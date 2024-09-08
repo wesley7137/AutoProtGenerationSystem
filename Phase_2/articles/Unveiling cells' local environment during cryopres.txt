@@ -1,0 +1,656 @@
+Title: Unveiling cells' local environment during cryopreservation by
+  correlative in situ spatial and thermal analyses
+Abstract:   Cryopreservation is the only fully established procedure to extend the
+lifespan of living cells and tissues, a key to activities spanning from
+fundamental biology to clinical practice. Despite its prevalence and impact,
+central aspects of cryopreservation, such as the cell's physico-chemical
+environment during freezing, remain elusive. Here we address that question by
+coupling in situ microscopic directional freezing to visualize cells and their
+surroundings during freezing with the freezing medium phase diagram. We extract
+the freezing medium spatial distribution in cryopreservation, providing a tool
+to describe the cell vicinity at any point during freezing. We show that two
+major events define the cells' local environment over time: the interaction
+with the moving ice front and with the vitreous moving front - a term we
+introduce here. Our correlative strategy may be applied to cells relevant in
+clinical research and practice, and help designing new cryoprotective media
+based on local physico-chemical cues.
+
+Full Text: 1 
+ Unveiling cells’ local environment during cryopreservation by correlative in 
+situ spatial and thermal analyses  
+Kankan Qina, Corentin Eschenbrennera, Felix Ginotb, Dmytro Dedovetsb, Thibaud Coradina, Sylvain 
+Devilleb, c, Francisco M. Fernande sa* 
+a Sorbonne  Université, UMR 7574, Laboratoire de  Chimie de la Matière Condensée de Paris, F -
+75005, Paris,  France  
+b Laboratoire de Synthèse et Fonctionnalisation des Céramiques , UMR 3080 CNRS/Saint -Gobain 
+CREE, Saint -Gobain Research Provence, Cavaillon , France  
+c now with: Université de Lyon, Université Claude Bernard  Lyon 1, CNRS, Institut Lumière Matière,  
+69622 Villeurbanne, France  
+ 
+Abstract  
+Cryopreservation is the  only fully established  procedure to extend the lifespan of living  cells 
+and tissues , a key to activitie s spanning from fundamental biology to clinical practice . Despite its 
+prevalence  and impact , central aspects of cryopreservation , such as the cell’s physico -chemical 
+environment during freezing, remain elusive . Here we address  that question  by coupling in situ 
+microscopic directional freezing to visualize cells and their surroundings during freezing with the 
+freezing medium phase diagram . We extract the freezing medium spatial distribution in 
+cryopreservation , providing a tool to describe the cell vicinity at any point during freezing . We show 
+that two  major events define  the cells ’ local environment over time:  the interaction with the moving ice 
+front and with the vitreous moving front  – a term we introduce here . Our correlative strategy may be 
+applied to cells relevant in clinical research and practice, and help designing new cryoprotective  media 
+based on local physico -chemical cues.  
+  2 
+ Intro duction  
+For decades, cryopreservation has been the pivotal  strategy in preserving  functional living 
+matter for extended periods of time. The capacity  to overcome the lifespan of  individual cells, cell 
+assemblies or tissues has enabled much of the recent advances in fundamental cell  biology,  cell therapies 
+and tissue engineering .1 This ability has been key for several clinical breakthroughs in r eproductive 
+biology2, and more generally all cases where the use of immortalized cell lines is not suitable . 
+Cryopreservat ion is generally attained  via two – seemingly opposite – approaches whose common 
+purpose is to prevent the deleterious effects , direct or not,  of water solidification on cells : vitrification  
+and slow freezing  methods.1 Vitrification  consists in  a liquid -solid transition of wat er – intra- and 
+extrac ellular – to an amorphous (vitr eous) state  by rapidly cooling (up to 106 °C.min−1)3 below  the glass 
+transition temperature4, preventing ice crystallization and thus minimizing cryoinjury. Conversely, slow 
+freezing  methods, that involve  programmed temperature decrea se, are nowadays widely  applied  for 
+cryopreservation of cells and tissues5,6. Beyond the ir technical diff erences, both vitrification  and slow 
+freezing  strategies  rely on an entangled set of thermodynamic and kinetic parameters  that blur the 
+analysis of the freezing phenomena . In addition, their respective success is determined by the viability 
+and/or vitality  of cells and tissues that are frozen  in presence of permeating cryoprotectant agents 
+(pCPA s) such as DMSO which may impo se cytotoxic response by cells .7–10 The challenges in 
+establishin g causal effects between the physico -chemical freezing parameters  and the biological 
+response s have  diverted the main research efforts towards a different direction, i.e. formula ting new 
+freezing media that maximizes cell viability to the stress es imposed by freezing and thawing .  
+Strategies to inhibit or minimize  ice crystals formation  while reducing  the harmful effects of 
+most pCPAs (e.g. DMSO, glycerol) were proposed by  lowering the later concentrations in presence of 
+non-permeating cryoprotectant agents  (npCPAs).11 Also s ucrose and trehalose  were found to accelerate  
+dehydration  of cells by altering intra - and extracellular osmotic pressures, which to some extent reduces 
+the possibility of intracellular ice gro wth.12,13 Recently, a ntifreeze proteins (AFPs) that present  ice 
+recrystallization inhibition (IRI) properties  have been applied as freezing media14, but immunological 
+and toxicological issues are still concerns for their clinical use15,16. To circumvent these issues AFP 3 
+ mimics  such as Poly(vinyl alcohol) (PVA) have been used for animal  cell17 and bacteria15 
+cryopreservation  as biocompatible alternatives  endued with IRI properties. Complex carbo hydrates  such 
+as hydroxyethyl starch  (HES)18,19, alginate20–22 or synthetic polyampholytes23 have been adopted in the 
+field of cell cryopreservation either with other pC PAs or alone.  More radical solutions have also been 
+proposed such as the use of metal -organic frameworks ,24 armors  around cells to prevent damage by ice 
+crystals or hydroxyapatite nanoparticles ,13 as vehicles to promote the internalization of CPAs. In most 
+of the preceding cases , may they be classical solutions such as  DMSO or more sophisticated solutions 
+such as AFPs, one crucial question remains open. What is the local composition of the vi cinity of cells 
+during freezing?  
+Here we address  that question by using a very simple fre ezing medium, sodium alginate solution 
+in water, to focus on the cellular environment during the freezing process. W e adapt ed the directional 
+freezing method  developed by Dedovets et al .25 to investigate the interaction between suspended S. 
+cerevisiae  cells and a moving freezing front in presence of a polysaccharide salt solution . These 
+observations are combined with the analysi s of the water -sodium alginate phase diagram obtained by 
+Differential Scanning Calorimetry  (DSC) to draw a more co mplete picture of the freezing environment  
+experienced by  S. cerevisiae  cells throughout the freezing process . Directional freezing ha s been 
+previously applied to observe red blood cells during freezing26 and to preserve adherent  cells27 as well 
+as ovarian28, liver29 and heart30 tissue in complex pCPA -conta ining media . In this work  directional 
+freezing provides a controlled freezing environment with clearly defined thermal boundary conditions, 
+steady freezing rate, and the ability  to investigate  in situ  the interaction between cells and the freezing 
+front. T hese conditions enable to bridge the kinetic and thermodynamic events occurring during 
+freezing , to reach  a more complete view of S. cerevisiae  environment prior, during and after interaction 
+with the freezing front. Moreover, we demonstrate that despite t he slow freezing approach and the 
+absence of pCPAs, the effective segregation between pure ice crystals, and an increasingly concentrated 
+phase , rich in cells and alginate , leads to a cellular local environment characterized by a vitreous 
+behavior whose pr edominance correlates positively with yeast viability.    4 
+ Thermodynamics of freezing media  
+Almost all  compounds soluble in water are practically insoluble in hexagonal ice (I h). This 
+implies that m ost solutes  are segregated from ice crystals during water f reezing.31,32 Under specific 
+conditions , also particles33 and even cells20,26,34 in suspension segregate  towards the interstitial space 
+defined b y the new ly formed ice crystals . In the following we estimate cells to stay in the interstitial 
+space, and verify this assumption experimentally. The consequence of such segregation step is ce ntral 
+in cryobiology since it determines the local composition of the cellular environment during freezing , an 
+information that was experimentally unavailable and conceptually overlooked .  
+Figure 1.a illustrates the path of an individual cell (in cyan) at two key moments that are defined 
+by the solute concentration changes. To characterize the increasingly concentrated media generated 
+during ice growth a binary phase diagram of sodium alginate in water was established using DSC  (Figure 
+1.b). The freezing te mperature 𝑇𝑓 was determined at the onset of the exothermic crystallization peak for 
+polymer volume fractions, 𝜙𝑝 ranging from 0.025 to 0.65 in consecutive freezing and heating cycle at 
+10 °C.min-1 (Figure S1). According to Flory ’s theory, t he freezing point  of a polymer solution with high 
+polymerization degree ( 𝑁>>>1) can be described by equation 1 ,35   
+𝑇𝑓=1+𝑤
+Δ𝐻𝜙𝑝2
+1
+𝑇0−𝑅
+Δ𝐻(ln(1−𝜙𝑝)+𝜙𝑝)                                                                   (eq.1) 
+where  𝑤 is the regular solution interaction parameter  in 𝐽.𝑚𝑜𝑙−1, ∆𝐻 is the water melting enthalpy 
+(∆𝐻=6007  𝐽.𝑚𝑜𝑙−1), 𝜙𝑝 is the polymer volume fraction  and  𝑅 is the Boltzman constant in 𝐽.𝐾−1. 
+For 𝜙>0.54 no exothermic peak correspond ing to water freezing was detected at  -10 °C.min-1, 
+suggesting that for high polymer content composit ions no ice  crystallization occurred within the 
+detection limit of the DSC. The lack of detectable freezing event s is in good agreement with the glass 
+transition temperatures calculated for the ice -alginate system defined by Gordon -Taylor  equation35 (eq. 
+2),  
+𝑇𝑔=𝑇𝑔𝑤𝜙𝑤+𝑘𝑇𝑔𝑝𝜙𝑝
+𝜙𝑤+𝑘𝜙𝑝                                                         (eq. 2) 5 
+ where  𝑇𝑔 corresponds to the glass transition temperature for a given composition, 𝑇𝑔𝑤=−137 .15 °𝐶 is 
+the pure ice glas s transition tem perature, 𝑇𝑔𝑝=120° 𝐶 is the polymer glass transition temperature and 
+𝑘 is an empirical parameter fixed to 0.5  as discussed elsewhere for other polysaccharide systems35. The 
+full phase diagram of the alginate/ water binary system is depicted in Figure 1.b. As reported for similar 
+polysaccharide systems35, upon cooling at 10 °C.min-1, sodium alginate solutions ( L) below  𝜙<0.54 
+tend to segregate into a pure ice phase ( I) along with an increasingly  concentrated solution phase ( L). If 
+the mixture is cooled below the temperature defined by the intersection between 𝑇𝑓 and 𝑇𝑔 then a 
+vitreous ( V) or glassy phase is fo rmed whose composition is defined by the same intersection between 
+𝑇𝑓 and 𝑇𝑔.  
+From another set of DSC experiment s we quantified the ice volume fraction 𝜙𝑖𝑐𝑒 from the 
+integral of the ice melting enthalpy in alginate -water binary mixtures. From the values of 𝜙𝑖𝑐𝑒 obtained, 
+we determined the  volume fraction of non -frozen water associated with the polymer for each alginate 
+concentration . Figure 1.c depicts the evolution of the non -frozen water volume fraction 
+(𝑙𝑜𝑐𝑎𝑙  𝜙𝑤𝑎𝑡𝑒𝑟 ) and alginate volume fraction ( 𝑙𝑜𝑐𝑎𝑙  𝜙𝑎𝑙𝑔𝑖𝑛𝑎𝑡𝑒 ) in between ice crystals after freezing 
+different alginate -water binary mixtures from room temperature to −80 ℃ at 10 ℃.𝑚𝑖𝑛−1. The local 
+composition in between ice crystals was found to be independent of the initial alginate -water 
+composition up to 𝜙=0.6 (dark grey and magenta data points). Above this alginate volume fraction no 
+ice melting endotherm was detected upon heating the samples from -80 °C to 40 °C, suggesting that no 
+ice crys tallization took place during freezing . Under these circumstances all water was considered as 
+non-freezing water (a thorough discussion of the nature of freezable and non -freezable water in presence 
+of polysaccharides is available elsewhere and is beyond t he scope of this work35). As a consequence, no 
+phase segregation occurred and the local composition of the polymer -rich phase after fr eezing was 
+similar to the initial mixtures (lighter grey and magenta data  points). The intersection between the 
+liquidus  curve  and the glass transition curves  (Figure 1.b) thus defines  the local composition of the 
+segregated phase for 𝜙<0.6. This critical  polymer volume fraction will be referred to hereafter as 
+𝜙𝑐𝑟𝑖𝑡. For a ll practical uses in cell cryopreservation , polysaccharide  concentrations is lower than  𝜙𝑐𝑟𝑖𝑡. 
+The consequences from a cryopreservation standpoint are important  since the se data suggests that 6 
+ regardless of the initial concentration of polymer  (provided that 𝜙<𝜙𝑐𝑟𝑖𝑡), the composition of the local 
+environment surrounding cells is independent of the  initial polymer concentration and is defined  solely 
+by the intersect ion between 𝑇𝑓 and 𝑇𝑔.  
+Since the initial composition of alginate solutions we used in the cell cryopreservation 
+experiments was limited to 𝜙=0.025 (vertical dotted line in Figure 1.b), and because the thermal 
+gradient in the directional freezi ng setup is linear, it is possible to transpose the data from the phase 
+diagram to establish the composition of the cell surroundings from room temperature to -80 °C during 
+freezing. Such an analogy enables to describe both the temperature and composition of the ice/alginate 
+solution/vitreous phase throughout the full freezing process. We thus define two moments that separate 
+different polymer concentration around individual cells during freezing. At 𝑡1 (Figure 1.a) the cell 
+surroundings evolved from a fixed polysaccharide concentration defined by the initial water -alginate 
+mixture to experience an increase in local polymer concentration until this concentration reached 
+𝜙𝑐𝑟𝑖𝑡 at 𝑡2 (Figu re 1.a). At 𝑡2 alginate concentration in the cells’ surrounding became constant and 
+equivalent to the vitreous mixture of alginate and water defined by 𝜙𝑐𝑟𝑖𝑡.  
+ 
+ Local concentration of alginate between ice crystals  
+It is commonly admitted that each cell type displays optimum viability at a specific freezing 
+rate. The bell -shaped curves that describe cell viability according to  freezing rate, have supported this 
+empirical statement and have provided much needed guidance in the definition of the b est 
+cryopreservation protocols for different cell types.36,37 The description of the via bility according to the 
+freezing rate is, however, provides only limited  insight into the different phenomena occurring during 
+cryopreservation. As shown above, the composition of the interstitial zones , and thus the cellular 
+environment during freez ing, depends on the intersection point between 𝑇𝑓 and 𝑇𝑔. The liquidus curve 
+describes a purely thermodynamic transition  whose characteristic temperature for a given composition 
+is not expected to change with the freezing rate. The glass transiti on is, on the contrary, strongly 
+dependent on the heating and cooling rates38. Faster cooling rates are expected to move 𝑇𝑔 to higher 7 
+ temperatures, which changes the intersection point between 𝑇𝑓 and 𝑇𝑔 and thus impacts on 𝜙𝑐𝑟𝑖𝑡, the 
+composition of the vitreous phase. In the following experiments we have controlled the ice front velocity 
+as a strategy to modulate the freezing rate in the directional freezing setups. To ascertain the impact of 
+ice front velocity on the phase segregation between ice and alginate/water gla ss during freezing, a n 
+alginate solution marked  with rhodamine B was frozen under the con focal microscope setup depicted in 
+Figure 2.a at 10, 20, 30 and 50 µm.s-1. Two dimensional image sequences  of the freezing phenomena 
+were acquired and stabilized at th e moving front. Figure 2.b represents a section of a still image used to 
+calculate the volume fraction of ice according to the distance to the ice front for the different ice front 
+velocities. At least ten consecutive images were treated ( Figure S2) for ea ch ice front velocity. From the 
+integration of the ice zones (in black ) the ice volume fraction as a function of the distance to the ice front 
+was determined . Figure 2.c describes the progression of the ice volume fraction, 𝜙𝑖𝑐𝑒, along the x 
+direction according to the ice front velocity. From the moving ice front point towards the cold element,  
+𝜙𝑖𝑐𝑒 grows rapidly to attain a relatively stable regime at around 400 µm from the ice front. The ice 
+volume fraction at the plateau zone is independent of the ice front velocity for 10 and 20 µm.s-1. As the 
+ice front velocity increase s from 20 to 50 µm.s-1, 𝜙𝑖𝑐𝑒 at the plateau decreases from 0.9 1 to 0. 79, 
+respectively. While this difference  may seem of little relevan ce to understand the local environment of 
+cells during freezing, the conversion to local alginate concentration in the interstitial zones is revelatory. 
+In figure 2.d , for high est ice front velocity  (50 µm.s-1), the local alginate concentration evolves fro m 4 
+wt.% to attain a stable  regime at around 20 wt.%. For the lower ice front velocities  (10 and 20 µm.s-1) a 
+mostly linear trend indicates that the local concentration of alginate evolves from 4 wt.% to 40 wt.%  
+within the first 600 µm. The intermediate ic e front velocity, 30 µm.s-1 yields a mostly linear alginate 
+concentration variation with the distance to the ice front, reaching 26 wt.% at 600 µm. These results 
+clearly indicate that the local environment surrounding cells during directional freezing is l argely 
+controlled by the ice front velocity. The difference in alginate concentration profile  evidenced in Figure  
+2.d can be further explained by the  fact that the  lowest temperature available in the confocal setu p is -8 
+°C. At high ice front velocities th e 𝑇𝑔is higher and the intersection between the liquidus line and 𝑇𝑔 is 
+readily accessible at moderate temperatures such as -8 °C. This leads to reaching a plateau in 8 
+ composition under the confocal microscope as observed for 50 µm.s-1. At lower ve locities the 
+intersection between the liquidus line and 𝑇𝑔 can only be accessed at lower temperatures, leading the 
+experiment not to attain the steady state regime.  While this limitation is present and relevant in the 
+confocal setup it was fully elimi nated in the cell freezing setup used later in this work where the cold 
+plate can go as low as -100 °C.     
+Another aspect that was accessible from the previous data relates to  how the variation of alginate 
+concentration occurs with time , for different ic e front velocities , from 𝑡1onwards. Figure 2.e describes 
+the local alginate concentration increase within the accessible field view under the confocal microscope 
+setup, from the ice front to 600 µm. For low velocities, the concentration increase was progressive but 
+reache d high alginate concentration (up to 40 wt.%). At higher ice front velocities the alginate 
+concentration increase was sharper but reache d a far mor e limited local concentration (20 wt.%). Figure 
+2.f depicts the initial concentration inc rease immediately after 𝑡1. The slope s of the linear fits show a 
+marked difference in the initial concentration variation ranging from 1.3 to 7.1 wt%.s-1 for 10 and 50 
+µm.s-1, respectively.   
+It is thus reasonable to hypothesize that, in directional freezing, the ice front vel ocity can play 
+two major roles  impacting cell behavior . The first is relate d with the final composition of the vitreous 
+alginate -water phase  surrounding the cells  that varies from 20 to 40 wt% by solely modifying the ice 
+front velocity  from 50 to 10 µm.s-1, respectively . This may account for important variations in cell 
+viability since the hydration of the storage medium will, in the present  water -polysaccharide system in 
+the absence of pCPA s, define the osmotic pressure difference between the intra - and ex tracellular media  
+of the cell s after 𝑡2. The second role of the ice front velocity is relate d with the rate at which the polymer 
+concentration change s from 𝑡1 onwards. Assuming that suspended cells will, prior to interaction with 
+the freezing front , be at osmotic equilibrium with the alginate solution ( 𝜙=0.025 ,4 𝑤𝑡%), the ice front 
+velocity determine s the rate at which cells will be drawn to an osmotic out-of-equilibrium situation.  
+The local environment of cells during freezing is determined by  a diverse range of conditions 
+that extend beyond the local concentration of polymer, as discussed so far. Another particularly 
+important aspect is the fate of cells during their interaction with the freezing front. As reported 9 
+ previously20, yeast cells are observed covered in a polysaccharide envelope, regardless of the ice front 
+velocity used in the directional freezing ( Figure S 3). However, to establish a quantitative relationship 
+between cell viability and ice front velocity we should ensure that the ratio of cells that end up within 
+the interstitial space defined by ice crystals ( i.e. enveloped in alginate) over those being engu lfed directly 
+by ice is independent of the ice front velocity.  
+ 
+Cell viability  
+To determine the physical environment of suspended S. cerevisiae  cells during freezing the 
+home -built directional freezing setup20 (Figure 3.a) was used to freeze yeast cell suspensions at different 
+ice front velocities. The three dimensional image of the fr eezing front zone, depicted in F igure 3.b 
+illustrates how ice crystals (unmarked, white) segregate both alginate solution (mark ed with Rhodamine 
+B (Rh -Alg), coded in magenta) and S. cerevisiae  cells (marked with FUN1 dye, coded in cyan) to form 
+domains of 4 -6 µm in the y direction (after the ice crystal is fully formed, bottom of the image) separated 
+by ice crystals ranging betwee n 20 and  50 µm in the y direction  (see Figure S 2). From the 3D rendered 
+image, yeast cells appear covered by a magenta layer  (rhodamine B in alginate) , indicating the absence 
+of direct contact between the cell wall with ice crystals. This observation was f urther confirmed by a 
+sequential imaging of cells exposed to an ice front moving at 10 µm.s-1. Figure 3 .c depicts nine 
+sequential fluorescence 2D images of the freezing front before, during and after the interaction of two 
+suspended cells with the moving f reezing front. Two different outcomes were identified: encapsulation 
+in the interstitial space defined by ice crystals (white arrows) and engulfment of th e cells in the ice 
+crystals ( yellow  arrows).  The images in Figure  3.c were chosen due to the co -occurr ence of both cases 
+and are not representative of the wh ole sample. Statistical analysis of the encapsulation efficiency of 
+yeast cells (n > 200) by the moving ice front (Figure 3.d) performed on image sequences obtained  at 10 
+and 50 µm.s-1 yield ed more tha n 85% of cells were encapsulated in the alginate -rich zones, regardless 
+of the ice front velocity.   10 
+ As shown above, the freezing conditions determine the final polymer concentration and the rate 
+at which this concentration is attained based solely on the velocity of the freezing front. To ascertain if 
+ice front velocity did translate into dif ferent cell viability when applied to yeast cell suspensions a 
+dedicated directional freezing setup was built . This setup allowed  to control the freezing step between 
+two well-defined thermal boundar ies closer to the temperatures relevant  in cryopreservation (Figure 
+4.a). S. cerevisiae  cells suspended in alginate solution were placed between glass coverslips separated 
+by a 500 µm spacer and moved from the hot block ( 𝑇𝐻=10 °𝐶) towards the cold block ( 𝑇𝐶=−100  °𝐶) 
+at different linear velocities. To ascertain the impact of the ice front velocity on the viability of S. 
+cerevisiae  cells during freezing, three ice front velocities, 10, 50 and 100 µm.s-1, were used . 
+Experimental data describing the cooling rate according to the ice front velocity is available in the 
+supporting information  (Figure S4 ). The growth curves of yeast cells were obtained in liquid growth 
+conditions after directional freezing followed by controlled quick thawing to 37°C (Figure 4.b). The 
+viability results support previous findings on the invers e dependency of cell viability with freezing 
+rate.36,37,39  When frozen at 10 µm.s-1 (5 °C.min-1) S. cerevisiae  cell suspensions (1.5·107 cells.mL-1) 
+display significantly faster growth kinetics than at higher ice front velocities (and freezing rates). 
+Though significantly different from the control up to 32h, the characteristic growth curve of cell 
+suspensions frozen at 10 µm.s-1 follow the control growth curve closely. This behavior is also observed 
+for differ ent cell densities ranging from 1.5·106 to 1.5·108 cells.mL-1 (Figure  S5). As the ice front 
+velocities increased from 10 to 50 and 100 µm.s-1 the cells’ growth kinetics decreased in a monotonic 
+manner indicating the inverse dependence between cell viabilit y and the physico -chemical conditions 
+determined by the ice front progression. These results were further confirmed by plate counting after a 
+freeze -thawing process (Fig. 4.c). The colony forming units determined by plate counting also decreased 
+monotonica lly with ice front velocity.  
+ 
+Discussion  
+Establishing a strict causal relationship between yeast  viability and the composition of the cell 
+surroundings determined by the ice front velocity is not possible since a wide range of other parameters 11 
+ are simultaneously at pl ay. The pressure formed in between ice crystals during ice templating and its 
+dependence with ice front velocity cannot be discarded. Recent results suggest that the pressure 
+generated during ice templating of a lamellar glycolipid can attain values in the  kbar range.40 Although 
+only two ice front velocities were tested (9 and 15 µm.s-1), the pressure values do stand in the critical 
+range for eukaryotic cells (between 1 and 3 kbar ).41 It is likely  that a  wider ice front velocity range  may 
+translate into significantly different interstitial pressures  with repercussions in cell viability . Also the 
+morphol ogy of the ice crystals formed during freezing are markedly different  depending on the ice front 
+velocity . The minimum Feret diameter of the macroporous alginate structures observe d under SEM after 
+freeze drying, displayed in the supp lementary information (Figure  S6) and the periodic distances 
+obtained under the confocal microscope ( Figure S7) are relevant measure s to describe the wall -to-wall 
+distance of the lamellar pores generated by the growth of ice cry stals. The  inverse scaling between ice 
+crystals size and ice front velocity observed here is a common behavior  described for ice -templating of 
+a variety of systems ranging from biopolymers20,42 to ceramic slurries43,44. While th e morphological 
+feature may seem of little relevance to cell viability, the size and distribution of ice crystals within the 
+sample may have significant impa ct during thawing of the samples , notably on their likelihood to endure 
+recrystallization , a key aspect in cell injury .  
+Nevertheless, we have here minimize d the unknown variables usually associated with 
+cryopreservation by selecting a freezing setup with clearly defined boundary conditions that can be 
+reproduced under a confocal microscope to draw a clearer picture of the cellular environment during 
+freezing. We can therefore unveil, in a detailed manner , how the medium surrounding each cell evolves 
+during  freezing and how the ice front velocity determines the composition of the cell environment. Based 
+on the water -alginate phase diagram w e introduce the notion of vitreous moving front  as a key element 
+to understand how the medium concentration evolves  over time during freezing.  Of especial importance 
+is the impact of the ice front velocity on the evolution of the concentration of the polymer solute 
+surrounding cells. Increasing the ice front velocity led to a lower concentration of alginate within the 
+interstitial space where cells are confined. This evolution could lead to a lower osmotic pressure 
+difference between the extracellular and the intracellular spaces and thus to less osmotic stress. In this 12 
+ regard, fast ice front velocity would seem a favorable condition to maximize cell viability . However, an 
+attentive  look at the initial solute concentration rate  of change between 𝑡1 and 𝑡2 shows very large 
+variation , up to 7.1 wt%.s-1, at high velocity,  whereas this value was as low as 1.7 wt%.s-1 for slower 
+ones. We hypothesize that this slow rate of solute concentration change is a central parameter behind 
+the increased viability of cells frozen at 10 µm.s-1. Higher rates may not allow to reach an equilibrium 
+state between the intra - and extracellular  osmotic forces , leading to an excess of cytoplasmic  water and 
+therefore inefficient inhibition of intracellular  ice growth  by solute/crowding effects . 
+Coupling microscopic observation during directional freezing of cells with the thermal analysis 
+of the freezing medium enable d to characterize the cell local environment during freezing . To the best 
+of our knowledge , describing the composition of the freezing media surrounding cells during freezing 
+has never been accomplished. Here we  experimentally quantify  the evolution of the concentration of a 
+polysaccharide -based medium during freezing and we establish that its final concentration is 
+independent from its initial concentration  in solution  below a critical value . We describe the vitreous 
+nature of the poly saccharide surrounding cells as it accumulates in the interstitial space defined by ice 
+crystals . Most transformations in concentration occur between the time points that mediate between the 
+passage of the moving ice front and the moving vitreous front, a concept we introduce for the first time.  
+These observations strengthen  the role of controlled ice front velocity in cryopres ervation , a factor often 
+overlooked in cooling rate control  experiments . Due to the eminently kinetic nature of the vitreous 
+transition, we prove that the different composition of  the cell surroundings depends  on the ice front 
+velocity used during freezing.  
+These results provide a more detailed insight into the osmotic stress endured by cells during 
+cryopreservation  due to the local increase in medium concentration , an information that has remained 
+elusive up to now. Furthermore , the correlative approach developed  here should allow to achieve  a 
+deeper understanding of the freezing mecha nisms of biological materials and provide quantitative data 
+to rationalize cell survival during  cryopreservation, an essential step to achieve better freezing protocols 
+in absence of toxic cryoprotectants.  
+ 13 
+ Materials and Methods  
+DSC  – Differential Scanning Calorimetry  was performed  to study the therm al behavior  of 
+alginate/water mixture s. In a typical experiment, 20 mg of different composition  varying from 4  wt.% 
+to 80 wt.%  were sealed in  aluminum crucible s and left to homogenize for one week at ambient 
+temp erature. To analyse the fraction of frozen water, s amples were cooled to -80 °C at –10 °C.min-1 
+followed by heating back to room temperature. The ice melt endotherm  was analy zed to understand the 
+local composition of composition of the final system . The co mparison between ice melting endotherm 
+integration and the amount of introduced  water allowed the quantification of the  amount of non-freezing 
+water  associated with the polymer fraction according with the initial alginate concentration. To describe 
+the cry oscopic depression, samples were cyclically cooled to -80 °C and heated back the temperature 
+corresponding to the middle of the melt endotherm. Upon each cycle the return temperature between 
+heating and cooling ramps was shifted of 0.5 °C towards lo wer tem peratures to overcome  supercooling . 
+All DSC analysis were performed in a TA Instruments Q20 DSC  instrument coupled with a cooling 
+flange. The conversion between mass and volume fraction is according to the equation (S.eq.1) in the 
+supplementary information . 
+Directional freezing under confocal microscopy  – The confocal microscopy system designed to 
+inspect the ice front during directional freezing25 was composed of  a temperature control ler connected 
+to two independent  Peltier elements (ET -127-10-13, Adaptive , purchased from RS Components, France) 
+coupled with a controlled XY stage . The distance between th e thermal  elements was 2 mm. The freezing 
+process was observed under a Confocal Laser Scanning Platform Leica TCS SP8 (Leica Microsystems  
+SAS,  Germany). For the analysis of the polymer fraction, rhodamine B (0.1 mM) was dissolved in 4 
+wt% alginate solution . The obtained fluorescent solution was injected inside  Hele -Shaw cells. The filled 
+Hele -Shaw cell were  moved from the hot to the cold Peltier  elements (temperature ranged from 12 to -
+8 °C) by a stepper motor at 10 , 20, 30 and 50 μm .s-1 linear  velocities ,. The ice crystal and corresponding 
+segregated polymer volume fraction s were analyzed with FIJI software45. For cell imaging during 
+freezing , S. cerevisiae  cells (around 1.5 ·107 cells.mL-1) stained with LIVE/DEAD™ Yeast Viability Kit  
+(L7009, ThermoFisher Scientific) were mixed with algi nate solution in presence of Rhodamine B (0.1 14 
+ mM) for 30 minutes. The sample s were then  imaged during freezing as they crossed the thermal gradient 
+at 10 and 50 μm.s-1. Image analysis was performed using  Fiji software45. The encapsulation efficiency 
+of yeast cells (stained by SYTO 9  and propidi um iodide , both obtained from Thermo Fisher Scientific ) 
+was obtained from counting cel ls trapped inside of alginate walls or ice column (n > 200).  
+Cell culture – 10 mg of dry Saccharomyces cerevisiae  cells (obtained from SIGMA -ALDRICH) 
+were suspended in 1 ml pH 7.2 PBS solution . Subsequently  10 μl of cell suspension  were pipetted into 
+10 ml Yeast Extract  Peptone  Dextrose (YPD) culture medi um. Cell suspensions were then placed  in an 
+incubator at 30 °C, 150 rpm for 30 hours. Cells were harvested after centrifugation at  6000 rpm for 10 
+minutes a nd resuspended in 0.9  wt.% NaCl solution for the following experiments.  
+Directional freezing  of yeast cells  – The setup was composed of two temperature -controlled 
+aluminum plates (12×10×1.5 cm) used as cold (𝑇𝐶=−100 ±5 ℃) and hot element  (𝑇𝐻=10±2 ℃)  
+and a motor  to slide the  samples  between both aluminum plates . The cold plate was refrigerated via a 
+copper element plunged into liquid Nitrogen. The hot plate was controlled by a circulating flow of water 
+from a nearby temperature controlled bath.  The distance between th e two plates was set to 2 mm. 
+Mixture of 4  wt.% sodium alginate  aqueous solution and yeast cells (fina l concentration, 1.5 ·107 
+cells. ml-1) was stabilized for 30 minutes at room temperature and injected into a sample holder (a g lass 
+coverslip sealed with a 500 µm  culture chamber from Thermo Fisher Scientific) . Prior to freezing, a 
+stabilization period (30 mins. at 𝑇𝐻) was systematically applied for the samples to attain  thermal 
+equilibrium, upon which the samples moved at 10 , 50 or 100 μm .s-1 from the hot to the cold element. 
+Once the sample was fully frozen and reached  the edge of the cold element  it was stored at -80 °C for 
+12 h. The frozen sample s were fully thawed in a water bath at 37 °C for 15 seconds. To ascertain cell  
+regrowth after freezing and thawing, 120 μl of each thawed  solution was dispersed into  10 ml fresh YPD 
+broth medi um and incubat ed at 30 °C, 150 rpm. Aliquots  were drawn  at 8, 12, 24, 28, 32, 48, 56 h and  
+optical density at 600 nm was tracked using a UV sp ectrometer (UVIKONXL SECOMAM). Three 
+replicates were performed for each ice front velocity.  Directional freezing  was performed at  different 
+cell densities, ranging from 1.5·106 to 1.5·108 cells. mL-1. The same freezing , sampling and the 15 
+ subsequent OD measur ement  procedures described above were applied. Three replicates were 
+performed for each cell density.  
+Cell viability assay  – Cell viability assay was performed by plate counting. The frozen sample s 
+(ca. 300 µL) obtained after directional freezing  were taken out from the -80 °C freezer and thawed in a 
+water bath at 37 °C for 15 seconds. Subsequently, 120 μl of the samples were centrifuged at 6000 rpm 
+and resuspended in 200 μl 0.9  wt.% NaCl solution. Samples were diluted to 1/10 , 1/100 and 1 /1000 X. 
+For plate co unting, 100 μl of each of the diluted samples were pipetted onto the YPD agar surface (three 
+replicates for each condition) and spreaded  with a sterile plastic  cell spreader . Agar plates were then put 
+inside an  incubator at 30 °C for 24 h  and c ell colonies  were counted by visual inspection.  
+SEM  – After directional freezing , samples were freeze -dried (ALPHA 2 -4 LD, Bioblock 
+Scientific , 0.1 mbar, at condenser temperature -80 °C ) for 24 hours. The dried foams were cut 
+perpendicular to the ice front growth direc tion (revealing the pores’ cross section) and parallel to the ice 
+growth direction (revealing the pores’ alignment) and fixed to a metal SEM holder using carbon tape . 
+Samples were sputtered with 10 nm gold layer and imaged on a Hitachi S -3400N scanning  electron  
+microscope at 10 kV beam acceleration voltage . Subsequent SEM image analysis were performed with 
+FIJI software45. 
+ 
+Acknowledgments  
+The aut hors show their appreciation to  I. Génois  for technical assistance on SEM  and to 
+C. Lorthioir and C. Boissière for fruitful discussion s. KQ acknowledges funding from the China 
+Scholarship Council , PhD grant  n. 201606230232 . This work was suppor ted by French state 
+funds managed by the National Research Agency (ANR) through the Cell sInFoams  project,  
+grant  n. ANR -17-CE08 -0009  and the European Research Council under the European 
+Community’s Seventh Framework Programme (FP7/2007 -2013) Grant Agreemen t n. 278004  
+(project FreeCo) .   16 
+  
+References  
+1. Jang, T. H. et al.  Cryopreservation and its clinical application. Integr. Med. Res.  6, 12–18 (2017).  
+2. Yokonishi, T. et al.  Offspring production with sperm grown  in vitro from cryopreserved testis 
+tissues. Nat. Commun.  5, 1–6 (2014).  
+3. Bald, W. B. On crystal size and cooling rate. J. Microsc.  143, 89–102 (1986).  
+4. Fahy, G. M. & Wowk, B. Principles of cryopreservation by vitrification. in Cryopreservation 
+and fre eze-drying protocols. Methods in Molecular Biology (Methods and Protocols)  21–82 
+(Springer, New York, NY, 2015).  
+5. Suzuki, N. et al.  Successful fertility preservation following ovarian tissue vitrification in patients 
+with primary ovarian insufficiency. Hum. Reprod.  30, 608 –615 (2015).  
+6. Kawamura, K. et al.  Hippo signaling disruption and Akt stimulation of ovarian follicles for 
+infertility treatment. Proc. Natl. Acad. Sci.  110, 17474 –17479 (2013).  
+7. Kita, H., Okamoto, K., Kushima, R., Kawauchi, A. & Chan o, T. Dimethyl sulfoxide induces 
+chemotherapeutic resistance in the treatment of testicular embryonal carcinomas. Oncol. Lett.  
+10, 661 –666 (2015).  
+8. Pal, R., Mamidi, M. K., Das, A. K. & Bhonde, R. Diverse effects of dimethyl sulfoxide (DMSO) 
+on the differ entiation potential of human embryonic stem cells. Arch. Toxicol.  86, 651 –661 
+(2012).  
+9. Galvao, J. et al.  Unexpected low -dose toxicity of the universal solvent DMSO. FASEB J.  28, 
+1317 –1330 (2014).  
+10. Alessandrino, E. P. et al.  Adverse events occurring du ring bone marrow or peripheral blood 
+progenitor cell infusion: Analysis of 126 cases. Bone Marrow Transplant.  23, 533 –537 (1999).  
+11. Seo, J. M. et al.  Cryopreservation of amniotic fluid -derived stem cells using natural 17 
+ cryoprotectants and low concentratio ns of dimethylsulfoxide. Cryobiology  62, 167 –173 (2011).  
+12. Gurruchaga, H. et al.  Advances in the slow freezing cryopreservation of microencapsulated cells. 
+J. Control. Release  281, 119 –138 (2018).  
+13. Stefanic, M. et al.  Apatite nanoparticles strongly im prove red blood cell cryopreservation by 
+mediating trehalose delivery via enhanced membrane permeation. Biomaterials  140, 138 –149 
+(2017).  
+14. Biggs, C. I. et al.  Polymer mimics of biomacromolecular antifreezes. Nat. Commun.  8, 1–12 
+(2017).  
+15. Hasan, M., F ayter, A. E. R. & Gibson, M. I. Ice Recrystallization Inhibiting Polymers Enable 
+Glycerol -Free Cryopreservation of Microorganisms. Biomacromolecules  19, 3371 –3376 (2018).  
+16. Graham, B. et al.  Polyproline as a Minimal Antifreeze Protein Mimic That Enhances  the 
+Cryopreservation of Cell Monolayers. Angew. Chem. Int. Ed.  129, 16157 –16160 (2017).  
+17. Mitchell, D. E., Lovett, J. R., Armes, S. P. & Gibson, M. I. Combining Biomimetic Block 
+Copolymer Worms with an Ice -Inhibiting Polymer for the Solvent -Free Cryopre servation of Red 
+Blood Cells. Angew. Chem. Int. Ed.  55, 2801 –2804 (2016).  
+18. Deller, R. C., Vatish, M., Mitchell, D. A. & Gibson, M. I. Glycerol -Free Cryopreservation of 
+Red Blood Cells Enabled by Ice -Recrystallization -Inhibiting Polymers. ACS Biomater. S ci. Eng.  
+1, 789 –794 (2015).  
+19. Blood, R. et al.  A Comparative Study of the Effects of Glycerol and Hydroxyethyl Starch in 
+Canine. J. Vet. Med. Sci.  66, 1543 –1547 (2004).  
+20. Christoph, S., Kwiatoszynski, J., Coradin, T. & Fernandes, F. M. Cellularized Cel lular Solids via 
+Freeze -Casting. Macromol. Biosci.  16, 182 –187 (2016).  
+21. Liu, X., Zhao, G., Chen, Z., Panhwar, F. & He, X. Dual Suppression Effect of Magnetic Induction 
+Heating and Microencapsulation on Ice Crystallization Enables Low -Cryoprotectant 
+Vitrification of Stem Cell –Alginate Hydrogel Constructs. ACS Appl. Mater. Interfaces  10, 18 
+ 16822 –16835 (2018).  
+22. Cao, Y. et al.  The Unusual Properties of Polytetrafluoroethylene Enable Massive -Volume 
+Vitrification of Stem Cells with Low -Concentration Cryoprote ctants. Adv. Mater. Technol.  4, 1–
+14 (2019).  
+23. Stubbs, C., Bailey, T. L., Murray, K. & Gibson, M. I. Polyampholytes as Emerging 
+Macromolecular Cryoprotectants. Biomacromolecules  21, 7–17 (2020).  
+24. Zhu, W. et al.  Metal -Organic Framework Nanoparticle -Assisted Cryopreservation of Red Blood 
+Cells. J. Am. Chem. Soc.  141, 7789 –7796 (2019).  
+25. Dedovets, D., Monteux, C. & Deville, S. Five -dimensional imaging of freezing emulsions with 
+solute effects. Science  360, 303 –306 (2018).  
+26. Ishiguro, H. & Rubinsky, B.  Mechanical interactions between ice crystals and red blood cells 
+during directional solidification. Cryobiology  31, 483 –500 (1994).  
+27. Bahari, L., Bein, A., Yashunsky, V. & Braslavsky, I. Directional freezing for the 
+cryopreservation of adherent mammalia n cells on a substrate. PLoS One  13, 1–17 (2018).  
+28. Arav, A. et al.  Ovarian function 6 years after cryopreservation and transplantation of whole sheep 
+ovaries. Reprod. Biomed. Online  20, 48–52 (2010).  
+29. Gavish, Z., Ben -Haim, M. & Arav, A. Cryopreservat ion of whole murine and porcine livers. 
+Rejuvenation Res.  11, 765 –772 (2008).  
+30. Elami, A. et al.  Successful restoration of function of frozen and thawed isolated rat hearts. J. 
+Thorac. Cardiovasc. Surg.  135, 666 –673 (2008).  
+31. Tajima, Y., Matsuo, T. & S uga, H. Calorimetric study of phase transition in hexagonal ice doped 
+with alkali hydroxides. J. Phys. Chem. Solids  45, 1135 –1144 (1984).  
+32. Thibert, E. & Dominé, F. Thermodynamics and kinetics of the solid solution of HCl in ice. J. 
+Phys. Chem. B  101, 3554–3565 (1997).  19 
+ 33. Deville, S. Understanding the Freezing of Colloidal Suspensions: Crystal Growth and Particle 
+Redistribution. in Freezing Colloids: Observations, Principles, Control, and Use: Applications 
+in Materials Science, Life Science, Earth Scienc e, Food Science, and Engineering  91–170 
+(Springer, Cham, 2017).  
+34. Bronstein, V. L., Itkin, Y. A. & Ishkov, G. S. Rejection and capture of cells by ice crystals on 
+freezing aqueous solutions. J. Cryst. Growth  52, 345 –349 (1981).  
+35. Kocherbitov, V. The nature of nonfreezing water in carbohydrate polymers. Carbohydr. Polym.  
+150, 353 –358 (2016).  
+36. Mazur, P. Freezing of living cells: mechanisms and implications. The American journal of 
+physiology  247, C125 –C142 (1984).  
+37. Mazur, P . & Schmidt, J. J. Interactions of cooling velocity, temperature, and warming velocity 
+on the survival of frozen and thawed yeast. Cryobiology  5, 1–17 (1968).  
+38. Moynihan, C. T., Easteal, A. J. & Wilder, J. Dependence of the Glass Transition Temperature 
+on Heating and Cooling Rate. J. Phys. Chem.  78, 2673 –2677 (1974).  
+39. Mazur, P. Cryobiology: The Freezing of Biological Systems. Science  168, 939 –949 (1970).  
+40. Baccile, N. et al.  Unveiling the Interstitial Pressure between Growing Ice Crystals during Ice -
+Templating Using a Lipid Lamellar Probe. J. Phys. Chem. Lett.  11, 1989 –1997 (2020).  
+41. Frey, B. et al.  Cells Under Pressure – Treatment of Eukaryotic Cells with High Hydrostatic 
+Pressure, from Physiologic Aspects to Pressure Induced Cell Death. Curr. Med.  Chem.  15, 2329 –
+2336 (2008).  
+42. Christoph, S. et al.  Ice-templating beet -root pectin foams : Controlling texture , mechanics and 
+capillary properties. Chem. Eng. J.  350, 20–28 (2018).  
+43. Deville, S., Saiz, E. & Tomsia, A. P. Freeze casting of hydroxyapat ite scaffolds for bone tissue 
+engineering. Biomaterials  27, 5480 –5489 (2006).  20 
+ 44. Deville, S., Saiz, E., Nalla, R. K. & Tomsia, A. P. Freezing as a Path to Build Complex 
+Composites. Science  311, 515 –518 (2006).  
+45. Schneider, C. A., Rasband, W. S. & Elicei ri, K. W. NIH Image to ImageJ: 25 years of image 
+analysis. Nature Methods  9, 671 –675 (2012).  
+ 
+  21 
+  
+Figure 1. Phase segregation of alginate/water solution  (L) during directional freezing enables controlled 
+phase separation into ice  (I) and a vitreous phase  (V). a) Diagram of the freezing profil e and  phase 
+separation during ice growth. At 𝑡1, cells are brought into contact with the freezing front and enter the 
+interstitial space defined by ice crystals . Between t 1 and t 2 cells experience an increasingly concentrated 
+solution phase that co -exists with ice. When the composition and temperature of the interstitial space 
+attain  𝜙𝑐𝑟𝑖𝑡, defined as the intersection between the liquidus and 𝑇𝑔 lines , the cells become entrapped in 
+a vitreous phase . b) Phase diagram of alginate/water soluti on. Magenta points describe the cryoscopic 
+depression of alginate/water mixtures as determined by DSC  at 10 °C.min-1. Liquidus curve is defined 
+by equation 2 and theoretical 𝑇𝑔 calculated according to Gordon Taylor model  is defined by equation 3 . 
+c) The composition of segregated phase upon freezing according to initial alginate concentration. Non -
+freezing water contained in the segregated phase, in magenta , is determined by the difference between 
+the total amount of water in the solution and the amount  of water  determined by the melting enthalpy of 
+the frozen fraction. In black , alginate composition in the segregated phase  according to the initial 
+alginate volume fraction . © (2020) Qin et al. ( 10.6084/m9.figshare.12129117 ) CC BY 4.0 license 
+https://crea tivecommons.org/licenses/by/4.0/.  
+ 
+22 
+  
+Figure 2. The composition of the  interstitial space between  ice crystals is determined by the linear 
+freezing velocity . a) The freezing setup available under the con focal microscope enables to follow the 
+freezing front at different linear velocities ranging from 10 to 50 µm.s-1. b) Frame of the freezing front 
+under the confocal microscope.  In magenta, rhodamine B -grafted alginate; in black, ice.  c) Ice volume 
+fraction  varies with the distance to the freezing front. Alginate/water segregated volume between ice 
+crystals according to the ice front distance. Data is  obtained from the integration of the volμme of  ice 
+crystals from  the confocal microscopy obtained at 10 µm.s-1, placed above the graph . d) Alginate 
+concentration can be calculated as a function of the distance to the freezing front assuming a zero 
+solubility in the  ice fraction. e) Local alginate concentration evolution over time after interaction with 
+the ice f ront (t 1). f) Initial moments of the alginate concentration evolution over time after interaction 
+with the ice moving front.  © (2020) Qin et al. ( 10.6084/m9.figshare.12129117 ) CC BY 4.0 license 
+https://creativecommons.org/licenses/by/4.0/.  
+23 
+  
+Figure 3. In situ directional freezing observation using confocal microscopy enables tracking the fate 
+of individual S. cerevisia e cells at different ice front velocities. a) Directional freezing stage used to 
+freeze cells under the confocal microscope. b) Three -dimensional rendered image of the freezing front 
+region of a yeast cell suspension in alginate. Yeast cells (cyan) was stained with FUN1 dye, alginate 
+was stained with Rhodamine B (magenta) and ice was unmarked (same color as background, white). c) 
+Sequential 2D fluorescence imaging of the freezing front of yeast cells suspension frozen at 10 µm.s-1. 
+Fluorophore exclusion zon es are occupied by ice (black). d) Statistic analysis of encapsulation efficiency 
+for individual yeast cells at 10 and 50 µm.s-1 freezing front velocity.  © (2020) Qin et al. 
+(10.6084/m9.figshare.12129117 ) CC BY 4.0 license https://creativecommons.org/licen ses/by/4.0/.  
+24 
+  
+ 
+Figure 4. Ice front velocity determine s yeast viability. a) Directional freezing setup  used for freezing 
+yeast cells suspended in alginate. b) Optical density of yeast suspension after directional f reezing, 
+thawing and re -culture in YPD suspension . c) Colony forming units of S. cerevisiae  determined by plate 
+counting performed immediately after thawing.  © (2020) Qin et al. ( 10.6084/m9.figshare.12129117 ) 
+CC BY 4.0 license https://creativecommons.org/l icenses/by/4.0/.  
+25 
+ Supplementary information  
+ 
+Unveiling cells’ local environment during cryopreservation by correlative in 
+situ spatial and thermal analyses  
+Kankan Qina, Corentin Eschenbrennera, Felix Ginotb, Dmytro Dedovetsb, Thibaud Coradina, Sylvain 
+Devilleb, c, Francisco M. Fernandesa* 
+a Sorbonne Université, UMR 7574, Laboratoire de  Chimie de la Matière Condensée de Paris, F -
+75005, Paris,  France  
+b Laboratoire de Synthèse et Fonctionnalisation des Céramiques, UMR 3080 CNRS/Saint -Gobain 
+CREE, Saint -Gobain Researc h Provence, Cavaillon , France  
+c now with:  Université de Lyon, Université Claude Bernard  Lyon 1, CNRS, Institut Lumière Matière,  
+69622 Villeurbanne, France  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 26 
+  
+Figure S1.  Cooling Differential Scanning Calorimetry scans obtained at 10 °C.min-1 for alginate/water 
+binary mixtures ranging from 4 to 76.1 wt.% in alginate.  
+ 
+ 
+27 
+  
+Figure S 2. Examples of sequential  frames used for the extraction of ice volume fraction at different 
+ice front velocities  
+ 
+28 
+  
+Figure S3. SEM micrographs of lyophilized alginate/cell foams prepared  by directional freezing at different ice 
+front velocities. Sample sections were cut perpendicular to the ice front growth direction. White arrows, indicate  
+encapsulated yeast cells.  
+ 
+ 
+Figure S 4 Temperature variation at different ice front velocities in the home -made directional freezing 
+setup.  
+ 
+ 
+29 
+  
+Figure S 5. S. cerevisiae  cell growth profile s with different initial cell densities  (from 1.5·106 to 1.5·108 
+cells.mL-1). Dot and light line, indicating control group without being frozen. Solid and dark line, 
+indicating  experimental group after subsequently freezing (10 µm.s-1), thawing and re -culturing.  
+ 
+ 
+Figure S 6. Minimum Feret diameter of pores performed on binarized images using FIJI software  according to 
+SEM images in Figure S 3. Moustache boxplots depict the median (center), 1st and 3rd quartiles (bottom and top of 
+boxes, respectively) and 10th and 90th percenti le of the distribution (lower and superior moustache limits, 
+respectively) for each ice front velocity. Black dots correspond to individual measurements (N >36). Fitting gamma 
+function are juxtaposed with the boxplots and depicted to the left of each box.  
+ 
+30 
+  
+Figure S 7. Periodic distances obtained by FFT analysis of confocal image stacks (n > 10) at different 
+ice front velocities.  
+ 
+Conversion between mass and volume fraction  
+The conversion between mass and volume fraction assuming a zero volume change of mixing is given 
+below ,   
+            ∅𝑝=𝜌𝑤
+𝜌𝑝(1
+𝑥𝑤𝑤𝑡−1−1)+𝜌𝑤                                                       (S.eq. 1 ) 
+where 𝑥𝑤𝑤𝑡 is the water mass fraction and 𝜌𝑤 and 𝜌𝑝 are the water and polymer density, respectively.  
+ 
+Confocal image treatment for volume fraction analysis  
+Image sequences of at least 10 consecutive frames were treated with a 2pixel median filter and rotated 
+so that the ice front was horizontal. A 600*600 Gaussian blur filter was applied to  each frame  to extract 
+a background intensity mask. Initial images were then divided by the obtained masks. A drift correction 
+was applied using a movie stabilization macro by Nicholas Schneider (available from 
+https://github.com/NMSchneider/fixTranslation -Macro -for-
+31 
+ ImageJ/bl ob/master/NMS_fixTranslation_ver1.ijm ) to stabilize the ice moving front. Image sequences  
+were cropped to remove stabilization artifacts at the image edges. All images extended for at least 600 
+µm below the ice front. Image sequences were subsequently bina rized using a Huang threshold between 
+0 and 39, rotated  by 90° and their profile integrated.  
+ 

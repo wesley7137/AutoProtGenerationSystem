@@ -1,0 +1,592 @@
+Title: NeuroBoun: An inquiry-based approach for exploring scientific literature
+  -- a use case in neuroscience
+Abstract:   Online scientific publications provide vast opportunities for researchers.
+Alas, the quantity and the rate of increase in the articles make the
+utilization of these resources very challenging. This work presents as
+inquiry-based approach to support the articulation of complex inter-related
+queries to gain insights regarding how these subjects have been studied in
+conjunction with one another as reported in the scientific literature. For this
+purpose we introduce inquiries that represent inter-related subqueries that are
+of interest to a researcher. The inquiries are expanded to better capture the
+intent of the inquirer, from which several queries are generated that represent
+various juxtapositions of the subjects in consideration. The sets of queries
+are used to search repositories to yield results that reveal quantitative and
+temporal relations among the subjects of the inquiry. A web-based tool,
+NeuroBoun, is developed as a proof of concept for medical publications found in
+PubMed. A use case related to the asymmetry of amygdala is presented to
+illustrate the potentials of the proposed approach.
+
+Full Text: NeuroBoun: An inquiry-based approach for
+exploring scientic literature {
+a use case in neuroscience
+Uskudarli, S∗:, G okdeniz, E., and Canbeyli, R.;
+:Department of Computer Engineering, Bogazici University,
+Turkey
+Sony Global Solutions, Turkey
+;Department of Psychology, Bogazici University, Turkey
+Abstract
+Online scientic publications provide vast opportunities for researchers.
+Alas, the quantity and the rate of increase in the articles make the uti-
+lization of these resources very challenging. This work presents as inquiry-
+based approach to support the articulation of complex inter-related queries
+to gain insights regarding how these subjects have been studied in con-
+junction with one another as reported in the scientic literature. For this
+purpose we introduce inquiries that represent inter-related subqueries that
+are of interest to a researcher. The inquiries are expanded to better cap-
+ture the intent of the inquirer, from which several queries are generated
+that represent various juxtapositions of the subjects in consideration. The
+sets of queries are used to search repositories to yield results that reveal
+quantitative and temporal relations among the subjects of the inquiry. A
+web-based tool, NeuroBoun , is developed as a proof of concept for medi-
+cal publications found in PubMed. A use case related to the asymmetry
+of amygdala is presented to illustrate the potentials of the proposed ap-
+proach.
+1 Introduction
+Gaining insight into the nature and results of a scientic investigation
+is quite complex. Additionally, the accelerating rate of scientic pub-
+lications make it exceedingly dicult to follow scientic developments.
+To grasp the developments related to a particular subject, an inquirer
+needs to be able to glean the relevant aspects and results that have been
+contributed by numerous scientists over a period of time. For example,
+∗Corresponding author, suzan.uskudarli@boun.edu.tr
+1arXiv:2001.00186v1  [cs.IR]  1 Jan 2020complex and comprehensive search (inquiries) consider the case of amyg-
+dalar asymmetry in the presence of themes that are often of interest, such
+as mood (i.e. anxiety, depression, etc.), brain functions (learning, mem-
+ory, etc) and evaluative aspects (salience, valence, etc). The process of
+inquiry requires support for accessing information at various resolutions.
+To this end, one may need to rst explore various concepts related to the
+inquiry (high level) and then delve deeper into details (low level). More-
+over, the inquiry process must be responsive so as to support the ow of
+the inquiry, since the responses will likely guide further inquiries.
+This work originates from a real-world use case in the neuroscience
+domain where we investigate the lateralization of brain regions as to how
+extensively they have been so far studied. We had been systematically
+querying PubMed to understand how certain concepts in neuroscience are
+inter-related and to what degree they have been investigated by examining
+publications. This process was laborious, time consuming and potentially
+error prone since such exploration is performed via aggregating the re-
+sults of numerous manual queries. Upon reection, it was evident that a
+tool that supports the articulation of interrelated queries that would au-
+tomatically query PubMed could relieve all three concerns and expedite
+the topical search without disrupting the ow of the researchers atten-
+tion. The design of NeuroBoun emerged while investigating the cerebral
+asymmetry in general and the lateralization of subcortical structures such
+as the amygdala in particular.
+To address such needs we introduce the notion of an inquiry to express
+a set of inter-related queries with a specic context that is of interest to
+a researcher. Inquiries are made within a collection of documents that
+represent a body of work (documented knowledge) and may be domain
+dependent (i.e. medical publications) or independent (i.e. news articles).
+The objective of an inquiry is to provide insight regarding the research per-
+formed on inter-related subjects over time, which requires posing several
+advanced searches. Essentially, inquiries consist of a main query which
+serves as the central focus of interest (i.e., the brain region amygdala ) and
+an optional set of relevant queries (i.e., the imaging technology fMRI and
+the mood disorders depression and anxiety ). The inquires are processed
+to better capture the intention to yield a set of queries, the results are
+which are aggregated to present an explorable overview to the inquirer.
+For this purpose, we created a tool called NeuroBoun tailored to ad-
+dress the need to run inquiries for researchers to perform several compar-
+isons without losing the context of their search. A prototype is imple-
+mented to demonstrate this approach using PubMed [2] as the source of
+documents, which consists of over 29 million articles related to biomedical
+literature as of July 2019. This tool was not designed as an alternative
+to PubMed, but rather to enhance and expedite the searching of topics
+within the body of work it contains.
+The need for complex and comprehensive search (inquiries) is illus-
+trated using NeuroBoun with a use case concerning amygdalar asymme-
+tryin conjunction with relevant themes of mood (anxiety, depression),
+brain functions (learning, memory, etc) and evaluative aspects (salience,
+valence, etc).
+The remainder of this paper is organized as follows: Section 2 intro-
+2duces related work, Section 3 presents our approach, Section 4 outlines
+the implementation details, Section 5 elaborates our use case, Section 6
+presents our observations related to this work and the future directions
+we intend to pursue, and nally Section 7 makes concluding remarks.
+2 Related Work
+There is great motivation to improve access to research results, which
+has led to work on various aspects of this vast challenge. This section
+describes some of this work in terms of their domain of subjects, the
+methods for performing searches, and the presentation of the results.
+Systems that support access to research publications may be specic to
+or independent of a domain. Google Scholar [12] is a widely used domain-
+independent service that supports querying scholarly work (journal and
+conference papers, theses and dissertations, academic books, pre-prints,
+abstracts, technical reports) and patents. It returns a ranked list of arti-
+cles with the number of citations they received and related work. Seman-
+tic Scholar [1] is also a domain-independent service that utilizes articial
+intelligence (AI) an provides functionality similar to Google Scholar. It
+provides intent-based searching that uses features like locations, variation
+of words, synonyms and concept matching to yield relevant peer reviewed
+articles. Google Scholar has higher recall and lower precision in com-
+parison to Semantic Scholar due to its coverage and search methodology.
+Users elect to use the one based on the scope and depth of their intended
+search. Sometimes Semantic Scholar is used to leap frog to Google Scholar
+to fetch additional articles.
+Among the most actively utilized scientic documents are those from
+the biomedical domain due to the immense advances that have taken
+place in this eld coupled with the desire to make timely use of these
+developments in life impacting medical research. PubMed([2]) provides a
+continuously evolving platform for exploring scholarly documents related
+to biomedicine and health (presently over 30 million articles) with sophis-
+ticated search functionality. To capture the intended search, the query is
+enriched with alternative terms obtained from translation tables such as
+MeSH (Medical Subject Headings) and other indexes such as for authors.
+PubMed also provides application programming interfaces (APIs) called
+theEntrez Programming Utilities API [21] for the developers interested
+in utilizing PubMed data and querying the National Center for Biotech-
+nology Information (NCBI) databases. Wrapper applications using the
+Entrez API [8, 19] aim to improve the queries, the relevancy of search
+results, or the user experience.
+Several alternatives to using PubMed for searching medline [15, 17]
+were found to improve the comprehensibility of the results by novice or
+expert users via the providing lters and visualizations. Most of them
+return lists of ranked articles with various attributes. A few return tables
+or graphs that relate predetermined features such as domain specic con-
+cepts (proteins or genes), authors, MeSH terms, or locations. Our work
+diers from these approaches as our focus aims to support user dened
+searches with inter-related dimensions and to respond with an overview
+3that depicts how these dimensions are related. If desires, the researcher
+can continue to diving in to specic aspects of result to eventually retrieve
+articles.
+Most of the recent work, including new and improved services, focus
+on smart search technologies tailored to individual researchers. Articial
+intelligence (AI) techniques are employed to deliver precise, comprehen-
+sive and useful output. As the main source documents in the biomed-
+ical domain, PubMed [7] is continuously being improved in preparation
+for its next generation model. PubMed Labs [6] is the test site for the
+new/improved functionalities such as ranking algorithms and optimized
+user-interface experience. Meta [18] is developing a service to assist re-
+searches with customized feeds that deliver real-time developments (publi-
+cations, researchers, and related concepts) in biomedical research, thereby
+reducing the laborious tasks of tracking research. Similarly, Scopus Dis-
+covery [5] is developing a model to provide personalized content discovery
+that is rened through learning researchers' behavior based on their pre-
+vious activities.
+All these platforms focus on one of the most important aspects of sci-
+entic literature search, namely identifying the intent of a researcher by
+examining their behaviour patterns. Understanding the intended query
+is crucial to delivering desired results. Prior to the recent AI-based im-
+provements log analysis [4, 14] or session based approaches [16, 22] were
+employed to understand searching behavior patterns. Such behaviour was
+found to dier based on the domain of research, such as in oncology [23]
+and pandemic diseases [20]. .
+Some studies focus on extracting relations and connectivity informa-
+tion for specic domains to automate the retrieval of precise and compre-
+hensive information relevant to a query performed against an extensive
+body of scientic information. WhiteText [9] extracts neuroanatomical
+connectivity relations from publications retrieved from PubMed [10] using
+NLP techniques. It presents the connected regions and species as a result.
+To preserve the context, the Named Entities (proteins, genes, and brain
+regions) are extracted from the documents on a sentence basis. A similar
+approach extracts neuroanatomical relations by specifying patterns over
+the constituency and dependency parse trees of sentences [11].
+NeuroBoun is a wrapper application that uses PubMed as a data
+source that aims to enhance the existing capabilities of PubMed and expe-
+dite inquiries which are complex search operations related to inter-related
+subjects. The main dierence of our approach is the generation of a set
+of subqueries from inquiries and the aggregation of the result to provide
+an overview of how the subqueries are inter-related. The overview can be
+further explored to see the details and eventually reach the articles that
+contribute to the results. This overview may be used to focus on par-
+ticular sub-sets or to revise the inquiry to alter the results. NeuroBoun
+provides a comprehensive and contextual user journey for the researchers
+as is detailed with a use case in Section 5. The ultimate goal is to pro-
+vide researchers with a tool that enables them to concentrate on their
+investigation without having to switch contexts.
+4userCross
+Queries
+Expand
+QueriesSearch
+Queries q2:td21; : : :uq1:td11; : : :uResult set:
+@dPd
+...
+Synonyms
+Acronyms
+Document
+RepositoryProcess
+DocumentsDocumentscq
+qs
+sq d
+r dConstruct QueriesSearch
+@qPeq
+ii:mq
+i:rq
+i:syneq
+Figure 1: An overview of processing inquires. Here iis an inquiry posed by a
+user, cqis a set of queries composed by juxtaposing the related queries with the
+main query, and eqis the corresponding set of queries expanded with synonyms.
+3 Approach
+We introduce the notion of an inquiry to express a set of inter-related
+queries with a specic context that is of interest to a researcher. Inquiries
+are made within a collection of documents that represent a body of work
+(documented knowledge) and may be domain dependent (i.e. medical
+publications) or independent (i.e. news articles). Essentially, inquires
+have a main query which serves as the central focus of interest, such
+as the brain region amygdala . Additionally, other queries of interest in
+conjunction with the main query may be specied. For example, queries
+related to the amygdala may include the imaging technology fMRI and
+the mood disorders depression and anxiety . These queries could be of
+interest when studying the relevance of imaging technologies and mood
+disorders in research related to amygdala.
+The objective of an inquiry is to provide insight regarding how various
+queries are related to one another over time. This involves examining the
+queries in conjunction with one another. Since the main query establishes
+the context of the inquiry, it is present in all query result. The remaining
+queries are performed in all possible combination with each other. Figure 3
+shows the queries related the inquiry xmq,trq1; rq2; rq1u, c, s, tiy, where
+mqandrqirepresents the main query and related queries respectively.
+Related queries may include sub-queries, each of which is searched
+independently. For example, the inquiry xmq,ta1; a2u,D,Syn, tiy, if
+rq1rq11; rq12andrq2rq21the set of queries to be performed is:
+tmq; mq^rq11; mq^rq12; mq^rq21u. Here, the sub-queries are not
+examined in conjunction with one another ( q11^q12), but rather the
+5Type Denition Description
+I MQ;RQ;DC;SY;TI¡inquiry
+MQ QT main query
+QT W + term
+RQtQT ","u related query
+W w-regex word
+S s-regex sentence
+TI  Y;Y¡ time period (interval)
+Y y-regex year.
+R D   document resource
+D T;S+;Y;ID¡ document
+DC tD ","u+ document collection
+T String title
+SYN SI  set of synonyms items
+SI W;rW s¡ synonyms & acronyms
+Table 1: The type symbols used for making inquiries.
+pmq^rq1^rq2^rq3q
+pmq^rq1^rq3q pmq^rq1^rq2q pmq^rq2^rq3q
+pmq^rq2q pmq^rq1q pmq^rq3q
+pmqq
+Figure 2: The queries of an inquiry with three aspects ( rq1; rq2; s3) and the
+main query mq.
+6dimensions are examined in conjunction with one another. The rationale
+here is that related queries capture an aspect of interest within the context
+of inquiry. Thus, the aspects that are of interest with respect to each other
+are dened as separate dimensions rather than sub-queries.
+The remainder of this section formally denes inquires by introducing
+a set of types and functions. Table 1 shows the types relevant to inquiries.
+All type names are denoted with capital letters. Curly braces denote sets
+and angle brackets denote tuples. The regular expression symbols \ *" and
+\+" are used to denote sets of zero or more orone or more repetitions.
+3.1 Inquiries
+The main type I(inquiry) consists of a main query ( MQ), an optional
+set of related queries ( RQ), a document resource ( R), a set of synonyms
+(SYN), and a time interval ( TI). The default time interval corresponds to
+the dates of the oldest and the more recent documents. The document
+resource is a set of URIs (Uniform Resource Identier) from which infor-
+mation about publications are obtained. Such information is the title,
+abstract, keywords, publication date, and the body of an article. This pa-
+per describes inquires over the most widely accessible information about
+articles, namely their titles and abstracts.
+Here, words, sentences and years are specied with regular expressions
+(s-regex, w-regex , and y-regex). A sentence consists of a sequence of
+characters that terminate with a ',', '!', or '?'1The regular expressions
+for words and years are dened as \W\\w+\W and d{4}.
+A time interval is denoted as  yi; yj¡where yi:Y,yj:Y,yi¤yj. A
+document d:Dconsists of a title, a set of sentences extracted from the
+abstract of the publication, a publication date, and an identier provided
+by the document resource. In the examples provided in this paper, the
+resource is PubMed and the identiers are called PMID2.
+The semantics of performing an inquiry is dened with a set func-
+tions. Variables are denoted with lowercase letters that are declared as
+variableName :variableType (i.e. inq:I). Variables representing a set are
+denoted with the subscript \s" (i.e. qs:QT+for a set of query terms).
+Accessor functions for composite data are presumed to exist and denoted
+using the dot notation with the name of the component. For example,
+i:mq returns the main query of i(i:I).
+In the following functions, let
+inquirepiqxmq;rqs;ds;syns; tiy
+where i:I,mq:Q,rqs:Q+,syns:SY, and ti:TI,syns:SYis a domains-
+specic set of synonyms and acronyms.
+The main function inquire is dened as:
+inquirepiqsearchpqueriespiq;documentspi:dc; i:tiqq
+1The prototype relies on the well known Natural Language Toolkit ( https://www.nltk.
+org/) for sentences.
+2In our use case the resources are obtained from the Entrez API for PubMed: https:
+//eutils.ncbi.nlm.nih.gov/entrez/eutils/
+7whose result set whose elements are the sets of documents that match a
+query of the inquiry. For example, the inquiry:
+inquire(x"amygdala ",t"depression, anxiety ","fMRI "u,SSns,PM,h1980;2018iy)
+"amygdala "(the main query) is examined along with the related queries:
+"depression, anxiety "and "fMRI ". A set of synonyms ( SSns) is used to
+expand the query terms. Also, the inquiry is limited to the documents
+published between 1980 to 2018 in accordance with:
+documentspds;hb; eiqtd|dPds; b¤d:y¤eu (1)
+The query terms are expanded as:
+expandpqt; syq|qt|¹
+i1synsetpwi; syq (2)
+where wiis the ithword in qtand synsetpw; sqis the set of synonyms and
+acronyms for wins.
+The queries corresponding to an inquiry iare obtained by taking the
+cross product of the main query with the power set of the related queries
+(both expanded):
+queriespiqexpandpi:mqq¡
+Ppexpandpi:rq; i:synqq (3)
+where queries piqforms the set of all queries that will be performed. We
+refer to an element of this set as a cross-query . The search function for a
+query term is:
+searchpqs; dsqtd|dPds; qPqs; matchpq; dqtrueu (4)
+matchpq; d;wqs-matchpq; d:tit; wq_s-matchpq; si;wq(5)
+where , siPd.sentences and s-match is a function that returns true if a
+query term is contained in a string and false otherwise. For query terms
+of single words, this is equivalent to the word being an element of the
+set of words within the document. For multi-word terms, the words must
+occur in the document in the same order as in the query. Optionally,
+a document including text that matches a the query terms with possible
+intermediate words may be considered a hit. This is useful when the query
+terms need not occur consecutively in the document, such as in the case
+of \left amygdala" which should match \left and right amygdala" or \left
+basolateral amygdala" since they refer to left amygdala. All punctuation
+marks within the document are ignored.
+Articles are represented as:  t; a; s s¡where t:T,a:Text, and ssS.
+The query expansion is performed as follows:
+•Query Component Processing: The query terms are searched in the
+title and the abstract of an article. The query terms are converted to
+regular expressions and expanded with the acronyms and synonyms.
+8•Acronym and Synonym Expansion: To capture the intention of the
+query, domain specic acronyms and synonyms are used to expand
+the query terms. For example, left amygdala is expanded to \ left
+(amygdala|amygdalar|amygdalae )".
+•Window of matching terms: Queries containing multiple terms match
+sentences with up to six words between the query words. The regular
+expressions are constructed to accept six intermediate words (a num-
+ber that was determined through experimentation). For example,
+the query term left amygdala becomes \ left (( nw)* ) f0,6gamygdala'' .
+•Word Boundary Restrictions: Regular expressions impose word bound-
+aries on query terms so that a query term like \ man" only matches
+\man" and not words that include it as a substring (performance,
+manner, manipulation, and woman). The query term \ man" is trans-
+formed to the regular expression \ nW(man)nW".
+Each query term is transformed into a regular expression such that the
+resultant set consists of all the matching documents. The results of an
+inquiry are presented as a table that displays the frequencies of the docu-
+ments for each cross-query. This enables viewing the relative frequencies
+of the combinations of the queries within an inquiry in a juxtaposed man-
+ner. The frequency of articles according the their year of publication are
+shown as a histogram. For a specic year, matching articles are shown
+with their pmid ,doi, publication year, article title, and the sentences in
+the article that match the query. The user may view a specic article on
+PubMed by clicking on the pmid .
+4 Implementation Details
+A prototype, NeuroBoun, of the proposed method is implemented as
+a web application using Python3Documents were retrieved from PubMed
+via Entrez API4. A subset of the articles were fetched that contain the
+term \amygdala" (totaling 38,998 as of 12.10.2019). The documents are
+represented with their PMID (document identiers provided by PubMed),
+their titles and their abstracts which are stored as a list of sentences.
+Sentences are the main units of documents that are used to seek ele-
+ments of interest. The NLTK library [3] is used to parse the abstracts to
+yield sentences. PostgreSQL [13] was used to store the processed docu-
+ments. A demo of the system is accessible at soslab.cmpe.boun.edu.tr/
+neuroboun .
+5 Use case
+The use of NeuroBoun tool will be described with a use case. A user
+can search a subject along with several dimensions. The cross-queries
+3can be accessed at http://soslab.cmpe.boun.edu.tr/neuroboun and the software is available
+on a git repository. The data is available via PubMed.
+4The Entrez API is available at: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ . For
+ease of replicability, we provide a script to fetch the documents that may be found at the code
+repository.
+9(as described in Section 3) are searched within the articles and the fre-
+quencies and percentages that match the articles are returned. As such,
+the researcher is presented the body of relevant publications for a quick
+perusal or to perform detailed analysis such as to inspect the results of
+specic cross-queries, specic documents, or sentences.
+To start with, NeuroBoun oers several features to specify inquires as
+shown in Figure 3. The following describes the user interface elements
+that may be used to specify an inquiry:
+Preceding/succeeding word: The main query may specify other terms
+that may precede or succeed the central term. When preceding or suc-
+ceeding words are specied a match within the document succeeds when
+the terms are in the same sentence and occur within a distance of zero
+to six words. In case of our example two preceding terms are specied
+(\left" and \right"). The results will be presented separately for the
+documents that include \amygdala" and those that precede \amygdala"
+with the terms \left" and for \right" within 0-6 words. For example, a
+document that has a sentence including \left basolateral amygdala" will
+be considered a match. In this manner the user will be able to observe
+the degree to which studies consider the left and right of amygdala in
+research.
+Dimension: Users can specify additional dimensions of interest by spec-
+ifying corresponding search terms. Each dimension consists of one or
+more search terms and each term consist of one or more words. These
+dimensions are searched within the articles to inspect the degree to which
+they co-occur in the same context. The user is presented an overview
+table that summarizes the results of the cross-queries formed based on
+the dimensions. The results can be further inspected by selecting a de-
+sired cell within the summary table. In our use case the dimensions were
+related to the brain regions (amygdala), moods (anxiety), and imaging
+technologies (fMRI).
+Time period: The user may limit the articles according the the pub-
+lication date (year) by specifying a year for before and/or after some
+given year. For example, the user may select "After" 1990 to explore the
+impact of the emergence of fMRI technology in research facilities.
+Field selection: An inquiry can be performed by searching for the terms
+within the title and/or the abstract of the articles. This is specied by
+selecting the desired option next to Gobutton (default is \All Fields").
+In our case, we wanted to identify the articles related to amygdala to
+delineate the functional, neuroanatomical and neurophysiological dier-
+ences between the left and the right amygdala in the mammalian brain.
+Additionally, we are interested in how development of new research tools
+including neuroimaging changed the depth and scope of research on amyg-
+dalar lateralization and whether there has been adequate explanation of
+the mechanism underlying the lateralization commensurate with the in-
+creasing rate of publications on this specic topic. Figure 3 shows this
+inquiry ( lateralization of amygdala in the context of the moods of anxiety
+and fear ) using NeuroBoun where the main query is set to \amygdala"
+with the preceding words \left" and \right". Two dimensions are specied,
+10Figure 3: An inquiry for inspecting the lateralization of amygdala with two
+dimensions.
+one for moods (\anxiety", \fear") and another for an imaging technology
+(\fMRI"). No time limitation is specied.
+Figure 4 shows various screens resulting from this inquiry. The screen
+on the top left, presents the frequency/percentages of each cross-query in
+a juxtaposed manner to reveal the degree to which they co-occur. While
+examining the results, researchers can dive into the details of a specic
+cross-section by clicking in a cell (i.e. right amygdala and anxiety) which
+shows a trend graph of the number of articles published on a yearly basis
+is shown along with the total number of matching articles and sentences.
+The user can further proceed by examining the documents that match the
+queries. For each document the doi,pmid , title, and a link to PubMed
+article is shown. More signicantly, the relevant sentences may be seen
+which highlight the matching terms in the title and abstract of the arti-
+cles. In this example, the query "right amygdala" matches with an article
+containing a sentence which has three words between "right" and "amyg-
+dala", namely "right or the left amygdala" (see bottom right screen in
+Figure 4. Finally, one may continue their exploration by accessing spe-
+cic articles in PubMed by clicking on the id of an article.
+6 Discussion and Future Work
+The main aim of this work is to provide researchers with a tool to in-
+vestigate a subject of interest within a body of work through inquiries that
+embody a set of queries. For this purpose we developed a model for per-
+forming and aggregating inter-related queries. A prototype of this model
+was implemented that presents the results in a juxtaposition manner to
+facilitate the comparison of the relative density of work regarding the as-
+pects of the inquiry. It also, supports delving into any of the sub-contexts
+11Figure 4: Search Results for main query of \amygdala" in comparison with
+\left" and \right" amygdala which is combined with dimensions of moods like
+anxiety, fear and fMRI
+to view the work over years and the specic articles that highlight the
+matching terms.
+The current version of the system performs queries over the titles,
+abstracts, and keywords of articles from PubMed. In recent years, there
+is a signicant increase in open access articles which provides the full text
+of documents. This exciting development presents many opportunities to
+improve our results. Per feedback from researchers (who used our tool),
+we think that the locations where the query terms match the document
+(i.e,Future Work andResults ) may provide critical clues for researchers
+regarding the signicance of the papers or their ndings. Another issue
+of relevance is the assessment of the qualitative contribution of an article,
+such as the introduction of a new method or an explanation.
+We plan to improve inquiries with the use of more advanced NLP
+methods and semantic web techniques to benet from the standardized
+terms and the representation of domain knowledge to capture relationships
+within documents and to perform semantic processing.
+While the implementation of NeuroBoun tool supports inquiry in the
+neuroscience domain, the design of the system is domain-independent with
+its own document model. Thus, it can be adapted for alternative domains
+of interest.
+Finally, we intend to publish a paper dedicated to a critical assessment
+of amygdalar asymmetry that uses the facilities provided by NeuroBoun .
+127 Conclusion
+We have proposed an approach for inquiry over a published body
+of work and implemented a prototype that embodies its infrastructure.
+The benecial insights provided by this inquiry-based approach is demon-
+strated with the the prototype we developed that uses PubMed. Although
+several approaches that utilize PubMed results for alternative presenta-
+tion exist, ours provides a unied view of several enhanced queries.
+NeuroBoun was developed based on our need to achieve a comprehen-
+sive, ecient and expandable search for the case that we briey present
+here, namely amygdalar lateralization. Although, its development origi-
+nated from a specic context, it is designed to serve any body of knowl-
+edge. We are encouraged by the results which for the foundation of work
+we intend to pursue in several directions, among the most signicant are
+using domain-specic ontologies to semantically annotate and retrieve ar-
+ticles and extending the inquiries to search the full body of articles which
+are becoming increasingly accessible due to the support for open access
+publication.
+Acknowledgements
+The authors gratefully acknowledge Ozgur Akyaz and S ahin Batmaz
+for their eorts in implementing the prototype and the members of SosLab
+and TABILAB of the Computer Engineering Department at Bogazici Uni-
+versity for their valuable feedback throughout this work.
+References
+[1] Allen Institute for Articial Intelligence (AI2). Semantic scholar,
+2015. https://www.semanticscholar.org [Accessed: 2019-10-01].
+[2] Bethesda (MD): National Center for Biotechnology Information,
+US. Pubmed Help, 2005. https://www.ncbi.nlm.nih.gov/books/
+NBK3827 [Updated 2019 July 25].
+[3] Steven Bird, Ewan Klein, and Edward Loper. Natural language pro-
+cessing with Python: analyzing text with the natural language toolkit .
+O'Reilly Media, Inc., 2009.
+[4] Olivier Bodenreider. A day in the life of PubMed: analysis of a
+typical day's query log. Journal of the American Medical Informatics
+Association (JAMIA) , 14(2):212220, 2007.
+[5] Elsevier. Scopus discovery platform, 2019. https://www.scopus.com
+[Accessed: 2019-10-10].
+[6] Nicolas Fiorini, Kathi Canese, Rostyslav Bryzgunov, Ievgeniia
+Radetska, Asta Gindulyte, Martin Latterner, Vadim Miller, Maxim
+Osipov, Michael Kholodov, Grisha Starchenko, Evgeny Kireev, and
+Zhiyong Lu. PubMed Labs: An experimental system for improving
+biomedical literature search. Database , 2018:1{8, 09 2018. Article
+id:bay094.
+13[7] Lu Z Fiorini N, Lipman DJ. Towards PubMed 2.0. Elife, 6(e28801),
+2017.
+[8] Paul Fontelo, Fang Liu, and Michael Ackerman. askMEDLINE: a
+free-text, natural language query tool for MEDLINE/PubMed. BMC
+Medical Informatics and Decision Making , 5(1):5, 2005.
+[9] Leon French, Suzanne Lane, Lydia Xu, Celia Siu, Cathy Kwok, Yiqi
+Chen, Claudia Krebs, and Paul Pavlidis. Application and evalua-
+tion of automated methods to extract neuroanatomical connectivity
+statements from free text. Bioinformatics , 28(22):2963{2970, 2012.
+http://dx.doi.org/10.1093/bioinformatics/bts542 .
+[10] Leon French, Po Liu, Olivia Marais, Tianna Koreman, Lucia Tseng,
+Artemis Lai, and Paul Pavlidis. Text mining for neuroanatomy us-
+ing whitetext with an updated corpus and a new web application.
+Frontiers in Neuroinformatics , 9(13), 2015.
+[11] Erin c G okdeniz, Arzucan Ozg ur, and Re sit Canbeyli. Automated
+neuroanatomical relation extraction: A linguistically motivated ap-
+proach with a PVT connectivity graph case study. Frontiers in neu-
+roinformatics , 10(39), 2016.
+[12] Google Inc. Google scholar, 2004. https://scholar.google.com
+[Accessed: 2019-08-11].
+[13] The PostgreSQL Global Development Group. Postgresql: The
+world's most advanced open source database, 1996-2019. https:
+//www.postgresql.org [Accessed: 2019-10-01]].
+[14] R. Islamaj Dogan, G. C. Murray, A. Nvol, and Z. Lu. Understanding
+PubMed user search behavior through log analysis. Database: The
+Journal of Biological Databases and Curation , bap018, 2009.
+[15] A Keepanasseril. PubMed alternatives to search MEDLINE: An en-
+vironmental scan. Indian Journal Dental Research , 25(4):527{34,
+2014.
+[16] Nir Levine, Haggai Roitman, and Doron Cohen. An extended rel-
+evance model for session search. In Proceedings of the 40th Inter-
+national ACM SIGIR Conference on Research and Development in
+Information Retrieval , SIGIR '17, pages 865{868, New York, NY,
+USA, 2017. ACM.
+[17] Z Lu. PubMed and beyond: a survey of web tools for searching
+biomedical literature. Database : the journal of biological databases
+and curation , baq036, 2011.
+[18] Meta. Meta: Science discovery platform, 2019. https://meta.org
+[Accessed: 2019-10-10].
+[19] Michael Muin, Paul Fontelo, and Michael Ackerman. PubMed in-
+teract: an interactive search application for MEDLINE/PubMed.
+2006:1039, 2006.
+[20] Ole Norgaard and Jerey V Lazarus. Searching PubMed during a
+pandemic. PloS one , 5(4):e10039, 2010.
+14[21] Sayers E. A general introduction to the e-utilities { entrez program-
+ming utilities help, 2010. https://www.ncbi.nlm.nih.gov/books/
+NBK25497/ [Accessed: 2019-10-16].
+[22] Christophe Van Gysel, Evangelos Kanoulas, and Maarten de Rijke.
+Lexical query modeling in session search. In Proceedings of the 2016
+ACM International Conference on the Theory of Information Re-
+trieval , ICTIR '16, pages 69{72, New York, NY, USA, 2016. ACM.
+[23] Beatriz Vincent, Maurice Vincent, and Carlos Gil Ferreira. Mak-
+ing PubMed searching simple: learning to retrieve medical literature
+through interactive problem solving. The Oncologist , 11(3):243{51,
+2006.
+15

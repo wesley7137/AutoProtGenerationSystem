@@ -1,0 +1,310 @@
+Title: Bone regenerative potential of mesenchymal stem cells on a
+  micro-structured titanium processed by wire-type electric discharge machining
+Abstract:   A new strategy with bone tissue engineering by mesenchymal stem cell
+transplantation on titanium implant has been dawn attention. The surface
+scaffold properties of titanium surface play an important role in bone
+regenerative potential of cells. The surface topography and chemistry are
+postulated to be two major factors increasing the scaffold properties of
+titanium implants. This study aimed to evaluate the osteogenic gene expression
+of mesenchymal stem cells on titanium processed by wire-type electric discharge
+machining. Some amount of roughness and distinctive irregular features were
+observed on titanium processed by wire-type electric discharge machining. The
+thickness of suboxide layer was concomitantly grown during the processing.
+Since the thickness of oxide film and micro-topography allowed an improvement
+of mRNA expression of cells, titanium processed by wire-type electric discharge
+machining is a promising candidate for mesenchymal stem cell based functional
+restoration of implants.
+
+Full Text:  1Bone regenerative potential of mesenchymal stem cells on a 
+micro-structured titanium processe d by wire-type electric discharge 
+machining 
+ 
+Yukimichi Tamaki*, Yu Kataoka, and Takashi Miyazaki 
+Department of Oral Biomaterials and Technology, School of Dentistry, Showa University, 1-5-8 Hatanodai, 
+Shinagawa-ku, Tokyo 142-8555, Japan 
+(Received Apr. 22, 2010) 
+ 
+A new strategy with bone tissue en gineering by mesenchymal stem ce ll transplantation on titanium 
+implant has been dawn attention. The surface sc affold properties of titanium surface play an 
+important role in bone regenerative potential of  cells. The surface topography and chemistry are 
+postulated to be two major factors increasing the scaffold properties of titanium implants. This study 
+aimed to evaluate the osteogenic gene expression of  mesenchymal stem cells on  titanium processed by 
+wire-type electric di scharge machining. Some am ount of roughness and distin ctive irregular features 
+were observed on titanium processed by wire-type  electric discharge machining. The thickness of 
+suboxide layer was concomitantly grown during the processing. Since the thic kness of oxide film and 
+micro-topography allowed an improvement of m RNA expression of cells, titanium processed by 
+wire-type electric discharge machining is a prom ising candidate for mese nchymal stem cell based 
+functional restoration of implants.  
+* contact to: tamaki@dent.showa-u.ac.jp  
+ Key words Titanium, implant, surface, mesenchymal stem cell  
+ 
+Introduction 
+The dental implant failure is frequently ascribed to 
+large bone defect or surrounding poor bone quality. Functional restoration of bone following surgical 
+interventions is a crucial step for the success and long 
+term survival of orthopedic and dental implants[1, 2]. Although the bone graft is widely accepted as the standard in such surgical  site, inherent donor-site 
+limitations with respect to tissue rejection and disease 
+transfer are of particular shortcomings in 
+autografting[2, 3]. A new strategy with bone tissue engineering by mesenchymal stem cell (MSC) transplantation has been dawn attention[1, 4-7]. 
+Titanium is a primary metallic biomaterial used in 
+orthopedic and dental implants[8, 9]. The surface scaffold properties of titanium surface, namely osteogenic gene expression of adherent cells play an 
+important role in the bone tissue engineering of 
+implants[4, 7, 10, 11]. A large number of surface modification techniques have already existed, including commercial ones. Rough surfaces such as the sand-blasted, acid-etched titanium implant have 
+generally proven superior to smooth surface in terms 
+of promoting bone-cells and implant contact at the interface[12-14]. The authors have reported that the wire-type electric discharge machining (W-EDM) of 
+titanium allowed a microstructured titanium surface 
+with an irregular morphology. W-EDM processes electro-conductive materials by spark discharge generated between a narrow metal wire and the 
+material through running pure distilled water. This 
+computer associated technique enables extremely accurate complex sample shaping. It also yields an optimal micro textured surface during the processing[15]. 
+Various thicknesses of the oxide film the type of crystallinity, and the amount of oxygen incorporated into the surfaces of differently processed titanium 
+samples have been reported[13, 16-18]. The thickness 
+of oxide film is another important determinant of osteoblast responses on titanium as the thickness of oxide film may improve the surface free energy that accumulates functional gr oups and osteogenic 
+biomolecules at the surface . The surface topography 
+and chemistry are postulated to be two major factors increasing the osteoconductivity of titanium implants. Titanium alters the thickness of the surface oxide film 
+even in a simple heated setting. Since the titanium 
+oxide film is sensitively altered by each processing, the authors hypothesized that W-EDM processes the thickness of oxide film and micro topography at the 
+same time. 
+In this study, the chemical characteristics and surface topographies of titanium processed by W-EDM and titanium-coated W-EDM epoxy resin replicas were evaluated. The scaffold property of the samples was 
+evaluated by the mRNA expression of MSC onto the 
+samples.  
+Materials and Methods  
+Specimen Preparation  
+JIS grade 2 titanium (KS-50, Kobe Steel, Kobe, Japan) was used as the starting material. The smooth surfaces of titanium plates, 10 x 10 x 1.0 mm, were 
+gradually ground with waterproof polishing papers 
+from #500 to #1200 under running water. They were then polished with alumina particles until an average 
+diameter of 0.3 µm. W-EDM samples (W-EDM-Ti) of arXiv:1004.4045 [q-bio.CB ] 2the same dimensions were processed under conditions 
+of 6.5 µsecond τ off (pulse off time) and 0.65  µsecond 
+τ on (pulse on time) at 15 amps IP (peak current) and 
+90 V (non-load voltage) (LS 350X, Japan). The samples were ultrasonically cleaned in acetone, detergent solution (7X, ICN), and pure distilled water 
+for 15 min of each cleaning process. The specimens 
+were then dried and stored in a desiccator for 24 hrs in 50% humidity and at a temperature of 23°C.  
+Preparation of replica surface topography 
+The method for titanium coated replicas was given in the paper written by Burunett DM et al[19, 20]. Impressions of polished titanium and W-EDM 
+surfaces were made with vinyl polysiloxane 
+impression material (PROVIL
+® novo Light , Heraeus 
+Kulzer, Dormagen, Germany). Vinyl polysiloxane negative replicas were used to cast epoxy-resin 
+(EPO-TEK 302-3, Epoxy Technology, Bellerica, MA) 
+positive replicas of the surfaces. The epoxy replicas of polished titanium (Ti) and W-EDM were cleaned with in a detergent (7X) (ICN Biomedicals, Inc., Costa 
+Mesa, CA), baked at 60°C for 4 days, and 
+sputter-coated (IB-2, Eiko Engineering, Tokyo, Japan) 
+with 50 nm of Ti.  
+ 
+Micro topography 
+The micro topography of the samples was obtained 
+using a scanning electron microscope (S-2360N, HITACHI, Hitachi, Japan). The average roughness of the samples was evaluated by a surface texture 
+measuring instrument (SURFCOM, 480A, TOKYO 
+SEIMITUS, Tokyo, Japa n). The results were 
+expressed as the mean ± SD of 6 specimens (n = 6), and analyzed statistically by analysis of variance (ANOVA). 
+ 
+Surface characterization XRD The crystal phases of the samples were detected by 
+TF-XRD (XRD-6100, SHIMADZU, Kyoto, Japan) 
+with CuK α radiation. XRD was operated at 40 kV, 40 
+mA with a scanning speed of 0.02°/4 sec and a scanning range of 20-50°. 
+ 
+XPS The surfaces of each specimen were characterized by X-ray photoelectron spectroscopy (XPS) (ESCA-3400, 
+SHIMADZU, Kyoto, Japan). High-resolution spectra 
+from a wide scan were analyzed using MgK α 
+radiation. A 20-mA emission current and 8-kV 
+accelerated voltage were applied for this analysis. The 
+binding energies for each spectrum were calibrated with the C1s spectrum of 285.0 eV. The results were analyzed statistically by Student's t tests. Significant differences were considered  to exist when p < 0.01 
+(n=6). 
+ Expression of mRNA on the samples Rat MSCs (RIKEN Cell Bank, Tsukuba, Japan) were 
+cultured on the titanium samples with α-MEM (Sigma, 
+Tokyo, Japan) containing 10 % FBS, dexamethasone, 
+ascorbic acid 2 phosphate and grycerophosophate at 
+37 °C and 5 % CO
+2 for 1 week. Expressions of 
+integrin αV, osteopontin, and Cbfa-1 were obtained by 
+RT-PCR 
+ 
+Results  
+Surface topographies  
+The surface topography  of Ti appeared to be smoother 
+than those of W-EDM-Ti and W-EDM replicas 
+(Fig.1). Some amount of roughness and distinctive irregular features were observed on W-EDM-Ti and W-EDM replicas. Average surface roughnesses, Ra, 
+of the samples were the same; the average for 
+W-EDM-Ti was 19.5±0.5 µm, and for W-EDM 
+replicas it was 19.6±0.4 µm (Fig.1). No significant 
+differences (p > 0.01) were detected between 
+W-EDM-Ti and W- EDM replicas. 
+ 
+Surface characterization 
+X-ray diffraction patterns of specimen are shown in 
+Fig.2. Typical XRD patterns of titanium were detected similarly on Ti and W-EDM replicas. A peak of 42.5 
+2θ (Cak α/degree) attributable to TiO appeared to be 
+increased on W-EDM-Ti.  
+High resolution spectra of Ti2p on each sample are shown. The binding energies of each spectrum between Ti and W-EDM replicas showed no 
+significant differences (p<0. 01). The shoulder peak of 
+Ti2p at 457.0 eV attributab le to TiO was increased on 
+W-EDM-Ti compared to Ti and W-EDM replicas (not 
+shown). 
+ 
+Expression of mRNA 
+Integrin αV expressions were detected only on 
+W-EDM-Ti even after 6 hrs cultivation. The mRNA 
+expression of osteopontin was observed after 1 wk on 
+all samples. The expression of cbfa-1 on W-EDM-Ti was observed after 1 wk cultivation while that of W-EDM replica was observed after 2 wks. The 
+expression of cbfa-1 on Ti was observed after 3 wks 
+culture.   
+ 
+Discussion The present investigation of surface characterization 
+revealed that the superficial chemistry of Ti and W-EDM replicas was consistent. Since the surface topographies of W-EDM-Ti and W-EDM replicas showed no significant differences, W-EDM replicas 
+could solely replicate the micro topography effect of 
+W-EDM-Ti on in vitro  cellular responses. Both 
+surface characterizations demonstrated that an increasing TiO peak was detected only on W-EDM-Ti 
+samples. Oxygen incorporated into the W-EDM-Ti 
+surface increased during processing. Thus, W-EDM processing could alter the superficial chemistry as well as the micro topogr aphy of titanium surfaces.  3Cells interact with titanium substrate via integrin 
+binding to extra cellular matrix proteins[21, 22].The first phase integrin mediat ed cell adhesion mechanism 
+is essential to achieve th e successful anchorage of 
+endosseous implants[23]. The initial adhesion of cells is mediated by specific membrane receptors, mainly 
+integrins αV[21, 22]. These recognize the biding 
+domains of the RGD sequence of adsorbed serum 
+proteins such as fibronectin or vitronectin on titanium surfaces. A thickness of TiO suboxide layer increases the surface free energy that accumulates functional 
+groups and osteogenic biomolecules when exposed in 
+biological fluids. Since the expression of integrin αV 
+were detected only on W-EDM-Ti, even after 6 hrs 
+cultivation, the increased TiO layer formed on the 
+W-EDM-Ti increased the amount of cell binding serum proteins that could be  affected by the increased 
+surface free energy. 
+The Cbfa-1 is a related gene which indicates 
+differentiation from MSCs to osteoblasts[24]. Recent studies have indicated that the different surface topographies of titanium distinctly modulate cell morphology of fibroblasts and osteoblastic cells at 
+surfaces[10, 25].
+ Morphological features of 
+osteoblastic cells marked ly activated cytoplasmic 
+stress fiber formation that is  associated with a more 
+differentiated cellular phenotype. The present study 
+showed some amount of roughness and distinctive 
+irregular features on W-ED M-Ti and W-EDM replicas. 
+Thus, Cbfa-1 expression on W-EDM-Ti and W-EDM replicas was up-regulated compared to that on smooth 
+Ti samples.  
+Both surface chemistry and topography of W-EDM-Ti up-regulated the mRNA expression of MSCs. W-EDM processing on titanium implants therefore enhances scaffold properties of MSCs to the surface. 
+In conclusion, the thickness of oxide film and 
+micro-topography performed on W-EDM-Ti has scaffold properties toward the MSCs. W-EDM is a promising candidate for MSC based functional 
+restoration surrounding implants.  
+ 
+ACKNOWLEDGEMENTS 
+This work was supported by MEXT, Haiteku (2007), a 
+Grant-in-Aid for Scientif ic Research (B) from the 
+Japan Society for the Promotion of Science, and a Grant-in-Aid for the En couragement of Young 
+Scientists (B) from The Mi nistry of Education, 
+Culture, Sports, Science and Technology of Japan. 
+ 
+References 
+1. Valencia S, Gretzer C, Cooper LR. Surface 
+nanofeature effects on titanium-adherent human 
+mesenchymal stem cells. International Journal of Oral 
+and Maxillofacial Implants 2009;24(1):38-46. 2. Wall I, Donos N, Carlqvist K, Jones F, Brett P. Modified titanium surfaces promote accelerated 
+osteogenic differentiation of mesenchymal stromal 
+cells in vitro. Bone 2009;45(1):17-26. 3. Shibata Y, Yamamoto H, Miyazaki T. 
+Colloidal beta-tricalcium phosphate prepared by discharge in a modified body fluid facilitates synthesis 
+of collagen composites. Journal of Dental Research 
+2005;84(9):827-831. 4. Cai K, Lai M, Yang W,  Hu R, Xin R, Liu Q, 
+et al. Surface engineering of titanium with potassium 
+hydroxide and its effects on the growth behavior of 
+mesenchymal stem cells. Acta Biomaterialia 2009. 5. Clem WC, Chowdhury S, Catledge SA, Weimer JJ, Shaikh FM, Hennessy KM, et al. 
+Mesenchymal stem cell interaction with ultra-smooth 
+nanostructured diamond for wear-resistant orthopaedic implants. Biomaterials 2008;29(24-25):3461-3468. 6. Giannoni P, Muraglia A, Giordano C, 
+Narcisi R, Cancedda R, Quarto R, et al. Osteogenic 
+differentiation of human mesenchymal stromal cells on surface-modified titanium alloys for orthopedic and dental implants. International Journal of Artificial 
+Organs 2009;32(11):811-820. 
+7. Olivares-Navarrete R, Hyzy SL, Hutton DL, 
+Erdman CP, Wieland M, Boyan BD, et al. Direct and indirect effects of microstructured titanium substrates 
+on the induction of mesenchymal stem cell 
+differentiation towards the osteoblast lineage. Biomaterials 2010;31(10):2728-2735. 8. Mangano C, De Rosa A, Desiderio V, 
+d'Aquino R, Piattelli A, De Francesco F, et al. The 
+osteoblastic differentiation of dental pulp stem cells and bone formation on different titanium surface textures. Biomaterials 2010;31(13):3543-3551. 9. Lin D, Li Q, Li W, Duckmanton N, Swain 
+M. Mandibular bone remodeling induced by dental 
+implant. Journal of Biomechanics 2010;43(2):287-293. 10. Balloni S, Calvi EM, Damiani F, Bistoni G, 
+Calvitti M, Locci P, et al. Effects of titanium surface 
+roughness on mesenchymal stem cell commitment and differentiation signaling. The International journal of oral & maxillofacial implants 2009;24(4):627-635. 
+11. Carneiro-Campos LE, Fernandes CP, 
+Baldunio A, Leite Duarte ME, Leitao M. The effect of titanium topography features on mesenchymal human stromal cells' adhesion. Clinical Oral Implants Research 2010;21(2):250-254. 
+12. Aita H, Hori N, Takeuchi M, Suzuki T, 
+Yamada M, Anpo M, et al. The effect of ultraviolet functionalization of titanium on integration with bone. Biomaterials 2009;30(6):1015-1025. 
+13. Bozzini B, Carlino P, D'Urzo L, Pepe V, 
+Mele C, Venturo F. An electrochemical impedance investigation of the behaviour of anodically oxidised titanium in human plasma and cognate fluids, relevant 
+to dental applications. J Mater Sci Mater Med 
+2008;19(11):3443-3453. 14. Li Y, Lee IS, Cui FZ, Choi SH. The biocompatibility of nanostructured calcium phosphate 
+coated on micro-arc oxidized titanium. Biomaterials  42008;29(13):2025-2032. 
+15. McGeough JA. Studies of Micro- and Nano-Technoloy in Orthopaedic Engineering. Int J 
+Electrical Machining 
+ 2005;10:12-16. 16. Habazaki H, Uozumi M, Konno H, Shimizu K, Skeldon P, Thompson GE. Crystallization of oxide 
+films of anodic titania on titanium and its alloys. 
+Corrosion Science 2003;45:2063-2073. 17. Hanawa T, Kon M, Doi H, Ukai H, Murakami K, Hamanaka H, et al. Amount of hydroxyl 
+radical on calcium-ion-implanted titanium and point 
+of zero charge of constituent oxide of the surface-modified layer. J Mater Sci Mater Med 1998;9:89-92. 18. Park YJ, Song HJ, Kim I, Yang HS. Surface 
+characteristics and bioactivity of oxide film on 
+titanium metal formed by thermal oxidation. J Mater Sci Mater Med 2007;18:565-575. 19. Kim H, Murakami H, Chehroudi B, Textor 
+M, Brunette DM. Effects of surface topography on the 
+connective tissue attachment to subcutaneous implants. International Journal of Oral and Maxillofacial Implants 2006;21(3):354-365. 
+20. Glass-Brudzinski J, Perizzolo D, Brunette 
+DM. Effects of substratum surface topography on the 
+organization of cells and collagen fibers in collagen gel cultures. Journal of Biomedical Materials 
+Research 2002;61(4):608-618. 
+21. Kawai H, Shibata Y, Miyazaki T. Glow discharge plasma pretreatment enhances osteoclast 
+differentiation and survival on titanium plates. Biomaterials 2004;25(10):1805-1811. 
+22. Shibata Y, Hosaka M,  Kawai H, Miyazaki T. 
+Glow Discharge Plasma Treatment of Titanium Plates Enhances Adhesion of Osteoblast-like Cells to the Plates Through the Integr in-Mediated Mechanism. 
+International Journal of Oral and Maxillofacial 
+Implants 2002;17(6):771-777. 23. Olivares-Navarrete R, Raz P, Zhao G, Chen J, Wieland M, Cochran DL, et al. Integrin α2β1 plays 
+a critical role in osteoblast response to micron-scale 
+surface structure and surface energy of titanium substrates. Proceedings of the National Academy of 
+Sciences of the United  States of America 
+2008;105(41):15767-15772. 
+24. De Angelis E, Ravanetti F, Cacchioli A, 
+Corradi A, Giordano C, Candiani G, et al. Attachment, proliferation and osteogenic response of osteoblast-like cells cultured on titanium treated by a 
+novel multiphase anodic spark deposition process. 
+Journal of Biomedical Materials Research - Part B Applied Biomaterials 2009;88(1):280-289. 25. Marinucci L, Balloni S, Becchetti E, 
+Belcastro S, Guerra M, Calvitti M, et al. Effect of 
+titanium surface roughness on human osteoblast proliferation and gene expression in vitro Int J Oral Maxillofac Implants 2006;21(5):719-725. 
+  5 
+       Figure 1 Surface topography of W- EDM-Ti and W-EDM replica 
+         Figure 2 XRD spectra of W-ED M-Ti and W-EDM replica  
+FW-EDM replica
+FW-EDM-Ti
+Ra012
+Rmax10
+515(µm)
+0
+W-EDM replica
+100㎛
+W-EDM-Ti
+100㎛
+(µm)
+W-EDM replicaTi
+TiO
+W-EDM-Ti30 40 50 Intensity
+2θ(Cuk α)/degree30 40 50Intensity 
+2θ(Cuk α)/degree42.5 6  
+      Figure3  mRNA expression of MSCs on the samples for 12 hrs.         Figure 4 mRNA expression of MSCs on the samples for 3 wks 
+3 hrsGAPDH
+Cbfa-1
+6 hrs 12 hrsosteopntin
+Integrin αV
+TiW-EDM
+replica
+W-EDM-Ti
+TiW-EDM
+replica
+W-EDM-Ti
+TiW-EDM
+replica
+W-EDM-Ti
+1 dGAPDH
+Cbfa-1
+1 wk 2 wksosteopontin
+Integrin αV
+3 wks
+TiW-EDM
+replica
+W-EDM-Ti
+TiW-EDM
+replica
+W-EDM-Ti
+TiW-EDM
+replica
+W-EDM-Ti
+TiW-EDM
+replica
+W-EDM-Ti

@@ -1,0 +1,1325 @@
+Title: Piezoelectricity and flexoelectricity in biological cells: The role of
+  cell structure and organelles
+Abstract:   Living tissues experience various external forces on cells, influencing their
+behaviour, physiology, shape, gene expression, and destiny through interactions
+with their environment. Despite much research done in this area, challenges
+remain in our better understanding of the behaviour of the cell in response to
+external stimuli, including the arrangement, quantity, and shape of organelles
+within the cell. This study explores the electromechanical behaviour of
+biological cells, including organelles like microtubules, mitochondria, nuclei,
+and cell membranes. Two distinct cell structures have been developed to explore
+the cell responses to mechanical displacement, resembling actual cell shapes.
+The finite element method has been utilized to integrate the linear
+piezoelectric and non-local flexoelectric effects accurately. It is found that
+the longitudinal stress is absent and only the transverse stress plays a
+crucial role when the mechanical load is imposed on the top side of the cell
+through compressive displacement. The impact of flexoelectricity is elucidated
+by introducing a new parameter called the maximum electric potential ratio
+($V_{\text{R,max}}$). It has been found that $V_{\text{R,max}}$ depends upon
+the orientation angle and shape of the microtubules. Further, the study reveals
+that the number of microtubules significantly impacts effective elastic and
+piezoelectric coefficients, affecting cell behaviour based on structure,
+microtubule orientation, and mechanical stress direction. The insight obtained
+from the current study can assist in advancements in medical therapies such as
+tissue engineering and regenerative medicine.
+
+Full Text: Piezoelectricity and flexoelectricity in biological cells:
+The role of cell structure and organelles
+Akepogu Venkateshwarlua,∗, Akshayveera, Sundeep Singhb, Roderick Melnika
+aMS2Discovery Interdisciplinary Research Institute, Wilfrid Laurier University, 75 University Avenue West, Waterloo, Ontario,
+N2L 3C5, Canada
+bFaculty of Sustainable Design Engineering, University of Prince Edward Island, Charlottetown, PE C1A 4P3, Canada
+Abstract
+Living tissues experience various external forces on cells, influencing their behaviour, physiology, shape,
+gene expression, and destiny through interactions with their environment. Despite much research done in
+this area, challenges remain in our better understanding of the behaviour of the cell in response to external
+stimuli, including the arrangement, quantity, and shape of organelles within the cell. This study explores
+the electromechanical behaviour of biological cells, including organelles like microtubules, mitochondria,
+nuclei, and cell membranes. Two distinct cell structures have been developed to explore the cell responses
+to mechanical displacement, resembling actual cell shapes. The finite element method has been utilized to
+integrate the linear piezoelectric and non-local flexoelectric e ffects accurately. It is found that the
+longitudinal stress is absent and only the transverse stress plays a crucial role when the mechanical load is
+imposed on the top side of the cell through compressive displacement. The impact of flexoelectricity is
+elucidated by introducing a new parameter called the maximum electric potential ratio (VR,max ). It has
+been found that VR,max depends upon the orientation angle and shape of the microtubules. Further, the
+study reveals that the number of microtubules significantly impacts e ffective elastic and piezoelectric
+coefficients, a ffecting cell behavior based on structure, microtubule orientation, and mechanical stress
+direction. The insight obtained from the current study can assist in advancements in medical therapies such
+as tissue engineering and regenerative medicine.
+Keywords: Electromechanical coupling, Shape of the organelles, Electric potential ratio, Microtubule’s
+orientation, Medical therapies, Cell structure, Flexoelectricity
+1. Introduction
+Cell mechanics plays a vital role in the development, functioning, metabolism, and regulation of nuclear
+responses in cells. The primary factors that determine the mechanical properties of the cell are the elasticity
+of the cell, adhesion between the cell and its substrate, and membrane tension [1, 2]. The biological cell
+exhibits a highly intricate internal structure. The cell comprises two primary constituents: the cytoplasm
+and the nucleus. The cytoplasm is a fluidic matrix that commonly surrounds the nucleus and is enclosed by
+the cellular plasma membrane [3, 4].
+∗Corresponding author.
+Email addresses: avenkateshwarlu@wlu.ca (Akepogu Venkateshwarlu), aakshayveer@wlu.ca (Akshayveer),
+sunsingh@upei.ca (Sundeep Singh), rmelnik@wlu.ca (Roderick Melnik)
+Preprint submitted to ... March 5, 2024arXiv:2403.02050v1  [q-bio.QM]  4 Mar 2024Organelles are subcellular structures that are microscopic and are located within the cytoplasm. These
+structures are responsible for carrying out various functions that are essential for maintaining the stability of
+the cell’s internal environment, also known as homeostasis [5]. These functions include energy generation,
+protein synthesis and release, toxin removal, and the reception of external stimuli. The organelles undergo
+alterations by changing their shape, quantity, and spatial arrangement inside the cell, which a ffects their
+structure and organization [6–8]. Cellular dynamics are directly impacted by processes such as division,
+merging, morphological changes, transportation, and external stimuli [9]. For instance, mitochondria are
+attached to the cytoskeleton at precise sites within the cell. Neurons rely on mitochondrial anchoring to
+ensure that mitochondria are solidly attached to presynaptic locations in axons, enabling them to provide
+the necessary energy for neurotransmission [10–12].
+The regulation of microtubule dynamics is crucial for the proper functioning and division of all
+eukaryotic cells. The wide range of actions is primarily facilitated by the dynamic ends of microtubules,
+which can attach to di fferent targets within the cell, produce mechanical forces, and interact with actin
+microfilaments [13]. Microtubules are cellular structures that play an essential part in understanding how
+related proteins, mechanical forces, and microtubule-targeting medicines, such as cancer
+chemotherapeutics, regulate the mechanisms of microtubule function [14, 15]. Microtubules also play a
+crucial role in facilitating the transportation of diverse cellular structures, such as lysosomes,
+mitochondria, and other organelles [16, 17]. The structure of microtubules is based on dimers composed of
+α- and β-tubulin, which exhibit an elongated, non-branching polymer pattern [18]. Each microtubule
+consists of approximately thirteen dimeric tubulin molecules arranged in a circular configuration [19]. The
+length of the microtubule can be modified through the addition or removal of dimers. The microtubules,
+which have rigid structures found within cells, can cause significant strain fluctuations due to their small
+size and interaction with a flexible cellular matrix. Further, they provide sti ffness to the structures, and
+their number depends on cell type, structural characteristics, and the primary function [20]. Among the
+many cell types that may be found in a wide variety of organisms, ranging from protists to mammals, cilia
+and flagella are two structures that are particularly notable and widely recognized. Protists have the ability
+to arrange microtubules in various diverse formations, which results in the construction of structures that
+are both unique and comprehensive [21]. Some motile cilia contain di fferent numbers of microtubules,
+such as singlets in apicomplexans, fungi, and Caenorhabditis elegans [22, 23], symmetrical basal bodies
+with nine microtubules, and complex organelles like motile cilium with 9 +2 structures [6–8]. Axonemes in
+protozoans, insects, arthropods, and nematodes have varying numbers of microtubule doublets, precisely
+10, 12, 14, 16, or 18 [24–28]. External stimuli increase actin stress fibres in cells exposed to shear stress or
+geometric patterns, resulting in an increase in the cytoskeletal network [29].
+Many computational studies [30–34] have focused on the mechanical coupling between strain and
+stress in nanowires and plates. It has been reported that a significant proportion of biological components,
+such as microtubules, bones, and collagen, exhibit piezoelectric properties. For instance, during walking,
+the human tibia produces a piezoelectric potential of approximately 300 µV [35]. Therefore, it is important
+to conduct a thorough investigation into the mechanics of the cell and its organelles in order to gain a better
+understanding of their piezoelectric properties. The discovery of piezoelectricity has a long history,
+starting with the Curie brothers, who, in 1880, observed that some crystals display both positive and
+negative charges under pressure, which disappear once the pressure is released. This resulted in their
+discovery of piezoelectricity. Later, scientists used the term “piezoelectricity” to describe the direct
+relationship between mechanical stress and electricity [36–42]. Since then, piezoelectricity,understood as
+the direct relationship between electrical and mechanical energy, is widely used in various applications,
+including artificial muscles, wearable sensors, advanced microscopes, flexible actuators, energy harvesting
+2devices, and minimally invasive surgery [40, 43–49]. On the other hand, flexoelectricity is a bidirectional
+linear interaction between the electric field and strain gradients, unlike piezoelectricity, which occurs due
+to electric polarization and strain. It is characterized by strain gradients or inhomogeneous strains, while
+uniform strains cause piezoelectricity [47, 48, 50]. While non-centrosymmetric materials in physical and
+biological systems exhibit linear piezoelectricity, which is the coupling of a single strain component with a
+single electric field component [46, 49], flexoelectricity can occur even in materials with centrosymmetry,
+especially when inhomogeneities at micro length scales lead to significant strain gradients and electric field
+formation [51, 52]. Despite their minimal e ffects, often at larger scales, flexoelectric contributions to
+electromechanical coupling are likely to be substantial at smaller scales [33, 53].
+Given these coupled e ffects, it becomes apparent that further research is necessary to fully understand
+how living cells behave, especially in the context of their variable organelle shapes. The structure and
+orientation of the organelles are essential for comprehending the dynamics of the cell. Moreover, the
+quantity of microtubules within a cell plays a crucial role in cell dynamics. These aspects have not yet
+been thoroughly investigated [27, 28]. Recent experimental studies [54, 55] show that microtubules are
+mostly composed of α- andβ-tubulin dimerization, resulting in a polarized tubular structure. Cells can
+extend and contract at the plus end. Cell morphology may depend on microtubule reorientation.
+Non-centrosomal microtubules (NC-MTs) may a ffect cell adhesion and division, depending on cell type.
+However, these implications have not been explored in the context of piezoelectric and flexoelectric
+effects. Despite notable progress, there is still a considerable dearth of understanding the functioning of
+individual organelles and their integrated behaviour within the living cells when they are exposed to
+external stimuli such as piezoelectricity and flexoelectricity [33, 45–49]. The significance of mechanical
+stimuli in regulating cell functions is becoming even more apparent, given the fact that the understanding
+of the immediate structural reaction of cells to mechanical stresses is still inadequate [29].
+Therefore, the primary aim of this work is to investigate the impact of externally exerted mechanical
+displacement on the characteristics of individual cells, with a specific emphasis on the variable shapes and
+sizes of organelles. In what follows, we carry out an extensive parametric analysis to examine the e ffects
+of piezoelectricity and flexoelectricity by varying the number of microtubules from 2 to 18 along with their
+shapes when the cells are subjected to the mechanical displacements. The mechanical response of the cell is
+elucidated by determining the e ffective elastic coe fficients, and the contribution of piezoelectricity resulting
+from mechanical displacement is quantified through the e ffective piezoelectric coe fficients.
+The rest of the paper has been structured as follows: Section 2 describes the model that governs the
+coupled electro-elastic behaviour of the cells, including the geometry of the cell structure and the boundary
+conditions. The results obtained from the present study, which include the e ffects of piezoelectricity and
+flexoelectricity on the distribution of electric potential, strain, e ffective elastic coe fficients, and e ffective
+piezoelectric coe fficients, are delineated in Section 3. The findings are summarized in Section 4.
+2. Physics-based model of the biological cell
+This section details the developed model of the biological cell, including material properties, mathematical
+framework, numerical setup, and boundary conditions necessary for problem solving. The cell has a width
+ofaw=21µm [56–58]. It contains distinct organelles with well-defined shapes in cell structure-1 in the
+x1−x3plane. However, the realistic organelles lack a specific and well-defined shape. Therefore, we have
+also selected arbitrary shapes for intracellular organelles, such as the nucleus, mitochondria, cytoplasm,
+microtubules, cell membrane, and centrosome, for cell structure-2. The arbitrary shapes of the organelles
+have been created using an in-house developed MATLAB code. The organelles possess unique structures
+that exhibit a diverse range of sizes and shapes within cellular compartments. For instance, mitochondria
+3Table 1: Physical properties of the organelles considered in the current study.
+S.No. Parameter Elastic modulus (E) Poisson’s ratio ( ν) Relative permittivity
+(Dielectric constant)
+1 Nucleus 1 kPa [76] 0.3 [76] 80 [77, 78]
+2 Mitochondria 50.3 kPa [79] 0.3 [58] 80 [77, 78]
+3 Microtubule 2 GPa [80] 0.3 40 [79]
+1.9 GPa [76] 0.3 [76, 80, 81]
+4 Cell membrane 1.8 kPa [76] 0.3 [77, 78] 3 [77, 78]
+5 Cytoplasm 0.25 kPa [76, 80,
+82]0.49 [77, 78, 80,
+82]80 [77, 78]
+6 Actin cortex 2 kPa [80, 83] 0.3 [80, 83]
+are portrayed as rigid, long, cylinder-shaped structures that resemble bacteria. They are highly elastic and
+dynamic organelles that are always undergoing shape changes [9, 59, 60]. The morphology of the nucleus
+[61–65], cell membrane [62, 66, 67], and mitochondria [66, 68–70] exhibits distinct characteristics in the
+cell structures, as shown in Figure 1. The shape of the cell model has been created based on the experimental
+studies [57, 60, 71–73] as depicted in Figures 1(a) and 1(b). Similarly, the shapes of organelles such as
+the nucleus [61–65], cell membrane [62, 66, 67], and mitochondria [66, 68–70], are modelled based on
+experimental and other computational studies. The dimensions of the organelles have been taken as follows
+[74]: nucleus, 5 µm [56]; mitochondria, 0.92 µm [56]; microtubule, 25 nm (diameter), length 5-15 µm
+[60, 73, 75]; cell membrane, 20 µm (diameter), 7 µm [56, 57].
+Both cell structures are presumed to possess an equivalent quantity of organelles, comprising 12
+mitochondria, 18 microtubules, 1 nucleus, 1 cytosol, and 1 cell membrane, for the purpose of conducting a
+comparison analysis. Furthermore, it has been considered that all intercellular organelles have identical
+surface areas compared to their counterparts in the cell structures. The lengths of the microtubules are
+varied, and their inward ends have been connected to the centrosome. The cell membrane has been
+conceptualized as a structural barrier that delineates the intracellular compartment of the cell from the
+extracellular matrix environment [14].
+The material properties pertaining to the organelles that have been utilized in the current study are
+outlined in Table 1. This study focuses on the piezoelectric and flexoelectric coe fficients that relate to
+microtubules, while neglecting the consideration of these coe fficients for other organelles; they are assumed
+to be zero [58].
+The fully coupled electromechanical model, based on the extended linear theory of continuum
+mechanics for dielectric continua, has been used to analyze the two-dimensional biological cell domain in
+a steady-state regime. Under equilibrium conditions and based on Gauss’s law, the governing equations for
+the current two-dimensional computational domain are given as:
+
+σi j−ˆσi j,k
+,j=0, (1)
+Di,i=0, (2)
+whereσi jare the components of the mechanical stress tensor, Di,iare the components of the electric
+displacement vector, and ˆ σi jkis the higher-order flexoelectric tensor. σi j,Di,i, and ˆσi jkhave been
+calculated by their fundamental constitutive relationships based on the Gibbs free energy equation ( G) as
+41 2 3 4
+5 6
+7
+8
+9
+10 1211Nucleus
+CytosolMicrotubule
+Cell membrane
+1-12: Mitochondria
+awaw(a) Cell structure-1 (CS-1)
+Cytosol
+Microtubule
+1 2 3 4
+5 6
+7
+8
+9
+10 1211NucleusCell membrane
+1-12: Mitochondria
+awaw
+(b) Cell structure-2 (CS-2)
+Figure 1: Schematic representation of the structure of the two-dimensional biological cell, including various organelles such as
+the cell membrane, nucleus, mitochondria, and microtubules, with (a) idealized shapes and (b) shapes that closely resemble the
+experimental studies.
+5follows:
+G=1
+2ci jklεi jεkl−eki jEkεi j−1
+2ϵi jEiEj−1
+2Bkli jEkElεi j−µi jklEiεjk,l, (3)
+σi j=∂G
+∂εi j=ci jklεkl−eki jEk, (4)
+ˆσi jk=∂G
+∂εjk,l=−µi jklEi=µli jkEl, (5)
+Di=−∂G
+∂Ei=ϵi jEj+ei jkεjk+µi jklεjk,l. (6)
+In Eq. 3,1
+2ci jklεi jεklis the elastic deformation energy, eki jEkεi jis piezoelectric energy,1
+2ϵi jEiEjis
+dielectric energy (it is purely due to electric field and electric properties),1
+2Bkli jEkElεi jis electrostrictive
+energy, and µi jklEiεjk,lis the flexoelectric energy. In the present study, the electrostrictive energy term has
+been neglected. Moreover, εi jare the components of the mechanical strain tensor, Ekare the components
+of the electric field vector, ci jklare the linear elastic coe fficients in the sti ffness matrix, ei jkare the linear
+piezoelectric coe fficients, andϵjkare the dielectric permittivity coe fficients, andµi jklεjk,lis the fourth-order
+flexoelectric tensor.
+By employing the two-dimensional biological cell model described above and assuming the presence
+of transversely isotropic piezoelectric material along the x3-axis, the electromechanical phenomena can be
+investigated using either the x1-x3orx2-x3planes. Therefore, when considering the x1-x3plane, using the
+V oigt notation, the constitutive relations (Eqs. 4-6) can be reduced into matrix form, as follows [58, 84–86]:
+σ11
+σ33
+σ13=c11c13 0
+c13c33 0
+0 0 c44ε11
+ε33
+2ε13−0e31
+0e33
+e15 0"E1
+E3#
+, (7)
+"D1
+D3#
+="0 0 e15
+e31e33 0#ε11
+ε33
+2ε13+"ϵ11 0
+0ϵ33#"E1
+E3#
++"µ1111µ1331
+µ3113µ3333#"ε11,1ε33,1
+ε11,3ε33,3#
+. (8)
+The relationship between the strain field and displacement vector, electric potential, and electric field
+is mathematically expressed as
+εi j=1
+2
+ui,j+uj,i
+, (9)
+Ei=−V,i. (10)
+Collagen and microtubule-associated tau proteins exhibit comparable crystalline homology [87]. As a
+result, the generation of piezoelectric potential is comparable in both proteins when subjected to similar
+load conditions [88]. Therefore, in the present study, it has been assumed that the piezoelectric coe fficients
+of the microtubules are equivalent to those of collagen. The hexagonal symmetry has been taken into
+consideration in order to determine each piezoelectric coe fficient for collagen. The piezoelectric tensor can
+6Table 2: Boundary conditions considered in the current study.
+Boundary
+conditionLeft Right Top Bottom
+BC-1 u1=0,
+u3=0,
+∂V
+∂x1=0u1=0,
+u3=0,
+∂V
+∂x1=0u1=0,
+u3=DC,
+∂V
+∂x1=0u1=0,
+u3=0,
+V=0
+BC-2 u1=DC,
+u3=0,
+∂V
+∂x1=0u1=DC,
+u3=0,
+∂V
+∂x1=0u1=0,
+u3=DC,
+∂V
+∂x1=0u1=0,
+u3=0,
+V=0
+BC-3 u1=DC,
+u3=0,
+∂V
+∂x1=0u1=DC,
+u3=0,
+∂V
+∂x1=0u1=0,
+u3=DC,
+∂V
+∂x1=0u1=0,
+u3=DC,
+V=0
+be represented using V oigt’s notation as follows [58, 89]:
+di j=0 0 0 d14 d15 0
+0 0 0 d15−d140
+d31d31d33 0 0 0. (11)
+In the piezoelectric tensor ( di j), the subscript isignifies the direction of the electric field displacement,
+whereas the subscript jrepresents the corresponding mechanical deformation.
+Given that the current study is based on the stress form, the piezoelectric coe fficients provided in Eq. 11
+in strain form have been transformed into the stress form using the following relationship:
+ei jk=cjklmdilm, (12)
+where ei jkare the piezoelectric stress coe fficients, cjklmare the components of the elastic tensor, and dilm
+are the piezoelectric strain coe fficients.
+The orientation of the microtubules and their e ffect on the piezoelectric tensor have also been taken into
+account in this work. The transformation of the piezoelectric coe fficients has been formulated elsewhere
+[58].
+2.1. Boundary conditions
+The details of the biological cell geometry and the governing equations to understand the piezoelectric
+behaviour of the biological cell are provided previously. Here, we discuss the impact of mechanical
+displacements on the biological cell, specifically examining three di fferent boundary conditions to
+understand the cell response comprehensively, as shown in Table 2. The bottom surface of the
+two-dimensional biological cell model depicted in Figure 2 has been subjected to fixed boundary
+conditions that are electrically grounded ( V=0). These restrictions have been adopted from previous
+studies [90–93] and inspired by experimental investigations [6–8, 20, 22–26, 94]. The direction in which
+the mechanical displacement is exerted on the piezoelectric material is as follows:
+•Boundary condition-1 (BC-1): A mechanical displacement is exerted at the top of the boundary by
+altering the compressive displacement (DC) within the range of 20 nm to 120 nm, as depicted in
+Figure 2(a).
+7u1=0
+u3=0
+V=0(a) BC-1
+u1=0
+u3=0u1=0
+u3=0
+x₁x₃
+u1=0DC: 20 nm-120 nm u3=DC
+∂V/∂x1=0
+∂V/∂x3=0∂V/∂x1=0∂V/∂x3=0∂V/∂x1=0
+∂V/∂x3=0(a) BC-1
+u1=0
+u₃=0
+V=0(b) BC-2
+u1=DC
+u₃=0u3=0
+x₁x₃
+u₁=0DC: 20 nm-120 nm u3=DC
+u₁=DC
+∂V/∂x1=0
+∂V/∂x3=0∂V/∂x1=0
+∂V/∂x3=0∂V/∂x1=0
+∂V/∂x3=0 (b) BC-2
+u₁=0
+u₃=DC
+V=0(c) BC-3
+u₁=DC
+u₃=0 u₃=0
+x₁x₃
+u₁=0DC: 20 nm-120 nm u₃=DC
+u₁=DC
+∂V/∂x1=0
+∂V/∂x3=0∂V/∂x1=0
+∂V/∂x3=0
+∂V/∂x1=0
+∂V/∂x3=0
+(c) BC-3
+Figure 2: A finite element model of a single cell is created with specific boundary conditions (BC). Compressive displacement
+(DC) in terms of u1andu3is applied to the cell, ranging from 20 to 120nm, in three di fferent configurations: (a) on the top of
+the cell, (b) on the left and right sides of the cell, and (c) on the top, bottom, left, and right sides of the cell, while the bottom is
+electrically grounded in all the cases, i.e., the electric potential ( V) is set to zero.
+•Boundary condition 2 (BC-2) involves the application of a mechanical displacement at the left, right,
+and top boundaries by altering the compressive displacement within the range of 20 nm to 120 nm,
+as depicted in Figure 2(b).
+•Boundary condition-3 (BC-3) deals with the imposition of a mechanical displacement at the left,
+8right, top, and bottom boundaries of the system. This force is exerted by altering the compressive
+displacement values within the range of 20 nm to 120 nm, as depicted in Figure 2(c).
+These boundary conditions are very important to understand the cell mechanics in many applications,
+including bone repair [94–98].
+To investigate the mechanical response and piezoelectric behavior of the biological cell more precisely,
+effective coe fficients have been determined by creating many load instances with varying boundary
+conditions. Each load instance should be structured in such a way that only one value in the strain /electric
+field vector is non-zero, with all other values being zero. To determine the e ffective coe fficient, use an
+average non-zero value in the strain /electric field vector and the average values in the stress /electrical
+displacement vector [99–102]. The e ffective elastic coe fficients and e ffective piezoelectric coe fficients are
+computed in the principal plane directions ( x1-x3) under the specified boundary conditions, i.e., the
+mechanical ( c11,e f f,c13,e f f, and c33,e f f) and piezoelectric response ( e31,e f f, and e33,e f f) of the biological
+cell in the transverse and longitudinal directions [84, 86]. The volume average of quantity Ais denoted by
+⟨A⟩in the calculation below. It is determined as
+⟨A⟩=1
+(awaw)Z
+ΩAdΩ, (13)
+where Ωrepresents the volume of the domain in which the integration is performed. Adenotes the area of
+the biological cell, while awrepresents the width of the cell.
+The e ffective elastic and piezoelectric coe fficients are calculated by utilizing the volume averages for
+the boundary conditions specified in Section 2.1, which are as follows [84]:
+c11,e f f=⟨σ11⟩
+ε11,c13,e f f=⟨σ11⟩
+ε33,c33,e f f=⟨σ33⟩
+ε33,
+e31,e f f=⟨D3⟩
+ε11,e33,e f f=⟨D3⟩
+ε33, (14)
+where⟨D3⟩is the volume average of the D3component of the electric flux density vector.
+The finite element analysis has been performed to numerically implement the coupled electromechanical
+model described above using COMSOL multiphysics while applying boundary conditions to the biological
+cell.
+3. Results and discussion
+Cell mechanics refers to the division and merging of cell organelles, which are crucial for maintaining their
+structure, distribution, and size. In order to investigate the cell behaviour when it is subjected to mechanical
+displacement, three boundary conditions (BC-1 to BC-3) are employed for the compressive displacement
+ranging from 20 nm to 120 nm. The current study presents a comparative analysis of the piezoelectric e ffect
+in the cell, and analyzing the outcomes both with and without consideration of flexoelectric e ffects for the
+strain distribution, electric potential distribution, and determination of the e ffective elastic and piezoelectric
+coefficients.
+3.1. Impact of piezoelectric and flexoelectric e ffects on strain distribution in biological cells
+The strain component ( ε11) distribution in the x1-direction inside the biological cell as a result of the
+combined e ffects of piezoelectricity and flexoelectricity is shown in Figure 3. The distribution has been
+9derived for two distinct cell structures subjected to a compressive displacement of 20 nm, while accounting
+for three applied boundary conditions (BC-1 to BC-3). For BC-1, the magnitude of ε11is concentrated in
+close proximity to the cell membrane, as well as the top and bottom walls of the cell, as depicted in
+Figure 3(a)-(b). This distribution of strain is a result of the application of compressive mechanical
+displacement in the transverse direction. For BC-2 and BC-3, the magnitude of ε11is concentrated toward
+the corners of the bottom walls of the cell.
+On the other hand, there is a noticeable di fference in the distribution of the strain component ( ε33) in
+thex3-direction compared to the x1-direction within the biological cell. This di fference is attributed to the
+combined influence of piezoelectricity and flexoelectricity, as depicted in Figure 4.
+The impact of flexoelectric stress components on the strain distribution is insignificant. Therefore,
+the strain distribution for the e ffect of piezoelectricity only and for the combined e ffect of piezoelectricity
+and flexoelectricity show a remarkable similarity and have nearly comparable magnitudes, as depicted in
+Figures 3 to 4. Nevertheless, the strain distribution in the x3-direction is slightly greater than in the x1-
+direction, as the flexoelectric stress component in the x3-direction is 1.80 times larger than its component in
+thex1-direction, regardless of the boundary conditions (BC-1 to BC-3). The flexoelectric stress component
+in cell structure-2 has exhibited a notable alteration in comparison to CS-1 as a result of the modifications
+in the shape, size, and orientation of the microorganelles, particularly the microtubules.
+3.2. Electrical potential distribution
+The electric potential distribution of a biological cell under compressive displacement has been determined
+by solving the governing equations described in Section 2. Accordingly, the electric potential
+distribution for each boundary condition applied to the cell considering only the piezoelectric e ffect and
+the combined piezoelectric-flexoelectric e ffects is provided below.
+3.2.1. Consideration of piezoelectric e ffects alone
+The electric potential (V) distribution within the biological cell, resulting from a 20 nm mechanical
+(compressive) displacement, accounting for the piezoelectric e ffect alone, is illustrated in Figure 5. The
+distribution is studied under three applied boundary conditions, marked as BC-1 to BC-3. The arrows
+indicate the direction of the electric field lines within the cell. In all the cases, BC-1 and BC-3, it is evident
+from Figure 5(a)-(d) that the electric potential generated is higher for CS-1 in comparison to CS-2. The
+strain distribution is no more streamlined along the boundary of the microtubules due to the localization of
+the strain near to the curved edges. As a result, the intensity of the strain distribution in the vicinity of the
+centrosome is reduced. Hence, the overall electric potential being generated in the cell is reduced.
+Consequently, a weak piezoelectric e ffect leads to the generation of a lower electric potential. The electric
+potential being generated has been reduced by a factor of 10 when BC-3 is applied to the biological cell
+compared to BC-1 and BC-2 (see Figure 5(e)-(f)).
+3.2.2. Consideration of flexoelectric e ffects in addition to piezoelectric e ffects
+There is a significant enhancement of the electric potential distribution within the cell when considering
+the application of non-local flexoelectric e ffects in addition to the linear piezoelectric e ffects. Figures 6(a),
+6(c) and 6(e) depict the electric potential distribution in CS-1, whereas Figures 6(b), 6(d) and 6(f) for the
+CS-2. The contour plots displayed in Figures 6(a)-(d) demonstrate that, under all three boundary conditions
+(BC-1 to BC-3), the electric potential generated in CS-1 is greater than that of CS-2. The strain gradients
+are stronger for the regular shapes of organelles in the cell (CS-1). The electric potential generated in BC-2
+is observed to increase due to the absence of strain gradients in the longitudinal directions. The transverse
+direction ( x3) exhibits a strain gradient that is responsible for the increased electric potential compared
+10(a) CS-1, BC-1
+ (b) CS-2, BC-1
+(c) CS-1, BC-2
+ (d) CS-2, BC-2
+(e) CS-1, BC-3
+ (f) CS-2, BC-3
+Figure 3: The distribution of the strain component in the x1-direction (ε11) for two cell structures, namely cell structure-1 (a, c, e)
+and cell structure-2 (b, d, f), under three di fferent boundary conditions considering the piezoelectric e ffect alone and the combined
+effect of the piezoelectricity and flexoelectricity for the compressive displacement of 20 nm.
+11(a) CS-1, BC-1
+ (b) CS-2, BC-1
+(c) CS-1, BC-2
+ (d) CS-2, BC-2
+(e) CS-1, BC-3
+ (f) CS-2, BC-3
+Figure 4: The distribution of the strain component in the x3-direction (ε33) for the piezoelectric e ffect alone and the combined
+effect of piezoelectricity and flexoelectricity for cell structure-1 (a, c, e) and cell structure-2 (b, d, f) under three di fferent boundary
+conditions for the compressive displacement of 20 nm.
+12(a) CS-1, BC-1
+ (b) CS-2, BC-1
+(c) CS-1, BC-2
+ (d) CS-2, BC-2
+(e) CS-1, BC-3
+ (f) CS-2, BC-3
+Figure 5: The electric potential distribution in the biological cell is being analyzed under the influence of a 20nm compressive
+displacement, taking into consideration only the piezoelectric e ffect. The analysis has been conducted for two cells: cell structure-
+1 (a, c, e) and cell structure-2 (b, d, f).
+13to BC-1 and BC-3. The combined e ffect of piezoelectricity and flexoelectricity induces a higher electric
+potential when considering only the piezoelectric e ffect.
+3.2.3. Consideration of the number of microtubules and the shape of the organelles
+It is observed that the maximum electrical potential obtained for each boundary condition and cell
+structure is also di fferent, as depicted in Figures 5 and 6. This is attributed to the shape and arrangement of
+the microtubules within the biological cell that have a significant impact on the distribution of the electric
+potential [89]. The absence of longitudinal and transverse strains in BC-3 can be attributed to the uniform
+displacement boundary conditions in the principal planes, i.e., x1and x3. Nevertheless, only a small
+amount of transverse strain is generated near the corners of the bottom side due to the applied mechanical
+displacement. This can be attributed to the negligible piezoelectric e ffect, resulting in a low generation of
+electric potential in this case.
+The growth, maintenance, and regulation of cells and tissues depend on the strength of electric fields.
+Moreover, studying electric potential distribution within the cell is essential for tissue regeneration,
+embryonic development, and wound healing [103, 104]. For instance, electric fields are used in tissue
+engineering for characterizing artificial tissues, forming tissue-like materials, and micro-manipulating
+cells. Electrical stimulation has emerged as a novel and cutting-edge method in the field of regenerative
+medicine [105, 106].
+3.2.4. Maximum induced electric potential considering the piezoelectric e ffect and the combined
+piezoelectric-flexoelectric e ffects
+A parametric analysis has been carried out to quantify the maximum electric potential ( Vmax) obtained when
+a compressive displacement of 20 nm is applied for BC-1 to BC-3. The number of microtubules in the
+present two-dimensional biological cell considered are 18, as shown in Figure 7. When considering purely
+the piezoelectric e ffect, CS-1 generates a Vmaxlarger than CS-2 for BC-1, as illustrated in Figure 7(a). On
+the other hand, Vmaxshows a significant rise in the case of CS-1 when both the piezoelectric and flexoelectric
+effects are taken into account together for BC-1, as shown in Figure 7(b) and a similar pattern is observed
+for BC-2 and BC-3. An increase in the number of microtubules in the cellular structure results in an increase
+ofVmax. This increase is evident from the compressive displacement range of 20 nm to 120 nm observed
+in BC-1 to BC-3, as shown in Figure 7(a)-(f). This occurs due to the orientation, shape, and number of
+microtubules. Recall that, in the present study, the flexoelectric coe fficients are considered only for the
+microtubules.
+Figure 8 illustrates the variation in Vmaxdistribution resulting from the piezoelectric-flexoelectric
+effects within the biological cell, while maintaining boundary conditions and cell structures. This variation
+is observed as a function of the compressive displacement and the number of microtubules. In CS-1 for
+BC-1, the induced Vmaxis significantly higher for the piezoelectric-flexoelectric e ffects compared to the
+piezoelectric e ffect alone. It can be observed from Figure 8(a)-(f) that an increase in the number of
+microtubules leads to an increase in the generated Vmaxfor all the boundary conditions. This is attributed
+due to the orientation of the microtubules in the cells. Experimentally, it has been found that the orientation
+and alignment of microtubules significantly impact the shape and functionality of keratinocyte cells [55].
+Figures 7 and 8 also clearly demonstrate that the magnitude of Vmaxfollows a trend of increasing from
+BC-1 to BC-2 and thereafter decreasing at BC-3. For instance, when the piezoelectricity alone is considered,
+Vmaxfor CS-1 is found to be 1 .18×10−6V (BC-1), 1 .74×10−6V (BC-2), and 4 .92×10−7V (BC-3).
+Experimental findings confirm that the maximum induced electric potential in the bone by the piezoelectric
+effect is on the order of microvolts ( µV) [94]. Further, a similar pattern has been noticed in the case of CS-2.
+This occurs because, in BC-1, the electric potential is solely generated by the transverse strain from the top
+14(a) CS-1, BC-1
+ (b) CS-2, BC-1
+(c) CS-1, BC-2
+ (d) CS-2, BC-2
+(e) CS-1, BC-3
+ (f) CS-2, BC-3
+Figure 6: The electric potential distribution in the biological cell is analyzed for a compressive displacement of 20 nm, taking into
+account both the piezoelectric and flexoelectric e ffects for two cells: cell structure-1 (a, c, e) and cell structure-2 (b, d, f).
+15DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010-510-410-310-210-1 CS-1, MT-2 
+CS-2, MT-2CS-1, MT-6CS-2, MT-6CS-1, MT-10CS-2, MT-10CS-1, MT-14CS-2, MT-14CS-1, MT-18CS-2, MT-18BC-1, P(a) BC-1, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010-310-210-1100101
+CS-1, MT-2
+CS-2, MT-2CS-1, MT-6CS-2, MT-6CS-1, MT-10CS-2, MT-10CS-1, MT-14CS-2, MT-14CS-1, MT-18CS-2, MT-18 BC-1, P+F (b) BC-1,P +F
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010-510-410-310-210-1 CS-1, MT-2
+CS-2, MT-2CS-1, MT-6CS-2, MT-6CS-1, MT-10CS-2, MT-10CS-1, MT-14CS-2, MT-14CS-1, MT-18CS-2, MT-18BC-2, P
+(c) BC-2, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­310­210­1100101
+CS­1, MT­2
+CS­2, MT­2
+CS­1, MT­6
+CS­2, MT­6
+CS­1, MT­10
+CS­2, MT­10
+CS­1, MT­14
+CS­2, MT­14
+CS­1, MT­18
+CS­2, MT­18BC­2, P+F (d) BC-2,P +F
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­410­310­2
+CS­1, MT­2
+CS­2, MT­2
+CS­1, MT­6
+CS­2, MT­6
+CS­1, MT­10
+CS­2, MT­10
+CS­1, MT­14
+CS­2, MT­14
+CS­1, MT­18
+CS­2, MT­18BC­3, P
+(e) BC-3, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­210­1100CS­1, MT­2
+CS­2, MT­2
+CS­1, MT­6
+CS­2, MT­6
+CS­1, MT­10
+CS­2, MT­10
+CS­1, MT­14
+CS­2, MT­14
+CS­1, MT­18
+CS­2, MT­18BC­3, P+F (f) BC-3,P +F
+Figure 7: Maximum electric potential ( Vmax) as a function of the compressive displacement and number of microtubules considering
+only for the piezoelectric e ffect (a,c,e) and for the combined e ffect of piezoelectricity-flexoelectricity (b, d, f) under the specific
+boundary conditions. 16DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­510­410­310­210­1100101102
+MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­1, CS­1(a) BC-1, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­810­710­610­510­410­310­210­1
+MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­1, CS­2 (b) BC-1,P +F
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­410­310­210­1100101MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­2, CS­1
+(c) BC-2, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­510­410­310­210­1100101102
+MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­2, CS­2 (d) BC-2,P +F
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­410­310­210­1100MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­3, CS­1
+(e) BC-3, Piezo
+DC (nm)Vmax (mV)
+0 20 40 60 80 100 120 14010­410­310­210­1100101MT­2, P
+MT­2, P+F
+MT­6, P
+MT­6, P+F
+MT­10, P
+MT­10, P+F
+MT­14, P
+MT­14, P+F
+MT­18, P
+MT­18, P+FBC­3, CS­2 (f) BC-3,P +F
+Figure 8: Maximum electric potential distribution ( Vmax) and the compressive displacement and number of microtubules in the case
+of the piezoelectric (a,c,e) and flexoelectric (b, d, f) e ffects, considering the three boundary conditions.
+17side, without any contribution from the longitudinal strain. In BC-2, the applied compressive displacement
+on both the left and right sides is balanced due to the absence of a strain gradient. The gradient of BC-3 is
+symmetrical from all directions, resulting in a minimal net value of the electric potential.
+Flexoelectricity exerts a substantial influence on the biological cell. It is additionally characterized
+by the ratio of the maximum electric potential resulting from the combined e ffects of piezoelectricity and
+flexoelectricity to the electric potential arising from piezoelectricity alone ( VR,max =Vmax,P +F/Vmax,P ). This
+ratio has been examined in connection with the total number of microtubules under the three specified
+boundary conditions, as illustrated in Figure 9. It is evident that the highest value of VR,max occurs when
+there are 6 microtubules in the case of CS-2, under the three boundary conditions BC-1 to BC-3. It has been
+found that when BC-1 is applied, VR,max for CS-1 takes precedence over CS-2. Whereas VR,max has shown
+an uneven trend for CS-1 on imposing BC-2 and BC-3. The primary factor influencing the behaviour is the
+angular orientation and shape of the microtubules [94, 107].
+This knowledge is very useful to our better understanding of the induced electric potential resulting from
+piezoelectricity in the healing mechanism for bone fractures and other medical therapies. For example,
+the primary building blocks of bone, collagen and hydroxyapatite, are oriented strongly in the direction
+of the bone axis. The direction in which ultrasonic radiation or a load is applied greatly influences the
+induced electric potential in the bone resulting from piezoelectricity. The piezoelectric properties of bone
+have a role in the healing process of the Low-intensity pulsed ultrasound (LIPUS) therapy [37, 94, 108].
+The two-dimensional biological cell is significantly influenced by the quantity and loading conditions of
+microtubules. The current study predicts a significant increase in electromechanical e ffects, potentially
+useful in bio-compatible nano-biosensors, drug delivery, noninvasive diagnostic methods, and treatment
+strategies [50, 109–111].
+The stimulation of cells depends on the generation of electric potential resulting from the mechanical
+load being applied. For instance, the glial cells undergo changes in structure when stimulated electrically
+and align themselves perpendicular or parallel to the electric field [112]. Hence, cell stimulation depends
+on the intensity of the electric potential, which is dependent on the boundary condition. The biological
+cell having a structure with regular-shaped organelles exhibited over cellular stimulation than the arbitrary
+shapes of the organelles. The previous study utilized a cell structure [58] model that exhibited regular shapes
+of the organelles. Therefore, in the present study, we carry out a more realistic analysis where the shapes
+of the organelles have been chosen to be arbitrary, which are non-spherical in nature. Moreover, the cell
+stimulation is controlled by varying the mechanical displacement as described previously (Section 2.1).
+3.3. Determination of the e ffective elastic coe fficients
+Effective elastic coe fficients are computed using Eqs. 13 and 14 to elucidate the mechanical response of
+the cell, which show that the principal plane stresses are the only factors influencing these coe fficients.
+The compressive displacement has an impact on the e ffective elastic coe fficients, c11,e f fandc33,e f fin
+the principal planes ( x1andx3). We also have another elastic coe fficient, c13,e f f, defined as the ratio of
+the average principal stress in the x3-direction to the principal strain in the x1-direction. The following
+sub-section discusses the numerical studies conducted to investigate the variations in the e ffective elastic
+coefficients influenced by biological cells’ local geometry and physical properties, considering only the
+piezoelectric and combined piezoelectric-flexoelectric e ffects.
+3.3.1. Consideration of piezoelectric e ffects alone and combination of piezoelectric-flexoelectric e ffects
+BC-1 clearly demonstrates that the mechanical response of the cell in the x1-direction, c11,e f f, is 100
+times greater for CS-1 than for CS-2, considering solely the piezoelectric e ffect, as shown in Figure 10(a).
+Because the compressive displacement is given to the upper side of the cell. This shows that the predicted
+18NMTVmax, P+F /Vmax, P
+0 5 10 15 200100200300400500600700
+CS­1
+CS­2BC­1(a) BC-1
+NMTVmax, P+F /Vmax, P
+0 5 10 15 20050100150200250300
+CS­1
+CS­2BC­2 (b) BC-2
+NMTVmax, P+F /Vmax, P
+0 5 10 15 20306090120150180
+CS­1
+CS­2BC­3
+(c) BC-3
+Figure 9: Ratio of the maximum electric potential for the piezoelectric and flexoelectric e ffects to the piezoelectric e ffects, denoted
+asVR,max =Vmax,P +F/Vmax,P, as a function of the number of microtubules under three boundary conditions.
+value of c11,e f fdepends not only on the elastic coe fficients but also on the geometry of the cell [113].
+Additionally, it should be noted that the value of c11,e f fremains constant for both the piezoelectric and
+flexoelectric e ffects.
+For BC-2, there is no fluctuation in the value of c11,e f ffor CS-2 when only the piezoelectric e ffect has
+been taken into account. However, the value of c11,e f fis lower for CS-1 compared to CS-2 and displays
+variation for CS-1, as depicted in Figure 10(b). The compressive displacement is exerted on three sides of
+the cell, while the bottom side is electrically grounded. Therefore, there is no variation in stress along the
+x3-direction, and it is only present in the x1-direction. c11,e f fexhibits a declining trend in the context of
+19the combined piezoelectric and flexoelectric phenomena as the number of microtubules is augmented from
+2 to 6. However, it experiences a rapid surge at 10 microtubules, followed by a subsequent decrease (see
+Figure 10(b)).
+Upon analyzing Figure 10(c), it becomes apparent that when the compressive displacement is applied
+to all sides of the cell (BC-3), the e ffective coe fficient of c11,e f fdisplays lower values for CS-1 initially,
+but eventually reaches the same value as CS-2 when just the piezoelectric e ffect is taken into account. The
+effective elastic constant c11,e f fis larger for CS-1 compared to CS-2, particularly for up to 4 microtubules,
+considering the combination of the piezoelectric and flexoelectric e ffects, and c11,e f fshows a declining
+pattern in CS-1. This drop is noticed when the number of microtubules is increased from 4 to 6. Moreover,
+the effective coe fficient of c11,e f fconverges to a comparable value as that of CS-2 when the number of
+microtubules surpasses 10. This is because the stress that is being generated is seen only in the x1-direction
+due to the impact of the mechanical displacement.
+Figure 11 depicts the changes in c13,e f facross the biological cell, as computed by taking into account
+the piezoelectric e ffects. For BC-1, it is apparent from Figure 11(a) that c13,e f fexhibits a consistent pattern
+for both CS-1 and CS-2 when only the piezoelectric e ffect is considered. However, it is evident from
+Figure 11(b) that c13,e f fvalue remains unchanged for both the piezoelectric and flexoelectric e ffects. c13,e f f
+is shown to decrease initially as the number of microtubules is increased from 2 to 6. This is because the
+average stress values in the x3-direction and strain in the x1-direction are the same for both cell structures.
+In the case of BC-2, c13,e f fis higher for CS-2 in comparison to CS-1 because the principal stresses and
+strains for these cell structures are di fferent. Moreover, the value of c13,e f fremains unchanged for both
+the piezoelectric and flexoelectric e ffects, as depicted in Figure 11(b). It can be observed that the value
+ofc13,e f fshows no variation while the number of microtubules is increased from 2 to 6. However, there
+is a dramatic decrease in c13,e f fthereafter, followed by a period of no apparent variation. In the case of
+BC-3, c13,e f fvalue is lower for CS-2 in comparison to CS-1, specifically for up to 10 microtubules, when
+considering the piezoelectric and flexoelectric e ffects. Subsequently, the value of c13,e f ftends to converge
+with that of CS-1 when considering 10 microtubules and beyond, as depicted in Figure 11(c).
+Figure 12(a) shows that the e ffective value of c33(the mechanical response of the biological cell in
+x3-direction) is greater for CS-1 than for CS-2 in BC-1. Both cell structures exhibit an increasing trend in
+c33,e f fwith an increase in the number of microtubules. c33,e f fvalue remains unchanged for both the
+piezoelectric and flexoelectric phenomena. The value of c33,e f fexhibits an upward trend when the number
+of microtubules increases from 2 to 4. However, it experiences an abrupt decline when the number of
+microtubules reaches 6. The values of c33,e f fare shown to increase for both the piezoelectric and
+flexoelectric e ffects, as well as for CS-1 and CS-2, extending beyond microtubules 6. The stress and strain
+are present only in the x1and x3-directions. As seen in Figure 12(b), both cell structures exhibit a
+consistent pattern with an increase in microtubule number for BC-2 when considering the piezoelectric
+effect alone, and c33,e f fis slightly larger for CS-1 than CS-2. It is apparent that c33,e f fvalue remains
+unchanged for both the piezoelectric and flexoelectric phenomena. c33,e f fis declining as the number of
+microtubules increases from 2 to 6. However, it experiences a dramatic decline at 10 microtubules. The
+values of c33,e f fare observed to increase for both the piezoelectric and flexoelectric e ffects considering the
+cell structures, CS-1 and CS-2, extending the microtubules beyond 10. In the case of BC-3, it is evident
+thatc33,e f fis comparatively lower for CS-1 than for CS-1, specifically within the range of 6 microtubules,
+with regard to the piezoelectric and flexoelectric phenomena. The value of c33,e f fis shown to converge
+with that of CS-1 when considering 6 microtubules, as depicted in Figure 12(c). In addition, when the
+number of microtubules are 10, it is seen that the e ffective value of c33,e f ffor CS-1 starts rapidly
+increasing.
+20NMT (­)c11,eff (×1010, Pa)
+0 5 10 15 20020406080100120
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­1
+0 5 10 15 20115116117118119120
+0 5 10 15 20­1.4E­06­1.2E­06­1E­06­8E­07­6E­07­4E­07(a) BC-1
+NMT (­)c11,eff (×1019, Pa)
+0 5 10 15 20051015202530354045
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­2
+0 5 10 15 201E­11.1E­11.2E­11.3E­11.4E­11.5E­11.6E­11 (b) BC-2
+NMT (­)c11,eff (×1020, Pa)
+0 5 10 15 20­2­1.5­1­0.500.5
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­3
+0 5 10 15 20­2E­1502E­154E­156E­15
+(c) BC-3
+Figure 10: The e ffective elastic coe fficient ( c11,e f f) of cell structure-1 (CS-1) and cell structure-2 (CS-2) as a function of the number
+of microtubules for the piezoelectric (P) and flexoelectric (P +F) effects are plotted against the compressive displacement at 20 nm
+for (a) BC-1, (b) BC-2, and (c) BC-3.
+3.3.2. Impact of the orientation and shape of the organelles on the e ffective elastic coe fficients
+The e ffective elastic coe fficients are significantly influenced by the shape and orientation of the organelles.
+When a compressive displacement is given to the top side of the cell, the e ffective value of c11,e f fis higher
+for CS-1 compared to CS-2, as depicted in Figure 10(a). Alterations in the cell’s shape and orientation of
+the organelles resulted in di fferent e ffective coe fficients of the cell structures, particularly the microtubules
+[114]. This phenomenon is also observed when there is an increase in the quantity of microtubules, as it
+leads to a shift in their orientation.
+21NMT (­)c13,eff (×1010, Pa)
+0 5 10 15 20­7.8­7.6­7.4­7.2­7­6.8­6.6­6.4
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­1(a) BC-1
+NMT (­)c13,eff (×1010, Pa)
+0 5 10 15 2000.20.40.60.811.21.4
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­2
+0 5 10 15 201.161.181.21.221.24
+0 5 10 15 208E­078.5E­079E­079.5E­071E­061.05E­061.1E­06 (b) BC-2
+Number of microtubulesc13,eff (Pa)
+0 2 4 6 8 10 12 14­7E+18­6E+18­5E+18­4E+18­3E+18­2E+18­1E+1801E+18
+G­1, P
+G­2, P
+G­1, P+F
+G­2, P+FBC­3
+NMT (­)c13,eff (×1018, Pa)
+0 5 10 15 20­7­6­5­4­3­2­101
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­3
+0 5 10 15 2005E­061E­051.5E­05
+(c) BC-3
+Figure 11: The e ffective elastic coe fficient ( c13,e f f) of cell structure-1 (CS-1) and cell structure-2 (CS-2) as a function of the
+number of microtubules considering only the piezoelectric e ffect (P) and for combined piezoelectric-flexoelectric (P +F) effects
+plotted against the compressive displacement at 20 nm for (a) BC-1, (b) BC-2, and (c) BC-3.
+c13,e f fexhibits an initial decrease as the number of microtubules is raised from 2 to 6, as depicted
+in Figure 11(a). Nevertheless, the orientation of microtubules leads to a significant rise in the e ffective
+coefficient, c13,e f f, when the number of microtubules reaches 10. c33shows a positive correlation with
+the number of microtubules, increasing as the number of microtubules rises from 2 to 4, as depicted in
+Figure 12(a). Nevertheless, it undergoes a sudden decrease once the quantity of microtubules approaches 6.
+It is demonstrated that the values of c33,e f frise for CS-1 and CS-2, going beyond the number of microtubules
+6.
+22NMT (­)c33,eff (Pa)
+0 5 10 15 20180020002200240026002800
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­1(a) BC-1
+NMT (­)c33,eff (Pa)
+0 5 10 15 20500060007000800090001000011000
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­2
+0 5 10 15 2056005800600062006400 (b) BC-2
+NMT (­)c33,eff (×1012, Pa)
+0 5 10 15 20­10­5051015
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­3
+(c) BC-3
+Figure 12: The e ffective elastic coe fficient ( c33,e f f) of cell structure-1 (CS-1) and cell structure-2 (CS-2) as a function of the number
+of microtubules considering only the piezoelectric e ffect (P) and for combined piezoelectric-flexoelectric (P +F) effects are plotted
+against the compressive displacement at 20 nm for (a) BC-1, (b) BC-2, and (c) BC-3.
+When applying compressive displacement to all sides of the cell except the bottom, c11,e f fshows a
+declining trend as the number of microtubules increases from 2 to 6 for CS-1, as depicted in Figure 10(b).
+Nevertheless, it experiences a sharp surge at 10 microtubules, followed by a subsequent decrease. However,
+unlike CS-1, CS-2 is displaying a distinct pattern. c13,e f fis greater for CS-1 when compared to CS-2,
+as illustrated by Figure 11(b). The value of c13,e f fremains unchanged as the number of microtubules
+increases from 2 to 6. However, there is a dramatic decrease in c13,e f fthereafter, followed by a period of
+no apparent variation. When subjecting the cell to compressive displacement on all sides, it is evident from
+23Figure 12(b) that c33increases as the number of microtubules grows for CS-2. However, the e ffective c33
+coefficient exhibits minimal fluctuation for CS-1.
+When the cell is subjected to compressive displacement on all sides (BC-3), it is clear that c11,e f fis
+greater for CS-2 compared to CS-1, particularly for up to 4 microtubules, as shown in Figure 10(c). The
+effective value of c11,e f fshows a declining pattern in CS-2. This drop is noticed when the number of
+microtubules is increased from 4 to 6. Moreover, the e ffective value of c11,e f fconverges to a comparable
+value to that of CS-1 when the number of microtubules surpasses 10. c13,e f fvalue is lower for CS-2
+compared to CS-1, particularly for microtubule numbers up to 10, as seen in Figure 11(c). Afterwards, the
+value of c13,e f fapproaches convergence with that of CS-1 when considering the number of microtubules
+beyond 10. c33,e f fvalue for CS-2 is lower than that of CS-1, particularly for 6 microtubules, as shown in
+Figure 12(c). However, it approaches the value of CS-1 when considering 6 microtubules. Furthermore,
+as the number of microtubules reaches 10, there is a noticeable and quick increase in the e ffective value of
+c33,e f ffor CS-1.
+Calculating e ffective elastic coe fficients helps understand biological cell mechanical behavior. For
+instance, cell organelles have a non-uniform distribution, with osteoblasts having cellular elasticity in the
+cytoplasmic skirt [115–117].
+3.4. Determination of the e ffective piezoelectric coe fficients
+The presence of piezoelectric inclusions, such as the number of microtubules, significantly impacts the
+effective elastic moduli of cell structures. The e ffective piezoelectric coe fficients are calculated by dividing
+the average values of the strain component and the electric flux density vector component, i.e., e31,e f f=
+⟨D3⟩
+ε11,e33,e f f=⟨D3⟩
+ε33.
+3.4.1. Consideration of only the piezoelectric e ffect and the combination of piezoelectric-flexoelectric
+effects
+Figure 13 displays the e ffective piezoelectric coe fficient ( e31,e f f) within the cell for piezoelectrici e ffect
+alone and the combination of piezoelectric and flexoelectric e ffects, i.e., applying mechanical strain in the
+x3-direction causes a piezoelectric reaction, specifically the production of e31,e f fin the x1-direction [37].
+For BC-1, it can be observed that e31,e f fdisplays similar trends for both cell structures (CS-1 and
+CS-2), encompassing both the piezoelectric and flexoelectric phenomena, as depicted in Figure 13(a).
+Therefore, the impact of flexoelectricity is insignificant. This phenomenon is caused by the alignment of
+the microtubules in response to mechanical tension exerted on the top portion of the cell. When it comes to
+BC-2, the e ffective value of e31,e f fis higher for CS-2 when compared to CS-1, as depicted in Figure 13(b).
+The negative values of e31,e f fin CS-1 are a result of the compressive stresses in x1and x3
+directions caused by the mechanical stress on three sides of the cell when the bottom side is electrically
+grounded. Therefore, e31,e f fis yielding negative values for CS-1. For BC-3, when comparing CS-2 to
+CS-1, the value of e31,e f fshows a trend toward decline with respect to up to four microtubules. This
+observation relates to the occurrence of piezoelectricity and flexoelectricity. Afterwards, the value of
+e31,e f fshows an increasing pattern and approaches the value of CS-1, as shown in Figure 13(c).
+The e ffective coe fficient e33,e f fis calculated for the applied mechanical strain that induces piezoelectric
+effect in the x3-direction, as shown in Figure 14. It can be observed from Figures 14(a)-(b) that e33,e f fis
+higher for CS-2 than CS-1. This observation holds true for both the piezoelectric and flexoelectric e ffects in
+BC-1 and BC-2. Both CS-1 and CS-2 exhibit similar trends for the values of e33,e f f. In BC-3, the value of
+e33,e f fremains constant for both the piezoelectric and flexoelectric e ffects until the number of microtubules
+reaches 10, as depicted in Figure 14(c), after which it exhibits a significant decrease.
+24NMT (-)e31,eff (×10-5, C/m2)
+0 5 10 15 20246810121416
+CS-1, P
+CS-2, PCS-1, P+FCS-2, P+FBC-1(a) BC-1
+0 5 10 15 20­1.8E­06­1.75E­06­1.7E­06­1.65E­06­1.6E­06­1.55E­06­1.5E­06
+NMT (­)e31,eff (×106, C/m2)
+0 5 10 15 20­2.5­2­1.5­1­0.500.5
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­2
+0 5 10 15 20­1.8E­06­1.75E­06­1.7E­06­1.65E­06­1.6E­06­1.55E­06­1.5E­06 (b) BC-2
+NMT (­)e31,eff (×106, C/m2)
+0 5 10 15 20­202468
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­3
+0 5 10 15 20­2E­07­1.5E­07­1E­07­5E­08
+(c) BC-3
+Figure 13: The e ffective piezoelectric coe fficient ( e31,e f f) of cell structure-1 (CS-1) and cell structure-2 (CS-2) as a function of the
+number of microtubules considering only the piezoelectric e ffect (P) and for combined piezoelectric-flexoelectric (P +F) effects are
+plotted against the compressive displacement at 20 nm for (a) BC-1, (b) BC-2, and (c) BC-3.
+3.4.2. Influence of the organelle’s shapes and orientations on the e ffective piezoelectric coe fficients
+The e ffective piezoelectric coe fficient, e31,e f f, has been analyzed under three di fferent applied boundary
+conditions (BC-1 to BC-3) as a function of the number of microtubules. Despite the symmetry in the shape
+of the microtubules, the cell structures exhibit di fferent values of e31,e f fdue to the curved edges at the
+surfaces.
+In the case of BC-1, e31,e f finitially decreases as the number of microtubules increases from 2 to 6,
+as shown in Figure 13(a). However, it subsequently undergoes a significant increase when the number of
+25NMT (­)e33,eff (×10­5, C/m2)
+0 5 10 15 20­9­8­7­6­5­4­3­2­1
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­1(a) BC-1
+NMT (­)e33,eff (×10­5, C/m2)
+0 5 10 15 20­65­60­55­50
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­2 (b) BC-2
+NMT (­)e33,eff (×106, C/m2)
+0 5 10 15 20­4­3­2­1012
+CS­1, P
+CS­2, P
+CS­1, P+F
+CS­2, P+FBC­3
+0 5 10 15 20­0.1­0.0500.050.1
+(c) BC-3
+Figure 14: The e ffective piezoelectric coe fficient ( e33,e f f) of cell structure-1 (CS-1) and cell structure-2 (CS-2) as a function of the
+number of microtubules considering only the piezoelectric e ffect (P) and for combined piezoelectric-flexoelectric (P +F) effects are
+plotted against the compressive displacement at 20 nm for (a) BC-1, (b) BC-2, and (c) BC-3.
+microtubules reaches 10. This phenomenon is caused by the alignment of the microtubules in response
+to mechanical displacement exerted on the top portion of the cell. From the analysis of Figure 14(a), it is
+evident that there is an increase in e33,e f ffor both CS-1 and CS-2 as the number of microtubules is increased
+from 2 to 6. e33,e f fdecreases when it transitions from microtubules 6 to 10. Both CS-1 and CS-2 display
+comparable patterns in terms of the quantity of microtubules for the values of e33,e f f.
+When it comes to BC-2, the value of e31,e f fshows no variation regardless of the number of microtubules
+in cell structure-2, as depicted in Figure 13(b). Figure 14b indicates that there is a rise in e33,e f ffor both
+26CS-1 and CS-2 when the number of microtubules is raised from 2 to 6 for BC-2. The value of e31,e f fshows
+an increasing pattern and approaches the value of CS-1 when the number of microtubules exceeds 10, as
+shown in Figure 13(c). This behaviour has been caused by the orientation of the microtubules. Moreover,
+the stress is exerted uniformly on all sides of the cell, leading to no strain gradient. e33,e f fconsistent for the
+number of microtubules increases from 2 to 10; beyond that, it experiences a notable reduction, as shown
+in Figure 14(c).
+In summary, a linearly coupled electromechanical model has been developed to quantify cellular
+mechanics under external mechanical displacement, considering piezoelectric and nonlocal flexoelectric
+effects. The present model assumes that living cells are linear elastic, which provides the first step in the
+analysis [91, 118]. Living cells are visco-elastic, and incorporating dynamic analysis addinto a
+three-dimensional study could provide more realistic responses with variable shapes of the organelles and
+cell structures [119]. Future extensions could also include cellular tensegrity models, which account for
+individual components of the cytoskeleton using discrete beam or truss elements [120, 121]. Clearly, in
+realistic scenarios, the electro-elastic properties of biological cells are not uniform and exhibit di fferent
+qualities in all directions. To capture the intricacies of these phenomena, more sophisticated multiscale
+modelling methodologies would need to be developed [104, 122]. Despite limitations, the developed
+coupled electromechanical model is an important initial model that incorporates piezoelectric and
+flexoelectric e ffects within the biological cell. Comparative analysis of the predicted outcomes could help
+understand the complex electromechanical response of biological cells and assist in the design of
+electromechanical devices for various medical applications.
+4. Conclusions
+The presented study has explored a two-dimensional conceptual framework of the biological cell for two
+different structures, encompassing many essential organelles that experience distinct mechanical loading
+conditions originating from the external environment. The impact of incorporating flexoelectric coupling
+into the electromechanical model is significantly more prominent than that of solely introducing
+piezoelectric coupling. The cell structures used in the present study are classified into two categories:
+regular and arbitrary shapes. Understanding cell mechanics is highly dependent on these structures and the
+boundary conditions since they play a significant role in influencing cell behaviour and associated
+stimulation. A parametric analysis revealed that cell structures with regular shapes of the organelles
+generate a higher maximum electric potential when combined with piezoelectric and flexoelectric e ffects;
+this indicates that there are more microtubules in the cellular structure. The mechanical and piezoelectric
+responses of the cell under three distinct boundary conditions have been elucidated with the help of the
+effective elastic and piezoelectric coe fficients. Cell structures show that the presence of piezoelectric
+inclusions, specifically microtubules, significantly a ffects e ffective elastic moduli, leading to increased
+effective moduli. The number of microtubules significantly influences the e ffective elastic coe fficients and
+piezoelectric coe fficients, both with and without considering the piezoelectric properties, due to the
+dependence of the behaviour of cells on their structure, the orientation of the microtubules, and the
+direction of mechanical stress. Microtubule number, orientation, and loading conditions significantly
+impact cell mechanics, predicting increased electromechanical e ffects. These findings have practical
+applications in the development of biocompatible nano-biosensors, drug delivery systems, noninvasive
+diagnostic techniques, and therapeutic approaches where the properties of biological cells need to be better
+understood.
+27Acknowledgments
+The authors are grateful to the NSERC and the CRC Program (Canada) for their support. This research was
+enabled in part by support provided by SHARCNET (www.sharcnet.ca) and Digital Research Alliance of
+Canada (www.alliancecan.ca).
+Appendix A. Mesh Independence analysis
+The precision of numerical solutions is contingent upon the specific mesh employed to discretize the
+governing equations and boundary conditions. As the mesh size decreases and tends to zero within its
+optimal limits, the accuracy of the solutions improves, but the computational cost increases. The degree of
+freedom needed for model computation significantly impacts time and memory use. It is typically
+advantageous to estimate the degrees of freedom by considering the number of mesh elements in the
+model. Hence, a mesh independence analysis has been performed on CS-2 over the entire computational
+domain using a non-uniform triangular mesh to evaluate the trade-o ffbetween the accuracy of the solution
+and computational cost.
+Table A1 presents pertinent data regarding the quantity of elements, degrees of freedom, and the
+maximum electric field intensity within the cell. The present study has noted an increase in the
+computational cost as a result of the irregular structure of the microtubules and shapes of the mitochondria.
+This ultimately leads to an increase in both the number of elements and the degrees of freedom, as
+depicted in Figure A1. The trend observed is that the maximum electric field intensity value exhibits an
+increasing pattern as the number of elements increases up to 1650073. After that, the changes in the
+solution are negligible in terms of the maximum electric field intensity and relative percentage error. For
+instance, at 1653103 elements, and the maximum electric field intensity value is 5.887 V /m, with a relative
+percentage error of 0.0033. Therefore, in order to optimize computational e fforts and cost, the total
+number of elements selected and all subsequent results presented in this work have been given for 1653103
+elements and the degrees of freedom, 10817040. The mesh independence analysis for CS-1 has been
+conducted in a separate study [58].
+Table A1: Details of the mesh independence analysis.
+S.No. Number of
+elementsDegrees of
+freedomMaximum electric field
+intensity (log( V/m))Relative % error
+1 1149649 7489668 5.9160 -
+2 1183564 7691148 5.9115 0.0761
+3 1261426 8183232 5.9106 0.0152
+4 1622430 10632984 5.9059 0.0795
+5 1643463 10759200 5.8969 0.1526
+6 1646619 10778136 5.8906 0.1069
+7 1650073 10798860 5.8889 0.0288
+8 1653103 10817040 5.8887 0.0033
+9 1657046 10840704 5.8858 0.0492
+10 1660121 10859160 5.8841 0.0288
+11 1664968 10888236 5.8840 0.0016
+28Number of elementsMaximum electric field intensity (log (V/m))
+DoF
+1.0x10+061.2x10+061.4x10+061.6x10+061.8x10+065.885.895.95.915.925.93
+7.0x10+068.0x10+069.0x10+061.0x10+071.1x10+07
+EF
+DoFFigure A1: The relationship between the total number of elements and the electric field intensity, as well as the degrees of freedom
+(DoF).
+References
+[1] Q. Wang, H. Cheng, H. Peng, H. Zhou, P. Y . Li, R. Langer, Non-genetic engineering of cells for drug delivery and cell-based
+therapy, Advanced Drug Delivery Reviews 91 (2015) 125–140.
+[2] S. Tang, Z. Davoudi, G. Wang, Z. Xu, T. Rehman, A. Prominski, B. Tian, K. M. Bratlie, H. Peng, Q. Wang, Soft materials
+as biological and artificial membranes, Chemical Society Reviews 50 (22) (2021) 12679–12701.
+[3] J. Holy, Structure and function of cell organelles, in: S. A. Krawetz, D. D. Womble (Eds.), Introduction to bioinformatics:
+A theoretical and practical approach, Humana Press, 2003, pp. 25–54.
+[4] R. Link, K. Weißenbruch, M. Tanaka, M. Bastmeyer, U. S. Schwarz, Cell shape and forces in elastic and structured
+environments: From single cells to organoids, Advanced Functional Materials (2023) 2302145.
+[5] F. Basoli, S. M. Giannitelli, M. Gori, P. Mozetic, A. Bonfanti, M. Trombetta, A. Rainer, Biomechanical characterization at
+the cell scale: present and prospects, Frontiers in Physiology 9 (2018) 1449.
+[6] Zhang, Ming and Assouline, Jose G., Cilia containing 9 +2 structures grown from immortalized cells, Cell Research 17 (6)
+(2007) 537–545.
+[7] Lin, Jianfeng and Heuser, Thomas and Song, Kangkang and Fu, Xiaofeng and Nicastro, Daniela, One of the nine doublet
+microtubules of eukaryotic flagella exhibits unique and partially conserved structures, PLOS ONE 7 (10) (2012) e46494.
+[8] Hoyer-Fender, Sigrid, Primary and motile cilia: Their ultrastructure and ciliogenesis, in: K. L. Tucker, T. Caspary (Eds.),
+Cilia and nervous system development and function, Springer Netherlands, 2013, pp. 1–53.
+[9] A. R. Fenton, T. A. Jongens, E. L. F. Holzbaur, Mitochondrial dynamics: Shaping and remodeling an organelle network,
+Current Opinion in Cell Biology 68 (2021) 28–36.
+[10] S. R. Chada, P. J. Hollenbeck, Nerve growth factor signaling regulates motility and docking of axonal mitochondria, Current
+Biology 14 (14) (2004) 1272–1276.
+[11] A. Gutnick, M. R. Banghart, E. R. West, T. L. Schwarz, The light-sensitive dimerizer zapalog reveals distinct modes of
+immobilization for axonal mitochondria, Nature Cell Biology 21 (6) (2019) 768–777.
+29[12] S. E. Cason, E. L. F. Holzbaur, Selective motor activation in organelle transport along axons, Nature Reviews Molecular
+Cell Biology 23 (11) (2022) 699–714.
+[13] R. Rodr ´ıguez-Garc ´ıa, V . A. V olkov, C.-Y . Chen, E. A. Katrukha, N. Olieric, A. Aher, I. Grigoriev, M. P. L ´opez, M. O.
+Steinmetz, L. C. Kapitein, G. Koenderink, M. Dogterom, A. Akhmanova, Mechanisms of motor-independent membrane
+remodeling driven by dynamic microtubules, Current Biology 30 (6) (2020) 972–987.
+[14] N. B. Gudimchuk, J. R. McIntosh, Regulation of microtubule dynamics, mechanics and function through the growing tip,
+Nature Reviews Molecular Cell Biology 22 (12) (2021) 777–795.
+[15] N. B. Gudimchuk, V . V . Alexandrova, Measuring and modeling forces generated by microtubules, Biophysical Reviews
+15 (5) (2023) 1095–1110.
+[16] J. A. Tuszynski, D. Friesen, H. Freedman, V . I. Sbitnev, H. Kim, I. Santelices, A. P. Kalra, S. D. Patel, K. Shankar, L. O.
+Chua, Microtubules as sub-cellular memristors, Scientific Reports 10 (1) (2020) 2108.
+[17] E. Kummer, N. Ban, Mechanisms and regulation of protein synthesis in mitochondria, Nature Reviews Molecular Cell
+Biology 22 (5) (2021) 307–325.
+[18] S. Li, C. Wang, P. Nithiarasu, Three-dimensional transverse vibration of microtubules, Journal of Applied Physics 121 (23)
+(2017).
+[19] S. Setayandeh, A. Lohrasebi, Multi scale modeling of 2450mhz electric field e ffects on microtubule mechanical properties,
+Journal of Molecular Graphics and Modelling 70 (2016) 122–128.
+[20] T. Ishikawa, Axoneme structure from motile cilia, Cold Spring Harbor Perspectives in Biology 9 (1) (2017).
+[21] de Souza, Wanderley and Attias, Marcia, Subpellicular microtubules in apicomplexa and trypanosomatids, in: W. de Souza
+(Ed.), Structures and organelles in pathogenic protists, Springer Berlin Heidelberg, 2010, pp. 27–62.
+[22] I. Mollaret, J.-L. Justine, Immunocytochemical study of tubulin in the 9 +‘1’ sperm axoneme of a monogenean
+(platyhelminthes), pseudodactylogyrus sp., Tissue and Cell 29 (6) (1997) 699–706.
+[23] A. Bezler, A. Woglar, F. Schneider, F. Douma, L. B ¨urgy, C. Busso, P. G ¨onczy, Atypical and distinct microtubule radial
+symmetries in the centriole and the axoneme of lecudina tuzetae, Molecular Biology of the Cell 33 (8) (2022) ar75.
+[24] D. R. Roggen, D. J. Raski, N. O. Jones, Cilia in nematode sensory organs, Science 152 (3721) (1966) 515–516.
+[25] B. van Deurs, Axonemal 12 +0 pattern in the flagellum of the motile spermatozoon of nymphon leptocheles, Journal of
+Ultrastructure Research 42 (5) (1973) 594–598.
+[26] R. Dallai, L. Xu ´e, W.-Y . Yin, Flagellate spermatozoa of protura (insecta, apterygota) are motile, International Journal of
+Insect Morphology and Embryology 21 (2) (1992) 137–148.
+[27] B. Spreng, H. Fleckenstein, P. K ¨ubler, C. Di Biagio, M. Benz, P. Patra, U. S. Schwarz, M. Cyrkla ff, F. Frischknecht,
+Microtubule number and length determine cellular shape and function in plasmodium, The EMBO Journal 38 (15) (2019)
+e100984.
+[28] J. L. Ferreira, V . Pra ˇz´ak, D. Vasishtan, M. Siggel, F. Hentzschel, A. M. Binder, E. Pietsch, J. Kosinski, F. Frischknecht, T. W.
+Gilberger, K. Gr ¨unewald, Variable microtubule architecture in the malaria parasite, Nature Communications 14 (1) (2023)
+1216.
+[29] L. Guolla, M. Bertrand, K. Haase, A. E. Pelling, Force transduction and strain dynamics in actin stress fibres in response to
+nanonewton forces, Journal of Cell Science 125 (3) (2012) 603–613.
+[30] C. Liu, S. Hu, S. Shen, E ffect of flexoelectricity on electrostatic potential in a bent piezoelectric nanowire, Smart Materials
+and Structures 21 (11) (2012) 115024.
+[31] W. Yang, X. Liang, S. Shen, Electromechanical responses of piezoelectric nanoplates with flexoelectricity, Acta Mechanica
+226 (9) (2015) 3097–3110.
+[32] Y . S. Joshan, S. Santapuri, A gradient electromechanical theory for thin dielectric curved beams considering direct and
+converse flexoelectric e ffects, Zeitschrift f ¨ur angewandte Mathematik und Physik 73 (5) (2022) 178.
+[33] L. M. Thai, D. T. Luat, V . B. Phung, P. V . Minh, D. V . Thom, Finite element modeling of mechanical behaviors of
+piezoelectric nanoplates with flexoelectric e ffects, Archive of Applied Mechanics 92 (1) (2022) 163–182.
+[34] X. Wang, Y . Xue, Investigation of the electric response of the piezoelectric curved beam considering the direct piezoelectric
+and flexoelectric e ffects, Thin-Walled Structures 188 (2023) 110839.
+[35] Y . Iwao, Electrical callus and callus formation by electret., Clinical Orthopaedics and Related Research (1976-2007) 124
+(1977).
+[36] E. Fukada, Piezoelectricity of wood, Journal of the Physical Society of Japan 10 (2) (1955) 149–154.
+[37] E. Fukada, I. Yasuda, On the piezoelectric e ffect of bone, Journal of the physical society of Japan 12 (10) (1957) 1158–1162.
+[38] E. Fukada, I. Yasuda, Piezoelectric e ffects in collagen, Japanese Journal of Applied Physics 3 (2) (1964) 117.
+[39] E. Fukada, Piezoelectricity as a fundamental property of wood, Wood Science and Technology 2 (1968) 299–307.
+[40] E. Fukada, Piezoelectric properties of biological polymers, Quarterly reviews of biophysics 16 (1) (1983) 59–87.
+[41] E. Fukada, History and recent progress in piezoelectric polymers, IEEE Transactions on ultrasonics, ferroelectrics, and
+frequency control 47 (6) (2000) 1277–1290.
+30[42] I. Chae, C. K. Jeong, Z. Ounaies, S. H. Kim, Review on electromechanical coupling properties of biomaterials, ACS Applied
+Bio Materials 1 (4) (2018) 936–953.
+[43] M. Shamos, L. Lavine, Piezoelectricity as a fundamental property of biological tissues, Nature 213 (5073) (1967) 267–269.
+[44] J. C. Anderson, C. Eriksson, Piezoelectric properties of dry and wet bone, Nature 227 (5257) (1970) 491–492.
+[45] D. A. Fletcher, R. D. Mullins, Cell mechanics and the cytoskeleton, Nature 463 (7280) (2010) 485–492.
+[46] L. He, J. Lou, A. Zhang, H. Wu, J. Du, J. Wang, On the coupling e ffects of piezoelectricity and flexoelectricity in
+piezoelectric nanostructures, AIP Advances 7 (10) (2017) 105106.
+[47] Y . Lun, H. Zhou, D. Yao, X. Wang, J. Hong, Screening piezoelectricity in determination of flexoelectric coe fficient at
+nanoscale, Mechanics of Materials 150 (2020) 103591.
+[48] H. Atef, A. El-Dhaba, Modeling the flexoelectric e ffect via the reduced micromorphic model, Composite Structures 290
+(2022) 115504.
+[49] S. K. Rout, S. Kapuria, A flexoelectric actuator model with shear-lag and peel stress e ffects, Proceedings of the Royal
+Society A: Mathematical, Physical and Engineering Sciences 479 (2273) (2023) 20230099.
+[50] Q. Deng, L. Liu, P. Sharma, Flexoelectricity in soft materials and biological membranes, Journal of the Mechanics and
+Physics of Solids 62 (2014) 209–227.
+[51] F. Deng, Q. Deng, W. Yu, S. Shen, Mixed finite elements for flexoelectric solids, Journal of Applied Mechanics 84 (8)
+(2017).
+[52] A. Abdollahi, N. Domingo, I. Arias, G. Catalan, Converse flexoelectricity yields large piezoresponse force microscopy
+signals in non-piezoelectric materials, Nature Communications 10 (1) (2019) 1266.
+[53] T. D. Nguyen, S. Mao, Y .-W. Yeh, P. K. Purohit, M. C. McAlpine, Nanoscale flexoelectricity, Advanced Materials 25 (7)
+(2013) 946–974.
+[54] Zhang, Rui and Gu, Lusheng and Chen, Wei and Tanaka, Nobutoshi and Zhou, Zhengrong and Xu, Honglin and Xu, Tao and
+Ji, Wei and Liang, Xin and Meng, Wenxiang, CAMSAP2 and CAMSAP3 localize at microtubule intersections to regulate
+the spatial distribution of microtubules, Journal of Molecular Cell Biology (2023) mjad050.
+[55] Kobori, Mako and Abe, Junya and Saito, Reika and Hirai, Yohei, CAMSAP3, a microtubule orientation regulator, plays
+a vital role in manifesting di fferentiation-dependent characteristics in keratinocytes, Experimental Cell Research 435 (1)
+(2024) 113927.
+[56] R. Connie, W. Robert, J. Vladimir, D. Jean, C. Jung, A. Yael, Biology, OpenStax, Houston, Texas, 2016.
+[57] R. S. Natasha, Introduction to biology, Creative Commons Attribution 4.0 International License, 2016, Ch. 3.2 Comparing
+prokaryotic and eukaryotic cells.
+[58] S. Singh, J. A. Krishnaswamy, R. Melnik, Biological cells and coupled electro-mechanical e ffects: The role of organelles,
+microtubules, and nonlocal contributions, Journal of the Mechanical Behavior of Biomedical Materials 110 (2020) 103859.
+[59] A. Uzman, Molecular biology of the cell (4th ed.): Alberts, B., Johnson, A., Lewis, J., Ra ff, M., Roberts, K., and Walter, P.,
+Biochemistry and Molecular Biology Education 31 (4) (2003) 212–214.
+[60] N. Parker, M. Schneegurt, A. H. T. Tu, B. M. Forster, P. Lister, Microbiology, Open Textbook Library, OpenStax, 2017.
+[61] Y . Tange, A. Hirata, O. Niwa, An evolutionarily conserved fission yeast protein, ned1, implicated in normal nuclear
+morphology and chromosome stability, interacts with dis3, pim1 /rcc1 and an essential nucleoporin, Journal of Cell Science
+115 (22) (2002) 4375–4385.
+[62] H. Norppa, G. C.-M. Falck, What do human micronuclei contain?, Mutagenesis 18 (3) (2003) 221–233.
+[63] R. D. Goldman, D. K. Shumaker, M. R. Erdos, M. Eriksson, A. E. Goldman, L. B. Gordon, Y . Gruenbaum, S. Khuon,
+M. Mendez, R. Varga, F. S. Collins, Accumulation of mutant lamin a causes progressive changes in nuclear architecture in
+hutchinson–gilford progeria syndrome, Proceedings of the National Academy of Sciences 101 (24) (2004) 8963–8968.
+[64] M. Webster, K. L. Witkin, O. Cohen-Fix, Sizing up the nucleus: nuclear shape, size and nuclear-envelope assembly, Journal
+of Cell Science 122 (10) (2009) 1477–1486.
+[65] S. B. Khatau, S. Kusuma, D. Hanjaya-Putra, P. Mali, L. Cheng, J. S. H. Lee, S. Gerecht, D. Wirtz, The di fferential formation
+of the linc-mediated perinuclear actin cap in pluripotent and somatic cells, PLOS ONE 7 (5) (2012) 1–12.
+[66] C. A. Mannella, The relevance of mitochondrial membrane topology to mitochondrial function, Biochimica et Biophysica
+Acta (BBA) - Molecular Basis of Disease 1762 (2) (2006) 140–147.
+[67] J. C. Bozelli, R. M. Epand, Membrane shape and the regulation of biological processes, Journal of Molecular Biology
+432 (18) (2020) 5124–5136.
+[68] M. R. Kalt, Mitochondrial pleiomorphism in sustentacular cells of xenopus laevis, The Anatomical Record 182 (1) (1975)
+53–60.
+[69] P. Paumard, J. Vaillier, B. Coulary, J. Schae ffer, V . Soubannier, D. M. Mueller, D. Br `ethes, J.-P. di Rago, J. Velours, The atp
+synthase is involved in generating mitochondrial cristae morphology, The EMBO Journal 21 (3) (2002) 221–230.
+[70] J. Velours, A. Dautant, B. Salin, I. Sagot, D. Br `ethes, Mitochondrial f1f0-atp synthase and organellar internal architecture,
+The International Journal of Biochemistry & Cell Biology 41 (10) (2009) 1783–1789.
+31[71] A. Vaziri, A. Gopinath, Cell and biomolecular mechanics in silico, Nature Materials 7 (1) (2008) 15–23.
+[72] R. Connie, W. Robert, J. Vladimir, D. Jean, C. Jung, A. Yael, Biology, OpenStax, Houston, Texas, 2016.
+[73] O. Moujaber, U. Stochaj, The cytoskeleton as regulator of cell signaling pathways, Trends in Biochemical Sciences 45 (2)
+(2020) 96–107.
+[74] G. Ofek, D. C. Wiltz, K. A. Athanasiou, Contribution of the cytoskeleton to the compressive properties and recovery
+behavior of single cells, Biophysical Journal 97 (7) (2009) 1873–1882.
+[75] G. M. Cooper, The cell: A molecular approach. 2nd edition, Sinauer Associates, 2000.
+[76] D. R. Katti, K. S. Katti, Cancer cell mechanics with altered cytoskeletal behavior and substrate e ffects: A 3D finite element
+modeling study, Journal of the Mechanical Behavior of Biomedical Materials 76 (2017) 125–134.
+[77] T. R. Gowrishankar, A. T. Esser, Z. Vasilkoski, K. C. Smith, J. C. Weaver, Microdosimetry for conventional and supra-
+electroporation in cells with organelles, Biochemical and Biophysical Research Communications 341 (4) (2006) 1266–1276.
+[78] P. K. Tiwari, S. K. Kang, G. J. Kim, J. Choi, A.-A. H. Mohamed, J. K. Lee, Modeling of nanoparticle-mediated electric field
+enhancement inside biological cells exposed to AC electric fields, Japanese Journal of Applied Physics 48 (2009) 087001.
+[79] Y . Li, S. Honda, K. Iwami, Y . Ohta, N. Umeda, Analysis of mitochondrial mechanical dynamics using a confocal
+fluorescence microscope with a bent optical fibre, Journal of Microscopy 260 (2) (2015) 140–151.
+[80] S. Barreto, C. H. Clausen, C. M. Perrault, D. A. Fletcher, D. Lacroix, A multi-structural single cell model of force-induced
+interactions of cytoskeletal components, Biomaterials 34 (26) (2013) 6119–6126.
+[81] F. Pampaloni, E.-L. Florin, Microtubule architecture: inspiration for novel carbon nanotube-based biomimetic materials,
+Trends in Biotechnology 26 (6) (2008) 302–310.
+[82] D. E. Ingber, S. R. Heidemann, P. Lamoureux, R. E. Buxbaum, Opposing views on tensegrity as a structural framework for
+understanding cell mechanics, Journal of Applied Physiology 89 (4) (2000) 1663–1678.
+[83] J. Stricker, T. Falzone, M. L. Gardel, Mechanics of the F-actin cytoskeleton, Journal of Biomechanics 43 (1) (2010) 9–14.
+[84] J. A. Krishnaswamy, F. C. Buroni, F. Garcia-Sanchez, R. Melnik, L. Rodriguez-Tembleque, A. Saez, Lead-free
+piezocomposites with CNT-modified matrices: Accounting for agglomerations and molecular defects, Composite Structures
+224 (2019) 111033.
+[85] J. A. Krishnaswamy, F. C. Buroni, E. Garc ´ıa-Mac ´ıas, R. Melnik, L. Rodriguez-Tembleque, A. Saez, Design of lead-
+free pvdf /cnt/batio3 piezocomposites for sensing and energy harvesting: the role of polycrystallinity, nanoadditives, and
+anisotropy, Smart Materials and Structures 29 (1) (2019) 015021.
+[86] J. A. Krishnaswamy, F. C. Buroni, F. Garcia-Sanchez, R. Melnik, L. Rodriguez-Tembleque, A. Saez, Improving the
+performance of lead-free piezoelectric composites by using polycrystalline inclusions and tuning the dielectric matrix
+environment, Smart Materials and Structures 28 (7) (2019) 075032.
+[87] de Garcini, E. Montejo and Carrascosa, J. L. and Nieto, A. and Avila, J., Collagenous structures present in brain contain
+epitopes shared by collagen and microtubule-associated protein tau, Journal of Structural Biology 103 (1) (1990) 34–39.
+[88] A. Kushagra, Thermal fluctuation induced piezoelectric e ffect in cytoskeletal microtubules: Model for energy harvesting
+and their intracellular communication, Journal of Biomedical Science and Engineering 8 (2015) 511–519.
+[89] D. Denning, J. I. Kilpatrick, E. Fukada, N. Zhang, S. Habelitz, A. Fertala, M. D. Gilchrist, Y . Zhang, S. A. M. Tofail, B. J.
+Rodriguez, Piezoelectric tensor of collagen fibrils determined at the nanoscale, ACS Biomaterials Science & Engineering
+3 (6) (2017) 929–935.
+[90] P. D. Garcia, R. Garcia, Determination of the elastic moduli of a single cell cultured on a rigid support by force microscopy,
+Biophysical Journal 114 (12) (2018) 2923–2932.
+[91] P. D. Garcia, R. Garcia, Determination of the viscoelastic properties of a single cell cultured on a rigid support by force
+microscopy, Nanoscale 10 (42) (2018) 19799–19809.
+[92] M. Li, L. Liu, X. Xu, X. Xing, D. Dang, N. Xi, Y . Wang, Nanoscale characterization of dynamic cellular viscoelasticity
+by atomic force microscopy with varying measurement parameters, Journal of the Mechanical Behavior of Biomedical
+Materials 82 (2018) 193–201.
+[93] S. Marcotti, G. C. Reilly, D. Lacroix, E ffect of cell sample size in atomic force microscopy nanoindentation, Journal of the
+Mechanical Behavior of Biomedical Materials 94 (2019) 259–266.
+[94] Nakamura, Tsukasa and Takata, Mineaki and Michimoto, Itsuki and Koyama, Daisuke and Matsukawa, Mami, Site
+dependence of ultrasonically induced electrical potentials in bone, JASA Express Letters 1 (1) (2021) 012002.
+[95] Z. L. Wang, Nanopiezotronics, Advanced Materials 19 (6) (2007) 889–892.
+[96] J. Tich `y, J. Erhart, E. Kittinger, J. Privratska, Fundamentals of piezoelectric sensorics: mechanical, dielectric, and
+thermodynamical properties of piezoelectric materials, Springer Science & Business Media, 2010.
+[97] C. Zhang, W. Wang, X. Hao, Y . Peng, Y . Zheng, J. Liu, Y . Kang, F. Zhao, Z. Luo, J. Guo, B. Xu, L. Shao, G. Li, A novel
+approach to enhance bone regeneration by controlling the polarity of gan /algan heterostructures, Advanced Functional
+Materials 31 (5) (2021) 2007487.
+[98] C. Yang, J. Ji, Y . Lv, Z. Li, D. Luo, Application of piezoelectric material and devices in bone regeneration, Nanomaterials
+3212 (24) (2022).
+[99] Berger, Harald and Kari, Sreedhar and Gabbert, Ulrich and Rodriguez-Ramos, Reinaldo and Guinovart, Raul and Otero,
+Jose A. and Bravo-Castillero, Julian, An analytical and numerical approach for calculating e ffective material coe fficients of
+piezoelectric fiber composites, International Journal of Solids and Structures 42 (21) (2005) 5692–5714.
+[100] Dascalescu, Lucian and Qin, Ri-Song and Xiao, Yi and Lan, Haitian, Numerical simulation of e ffective properties of 3D
+piezoelectric composites, Journal of Engineering 2014 (2014) 824806.
+[101] Saputra, Albert Artha and Sladek, Vladimir and Sladek, Jan and Song, Chongmin, Micromechanics determination of
+effective material coe fficients of cement-based piezoelectric ceramic composites, Journal of Intelligent Material Systems
+and Structures 29 (5) (2017) 845–862.
+[102] Hamdia, Khader M., A representative volume element model to evaluate the e ffective properties of flexoelectric
+nanocomposite, European Journal of Mechanics - A /Solids 103 (2024) 105149.
+[103] I. Titushkin, M. Cho, Regulation of cell cytoskeleton and membrane mechanics by electric field: Role of linker proteins,
+Biophysical Journal 96 (2) (2009) 717–728.
+[104] Z. Schofield, G. N. Meloni, P. Tran, C. Zerfass, G. Sena, Y . Hayashi, M. Grant, S. A. Contera, S. D. Minteer, M. Kim,
+A. Prindle, P. Rocha, M. B. A. Djamgoz, T. Pilizota, P. R. Unwin, M. Asally, O. S. Soyer, Bioelectrical understanding and
+engineering of cell biology, Journal of The Royal Society Interface 17 (166) (2020) 20200013.
+[105] G. H. Markx, The use of electric fields in tissue engineering, Organogenesis 4 (1) (2008) 11–17.
+[106] Chen, Cen and Bai, Xue and Ding, Yahui and Lee, In-Seop, Electrical stimulation as a novel tool for regulating cell behavior
+in tissue engineering, Biomaterials Research 23 (1) (2019) 25.
+[107] K. J. B ¨ohm, N. E. Mavromatos, A. Michette, R. Stracke, E. Unger, Movement and alignment of microtubules in electric
+fields and electric-dipole-moment estimates, Electromagnetic Biology and Medicine 24 (3) (2005) 319–330.
+[108] Antebi, Ben and Cheng, Xingguo and Harris, Je ffrey N. and Gower, Laurie B. and Chen, Xiao-Dong and Ling, Jian,
+Biomimetic collagen-hydroxyapatite composite fabricated via a novel perfusion-flow mineralization technique, Tissue
+Engineering Part C: Methods 19 (7) (2012) 487–496.
+[109] N. A. Peppas, J. R. Clegg, The challenge to improve the response of biomaterials to the physiological environment,
+Regenerative Biomaterials 3 (2) (2016) 67–71.
+[110] N. Ashammakhi, S. Ahadian, F. Zengjie, K. Suthiwanich, F. Lorestani, G. Orive, S. Ostrovidov, A. Khademhosseini,
+Advances and future perspectives in 4d bioprinting, Biotechnology Journal 13 (12) (2018) 1800148.
+[111] N. A. Kamel, Bio-piezoelectricity: fundamentals and applications in tissue engineering and regenerative medicine,
+Biophysical Reviews 14 (3) (2022) 717–733.
+[112] C. T. Tsui, P. Lal, K. V . R. Fox, M. A. Churchward, K. G. Todd, The e ffects of electrical stimulation on glial cell behaviour,
+BMC Biomedical Engineering 4 (1) (2022) 7.
+[113] Wang, Yaojin and Hasanyan, Davresh and Li, Menghui and Gao, Junqi and Li, Jiefang and Viehland, D. and Luo, Haosu,
+Theoretical model for geometry-dependent magnetoelectric e ffect in magnetostrictive /piezoelectric composites, Journal of
+Applied Physics 111 (12) (2012) 124513.
+[114] Kapat, Kausik and Shubhra, Quazi T. H. and Zhou, Miao and Leeuwenburgh, Sander, Piezoelectric nano-biomaterials for
+biomedicine and tissue regeneration, Advanced Functional Materials 30 (44) (2020) 1909045.
+[115] G. T. Charras, M. A. Horton, Determination of cellular strains by combined atomic force microscopy and finite element
+modeling, Biophysical Journal 83 (2) (2002) 858–879.
+[116] A. Rigato, F. Rico, F. Eghiaian, M. Piel, S. Scheuring, Atomic force microscopy mechanical mapping of micropatterned cells
+shows adhesion geometry-dependent mechanical response on local and global scales, ACS Nano 9 (6) (2015) 5846–5856.
+[117] H. Schillers, Measuring the elastic properties of living cells, in: N. C. Santos, F. A. Carvalho (Eds.), Atomic Force
+Microscopy: Methods and Protocols, Springer New York, 2019, pp. 291–313.
+[118] P. Kollmannsberger, B. Fabry, Linear and nonlinear rheology of living cells, Annu. Rev. Mater. Res. 41 (1) (2011) 75–97.
+[119] O. Chaudhuri, J. Cooper-White, P. A. Janmey, D. J. Mooney, V . B. Shenoy, E ffects of extracellular matrix viscoelasticity on
+cellular behaviour, Nature 584 (7822) (2020) 535–546.
+[120] D. E. Ingber, N. Wang, D. Stamenovi ´c, Tensegrity, cellular biophysics, and the mechanics of living systems, Reports on
+Progress in Physics 77 (4) (2014) 046603.
+[121] S.-Y . Sun, L.-Y . Zhang, X. Chen, X.-Q. Feng, Biochemomechanical tensegrity model of cytoskeletons, Journal of the
+Mechanics and Physics of Solids 175 (2023) 105288.
+[122] D. Ambrosi, M. Ben Amar, C. J. Cyron, A. DeSimone, A. Goriely, J. D. Humphrey, E. Kuhl, Growth and remodelling of
+living tissues: perspectives, challenges and opportunities, Journal of The Royal Society Interface 16 (157) (2019) 20190233.
+33

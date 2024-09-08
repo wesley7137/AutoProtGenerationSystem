@@ -1,0 +1,921 @@
+Title: Mathematical Model of the Impact of Chemotherapy and Anti-Angiogenic
+  Therapy on Drug Resistance in Glioma Growth
+Abstract:   This research presents a mathematical model of glioma growth dynamics with
+drug resistance, capturing interactions among five cell populations: glial
+cells, sensitive glioma cells, resistant glioma cells, endothelial cells, and
+neuron cells, along with two therapy agent populations: chemotherapy and
+anti-angiogenic therapy. Glioma is a malignant tumor originating from glial
+cells, undergoes chemotherapy-induced mutations, leading to drug-resistant
+glioma cells. This not only impacts glioma cells but also normal cells.
+Combining chemotherapy and anti-angiogenic therapy, the model employs a Holling
+type II response function, considering optimal dosages for treatment
+optimization. Through analysis, three equilibrium are identified: two stable
+and one unstable equilibrium points. Numerical simulations, employing phase
+portraits and trajectory diagrams, illustrate the combined therapies impact on
+glioma cells. In summary, this concise model explores glioma dynamics and drug
+resistance, offering insights into the efficacy of combined therapies, crucial
+for optimizing glioma treatment.
+
+Full Text: MATHEMATICAL MODEL OF THE IMPACT OF CHEMOTHERAPY
+AND ANTI-ANGIOGENIC THERAPY ON DRUG RESISTANCE IN
+GLIOMA GROWTH
+Latifah Hanum
+Universitas Gadjah Mada
+Yogyakarta, Indonesia
+latiifahhanum@mail.ugm.ac.idNanang Susyanto
+Universitas Gadjah Mada
+Yogyakarta, Indonesia
+nanang_susyanto@ugm.ac.idDwi Ertiningsih
+Universitas Gadjah Mada
+Yogyakarta, Indonesia
+dwi_ertiningsih@ugm.ac.id
+ABSTRACT
+This research presents a mathematical model of glioma growth dynamics with drug resistance,
+capturing interactions among five cell populations: glial cells, sensitive glioma cells, resistant glioma
+cells, endothelial cells, and neuron cells, along with two therapy agent populations: chemotherapy
+and anti-angiogenic therapy. Glioma is a malignant tumor originating from glial cells, undergoes
+chemotherapy-induced mutations, leading to drug-resistant glioma cells. This not only impacts
+glioma cells but also normal cells. Combining chemotherapy and anti-angiogenic therapy, the model
+employs a Holling type II response function, considering optimal dosages for treatment optimization.
+Through analysis, three equilibrium are identified: two stable and one unstable equilibrium points.
+Numerical simulations, employing phase portraits and trajectory diagrams, illustrate the combined
+therapies impact on glioma cells. In summary, this concise model explores glioma dynamics and drug
+resistance, offering insights into the efficacy of combined therapies, crucial for optimizing glioma
+treatment.
+Keywords Drug-resistance ·Anti-angiogenic therapy ·Mathematical model ·Stability
+1 Introduction
+Tumors cells are abnormal cells that are classified as either benign or malignant. Benign tumors exhibit characteristics
+that do not invade normal tissues, while malignant tumors can invade and spread throughout the entire body. Glioma is
+a type of aggressive brain tumor that originates from glial cells. From an epidemiological standpoint, gliomas occur
+across all age groups, but they are more commonly observed in adults, with males being more susceptible than females
+[1]. Solid tumors, such as gliomas in the brain, that grow larger than a critical size (1-2 mm in diameter) need to recruit
+new blood vessels to supply the necessary oxygen and required nutrients for their survival and growth. This process
+involves the formation of new blood vessels [2].
+Blood vessels within gliomas are utilized for delivering nutrients and facilitating the migration of cancer cells. Glioma
+cells migrate alongside blood vessels, displacing the interactions between glial cells and blood vessels. Through this
+mechanism, glioma cells manage to extract nutrients from the bloodstream. This relocation process disrupts the function
+of glial cells, compromising the proper delivery of sufficient glucose and oxygen to neurons [ 3]. These consequences
+carry broader significance, impacting the well-being of neurons that rely on the support provided by glial cells for their
+nourishment, structural stability [ 4], and the maintenance of the extracellular environment that envelops these neurons.
+Within this intricate neural network, neurons assume a pivotal role in the processing of sensory and internal signals,
+thereby making a substantial contribution to our cognitive and perceptual abilities. Malignant gliomas are characterized
+by significant blood vessel enhancement due to the process of angiogenesis, which plays a crucial role in tumor growth
+and colonization within the brain. The blood vessels in gliomas demonstrate the proliferation of endothelial cells,
+indicating a high-grade glioma [5].arXiv:2308.11212v1  [math.DS]  22 Aug 2023Despite these advancements, a promising option for cancer treatment is chemotherapy. Currently, 9 out of 10
+chemotherapy failures are linked to drug resistance. In chemotherapy, after administering specific drugs, a significant
+number of patient tumor cells become resistant to those drugs. Consequently, drug resistance emerges as a serious issue
+in the field of cancer. Drug resistance often imposes inevitable limitations on the long-term effectiveness of therapies
+targeted at cancer patients. Significant efforts have been made to combat drug resistance and enhance patient survival.
+Although the underlying molecular and cellular mechanisms are intricate, several paradigmatic mechanisms of drug
+resistance have been established. It is widely accepted that the inherent heterogeneity within the population of cancer
+cells is believed to encompass cells that are sensitive to drugs as well as cells that are resistant to drugs [6].
+One of the combination therapies in chemotherapy is anti-angiogenic therapy. Anti-angiogenic therapy is a method
+used to combat cancer with the aim of cutting off the supply of nutrients and oxygen to tumor cells through the
+blood vessels and preventing the formation of new blood vessels. Most approved anti-angiogenic agents for cancer
+treatment rely on targeting the Vascular Endothelial Growth Factor (VEGF), as VEGF signaling is considered a primary
+promoter of angiogenesis. In addition to controlling angiogenesis, these drugs can enhance immunotherapy because
+VEGF also exhibits immunosuppressive functions, highlighting a potential target of anti-angiogenic therapy. Targeting
+blood vessels in brain tumors has become an extremely intriguing strategy, considering the high rate of endothelial
+proliferation, vascular permeability, and expression of proangiogenic growth factors [7].
+The author’s interest in similar research stemmed from the realization that the process of angiogenesis can influence the
+response of tumor cell growth. This insight was then applied to cases of glioma tumors with drug resistance, which
+are highly malignant primary brain cancers. The model the author devised takes the form of a system of differential
+equations. This model depicts the dynamics of glioma brain tumor cell growth in the presence of drug resistance.
+The drug resistance, as a result of chemotherapy, renders tumor cells insensitive to chemotherapy drugs. The role of
+endothelial cells in ongoing therapy, particularly anti-angiogenic therapy, becomes crucial as they play a pivotal role in
+delivering supplies from anti-angiogenic agents. This has a significant impact on cancer since the required blood flow
+for tumor cells can be disrupted, leading to cell dormancy. The Dormancy phase describes the state where tumor cells
+cease to grow and become inactive for a certain period. As a result, the transition of tumor cells into dormancy is a
+mechanism that facilitates the survival and development of tumors. Therefore, gaining a better understanding of the
+proportional dynamics of resistant cells within gliomas under chemotherapy can lead to further therapeutic approaches.
+This approach holds the potential for effectiveness because by cutting off the blood supply, tumor cells cannot grow or
+develop. Consequently, the created model introduces additional compartments and new parameters to analyze their
+influence.
+This paper is organized into the following sections. In the next section, we’ll introduce our model formulation. Section 3
+discusses existence and stability of the equilibria. Section 4 will present numerical simulations to back up our theoretical
+findings. Finally, we’ll wrap things up in Section 5 with our conclusions and discussions.
+2 Model Formulation
+Previous research on glioma growth models has been conducted by [ 8] is divided into five classes: glial cells, sensitive
+glioma cells, resistant glioma cells, neurons, and chemotherapy agents. Another journal introduced by [ 9] discusses
+a model related to anti-angiogenic therapy for tumors in general. The author then attempts to create a combination
+of anti-angiogenic therapy and chemotherapy to observe their impact on gliomas in the presence of drug resistance,
+based on scientific research by [ 5]. The development performed in this study lies in the effect of subsequent therapy
+that influences the glioma tumor cell compartments. The crucial impact of angiogenesis on the growth of glioma brain
+tumors is referenced from the study by [ 10], thus adding parameters related to dormancy in the tumor cell compartments
+as an effect of anti-angiogenic therapy. In the formulation of this mathematical model, a nonlinear system of differential
+equations is defined to represent the mathematical impact of anti-angiogenic therapy and chemotherapy on glioma
+tumors with drug resistance.
+The cells population is separated into five parts, i.e., the glial cells ( G1), the glioma sensitive cell ( G2), the glioma
+resistance cell ( G3), the endothelial cell ( G4), the neuron cell ( G5) and two agents of treatment are agent chemotherapy
+(Q), and agent anti-angiogenic ( Y). The schematic interaction diagram which shows the interaction between the normal
+cells, tumour cells and agent therapy has been shown on Figure 1.
+2Figure 1: The interaction diagram of glial cells, sensitive glioma cells, resistant glioma cells, endothelial cells, neurons,
+chemotherapy agents, and anti-angiogenic agents.
+From the diagram, we have the system as follows:
+dG1
+dt=p1G1
+1−G1
+k1
+−κ1G1[G2+G3]−D1(G4, Y)G1Q
+A1+G1
+dG2
+dt=p2G2
+1−G2+G3
+k2+χG 4
+−κ2G1G2−uF(Q)G2−ρF(Y)G2
+−D2(G4, Y)G2Q
+A2+G2
+dG3
+dt=p3G3
+1−G2+G3
+k2+χG 4
+−κ3G1G3+uF(Q)G2
+−ρF(Y)G3 (1)
+dG4
+dt= Φ [ G2+G3] +p4G4
+1−G4
+k3
+−D4G4Y
+A4+G4
+dG5
+dt=ω˙G1F 
+−˙G1
+k1!
+G5−D5(G4, Y)G5Q
+A5+G5
+dQ
+dt=ϕ−
+ψ+c1G1
+A1+G1+c2+G2
+A2+G2+c5G5
+A5+G5
+Q
+dY
+dt=δ−
+γ+c4G4
+A4+G4
+Y
+3with
+Di(G4, Y) =Di0+Di1G4+Di2Y, i= 1,2,5
+and initial values Gi≥0, i= 1, ...,5Q≥0, Y≥0fort= 0.The Heaviside function is generally defined as follows:
+F(x) =0, x≤0
+1, x > 0.(2)
+Variable G1is the glial cells concentration ( kg.m−3),G2is the drug-sensitive glioma cells concentration ( kg.m−3),G3
+is the drug-resistant glioma cells concentration ( kg.m−3),G4is the endothelial cells concentration ( kg.m−3),G5is the
+neurons concentration ( kg.m−3),Qis the chemotherapeutic agent concentration ( mg.m−2),Yis the anti-angiogenic
+agent concentration ( mg.m−2). Parameters pi, i= 1,2,3,4represent proliferation rate following logistic growth with
+carrying capacity ki, i= 1,2,3,4. Parameters ( κi, i= 1,2,3) are competition coefficient between glial and glioma
+cells. Parameter χis the proportion of endothel cells responsible for the glioma angiogenesis. Parameter uis mutation
+rate of sensitive glioma to resistent glioma. Parameter ρis transition rate of glioma cells into dormancy phase triggered
+by anti-angiogenic therapy. Parameter Φis the rate of creation of glioma cells due to endothel cells. Neuron loss results
+from reduced glial concentration, while an increase has no effect, depicted by ω. Parameters Di0, i= 1,2,5, is the
+killing rate of chemotherapy on Xiin the absence of G4andYrespectively. Parameters Dij, i, j= 1,2,5, is the rate
+of increased killing on Giby chemotherapy agent per concentration of G4(j= 1) andY(j= 2) . Parameter D4is the
+killing rate of anti-angiogenic therapy on G4.Ai, i= 1,2,4,5, is the Holling type II constant for Gi. Exponential
+increase in chemotherapy agent concentration due to infusion at rate ϕ, followed by decrease related to body clearance
+of chemotherapy sent to glioma patients at clearance rate ψ. Exponential increase in anti-angiogenic agent concentration
+due to infusion at rate δ, followed by decrease related to body clearance of anti-angiogenic sent to glioma patients
+at clearance rate γ. Parameters ci, i= 1,2,4,5, is the rate at which agent anti-angiogenic and chemotherapy agent
+combine with Gi.
+We obtain the non-dimensionalized model according to the procedure outlined in [ 11], if we let g1 =Gi/ki, i=
+1,2,3,4, q=Q, y=Y, β 1=κ1k2, β2=κ2k1, β3=κ3k1, α=ωk1, ai=Ai/ki(i= 1,2,4,5),µ= Φk3/k2, t=
+χk3/k2, di0=Di0/ki, di1=Dik3/ki, di2=Di2/ki,(i= 1,2,5), d4=D4/k3,then our model becomes:
+dg1
+dt=p1g1[1−g1]−β1g1[g2+g3]−d1(g4, y)g1q
+a1+g1
+dg2
+dt=p2g2
+1−g2+g3
+1 +τg4
+−β2g1g2−uF(q)g2
+−ρF(y)g2−d2(g4, y)g2q
+a2+g2
+dg3
+dt=p3g3
+1−g2+g3
+1 +τg4
+−β3g1g3+uF(q)g2
+−ρF(y)g3 (3)
+dg4
+dt=µ[g2+g3] +p4g4[1−g4]−d4g4y
+a4+g4
+dg5
+dt=α˙g1F(−˙g1)g5−d5(g4, y)g5q
+a5+g5
+dq
+dt=ϕ−
+ψ+c1g1
+a1+g1+c2g2
+a2+g2+c5g5
+a5+g5
+q
+dy
+dt=δ−
+γ+c4g4
+a4+g4
+y
+with
+di(g4, y) =di0+di1g4+di2y, i= 1,2,5
+and initial values gi≥0, i= 1, ...,5q≥0, y≥0fort= 0.
+In the following section, we will explore the characteristics of the solution for the model (3), encompassing its existence
+and local stability of the equilibria.
+43 Existence And Local Stability Of Equilibria
+3.1 The Existence of Equilibria
+The equilibrium point of the glioma model, referred to as E0= (0,0,0,0,0,ϕ
+φ,δ
+γ), shows the nonexistence of the all
+cells. This state at which the system’s variables remain constant over time.
+The others equilibria
+E1= (gb
+1,0,0, gb
+4,0, qb, yb)
+where
+qb=p1[1−gb
+1][a1+gb
+1]
+d10+d11gb
+4+d12yb
+yb=δ[a4+gb
+4]
+a4γ+c4gb
+4+gb
+4γ
+and furthermore, to determine the value of gb
+4andgb
+1when g2= 0andg3= 0, we obtain at least one positive root for
+the quadratic equation:
+p4(c4+γ)g2
+4+p4((a4−1)γ−c4)g4−a4γp4+δd4= 0 (4)
+by applying Descarte’s rule of signs,
+gb
+4=(−γa4+γ+c4) +q
+(γa4−γ−c4)2−4 (γ+c4) [δ(d4)/p4−a4γ]
+2 (γ+c4)(5)
+for the existence of the equilibriua E1note that if δ(d4)< a 4γp4, implying −γa3+γ+c4<(γa4−γ−c4)2−
+4 (γ+c4) [δ(d4)/p4−a4γ]. Next, by simple calculation we have at least one positive root for the quadratic equation:
+p1(c1+ψ)g2
+1+ ((a1−1)ψ−c1)p1g1−a1p1ψ+ϕd1= 0 (6)
+then descarte’s rule of signs yields a quadratic Equation (6) is given by:
+gb
+1=(ψ+c1−ψa1) + [(−ψ−c1+ψa1)]2−4 (ψ+c1) [d1(g4, y)ϕ/p 1−ψa1]1/2
+2 (ψ+c1). (7)
+Therefore, if ϕ/ψ < p 1a1/(d10+d11gb
+4+d12yb),gb
+1>0always exists, as well as for qb.
+Next, resistant glioma equilibria represent where tumor cells still persist within the host individual affected by glioma. In
+other words, g2̸= 0org3̸= 0. When affected by glioma, equilibrium points in the population occur in two conditions:
+first, when g2>0andg3= 0, ifg2= 0, leading to the values g2= 0andg3= 0when the equilibrium point is a free
+glioma equilibrium point. Thus, we will investigate the condition where g2= 0andg3>0. Since g3̸= 0, we found
+equilibrium E2= (0,0, gr
+3, gr
+4,0, qr, yr)where:
+gr
+3=(gr
+4τ+ 1)( p3−ρ)
+p3
+qr=ϕ
+ψ
+yr=δ(a4+gr
+4)
+(c4+γ)gr
+4+a4γ
+andgr
+4is positive solutions of the following equation:
+l1g3
+4+l2g2
+4+l3g4+l4= 0 (8)
+where li, fori= 1,2,3,4, are defined as follows:
+l1= 1
+l2=((−µτ+ (a4−1)p4)p3+µρτ)
+p3p4
+l3=(((−a4τ−1)µ+d4y−a4p4)p3+ρµ(a4τ+ 1))
+p3p4
+l4=a4µ(ρ−p3)
+p3p4.
+5The solutions of equation (8) are involves the following steps as provided by [19], resulting in roots:
+g4,1 =3√
+A+√
+A2+4B3
+33√
+2−3√
+2B
+33√
+A2+√
+A2+4B3−l2
+3
+g4,2=−(1−i√
+3)3√
+A+√
+A2+4B3
+63√
+2+(1+i√
+3)3√
+2B
+63√
+A+√
+A2+4B3−l2
+3
+g4,3 =−(1+i√
+3)3√
+A+√
+A2+B
+63√
+2+(1−i√
+3)3√
+2B
+63√
+A+√
+A2+B−l2
+3
+with
+A= 9l2l3−27l4−2l3
+2
+B= 3l3−l2
+2.
+Next, we will analyze the real roots of the polynomial and the conditions under which the real roots of the polynomial
+are negative. Let’s assume:
+P=3q
+A+p
+A2+ 4B3.
+The condition for Pto be real is A2≥B. With this, we have:
+g4,1=P
+33√
+2−3√
+2B
+3P−l2
+3
+g4,2=−(1−i√
+3)P
+63√
+2+(1 +i√
+3)3√
+2B
+6P−l2
+3
+g4,3=−(1 +i√
+3)P
+63√
+2+(1−i√
+3)3√
+2B
+6P−l2
+3.
+The equation gr
+4is one positive real root. For this root to be positive, the conditionP
+33√
+2>3√
+2B
+3P+l2
+3must be satisfied.
+3.2 The Stability of equilibria
+In this section, we’re going to investigate the stability of the equilibria by examining the eigenvalues of the Jacobian
+matrices in system (3). We can determine stability by looking at whether the real parts of the eigenvalues of the Jacobian
+matrix, calculated at a specific equilibrium point, are positive or negative.
+For the local stability of glioma-free equilibrium point E0, E1, anda glioma resistent equilibrium point E2, we have the
+following theorem.
+Teorema 3.1. The first glioma-free equilibrium point, denoted as E0= (0,0,0,0,0,ϕ
+φ,δ
+γ), exists and is locally
+asymptotically stable if the following conditions are: ϕ >p1ψa1γ
+(d10+d12δ),ϕ >(p2−u−ρ)ψa2γ
+(d20+d22δ),ρ > p 3,δ >p4γa4
+d4. These
+conditions ensure the stability of the equilibrium point E0.
+Proof. To determine the stability of E0one may compute the variational matrix of system (3) about E0given by
+DfE0=
+m11 0 0 0 0 0 0
+0 m22 0 0 0 0 0
+0 u m 33 0 0 0 0
+0 µ µ m 44 0 0 0
+0 0 0 0 m55 0 0
+−c1ϕ
+ψa1−c2ϕ
+ψa20 0 −c5ϕ
+ψa5m66 0
+0 0 0 −c4δ
+γa40 0 m77
+.
+The eigenvalues of the Jacobian matrix of system (3) at equilibrium point E0= (0,0,0,0,0,ϕ
+φ,δ
+γ)are as follows:
+6λ1=p1−(d12δ/γ+d10)ϕ
+ψa1
+λ2=p2−u−ρ−(d22δ/γ+d20)ϕ
+ψa2
+λ3=p3−ρ
+λ4=p4−d4δ
+γa4
+λ5=−(d52δ/γ+d50)ϕ
+ψa5
+λ6=−ψ
+λ7=−γ.
+Furthermore, it is necessary that ϕ >p1ψa1γ
+(d10+d12δ),ϕ >(p2−u−ρ)ψa2γ
+(d20+d22δ),ρ > p 3, and δ >p4γa4
+d4where these results are
+obtained through λ1<0,λ2<0,λ3<0andλ4<0. Given that the parameters ϕ,ψ, and γare positive, we know
+thatλ5,λ6, and λ7are all negative. We consider p1= 0.0068 ,p2= 0.012,p3= 0.002,p4= 0.002,ψ= 0.01813 ,
+γ= 0.136,ρ= 0.01,d10= 4.7×10−8,d12= 3.9×10−8,d20= 7.8×10−2,d22= 7.5,d4= 0.71,u= 0.01, and
+a1=a2=a4= 1(Table). With these values, we obtain that E0is linearly asymptotically stable for ϕ >356.22. In
+other words, the chemotherapy agent kills all cells, They will never recuperate. However, the non-cell state’s stability is
+only ensured at an exceptionally high infusion rate ϕ. Consequently, the equilibrium point E0is unstable.
+Teorema 3.2. If the following conditions are satisfied:
+1.2p4gb
+4γ+2p4g2b
+4c4
+a4+gb
+4+d4yb
+a4γ
+(a4+gb
+4)2> p 4γ+p4c4gb
+4
+a4+gb
+4
+2.d2(gb
+4, yb)qb>(p2−β2gb
+1−u−ρ)a2
+3.p3< β 3gb
+1−ρ
+4.2ψp1gb
+1+2c1g2b
+1p1
+a1+gb
+1+a1d11gb
+4qb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3 +a1d12qbyb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3 +a1d10qb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3 > ψp 1+
+c1gb
+1p1
+a1+gb
+1
+Then, the second glioma-free equilibrium point E1= (gb
+1,0,0, gb
+4,0, qb, yb)in system (3) is locally asymptotically
+stable.
+Proof. The stability of E1can be determined by analyzing the eigenvalues of the Jacobian Matrix, which is the result
+of linearizing system (3) around the equilibrium point E1= (gb
+1,0,0, gb
+4,0, qb, yb).
+DfE1=
+e11e12e13e14 0e16e17
+0e22 0 0 0 0 0
+0e32e33 0 0 0 0
+0e42e43e44 0 0 e47
+0 0 0 0 e55 0 0
+e61e62 0 0 e65e66 0
+0 0 0 e74 0 0 e77
+. (9)
+The obtained eigenvalues are as follows:
+λ1=p2−β2gb
+1−u−ρ−d2(gb
+4, yb)qb
+a2
+λ2=p3−β3gb
+1−ρ
+λ3=−d5(gb
+4, yb)qb
+a5.
+Parameters d5, a5>0soλ3<0. In order to ensure the stability of E1= (gb
+1,0,0, gb
+4,0, qb, yb)it is necessary that
+d2(gb
+4, yb)qb>(p2−β2gb
+1−u−ρ)a2andp3< β 3gb
+1−ρ, where these results are obtained through λ1<0andλ2<0.
+The values of the dimensionless parameters are positives, then the eigenvalues λ1,λ2are negatives.
+7Next, for λ4andλ5, we obtain the following:
+λ2−v1λ+v2 (10)
+where:
+v1=e77+e44
+v2=e77e44−e74e47
+=
+2γp4gb
+4−γp4+γd4yba4
+(a4+gb
+4)2+2c4g2b
+4p4
+a4+gb
+4−c4gb
+4p4
+a4+gb
+4
+−c4a4ybd4gb
+4
+(a4+gb
+4)3
+= 2 γp4gb
+4−γp4+γd4yba4
+(a4+gb
+4)2+2c4g2b
+4p4
+a4+gb
+4−c4gb
+4p4
+a4+gb
+4.
+Based on the known values, e74<0ande47<0, soe74e47>0. Then, if
+2p4g4γ+2p4g2
+4c4
+a4+g4+d4ya4γ
+(a4+g4)2> p 4γ+p4c4g4
+a4+g4,
+thene77e44>0. Furthermore, we have:
+2γp4g4−γp4+γd4ya4
+(a4+g4)2+2c4g2
+4p4
+a4+g4−c4g4p4
+a4+g4+c4a4yd4g4
+(a4+g4)3>c4a4yd4g4
+(a4+g4)3
+so,e77e44> e 74e47. Now, from Equation (10), we obtain the eigenvalues λ4,5as follows:
+λ4,5=−v1±p
+v2
+1−4(1)v2
+2(1)=−v1±p
+v2
+1−4v2
+2.
+The real part of λ4andλ5is always negative because if v2
+1−4v2>0, then v2
+1> v2
+1−4v2, which implies:
+λ4=−v1+p
+v2
+1−4v2
+2<0
+λ5=−v1−p
+v2
+1−4v2
+2<0.
+Additionally, if v2
+1<4v2, thenp
+v2
+1−4v2is imaginary, and since v1>0,−v1<0. Moving on to λ6andλ7, we
+have:
+λ2−w1λ+w2 (11)
+where:
+w1=e66+e11
+w2=e66e11−e16e61
+= 
+2ψp1gb
+1+2c1gb
+12p1
+a1+gb
+1−ψp1−c1gb
+1p1
+a1+gb
+1+a1d11gb
+4qb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3
++a1d12qbyb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3+a1d10qb(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3
+−(d11gb
+4+d12yb+d10)gb
+1c1a1qb
+(a1+gb
+1)3
+= 
+2ψp1gb
+1+2c1gb
+12p1
+a1+gb
+1−ψp1−c1gb
+1p1
+a1+gb
+1+qba1(d1(gb
+4, yb)(a1ψ+c1gb
+1+gb
+1ψ))
+(a1+gb
+1)3!
+−(d1(gb
+4, yb)gb
+1c1a1qb
+(a1+gb
+1)3
+= 2 ψp1gb
+1+2c1gb
+12p1
+a1+gb
+1−ψp1−c1gb
+1p1
+a1+gb
+1+qba1(d1(gb
+4, yb)(a1ψ+gb
+1ψ))
+(a1+gb
+1)3.
+8Based on the known values, e16ande61are negative, so e16e61>0. If
+2ψp1gb
+1+2c1g2b
+1p1
+a1+gb
+1+qba1(d1(gb
+4, yb)(a1ψ+c1gb
+1+gb
+1ψ))
+(a1+gb
+1)3> ψp 1+c1gb
+1p1
+a1+gb
+1,
+thene66e11>0. Furthermore, we have:
+2ψp1gb
+1+2c1gb
+12p1
+a1+gb
+1−ψp1−c1gb
+1p1
+a1+gb
+1+qba1(d1(gb
+4, yb)(a1ψ+c1gb
+1+gb
+1ψ)
+(a1+gb
+1)3>(d1(gb
+4, yb)gb
+1c1a1qb
+(a1+gb
+1)3
+So,e66e11> e 16e61. Now, from Equation (11), we obtain the eigenvalues λ6,7as follows:
+λ6,7=−w1±p
+w2
+1−4(1)w2
+2(1)=−w1±p
+w2
+1−4w2
+2.
+The real part of λ6andλ7is always negative because if w2
+1−4w2>0, then w2
+1> w2
+1−4w2, which implies:
+λ6=−w1+p
+w2
+1−4w2
+2<0
+λ7=−w1−p
+w2
+1−4w2
+2<0.
+Additionally, if w2
+1<4w2, thenp
+w2
+1−4w2is imaginary, and since w1>0,−w1<0. Because λi<0for every
+i= 1,2,3,4,5,6,7, the equilibrium point E1is locally asymptotically stable. Therefore, the stability of the second
+free equilibrium point of glioma signifies a state in which glioma cells no longer exist within the body of the glioma
+patient. This indicates that chemotherapy and anti-angiogenic therapy at specific dosages can suppress glioma growth
+while ensuring that all neuronal cells are spared from any adverse effects.
+In the next section we will give some numerical simulation to illustrate the theoretical results for several case.
+4 Numerical Result
+In this section, we will showcase several numerical simulations aimed at illustrating the theoretical findings discussed
+in the preceding section. The parameter values employed in the system, as detailed in Table (1), were acquired from the
+work of [8, 9].
+4.1 Numerical Simulation and Biological Interpretation of the Second Glioma Free Equilibrium Points
+In the case of tumor-free conditions, there are no tumor cells within the brain tissue, meaning there are no sen-
+sitive glioma cells nor resistant glioma cells ( g2= 0 andg3= 0). Subsequently, a numerical simulation is
+conducted based on the parameter values in Table 2 to assess the stability of the free glioma equilibrium point
+E1= (0.99,0,0,0.65,0,0.18,0.0016) in the phase portrait and trajectory diagram. Therefore, in the following simula-
+tion, the values of u= 0.001, α= 2andρ= 0.01are chosen. Figure 2 shows that there exists a single equilibrium
+point. This equilibrium point is locally asymptotically stable and has a stable node shape. When different initial values
+for the concentrations of glial cells, resistant glioma cells, and endothelial cells are taken, they converge to a certain
+value. The local stability analysis around this equilibrium point is provided by the Jacobian matrix below.
+Df(E1) =
+−0.006 −0.018 −0.018 −3.620×10−90 −3.667×10−8−3.549×10−9
+0 −0.021 0 0 0 0 0
+0 0 .001 −0.009 0 0 0 0
+0 0 .004 0 .004 −0.001 0 0 −0.279
+0 0 0 0 −0.001 0 0
+−9.051×10−6−0.005 0 0 −0.000 −0.018 0
+0 0 0 −0.000 0 0 −0.148
+.
+As a result, the eigenvalues of Df(E1)are calculated as follows: λ1=−0.001,λ2=−0.149,λ3=−0.001,
+λ4=−0.009,λ5=−0.022,λ6=−0.018, andλ7=−0.007. Since the real parts of all λiare negative ( Re (λi)<0),
+the equilibrium point E1= (0.99,0,0,0.65,0,0.18,0.0016) is locally asymptotically stable.
+Furthermore, a trajectory diagram of cell concentrations, including glial cells, sensitive glioma cells, resistant glioma
+cells, endothelial cells, and neurons, concerning initial conditions, is provided. Here, the authors depict the trajectory
+diagram of equilibrium points for free glioma at t= 0−10000 .
+9Table 1: Parameters of the model.
+Parameter Value Reference
+p1 0.0068 day−1p1< p 2[9]
+p2 0.012day−1[8]
+p3 0.002day−1[8]
+p4 0.002day−1p4< p 1[12]
+ki, i= 1,2,3,4 510kg.m−3[8]
+Ai, i= 1,2,4,5 510kg.m−3[8]
+κ1 3.6×10−5day−1[9]
+κ2, κ3 3.6×10−6day−1κ2, κ3< κ 1[9]
+χ 0.15 χ <1[9]
+Φ 0.004day−1Φ> p 4[13]
+c1 0.0002 day−1[9]
+c2 0.032day−1c2≫c1[9]
+c4 0.032day−1c4≥c2[14]
+c5 0.0012 day−1c5≥c1
+u 0−1 [8]
+ρ 0−1 [10]
+ω 0−0.02 [8]
+D10 2.4×10−5day−1[9]
+D20 4.0×10day−1D20≫D10[15]
+D50 2.4day−1D20> D 50≫D10
+D4 3.6×102day−1D3> D 20[9]
+D11 4.0×10−8day−1D11< D 10[9]
+D21 4.0×10−2day−1D21> D 11[9]
+D51 4.0×10−3day−1D21> D 51> D 11
+D12 2.0×10−5day−1D12< D 10[9]
+D22 3.8×103day−1D22> D 12[9]
+D52 2.0day−1D22> D 52> D 12
+ϕ 3.3×10−3day−1Almost continuous [16]
+ψ 0.01813 day−1Half-life of CA [17]
+δ 2.4×10−4day−1ϕ= 14δ[16]
+γ 0.136day−1γ= 7.5ψ[18]
+In Figure 4, it can be observed that as time approaches infinity ( t→ ∞ ), the concentration of glial cells initially
+decreases over the course of 100 days. Then, around day 101, it starts to increase until it reaches the value of g1= 0.99
+or a concentration of glial cells equal to 0.99, remaining constant thereafter and approaching nearly twice its initial
+value for an extended period. On the other hand, the concentration of sensitive glioma cells continually decreases
+from the outset until it approaches zero over the course of 200 days, extending to infinity ( t→ ∞ ). Meanwhile, the
+concentration of resistant glioma cells initially increases, almost reaching a value of 0.2on day 75, after which its
+growth declines on day 76 and eventually approaches zero indefinitely.
+This results in stimulation of endothelial cells. As shown in Figure 5, the concentration of endothelial cells continues to
+increase every day, reaching a value of 0.65for an indefinite period. Subsequently, the concentration of neuron cells
+decreases in tandem with the decline in glial cells until day 100, after which it remains nearly constant and approaches
+zero indefinitely.
+10Table 2: Parameters of the non-dimensionalization model.
+Parameter Value
+ai, i= 1,2,4,5 1
+β1 1.8×10−2
+β2, β3 1.8×10−3
+τ 0.15
+µ 0.004
+α 0−10
+d10 4.7×10−8
+d20 7.8×10−2
+d50 4.7×10−3
+d4 0.71
+d11 4.0×10−8
+d21 4.0×10−2
+d51 4.0×10−3
+d12 3.9×10−8
+d22 7.5
+d52 3.9×10−3
+Figure 2: Phase portrait of the glioma free equilibrium point E1= (0.99,0,0,0.65,0,0.18,0.0016)
+Therefore, the stable equilibrium point of the second free glioma represents a condition where glioma cells no longer
+exist in the body of glioma patients. This indicates that chemotherapy and anti-angiogenic therapy with specific dosages
+can suppress glioma growth, with the side effect of eliminating all neuron cells as well.
+11Figure 3: Trajectory diagram of free glioma equilibrium points ( t= 0−10000 )
+Figure 4: Trajectory diagram of free glioma equilibrium points for glial cells, sensitive glioma cells, and resistant
+glioma cells
+12Figure 5: Trajectory diagram of free glioma equilibrium points for endothelial cells and neurons
+Figure 6: Phase Portrait of Resistant Glioma Equilibrium Points E2= (0,0, gr
+3, gr
+4,0, qr, yr)
+4.2 Numerical Simulation and Biological Interpretation of the Equilibrium Point of Resistant Glioma
+In the case of tumor resistance, tumor cells still exist within the brain tissue, meaning that resistant glioma cells persist
+in the body of glioma patients. Subsequently, a numerical simulation is performed based on the parameter values in
+Table 2, and parameters corresponding to the existence of the equilibrium point of resistant glioma are selected to assess
+the stability of the equilibrium point of free resistant glioma E2= (0,0, gr
+3, gr
+4,0, qr, yr)withgr
+3, gr
+4, qr, and yrgiven
+in section (3).
+To obtain an endemic case, we choose the values p3= 0.006,u= 0.01,ρ= 0.003,ϕ= 4.0×10−3,α= 2 and
+δ= 2.9×10−4. In Figure 6, it can be shown that there is one equilibrium point that emerges, which is the equilibrium
+point for resistant glioma, denoted as E2= (0,0, gr
+3, gr
+4,0, qr, yr). This equilibrium point is locally asymptotically
+stable and has a spiral shape. When different initial values are chosen for the concentrations of glial cells, resistant
+glioma cells, and endothelial cells, they all converge to a certain value. The local stability analysis around this
+13Figure 7: Trajectory diagram of resistant glioma equilibrium points ( t= 0−10000 )
+equilibrium point is provided by the Jacobian matrix below.
+Df(E2) =
+−0.0046 0 0 0 0 0 0
+0 −0.0400 0 0 0 0 0
+−0.0011 0 .0070 −0.0030 0 .0002 0 0 0
+0 0 .0040 0 .0040 −0.0044 0 0 −0.4280
+0 0 0 0 −0.0024 0 0
+−0.00004 −0.0070 0 0 −0.0003 −0.01813 0
+0 0 0 −9.256×10−60 0 −0.1554
+.
+Subsequently, the eigenvalues were obtained as follows: λ1=−0.03996 ,λ2=−0.0181 ,λ3=−0.1554+2 .9×10−27i,
+λ4=−0.0025 + 1 .98×10−25i,λ5=−0.0048−2×10−25i,λ6=−0.0024 , andλ7=−0.0046 . Since each Re(λi)
+fori= 1,2,3,4,5,6,7is negative, the equilibrium point E2= (0,0, gr
+3, gr
+4,0, qr, yr)is locally asymptotically stable.
+Furthermore, trajectory diagrams of cell concentrations, including glial cells, sensitive glioma cells, resistant glioma
+cells, endothelial cells, and neurons, concerning initial conditions, are provided. In Figure 7, we shows the trajectory
+diagram of the equilibrium point of resistant glioma at t= 0−10000 .
+It is further clarified in Figure 8 that as t→ ∞ , the variables g1andg2approach zero. The concentration of glial cells
+decreases to nearly zero over an indefinite period. Meanwhile, the concentration of sensitive glioma cells continues
+to decrease initially until it approaches zero by t= 200 days and continues to zero for an indefinite time ( t→ ∞ ).
+Furthermore, the concentration of resistant glioma cells increases for 1400 days and subsequently remains constant
+at0.62in the indefinite time ( t→ ∞ ). This is reasonable as it falls within the capacity limits of resistant glioma cell
+growth.
+Figure 9 displays the trajectory diagram for variables g4andg5. The continuous increase in resistant glioma cells
+stimulates angiogenesis processes in the brain, resulting in the stimulation of endothelial cell formation, leading to a
+significantly higher concentration of endothelial cells, exceeding twice the concentration of resistant glioma cells, at
+1.54.
+Therefore, the stable equilibrium point of resistant glioma depicts the presence of resistant tumor cells that persist
+within the brain tissue but does not surpass the threshold for resistant glioma cell growth ( k2= 1) while considering
+specific chemotherapy and anti-angiogenic dosages.
+4.3 The Behavior of Subpopulations of Sensitive Glioma Cells and Resistant Glioma Cells with Varying
+Transition Rates to Dormancy Phase
+Based on the graph in Figure 10 above, two cases can be considered:
+•Case 1: If ρ≥p3. From Figure 10, it can be observed that the concentration of glioma cells gradually
+decreases when the transition rate of cells to the dormant phase ( ρ) is greater than or equal to the proliferation
+14Figure 8: Trajectory diagram of resistant glioma equilibrium points for glial cells, sensitive glioma cells, and resistant
+glioma cells
+Figure 9: Trajectory diagram of resistant glioma equilibrium points for endothelial cells and neurons
+rate of resistant glioma cells ( p3). This implies the possibility of successful chemotherapy and anti-angiogenic
+therapy. When ρ > p 3, as time tapproaches infinity, the concentration of glioma cells tends to be unstable
+because the proliferation of resistant glioma cells exceeds the rate of transition to the dormant phase.
+•Case 2: If ρ < p 3. From Figure 10, it can be observed that the concentration of glioma cells will increase
+when the transition rate of cells to the dormant phase ( ρ) is less than the proliferation rate of resistant glioma
+15Figure 10: Time evolution of g2(t) +g3(t)for various values of ρ.
+cells ( p3). This implies the success of chemotherapy and anti-angiogenic therapy in reducing the maximum
+concentration of glioma cells by 1−(g4τ+1)(p3−ρ)
+p3.
+5 Conclusion
+In conclusion, this research paper provides a comprehensive exploration of the multifaceted dynamics surrounding
+glioma brain tumors and their responsiveness to chemotherapy, with a particular emphasis on the crucial role of
+anti-angiogenic therapy in the treatment process. The investigation commences by establishing a mathematical model
+to simulate the intricate interactions taking place within the tumor microenvironment. This model incorporates
+various factors, such as the diffusion of chemotherapy agents, proliferation of tumor cells, and the influence of anti-
+angiogenic drugs, making it a valuable tool for assessing the efficacy of treatment strategies. One of the pivotal aspects
+addressed in this study is the identification and characterization of equilibrium points within the mathematical model.
+Equilibrium points represent states in which the system remains stable over time, providing critical insights into the
+potential outcomes of chemotherapy and anti-angiogenic therapy. Through rigorous analysis, it becomes apparent that
+equilibrium points can vary considerably based on parameter values, specifically infusion rates and the strengths of
+cellular interactions. This variation highlights the sensitivity of the system to these factors and underscores the need for
+precise therapeutic planning.
+Furthermore, the analysis sheds light on the attainability and stability of equilibrium points that signify tumor eradication.
+Notably, it is discerned that achieving a tumor-free state often requires exceptionally high infusion rates of chemotherapy
+agents. This revelation has significant implications for clinical practice, suggesting that complete tumor elimination
+through chemotherapy alone may be a challenging endeavor due to potential toxicity concerns and limitations in
+drug delivery systems. In this context, the study underlines the importance of considering a comprehensive treatment
+approach that combines chemotherapy with anti-angiogenic therapy. Anti-angiogenic drugs, designed to inhibit the
+formation of blood vessels within tumors, can complement chemotherapy by altering the tumor microenvironment,
+potentially reducing the required chemotherapy dosage and minimizing side effects. This synergistic approach addresses
+the issue of drug resistance often encountered in glioma treatment.
+In summary, this research underscores the intricate and interdependent nature of glioma treatment. It emphasizes the
+need for personalized therapeutic strategies that take into account the unique parameters of each patient’s tumor and
+considers the delicate balance between chemotherapy and anti-angiogenic therapy. By offering a deeper understanding
+of the mathematical foundations governing these treatments, this study contributes valuable insights to the ongoing
+efforts to improve the prognosis and quality of life for individuals facing the formidable challenge of glioma brain
+tumors.
+16References
+[1]Keyang Yang and et al. Glioma targeted therapy: insight into future of molecular approaches. Department of
+Neurosurgery, Xiangya Hospital , 2022.
+[2]V .S Cea and et al. Antiangiogenic therapy for glioma. Journal of Signal Transduction,483040(12) , page 15, 2012.
+[3]Z.C. Ye and H Sontheimer. Glioma cells release excitotoxic concentrations of glutamate. Cancer Res, 59(17) ,
+page 4383–4391, 1999.
+[4] P Glees. Neuroglia: Morphology and Function . Blackwell, Oxford, 1955.
+[5] T. Wurdinger and B.A. Tannous. Glioma angiogenesis. Cell Adhesion Migration,3(2) , pages 230–235, 2009.
+[6]B Mansoori and et al. The different mechanisms of cancer drug resistance: A brief review. Adv Pharm Bull, 7(3) ,
+pages 339–348, 2017.
+[7]F.L. Coelho and et al. Anti-angiogenic therapy:current challenges and future perspectives. ,Int.J.Mol. Sci.,3765 ,
+page 22, 2021.
+[8]Jose Trobia and et al. Mathematical model of brain tumour growth with drug resistance. Elsevier,103 , pages
+1007–5704, 2020.
+[9]S.T.R. Pinho, H.I. Freedman, R.F.S. Andrade, and F.S. Bacelar. A mathematical model for the effect of anti-
+angiogenic therapy in the treatment of cancer tumours by chemotherapy,. Nonlinear Analysis: Real World
+Applications(14) , page 815–828, 2012.
+[10] Marvin A Bottcher and et al. Modeling treatment-dependent glioma growth in- cluding a dormant tumor cell
+subpopulation. BMC Cancer , 2018.
+[11] Yan-Bin Jia. Roots of polynomials. Notes , page 477/577, 2020.
+[12] B. Alberts, A. Johnson, J. Lewis, M. Raff, K. Roberts, and P. Walter. Molecular Biology of the Cell . Taylor and
+Francis Books,London, 2002.
+[13] R.K. Sachs, L.R. Hlatky, and P. Hanfeldt. Simple ode models of tumour growth and anti-angiogenic or radiation
+treatment. Math. Comput. Modelling 33 , page 1297–1305, 2001.
+[14] D. Hanahan and J. Folkman. Patterns and emerging mechanisms of the angiogenic switch during tumourigenesis.
+Cell 86 , page 353–364, 1996.
+[15] R.T. Silver, R.D. Lauper, and C.I. Jarowski. A Synopsis of Cancer Chemotherapy . Yorke Medical Books, New
+York, 1987.
+[16] T. Browder, C.E. Butterfield, B.M. Kräling, B. Shi, B. Marshall, M.S. OReilly, and J. Folkman. Anti-angiogenic
+scheduling of chemotherapy improves efficacy against experimental drug-resistant cancer. Cancer Res. 60 , page
+1878–1886, 2001.
+[17] R. Said nad M. Abdel-Rehim, B. Sadeghia, S. Al-Hashemi, Z. Hassana, and M. Hassan. Cyclophosphamide
+pharmacokinetics in mice: a comparison between retro orbital sampling versus serial tail vein bleeding. Open
+Pharmacol. J. 1 , pages 30–35, 2007.
+[18] S. Shusterman, S.A. Grupp, R. Barr, D. Carpentieri, H. Zhao, and J.M. Maris. The angiogenesis inhibitor tnp-470
+effectively inhibits human neuroblastoma xenograft growth especially in the setting of subclinical disease. Clin.
+Cancer Res. 7 , pages 977–984, 2001.
+17

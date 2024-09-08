@@ -1,0 +1,1056 @@
+Title: In Silico Implementation of Evolutionary Paradigm in Therapy Design:
+  Towards Anti-Cancer Therapy as Darwinian Process
+Abstract:   In here presented in silico study we suggest a way how to implement the
+evolutionary principles into anti-cancer therapy design. We hypothesize that
+instead of its ongoing supervised adaptation, the therapy may be constructed as
+a self-sustaining evolutionary process in a dynamic fitness landscape
+established implicitly by evolving cancer cells, microenvironment and the
+therapy itself. For these purposes, we replace a unified therapy with the
+`therapy species', which is a population of heterogeneous elementary therapies,
+and propose a way how to turn the toxicity of the elementary therapy into its
+fitness in a way conforming to evolutionary causation. As a result, not only
+the therapies govern the evolution of different cell phenotypes, but the cells'
+resistances govern the evolution of the therapies as well. We illustrate the
+approach by the minimalistic ad hoc evolutionary model. Its results indicate
+that the resistant cells could bias the evolution towards more toxic elementary
+therapies by inhibiting the less toxic ones. As the evolutionary causation of
+cancer drug resistance has been intensively studied for a few decades, we refer
+to cancer as a special case to illustrate purely theoretical analysis.
+
+Full Text: arXiv:1811.06262v3  [q-bio.PE]  9 Oct 2019InSilicoImplementationofEvolutionary ParadigminTherapyDesign :
+TowardsAnti-CancerTherapyasDarwinianProcess
+B. Brutovsky
+Department of Biophysics, Faculty of Science, Jesenna 5,
+P. J. Safarik University, Jesenna 5, 04154 Kosice, Slovakia
+D. Horvath
+Technology and Innovation Park, Center of Interdisciplina ry Biosciences,
+P. J. Safarik University, Jesenna 5, 04154 Kosice, Slovakia
+In here presented in silicostudy we suggest a way how to implement the evolutionary prin ciples
+into anti-cancer therapy design. We hypothesize that instead of its ongoing supervised adaptation,
+the therapy may be constructed as a self-sustaining evolution ary process in a dynamic ﬁtness land-
+scape established implicitly by evolving cancer cells, microenvi ronment and the therapy itself. For
+these purposes, we replace a uniﬁed therapy with the ‘therapy species’, which is a population of
+heterogeneous elementary therapies, and propose a way how t o turn the toxicity of the elementary
+therapy intoitsﬁtness inaway conformingto evolutionary cau sation. Asaresult,not onlythethera-
+pies govern the evolution of di ﬀerent cell phenotypes, but the cells’ resistances govern the ev olution
+of the therapies as well. We illustrate the approach by the min imalistic ad hocevolutionary model.
+Its results indicate that the resistant cells could bias the evo lution towards more toxic elementary
+therapies by inhibiting the less toxic ones. As the evolutio nary causation of cancer drug resistance
+hasbeen intensivelystudiedforafewdecades, wereferto cance rasaspecialcasetoillustratepurely
+theoretical analysis.
+I. INTRODUCTION
+Development of up-to-date anti-cancer therapies re-
+lies on the deep knowledge of speciﬁc biochemical
+machinery of cancer cells. However, despite im-
+provedunderstandingofthemoleculardetailsofcan-
+cer initiation and progression, many targeted thera-
+pies fail due to diversity of strategies of resistance
+deployed by cancer cells [1–4]. Presently, intratu-
+mor heterogeneity is viewed as the principal obsta-
+cle in the therapy design and many papers have re-
+vieweditscausesandconsequencestotherapeuticre-
+sistance during the last decades [5–12]. The mecha-
+nismsofresistancerelatetoalteredactivityofthespe-
+ciﬁc enzyme systems, blocked apoptosis, developing
+transport mechanisms which provide multidrug re-
+sistance, etc. It was demonstrated that clonal that ac-
+cumulation ofthe viable clonalgenetic variantsposes
+greater threat of progressing to cancer than the ho-
+mogenizing clonal expansion [13]. Moreover, it is
+known for a long time that the epigenetic changes,
+such as DNA methylation, histone modiﬁcations,
+chromatin remodeling, and small RNA molecules,
+play the causative role in cancer initiation, progres-
+sion [14–16] and resistance [17]. Considering the
+timescales during which mutations spread in a can-
+cer cell population, the contribution of non-genetic
+instability in the intratumor heterogeneity of cancer
+cell populationsis signiﬁcant [18].
+Another obstacle to e ﬃcient therapies consists in a
+static manner of the administration of most thera-
+pies which underestimates that many properties of
+cancer cells that contribute to the invasion, metas-
+tases and resistance likely arise as successful adap-tive strategies to survive and proliferate within the
+temporally unstable micro-environmental conditions
+[19], induced, eventually, by the therapy itself. It was
+shownthattheadaptivetherapeuticinterventionthat
+reﬂects the temporal and spatial variability of the tu-
+mor microenvironment and cellular phenotype may
+provide substantially longer survival than the stan-
+dard high dose density strategies [20].
+Evolutionary Dynamics of Cancer. Since Now-
+ell conceptualized carcinogenesis as the evolutionary
+process [21], evolutionary theory has been accepted
+as the appropriate conceptual base to get an insight
+intothe modus operandi of cancer [21–23]. Evolution-
+ary dynamics, in which the intratumor heterogene-
+ityplaysthecrucialrole,equipsevolving populations
+of neoplastic cells with the adaptive power enabling
+them to cope with uncertain or time-varying micro-
+environmental conditions and it is considered as the
+main reason why the targeted therapy of cancer fails
+[24], and why the combination therapy, despite often
+improved therapeutic outcome, is still not the ulti-
+mate winner in the ﬁght against cancer [25]. Nowa-
+days, an e ﬀort to address the heterogeneity and vari-
+ability of cancer cells in the therapy design is appar-
+ent [26, 27].
+Therapeuticresilienceofadvancedcancersmaybeat-
+tributednotonlytogeneticdiversitybuttoepigenetic
+plasticityaswell[28]. Amajordi ﬀerencebetweenthe
+epigenetic and genetic changes is that the epigenetic
+changes are reversible and, in principle, responsive
+to environmental inﬂuence. Variability in the pheno-
+typic characteristics of isogenic cells confers to cellu-
+lar tissues importantproperties, such as the ability of
+cancer cells to escape a targeted therapy by switch-2
+ing to an alternative phenotype [29, 30]. It motivates
+an eﬀort to stimulate (or prevent) the speciﬁc pheno-
+type switching purposefully as a therapeutic strategy
+[31, 32].
+The interplay between the respective genomes, epi-
+genomes, transcriptomes and proteomes constitutes
+a ’cell-state’ [33]. Due to their tendency to be self-
+stabilizing, there are typically fewer distinct cell
+states in a tumor than it could be inferred from the
+degree of the genetic, epigenetic and transcriptional
+heterogeneity and, straightforwardly, genetically dis-
+tinct cells may be susceptible to the treatment with
+the same drugs [34]. On the other hand, even ge-
+netically identical cells can, due to the epigenetic dif-
+ferences and inﬂuence of an microenvironment, ex-
+ist in diﬀerent cell states. Studying the cell-state dy-
+namics of the isogenic population of human breast
+cancer cells revealed that the three phenotypic frac-
+tions (stem, basal and luminal) stay under the ﬁxed
+genetic and environmental conditions in the equilib-
+rium proportions and that individual cells transition
+from one state to another with constant interconver-
+sion rates [35]. Moreover, if the fractions were pur-
+posely deviated from the equilibrium, the equilib-
+rium proportions were reestablished by interconver-
+sions between the cell states instead of di ﬀerential
+growth of the respective phenotypic subpopulations.
+Therefore, Markov process was proposed as the ap-
+propriatemathematical model forthe respective cell-
+state dynamics[35].
+Presuming that the cells in di ﬀerent states di ﬀer in
+their growth properties, the cell-state composition of
+the cancer cell population becomes evolutionary im-
+portant trait at the cancer-relevant timescales dur-
+ing which the cancer cells are exposed, in general,
+to changing environment (including the therapy). In
+this case, the population may beneﬁt from maintain-
+ing the diversity of cell states, each advantageous
+within a di ﬀerent context [36, 37]. It was observed
+that in the case of variable selective pressure, the
+population of di ﬀerent organisms evolves the mecha-
+nisms to tune the phenotypic variability of the pop-
+ulation to reﬂect the variability of the acting selec-
+tive pressure [38]. In bacteria, the well known risk-
+diversiﬁcation strategy evolved in populations when
+facing changing environment [39–41] is bet-hedging
+[42, 43]. This strategy increases the long-term sur-
+vival and growth of an entire lineage instead of con-
+ferringanimmediate ﬁtnessbeneﬁt tooneindividual
+[36]. Based on the formal similarity of evolving can-
+cer cell population with bacteria, viruses or yeast, it
+has been recently proposed that the structure of in-
+tratumor heterogeneity is an evolutionary trait which
+evolves towards the maximum clonal ﬁtness at the
+cancer-relevant timescale in changing (or uncertain)
+environmentandthat itsstructurecorrespondstothe
+bet-hedging strategy [44–47] which has been recently
+put into therapeutic context [48].Distinguishing between the intratumor heterogene-
+ity due to the di ﬀerences in the DNA sequences and
+that resulting fromtheepigenetic modiﬁcationsisin-
+structive for the biological insight as well as for the
+’physical’ realization of an eventual therapy. Nev-
+ertheless, as the genetic and epigenetic changes dif-
+fer primarily in their stabilities and characteristic
+timescales (both can be formulated probabilistically)
+and their contributions to the cell states may be in-
+tertwinned, the two physical levels, genetic and epi-
+genetic, need not be viewed separately [34]. For ex-
+ample, within themathematical Markovmodel ofthe
+cell-state dynamics, the probabilities of transitions
+can be expressed by the elements of the transition
+matrix, not regarding whether genetic or epigenetic.
+Whether the epigenetic states are su ﬃciently stable
+[49] (i. e. whether probabilities of the respective tran-
+sitions are low enough) to enable Darwinian evolu-
+tion of isogenic cells underpinned by purely epige-
+netic states is an open question.
+Evolutionarily Motivated Therapies. Cancer cells
+continuously evolve their ability to survive in time-
+varying microenvironment (as exempliﬁed by devel-
+oping the resistance against eventual therapeutic in-
+terventions). Consequently, to stay e ﬃcient, the ther-
+apy must be appropriately modiﬁed as well, which
+is typically arranged by the combination therapies
+and/or appropriate scheduling schemes which make
+attempts to solve this problem explicitly. In the strat-
+egy of benign cell boosters Maley and Forrest pro-
+posed ﬁrstly to increase the proliferation rate of the
+benign cells sensitive to a cytotoxin intentionally and
+then apply the toxin [50]. Similarly, Chen et al. de-
+signed strategy ofan’evolutionary trap’whichselects
+from a karyotypically divergent population the sub-
+population with predictably drugable karyotypicfea-
+ture [51]. In the evolutionary double bind strategy to
+control cancer, Gatenby at al. exploit that the ther-
+apy resistance requires costly phenotypic adaptation
+that reduces the ﬁtness of the respective cells [52]. It
+has been shown recently that the proliferation of ma-
+lignant cells can be decreased by the administration
+of non (or minimally) cytotoxic ersatzdroges [53, 54]
+thereby thecell’sresourcesaredivertedfromthepro-
+liferation and invasion towards the e ﬄux pump ac-
+tivity, which, consequently, lowers the fraction of the
+cells with developed drug e ﬄux mechanisms in the
+population [54]. During recent years, directed evo-
+lution of oncolytic viruses has been investigated in
+the virotherapy [55]. Instead of detailed knowledge
+of the molecular aspects of the interaction between
+the cancer cell and the virus, the approach exploits
+evolutionary principles such as diversiﬁed popula-
+tion of viral candidates which undergo purposefully
+designed selection steps to direct evolution towards
+an explicitly pre-deﬁned goal. Usefulness of the ap-
+proach was demonstrated by the adaptation of the
+RNA virus to the cells in which the tumor suppres-
+sor gene p53had been inactivated [56].3
+Virotherapyisatargetedanticancerstrategyinwhich
+geneticallyengineeredstrainsofvirusesreplicateand
+lyse tumor cells [57]. Unfortunately, due to evolution
+of cancer cells the ultimate success of the treatment
+remains elusive. We hypothesize that even if one ad-
+mits evolution of the virus, its ﬁtness does not suf-
+ﬁciently reﬂect its ability to lyse cancer cells which,
+consequently, vanishes. In our work, the therapy is
+conceived as a self-sustaining evolutionary processin
+dynamic ﬁtness landscape [58–61] with cytotoxicity
+of elementary therapies reﬂected in their respective
+ﬁtness, which could prevent (or reduce) its decrease
+during eventual treatment.
+II. MODEL
+Evolutionary Causation of Toxicity. The ultimate
+goal of cancer research is to design the therapy
+which stays e ﬃcient against heterogeneous and con-
+tinuously changing cancer cells with the minimum
+harm to healthy cells. To implement the evolution-
+ary paradigm into the therapy design, we construct
+thetherapyasapopulationofheterogeneous’elemen-
+tary’ therapies (a ’therapy species’) each of them al-
+lowed to interact exclusively with one of the avail-
+able (therapy-free) cells (Fig. 1). Regarding the ther-
+apeutic context, the principal feature of the elemen-
+tarytherapyisitstoxicitytocells. Toundergo contin-
+uous, self-sustaining adaptation by the evolutionary
+process, toxicity of the elementary therapy must play
+the role of the therapy’s ﬁtness, which means that it
+must conformto evolutionary causation.
+Firstly toxicity of the elementary therapy must result
+fromtherealselectionpressure,whichmeansthatthe
+elementary therapy must be put into interaction with
+thecell. Secondlytheevolutionary causation requires
+thatduringthetreatmentthefundamentalevolution-
+ary principles, phenotypic variation, di ﬀerential ﬁt-
+ness and heritability of ﬁtness [62], apply. It follows
+that i) the elementary therapies di ﬀer in their respec-
+tivetoxicities,ii)themoretoxicelementarytherapyis,
+themoreoftenitisapplied,and,iii)repeatedapplica-
+tionofthe sameelementarytherapyprovides toxicity
+similar to that in its previous (i. e. ’parent’) applica-
+tion, even if it is slightly changed (’mutated’). While
+the points i) and iii) are straightforward and can be
+ensured by the appropriate heterogeneity of the ele-
+mentary therapies, the point ii) is less intuitive and
+below we outline its minimalistic in silicoimplemen-
+tation (Fig. 1).
+In here proposed approach, each elementary therapy
+maycreatecomplexwithoneofthetherapy-freecells.
+The elementary therapy can create the new complex
+with another therapy-free cell only after its current
+complex has decayed, playing the role of a catalyst.
+It follows that each cell-therapy complex is exposed,
+at the same time, to two counteracting selection pres-
+FIG. 1: How toxicity turns into ﬁtness. The red elementary
+therapykills the cellsooner than the blueone thereforeitc an be
+applied more often. It means that the toxicity plays the role of
+reproduction ﬁtness. If the therapy is not toxic, it stays wi thin
+the complex and enables binding opportunity to free (i. e. more
+toxic) therapies.
+sures. On the one hand, the ﬁtness of the cell is pro-
+portionaltothenumberofitscopies,thereforelonger
+lifetime of the complex (hence the resistance to ther-
+apy) is supported by the evolution of the target cell
+population. Ontheotherhand,thecomplexesareun-
+der selection pressure due to the evolution of thera-
+pies; the sooner the elementary therapy kills the cells
+within its consecutive complexes, the higher is the
+number of its repetitions (hence, by deﬁnition, its re-
+production ﬁtness). Consequently, shorter lifetime of
+the complex (hence higher toxicity of the elementary
+therapies) is implicitly supported by the evolution of
+therapies. Despitethetwoevolutionaryprocessesdif-
+fer in their respective reproduction mechanisms, the
+former creating physical copies (cells), the latter re-
+peating the therapies accordingly to their respective
+toxicities, the both processes satisfy one of the fun-
+damental principles of evolution, the heritability of
+ﬁtness, which does not require any particular mecha-
+nism of inheritance; only the correlation between the
+parent’s and o ﬀspring’s ﬁtness is required [62]. To
+sum up, asin hereproposedalgorithm thenumber of
+iterations of an elementary therapy (hence its ﬁtness)
+depends on the ability of the therapy to kill the cell,
+the toxicity of the elementary therapy can be identi-
+ﬁed with its ﬁtness.
+To illustrate the above conceptual approach (Fig. 1),
+we present in the following subsections its in silico
+implementation. We have devised two ad hocmod-
+els, the conceptual model of the target cell popula-
+tion and the model of a virtual elementary therapy
+and its interaction with the cell within the complex.4
+Feasibility of the respective algorithmic steps at bio-
+chemicalandbiologicallevelsisnotconsidered;short
+discussion about an eventual implementation of the
+approachis providedin the Conclusions.
+Model of the Target Cell Population. During a few
+last decades many mathematical cancer models have
+been constructed, mostly classiﬁed as (i) continuum,
+formulated through di ﬀerential equations, (ii) dis-
+crete lattice models, usually represented by cellular
+automata and, (iii) agent based with diverse levels
+of ’intelligence’ assumed in the agents (for complete
+review of mathematical cancer models, see [63–68]).
+The respective types of models incorporate di ﬀerent
+levels of biological punctuality focusing on di ﬀerent
+scales, from microscopic to phenomenological. As in
+carcinogenesis many biological phenomena run con-
+currently, the multiscale models make an e ﬀort to
+bridge the gap between the phenomenology and mi-
+croscopictheory[69,70]. Evolutionarymodelsofcan-
+cer do not typically focus on the microscales. The
+reason is that the phenotypes of cancer and normal
+cells can have many alternative genetic (and epige-
+netic)causes. Instead,evolutionofcancerisdrivenby
+the environmental selection forces that interact with
+individual cellular strategies (or phenotypes) [19]. In
+this way, the evolutionary models investigate how se-
+lection pressure inﬂuence the life history characteris-
+tics, such as survival strategy, reproduction behavior,
+population heterogeneity, etc. [71–74].
+Thead hocchoice of the genome-coded actions in our
+coarse-grainedmodel ofthecell reﬂectshereadopted
+epitomizationoftargetcellsbycancercells. Asavoid-
+ing programmed cell death (apoptosis) is one of the
+hallmarks of cancer [75] no gene for it is assumed in
+theabovesetofactions;targetcellsdieduetothelack
+of resources or to the therapy. On the other hand, the
+dormancy and phenotypic switching are included as
+they are often referredas possible alternative ways of
+drug resistance. As a result each target cell is deﬁned
+by its state, φ∈{0,1}, enabling to quantify the impact
+of an elementary therapy on the cell, see below, and
+its ’genome’ consisting of Lgenesgj∈{R,M,S,D}, j=
+1...L, each representing speciﬁc cell-related action.
+The tupleG≡/an}bracketle{tLR/L,LM/L,LS/L,LD/L/an}bracketri}ht,Lxbeing the
+number of gene xin the genome, is introduced to ex-
+press proportions of the respective genes in the cell’s
+genome. The actions associated with the respective
+genes correspond to: (R)eplication: the copy of the
+cell is created, unless the lack of resources prevents
+it, in which case the cell itself dies; if successful, the
+copy (‘child’) inherits the parent’s genome and state
+and undergoes mutation, (M)utation: the gene is se-
+lected uniformly at random from the genome. If the
+selected gene is ’M’, another gene selected uniformly
+at random is replaced by the gene picked with the
+same probability from {R,M,S,D},(S)witching: the
+cell state is switched either from 1 to 0 or from 0 to
+1, depending on the current state, and (D)ormancy:no action is performed. Proportions of the respective
+gene in the genome of the cell determine its pheno-
+type such as, for example, proliferative (abundance
+of ’R’ genes), survival (abundance of ’D’ genes), the
+cellstateswitching(’S’gene)andgeneticallyunstable
+(’M’ gene).
+Model of the Elementary Therapy. In our model, a
+uniﬁed, biochemically reasoned therapy is replaced
+by the‘therapyspecies’, whichisevolving population
+of heterogeneous elementary therapies. Conceptual
+novelty of the approach (Fig. 1) consists in avoiding
+the necessity to specify explicitly the di ﬀerences be-
+tween cancerandnormalcells, whichis, due to intra-
+tumor heterogeneity, the principal obstacle in com-
+montreatments. Instead,itisrequiredthatthemodel
+of elementary therapy introduces variability in the
+cells’ survival. It follows that to prevent ’premature
+convergence’ (hence genetic drift) the population of
+elementary therapies must start as less (or non)toxic.
+To facilitate the instructive in silico modeling, the
+elementary therapies are of the same mathematical
+structure based on two characteristics - the rate of
+changeandtheselectivity. Thesewerechosenbecause
+they obviously inﬂuence the fate of the target cell as
+deﬁnedabove,hencetheyguaranteethevariability of
+theﬁtnesswithinthepopulationofelementarythera-
+pies. Nevertheless, in the eventual applicationsmuch
+less intuitive characteristics can be chosen, based on
+diﬀerent pharmacological mechanisms of action.
+The elementary therapy integrates all factors that ef-
+fect the cell’s fate into one time-dependent variable
+E(t), chosen to change continuously between 0 and 1
+accordingly
+E(t)=1±sin(t/T)
+2, (1)
+2πTbeing the period of the respective therapy. The
+choice of the + /−sign is arbitrary, nevertheless once
+chosen the sign persists during simulation.
+Toquantifyselectivityofthetherapy, S,thethreshold
+σis deﬁned as
+σ=1
+1+eS(|E(t)−φ|−C), (2)
+whereC=0.5postulates thesymmetryof E(t)regard-
+ingthetwopossiblecell states. Inthenext,wedenote
+the therapyas the tuple D≡/an}bracketle{tT,S/an}bracketri}ht.
+Thethreshold σdeterminesthefateofthecell,apply-
+ing the rule
+action=cell death ,ifυrand>σ,
+,
+selected uniformly at random
+fromthe genome ,otherwise(3)
+whereυrand∈(0,1) is uniformly distributed random
+number. Interaction of the therapy with the cell5
+(Eqs. 1 to 3) applies only if the action selected in
+Eq. (3) is the replication.
+We emphasize that in the model the cell’s resistance
+is not bound to a speciﬁc cell state φbut it is rather
+viewed asthe ability ofthe cell(s) to survive under an
+instant therapy. For convenience, the cell in the state
+φcloser toE(t) is assigned with lower probability of
+death (Eqs. 2, 3). Regarding here followed therapeu-
+tic context it is viewed as resistant, while the cell in
+thecomplementarystate(fartherfromthe E(t),higher
+probability of death) is referred as sensitive. Taking
+intoaccountthetimevariabilityofthetherapy(Eq.1)
+it followsthat thecell can beresistant in onemoment
+andsensitive in the other without switching its state.
+Simulation Scheme. The simulation begins with the
+population of Ncells characterized by their genomes
+Giand states φi, i= 1...N,evolving simultaneously
+with the heterogeneous population of Ktherapies
+Dk≡/an}bracketle{tTk,Sk/an}bracketri}ht, k= 1...K,(Eqs. 1, 2). Each genome
+Gi, i=1...N,consistsof Lgenesgj, j=1...L,selected,
+at the beginning, uniformly at random from {R,M}.
+Thestates φi, i=1...Narepickedfrom{0,1}withthe
+same probability. The therapy species is represented
+byKelementary therapies Dk=/an}bracketle{tTk,Sk/an}bracketri}ht, k= 1...K,
+eachofthem withitsownperiod2 πTkandselectivity
+Sk,starting as
+Tk=10ξandSk=10η, k=1...K, (4)
+whereξ∈(ξmin,ξmax) andη∈(ηmin,ηmax) are uni-
+formly distributed randomnumbers.
+During simulation, the cells and therapies evolve ac-
+cordingly to the model (Eqs. 1-3). The number of
+cells varies as implied by their interaction with el-
+ementary therapies and the population carrying ca-
+pacity provided by the system resources. At replica-
+tion,thenewlyborncellinherits itsstate andgenome
+from its parent, and the both genomes undergo the
+abovedescribed mutation procedure. In addition, the
+oﬀspring cell creates exclusive lifetime complex with
+one of the free elementary therapies. In contrast to
+the variable size of the population of cells, the size of
+the therapy species is kept constant; elementary ther-
+apies neither replicate, nor die; they only mutate ev-
+ery time when they form the complex with the cell;
+the mutated therapies areobtained as
+Tnew
+k=Told
+k×10δ1andSnew
+k=Sold
+k×10δ2,(5)
+whereδ1,δ2∈(0,0.1) are uniformly distributed ran-
+dom numbers. Subsequently, the values of parame-
+ters within required intervals are guaranteed by im-
+posing the limits as
+˜X=X×10γmax−γmin,forX <10γmin,
+X×10γmin−γmax,forX >10γmax,
+X, otherwise(6)
+whereXstandsforTnew
+korSnew
+kandγfortherespec-
+tiveξorηin Eq. 4.During its lifetime, the cell repeatedly chooses uni-
+formly at random the gene from its genome and per-
+forms the respective actions. If the action is replica-
+tion, the interaction of the cell and its respective ele-
+mentary therapy is recalculated (Eqs. 1- 3). If the cell
+survives, it replicates. When the cell dies, either due
+to the interaction with the therapy or due to the lack
+of resources at the moment of replication, its respec-
+tive complex decays and the relinquished elementary
+therapy becomes capable to create complex with an-
+other newly born cell, playing the roleof a catalyst.
+III. RESULTS
+Here,thecellstatedynamicsisrepresentedbythede-
+pendence of the ratio N1/Non the variableE(t);N1
+andNare numbers of the cells in the state φ=1 and
+the target cell population size, respectively. Due to
+fundamentally di ﬀerent physical implementation of
+themodelsystem,withbiologicaltimescalesandcar-
+rying capacity substituted by the CPU and memory
+limits (see Appendix), numerical values of TandS
+in the ﬁgures below lack biological meaning and are
+used only to outline a few typical behaviors of the
+model. Despite that, some results, such as the de-
+pendence of the cell state dynamics on the relations
+between someoftheparameterscouldhaveuniversal
+meaning. In the subsections C and D, E(t) (Eq. 1) was
+calculated for each cell-therapy complex separately,
+with time tcorresponding to the cell’s age expressed
+as the CPU time consumed by the cell’s thread (run-
+ning in parallel with other threads, see Appendix) in-
+stead of simulation (i. e. ’physical’) time, providing
+E(0)=0.5 at the cell’s birth. Consequently, the ranges
+ofTof elementary therapies chosen in the Results
+sections A and B di ﬀer in orders of magnitude from
+those in sections C andD.
+To get deeper insight into below in silico investiga-
+tionoftheevolutionarydynamicsofthecellsandele-
+mentarytherapies, wehaveﬁrstly studied afewcases
+of the cell state dynamics where at least one popula-
+tion, cells or therapies, was kept homogeneous (i. e.
+isogenic or uniﬁed, respectively) and did not evolve.
+Thoughmostofpresentedfeaturesareratherobvious
+byintuition,forthereaders’conveniencewepointout
+the most dominant ofthem.
+A. Isogenic target cell population under uniﬁed therapy
+Firstly dependences of the cell state dynamics on the
+three model characteristics, selectivity and period of
+the uniﬁedtherapyandthecell’sswitching rate( LS/L
+inGiso), were investigated. Fig. 2 shows convergence
+of the (N1/N,E) trajectories for the respective combi-
+nations of the above three model characteristics. The
+three nonevolving isogenic target cell populations
+which di ﬀer each other in the cells’ switching rates,
+i) no switching, Giso=/an}bracketle{t0.5,0,0,0.5/an}bracketri}ht, ii) low switch-6
+ing,Giso=/an}bracketle{t0.5,0,0.02,0.48/an}bracketri}ht, and iii) high switching,
+Giso=/an}bracketle{t0.5,0,0.5,0/an}bracketri}ht, were exposed one by one to 8
+diﬀerent uniﬁed therapies Duni=/an}bracketle{tT,S/an}bracketri}ht, combining
+a few diﬀerent periods 2 πT(T= 400,100,40,10ms)
+and selectivities ( S= 1,30). We note that to satisfy
+the genome’s constraint( LR+LM+LS+LD)/L=1, the
+change in the switching rate LS/Lis compensated bythe respective change of the probability of dormancy,
+LD/L. Nevertheless, taking intoaccount minorrole of
+the dormancy within our illustrative model, we omit
+analysis of this step. Isogenic populations consisted
+of a few thousands non-evolving cells in the states
+φi, i= 1...N,each picked from {0,1}with the same
+probability.
+FIG. 2: Examples of the cell state dynamics of non-evolving pop ulations of isogenic cells which di ﬀer by the probability of the cell
+state switching - no switching, low ( LS/L=0.02)and high ( LS/L=0.5)switching probability; for each of the populations two kin ds
+of therapies are applied - low and highly selective, respect ively, quantiﬁed by the values of the parameter S= 1and30, respectively.
+Moreover, for all the cases four uniﬁed therapies di ﬀering in their respective periods are applied, as quantiﬁed by the values of the
+parameterT=400,100,40and10msin (1). In eachplot twoseries corresponding to the plus (red )or minus (black) sign in Eq. (1)
+aredepicted.7
+Inthecasewithoutswitching, Giso=/an}bracketle{t0.5,0,0,0.5/an}bracketri}ht, the
+population becomes extinct if the period 2 πTis too
+long (T= 400msin Figs. 2A, 2B, 3A, and 3B)
+for the survival of the sensitive cells. The probabil-
+ity of extinction increases with higher selectivity of
+the therapy (Figs. 3A and 3B). In the case of low se-
+lectivity,S= 1.0, and the shortest investigated pe-
+riod given byT= 10ms, the ability to switch the
+cell state does not a ﬀect the cell state dynamics sig-
+niﬁcantly (Fig. 2A to C). However, high selectivity,
+S=30.0, can homogenize the cell states in the popu-
+lation even during very short period without switch-
+ing (Fig. 2B,T= 10ms). Between the two limiting
+periods, corresponding to T=400msandT=10ms,
+respectively, the population does not become extinct
+and converges to one of the two cell states. When the
+phenotypeswitchingisallowed,thetypicalhysteretic
+behaviorofthecellstatedynamicsemergesforthese-
+lectivityS=30 (Figs. 2D and 2F, the period given by
+T=400ms)withthewidthofhysteretic loopdecreas-
+ing with the switching probability. It is obvious thatthe similar cell state dynamicscan be produced alter-
+natively (Figs. 2C, T= 400msand 2F,T= 100ms),
+which indicates dependence of the cell state dynam-
+ics on a scaling form constructed between selectivity,
+period andthe rateof switching.
+Wenotethat therelation between hysteresis andphe-
+notype switching in evolutionary systems has often
+been observed and studied [76]. It was shown in
+bacteria that some antibioticscan induce long-lasting
+changes in their physiology, termed cellular hystere-
+sis, that inﬂuencebactericidalactivityofotherantibi-
+otics andcan be exploited to optimizeantibiotic ther-
+apy [77]. However, keeping in mind ad hocchoice
+of the model aimed in particular to provide formal
+ﬁtness landscapes for here investigated purposes, we
+leave deeper analysis of the speciﬁc hysteretic behav-
+ior (or the memory e ﬀects caused by the therapy) of
+the cell state dynamics and, eventually, the scaling
+properties to future research.
+FIG. 3: Dependence of the target cell population size on the p eriod and selectivity of the therapy and the rate of switchin g of isogenic
+cells. Obviously, under higher selectivity the system foll ows dynamics ofE(t)unless too short period (here, corresponding to the case
+T= 10 ms).
+B. Evolvingtarget cell population under uniﬁed therapy
+In this subsection, the target cell population (for
+its initialization see simulation scheme in Section II)
+evolves under a few uniﬁed therapies Duni=/an}bracketle{tT,S/an}bracketri}ht
+which di ﬀer by their periods 2 πTand selectivitiesS.
+In the case of short periods, here corresponding to
+Duni=/an}bracketle{t1,1/an}bracketri}htand/an}bracketle{t1,30/an}bracketri}ht, the switching probabilities
+LS/Linthepopulationconvergedto0 .02(Figs. 4A,B),
+which is the lowest possible nonzero value within the
+model resolution. In the case of long periods, cor-
+responding to the uniﬁed therapies Duni=/an}bracketle{t100,1/an}bracketri}ht
+and/an}bracketle{t100,30/an}bracketri}ht, no switching has evolved (Figs. 4E to
+F). When the therapies with intermediate periods,
+Duni=/an}bracketle{t10,1/an}bracketri}htand/an}bracketle{t10,30/an}bracketri}ht, are applied, higher se-lectivity makes population more state homogeneous
+and, at the same time, decreases switching probabili-
+ties (Figs. 4C, D).
+In the previous subsection we demonstrated sensitiv-
+ity of the cell state dynamics on the period 2 πTand
+the selectivitySofthetherapyasimplementedinthe
+model (Eqs. 1-6) as well as on the switching proba-
+bility. In this subsection the interplay between the
+period 2 πTand selectivitySof the therapy and the
+evolutionofswitchingprobabilitywasshowninmore
+depth andtheconsequencesofevolving it (ornot) for
+the cell state dynamics.
+The results presented in this and the previous sub-
+sections are very general and reﬂect simplicity of the8
+aboveadhocmodels. Toobtainbiologicallymorerele-
+vant outcome, biologically realistic timescales for the
+replication, phenotypic switching, apoptosis, carry-
+ing capacity, etc, would be needed. Nevertheless, re-
+garding the context of our work we require the capa-
+bility ofthe model to generatesu ﬃcient variability of
+thecellstatedynamics,whichhasbeendemonstrated.
+FIG.4: Evolution oftheswitchingrateunder6di ﬀerentuniﬁed
+therapiesDuni=/an}bracketle{tT,S/an}bracketri}ht, where the short period therapy uses
+T=1s, intermediateT=10s, and the long period therapy T=
+100s. The sizes of the target cell population and the switching
+rates in the genome after the population becomes isogenic are
+rescaledtoemphasizedependencesoftherespectiveserieso nthe
+variableE(t). Population size counts the both cell states, 0and
+1; however, at theE(t)extrema one of the states (alternately)
+dominates.
+C. Isogenic target cell population under evolving therapy
+Here,therelationbetweentoxicitiesoftheelementary
+therapies and their ﬁtness was investigated. Toxicity
+of the elementary therapy is represented by the aver-
+agelifetimeofthecellswhichhaveappliedit,andthe
+ﬁtness of the therapy corresponds to the number of
+its iterations, i. e. its abundance within the space of
+all possible elementary therapies spanned by the in-
+tervals (ξmin,ξmax)×(ηmin,ηmax) (Eq. 4).
+In simulations, the therapy species consisting of K=
+32768 elementary therapies Dk=/an}bracketle{tTk,Sk/an}bracketri}ht, k= 1...K,
+evolves in interaction with non-evolving isogenic
+populations (4 populations with di ﬀerent switch-
+ing probabilities were one by one tested, Giso=/an}bracketle{t0.5,0,0,0.5/an}bracketri}ht,/an}bracketle{t0.5,0,0.02,0.48/an}bracketri}ht,/an}bracketle{t0.5,0,0.2,0.3/an}bracketri}htand
+/an}bracketle{t0.5,0,0.5,0/an}bracketri}ht). At the beginning, the cell states φi, i=
+1...N, were picked from {0,1}with the same prob-
+ability and the elementary therapies’ parameters Tk
+andSk, k=1...K,determining the periods andselec-
+tivities of the respective elementary therapies (Eq. 2),
+were generated accordingly to Eq. 4 for ξ∈(2,9) and
+η∈(0,3). The new (’mutated’) elementary therapies
+wereobtainedfromEq.5imposingtheboundarycon-
+ditions (Eq. 6) with δ1,δ2∈(0,0.1).
+The simulation results show that increase of the
+switching probabilities in isogenic target cell popula-
+tions makes the distributions of average lifetimes, as
+wellasthedensityofthetherapyspace,ﬂatter(Fig.5).
+Theaveragelifetimesofthecellsunderevolving ther-
+apiespresentedinFigs.5and6were ≈52µsforGiso=
+/an}bracketle{t0.5,0,0,0.5/an}bracketri}ht,≈52µsforGiso=/an}bracketle{t0.5,0,0.02,0.48/an}bracketri}ht,≈
+46µsforGiso=/an}bracketle{t0.5,0,0.2,0.3/an}bracketri}htand≈39µsforGiso=
+/an}bracketle{t0.5,0,0.5,0/an}bracketri}ht.
+FIG.5: The averagelifetimes of the cells(uppersurfaces)wh ich
+applythesameelementarytherapyversusnumberofitsapplica-
+tions (expressed as the density of the discretized (ξmin,ξmax)×
+(ηmin,ηmax)therapy space, bottom surfaces, a. u. standing for
+arbitraryunits). TheplotsAtoDshowtheresultsfor4isoge nic
+target populations Gisowhich diﬀer in switching probabilities.
+The surfaces corresponding to the density of therapy space a re
+rescaled for the demonstration purposes; the heat maps of the
+respective densities of the therapy space (bottom surfaces ) are
+shown more preciselyin Fig.6Ato D.
+The main result of this subsection (Figs. 5, 6) is that
+less toxic elementary therapies (conferring to cells
+longer averagelifetimes) becomeless abundant inthe
+therapy species. Moreover, the ﬂatness of the distri-
+bution andtheaveragelifetimeofthecellsdependon
+the switching probability encoded in the genomes.9
+FIG. 6: The heat maps show more precisely the density of the
+therapy space for the corresponding populations in Fig. 5. C ol-
+ors of the heat maps are scaled to sharpen positions of the ex-
+trema in the surfaces.
+D.Evolving target cell population under evolving therapy
+Here, the population of therapies evolves simultane-
+ously with the population of cells. Dependence of
+the average lifetimes of the cells on applied thera-
+pies, speciﬁed by the parameters TandS, was in-
+vestigated. As the density of the therapy space is
+recorded after the population of target cells has con-
+vergedtoisogenic( Giso=/an}bracketle{t0.6,0,0,0.4/an}bracketri}ht)thediﬀerences
+in the cells’ lifetimes are attributed exclusively to the
+applied therapies. Evolved switching probability was
+0, which is consistent with the ﬁndings in the previ-
+ous subsection that, in this speciﬁc case, the absence
+of switching increases the average lifetime of cells.
+Fig.7showsthatthetherapiesconferring,onaverage,
+longer lifetimes to the respective cells are underrep-
+resented in the therapyspecies and vice versa.
+The explanation of the anticorrelation is straightfor-
+ward. Each cell, at its birth, creates the exclusive
+complex with one of the available elementary thera-
+pies (which ’mutates’). Even neither in the case of
+longlivingcell(dormantcellorthecellresistanttoits
+respective therapy) is the therapy replaced. It might
+seem (therapeutically) contraproductive, as it contra-
+dictstoanintuitiveexpectationthattheresistantcells
+should be the primary target of therapies, as resist-
+ing the cell death is one of the hallmarks of cancer
+cells [75]. As it was discussed above, here the ﬁtness
+of the therapy corresponds to the number of its iter-
+ations (instead of the number of its physical copies).
+Straightforwardly, the therapeutic e ﬀort is to arrange
+that more ﬁt (toxic) elementary therapies are appliedmore often, and vice versa, if the therapy is not e ﬃ-
+cient, it should be repeated only rarely (to preserve
+theexplorationcapabilityofthealgorithm). Theanti-
+correlationinFig.7impliesthatthelesse ﬃcientther-
+apyis,thelessoftenitisused,whichisthedesiredre-
+sult. The message is that if it is not possible to deter-
+minea prioriwhich therapy is the best (and to apply
+it), one should eliminate less ﬁt therapies (to increase
+the abundance ofthe moretoxic ones).
+FIG. 7: Comparison of the average lifetimes of the cells which
+applied the same elementary therapy (upper surface in plot A)
+with the density of the space of elementary therapies (bottom
+surface in A, a.u. standing for the arbitrary units). As the d en-
+sity of the therapy space is recorded after the population ha s
+converged to isogenic ( Giso=/an}bracketle{t0.6,0,0,0.4/an}bracketri}ht), the average life-
+times depend only on the respective elementary therapies. The
+corresponding heat maps B, C underline the correlation of the
+area of the above-average lifetimes (bright yellow area in pl ots
+A, B) with sparsely populated areas in the therapy space (dee p
+violet areain plots A, C).
+IV. DISCUSSION
+In here presented scenario, the resistant cells implic-
+itly serve as inhibitors for non (or less) e ﬃcient ther-
+apies. Bythis way, the resistant cells direct the evolu-
+tion ofthe therapyspecies tomoree ﬃcient therapies.
+Here, it is required that the elementary therapy can
+createcomplexwiththenexttherapy-freecellonlyaf-
+teritscurrentcell’sdeath. Bythis,toxicityofthether-
+apy is connected with its ﬁtness in the evolution con-
+forming way. However, this requirement disregards
+that manycancersevolvemultidrug resistanceby up-
+regulatingmembranee ﬄuxpumpthatexportsdrugs,10
+thereby ensuring the cell’s survival. As in this case
+the therapy is pumped out before it can fully exhibit
+its particular properties (primarily its toxicity), evo-
+lution of elementary therapies becomes questionable
+as one of the crucial evolutionary principle, the dif-
+ferential ﬁtness [62], is signiﬁcantly suppressed. On
+the other hand, the e ﬄux pump comes with the en-
+ergetic cost [78] which makes the cells with the e ﬄux
+pump less ﬁt than those without it when the therapy
+is absent (ornontoxic[53, 54]).
+Inherepresentedconceptualization,thetherapiesare
+heterogeneous,eachoftheminteractingwiththecells
+with heterogeneous properties, including the di ﬀer-
+ences in their sensitivity to di ﬀerent therapies. If the
+cell pumps out the therapies not regarding their re-
+spective toxicities, it wastes resources and becomes
+less ﬁt. Therefore, we speculate that in reality the
+cellswouldevolvemechanism(s)enablingthemtoex-
+trude therapies reﬂecting the level of their respective
+toxicity. If true, moretoxic therapies prevail in popu-
+lation,justasinhereinvestigatedcasewhenthedeath
+of the cell was required to re-apply its therapy by the
+next cell. It would mean that the toxicity plays, from
+the evolutionary viewpoint, the role of the ﬁtness of
+the therapy no matter whether it shortens the cell’s
+lifetime, orredirects the cell’s resourcesfromreplica-
+tion andinvasion to building e ﬄux mechanism(s).
+Inherepresentedalgorithm,eachnewlyborncellcre-
+ates the complex with the therapy which is, in gen-
+eral, diﬀerent from the therapy of its parent. It fol-
+lows, that even if the o ﬀspring has inherited resis-
+tance against the therapy of its parent, it might still
+be sensitive to its own, in addition mutated, ther-
+apy, which obviously decreases its (as well as its par-
+ent’s) ﬁtness. This e ﬀect might be more pronounced
+in the case of cells with unlimited replicative poten-
+tial, which is one of the cancer hallmarks [79]. This
+adds more biological ﬂavor to the model, as most
+chemotherapeutic drugs are designed to e ﬀectively
+target fast-dividing cells.
+V. CONCLUSIONS
+In the paper, a uniﬁed therapy is substituted by the
+therapyspecies,theevolvingconstantsizepopulation
+of heterogeneous elementary therapies, each of them
+with the ﬁtness resulting a posteriori from its interac-
+tionwiththecellsandviceversa. Inthisway,notonly
+thetherapiesgoverntheevolution ofdi ﬀerentpheno-
+types, but the variable resistances of the cells govern
+the evolution of the therapies as well. From the view-
+pointofevolvingelementarytherapies,evolvingpop-
+ulation of target cells plays the role of dynamical en-
+vironment. As the therapies themselves mutate, less
+denseareasofthetherapyspacearerepeatedlyrepop-
+ulatedbydi ﬀusion,retainingexploratorypowerofal-
+gorithm. Our in silicoinvestigation indicates that thealgorithm can identify the most e ﬃcient therapies by
+inhibiting those which are less e ﬃcient (as evidenced
+by their lower ability to kill the host cell). Not be-
+ing tailored to some speciﬁc molecular mechanisms
+responsible for the respective cancerous features, the
+approachcould, inprinciple,tocopewithintratumor
+heterogeneity and stay e ﬃcient during adaptation of
+cancer cells to changed therapy.
+Despite conceptual simplicity of the above approach
+we foresee a number of technical di ﬃculties in its
+eventual therapeutic implementation. The ultimate
+question, i. e. which species will be the winner of the
+evolutionary ’arms race’ - cancer or therapy - stays
+therefore unanswered in our paper. Each evolution-
+ary process samples its respective search space with
+some speciﬁc e ﬃciency. While the e ﬃciency of the
+samplingbycancercellspopulationresultsfromtheir
+biochemistry, inthecaseofthetherapyspeciestheef-
+ﬁciency of sampling would derive from its eventual
+therapeutic realization. The questions follow: What
+agent could be used as the replication-deﬁcient ther-
+apy species? Must it be organic at all? How to mu-
+tate the therapies? How to deliver the elementary
+therapy into the cell, and, subsequently, to avoid the
+eﬄux pump, etc. Some of the above issues are om-
+nipresent in cancerresearchandareintensively stud-
+ied. Important insights could be gained from the vi-
+rotherapy where the evolutionary principles are used
+to direct evolution towards the explicitly pre-deﬁned
+goal,andthevirus-basedgene-therapywhichusesthe
+replication-deﬁcient viruses asvectors.
+Recently, the framework for classifying tumors ac-
+cordingtotheirevolvabilitywaspresented[74],based
+on the diversity of neoplastic cells and its changes
+over time (constituting the Evo-index) on the one
+hand, and the environmental hazard and availabil-
+ity of resources (Eco-index) on the other hand. The
+authors of the above paper envision that in the fu-
+ture, the classiﬁcation could indicate how the tumor
+of the respective type of evolvability would change
+with diﬀerent therapy, helping so cliniciansto choose
+theinterventionsregardingevolvability oftherespec-
+tive neoplasms. Our work enables to study the inter-
+play between related characteristics, such as the phe-
+notype switching and mutability, which reﬂect diver-
+sity of the target cell population and its changes over
+time and could eventually play the role of the Evo-
+index. Similarly, the environmental hazard is in our
+work represented by the selectivity of the therapy.
+The resources are implicitly (and, in principle, un-
+avoidably) included in the model. Variability of the
+selection pressure is mediated by the di ﬀerent peri-
+odsofelementary therapies. Owingtothiswebelieve
+that herepresented approachcouldcontributetobet-
+ter understanding of the relation between evolvabil-
+ityofcanceranddynamicsofenvironment(hencethe
+therapy).
+In his iconoclastic paper [80], Leonard Adleman pro-
+posed that computationally hard problems, such as11
+therein presented NP-complete directed Hamiltonian
+path problem, can be e ﬃciently solved with the algo-
+rithmic steps realized by the standard tools of molec-
+ular biology. We hope that here speculated possible
+beneﬁts of yet conceptual approach could, perhaps,
+motivate cancer researchers to test its feasibility in a
+therapeutically relevant way.ACKNOWLEDGMENTS
+This work was supported by the Scientiﬁc Grant
+Agency of the Ministry of Education of Slovak Re-
+public (VEGA) under the grants No. 1/0250/18 and
+1/0156/18.
+[1] Gottesman, M. M. 2002Mechanisms of cancer drug resistance Annu. Rev. Med. 53,615–627.
+[2] Bedard, P.L., Hansen, A.R., Ratain, M. J.&Siu,L. L. 2013 Tumourheterogeneity in the clinic Nature501,355–364.
+[3] Gallaher, J. A., Enriquez-Navas, P. M., Luddy, K. A., Gat enby, R. A. & Anderson, A. R. A. 2018 Spatial heterogeneity
+and evolutionary dynamics modulate time to recurrence in contin uous and adaptive cancer therapies Cancer Res. 78,
+2127–2139.
+[4] Gatenby, R. & Brown, J.2018 The evolution andecology of re sistance in cancer therapy Cold Spring Harb. Perspect.Med.
+8,a033415.
+[5] Turner, N.C. &Reis-Filho, J.S. 2012Genetic heterogene ity andcancer drug resistance Lancet13,e178–85.
+[6] Saunders, N. A., Simpson, F., Thompson, E. W., Hill, M. M. , Endo-Munoz, L., Leggatt, G., Minchin, R. F. & Guminski,
+A. 2012 Role of intratumoural heterogeneity in cancer drug res istance: molecular and clinical perspectives EMBO Mol.
+Med.4, 675–684.
+[7] Marusyk, A.& Polyak, K. 2010Tumorheterogeneity: Cause s and consequences Biochim. Biophys. Acta 1805,105–117.
+[8] Marusyk, A., Almendro, V. & Polyak, K. 2012 Intra-tumour heterogeneity: a looking glass for cancer? Nat. Rev. Cancer
+12,323–334.
+[9] Marusyk, A.& Polyak, K. 2013Cancer cell phenotypes, in ﬁft y shades of grey Science339,528–529.
+[10] Meacham, C. E. &Morrison, S. J.2013Tumourheterogeneit y andcancer cellplasticity Nature501,328–337.
+[11] Burrell, R. A., McGranahan, N., Bartek, J. & Swanton, C. 2 013 The causes and consequences of genetic heterogeneity in
+cancer evolution Nature501,338–345.
+[12] Fisher, R., Pusztai,L.&Swanton, C.2013Cancerheterog eneity: implicationsfor targeted therapeutics Br.J.Cancer 108,
+479–485.
+[13] Maley,C.C.,Galipeau,P.C., Finley,J.C., Wongsurawa t, V.J.,Li,X.,Sanchez, C.A.,Paulson,T.G.,Blount,P.L.,R isques,
+R. A., Rabinovitch, P. S. et al.2006 Genetic clonal diversity predicts progression to esopha geal adenocarcinoma Nat.
+Genet.38,468–473.
+[14] Laird, P. W.2005Cancer epigenetics Hum. Mol. Gen. 14,R65–R76.
+[15] Bjornsson, H. T., Fallin,M. D. & Feinberg, A. P. 2004 An i ntegrated epigenetic and genetic approach to common human
+diseaseTrends Genet. 20,350–358.
+[16] Easwaran,H.,Tsai,H.C.&Baylin,S.B.2014Cancerepige netics: Tumorheterogeneity, plasticityofstem-likestates ,and
+drug resistance Mol. Cell 54,716–727.
+[17] H¨olzel,M.,Bovier,A.&T ¨uting,T.2013Plasticityoftumourandimmunecells: asourceof heterogeneity andacausefor
+therapy resistance? Nat. Rev.Cancer 13,365–376.
+[18] Huang, S. 2013 Genetic and non-genetic instability in t umor progression: link between the ﬁtness landscape and the
+epigenetic landscapeof cancer cells CancerMetastasis Rev. 32,423–448.
+[19] Gillies, R. J., Brown, J. S., Anderson, A. R. A. & Gatenby , R. A. 2018 Eco-evolutionary causes and consequences of
+temporal changes inintratumouralblood ﬂow Nat. Rev.Cancer 18,576–585.
+[20] Gatenby, R.A., Silva,A. S., Gillies,R.J. &Frieden, B. R.2009Adaptivetherapy CancerRes. 69,4894–4903.
+[21] Nowell,P. C.1976The clonalevolution of tumorcell popul ationsScience194,23–28.
+[22] Merlo, L. M. F., Pepper, J. W., Reid, B. J. & Maley, C. C. 20 06 Cancer as an evolutionary and ecological process Nat. Rev.
+Cancer6, 924–935.
+[23] Greaves, M. 2007Darwinian medicine: a casefor cancer Nat. Rev.Cancer 7, 213–221.
+[24] Gillies,R.J.,Verduzo,D.&Gatenby,R.A.2012Evoluti onarydynamicsofcarcinogenesisandwhy targetedtherapy does
+not work Nat. Rev.Cancer 12,487–493.
+[25] Bozic, I., Reiter, J. G., Allen, B., Antal, T., Chatterje e, K., Shah, P., Moon, Y. S., Yaqubie, A., Kelly, N., Le, D. T. et al.2013
+Evolutionary dynamics of cancer inresponse to targeted combina tion therapy eLIFE2, e00747.
+[26] Amirouchene-Angelozzi, N., Swanton, C. & Bardelli, A. 2 017 Tumor evolution as a therapeutic target Cancer Discov. 7,
+805–817.
+[27] Zhang, J., Cunningham, J. J., Brown, J. S. & Gatenby, R. A . 2017 Integrating evolutionary dynamics into treatment of
+metastatic castrate-resistant prostate cancer Nat. Commun. 8,art. 1816.
+[28] Greaves, M. 2015Evolutionary Determinants of Cancer CancerDiscov. 5,806–820.
+[29] Kemper, K., de Goeje, P. L., Peeper, D. S. & van Amerongen , R. 2014 Phenotype switching: Tumor cell plasticity as a
+resistance mechanism andtarget for therapy CancerRes. 74,5937–5941.
+[30] Emmons, M. F., Fai ˜ao-Flores, F. & Smalley, K. S. M. 2016 The role of phenotypic p lasticity in the escape of cancer cells
+from targeted therapy Biochem. Pharmacol. 122,1–9.
+[31] Saez-Ayala, M., Montenegro, M. F., del Campo, L. S., Fer nandez-Perez, M. P., Chazarra, S., Freter, R., Middleton, M .,12
+Pinero-Madrona, A., Cabezas-Herrera, J., Goding,C.R. etal.2013Directed phenotype switching as an e ﬀectiveantime-
+lanoma strategy CancerCell 24,105–119.
+[32] Montenegro, M. F., del Campo, L. S., , Fernandez-Perez, M. P., Saez-Ayala, M., Cabezas-Herrera, J. & Rodrguez-Lope z,
+J.N.2015Targeting the epigenetic machinery of cancer cells Oncogene 34,135–143.
+[33] Clevers, H., Rafelski, S., Elowitz, M., Klein, A., Shen dure, J., Trapnell, C., Lein, E., Lundberg, E., Uhlen, M., Ma rtinez-
+Arias, A. et al.2017 What is your conceptual deﬁnition of ”cell type” in the conte xt of a mature organism? Cell Systems
+4,255–259.
+[34] Alizadeh, A. A., Aranda, V., Bardelli, A., Blanpain, C. , Bock, C., Borowski, C., Caldas, C., Califano, A., Doherty, M .,
+Elsner, M. etal.2015Toward understanding andexploitingtumorheterogene ityNat. Med. 21,846–853.
+[35] Gupta, P. B., Fillmore, C. M., Jiang, G., Shapira, S. D., Tao, K., Kuperwasser, C. & Lander, E. S. 2011 Stochastic state
+transitions giveriseto phenotypic equilibriumin populat ions of cancercells Cell146,633–644.
+[36] Carja, O. & Plotkin, J.B.2017The evolutionary advanta geof heritable phenotypic heterogeneity Sci. Rep. 7,5090.
+[37] Dueck,H.,Eberwine,J.&Kim,J.2016Variationisfunctio n: Aresinglecelldi ﬀerencesfunctionallyimportant? BioEssays
+38,172–180.
+[38] Rando, O. J.& Verstrepen, K. J.2007Timescalesof geneti c andepigenetic inheritance Cell128,655–668.
+[39] Crean, A. J. & Marshall, D. J. 2009 Coping with environme ntal uncertainty: dynamic bet hedging as a maternal e ﬀect
+Phil. Trans. R. Soc. B 364,1087–1096.
+[40] Forbes, S. 2009Portfolio theory andhow parent birds ma nageinvestment risk OIKOS118,1561–1569.
+[41] Beaumont,H.J.E.,Gallie,J.,Kost,C.,Ferguson,G.C. &Rainey,P.B.2009Experimentalevolutionofbethedging Nature
+462,90–94.
+[42] de Jong, I., Haccou, P. & Kuipers, O. P. 2011 Bet hedging or n ot? A guide to proper classiﬁcation of microbial survival
+strategies BioEssays 33,215–223.
+[43] Donaldson-Matasci,M.C.,Lachmann,M.&Bergstrom,C.T. 2008Phenotypicdiversityasanadaptationtoenvironmen-
+tal uncertainty Evol. Ecol. Res. 10,493–515.
+[44] Chisholm, R. H., Lorenzi, T. & Clairambault, J. 2016 Cel l population heterogeneity and evolution towards drug resi s-
+tanceincancer: Biologicalandmathematicalassessment,theore ticaltreatmentoptimisation Biochim.Biophys.Acta 1860,
+2627–2645.
+[45] Nichol, D., Robertson-Tessi, M., Jeavons, P. & Anderson , A. R. A. 2016 Stochasticity in the genotype-phenotype map:
+Implications forthe robustness and persistence of bet-hedgi ngGenetics 204,1523–1539.
+[46] Gravenmier, C. A., Siddique, M. & Gatenby, R. A. 2018 Ada ptation to stochastic temporal variations in intratumoral
+blood ﬂow: The Warburg e ﬀect as abet hedging strategy Bull. Math. Biol. 80,954–970.
+[47] Thomas, F., Ujvari, B., Gideon, C., Tasiemski, A., Ewal d, P. W. & Roche, B. 2017 Toward an ultimate explanation of
+intratumorheterogeneity in B.Ujvari,B.Roche & F.Thomas, e ditors,Ecology and evolution of cancer Elsevier.
+[48] Mathis, R. A., Sokol, E. S. & Gupta,P. B.2017 Cancer cells e xhibit clonal diversity in phenotypic plasticity Open Biol. 7,
+160283.
+[49] Herman,J.J.,Spencer, H.G.,Donohue,K.&Sultan,S.E.2 014Howstable’should’epigeneticmodiﬁcationsbe? Insight s
+from adaptiveplasticity andbet-hedging Evolution 68,632–643.
+[50] Maley, C. C., Reid, B. J. & Forrest, S. 2004 Cancer prevent ion strategies that address the evolutionary dynamics of
+neoplastic cells: Simulating benign cell boosters and selecti on for chemosensitivity Cancer Epidemiol. Biomark. Prev. 13,
+1375–1384.
+[51] Chen, G., Mulla, W. A., Kucharavy, A., Tsai, H. J., Rubins tein, B., Conkright, J., McCroskey, S., Bradford, W. D., Weem s,
+L., Haug,J.S. etal.2015Targeting the adaptabilityof heterogeneous aneuploi dsCell160,771–784.
+[52] Gatenby,R.A.,Brown,J.&Vincent,T.2009Lessons froma ppliedecology: Cancercontrolusinganevolutionary double
+bindCancerRes. 69,7499–7502.
+[53] Kam, Y., Das, T., Tian, H., Foroutan, P., Ruiz, E., Marti nez, G., Minton, S., Gillies, R. J. & Gatenby, R. A. 2015 Sweat but
+no gain: Inhibiting proliferation of multidrugresistant ca ncer cellswith “ersatzdroges” Int. J. Cancer 136,E188–E196.
+[54] Enriquez-Navas,P.M., Wojtkoviak, J.W.&Gatenby,R.A .2015Applicationof evolutionaryprinciplestocancertherapy
+CancerRes. 75,4675–4680.
+[55] Sanjuan,R. &Grdzelishvili,V.Z.2015Evolution of onco lytic viruses Curr.Opin. Virol. 13,1–5.
+[56] Garijo, R., Hernandez-Alonso, P., Rivas, C., Diallo, J . S. & Sanjuan, R. 2014 Experimental evolution of an oncolytic
+vesicularstomatitis viruswith increased selectivity for p53 -deﬁcientcells PLoS ONE 9, e102365.
+[57] Jenner, A.L., Kim, P.S. & Frascoli,F.2019Oncolytic viro therapy for tumoursfollowing a gompertz growth law J. Theor.
+Biol.480,129–140doi:https://doi.org/10.1016/j.jtbi.2019.08. 002.
+[58] Holland, J.H. 1975 Adaptation in natural and artiﬁcial systems University of Michigan.
+[59] Levins, R. 1968 Evolution in Changing Environments: Some Theoretical Explor ationsPrinceton University Press.
+[60] Branke, J.2002 Evolutionary Optimization in Dynamic Environments KluwerAcademic Publishers.
+[61] Morrison, R. W.2004 Designing Evolutionary Algorithms for Dynamic Environments Springer.
+[62] Lewontin, R. C.1970The units of selection Annu. Rev. Ecol. Syst. 1,1–18.
+[63] Anderson, A. R. A. & Chaplain, M. A. J. 1998 Continuous an d discrete mathematical models of tumor-induced angio-
+genesisBull. Math. Biol. 60,857–900.
+[64] Preziosi, L., editor 2003 CancerModelling and Simulation Chapman&Hall/CRCPress.
+[65] Bellomo, N., Li, N. K. & Maini, P. K. 2008 On the foundatio ns of cancer modelling: Selected topics, speculations, and
+perspectives Math. Mod. Meth. Appl.S. 18,593–646.
+[66] Lowengrub, J. S., Frieboes, H. B., Jin, F., Chuang, Y.-L ., Li, X., Macklin, P., Wise, S. M. & Cristini, V. 2010 Nonlinea r
+modelling of cancer: bridging the gapbetween cells andtumours Nonlinearity 23,R1–R91.13
+[67] Wodarz, D.&Komarova,N.L.2014 DynamicsofCancer: MathematicalFoundations ofOncology WorldScientiﬁc,London.
+[68] Altrock, P. M., Liu, L. L. & Michor, F. 2015The mathematics o f cancer: integrating quantitativemodels Nat. Rev. Cancer
+15,730–745.
+[69] Deisboeck, T.S. &Stomatakos, G.S., editors 2011 Multiscale CancerModeling Chapman&Hall/CRC Press.
+[70] Cristini, V. & Lowengrub, J. 2010 Multiscale Modeling of Cancer: An Integrated Experimental a nd Mathematical Modeling
+Approach CambridgeUniversity Press, Cambridge.
+[71] Aktipis, C. A., Boddy, A. M., Gatenby, R. A., Brown, J. S. & Maley, C. C. 2013 Life history trade-o ﬀs in cancer evolution
+Nat. Rev.Cancer 13,883–892.
+[72] Korolev, K. S., Xavier, J. B.&Gore, J.2014Turning ecolo gy andevolution againstcancer Nat. Rev. Cancer 14,371–380.
+[73] Abbott, R. G.&Forrest, S. 2006Simulatinghallmarks of cancerArtif. Life 12,617–634.
+[74] Maley,C.C.,Aktipis,A., Graham,T.A.,Sottoriva, A., Boddy, A.M., Janiszewska,M.,Silva,A.S., Gerlinger,M.,Y uan,Y.,
+Pienta, K. J. etal.2017Classifyingthe evolutionary andecological features of neoplasms Nat. Rev. Cancer 17,605–619.
+[75] Hanahan, D. &Weinberg, R.A. 2011Hallmarksof cancer: The next generation Cell144,646–674.
+[76] Friedman, G., McCarthy, S. & Rachinskii, D. 2014 Hysteres is can grant ﬁtness in stochastically varying environment
+PLoS ONE 7,e103241.
+[77] Roemhild, R.,Gokhale, C.S.,Dirksen, P.,Blake,C., Ro senstiel,P., Traulsen,A., Andersson, D.I.&Schulenburg,H .2018
+Cellularhysteresisasaprincipletomaximizethee ﬃcacyofantibiotictherapy Proc.Natl.Acad.Sci.USA 115,9767–9772.
+[78] Silva, A. S., Kam, Y., Khin, Z. P., end R. J. Gillies, S. E. M. & Gatenby, R. A. 2012 Evolutionary approaches to prolong
+progression-free survivalinbreast cancer CancerRes. 72,6362–6370.
+[79] Hanahan, D. &Weinberg, R.A. 2000The hallmarks of cancer Cell100,57–70.
+[80] Adleman, L.M. 1994Molecularcomputation of solutions to combinatorial problems Science266,1021–1023.
+[81] Kerrisk, M. 2010 The Linux Programming Interface: A Linux and UNIX System Progr amming Handbook No Starch Press,
+San Francisco, CA,USA 1st edition.
+APPENDIX
+The program encoding the above model conforms to
+thePOSIXThreadsexecutionschemewiththeround-
+robin time sharing as implemented in the Linux pro-
+gramming interface API [81], enabling to execute
+the respective cells concurrently as separate threads.
+Moreimportant than an eventual CPU gain, accruing
+fromtheprogramparallelism,isthebeneﬁtfromdel-
+egatingsomeofthemodel’sparameterstotherespec-
+tivesystemCPUandmemoryresources. Forexample,
+the size of the cell population derives, apart from the
+cells’ genomes themselves, from the maximum num-
+ber of concurrently running threads allowed by the
+system (representing ‘carrying capacity’ of the pop-
+ulation), duration of the thread creation (being the
+counterpart of the cell replication), size of the thread
+stack, etc. Owing to the implicit substitution of some
+model parameters by the system parameters, the im-
+plementation of the model is more robust, simplerand enable to concentrate on particular biologically
+relevant aspects, such as demonstrated by the above
+results. Obviously, the hardware constraints can be
+viewed as the counterpart of the constraints implied
+by biochemistry which are always present in biologi-
+cal experiments.
+Our speciﬁc hardware restrictions, such as the max-
+imum allowed concurrently running threads in the
+system, duration of the thread creation (hundreds of
+nanoseconds)andcancellationprocesses,etc,enabled
+us to simulate populations close to maximum size
+N≈10000, Fig. 3. In summary, between 107and
+108(≈104per second) cell-therapy complexes could
+be tested in a 1-hour simulation. The number of ele-
+mentary therapies in the therapy species during sim-
+ulations waskeptconstant( K=32768), reﬂecting the
+particular hardwareimplementation.

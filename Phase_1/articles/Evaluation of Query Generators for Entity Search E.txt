@@ -1,0 +1,747 @@
+Title: Evaluation of Query Generators for Entity Search Engines
+Abstract:   Dynamic web applications such as mashups need efficient access to web data
+that is only accessible via entity search engines (e.g. product or publication
+search engines). However, most current mashup systems and applications only
+support simple keyword searches for retrieving data from search engines. We
+propose the use of more powerful search strategies building on so-called query
+generators. For a given set of entities query generators are able to
+automatically determine a set of search queries to retrieve these entities from
+an entity search engine. We demonstrate the usefulness of query generators for
+on-demand web data integration and evaluate the effectiveness and efficiency of
+query generators for a challenging real-world integration scenario.
+
+Full Text: Evaluation of Query Generators for Entity Search Engines  
+Stefan Endrullis  Andreas Thor  Erhard Rahm
+University of Leipzig  
+Germany  
+{endrullis, thor, rahm}@informatik.uni -leipzig.de  
+ 
+ 
+ABSTRACT  
+Dynamic web applications suc h as mashups need eff icient access 
+to web data that is only accessible via entity search engines  (e.g. 
+product or publication search engines ).  However, most current 
+mashup systems and applications only support simple keyword 
+searches for retrieving data f rom search engines .  We pr opose the 
+use of more powerful search strategies building on so -called query 
+generators .  For a given set of entities q uery generators are able to 
+automat ically determine a set of search queries to retriev e these 
+entities  from an entity search engine .  We demonstrate the usefu l-
+ness of query generators for on -demand web data integration and 
+evaluate the effectiveness and efficiency of query generators for a 
+challenging real -world integration sc enario.  
+1. INTRODUCTION  
+There is a huge nu mber of deep web sources whose content is 
+hidden behind (entity) search engine inte rfaces [Be01] and, thus, 
+can only be accessed via suitable search queries .  Entity search 
+engine s (ESE)  are a popular way to access this valuable data, e.g., 
+product search engines (Google Product Search, Yahoo Sho p-
+ping) or bibliographic search engines for scientific publications 
+(Google Scholar, Micr osoft Libra) .  ESEs are not only employed 
+by human users but are increasingly used by computer programs 
+such as mashup applicat ions.  Mashups co mbine content from 
+multiple (web) sources and services in a dynamic fashion, i.e., 
+data integration occurs at runtime (on demand) based on specific 
+user input .  Web data access builds on existing (large) deep web 
+sources that are accessibl e via web APIs and on information e x-
+traction methods, e.g., based on screen scra ping. 
+One challenge in using ESEs for data integration is that these data 
+sources need to be accessed via specific search query interfaces .  
+Current mashup systems and applicat ions are typically limited to 
+simple keyword searches for retrieving data from search engines, 
+making it difficult to obtain good results with high recall and pr e-
+cision .  We argue that better query results with acceptable pe r-
+formance require the e xploitati on of specific search functionality of entity search engines .  Furthermore, the data quality of large -
+scale ESEs may be limited requi ring a post -processing effort, e.g., 
+to identify relevant result entities or deal with duplicate r esults.  
+We focus on comm on integration scenarios where a specific set of 
+entities needs to be found in an ESE, e.g., to obtain more inform a-
+tion on the entities for further processing .  For example, in the e -
+commerce domain we may have a list of pro ducts to be searched 
+for to iden tify suppliers with the lowest price per product or to 
+obtain corresponding product reviews .  In the bibliographic d o-
+main, we may want to obtain citation data for a given list of p a-
+pers, e.g., to identify the top -cited papers of a co nference or of an 
+autho r.  
+To solve such integration tasks we want to exploit existing ESEs 
+in an efficient way .  For illustration we can consider the fictional 
+publication entities of Table 1 that shall be found at Google 
+Scholar .  The naïve approach o f using one keyword query per 
+input object generally results in a high number of queries and may 
+still not retrieve all relevant entities .  Hence, the challenge is to 
+determine suitable search queries for a given set of entities which 
+achieve both good res ult quality (in terms of recall and precision 
+w.r.t. the entities of interest) as well as good ru ntime performance .  
+For example, very specific search queries (e.g., using the exact 
+product name) may miss relevant entries in the presence of name 
+variations  whereas relaxed queries may suffer from many irrel e-
+vant results .  Furthermore, the number of search queries should be 
+minimized to support suff iciently fast response times.  
+Finding the most effective and efficient set of search queries is a 
+difficult opt imization problem depending on many factors, esp e-
+cially the particular set of input entities as well as on the ESEs to 
+be used .  As a first step to solve the problem we propose and 
+evaluate the use of different query generators per ESE each of 
+which can au tomatically generate suitable search queries to find a 
+given set of entities .  Query generators may use simple keyword 
+searches but can also utilize sp ecific search features for improving 
+effectiveness or efficiency .  In pa rticular, query generators can 
+search for multiple entities simultaneously to r educe the number 
+of queries.  
+After a brief discussion of related work, we make the following 
+contr ibutions:  
+- We introduce the concept of query generators to automatically 
+generate search queries for a given set  of entities .  We provide a 
+generic model for the construction of search queries taking the 
+search capabilities of a search engine into account .  Furthe r-
+more, we support the generation of queries to simu ltaneously 
+search for multiple input e ntities (Sectio n 3).   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Revisited version of an article published in USETIM 2009 - We propose a generic and flexible approach for the evaluation 
+of query generators .  Our approach is applicable for different 
+entity search engines  and can evaluate multiple query generators 
+in a fully automatic way .  We propose the effectiveness mea sure 
+Coverage and its combination with an efficiency measure to a s-
+sess the quality of query generators (Section 4).  
+- We give results of a first evaluation of query gener ators in the 
+bibliographic domain using the publication search engine 
+Google Scholar .  We thereby demonstrate the us efulness of our 
+approach and show how a careful evaluation can be used to 
+identify the most promising query generators for different sc e-
+narios (Section 5).  
+2. RELATED WORK  
+According to [Be01] the deep web is much larger than the su rface 
+web making th e utilization of deep web sources an important issue  
+in web data management .  [Be01] also report s on hundreds of 
+thousands deep websites – along with hundreds of thousand s 
+search interfa ces. 
+The automatic generation of search queries for entity search e n-
+gines has been considered so far from two points of view .  First, 
+queries are generated for automatically crawling the hidden web 
+[BF04][RG01] .  While our query generators focus on on -demand 
+data access, hi dden web crawling usually is an offline process 
+aiming at downloading large portions of the “hidden databases” .  
+Second, virtual data integration approaches such as MetaQuerier 
+[CHZ05] have been proposed .  These approaches translate qu eries 
+posed against a global or federated schema into a set of equivalent  
+queries for the underlying hidden web sources .  However, these 
+integration approaches require a global schema and an initial user 
+query for query transformation whereas our approach is instance -
+driven by generating queries based on a given set of entities . 
+Similar to our approach [TSK07] presents the Karma system that 
+automatically completes a data table that was partially filled by a 
+user beforehand .  To that end, appropr iate queries are generated 
+based on the given user input .  While we focus on ESEs, Ka rma 
+generates SQL queries for RDBMS and does not consider the 
+specifics of ESEs, e.g., varying data quality and reduced query 
+capabilities in co mparison to SQL.  
+In [JWG06 ] keyword queries are generated for  a set of related 
+source documents .  The objective  is to find the source doc uments 
+in a given corpus of documents.  While [ JWG06 ] uses these qu e-
+ries to evaluate given document retrieval algorithms, we focus to 
+comparatively assess different  query generators themselves  to find 
+the best pe rforming ones . 
+To the best of our knowledge, our work is the first using query 
+generators to determine different types of ESE queries for a given 
+set of entities .  In our OCS prototype [TAR07] we already used a 
+fixed set of search queries for one search engine .  Here, we pr o-pose the general concept of query generators and present an 
+automatic evaluation approach for query gener ators.   
+3. QUERY GENERATORS  
+We assume the following general entity search engine  model .  A 
+search engine E supports a set of m search predicates p1, …, pm.  
+Every search predicate typically corresponds to a condition in a 
+search form .  For example, the bibliographic search engine 
+Google Scholar su pports a general free text predicate as well as 
+specific search predicates (advanced search) for author, title,  and 
+publication year .  For si mplicity, we assume a basic search query 
+q is a conjunction p1(v1)  …  pm(vm) specifying a  matching  
+condition for search values vi for search predicates  pi.  Typically 
+only a subset of the available search predicates is used  (i.e., a 
+search va lue vi= is possible) .  For search engines, the conjunction 
+of pred icates is not necessarily executed as a strict logical AND 
+but the search result may actually contain entities matching only 
+some of the specified predicates .  Depending on the search engine 
+capabilities, the search values vi may represent a single value, a set  
+of keywords, an exact phrase, or a pattern utilizing wildcard sy m-
+bols.  Furthermore the search engine may allow the combin ation 
+of basic queries with AND or OR .  Combining several basic qu e-
+ries is an important feature to reduce the overall number of posed 
+queries and thus to improve the efficiency of search engine a ccess.   
+Table 2 summ arizes the query capabilities for some popular ESEs.  
+They differ in the number and type of predicates as well as in the 
+kind of valid search values .  All search engines support a free 
+(unrestricted) search predicate correspondin g to a simple search 
+form, e.g., for searching keywords or phrases .  The Google ESEs 
+allow the search for (string) patterns by using wil dcard symbols 
+whereas Amazon and EBay do not .  These search engines support 
+the di sjunction of multiple queries but this  feature may be subject 
+to some restrictions, e.g., the length of the combined query string .  
+In general, the query capabilities of a search engine may be spec i-
+fied manually but could also be determined automatically 
+[ZHC04,  HML+07 ].  A further important s earch engine characte r-
+istic is the maximal number z of resulting entities per request .  It 
+may influence the query generation process since effective query 
+generators try to identify all relevant entities with a minimal nu m-
+ber of r equests.  Table 1. Fictional example publications  
+Id Authors  Title 
+s1 {Smith, Jones}  The question to 42  
+s2 {Williams, Smith}  Don't Panic!  
+s3 {Taylor}  The Hitchhiker's Guide to the Galaxy  
+ Table 2. Overview of query capabilities for selected ESE s 
+Capability  Google 
+Scholar  Google 
+Product 
+Search  Amazon  
+(for Books)  Ebay  
+Search  
+predicates  pi  Intitle, 
+Author, 
+Publisher, 
+Year, free Name, 
+Description, 
+Price, free Title, Author, 
+ISBN, Date, 
+Publisher, free 
+(+ se veral 
+categ ories) Title, Descri p-
+tion, Price, 
+Seller, free, (+ 
+several categ o-
+ries) 
+Search values vi value, 
+keywords, 
+phrases, 
+pattern  value, 
+keywords, 
+phrases, 
+pattern  value,  
+keywords, 
+phrases value,  
+keywords,  
+phrases 
+Aggregation(OR)  yes yes yes yes 
+Max. #ent ities 
+per request  100 100 12 200 
+ Query generators  utilize the capabilities of ESEs to generate a 
+certain kind of search queries for a given set of ent ities.  They can 
+implement similar search strategies to the ones used by humans to 
+quickly find certain entities .  For example, to find publication 
+[TR07] in Google Scholar one could search for the complete title 
+or search for a combination of author and relevant title keywords, 
+e.g., Thor MOMA .  In ge neral a query generator  takes as input a set 
+S of n entities of the same type (e.g., product, publication, o r per-
+son).  The query generator then generates k queries for a search 
+engine E.  The goal is that the corresponding query results match 
+the input entities as good as possible, i.e., it aims for a high recall 
+(all relevant entities appear in the result) at a good precision (few 
+irrelevant results) .  In contrast to manually specified queries, 
+query generators may try to find multiple ent ities simultaneously 
+with one query to reduce the number of queries and thus improve 
+performance .  For example, it is more e fficient to pose one query 
+returning all relevant results for 10 input entities than to use 10 
+queries each r eturning only one or a few relevant results.  
+We assume that the input entities for query generators are repr e-
+sented as tuples of a relation with a set of attributes a1, …, au.  
+Attributes may be single - or multi -valued, e.g., the list of a uthor 
+names for a publication .  Each query generator uses the input 
+entities to automatically generate search queries according to four 
+specifications:  
+- The partitio ning strategy  determines how the input set S is 
+split into subsets S1, …, Sk.  One query will be generated for 
+each of the subsets and, thus, k queries are generated for the e n-
+tire set S.  Our framework currently supports a naïve and a fr e-
+quent -value strat egy.  The naïve strategy  generates  one basic 
+query per entity , i.e. it uses partitions of size 1.   This a pproach 
+is quite expensive but always applicable .  In contrast, the fre-
+quent -value strategy  aims at reducing the number of basic qu e-
+ries by identifying  search values (attribute values) covering se v-
+eral entities .  We use a variation of the well -known Apriori a l-
+gorithm [AS94] to determine the most frequent attribute va lues, 
+e.g., publication authors or title keywords, which occur in a 
+minimal number of ent ities.  The entities covered by a frequent 
+value form a dynamic partition for which one basic query is 
+generated .  The remaining entities are further partitioned a c-
+cording to fr equent values as long as the minimal support per 
+value is achieved . Depen ding o n the actual attribute values the 
+input entities may thus be divided into several partitions of var i-
+able size.  
+- An attribute -predicate mapping  is a mapping of selected input 
+attributes to their corresponding search engine predicates .  Dif-
+ferent attributes may map to the same predicate (e.g., the free 
+search predicate) and, in principle, an attribute may map to di f-
+ferent predicates .  Since very specific queries may lead to a r e-
+duced recall the attribute -predicate mapping might only contain 
+a subset of the id entified schema mapping correspondences .  
+The attribute -predicate mapping is usually determined befor e-
+hand, e.g., based on a manually or automatically determined 
+schema matching [RB01].  - The search value generation  determines how the predicate 
+search values  are derived from the attribute values from the i n-
+put entities of the same partition .  The result is a basic search 
+query per partition .  To that end different functions can be a p-
+plied on the attributes, e.g., to generate phrases (putting a string 
+in quota tion marks) or to determine keywords, e.g., by remo ving 
+stop words from a string .  Further transformation functions may 
+be specific to a search engine and we introduce some of them in 
+the example below and in the evaluation section.  
+- The final aggregation is an optional step to combine several 
+basic search queries into one query .  The reduced number of 
+queries increases the number of processed input entities per 
+query and may improve search efficiency .  For query generators 
+we usually apply a disjunction (O R) of basic queries but our 
+model also supports other types of combination (e.g., AND) .  
+The aggregation step is optional also because not all ESEs sup-
+port such a combination of several qu eries.  
+Example : For illustration we consider the three fictional pu blica-
+tion entities of Table 1 that should be found at the ESE Google 
+Scholar (Scholar) .  As indicated in Table 1, Scholar provides 
+the predicates author  and intitle that match to the attributes authors 
+and title, respectively .  A first query generator may use a naïve 
+partitioning and generate a basic query for every publication .  
+The a ttribute -predicate mapping may only use the title attribute 
+and the transformation function  may extract  all relevant ke y-
+words  from the title  by skipp ing stop words .  Then t he resulting 
+queries without aggregation are q1=intitle(question 42), q2=intitle(don't 
+panic),  and q3=intitle(hitchhiker's guide galaxy) .  If the search engine 
+supports the combination of basic queries with the OR operator, 
+a modifie d query generator may only generate one query 
+q=q 1q2q3 . 
+A second query generator may use a frequent -value partitioning 
+using the author attribute .  Since the entities s1 and s2 share a 
+common author (Smith) they are merged into one partition .  The 
+remai ning entity s3 forms the second partition .  Furthermore, the 
+generator utilizes the predicate  author  and the transformation 
+function extracts the most frequent name .  The resulting queries 
+are therefore q1=author(smith)  and q2=author(taylor) .   
+4. EVALUATING QUERY GENERATORS  
+Query generators are a powerful concept to determine an effective 
+and efficient set of search engine queries to find information for a 
+given set of entities .  Unfortunately, finding the best query gener a-
+tor(s) is still challenging due to t he availability of many query 
+generators per ESE and different perfor mance and effectiveness 
+behavior for different input data sets .  By evaluating the query 
+generators on different input sets we obtain insights about their 
+effectiveness and efficiency in dependence of the characteristics 
+of those input sets .  This inform ation is then useful for choosing 
+the most promising query generators for on -demand data integr a-
+tion within mashup applications .  The selection of query gener a-
+tors may initially be a manual  decision by the mashup developer 
+but should eventually become an automatic dec ision by a mashup 
+infrastructure.  We propose a general framework for evaluating query generators 
+for entity search engines .  The overall approach is illustrated in 
+Figure 1.  The query generator to be evaluated is applied on the 
+input set S.  Each query step deals with the execution of a gene r-
+ated quer y by the respective ESE E.  The result is a set T of ent i-
+ties of the same type as the input entities S.  The entity sets S and 
+T are then matched, i.e., corresponding entities are identified .  The 
+match result is a so -called mapping M  ST containing all pairs 
+(s, t) where s and t represent the same real -world entity .  Entity 
+matc hing can be done automatically based on different approaches 
+(see, e.g., [EIV07] for a survey), e.g., the similarity of selected 
+attributes.  
+The key evaluation idea is that the m atch result M can be used to 
+automatically derive the quality of the underlying query gener ator.  
+The match result reveals for what input entities a corresponding 
+entity has been found by the generated queries .  Moreover, the 
+match result also identifies i rrelevant query results, i.e., entities 
+that do not match any of the input entities .  To that end we define 
+the effectiveness measures Coverage  and Recall as follows:  
+- Coverage  = |domain (M)| / |S| 
+- Recall  = |range (M)| / | Trel(S) | 
+Coverage  is the fraction o f S for which at least one matching 
+counterpart is found in the match result, which is denoted as do-
+main(M) = { sS | tT: (s,t)M}.  For example, a Coverage  of 1 
+is achieved if for all input entities s at least one relevant entity t 
+appears in the query r esult .  Analogou sly, range (M) denotes all 
+tT that appear in the match result M, i.e., all t having at least one 
+matching counterpart s.  The Recall  gives information about to 
+fraction of the found vari ations of the input entities in relation to 
+all releva nt entries Trel(S) that can be retrieved by the search e n-
+gine for the given input set S (relevant entries i nclude duplicates 
+and spelling variations) .  However, Trel(S) is usually not given and 
+very expensive to determine (in pri nciple one must execute all  
+possible queries that are somehow related to entities of S).  
+The precision of a query generator can be calculated as follows:  
+- Precision  = |range (M)| / |T| 
+Based on our experience Precision  is typically less important for 
+query generators than Coverage  and Recall .  This is to say that 
+search queries should primarily aim at retrieving all relevant ent i-
+ties (with few queries) even if many irrelevant entities are also obtained .  This is because the irrelevant entities can be rather 
+easily filtered away by a s ubsequent matching step thereby i m-
+proving precision after the query step .  However, the Precision  
+might be useful to determine the number of entities that should be 
+requested with one query (see the “next link ” evaluation in Se c-
+tion 5).  
+Measures for characterizing the effectiveness of query generators 
+are only one side of the coin .  On-demand data integration also 
+requires fast query response times and, thus, a small number of 
+queries and query requests to retrieve the relevant  results .  Ther e-
+fore, a useful mea sure to determine efficiency is the number of 
+query requests  a query generator uses for a given input data set.  
+The number of query requests may be higher than the number of 
+queries if a query returns more entities than c an be retrieved 
+within one search engine interaction .  Typically, ESEs return a 
+maximum of z (e.g., 10 or 100) entities per query .  Obtaining the 
+remaining result ent ities for the query requires additional query 
+requests, that is, r epeatedly follow the “next link ”.  For example, 
+Google Scholar provides at most 100 publications per result page .  
+An author query returning, say, 519 publications would require 6 
+requests to obtain all result ent ities.  
+Since the total number of query requests depends on the num ber 
+of entities to be found we use the following measure to determine 
+the efficiency of a query generator:  
+- Efficiency  = |domain (M)| / #Requests  
+ = Coverage · |S| / #R equests  
+The definition considers the size of the input set and the number 
+of requests s ent to the search engine as well as the coverage .  The 
+efficiency measure has an intuitive meaning: it indicates the ave r-
+age number of input entities that are covered per query request .  A 
+high value indicates a good efficiency (low number of queri es 
+neede d to retrieve relevant entities) .  The combined consi deration 
+of coverage is needed to focus on the number of relevant queries 
+(a small number of queries is us eless when these queries do not 
+return the requested entities).  
+5. EVALUATION  
+For our sample evalua tion we have chosen Google Scholar1, a 
+popular ESE for research publications, e.g., conference and jou r-
+nal papers .  As indicated in Table 1, it provides a free text pred i-
+cate ( free) and search predicates for title ( intitle ), authors ( author ) 
+and year ( year).  Scholar covers millions of publications but has 
+limited data quality due to an automatic extraction of bibli o-
+graphic metadata from the reference lists of full text documents 
+(misspelled author names, wrong publication year, etc.) .  Fur-
+thermore, there a re frequent duplicate publication entries .  Het-
+erogeneous conference and journal names make it difficult to 
+determine all Scholar entries for a particular venue and year .  
+Thus, Scholar is a challenging ESE for evaluating query gener a-
+tors.  
+As input entiti es we use subsets of the DBLP2 data source that 
+indexes more than one million computer science articles .  Based 
+on this source we automatically generated 60 test datasets where 
+                                                                 
+1 http://scholar.google.com  
+2 http://dblp.uni -trier.de/   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1. Search query processing for evaluating  
+query gener ators 
+ Query
+GeneratorEntity Search
+EngineQueriesInput entities S Output Entities T Query Step
+Entity
+Matching
+t4t3t1T
+s2s2s1S
+t4t3t1T
+s2s2s1Sa2
+s3s2s1a1 au ...a2
+s3s2s1a1 au ...
+t4...
+t3t2t1b1 bv
+t4...
+t3t2t1b1 bveach dataset consists of either 5, 30, or 100 publications and is 
+assigned to o ne of the fo llowing four categories:  
+- Author : all publications have one common author  
+- Title: all publications have one or more common ke ywords in 
+the title  
+- Venue : all publications were published at the same venue (co n-
+ference proceeding or journal volume) in  the same year  
+- Random : a random collection of publications  
+For every combination of dataset size and category we generated 5  
+different datasets giving us 3·4·5=60 datasets .  We tested ten 
+query generators (see next subse ction) on these 60 datasets and 
+saved the matching results and additional information about the 
+query executions and datasets in a data warehouse for evaluation .  
+Due to lack of space we will focus our discussion on the results 
+for dat asets of size 30 .  For the other dataset sizes we observe d 
+comparable results .  For datasets of size 5 the differences between 
+the query generators were smaller since even the naïve a pproaches 
+require at most 5 queries.  
+The matching between the DBLP instances and the retrieved 
+Scholar entities is performed base d on a combined similarity 
+value for the three attributes authors, publication title and year .  
+The similarity functions, combination function and match thres h-
+olds have been determined with the entity matching tool MOMA 
+[TR07] .  All string comparisons are case insensitive.  The co m-
+parison of author names is based on the last names and the first 
+letter of the first names .  To compare two public ation years we use 
+the measure 1-(min(|year 1-year 2|,10)/10) .  Finally, a pair of a 
+DBLP public ation and a Scholar pu blication is added to mapping 
+M iff it achieves similarity value s of at least 0.5 for the authors, 
+0.8 for the title , and 1 for the year . 
+5.1 Query Generators  
+Table 3 shows the 10 query generators used in this evaluation .  
+For each generator all fou r building blocks (partitioning, ma p-
+ping, search value generation, and aggreg ation) are specified.  The first two generators demonstrate the effectiveness of using 
+only one attribute for searching, but with different search va lues 
+(keywords vs . phrases) .  They generate exactly one query per i n-
+put entity (naïve partitioning) .  Query generator #3 corresponds to 
+#2 but OR -combines two basic queries to cut the number of qu e-
+ries by half .  The fourth generator maps three attributes to the 
+corresponding search pre dicates of Scholar and may therefore be 
+more precise than the first three generators .  Query generators #5, 
+#6, #7, and #8 utilize a fr equent value strategy, i.e., they pre -
+analyze the input for a value -based partitioning .  Generator #5 
+groups the input se t by the most frequently common authors 
+whereas generator #6 partitions the input publications based on 
+common title keyword s.  Generators #7 and #8 operate on mult i-
+ple attributes and build the partitions by identifying two common 
+items (authors, title key words and/or year) for each part ition.  
+Query generator #8 is similar to #7 but uses the free search pred i-
+cate for all search values.  
+The generators #9 and #10 utilize a special wildcard feature of 
+Scholar .  It can be used to create queries with relaxed p hrases 
+(pattern) while still aiming at high query precision .  For example, 
+when searching for publication [TR07] the pattern intitle:"MOMA * * * 
+object"  can be used instead of the complete title .  The pattern is 
+determined by replacing common words by a wi ldcard character 
+(asterisk) so that the remaining word list still characterizes the 
+publication title unambiguously within DBLP .  Since this a p-
+proach preserves the word order in the title, the r esults of this 
+strategy are typically more precise than naïve strategies based on 
+keywords.  
+The selected query generators can illustrate opportunities of our 
+framework but do obviously cover only a subset of all possible 
+approaches.  We plan more  comprehensive  evaluation s in our 
+future work.  
+5.2 Evaluation Results  
+An eva luation of query generators can be accomplished on very 
+different dimensions concerning the characteristics of the test 
+datasets or properties of the query generators .  In the following we 
+will first focus on the effectiveness of the query generators and 
+then discuss eff iciency which takes the number of query requests 
+into account .  The main goal is to identify the best query gener a-
+tors for the four different categories of input data.  
+Figure 2 illustrates the coverage of each quer y generator for th e 
+four dataset categories .  We observe that the best results (up to 
+0.8) are achieved for generators #1, #2, #3, and #9 which only  
+utilize the intitle search predicate based on publication title3.  
+They perform similarly well for all four  categories of input data .  
+These good results are a consequence of the fact that the gener a-
+tors mostly use one query per publication, i.e. they r equire great 
+search efforts .  The use of relaxed search values results in a slight 
+decrease of coverage, e.g. both the pattern -based (#9) and the 
+keywords -based (#1) query generators perform slightly more e f-
+fective than the use of phrases (#2, #3) .  On the other hand, ge n-
+erator #4 created very restrictive queries so that it misses many 
+                                                                 
+3 Coverage and recall values of 1 cannot be expected since not every 
+DBLP publication is represented in Scholar. We noticed that especially 
+older papers (e.g., publication dat e < 1995) are mostly not available in 
+Scholar.  Table 3. List of evaluated query generators  
+No Partitioning  Mapping  Search 
+value gen.  Aggre -
+gation attribute pred icate 
+1 naïve  title intitle  keywords  - 
+2 naïve  title intitle  phrases  - 
+3 naïve  title intitle  phrases  OR (2)  
+4 naïve  authors  author  gsAuthors  - 
+title intitle  keywords   
+year year value   
+5 freq. value (a uthor) authors  autho r gsAuthors  - 
+6 freq. value (title)  title intitle  keywords  - 
+7 freq. value (2 out  
+of {authors, t itle, 
+year})  authors  author  gsAuthors  - 
+title intitle  keywords   
+year year value   
+8 freq. value (2 out  
+of {authors, title, 
+year})  authors  free gsAuthors - 
+title free keywords   
+year free value   
+9 naïve  title intitle  pattern  - 
+10 naïve  title intitle  pattern  OR (10)  relevant entities resulting in a low co verage (which cannot be 
+compensated by its good pr ecision).  
+The comparison of query generators #2 and #3 shows that the 
+combined processing of two in title queries does not lead to a si g-
+nificant quality loss .  Generator #10 even reduces the nu mber of 
+queries by a factor 10, while retaining about 87% of the coverage 
+of generator #9 .  Hence combining several queries has compar a-
+tively little impact on effe ctiveness but does signif icantly improve 
+efficiency as we will see later in this section .  On the other hand, 
+the query generators based on frequent values may also reduce the 
+number of queries (see below) but achieve only a medium cove r-
+age.  Hence these q uery gener ators alone may not be effective 
+enough and may have to be combined with other query generators 
+for sufficient cove rage.  
+In Section 4 we have differentiated between coverage and recall to 
+quantify the completeness of  query results .  Figure 3 compares 
+these measures by building their ratio .  In general, both measures 
+are in a comparable range and are thus useful to evaluate effe c-
+tiveness .  For generators #1, #2, #3, and #9, which performed bes t 
+for coverage, recall is even higher than coverage (ratio>1) .  This 
+is because these ge nerators provide the most duplicate entities for 
+the publications in the input datasets .  These duplicate entities 
+may contain useful compl ementing information, e.g., t o find all 
+citations of a publication .  In particular, the pattern -based query 
+generator #9 benefits from its precise but still approximate queries 
+to find variations of the same publications .  By co ntrast, the recall 
+values for generators #4, #7, and #8 a re worse than their coverage .  
+These generators (see Table 3) use three attributes for their qu e-
+ries and, thus, produce very specific queries, hence missing dupl i-
+cate entities with slightly different attribute values (e.g., due to  a 
+typo in the title).  
+In order to identify the best query generators we also have to take 
+their efficiency into account .  For this purpose we introduced a 
+relative efficiency measure which indicates the average number of 
+relevant entities found per query request .  Figure 5 shows how the 
+different query generators perform w.r.t efficiency measure .  We 
+observe that the naïve query generators without query combin a-
+tion mostly achieve quality values of about 1, since they issue a 
+query  per entity (query generator #4 performs worst because of its 
+limited coverage) .  Better quality values are achieved by combi n-
+ing several basic queries (query generator #3, #10) for all four 
+categories of input data .  Query generator #10 combining 10 pa t-
+tern-based search queries is especially succes sful by achieving 5 -6 
+relevant entities per query request for all four types of input data.  
+The query generators based on frequent values are also able to 
+reduce the number of queries and thus to improve efficiency but their qua lity differs substantially for different categories of input 
+data.  Query generator #5 is by far the most eff icient generator in 
+category Author, since it needs only one basic author query for all 
+input entities (several query requests are necessary to follow the 
+“next links ”).  However, this query generator is not efficient for 
+the three other types of input dat a since they typically have no 
+frequently occurring authors .  Query generators #6 and #7 utilize 
+frequent title keywords and are able to improve the efficiency for 
+the second input category (publications with titles sharing the 
+same term) .  However their e fficiency is much lower than for ge n-
+erator #5 on frequent author datasets .  This is because author 
+names are relatively distinct and authors typically have a smaller 
+number of publications compared to the number of publications 
+with a given keyword .  Input  category “venue” is not well su p-
+ported by the considered query generators on Scholar so that such 
+input entities could be treated similarly than a random set of pu b-
+lications.  
+Figure 5 also distinguishes the efficiency between th e 1st request 
+and the average efficiency for all requests .  We observe that for 
+the most efficient generators the first request is especially eff icient 
+while the remaining requests (e.g., “next link ” requests) are still 
+useful but reduce the average effici ency.  The high eff iciency of 
+the first request is influenced by an apparently good ranking of the 
+considered search engine and is useful if one has to strongly limit 
+the number of search queries .  Generators with naïve part itioning, 
+e.g., #1 -#3 produce on e query per input entity and, thus, only 
+return few query results .  In most cases the query execution ther e-
+fore needs only one request .  Hence, the efficiency of the first 
+request corresponds to the average request efficiency.  
+Finally, we want to explore the usefulness of “next link ” query 
+requests .  In our evaluation 22% of all r equested result pages have 
+offered a next link .  The question then becomes whether spending 
+another query request to follow this link will likely return relevant 
+results .  To answ er this question we have analyzed the precision 
+of the current result page (percentage of relevant result entities) 
+and compared it with the precision of the next result page .  This is 
+illustrated in Figure 4 where the x -axis refe rs to the precision of 
+the current result page and the y -axis indicates the precision of the 
+next result page .  Figure 5 also covers the experiments with 100 
+input entities for which following the “next link” is more relevant 
+than for smaller inputs.  Note  that for our settings (r esult page size 
+= 100) there was no result page with more than 60% precision 
+(i.e., more than 60 relevant publications) o ffering a next link .  We 
+observe that the precision of the next result page usually decreases 
+but that in many  cases the next page still pr ovides many relevant 
+entities (up to 30% precision) .  Based on the results we can derive 
+a simple precision criterion to decide whet her we should follow 
+ 
+ 
+Figure 2. Average coverage of the 10 query generators per 
+category  
+ 
+Figure 3. Comparison of coverage and recall for query gener a-
+tors 1 -10 (coverage is normalize d to 100%)  the next link .  For example, if we want to achieve at least 5% 
+precision i n a next result page we should not follow the next link 
+if the precision of the current result page is lo wer than 15%.  
+The given example evaluation illustrates the spectrum of evalu a-
+tion types that can be realized with our approach to identify the 
+most pro mising query generators based on their coverage, recall, 
+and efficiency characteristics .  In our evaluation scenario query 
+generators using one search predicate usually outperform gener a-
+tors with three predicates .  The utilization of specific search e n-
+gine featur es, such as pattern -based queries and the combination 
+of several queries, proved to be highly efficient .  Furthermore, we 
+observed that next link queries are effective as long as the current 
+result page provides a certain precision level .  The use of frequ ent 
+value query generators is promising d epending on the type of 
+input data which would have to be analyzed beforehand .  Our 
+results also indicate that a single query generator may not always 
+be sufficient to achieve both good coverage and good efficiency .  
+Hence, there is a need to study the combined use of several query 
+generators or the construction of more sophisticated query gener a-
+tors.  For example, one could first use a highly efficient query 
+generator (e.g., number #10 or #5 for author -based publica tion 
+sets) to quickly present search results to the mashup user and use 
+additional query generators in the background to contin uously 
+improve coverage during mashup execution.  
+6. SUMMARY AND OUTLOOK  
+We presented a flexible query generator approach for queryi ng 
+entity search engines  based on a given set of input entities .  The 
+provision of query generators facilitates the development of po w-
+erful mashup applications requiring efficient access to ESEs.  We 
+proposed a generic model of query gener ators comprising several 
+building blocks for a flexible definition of a search strat egy.  In 
+addition, we illustrated how query generators can be ev aluated in 
+a fully automatic way based on automatic entity matc hing.  We 
+finally presented results of an initial evaluation f or a selected 
+search engine to demonstrate the usefulness of our a pproach .  The 
+evaluation approach is useful for developers to ide ntify the most 
+promising generators in terms of efficiency and e ffectiveness.  
+In future work we will extend our study of quer y generators to 
+additional domains and search engines .  Furthermore, we will 
+develop ada ptive search strategies that make use of multiple query 
+generators.  7. REFERENCES  
+[AS94] Agrawal, R.; Srikant, R.: Fast Algorithms for Mining 
+Association Rules in Large D atabases.  VLDB, 1994  
+[Be01] Bergman, M. K.: The Deep Web: Surfacing Hidden Value . 
+The Journal of Electronic Publishing 7(1), 2001  
+[BF04] Barbosa, L.; Freire, J.: Siphoning Hidden -Web Data 
+through Keyword -Based Interfaces . SBBD, 2004  
+[CHZ05] Chang, K. C. -C.; He, B.; Zhang, Z.: Toward Large 
+Scale Integration: Building a MetaQuerier over Databases 
+on the Web . CIDR, 2005  
+[EIV07] Elmagarmid, A.K., Ipeirotis, P.G., Verykios, V.S.:  Du-
+plicate Record Detection: A Survey . IEEE Transactions on 
+Knowl -edge and Data Engi neering 19(1), 2007  
+[HML+07] He, H.; Meng, W.; Lu, Y.; Yu, C.T.; Wu, Z.: Towards 
+Deeper Understanding of the Search Interfaces of the Deep 
+Web. World Wide Web 10(2), 2007  
+[JWG06]  Jordan, C.; Watters, C.; Gao, Q. : Using controlled query 
+generation to evalua te blind relevance feedback algorithms . 
+JCDL , 2006  
+ [RB01] Rahm, E.; Bernstein, P.A.: A survey of approaches to 
+automatic schema matching . VLDB Journal 10(4), 2001  
+[RG01] Raghavan, S.; Garcia -Molina, H.: Crawling the Hidden 
+Web. VLDB, 2001  
+[RSU95] Rajarama n, A.; Sagiv, J.; Ullman, J.D: Answering Qu e-
+ries using Templates with Binding Patterns . PODS, 1995  
+[TAR07] Thor, A.; Aumueller, D.; Rahm, E.: Data integration 
+support for mashups . IIWeb Workshop, 2007  
+[TR07] Thor, A.; Rahm, E.: MOMA - A Mapping -based Objec t 
+Matching System . CIDR, 2007  
+[TSK07]  Tuchinda, R.; Szekely, P.A.; Knoblock, C.A.: Building 
+data integration queries by demonstration . IUI, 2007  
+[ZHC04] Zhang, Z.; He, B.; Chang, K. C. -C.: Understanding Web 
+Query Interfaces: Best -Effort Parsing with Hidde n Syntax . 
+SIGMOD, 2004  
+ 
+ 
+Figure 4. Precision of “next link” requests  
+ 
+ 
+Figure 5. Efficiency of query generat ors per categ ory  
+(complete bar = efficiency for 1st request;  
+lower bar = a verage efficiency for all requests)  

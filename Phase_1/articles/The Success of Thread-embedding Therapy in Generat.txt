@@ -1,0 +1,3 @@
+Title: The Success of Thread-embedding Therapy in Generating Hair Re-growth in Mice Points to Its Possibly Having a Similar Effect in Humans.
+Abstract: Recently, thread-embedding therapy (TET) has been widely applied in Korean medicine for cosmetic purposes such as reducing skin wrinkles. An inserted thread was reported to have induced continuous stimulation, followed by support for connective tissue regeneration. However, the potential role of TET in hairgrowth has not yet been reported.
+Full Text: {"error":"API rate limit exceeded","api-key":"2600:1700:290:8d90:4d0f:f6f4:7822:e8fc","count":"4","limit":"3"}

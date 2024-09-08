@@ -1,0 +1,2110 @@
+Title: Incubation periods under various anti-retroviral therapies in
+  homogeneous mixing and age-structured dynamical models: A theoretical
+  approach
+Abstract:   With the launch of second line anti-retroviral therapy for HIV infected
+individuals, there has been an increased expectation on surviving period of
+people with HIV. We consider previously well-known models in HIV epidemiology
+where the parameter for incubation period is used as one of the important
+components to explain the dynamics of the variables. Such models are extended
+here to explain the dynamics with respect to a given therapy that prolongs life
+of an HIV infected individual. A deconvolution method is demonstrated for
+estimation of parameters in the situations when no-therapy and multiple
+therapies are given to the infected population. The models and deconvolution
+method are extended in order to study the impact of therapy in age-structured
+populations. A generalization for a situation when n-types of therapies are
+available is given. Models are demonstrated using hypothetical data and
+sensitivity of the parameters are also computed.
+
+Full Text: arXiv:q-bio/0608028v3  [q-bio.QM]  2 May 2013INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES,
+AGE-STRUCTURES
+Full Title: Incubation Periods Under Various Anti-Retroviral Therapi es In
+Homogeneous Mixing And Age-Structured Dynamical Models: A Theoretical
+Approach.
+Arni S.R. Srinivasa Rao1,2
+Mathematical Institute,
+Centre for Mathematical Biology,
+University of Oxford, 24-29 St Giles’,
+Oxford, OX1 3LB, England.
+(Accepted in The Rocky Mountain Journal of Mathematics, USA)
+Abstract. With the launch of second line anti-retroviral therapy for H IV
+infected individuals, there has been an increased expectat ion on surviving
+period of people with HIV. We consider previously well-know n models in
+HIV epidemiology where the parameter for incubation period is used as one
+of the important components to explain the dynamics of the va riables. Such
+models are extended here to explain the dynamics with respec t to a given
+therapy that prolongs life of an HIV infected individual. A d econvolution
+method is demonstrated for estimation of parameters in the s ituations when
+no-therapy and multiple therapies are given to the infected population. The
+models and deconvolution method are extended in order to stu dy the impact
+of therapy in age-structured populations. A generalizatio n for a situation
+whenn−types of therapies are available is given. Models are demons trated
+using hypothetical data and sensitivity of the parameters a re also computed.
+Key words: Epidemic models, deconvolution, conditional pr obability, second
+line ART.
+AMS subject classiﬁcations: 92D30, 44A35, 62A10
+1Current address: Georgia Regents University, 1120 15th Str eet, Augusta, GA 30912,
+USA. Email: arrao@gru.edu. Part of the revision was done whe n the author was working at
+Bayesian and Interdisciplinary Research Unit (BIRU), Indi an statistical Institute, Kolkata
+700108, INDIA
+2This paper was beneﬁted by several useful comments from Phil ip Maini, Masa Kakehashi,
+Kurapati Sudhakar, Thomas Kurien, Ramesh Bhat. Comments fo r revision by handling
+Associate Editor were very helpful. Supported by funds from the Institute of Public and
+Preventive Health, Georgia Regents University, Augusta. M y sincere gratitude to all.
+1INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 2
+Contents
+1.Preliminaries, Basic ODE Model and Integro-Diﬀerential
+Equations models 3
+2.Contemporary models and Modiﬁcations 9
+3.Conditional probabilities 14
+4.Generalization for multiple drug impact 18
+5.Theoretical examples 20
+5.1. Example 1: Gamma function. If ω >0is the parameter and Γ(ω)
+is the complete distribution function, then the incomplete
+gamma distribution, G(ω;tj) =1
+Γ(ω)/integraltexttj
+0e−xxω−1dx,for
+a≥0,tj≥0anda+tj/ne}ationslash= 0 20
+5.2. Example 2: Logistic function. Suppose θ1,θ2are parameters
+andF(θ1,θ2;tj) =/braceleftbigg
+1+e−(tj−θ1
+θ2)/bracerightbigg−1
+,forθ1,θ2>0,is the
+distribution function. 23
+5.3. Example 3: Log-normal function. Suppose µandσare
+parameters and LNF(µ,σ;tj) =1
+2/braceleftBig
+1+erf/parenleftBig
+lnx−µ
+σ√
+2/parenrightBig/bracerightBig
+,for
+µ,σ >0,is the distribution function. (Here erf{.}is the
+error function of the Gaussian function) 25
+6.Age-structured populations 27
+6.1. Varying incubation periods for age-structured popula tions 29
+7.Conclusions 38
+References 40
+8.Appendix I : Conditional probabilities for generalized
+multiple drug impact 44
+9.Appendix II: Truncated incubation period 45
+10.APPENDIX III : Parameters 47
+11.APPENDIX IV: FIGURES 48INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 3
+Abstract. With the launch of second line anti-retroviral therapy for H IV
+infected individuals, there has been an increased expectat ion on surviving
+period of people with HIV. We consider previously well-know n models in
+epidemiology where the parameter for incubation period is u sed as one of
+the important components to explain the dynamics of the vari ables. Such
+models are extended here to explain the dynamics with respec t to a given
+therapy that prolongs life of an HIV infected individual. A d econvolution
+method is demonstrated for estimation of parameters in the s ituations when
+no-therapy and multiple therapies are given to the infected population. The
+models and deconvolution method are extended in order to stu dy the impact
+of therapy in age-structured populations. A generalizatio n for a situation
+whenn−types of therapies are available is given. Models are demons trated
+using hypothetical data and sensitivity of the parameters a re also computed.
+1.Preliminaries, Basic ODE Model and
+Integro-Differential Equations models
+With the introduction of second line therapy[53] to the peop le living with
+HIV who were already on ﬁrst line therapy until introduction of second line
+therapy, there is a further hope to increase the active life o f HIV infected indi-
+viduals. Revised estimates of the people living with HIV are obtained for some
+countries to address the impact of second line therapy (see, for example[49]).
+Second line theory is provided after failure to responding t o the ﬁrst line
+therapy among the infected individuals. Modeling the impac t of second line
+therapy and corresponding extended survival time is compli cated because sus-
+ceptible population can acquire virus from two infected cla ss of populations
+who are on therapy in addition to the infected population who are without
+any therapy. However identifying the ﬁrst line individuals who are no more
+responding to the ﬁrst line therapy through surveillance is still a challenging
+issue in several countries. Diﬃculties in monitoring and re cording HIV in-
+fected population who are on ﬁrst line and second line therap y will also lead
+to diﬃculty in estimating parameters of disease progressio n and disease re-
+lated mortalities. Disease progression rate and incubatio n period are related
+and usually both are taken as reciprocal to each other. Incub ation period of
+HIV infected individuals is also expected to increase since new anti-retroviral
+therapy policies. The incubation period is generally deﬁne d as ‘the time du-
+ration between the time a virus or bacteria enters the human b ody and the
+time at which clinical clinical symptoms occur’. This durat ion can vary from
+case to case depending upon the route through which the virus or bacteria
+enters the immune system of an individual and in some cases de pends upon
+the age of the infected individual. For chickenpox this dura tion is 10 - 21 days,
+for common cold 2 - 5 days, for mumps 12 to 25 days, for SARS a max imum
+of up to 10 days, for rubella 14 - 21 days, for pertussis 7 - 10 da ys, and forINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 4
+HIV infection to AIDS 6 months to 10 years or more. The incubat ion pe-
+riod can be used as a measure of rapidity of the illness after i nteraction with
+the virus or bacteria. It is not easy to collect information o n the incubation
+period of infected individuals unless they are monitored. O ne of the direct
+ways of estimating the average incubation period of a given v irus in the pop-
+ulation is by surveillance and followup of the infected indi viduals until they
+develop symptoms. All the infected individuals may not be aw are of their
+infection until symptoms appear and followup is subject to t he availability of
+an individual. It might not be possible to follow up individu als in a typical
+situation, where time taken for the onset of symptoms from th e infection is
+longer, especially if infected individuals are lost to foll owup. Hence, there are
+limitations on directly estimating the average incubation period from prospec-
+tive cohort studies. Nevertheless, the incubation period o ccupies an important
+role along with other parameters in modeling the disease spr ead and under-
+standing the basic reproductive rate. A useful description of various epidemic
+models, and of estimation of parameters like the incubation period, transmis-
+sion rates, forces of infections are presented in [3]. The de gree of importance
+of obtaining accurate average incubation periods varies wi th the incubation
+period of the disease. This degree of variation causes mathe matical models
+to act sensitively in predicting future burden. Models desc ribing dynamics
+of disease spread where the incubation period is shorter are less subject for
+producing misleading results than models for the spread wit h longer and vary-
+ing incubation periods. Especially for predicting AIDS, th e epidemic models
+developed, depend heavily on parameters that determine tra nsmission rates of
+infection from infected to susceptible and on the parameter which explains the
+average time to progress to AIDS. A review of various modelin g approaches
+and quantitative techniques to estimate the incubation per iod can be found
+in [8, 6]. The introduction of anti-retroviral therapies an d protease inhibitors
+during the 1990s in several parts of the world resulted decli ne in opportunis-
+tic infections related to AIDS [41, 9, 11]. As a result of such interventions,
+the average incubation period was prolonged. There have bee n attempts to
+estimate the incubation period that vary due to drug interve ntion using statis-
+tical density functions [4]. The impact of this variation on the HIV dynamics,
+stability and on basic reproduction number has been investi gated [8, 12, 20].
+In this section, we ﬁrst consider an ODE model that explains t he dynamics
+of HIV spread in a population leading to AIDS (see [13]). We th en consider
+a similar model where incubation period is a variable with re spect to a given
+therapy. We address issues of estimating incubation period to be used in such
+dynamical models and the impact of above mentioned therapie s. Various ideas
+and the outline of this work are given at the end of this sectio n.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 5
+Perhaps the most fundamental model for the epidemiology of A IDS is that
+given by [13, 2, 3], which takes the form
+dX
+dt= Λ−(λ+µ)X,
+dY
+dt=λX−(d+µ)Y, (1.1)
+dDz
+dt=dY−γDz.
+Here the total population ( N) is divided into susceptibles ( X), infectives
+(Y) and individuals with the full blown disease ( Dz). The parameter Λis the
+input into the susceptible class, which can be deﬁned as the n umber of births
+in the population, λis the force of infection, µis general (non-AIDS related)
+mortality, γis disease related mortality and 1/dis the average incubation
+period. Here the incubation period is deﬁned as the duration of time between
+infection and onset of full blown disease. There are several other constructions
+of HIV transmission dynamics models
+In the models involving the disease progression parameter, it has been as-
+sumed that there is an increase in the mean length of life afte r HIV infection
+since the availability of therapies for AIDS [37, 38]. There are several works
+describing the impact of anti-retroviral therapies using d ata [1, 21, 22, 23, 24,
+25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 39, 40, 41, 43] and through models
+[23, 38, 42, 44, 45]. The time to start ART based on the CD4 coun t is still
+debatable. In a recent study on HIV-1 discordant couples [46 ], it was observed
+that the incidence rates among early ART couples are lower th an than the inci-
+dence rates among couples who were given ART at a standard tim e. Drugs are
+available which cannot eliminate virus from the body, but ar e helpful in pro-
+longing the life of an individual by slowing the disease prog ression (in other
+words increasing the incubation period). For example, prot ease inhibitors
+(saydrug 1) facilitate in producing non-infectious virus (only infect ious virus
+participates in new virus production), hence slowing the di sease progression;
+anti-retroviral therapy ( say drug 2) blocks virus from interacting with the
+non-infected cells and hence reduces the infection process within the cell pop-
+ulation (see section 5 in [14] and [15] for fuller details); a nd a combination
+of the above two drugs ( say drug 3 ) can be more eﬀective by simultaneously
+combining the function of drug 1 anddrug 2. Note that, when model (1.1)
+was developed, the above described drugs were not available . Information on
+scale-up of anti-retroviral therapies and related monitor ing of individuals can
+be found elsewhere (for example, see [23, 50, 47, 51]. We assu me that once
+individuals start taking drugs, their average incubation p eriod is prolonged.
+So, instead of assuming a constant 1/d, we assume that it varies based on theINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 6
+drug type. Thus we deﬁne 1/di=/integraltext
+Rzig(zi)dzi,fori= 0,1,2,3,wherei= 0
+denotes the without drug scenario, i= 1fordrug 1,i= 2fordrug 2 andi= 3
+fordrug 3 . Heregis the probability density function with a certain paramete r
+set (sayB) andziis a continuous random variable representing the incubatio n
+period. Here ziis a real valued function deﬁned on a standard probability
+space(S,A,P), whereSis the space of elementary events, Ais called a Borel
+ﬁelds, and P(A)is probability of the event A∈A.So,z:S→R.We can also
+denote this integral as a Stieltjes integral/integraltext
+RzidG(zi), whereG(z) =P(Z < z).
+We further assume without loss of generality that
+/integraldisplay
+Rz0dG(z0)</integraldisplay
+Rz1dG(z1)≤z2dG(z2)</integraldisplay
+Rz3dG(z3), (1.2)
+/integraldisplay
+Rz0dG(z0)</integraldisplay
+Rz1dG(z1)>/integraldisplay
+Rz2dG(z2)</integraldisplay
+Rz3dG(z3).
+(In the next section, we will give a detailed estimation proc edure for B.)
+Applying these varying incubation periods, model (1.1) is m odiﬁed as follows:
+dX
+dt= Λ−(λ0+λ1+λ2+λ3+µ)X,
+dY0
+dt=λ0X−/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++µ/bracerightBigg
+Y0,
+dY1
+dt=λ1X−/braceleftBigg/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
++µ/bracerightBigg
+Y1,
+dY2
+dt=λ2X−/braceleftBigg/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
++µ/bracerightBigg
+Y2,
+dY3
+dt=λ3X−/braceleftBigg/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
++µ/bracerightBigg
+Y3,
+dDz0
+dt=/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
+Y0−γ0Dz0,
+dDz1
+dt=/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
+Y1−γ1Dz1, (1.3)
+dDz2
+dt=/parenleftbigg/integraldisplay
+Rz2dF(z2)/parenrightbigg−1
+Y2−γ2Dz2,
+dDz3
+dt=/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
+Y3−γ3Dz3,INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 7
+X
+Y
+z0z1
+z2z3
+D z0 OR D z3D z1
+D z2
+Figure 1.1. Schematic diagram explaining the ﬂow of infected
+individuals without therapy to individuals who are on thera py.
+whereY0,Y1,Y2andY3are variables for infectives, Dz0,Dz1,Dz2andDz3
+are variables for individuals with the full blown disease, λ0,λ1,λ2andλ3and
+γ0,γ1,γ2andγ3are variables for disease related mortality for no-drug, drug
+1, drug 2 anddrug 3 respectively. See Figure 1.1 describing the ﬂows in the
+model eq (1.3). General mortality and disease-related mort ality are incorpo-
+rated in to the model to demonstrate the basic structure of th e model, and our
+aim here is to estimate Band thus to estimate/integraltext
+RzidG(zi)for allisuch that
+simulations of the model are performed. In model (1.3), the t otal population
+N=X+Y0+Y1+Y2+Y3+Dz0+Dz1+Dz2+Dz3satisﬁes
+dN
+dt= Λ−µX+µi=3/summationdisplay
+i=0Yi−3/summationdisplay
+i=0γiDzi.
+Estimation of parameters for the varying incubation period s is important
+for understanding the impact of drugs in prolonging the onse t of disease and
+thus to prolong the life. The set Bwill also be useful in obtaining vary-
+ing basic reproductive rates, R0ifor alli= 0,1,2,3. This can be computed
+asR0i=λγi/integraltext
+RzidG(zi)by assuming independence of the impact of various
+drugs. So far, there is no evidence that β,the probability of infecting a suscep-
+tible partner changes with the activation of a drug in the bod y. If we assume
+this as a constant, then R00≥R01≥or< R02≥R03. R01<{R01,R02,R03},INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 8
+because individuals are assumed to have longer incubation p eriod due to the ef-
+fect of drugs. In the absence of clinical evidence, we assume that the impact of
+drug1 anddrug2 follows any one of the following relations:/integraltext
+Rz1dG(z1)≤or>/integraltext
+Rz2dG(z2).Similarly, another important epidemiological measure, th e dou-
+bling time, tdiis obtained as tdi= ln(2)/integraltext
+RzidG(zi)/[R0i−1].Anti-retroviral
+therapy helps in blocking the virus from interacting with ce lls and simulta-
+neously providing protease inhibitors helps in producing n on-infectious virus.
+So without loss of generality, it is assumed that the impact o f double drug
+therapy is better than a single drug therapy. If we assume dis ease related
+mortality is constant for all ithenγi=γ.The number of AIDS related deaths
+in general are high during latter part of the incubation peri od due to increase
+in opportunistic infections. In general, over all AIDS rela ted mortality rate in
+a population is assumed to be higher than the general mortali ty rate in that
+population. Where there are ntypes of drugs available, we write the general
+form for the above dynamical model as follows:
+dX
+dt= Λ−/parenleftBiggn/summationdisplay
+I=0λi+µ/parenrightBigg
+X,
+dY0
+dt=λ0X−/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++µ/bracerightBigg
+Y0,
+......
+......
+dYn
+dt=λnX−/braceleftBigg/parenleftbigg/integraldisplay
+RzndG(zn)/parenrightbigg−1
++µ/bracerightBigg
+Yn,
+dDz0
+dt=/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
+Y0−γ0Dz0,
+...... (1.4)
+......
+dDzn
+dt=/parenleftbigg/integraldisplay
+RzndG(zn)/parenrightbigg−1
+Yn−γnDzn,
+As a special case we can consider all the parameters in the abo ve model
+as Stieltjes integrals and can estimate them using the rigor ous procedure ex-
+plained in the next section. For n= 3in the model (1.4), we can deduce the
+model (1.3). Practically, we do not have a situation where se veral drugs areINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 9
+available in the market for HIV infected individuals. Hence , the model (1.4)
+should be treated as a theoretical generalization.
+This paper is organized as follows: In section 2, we present c ontemporary
+models constructed for understanding transmission dynami cs of HIV for policy
+formulations and corresponding modiﬁed disease progressi on component that
+captures the impact of therapy, in section 3, we describe in d etail the esti-
+mation of the set Bfor up to three drugs; section 4 gives the corresponding
+expressions for the conditional probabilities of N−drugs. We construct the-
+oretical examples using three functions: Gamma, Logistic a nd Log-normal in
+section 5 to demonstrate the method explained in section 3. I n section 6 anal-
+ysis for age-structured populations is described in detail . Overall conclusions
+are given in section 7. Appendix I gives equations for condit ional probability
+when incubation period for various drug types does not have t he monotonicity
+property. Appendix II gives some more theoretical examples when the incuba-
+tion period is truncated to the right. Appendix III provides parameter values
+adopted for numerical simulations and Appendix IV has numer ical demonstra-
+tion of the model outputs and sensitivity of parameters in pr ojecting HIV and
+AIDS.
+2.Contemporary models and Modifications
+In this section, we present a contemporary model for HIV epid emic in India
+[19] and corresponding integro-diﬀerential equations. HI V model [19] devel-
+oped based on Indian data has three components, 1) Model for s pread in
+general population, 2) model for spread in homosexual men (M SM), 3) model
+for spread in intravenous drug users (IDU). We provide a desc ription of this
+model and then write corresponding revised model with integ ro diﬀerential
+equations. The system of diﬀerential equations in three mod els have incorpo-
+rated dynamics in fourteen compartments: U(i),susceptible population; V(i),
+sexually transmitted diseases population; W(i),HIV infected; T(i),AIDS in
+the general population for gender i(say,i= 1for male and i= 2for female),
+U(m),susceptible MSM; V(m),sexually transmitted infected MSM;, W(m),
+HIV infected MSM; T(m),MSM population with AIDS; U(IDU),suscepti-
+ble intravenous drug users; W(IDU),HIV infected intravenous drug users;
+T(IDU),intravenous drug users with AIDS. Male susceptible in gener al pop-
+ulation is eligible to acquire virus from jth sub-population ( j= 1,female
+married partner; j= 2,female casual partner, j= 3,commercial sex worker;
+j= 4,through blood transfusions. All the sub-populations are al lowed to
+contribute for the transmission dynamics of HIV and each sub -population is
+also subject to the risk of acquiring the infection from othe r sub-population
+wherever applicable (see [19] for complete description).
+The diﬀerential equations describing the Indian HIV epidem ic model areINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 10
+General
+Model
+
+dU(i)
+dt=aiU(i)−U(i)/parenleftBig/summationtext4
+j=1bijV(i)
+N(j)+/summationtext4
+j=1cijW(j)
+N(j)/parenrightBig
++φV(i)
+dV(i)
+dt=U(i)/summationtext4
+j=1bijV(i)
+N(j)−V(i)/summationtext4
+j=1dijW(j)
+N(j)−µV(i)−φV(i)
+dW(i)
+dt=U(i)/summationtext4
+j=1cijW(j)
+N(j)+V(i)/summationtext4
+j=1dijW(j)
+N(j)−
+δiW(i)−αiW(i)
+dT(i)
+dt=αiW(i)−µiT(i)
+MSM
+Model
+
+dU(m)
+dt=amU(m)−U(m)/parenleftBig
+bmV(m)
+N(m)+cmW(m)
+N(m)/parenrightBig
++φV(m)
+dV(m)
+dt=U(m)bmV(m)
+N(m)−V(m)dmW(m)
+N(m)−µV(m)−φV(m)
+dW(m)
+dt=U(m)cmW(m)
+N(m)+V(m)dmW(m)
+N(m)−
+δmW(m)−αmW(m)
+dT(m)
+dt=αmW(m)−µmT(m)
+IDU
+Model
+
+dU(IDU)
+dt=aIDUU(IDU)−U(IDU)/parenleftBig
+cIDUW(IDU)
+N(IDU)/parenrightBig
++
+φV(IDU)
+dW(IDU)
+dt=U(IDU)cIDUW(IDU)
+N(IDU)−δIDUW(IDU)−
+αIDUW(IDU)
+dT(IDU)
+dt=αIDUT(IDU)−µIDUT(IDU)
+where,N(j) =V(j)+W(j)forj= 1,2,3,4andN(m) =V(m)+W(m)
+The corresponding models with ﬂexible incubation periods a reINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 11
+dU(i)
+dt=aiU(i)−U(i)/parenleftBigg4/summationdisplay
+j=1bijV(i)
+N(j)+3/summationdisplay
+k=04/summationdisplay
+j=1cijkW(j)
+N(j)/parenrightBigg
++φV(i)
+dV(i)
+dt=U(i)4/summationdisplay
+j=1bijV(i)
+N(j)−V(i)3/summationdisplay
+k=04/summationdisplay
+j=1dijkW(j)
+N(j)−µV(i)−φV(i)
+dW0(i)
+dt=U(i)4/summationdisplay
+j=1cij0W(j)
+N(j)+V(i)4/summationdisplay
+j=1dij0W(j)
+N(j)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++δi/bracerightBigg
+W0(i)
+dW1(i)
+dt=U(i)4/summationdisplay
+j=1cij1W(j)
+N(j)+V(i)4/summationdisplay
+j=1dij1W(j)
+N(j)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
++δi/bracerightBigg
+W1(i)
+dW2(i)
+dt=U(i)4/summationdisplay
+j=1cij2W(j)
+N(j)+V(i)4/summationdisplay
+j=1dij2W(j)
+N(j)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
++δi/bracerightBigg
+W2(i)
+dW3(i)
+dt=U(i)4/summationdisplay
+j=1cij3W(j)
+N(j)+V(i)4/summationdisplay
+j=1dij3W(j)
+N(j)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
++δi/bracerightBigg
+W3(i)
+dTz0(i)
+dt=/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
+W0(i)−µ0Tzo
+dTz1(i)
+dt=/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
+W1(i)−µ1Tz1
+dTz2(i)
+dt=/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
+W2(i)−µ1Tz1
+dTz3(i)
+dt=/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
+W3(i)−µ3Tz3INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 12
+dU(m)
+dt=amU(m)−U(m)/parenleftBigg
+bmV(m)
+N(m)+3/summationdisplay
+k=0cmW(m)
+N(m)/parenrightBigg
++φV(m)
+dV(m)
+dt=U(m)bmV(m)
+N(m)−V(m)3/summationdisplay
+k=0dmW(m)
+N(m)−µV(m)−φV(m)
+dW0(m)
+dt=U(m)cm0W(m)
+N(m)+V(m)dm0W(m)
+N(m)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++δm/bracerightBigg
+W0(m)
+dW1(m)
+dt=U(m)cm1W(m)
+N(m)+V(m)dm1W(m)
+N(m)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
++δm/bracerightBigg
+W1(m)
+dW2(m)
+dt=U(m)cm2W(m)
+N(m)+V(m)dm2W(m)
+N(m)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
++δm/bracerightBigg
+W2(m)
+dW3(m)
+dt=U(m)cm3W(m)
+N(m)+V(m)dm3W(m)
+N(m)−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++δm/bracerightBigg
+W3(m)
+dTz0(m)
+dt=/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
+W0(m)−µmTz0(m)
+dTz1(m)
+dt=/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
+W1(m)−µmTz1(m)
+dTz2(m)
+dt=/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
+W2(m)−µmTz2(m)
+dTz3(m)
+dt=/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
+W3(m)−µmTz3(m)INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 13
+dU(IDU)
+dt=aIDUU(IDU)−U(IDU)3/summationdisplay
+k=0/parenleftbiggcIDU,kW(IDU)
+N(IDU)/parenrightbigg
++φV(IDU)
+dW0(IDU)
+dt=U(IDU)/parenleftbiggcIDU,0W(IDU)
+N(IDU)/parenrightbigg
+−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
++δIDU/bracerightBigg
+W0(IDU)
+dW1(IDU)
+dt=U(IDU)/parenleftbiggcIDU,1W(IDU)
+N(IDU)/parenrightbigg
+−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
++δIDU/bracerightBigg
+W1(IDU)
+dW2(IDU)
+dt=U(IDU)/parenleftbiggcIDU,2W(IDU)
+N(IDU)/parenrightbigg
+−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
++δIDU/bracerightBigg
+W2(IDU)
+dW3(IDU)
+dt=U(IDU)/parenleftbiggcIDU,3W(IDU)
+N(IDU)/parenrightbigg
+−
+/braceleftBigg/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
++δIDU/bracerightBigg
+W3(IDU)
+dTz0(IDU)
+dt=/parenleftbigg/integraldisplay
+Rz0dG(z0)/parenrightbigg−1
+W0(IDU)−µIDUTz0(IDU)
+dTz1(IDU)
+dt=/parenleftbigg/integraldisplay
+Rz1dG(z1)/parenrightbigg−1
+W1(IDU)−µIDUTz1(IDU)
+dTz2(IDU)
+dt=/parenleftbigg/integraldisplay
+Rz2dG(z2)/parenrightbigg−1
+W2(IDU)−µIDUTz2(IDU)
+dTz3(IDU)
+dt=/parenleftbigg/integraldisplay
+Rz3dG(z3)/parenrightbigg−1
+W3(IDU)−µIDUTz3(IDU)
+where the variables with suﬃx z0, z2,z3,z3are corresponding to the im-
+pact drug0, drug1, drug2, drug3 respectively. These contem porary models
+are improvised version of basic models presented in section 1 and are tested
+to predict accurately the epidemic situation during the era of anti-retroviral
+therapies.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 14
+3.Conditional probabilities
+In this section, we will give a detailed procedure to estimat eBthrough a
+deconvolution technique. Let Bbe split into a collection of four parameter
+sets say, B={B0,B1,B2,B3}for the four types of scenarios described in the
+previous section. Let Hbe the time of infection and Zbe the incubation
+period, then the time of onset of the disease can be represent ed asD=H+Z.
+There have been studies (see for list of references Brookmey er and Gail (1994)),
+in which HandZwere assumed independent and Dwas estimated through
+convolution. We outline the general idea of convolution and then give the
+convolution of HandZ.Suppose (an)and(bn)are two sequences of numbers
+over the time period, then
+(an)∗(bn) =n/summationdisplay
+k=0anbn−k (3.1)
+where(an)∗(bn)is the convolution of these sequences with an operator′∗′.
+Suppose aandbare mutually independent random variables and let AL(x)
+andBL(x)be their Laplace transformations, then a+bhas the Laplace trans-
+formation ALBL.Since the multiplication of the Laplace transformation is
+associative and commutative, it follows that (an)∗(bn)is also associative and
+commutative. Instead of discrete notation, suppose aandbare continuous
+and independent with probability density functions handg, then the density
+ofh+gis given by
+f(s) =/integraldisplay∞
+−∞h(t−s)g(t)dt=/integraldisplay∞
+−∞h(t)g(t−s)ds
+.
+Suppose G(s) =/integraltexts
+−∞g(s)ds, andF(s) =/integraltexts
+−∞f(s)dsthen
+F(s) =/integraldisplay∞
+−∞h(t)G(t−s)ds. (3.2)
+We callFthe convolution of handG. Suppose the above handGrepresent
+the infection density and incubation period distribution f unction; then the
+convolution of handGrepresents the cumulative number of disease cases
+reported (or observed), and is given by
+h∗G=/integraldisplay∞
+−∞h(t)G(t−s)ds. (3.3)
+This kind of convolution in (3.3) was used to estimate the num ber of AIDS
+cases for the ﬁrst time by [7]. Information on Gmay not be available for someINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 15
+populations. In such situations, Ghas been estimated through deconvolution
+from the information available on h∗Gandh[16, 17]. In this section we will
+construct conditional probabilities for each drug type and express the function
+that maximizes B. These kind of conditional probabilities derived for the
+drug type were not available earlier for the incubation periods when t he total
+number of reported disease cases were considered. Note that h∗Gis the
+cumulative number of disease cases.
+LetX0,X1,X2,...,X n−k,...,X n−l,...,X n−m,...,X nbe the disease cases avail-
+able in the time intervals [Ui−1,Ui)fori= 0,1,2,...n−k,...n−l,...(n−m)+
+1,...n+1.Suppose Eis the event of diagnosis of disease after the ﬁrst infection
+atT0.LetE={E0,E1,E2,E3}andE0occurs in the interval [U0,Un−k),E1
+(orE2) in[Un−k,Un−l)(or[Un−l,Un−m)) andE3in[Un−m,Un).NowD,the
+cumulative number of disease cases up to time Un,can be expressed from (3.3)
+as follows:
+D(U0≤s≤Un) =/integraldisplayUn−k
+0h(t)G(t−s)ds+/integraldisplayUn−l
+Un−kh(t)G(t−s)ds
++/integraldisplayUn−m
+Un−lh(t)G(t−s)ds+/integraldisplayUn
+Un−mh(t)G(t−s)ds, (3.4)
+D(A,B/Un) =/integraltextUn−k
+0h(t/A0)G(t−s/B0)ds+/integraltextUn−l
+Un−kh(t/A1)G(t−s/B1)ds
++/integraltextUn−m
+Un−lh(t/A2)G(t−s/B2)ds+/integraltextUn
+Un−mh(t/A3)G(t−s/B3)ds.
+In the above equation A0,A1, A2andA3are the parameter sets for the hfor
+drug0,drug1,drug2anddrug3. An infected individual could fall in to any
+of the intervals described above, and similarly a full-blow n disease diagnosed
+individual could fall in the same interval, but for a given in dividual the chrono-
+logical time of infection would be earlier than that of diagn osis of the disease.
+Un−kis the time of introduction of drugs after infection at U0.Individuals
+who were diagnosed on or after Un−k,and before Un,were taking one of the
+threedrugs. IfE1∈[Un−k,Un−l)andE2∈[Un−l,Un−m)Z1< Z2, otherwise
+ifE1∈[Un−l,Un−m)andE2∈[Un−k,Un−l)then and if E1,E2∈[Un−k,Un−m)
+thenZ1=Z2.An individual who was diagnosed with the disease before
+Unmust have developed symptoms in one of the four intervals [U0,Un−k),
+[Un−k,Un−l),[Un−l,Un−m)and[Un−m,Un).LetEj∈[Uj−1,Uj)⊆[U0,Un−k),
+then the conditional probability of the occurrence of EjgivenEis expressed
+asINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 16
+P(Ej/E) =P(Uj−1≤D≤Uj/D≤Un)
+=D(A0,B0/Uj)−D(A0,B0/Uj−1)
+D(A0,B0/Un)
+=/integraldisplayUj
+0h(t/A0)G(t−s/B0)ds./bracketleftbigg/integraldisplayUn
+0h(t/A0)G(t−s/B0)ds/bracketrightbigg−1
+−/integraldisplayUj−1
+0h(t/A0)G(t−s/B0)ds./bracketleftbigg/integraldisplayUn
+0h(t/A0)G(t−s/B0)ds/bracketrightbigg−1
+. (3.5)
+Ifdrugs were initiated at Un−k,then these conditional probabilities con-
+structed above will change according to the occurrence of E1,E2,E3.Consider
+E1∩E2=∅.LetEk∈[Uk−1,Uk)⊆[Un−k,Un−l), andE1∈[Un−k,Un−l), then
+P(Ek/E) =P(Uk−1≤D≤Uk/D≤Un)
+=D(A1,B1/Uk)−D(A1,B1/Uk−1)
+D(A1,B1/Un)
+=/integraldisplayUk
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg−1
+−/integraldisplayUk−1
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg
+.−1(3.6)
+Suppose Ek∈[Uk−1,Uk)⊆[Un−k,Un−l), andE2∈[Un−k,Un−l)i.e a situa-
+tion when Z1> Z2, then
+P(Ek/E) =/integraldisplayUk
+0h(t/A2)G(t−s/B2)ds./bracketleftbigg/integraldisplayUn
+0h(t/A2)G(t−s/B2)ds/bracketrightbigg−1
+−/integraldisplayUk−1
+0h(t/A2)G(t−s/B2)ds./bracketleftbigg/integraldisplayUn
+0h(t/A2)G(t−s/B2)ds/bracketrightbigg−1
+. (3.7)
+LetEl∈[Ul−1,Ul)⊆[Un−l,Un−m), andE2∈[Un−l,Un−m),thenINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 17
+P(El/E) =P(Ul−1≤D≤Ul/D≤Un)
+=D(A2,B2/Ul)−D(A2,B2/Ul−1)
+D(A2,B2/Un)
+=/integraldisplayUl
+0h(t/A2)G(t−s/B2)ds./bracketleftbigg/integraldisplayUn
+0h(t/A2)G(t−s/B2)ds/bracketrightbigg−1
+−/integraldisplayUl−1
+0h(t/A2)G(t−s/B2)ds./bracketleftbigg/integraldisplayUn
+0h(t/A2)G(t−s/B2)ds/bracketrightbigg
+.−1(3.8)
+Suppose El∈[Ul−1,Ul)⊆[Un−l,Un−m), andE1∈[Un−l,Un−m)i.e a situa-
+tion when Z1> Z2,then
+P(El/E) =/integraldisplayUl
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg−1
+−/integraldisplayUl−1
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg−1
+. (3.9)
+Now consider E1=E2∈[Up−1,Up)⊆[Un−k,Un−m),i.e.Z1=Z2,then the
+conditional probabilities contain the same parameter sets . In this situation,
+P(Ep/E) =/integraldisplayUp
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg−1
+−/integraldisplayUp−1
+0h(t/A1)G(t−s/B1)ds./bracketleftbigg/integraldisplayUn
+0h(t/A1)G(t−s/B1)ds/bracketrightbigg−1
+. (3.10)
+SinceZ3> Z0,Z1,Z2, suppose E3∈[Um−1,Um)⊆[Un−m,Un], then
+P(Um−1≤D≤Um/D≤Un) =D(A3,B3/Um)−D(A3,B3/Um−1)
+D(A3,B3/Un).
+Therefore,INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 18
+P(Em/E) =/integraldisplayUm
+0h(t/A3)G(t−s/B3)ds./bracketleftbigg/integraldisplayUn
+0h(t/A3)G(t−s/B3)ds/bracketrightbigg−1
+−/integraldisplayUm−1
+0h(t/A3)G(t−s/B3)ds./bracketleftbigg/integraldisplayUn
+0h(t/A3)G(t−s/B3)ds/bracketrightbigg−1
+(3.11)
+The above conditional probabilities P(Ej/E),P(Ek/E),P(El/E),P(Ep/E)
+andP(Em/E)are the probabilities associated with the intervals [Uj′−1,Uj′)
+,[Uk′−1,Uk′),[Ul′−1,Ul′),[Up′−1,Up′)and[Um′−1,Um′)for the ranges of j,k,l,p
+andmdeﬁned above. Since, X0,X1,X2,...,X n−k,...,Xn−l,...,X n−m,...,X nare
+mutually exclusive, we assume they follow a parametric dist ribution with the
+above probabilities are mutually exclusive, so we assume th ey follow the multi-
+nomial property of the distribution of the values in the time intervals and the
+above conditional probabilities. Then the likelihood func tions corresponding
+to the event set EareL0(A,B/Pj) =/producttextn−k
+j′=1Pj(A,B/Tj′),L1(2)(A,B/Pk) =/producttextn−l
+k′=n−kPk′(A,B/Tk′),L2(1)(A,B/Pl′) =/producttextn−m
+l′=n−lPl′(A,B/Tl′),L1=2(A,B/Pp)
+=/producttextn−m
+p′=n−kPp′(A,B/Tp′)andL3(A,B/Pm) =/producttextn
+m′=n−mPm′(A,B/Tm′).
+HereP•=P(E•/E).We estimate Aby ﬁtting an infection curve from the
+incidence data and we then estimate Bby maximizing the likelihood func-
+tions expressed above. The best estimate of Acould be information for initial
+values of XandYin the model (1.3). Using the corresponding estimate
+ofB, we obtain/integraltext
+RzidF(zi).In such situations, the above likelihood func-
+tions would be L0=/producttextn−k
+j′=0PTj′
+j, L1(2)=/producttextn−l
+k′=n−kPTk′
+k,L2(1)=/producttextn−m
+l′=n−lPTl′
+l,
+L1=2=/producttextn−m
+p′=n−kPTp′
+pandL3=/producttextn
+m′=n−mPTm′
+m.
+4.Generalization for multiple drug impact
+In this section, expressions for the conditional probabili ties are presented
+when multiple drugs are administrated in the population. Re fer to the sec-
+tions 2 and 3 for introduction on the role of various drugs and refer to the
+section 4 for basic formulations of conditional probabilit ies when there are
+three types of drugs to prolong the incubation period and wit hout any drug
+situation that would not alter natural process of disease pr ogression. Modeling
+for the situation corresponding to no drug is highly relevan t for those countries
+where surveillance and diagnosis of infections are not comp lete and several in-
+dividuals with HIV are not taking drugs. Let N={N0,N1,N2, ...,N N}be the
+number of available drugs and Z={Z0,Z1,Z2,...,ZN}be their corresponding
+incubation periods. Further let Z0< Z1< Z2<,...,< Z NandAandBbe
+their parametric sets. ThenINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 19
+D(A,B/UNN) =/integraldisplayUN0
+0h(t/AN0)G(t−s/BN0)ds
++/integraldisplayUN1
+UN0h(t/AN1)G(t−s/BN1)ds
+···+/integraldisplayUNN
+UNN−1h(t/ANN)G(t−s/BNN)ds. (4.1)
+Now,P(ENi/E) =P/parenleftbig
+UNi−1≤D≤UNi/D≤UNN/parenrightbig
+andLNi(for some i)
+can be computed as follows:
+P(ENi/E) =/integraldisplayUNi
+0h(t/ANi)G(t−s/BNi)ds×
+/bracketleftbigg/integraldisplayUNN
+0h(t/ANN)G(t−s/BNN)ds/bracketrightbigg−1
+−/integraldisplayUNi−1
+0h(t/ANi−1)G(t−s/BNi−1)ds×
+/bracketleftbigg/integraldisplayUNN
+0h(t/ANN)G(t−s/BNN)ds/bracketrightbigg
+.−1(4.2)
+LNi=/producttextNi
+j=Ni−1PTj
+jis maximized for the set [Ai,Bi]by the procedure ex-
+plained in the previous section. We will obtain Nsets of[A,B]values, and
+the corresponding likelihood values are LN1,LN2,LN3,...,LNN.In the above,
+we have assumed monotonicity of (Zi)to arrive at (4.2). If the (Zi)val-
+ues are not monotonic then the various conditional probabil ities can be con-
+structed as explained in the previous section. There we expl ained the general
+expression when there were a ﬁnite number of drugs available on the market.
+A detailed construction of various conditional probabilit ies is not necessary
+for the purpose of the present section (for details see Appen dix I). When
+theZisare not monotonic, and if they follow some order, say for exam ple,
+Z0> Z1< Z2> ... < Z N,then the conditional probabilities can be con-
+structed in the same way as equations (3.7e3.9) were. Suppos e(Zp)are equal
+for each p, then there will be two scenarios arising: one for before dru g in-
+tervention and one after drug intervention. For this situat ion, the likelihood
+equation is LNp=/producttextNp
+p=Np−1PTp
+pwhereP/parenleftbig
+ENp/E/parenrightbig
+,is given as follows:INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 20
+P/parenleftbig
+ENp/E/parenrightbig
+=/integraldisplayUNp
+0h(t/ANp)G(t−s/BNp)ds×
+/bracketleftbigg/integraldisplayUNN
+0h(t/ANN)G(t−s/BNN)ds/bracketrightbigg−1
+−/integraldisplayUNp−1
+0h(t/ANp−1)G(t−s/BNp−1)ds×
+/bracketleftbigg/integraldisplayUNN
+0h(t/ANN)G(t−s/BNN)ds/bracketrightbigg
+. (4.3)
+5.Theoretical examples
+In this section, we show some examples of the likelihood func tion constructed
+in the previous section, to estimate A,andB.Leth(s)follow a quadratic
+exponential and Bfollow a) a gamma function, and b) a logistic function.
+Infections in most of the countries started declining after the availability of
+antiretroviral therapies [9, 11], and incidence in the rece nt period was found
+to be stable in some countries like India [19]. This motivate d us to choose a
+quadratic exponential to represent h(s), namely h(s) =exp(α1s2+α2s+α3)for
+all−∞< α1,α2,α3<∞. A quadratic exponential function has been shown
+to be a good model for representing the above declines in the i ncidence rates
+[17]. The incubation period for AIDS is large as well as varia ble, therefore,
+functions like the gamma, Weibull and logistic can mimic sev eral shapes to ﬁt
+the incubation period data depending on their parameter val ues. Such well-
+known functions were used by many researchers for modeling t he incubation
+period of AIDS. We now demonstrate the application of such fu nctions for the
+theory explained in section 2.
+5.1.Example 1: Gamma function. Ifω >0is the parameter and Γ(ω)
+is the complete distribution function, then the incomplete gamma distribu-
+tion,G(ω;tj) =1
+Γ(ω)/integraltexttj
+0e−xxω−1dx,fora≥0,tj≥0anda+tj/ne}ationslash= 0.From the
+conditional probability equations from (3.5) to (3.11), an d the likelihood equa-
+tions explained in the later part of section 3, the following are the likelihood
+equations without a drug and for with three types of drugs:
+L0(α1,α2,α3;ω/Pj) =/productdisplay
+ja1(j)a2(j)−/productdisplay
+ja1(j−1)a2(j) (5.1)INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 21
+where
+a1(j) =/bracketleftbigg/integraldisplayuj
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytj
+0e−(uj−s)(uj−s)ω−1duj/bracerightbigg
+ds/bracketrightbiggTj
+a1(j−1) =/bracketleftbigg/integraldisplayuj−1
+0eα1s2+α2s+α3
+×/braceleftbigg1
+Γω/integraldisplaytj−1
+0e−(uj−1−s)(uj−1−s)ω−1duj−1/bracerightbigg
+ds/bracketrightbiggTj
+a2(j) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytn
+0e−(un−s)(un−s)ω−1dun/bracerightbigg
+ds/bracketrightbigg−Tj
+L1(2)(α1,α2,α3;ω/Pk) =/productdisplay
+ka1(k)a2(k)−/productdisplay
+ka1(k−1)a2(k) (5.2)
+where
+a1(k) =/bracketleftbigg/integraldisplayuk
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytk
+0e−(uk−s)(uk−s)ω−1duk/bracerightbigg
+ds/bracketrightbiggTk
+a1(k−1) =/bracketleftbigg/integraldisplayuk−1
+0eα1s2+α2s+α3
+×/braceleftbigg1
+Γω/integraldisplaytk−1
+0e−(uk−1−s)(uk−1−s)ω−1duk−1/bracerightbigg
+ds/bracketrightbiggTk
+a2(k) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytn
+0e−(un−s)(un−s)ω−1dun/bracerightbigg
+ds/bracketrightbigg−Tk
+L2(1)(α1,α2,α3;ω/Pl) =/productdisplay
+la1(l)a2(l)−/productdisplay
+la1(l−1)a2(l) (5.3)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 22
+a1(l) =/bracketleftbigg/integraldisplayul
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytl
+0e−(ul−s)(ul−s)ω−1dul/bracerightbigg
+ds/bracketrightbiggTl
+a1(l−1) =/bracketleftbigg/integraldisplayul−1
+0eα1s2+α2s+α3
+×/braceleftbigg1
+Γω/integraldisplaytl−1
+0e−(ul−1−s)(ul−1−s)ω−1dul−1/bracerightbigg
+ds/bracketrightbiggTl
+a2(l) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytn
+0e−(un−s)(un−s)ω−1dun/bracerightbigg
+ds/bracketrightbigg−Tl
+L1=2(α1,α2,α3;ω/Pp) =/productdisplay
+pa1(p)a2(p)−/productdisplay
+pa1(p−1)a2(p) (5.4)
+where
+a1(p) =/bracketleftbigg/integraldisplayup
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytp
+0e−(up−s)(up−s)ω−1dup/bracerightbigg
+ds/bracketrightbiggTp
+a1(p−1) =/bracketleftbigg/integraldisplayup−1
+0eα1s2+α2s+α3
+×/braceleftbigg1
+Γω/integraldisplaytp−1
+0e−(up−1−s)(up−1−s)ω−1dup−1/bracerightbigg
+ds/bracketrightbiggTp
+a2(p) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytn
+0e−(un−s)(un−s)ω−1dun/bracerightbigg
+ds/bracketrightbigg−Tp
+L3(α1,α2,α3;ω/Pm) =/productdisplay
+ma1(m)a2(m)−/productdisplay
+ma1(m−1)a2(m) (5.5)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 23
+a1(m) =/bracketleftbigg/integraldisplayum
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytm
+0e−(um−s)(um−s)ω−1dum/bracerightbigg
+ds/bracketrightbiggTm
+a1(m−1) =/bracketleftbigg/integraldisplayum−1
+0eα1s2+α2s+α3
+×/braceleftbigg1
+Γω/integraldisplaytm−1
+0e−(um−1−s)(um−1−s)ω−1dum−1/bracerightbigg
+ds/bracketrightbiggTm
+a2(m) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg1
+Γω/integraldisplaytn
+0e−(un−s)(un−s)ω−1dun/bracerightbigg
+ds/bracketrightbigg−Tm
+5.2.Example 2: Logistic function. Suppose θ1,θ2are parameters and
+F(θ1,θ2;tj) =/braceleftbigg
+1+e−(tj−θ1
+θ2)/bracerightbigg−1
+,forθ1,θ2>0,is the distribution function.
+The likelihood equations to obtain the parameters of logist ic distribution with-
+out drugs and for three types of drugs are as follows:
+L0(α1,α2,α3;θ1,θ2/Pj) =/productdisplay
+ja′
+1(j)a′
+2(j)−/productdisplay
+ja′
+1(j−1)a′
+2(j) (5.6)
+where
+a′
+1(j) =/bracketleftBigg/integraldisplayuj
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(uj−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTj
+a′
+1(j−1) =/bracketleftBigg/integraldisplayuj−1
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(uj−1−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTj
+a′
+2(j) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(un−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbigg−Tj
+L1(2)(α1,α2,α3;θ1,θ2/Pk) =/productdisplay
+ka′
+1(k)a′
+2(k)−/productdisplay
+ka′
+1(k−1)a′
+2(k) (5.7)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 24
+a′
+1(k) =/bracketleftBigg/integraldisplayuk
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(uk−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTk
+a′
+1(k−1) =/bracketleftBigg/integraldisplayuk−1
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(uk−1−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTk
+a′
+2(k) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(un−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbigg−Tk
+L2(1)(α1,α2,α3;θ1,θ2/Pl) =/productdisplay
+la′
+1(l)a′
+2(l)−/productdisplay
+la′
+1(l−1)a′
+2(l) (5.8)
+where
+a′
+1(l) =/bracketleftBigg/integraldisplayul
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(ul−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTl
+a′
+1(l−1) =/bracketleftBigg/integraldisplayul−1
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(ul−1−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTl
+a′
+2(l) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(un−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbigg−Tl
+L1=2(α1,α2,α3;θ1,θ2/Pp) =/productdisplay
+pa′
+1(p)a′
+2(p)−/productdisplay
+pa′
+1(p−1)a′
+2(p) (5.9)
+where
+a′
+1(p) =/bracketleftBigg/integraldisplayup
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(up−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTp
+a′
+1(p−1) =/bracketleftBigg/integraldisplayup−1
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(up−1−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTp
+a′
+2(p) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(un−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbigg−TpINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 25
+L3(α1,α2,α3;θ1,θ2/Pm) =/productdisplay
+ma′
+1(m)a′
+2(m)−/productdisplay
+ma′
+1(m−1)a2(m) (5.10)
+where
+a′
+1(m) =/bracketleftbigg/integraldisplayum
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(um−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbiggTm
+a′
+1(m−1) =/bracketleftBigg/integraldisplayum−1
+0eα1s2+α2s+α3/braceleftBigg/braceleftbigg
+1+e−(um−1−θ1
+θ2)/bracerightbigg−1/bracerightBigg
+ds/bracketrightBiggTm
+a′
+2(m) =/bracketleftbigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg/braceleftBig
+1+e−(un−θ1
+θ2)/bracerightBig−1/bracerightbigg
+ds/bracketrightbigg−Tm
+5.3.Example 3: Log-normal function. Suppose µandσare parameters
+andLNF(µ,σ;tj) =1
+2/braceleftBig
+1+erf/parenleftBig
+lnx−µ
+σ√
+2/parenrightBig/bracerightBig
+,forµ,σ >0,is the distribution
+function. (Here erf{.}is the error function of the Gaussian function) .The
+likelihood equations to obtain the parameters of the logist ic distribution with-
+out drugs and for three types of drugs are as follows:
+L0(α1,α2,α3;µ,σ/P j) =/productdisplay
+ja′′
+1(j)a′′
+2(j)−/productdisplay
+ja′′
+1(j−1)a′′
+2(j) (5.11)
+where
+a′′
+1(j) =/bracketleftbigg1
+2/integraldisplayuj
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTj
+a′′
+1(j−1) =/bracketleftbigg1
+2/integraldisplayuj−1
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTj
+a′′
+2(j) =/bracketleftbigg1
+2/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbigg−Tj
+L1(2)(α1,α2,α3;µ,σ/P k) =/productdisplay
+ka′′
+1(k)a′′
+2(k)−/productdisplay
+ka′′
+1(k−1)a′′
+2(k) (5.12)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 26
+a′′
+1(k) =/bracketleftbigg1
+2/integraldisplayuk
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTk
+a′′
+1(k−1) =/bracketleftbigg1
+2/integraldisplayuk−1
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTk
+a′′
+2(k) =/bracketleftbigg1
+2/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbigg−Tk
+L2(1)(α1,α2,α3;µ,σ/P l) =/productdisplay
+la′′
+1(l)a′′
+2(l)−/productdisplay
+la′′
+1(l−1)a′′
+2(l) (5.13)
+where
+a′′
+1(l) =/bracketleftbigg1
+2/integraldisplayul
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTl
+a′′
+1(l−1) =/bracketleftbigg1
+2/integraldisplayul−1
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTl
+a′′
+2(l) =/bracketleftbigg1
+2/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbigg−Tl
+L1=2(α1,α2,α3;µ,σ/P p) =/productdisplay
+pa′′
+1(p)a′′
+2(p)−/productdisplay
+pa′′
+1(p−1)a′′
+2(p) (5.14)
+where
+a′′
+1(p) =/bracketleftbigg1
+2/integraldisplayup
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTp
+a′′
+1(p−1) =/bracketleftbigg1
+2/integraldisplayup−1
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTp
+a′′
+2(p) =/bracketleftbigg1
+2/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbigg−Tp
+L3(α1,α2,α3;µ,σ/P m) =/productdisplay
+ma′
+1(m)a′
+2(m)−/productdisplay
+ma′
+1(m−1)a2(m) (5.15)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 27
+a′′
+1(m) =/bracketleftbigg1
+2/integraldisplayum
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTm
+a′′
+1(m−1) =/bracketleftbigg1
+2/integraldisplayum−1
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbiggTm
+a′′
+2(m) =/bracketleftbigg1
+2/integraldisplayun
+0eα1s2+α2s+α3/braceleftbigg
+1+erf/parenleftbigglnx−µ
+σ√
+2/parenrightbigg/bracerightbigg
+ds/bracketrightbigg−Tm
+6.Age-structured populations
+In this section we extend the models 1.3 and 1.4 to accommodat e age struc-
+ture into the population mixing and epidemiology parameter s. The incubation
+period for children is shorter than that of adults. Within th e adult popula-
+tion there could be variability due to age at the time of infec tion. There are
+studies that analyze the HIV data on age collected at the time of infection to
+study parameters like incubation period [5], and some studi es incorporate age
+structure in the models to explain the impact of an age-depen dent incubation
+period [10]. Information on population age structure is imp ortant source of
+data in a country with severe AIDS epidemic. Countries with h igh number of
+young adults and with high-risk behavior need special inter ventions in terms
+of behavioral counseling, treatment of drugs, monitoring a nd evaluation of the
+epidemic. For most of the countries with high numbers of HIV i nfected in-
+dividuals, age-related data for measuring impact of drugs a re not available.
+Virus transmission rates, disease progression rates and mo rtality rates could
+be highly age-dependent. Improving surveillance activiti es by age-structure of
+the HIV infected and susceptible populations would beneﬁt t he overall disease
+control programs in a country. In the absence of availabilit y of cohort data, the
+methods explained in section 2 could be of great use to estima te the incubation
+period. The analysis and method explained there could be car ried out based
+on the data available for individuals of every age (rounded t o closest integer).
+We describe the age-structure model and the method to obtain the incubation
+period in this section by considering jage groups. In a hospital set-up it is
+relatively easy to follow cohorts of age groups compared to f ollowing cohorts
+of individuals for each age group.
+Suppose the population in the jthage group is divided into Xjsusceptible,
+Y0,j,Y1,j,Y2,j,Y3,jare infected and Dz0,j,Dz1,j,Dz2,j,Dz3,jindividuals with
+the disease without drugs, and for drug1, drug2, drug3 respectively. The
+diﬀerential equations explaining these variables areINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 28
+dXj
+dt= Λj−/parenleftbig
+λ0
+jk+λ1
+jk+λ2
+jk+λ3
+jk+µj/parenrightbig
+Xj,
+dY0,j
+dt=λ0
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rz0,jdG(z0,j)/parenrightbigg−1
++µj/bracerightBigg
+Y0,j,
+dY1,j
+dt=λ1
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rz1,jdG(z1,j)/parenrightbigg−1
++µj/bracerightBigg
+Y1,j,
+dY2,j
+dt=λ2
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rz2,jdG(z2,j)/parenrightbigg−1
++µj/bracerightBigg
+Y2,j,
+dY3,j
+dt=λ3
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rz3,jdG(z3,j)/parenrightbigg−1
++µj/bracerightBigg
+Y3,j,
+dDz0,j
+dt=/parenleftbigg/integraldisplay
+Rz0,jdG(z0,j)/parenrightbigg−1
+Y0,j−γ0,jDz0,j
+dDz1,j
+dt=/parenleftbigg/integraldisplay
+Rz1,jdG(z1,j)/parenrightbigg−1
+Y1,j−γ1,jDz1,j (6.1)
+dDz2,j
+dt=/parenleftbigg/integraldisplay
+Rz2,jdF(z2,j)/parenrightbigg−1
+Y2,j−γ2,jDz2,j
+dDz3,j
+dt=/parenleftbigg/integraldisplay
+Rz3,jdG(z3,j)/parenrightbigg−1
+Y3,j−γ3,jDz3,j.
+Here,Λjis the input of susceptibles for the individuals in the age gr oup
+j,µjis the mortality rate, λ0
+jk,λ1
+jk,λ2
+jkandλ3
+jkare the forces of infection at
+which a susceptible in the age group jis infected by an infected individual in
+the age group kandγ0,j,γ1,j,γ2,jandγ3,jare disease related mortality rates
+for the infected individuals in the age group jwithout drugs, and with drug1,
+drug2, and drug3 for the individuals./parenleftbig/integraltext
+Rzi,jdG(zi,j)/parenrightbig−1is the rate of disease
+progression for the infected individual for the age group jfor the drug type i.
+Special attention is necessary in data collection for under standing the forces
+of infection by age group.
+If there are ndrug types available then the general model describing the
+dynamics of various variables described above is as follows :INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 29
+dXj
+dt= Λj−/parenleftbig
+λ0
+jk+λ1
+jk+λ2
+jk+λ3
+jk+µj/parenrightbig
+Xj,
+dY0,j
+dt=λ0
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rz0,jdG(z0,j)/parenrightbigg−1
++µj/bracerightBigg
+Y0,j,
+......
+......
+dYn,j
+dt=λn
+jkXj−/braceleftBigg/parenleftbigg/integraldisplay
+Rzn,jdG(zn,j)/parenrightbigg−1
++µj/bracerightBigg
+Yn,j,
+dDz0,j
+dt=/parenleftbigg/integraldisplay
+Rz0,jdG(z0,j)/parenrightbigg−1
+Y0,j−γ0,jDz0,j,
+...... (6.2)
+......
+dDzn,j
+dt=/parenleftbigg/integraldisplay
+Rzn,jdG(zn,j)/parenrightbigg−1
+Yn,j−γn,jDzn,j.
+whereαi,jis the mortality rate of infected individuals of drug type iin the
+age group j.
+6.1.Varying incubation periods for age-structured population s.We
+are interested in the average incubation period for a group o f individuals in the
+age group j. IfH(j)is the time of infection and Z(j)is the incubation period
+for thejthage group, then the time of onset of the disease for this age gr oup is
+D(j) =H(j)+Z(j).This is the time of onset of the disease for an individual
+who acquired the infection while in the jthage group. Development of the
+disease will be some time units (for example: months, years) after infection at
+agej.An individual who acquired the infection at age jis assumed to develop
+the full disease before completion of the same age jor> j. Given H(j),
+for some j, thenD(j)is allowed to occur at age j′(j′=j,j+ 1,···,j+ω,
+wherej+ωis the last age group for the possibility of infection). Clea rly,
+H(j)≤D(j). H(j) =D(j)is possible if an individual acquired infection
+and attains disease before completion of age j.One can do analysis using a
+bi-annual (or half-yearly) aging process.
+Consider an infection and disease development matrix (see ﬁ gure 6.1) where
+each cell (j,j′)denotes the (infection age groups, disease onset age groups ) for
+j= 0,1,2,...,j+ω;j′= 0,1,2,...,j+ω.Only those cells for which j≤j′are
+provided, and other cells are left blank for which the incuba tion period is not
+deﬁned. In the matrix, all the eligible cells are denoted, so obviously there areINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 30
+(0,0)          (0,1)                . . .              (0,j)            (0,j+1)                 . . .                     (0,j+w)
+                   (1,1)                . . .              (1,j)            (1,j+1)                 . . .                     (1,j+w)
+(j,j)            (j,j+1)                   . . .                    (j,j+w)
+(j+1,j+1)               . . .                   (j+1,j+w)
+(j+w,j+w).
+.
+..
+.
+..
+.
+..
+.
+.
+H(j)D(j)
+0
+1
+.
+.
+.
+j
+j+1
+.
+.
+.
+j+w    0                 1                 . . .                 j                j+1                      . . .                       j+w
+Figure 6.1. Age-structured infection and disease development
+matrix. Here row values indicate infection age group ( H(j)) and
+column values for age group in which infected individual dev el-
+oped disease ( D(j)). An individual who acquired the infection
+inj, and developed disease in j+ω, is indicated by the cell
+(j,j+ω).
+more cells present where the condition j≤j′is satisﬁed, and also jis very
+low. (In fact, the average incubation period is not beyond a c ertain duration.
+It is not intended in the matrix to suggest that the lower the v alue ofjthen
+the larger the value of incubation period). If the age of infe ction is higher, for
+somej, and towards the last few possible age groups, then it is poss ible that
+j′−jis shorter because individuals die naturally in old age. At t he same time,
+the chance of infection in the very higher age groups (say 60+ ) is negligible for
+HIV (unless there are some rare causes). In the absence of age speciﬁc cohorts
+of infected individuals and follow-up data, it is not feasib le to calculate disease
+progression rates and survival probabilities using direct cohort methods. In
+this section, we extend the method given in section 2 to estim ate the average
+disease progression rates (or average incubation periods) for infections in age
+groupj. This method is dependent on infection densities and data on disease
+occurrences for the age group j.
+Letp(t,j)andq(t,j)be the probability density functions of infection density
+and incubation period for the age group j.IfQ(t,j)is the distribution function
+of the incubation period, then Q(t,j) =/integraltextt
+−∞q(t,j)dt.Now, the convolution of
+p(t,j)andQ(t,j)is given byINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 31
+C(s,t) =/integraldisplay∞
+−∞p(t,j)Q(t−s,j)ds.
+We callCthe convolution of pandQ(i.e.p∗Q, where∗is the convolution
+operator). Therefore,
+p∗Q=/integraldisplay∞
+−∞p(t,j)Q(t−s,j)ds.
+Suppose an individual is diagnosed with a disease at age jin the year Uk.
+Then there is a possibility that this individual acquired th e infection in any
+of the years prior to Uk(provided this individual is born in the year ≥U0).
+Similarly, all those individuals who are diagnosed with the disease at age j+w
+in the year Unhave actually acquired infection in any of the years from U0to
+Un.In the same way, an individual infected at age jwill be diagnosed with
+the disease in an age group ≥j.We consider model (6.1), where four types of
+drugs were considered in section 2.
+LetA0(j),A1(j), A2(j),A3(j)be the parameter sets in age group jfor the
+four kind of drugs. Let B0(j),B1(j), B2(j),B3(j)be the parameter sets Cand
+E0(j),E1(j), E2(j),E3(j)be the corresponding events of diagnosis of disease
+in the age group jfor the four types of drugs. The cumulative number of
+diagnosed disease cases up to Unfor individuals who are diagnosed in the age
+groupjis
+J(U0< s < U n,j) =j/summationdisplay
+j∗=0I(j∗,j),
+whereI(0,j),I(1,j),...,I(j,j)are the numbers of disease cases diagnosed
+in age group j, and acquired the infection in the age group 0,1,...,j.
+I(0,j) =/integraldisplayUn−k
+0p(t,0)Q(t−s,j)ds+/integraldisplayUn−l
+Un−kp(t,0)Q(t−s,j)ds
++/integraldisplayUn−m
+Un−lp(t,0)Q(t−s,j)ds+/integraldisplayUn
+Un−mp(t,0)Q(t−s,j)ds
+=/integraldisplayUn−k
+0p(t,0/A0)Q(t−s,j/B 0)ds+/integraldisplayUn−l
+Un−kp(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUn−m
+Un−lp(t,0/A2)Q(t−s,j/B 2)ds+/integraldisplayUn
+Un−mp(t,0/A3)Q(t−s,j/B 3)dsINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 32
+I(1,j) =/integraldisplayUn−k
+0p(t,1)Q(t−s,j)ds+/integraldisplayUn−l
+Un−kp(t,1)Q(t−s,j)ds
++/integraldisplayUn−m
+Un−lp(t,1)Q(t−s,j)ds+/integraldisplayUn
+Un−mp(t,1)Q(t−s,j)ds
+=/integraldisplayUn−k
+0p(t,1/A0)Q(t−s,j/B 0)ds+/integraldisplayUn−l
+Un−kp(t,1/A1)Q(t−s,j/B 1)ds
++/integraldisplayUn−m
+Un−lp(t,1/A2)Q(t−s,j/B 2)ds+/integraldisplayUn
+Un−mp(t,1/A3)Q(t−s,j/B 3)ds
+...
+I(j,j) =/integraldisplayUn−k
+0p(t,j)Q(t−s,j)ds+/integraldisplayUn−l
+Un−kp(t,j)Q(t−s,j)ds
++/integraldisplayUn−m
+Un−lp(t,j)Q(t−s,j)ds+/integraldisplayUn
+Un−mp(t,j)Q(t−s,j)ds
+=/integraldisplayUn−k
+0p(t,j/A0)Q(t−s,j/B 0)ds+/integraldisplayUn−l
+Un−kp(t,j/A1)Q(t−s,j/B 1)ds
++/integraldisplayUn−m
+Un−lp(t,j/A2)Q(t−s,j/B 2)ds+/integraldisplayUn
+Un−mp(t,j/A3)Q(t−s,j/B 3)ds
+Similarly for unstructured populations, we assume that Un−kis the time
+of the introduction of drugs after the ﬁrst year of detection of the disease in
+U0.IfE1(j)∈[Un−k,Un−l)andE2(j)∈[Un−l,Un−m),thenZ1(j)< Z2(j),
+otherwise if E2(j)∈[Un−k,Un−l)andE1(j)∈[Un−l,Un−m)thenZ2(j)<
+Z1(j).IfE1(j),E2(j)∈[Un−k,Un−m), thenZ1(j) =Z2(j).Given an individual
+who was diagnosed with the disease in the age group jbeforeUnis already
+developed in one of the four intervals [U0,Un−k),[Un−k,Un−l),[Un−l,Un−m)
+and[Un−m,Un).IfE0(j)∈[Ui′−1,Ui′)⊆[U0,Un−k), (for drug type i′), then the
+conditional probability of occurrence of E0(j)givenE(j)isINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 33
+Pr[E0(j)/E(j)] =Pr[Ui′−1≤J≤Ui′,j/J≤Un]
+=J[A0(j),B0(j)/Ui′,j]−J[A0(j),B0(j)/ui′−1,j]
+J[A0(j),B0(j)/Un,j],
+whereJvalues for E0(j)are given by:
+J[A0(j),B0(j)/Ui′,j] =/integraldisplayUi′
+0p(t,0/A0)Q(t−s,j/B 0)ds
++/integraldisplayUi′
+0p(t,1/A0)Q(t−s,j/B 0)ds···+/integraldisplayUi′
+0p(t,j/A0)Q(t−s,j/B 0)ds
+J[A0(j),B0(j)/Ui′−1,j] =/integraldisplayUi′−1
+0p(t,0/A0)Q(t−s,j/B 0)ds
++/integraldisplayUi′−1
+0p(t,1/A0)Q(t−s,j/B 0)ds···+/integraldisplayUi′−1
+0p(t,j/A0)Q(t−s,j/B 0)ds
+J[A1(j),B1(j)/Un,j] =/integraldisplayUn
+0p(t,0/A0)Q(t−s,j/B 0)ds
++/integraldisplayUn
+0p(t,1/A0)Q(t−s,j/B 0)ds···+/integraldisplayUn
+0p(t,j/A0)Q(t−s,j/B 0)ds
+The above probability expressions are for the case without d rug interven-
+tions. When drugs were initiated at Un−k,then these probabilities changed
+according to the occurrence of E1(j),E2(j),E3(j).Suppose E1(j)∩E2(j) =∅.
+If[Uk′−1,Uk′)⊆[Un−k,Un−l), andE1∈[Un−k,Un−l),then
+Pr[E1(j)/E(j)] =Pr[Uk′−1≤J≤Uk′,j/J≤Un]
+=J[A1(j),B1(j)/Uk′,j]−J[A1(j),B1(j)/uk′−1,j]
+J[A1(j),B1(j)/Un,j],
+whereJvalues for E1(j)are given byINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 34
+J[A1(j),B1(j)/Uk′,j] =/integraldisplayUk′
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUk′
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUk′
+0p(t,j/A1)Q(t−s,j/B 1)ds
+J[A1(j),B1(j)/Uk′−1,j] =/integraldisplayUk′−1
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUk′−1
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUk′−1
+0p(t,j/A1)Q(t−s,j/B 1)ds
+J[A1(j),B1(j)/Un,j] =/integraldisplayUn
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUn
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUn
+0p(t,j/A1)Q(t−s,j/B 1)ds
+In the above, instead of E1(j),ifE2∈[Un−k,Un−l), then the probabilities
+would be
+Pr[E2(j)/E(j)] =Pr[Uk′−1≤J≤Uk′,j/J≤Un]
+=J[A2(j),B2(j)/Uk′,j]−J[A2(j),B2(j)/uk′−1,j]
+J[A2(j),B2(j)/Un,j],
+whereJvalues for E1(j)are given by
+J[A2(j),B2(j)/Uk′,j] =/integraldisplayUk′
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUk′
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUk′
+0p(t,j/A2)Q(t−s,j/B 2)ds
+J[A2(j),B2(j)/Uk′−1,j] =/integraldisplayUk′−1
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUk′−1
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUk′−1
+0p(t,j/A2)Q(t−s,j/B 2)dsINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 35
+J[A2(j),B2(j)/Un,j] =/integraldisplayUn
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUn
+0p(t,1/A2)Q(t−s,j/B 2)ds+/integraldisplayUn
+0p(t,j/A2)Q(t−s,j/B 2)ds
+If[Ul−1,Ul)⊆[Un−l,Un−m), andE1∈[Un−l,Un−m),then
+Pr[E1(j)/E(j)] =Pr[Ul′−1≤J≤Ul′,j/J≤Un]
+=J[A1(j),B1(j)/Ul′,j]−J[A1(j),B1(j)/ul′−1,j]
+J[A1(j),B1(j)/Un,j],
+whereJvalues for E1(j)are given by
+J[A1(j),B1(j)/Ul′,j] =/integraldisplayUl′
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUl′
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUl′
+0p(t,j/A1)Q(t−s,j/B 1)ds
+J[A1(j),B1(j)/Ul′−1,j] =/integraldisplayUl′−1
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUl′−1
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUl′−1
+0p(t,j/A1)Q(t−s,j/B 1)ds
+J[A1(j),B1(j)/Un,j] =/integraldisplayUn
+0p(t,0/A1)Q(t−s,j/B 1)ds
++/integraldisplayUn
+0p(t,1/A1)Q(t−s,j/B 1)ds···+/integraldisplayUn
+0p(t,j/A1)Q(t−s,j/B 1)ds
+Suppose [Ul−1,Ul)⊆[Un−l,Un−m), andE2∈[Un−l,Un−m)then
+Pr[E2(j)/E(j)] =Pr[Ul′−1≤J≤Ul′,j/J≤Un]
+=J[A2(j),B2(j)/Ul′,j]−J[A2(j),B2(j)/ul′−1,j]
+J[A2(j),B2(j)/Un,j]
+whereJvalues for E2(j)are given as below:INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 36
+J[A2(j),B2(j)/Ul′,j] =/integraldisplayUl′
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUl′
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUl′
+0p(t,j/A2)Q(t−s,j/B 2)ds
+J[A2(j),B2(j)/Ul′−1,j] =/integraldisplayUl′−1
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUl′−1
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUl′−1
+0p(t,j/A2)Q(t−s,j/B 2)ds
+J[A2(j),B2(j)/Un,j] =/integraldisplayUn
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUn
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUn
+0p(t,j/A2)Q(t−s,j/B 2)ds
+IfE1(j) =E2(j)∈[Up′−1,Up′)⊆[Un−k,Un−m)i.e.Z1(j) =Z2(j),then the
+conditional probabilities contain the same parameter sets . The probabilities
+for this situation are
+Pr[E1(j) =E2(j)/E(j)] =Pr[Up′−1≤J≤Up′,j/J≤Un]
+=J[A2(j),B2(j)/Up′,j]−J[A2(j),B2(j)/up′−1,j]
+J[A2(j),B2(j)/Un,j],
+whereJvalues for E2(j)are given by
+J[A2(j),B2(j)/Up′,j] =/integraldisplayUp′
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUp′
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUp′
+0p(t,j/A2)Q(t−s,j/B 2)ds
+J[A2(j),B2(j)/Up′−1,j] =/integraldisplayUp′−1
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUp′−1
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUp′−1
+0p(t,j/A2)Q(t−s,j/B 2)dsINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 37
+J[A2(j),B2(j)/Un,j] =/integraldisplayUn
+0p(t,0/A2)Q(t−s,j/B 2)ds
++/integraldisplayUn
+0p(t,1/A2)Q(t−s,j/B 2)ds···+/integraldisplayUn
+0p(t,j/A2)Q(t−s,j/B 2)ds
+SinceZ3(j)>{Z0(j),Z1(j),Z2(j)}, suppose E3(j)∈[Um′−1,Um′)⊆[Un−m,Un],
+now above probabilities are
+Pr[E3(j)/E(j)] =Pr[Um′−1≤J≤Um′,j/J≤Un]
+=J[A3(j),B3(j)/Um′,j]−J[A3(j),B3(j)/um′−1,j]
+J[A3(j),B3(j)/Un,j]
+whereJvalues for E3(j)are given by
+J[A3(j),B3(j)/Um′,j] =/integraldisplayUm′
+0p(t,0/A3)Q(t−s,j/B 3)ds
++/integraldisplayUm′
+0p(t,1/A3)Q(t−s,j/B 3)ds···+/integraldisplayUm′
+0p(t,j/A3)Q(t−s,j/B 3)ds
+J[A3(j),B3(j)/Um′−1,j] =/integraldisplayUm′−1
+0p(t,0/A3)Q(t−s,j/B 3)ds
++/integraldisplayUm′−1
+0p(t,1/A3)Q(t−s,j/B 3)ds···+/integraldisplayUm′−1
+0p(t,j/A3)Q(t−s,j/B 3)ds
+J[A3(j),B3(j)/Un,j] =/integraldisplayUn
+0p(t,0/A3)Q(t−s,j/B 3)ds
++/integraldisplayUn
+0p(t,1/A3)Q(t−s,j/B 3)ds···+/integraldisplayUn
+0p(t,j/A3)Q(t−s,j/B 3)ds
+Using the above conditional probabilities, likelihood fun ctions are constructed
+by assuming some parametric form for the diagnosed disease c ases. For each
+age group above, analysis is conducted to estimate the incub ation periods by
+age group.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 38
+7.Conclusions
+The methods and models developed support further biologica l and epidemi-
+ological experiments in the HIV infected population. As per the current WHO
+guidelines, ART is prescribed only when CD4 count reaches 25 0. Experiments
+indicate mortality rate among HIV infected population drop s after individ-
+uals are on ART, and hence expected life years remaining once individuals
+reaches CD4 = 250 is diﬀerent for those individuals who are on ART and who
+are not on ART. After providing ART for all the eligible peopl e, the length
+of life gained by individuals can be measured and resultant f unctional form
+can be modeled. Similarly, a model can be built for lengths of lives for those
+individuals who reach CD4=250 and not on ART.
+The improved models that address the impacts of anti-retrov iral therapy,
+protease inhibitors and combination of drugs presented in s ection 1 seem use-
+ful in understanding the dynamics of variables for individu als with the full
+blown disease for no-drug, drug1, drug2 anddrug3, i.e Dz0,Dz1,Dz2andDz3.
+Using the methodology in sections 2 to 4, (despite being leng thy), one can
+able to estimate the parameters for the incubation period fo r each drug type,
+by the deconvolution method. We have demonstrated this meth od for three
+types of drugs, and one can obtain Bfor as many drugs as possible from the
+formulas for n−types of drugs in section 3. So far, there is no evidence of
+drugs being useful in avoiding contracting the disease. Dru gs may be useful
+for avoiding opportunistic infections for some speciﬁc per iods of time. Eventu-
+ally, an individual will succumb to AIDS, whether or not that individual takes
+drugs (which is also demonstrated in the truncation eﬀect in Figure 9.1). The
+truncation eﬀect formulas can be used to obtain the paramete r set (say, BT),
+but we did not demonstrate this numerically. There were othe r type of meth-
+ods for obtaining incubation periods (see [18] when data is c ensored and see
+[48] when data is from hospital based cohort)
+We did not introduce intracellular delay that might arise du e drug interven-
+tions. There are not many quantitative results available on the relationship
+between the dose of a drug and the resultant delay in the devel opment of
+the disease. Suppose s1,s2,s3...,skareklevels of doses of a single drug, and
+τ1,τ2,τ3,...,τkare the respective delays obtained in producing a new infect ed
+cell. Then we can write the relation R2(s,τ)between sandτas
+/braceleftBig/summationtextk
+i=1(si−s)(τi−τ)/bracerightBig2
+/braceleftBig/summationtextk
+i=1(si−s)/bracerightBig2/braceleftBig/summationtextk
+i=1(τi−τ)/bracerightBig2INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 39
+R2(s,τ)is called the correlation coeﬃcient of dose-delay. sis the mean
+dose-level and τis the mean delay. This experiment can be conducted for
+various doses sij(say) for drug type j= 1,2,3...n. Each drug will produce
+a delay depending upon the dose level. From this, the average delay can be
+statistically compared to understand the mean dose eﬀect du e to a particular
+drug, and hence the drug eﬃcacy. However, this does not give d ynamics over
+the time period, but it is very useful in preparing the baseli ne parameters for
+simulation studies, and also for the models explained in sec tions 1, 2 and 5.
+There might be a possibility of exploring the impact of delay in the conditional
+probabilities expressed in this work.
+Our work may be interesting for people working on developing computa-
+tional techniques for solving integro-diﬀerential equati ons, algorithms to solve
+convolution type equations in epidemiology, and EM-type al gorithms. The
+age-structure analysis presented is more complicated than analysis presented
+for the non-age structured populations, and we provide a new kind of analysis
+for the incubation period. When reported disease cases and d ensities of the
+infection are available for a period of several years in the p opulation, then
+this kind of analysis oﬀers a reliable method to estimate the incubation period
+distribution.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 40
+References
+[1] Aalen, O.O., Farewell, V.T., De Angelis, D., Day, N.E., G ill, O.N. New Therapy
+explains the fall in AIDS incidence with a substantial rise i n number of persons
+on treatment expected. AIDS. 13 (1): 103-108. (1999).
+[2] Anderson, R.M. The epidemiology of HIV infection: varia ble incubation plus
+infectious periods and heterogeneity in sexual activity. J . Roy. Statist. Soc. Ser.
+A 151, no. 1, 66–98 (1988)
+[3] Anderson, R.M., May, R.M. Infectious diseases of humans . Dynamics and Con-
+trol. Oxford University Press. (1991)
+[4] Artzrouni, M.A. (1992) modeled time-varying density fu nction for the incuba-
+tion period of AIDS. J. Math. Biol. 31 , no. 1, 73–99 (1992)
+[5] Becker, N.G., Lewis, J.J.C., Li Z.F., et al. Age-speciﬁc back-projection of HIV
+diagnosis data Statistics in Medicine, 22 (13): 2177-2190 ( 2003)
+[6] Brookmeyer, R., Gail, M.H. AIDS Epidemiology A Quantita tive Approach.
+Oxford University Press. New York. (1994).
+[7] Brookmeyer, R., Gail, M.H. A method for obtaining short- term projections
+and lower bounds on the size of the AIDS epidemic J. Am. Stat. A ssoc. 83
+(402): 301-308 (1988).
+[8] Castillo-Chavez, C., Cooke, K., Huang, W., Levin, S. A. O n the role of long
+incubation periods in the dynamics of acquired immunodeﬁci ency syndrome
+(AIDS). I. Single population models. J. Math. Biol. 27, no. 4 , 373–398 (1989).
+[9] Conti, S., Masocco, M., Pezzotti, P., et al. Diﬀerential Impact of Combined
+Antiretroviral Therapy on the Survival of Italian Patients With Speciﬁc AIDS-
+Deﬁning Illnesses. J. Acquir. Immu. Deﬁci. Synd. 25(5):451 -458 (2000).
+[10] Griﬃths J, Lowrie D, Williams J An age-structured model for the AIDS epi-
+demic European J of Operational Research, 2000, 124 (1): 1-1 4.
+[11] Hung, C.C, Chen, M.Y, Hsiao, C.F, Hsieh, S.M., Sheng, W. H., Chang, S.C.
+Improved outcomes of HIV-1-infected adults with tuberculo sis in the era of
+highly active antiretroviral therapy. AIDS. 17(18):2615- 2622 (2003)
+[12] Kakehashi, M. A mathematical analysis of the spread of H IV/AIDS in Japan
+IMA J math. appl. med. 15 (4): 299-311 (1998)
+[13] May, R.M., Anderson, R.M., McLean, A.R. Possible demog raphic consequences
+of HIV/AIDS epidemics. I. Assuming HIV infection always lea ds to AIDS.
+Math. Biosci. 90, no. 1-2, 475–505 (1988)
+[14] Nowak M.A., May R.M. Virus Dynamics, Oxford University Press (2000)
+[15] Perelson, A.S., Nelson, P.W. Mathematical analysis of HIV-1 dynamics in vivo.
+SIAM Rev. 41, 1: 3-44 (1999)
+[16] Rao, A.S.R.S., Kakehashi, M. A Combination of Diﬀerent ial equations and
+Convolution in understanding the spread of an epidemic. Sad hana - Proc. Ind.
+Acad. Sc, Engg, 29, 3: 305-313 (2004)
+[17] Rao, A.S.R.S., Kakehashi, M. Incubation time distribu tion in back-calculation
+applied to HIV/AIDS data in India. Math. Biosci. Engg. no. 2, 263 - 277 (2005)
+[18] Rao, A.S.R.S., Basu, S., Basu, A., Ghosh, J.K. Parametr ic models for incuba-
+tion distribution in presence of left and right censoring. I ndian Journal of Pure
+& Applied Mathematics 36(7):pp. 371-384 (2005)
+[19] Rao, Arni S. R. Srinivasa; Thomas, Kurien; Sudhakar, Ku rapati; Maini, Philip
+K. HIV/AIDS epidemic in India and predicting the impact of th e nationalINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 41
+response: mathematical modeling and analysis. Math. Biosc i. Eng. 6 (2009),
+no. 4, 779–813,
+[20] Castillo-Chavez C (1989). Mathematical and statistic al approaches to AIDS
+epidemiology. Edited by C. Castillo-Chavez. Lecture Notes in Biomathematics,
+83. Springer-Verlag, Berlin, (1989)
+[21] Mouton, Y, Alfandari, S, Valette, M et al. Impact of prot ease inhibitors on
+AIDS-deﬁning events and hospitalizations in 10 French AIDS reference centres.
+AIDS. 11(12):F101-F105 (1997)
+[22] Wei, X.P., Ghosh, S.K., Taylor, M.E., et al. Viral dynam ics in human-
+immunodeﬁciency-virus type-1 infection Nature 373: 117-1 22. (1995)
+[23] M. Over, E. Marseille, K. Sudhakar, J. Gold, I. Gupta, A. Indrayan,S.K. Hira,
+N. Nagelkerke, A.S.R.S. Rao, P. Heywood. Antiretroviral th erapy and HIV
+prevention in India: Modeling costs and consequences of pol icy options. Sex
+Transm Dis. 2006;33 (10 Suppl):S145-52.
+[24] Gray R, Ssempiija V, Shelton J, Serwadda D, Nalugoda F, K agaayi J, Kigozi
+G, Wawer MJ. The contribution of HIV-discordant relationsh ips to new HIV
+infections in Rakai, Uganda. AIDS. 2011 Feb 14.
+[25] Shafer LA, Nsubuga RN, White R, Mayanja BN, Chapman R, O’ brien K, Van
+der Paal L, Grosskurth H, Maher D. Antiretroviral therapy an d sexual behavior
+in Uganda: a cohort study. AIDS. 2011 Mar 13;25(5):671-8.
+[26] Reynolds SJ, Makumbi F, Nakigozi G, Kagaayi J, Gray RH, W awer M, Quinn
+TC, Serwadda D. HIV-1 transmission among HIV-1 discordant c ouples be-
+fore and after the introduction of antiretroviral therapy. AIDS. 2011 Feb
+20;25(4):473-7.
+[27] Thirumurthy H, Jafri A, Srinivas G, Arumugam V, Saravan an RM, Angappan
+SK, Ponnusamy M, Raghavan S, Merson M, Kallolikar S. Two-yea r impacts
+on employment and income among adults receiving antiretrov iral therapy in
+Tamil Nadu, India: a cohort study. AIDS. 2011 Jan 14;25(2):2 39-46.
+[28] Mahy M, Stover J, Stanecki K, Stoneburner R, Tassie JM. E stimating the
+impact of antiretroviral therapy: regional and global esti mates of life-years
+gained among adults. Sex Transm Infect. 2010 Dec;86 Suppl 2: ii67-71.
+[29] Pretorius C, Stover J, Bollinger L, Bacaï¿œr N, William s B. Evaluating the
+cost-eﬀectiveness of pre-exposure prophylaxis (PrEP) and its impact on HIV-1
+transmission in South Africa. PLoS One. 2010 Nov 5;5(11):e1 3646.
+[30] Weber J, Tatoud R, Fidler S. Postexposure prophylaxis, preexposure prophy-
+laxis or universal test and treat: the strategic use of antir etroviral drugs to
+prevent HIV acquisition and transmission. AIDS. 2010 Oct;2 4 Suppl 4:S27-39.
+[31] Eng B, Cain KP, Nong K, Chhum V, Sin E, Roeun S, Kim S, Keo S, Heller TA,
+Varma JK. Impact of a public antiretroviral program on TB/HI V mortality:
+Banteay Meanchey, Cambodia. Southeast Asian J Trop Med Publ ic Health.
+2009 Jan;40(1):89-92.
+[32] Rajagopalan N, Suchitra JB, Shet A, Khan ZK, Martin-Gar cia J, Nonnemacher
+MR, Jacobson JM, Wigdahl B. Mortality among HIV-Infected Pa tients in Re-
+source Limited Settings: A Case Controlled Analysis of Inpa tients at a Com-
+munity Care Center. Am J Infect Dis. 2009;5(3):219-224.
+[33] Salomon JA, Hogan DR. Evaluating the impact of antiretr oviral therapy on
+HIV transmission. AIDS. 2008 Jul;22 Suppl 1:S149-59.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 42
+[34] Johnson JA, Li JF, Wei X, Lipscomb J, Irlbeck D, Craig C, S mith A, Bennett
+DE, Monsour M, Sandstrom P, Lanier ER, Heneine W. 219. Minori ty HIV-
+1 drug resistance mutations are present in antiretroviral t reatment-naï¿œve
+populations and associate with reduced treatment eﬃcacy. P LoS Med. 2008
+Jul 29;5(7):e158.
+[35] Hallett TB, Gregson S, Dube S, Garnett GP. The impact of m onitoring HIV
+patients prior to treatment in resource-poor settings: ins ights from mathemat-
+ical modelling.PLoS Med. 2008 Mar 11;5(3):e53.
+[36] Larson BA, Fox MP, Rosen S, Bii M, Sigei C, Shaﬀer D, Sawe F , Wasunna
+M, Simon JL. 251. Early eﬀects of antiretroviral therapy on w ork performance:
+preliminary results from a cohort study of Kenyan agricultu ral workers. AIDS.
+2008 Jan 30;22(3):421-5.
+[37] United Nations (2006). Department of Economic and Soci al Aﬀairs, Population
+Division (2006). World Population Prospects: The 2007 Revi sion.
+[38] Stover J, Walker N, Grassly NC, Marston M. Projecting th e demographic im-
+pact of AIDS and the number of people in need of treatment: upd ates to the
+Spectrum projection package. Sex Transm Infect. 2006 Jun;8 2 Suppl 3:iii45-50.
+[39] Boyle B.A., Elion R., Cohen C.J., DeJesus E., Hawkins T. , Moyle G.J. Ad-
+vances in HIV therapeutics: news from the 4th International AIDS Society
+Conference. AIDS Read. 2007 Oct;17(10):484-90.
+[40] Simcock M, Blasko M, Karrer U, et al. Treatment and progn osis of AIDS-
+related lymphoma in the era of highly active antiretroviral therapy: ﬁndings
+from the Swiss HIV Cohort Study. Antivir Ther. 2007;12(6):9 31-9.
+[41] Mugavero MJ, Pence BW, Whetten K, Leserman J, Swartz M, S tangl D, Thiel-
+man NM. Predictors of AIDS-related morbidity and mortality in a southern
+U.S. Cohort. AIDS Patient Care STDS. 2007 Sep;21(9):681-90 .
+[42] Artzrouni M. Back-calculation and projection of the HI V/AIDS epidemic
+among homosexual/ bisexual men in three European countries : evalution of
+past projections and updates allowing for treatment eﬀects . Eur J Epidemiol.
+2004;19(2):171-9.
+[43] Golub JE, Saraceni V, Cavalcante SC, Pacheco AG, Moulto n LH, King BS,
+Efron A, Moore RD, Chaisson RE, Durovni B.The impact of antir etroviral
+therapy and isoniazid preventive therapy on tuberculosis i ncidence in HIV-
+infected patients in Rio de Janeiro, Brazil. AIDS. 2007 Jul 1 1;21(11):1441-8.
+[44] Rong, Libin; Feng, Zhilan; Perelson, Alan S. Emergence of HIV-1 drug re-
+sistance during antiretroviral treatment. Bull. Math. Bio l. 69 (2007), no. 6,
+2027—2060
+[45] Rong, Libin; Feng, Zhilan; Perelson, Alan S. Mathemati cal analysis of age-
+structured HIV-1 dynamics with combination antiretrovira l therapy. SIAM J.
+Appl. Math. 67 (2007), no. 3, 731—756.
+[46] Cohen MS, Chen YQ, McCauley M et al. Prevention of HIV-1 I nfection with
+Early Antiretroviral Therapy.N Engl J Med. 2011 Jul 18. [Epu b ahead of print]
+[47] Joglekar, N.; Paranjape, R.; Jain, R.; et al. (2011). Ba rriers to ART adherence
+& follow ups among patients attending ART centres in Maharas htra, India,
+Indian Journal of Medical Research Volume: 134 Issue: 6 Page s: 954-959.
+[48] Rao, Arni S.R. Srinivasa and Hira S.K. (2003). Evidence of Shorter Incubation
+period of HIV-1 in Mumbai , India. International Journal of S TD & AIDS, 14:
+499-503.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 43
+[49] Rao, Arni S. R. Srinivasa, Thomas, Kurien; Kurapati, Su dhakar; Bhat, Ramesh
+Improvement in survival of people living with HIV/AIDs and r equirement for
+1st- and 2nd-line ART in India: A mathematical model. Notice s Amer. Math.
+Soc. 59 (2012), no. 4, 560–562.
+[50] Boerma JT et al (2006). Monitoring the scale-up of antir etroviral therapy pro-
+grammes: methods to estimate coverage. Bulletin of The WHO, 84, 2, 145-150.
+[51] Srikantiah, P; Ghidinelli, M; Bachani, D; et al. (2010) . Scale-up of national
+antiretroviral therapy programs: progress and challenges in the Asia Paciﬁc
+region. AIDS Volume: 24 Supplement: 3 Pages: S62-S71.
+[52] Monitoring of Antiretroviral Therapy in Resource –lim ited settings: Discussion
+(http://www.medscape.com/viewarticle/726673_4) (Brow sed on 6 July, 2011)
+[53] WHO (2010). Antiretroviral therapy for HIV infection i n adults and adoles-
+cents: recommendations for a public health approach. – 2010 rev,World Health
+Organization.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 44
+8.Appendix I : Conditional probabilities for generalized
+multiple drug impact
+Here we derive expressions for conditional probabilities w hen several drugs
+are available, and the incubation period is non-monotonic. When such a sit-
+uation arises there will be several combinations of orders o fZs.We take one
+such situation and write corresponding Lsfor the purpose of demonstration.
+Suppose Z0< ... < Z k=...=Zk+n+1< ... < Z N.Let us divide this into the
+following two inequalities and an equality: Z0< ... < Z k,Zk+1=...=Zk+n
+andZk+n+1< ... < Z N.If we consider the ﬁrst and third inequalities, then
+D(A,B/UNk) =/integraldisplayUN0
+0h(t/AN0)G(t−s/BN0)ds+
+/integraldisplayUN1
+UN0h(t/AN1)G(t−s/BN1)ds
+···+/integraldisplayUNk
+UNk−1h(t/ANk)G(t−s/BNk)ds
+D(A,B/UNN) =/integraldisplayUNn+k+1
+0h(t/ANn+k+1)G(t−s/BNn+k+1)ds+
+/integraldisplayUNn+k+2
+UN0h(t/ANn+k+2)G(t−s/BNn+k+2)ds
+···+/integraldisplayUNN
+UNN−1h(t/ANN)G(t−s/BNN)ds
+We can express {P(ENθ/E)}θ=k
+θ=0and{P(ENθ/E)}θ=N
+θ=n+k+1and the correspond-
+ing{LNθ}θas shown in the section 3. Then LNθis maximized for the set
+[Aθ,Bθ]. We obtain N−n−ksets of[A,B]values, and the corresponding
+likelihood functions {LNθ}k
+θ=0and{LNθ}N
+θ=n+k+1INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 45
+Time 1.0
+0.5
+0.0
+Figure 9.1. Truncated incubation period. The idea of trun-
+cated cumulative distribution of the incubation period is p lot-
+ted. After a certain time duration, there will not be any gain
+due to therapy. Median incubation period is represented by t he
+line cutting the curve at 0.5, corresponding to the Y-axis.
+9.Appendix II: Truncated incubation period
+Suppose there is an upper bound for the impact of drugs on the i ncubation
+period; that is, the incubation period cannot be increased a fter a certain time
+point after the drug use. Then the likelihood equations expl ained in section
+4 would change accordingly. There was an attempt earlier to t runcate the
+incubation period with the help of the truncated Weibull dis tribution [17].
+They have not seen the impact of drugs using such functions. I fZ,the length
+of the incubation period, and if Zcis the truncation point, then G(Z) =
+1−exp/braceleftbigg
+−/parenleftBig
+z
+δ1/parenrightBigδ2/bracerightbigg
+,for0< Z < Z c,andG(Z) = 1−exp/braceleftbigg
+−/parenleftBig
+z
+δ1/parenrightBigδ2/bracerightbigg
+exp/braceleftbigg
+−/parenleftBig
+δ2
+δ1/parenrightBig/parenleftBig
+tc
+δ1/parenrightBig(δ2−1)(z−zc)/bracerightbigg
+, forZ≥Zc.Here,δ1,δ2are scale and shape
+parameters. One can construct a likelihood function for eac h drug type using
+such functions as follows:
+L(A,B/Pj) =L<Zc+L≥Zc, (9.1)
+whereINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 46
+L<Zc=/productdisplay
+jb1(j)b2(j)−/productdisplay
+jb1(j−1)b2(j)
+L≥Zc=/productdisplay
+jbt
+1(j)bt
+2(j)−/productdisplay
+jbt
+1(j−1)bt
+2(j)
+and
+b1(j) =/braceleftBigg/integraldisplayuj
+0eα1s2+α2s+α3/braceleftBigg
+1−exp/braceleftBigg
+−/parenleftbiggt
+δ1/parenrightbiggδ2/bracerightBigg/bracerightBigg
+ds/bracerightBiggTj
+b1(j−1) =/braceleftBigg/integraldisplayuj−1
+0eα1s2+α2s+α3/braceleftBigg
+1−exp/braceleftBigg
+−/parenleftbiggt
+δ1/parenrightbiggδ2/bracerightBigg/bracerightBigg
+ds/bracerightBiggTj
+b2(j) =/braceleftBigg/integraldisplayun
+0eα1s2+α2s+α3/braceleftBigg
+1−exp/braceleftBigg
+−/parenleftbiggt
+δ1/parenrightbiggδ2/bracerightBigg/bracerightBigg
+ds/bracerightBigg−Tj
+bt
+1(j) =/bracketleftBigg/integraldisplayuj
+0eα1s2+α2s+α31−exp/braceleftBigg
+−/parenleftbiggz
+δ1/parenrightbiggδ2/bracerightBigg
+×
+exp/braceleftBigg
+−/parenleftbiggδ2
+δ1/parenrightbigg/parenleftbiggtc
+δ1/parenrightbigg(δ2−1)(z−zc)/bracerightBigg
+ds/bracketrightBiggTj
+bt
+1(j−1) =/bracketleftBigg/integraldisplayuj−1
+0eα1s2+α2s+α31−exp/braceleftBigg
+−/parenleftbiggz
+δ1/parenrightbiggδ2/bracerightBigg
+×
+exp/braceleftBigg
+−/parenleftbiggδ2
+δ1/parenrightbigg/parenleftbiggtc
+δ1/parenrightbigg(δ2−1)(z−zc)/bracerightBigg
+ds/bracketrightBiggTj
+bt
+2(j) =/bracketleftBigg/integraldisplayun
+0eα1s2+α2s+α31−exp/braceleftBigg
+−/parenleftbiggz
+δ1/parenrightbiggδ2/bracerightBigg
+×
+exp/braceleftBigg
+−/parenleftbiggδ2
+δ1/parenrightbigg/parenleftbiggtc
+δ1/parenrightbigg(δ2−1)(z−zc)/bracerightBigg
+ds/bracketrightBigg
+.−Tj
+For each drug type, an expression of the type in (9.1) can be de rived. Despite
+the assumption on truncation as mentioned above, the incuba tion period could
+vary according to the type of the drug.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 47
+Table 1. Parameters
+10.APPENDIX III : ParametersINCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 48
+11.APPENDIX IV: FIGURES
+In this section using the parameters in the Appendix III, out put of the
+models for hypothetical population sizes and sensitivity o f the parameters in
+projecting HIV and AIDS are shown through Figure 11.1 to Figu re 11.5.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 49
+(a)
+(b)
+(c)
+Figure 11.1. (a) Number of HIV and AIDS (before therapy),
+(b) Number of HIV infected (before therapy), (c) Number of
+HIV (after therapy)INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 50
+(a)
+(b)
+(c)
+Figure 11.2. (a) Sensitivity of d0onY0, (b) Sensitivity of d1
+andd2onY1andY2, (c) Sensitivity of d3onY3.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 51
+(a)
+(b)
+(c)
+Figure 11.3. (a) Sensitivity of d0onDz0, (b) Sensitivity of d1
+andd2onDz1andDz2, (c) Sensitivity of d3onDz3.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 52
+(a)
+(b)
+(c)
+Figure 11.4. (a) Sensitivity of γ0onDz0, (b) Sensitivity of γ1
+andγ2onDz1andDz2, (c) Sensitivity of γ3onDz3.INCUBATION PERIOD, ANTI-RETROVIRAL THERAPIES, AGE-STRUC TURES 53
+(a)
+(b)
+(c)
+Figure 11.5. (a) Sensitivity of λ0onDz0, (b) Sensitivity of λ1
+andλ2onDz1andDz2, (c) Sensitivity of λ3onDz3.

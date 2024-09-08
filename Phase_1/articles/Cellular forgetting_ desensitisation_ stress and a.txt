@@ -1,0 +1,862 @@
+Title: Cellular forgetting, desensitisation, stress and aging in signalling
+  networks. When do cells refuse to learn more?
+Abstract:   Recent findings show that single, non-neuronal cells are also able to learn
+signalling responses developing cellular memory. In cellular learning nodes of
+signalling networks strengthen their interactions e.g. by the conformational
+memory of intrinsically disordered proteins, protein translocation, miRNAs,
+lncRNAs, chromatin memory and signalling cascades. This can be described by a
+generalized, unicellular Hebbian learning process, where those signalling
+connections, which participate in learning, become stronger. Here we review
+those scenarios, where cellular signalling is not only repeated in a few times
+(when learning occurs), but becomes too frequent, too large, or too complex and
+overloads the cell. This leads to desensitisation of signalling networks by
+decoupling signalling components, receptor internalization, and consequent
+downregulation. These molecular processes are examples of anti-Hebbian learning
+and forgetting of signalling networks. Stress can be perceived as signalling
+overload inducing the desensitisation of signalling pathways. Aging occurs by
+the summative effects of cumulative stress downregulating signalling. We
+propose that cellular learning desensitisation, stress and aging may be placed
+along the same axis of more and more intensive (prolonged or repeated)
+signalling. We discuss how cells might discriminate between repeated and
+unexpected signals, and highlight the Hebbian and anti-Hebbian mechanisms
+behind the fold-change detection in the NF-\k{appa}B signalling pathway. We
+list drug design methods using Hebbian learning (such as chemically-induced
+proximity) and clinical treatment modalities inducing (cancer, drug allergies)
+desensitisation or avoiding drug-induced desensitisation. A better
+discrimination between cellular learning, desensitisation and stress may open
+novel directions in drug design, e.g., helping to overcome drug-resistance.
+
+Full Text: 1  Cellular and Molecular Life Sciences (2024) 81,97 
+ 
+Cellular forgetting,  desensitisation,  stress and aging in signalling  
+networks.  When do cells refuse to learn more? 
+Tamás Veres1,†, Márk Kerestély1,†, Borbála M. Kovács1, Dávid Keresztes1, Klára 
+Schulc1,2, Erik Seitz1, Zsolt Vassy1, Dániel V. Veres1,3, Peter Csermely1* 
+ 
+Abstract  
+Recent findings show that single,  non-neuronal cells are also a ble to learn signalling 
+responses developing cellular memory. In cellular learning node s of signalling networks 
+strengthen their interactions  e.g. by the conformational memory  of intrinsically disordered 
+proteins, protein translocation, m iRNAs, lncRNAs, chromatin mem ory and signalling 
+cascades. This can be described by a generalized, unicellular H ebbian learning process, where 
+those signalling connections, whi ch participate in learning, be come stronger. Here we review 
+those scenarios, whe re cellular signalling is not only repeated  in a few times (when learning 
+occurs), but becomes too frequent , too large, or too complex an d overloads the cell. This leads 
+to desensitisation of signalli ng networks by decoupling signall ing components, receptor 
+internalization, and consequent dow nregulation. These molecular  processes are examples of 
+anti-Hebbian learning and ‘forg etting’ of signalling networks. Stress can be perceived as 
+signalling overload inducing the  desensitisation of signalling pathways. Aging occurs by the 
+summative effects of cumulativ e stress downregulating signallin g. We propose that cellular 
+learning desensitisation, stress and aging may be placed along the same axis of more and 
+more intensive (prolonged or repeated) signalling. We discuss h ow cells might discriminate 
+between repeated and unexpected s ignals, and highlight the Hebb ian and anti-Hebbian 
+mechanisms behind the fold- change detection in the NF- κB signalling pathway. We list drug 
+design methods using Hebbian lear ning (such as chemically-induc ed proximity) and clinical 
+treatment modalities inducing (cancer, drug allergies) desensit isation or avoiding drug- 
+induced desensitisation. A better  discrimination between cellul ar learning, dese nsitisation and 
+stress may open novel direc tions in drug design, e.g., helping to overcome drug-resistance. 
+ 
+Keywords allergy, asthma, diabetes, habitu ation, heat shock, heart failu re, incoherent type-1 
+feedforward loop; metabolon, mn emon, prion, protein translocati on; receptor downregulation, 
+scaffold proteins 
+ 
+Learning of signalling networks  – at the level of their compone nts 
+ 
+Molecular mechanisms of neurona l learning became well establish ed [1]. However, much less 
+is known about the regulation of l earning at the individual, no n-neuronal cells. Recent 
+findings gave further evidence th at learning, indeed occurs in unicellular organisms, as well as 
+in individual cells of various ti ssues other than neurons, even  in rather sophisticated forms [2]. 
+In our paper we define cellular learning as an adaptive respons e to a stimulus, when the 
+stimulus is repeated in a short time. This leaves out many clas sical models of learning (such 
+as Pavlovian conditional learni ng) from our discussion. However , such a simplification 
+greatly helps the identification  of molecular mechanisms, which  become increasingly 
+ 
+ 
+ 
+* Peter Csermely, csermely.peter@med.semmelweis-univ.hu  
+† These authors contributed equally  to the paper: Tamás Veres, Má rk Kerestély 
+1 Department of Molecular Biology, Semmelweis University, Budapes t, Hungary 
+2 Division of Oncology, Department of Internal Medicine and Oncol ogy, Semmelweis University, Budapest, 
+Hungary 
+3 Turbine Ltd, Budapest, Hungary 2  obscured when long-term, multiste p adaptation phenomena are exa mined, such as cell 
+differentiation or tumour development. Several experiments in b udding yeast, Arabidopsis or 
+rice cells, mouse fibroblasts or murine CD8+ memory cells showed the formation of 
+molecular memory resulting in a f aster, larger, more sensitive and/or more robust response 
+after the second signal than the first [3-9]. 
+ 
+Various molecular mechanisms i nduce a faster and stronger respo nse after a repeated signal in 
+single cells. We mentio n the conformational memory of intrinsic ally disordered proteins 
+(IDPs) first, where the IDP transiently keeps its ordered confo rmation acquired a fter the first 
+signal, and if the second signal arrives within the time window  of the IDPs relaxation back to 
+the disordered state, than the second signal finds the IDP in a  ‘conformationally-primed’, 
+‘memory’-state [10,11]. IDPs may act like mo lecular switches ch anging the direction of 
+signal transmission [ 12]. Prions are an imp ortant class of IDPs . Prion proteins may transform 
+themselves to a β-sheet enriche d prion form, which forms aggreg ates. In budding yeast cells 
+the prion form of Pin1 maintain ed the molecular memory of a pre vious heat shock for many 
+generations [4]. Oligomerizing p roteins involved in cellular me mory formation were called as 
+mnemons [13,14]. In case of the W hi3 protein present in yeast m nemon and prion states were 
+shown to be associated, which conf ines the memory of deceptive courtship to the mother cell 
+[15]. Increased association of ‘c onformationally-primed’ IDPs w ith their signalling partners 
+can be regarded as an increased  network edge weight of signalli ng networks [10,16]. 
+ 
+Signal-induced protein transloca tion (e.g. between the cytoplas m and the mitochondria or cell 
+nucleus) is a widespread phenomenon in the cell potentially inv olving thousands of human 
+proteins [17]. Nuclear residence time of the yeast cyclin Cln3 finely tunes Whi5 inactivation 
+by phosphorylation. Whi5 is re-activ ated rapidly with a half-ti me of ~12 min. Thus the 
+Cln3/Whi5 system provides a rapi dly changing short term memory of environmental nutrient 
+levels for yeast cells [18]. Mito chondrial translocation of the  adaptor protein p66SHC was 
+associated with the formation of  hyperglycaemic cellular memory  of human aortic endothelial 
+cells [19]. Conversely, inhibition of  nuclear translocation of NK-κB p65 disrupted the 
+formation of CD8+ memory T and memory B cells [ 20,21]. Translocati ng proteins bui ld a 
+number of new connections in si gnalling networks, which, again,  shows a large increase of all 
+signalling network edge weights involved. 
+ 
+MicroRNAs are involved both in sensitisation- and habituation-t ype cellular memory 
+formation. MiRNA-156 participated  in the molecular memory forma tion of previous heat 
+shock in Arabidopsis cells lasting for seve ral days [6]. As an additional example fo r 
+sensitisation, miRNA-21 preserved  the fibrotic m echanical memor y of mesenchymal stem 
+cells [22]. As an example of ha bituation, both miRNA-221 and mi RNA-222 were involved in 
+the memory development of lipopolysaccharide tolerance [23]. Lo ng non-coding RNAs 
+(lncRNAs) played an important role in the memory formation of r ice cells after drought stress 
+[7] and the formation of CD8+ memory T cells after lymphocytic choriomeningitis virus 
+infection [24]. Increased miRNA and lncRNA levels correspond to  increased network edge 
+weights of miRNA connections in signalling networks. 
+ 
+Learning of signalling netwo rks – at the network level  
+ 
+After the contribution of single macromolecules (proteins and R NAs) to the formation of 
+cellular memory, we give additional three examples of more comp lex, system-level, 
+signalling network-type adaptati on. The first example is that o f epigenetic mechanisms and 
+chromatin memory [25]. A large variety of histone modifications  and DNA methylation 3  constitute transcriptional memory. Histone H3 lysine methylatio n was shown to participate in 
+the cellular memory development of yeast [26], Arabidopsis [5] (specifically m ediated by heat 
+shock factors HSFA2 and HSFA3; 27 ], mouse fibroblast and HeLa c ell sensitisation to IFN-β 
+and -γ, respectively [8,28], as well as in CD8+ memory T cell formation [9]. DNA 
+methylation pattern of 132 genes we re changed in the developmen t of CD4+ memory T cells 
+[29]. CRISPRoff, a single dead Cas9 fusion protein establishes DNA methylation and 
+repressive histone m odifications providing a  genome-wide transc riptional memory [30]. 
+Several studies showed the involvement of three-dimensional chr omatin structure 
+reorganization during cellular me mory development in yeast [3,3 1], as well as in the 
+sensitisation to repeated IFN-γ t reatment of HeLa cells [28] by  the same, nuclear pore protein 
+100/98-mediated chromatin-reorganization process [32]. 
+ 
+The second example of  network-type cellular memory formation is  that of signalling protein 
+kinase cascades. Members of t he Hog1 signalling pathway of osmo tic stress in yeast remained 
+phosphorylated even after  minutes of the first stress, and ‘wai ted’ pre-activated for a faster 
+response to a potential repeated  stress [33]. Similarly, in the  mitogen-activated protein kinase 
+(MAPK) cascade different relaxat ion rates of individual compone nts developed an 
+‘activation-competent’ state i nducing post-activation protein p hosphorylation bursts [34]. 
+MAPK pathway members are organized by pathway scaffold proteins  from fungi (e.g. Far1- 
+and Ste5-like proteins [35]) to h umans (e.g. RACK1 [36]). These  proteins, once they became 
+activated, maintain larger pathw ay segments pre-organized, read y to respond to the second 
+stimulus faster, and stronger. We note that similar signalling cascade memories may be 
+postulated in each signalling pathw ay. As examples the JNK and Hippo pathway cascades are 
+enhanced by the scaffolding prote ins JIP1 and MOB1A, respective ly [37,38]. These scaffolds 
+may prime these pathways givi ng a stronger second response afte r an initial stimulus. 
+ 
+The third example expands the a bove idea of path way organizatio n and consequent cellular 
+memory formation to networks oth er than signalling networks, su ch as metabolic networks. 
+Analysis of non-Markovian chemi cal reaction networks on gene ex pression showed that 
+molecular memory of protein synt hesis and degradation may induc e feedback, bimodality and 
+switch behaviour, and may fine t une gene expression noise, all components of molecular 
+memory [39]. Even bacteria use th eir inner membrane as a scaffo ld [40], as well as bacterial 
+microcompartments [41] to enhan ce the metabolic flux of their e nzymes. Mitochondria and 
+other intracellular compartments  also function as eukaryotic or ganizers of metabolic 
+processes [42]. Metabolons are m ultienzyme complexes that are h eld together by noncovalent 
+interactions enhancing their cooperation and summative metaboli c flux by substrate 
+channelling in e.g. glycolysis , branched chain amino acid oxida tion, purine biosynthesis, etc. 
+[43–47]. All these bacterial, m itochondrial and cellular microc ompartmental metabolic 
+scaffolds, as well as metabolons are potential organizers of ce llular memory. 
+ 
+Hebbian learning of signalling networks  
+ 
+Practically all molecular mechan isms of cellular memory formati on mentioned above are 
+satisfying the basic concept of Hebbian learning, i.e.: the inc rease of the connection strength 
+of those learning components (i n the initial concept: neurons) which are involved in the 
+learning process [1,48]. Stronger an d faster binding of 'confor mationally primed' IDPs, prions 
+and mnemons, protein transloca tion, overexpression of miRNAs an d lncRNAs, chromatin 
+memory, scaffolded protein kinase  and metabolic pathways are al l examples of connection 
+strength increases after an ini tial signal – ser ving as potenti al learning mechanisms of non- 
+neuronal single cells (Fig 1). 4  Obviously, single cells can not e xpress the complexity of the l earning process of multicellular 
+networks. This is especially tru e to that of neuronal networks.  One simple reason of this is the 
+number of connections. While m acromolecules may bind only handf ul of other 
+macromolecules, neurons devel oped axons and dendrites, which (b y their tremendously 
+increased surface areas) allow their connections to tens of tho usands of other neurons. This by 
+itself already magnifies  the structural complexity which may be  achieved by neuronal 
+networks, and allows the developm ent of incomparably more sophi sticated learning processes 
+than those of singl e, non-neuronal cells. 
+ 
+Anti-Hebbian learning in non-neuronal cells  
+ 
+Hebbian learning needs to be compl emented by the reverse proces s, where connection 
+strengths decrease, since only He bbian-type ‘positive’ changes of the system would lead to 
+the system’s over-excitation. Thi s was first generally formaliz ed by Oja’s rule, which keeps 
+the total of connection strengt hs constant duri ng a Hebbian lea rning process [49]. In cells 
+connection strength decrease (d ecay) is generall y introduced by  cellular noise [50]. However, 
+anti-Hebbian learning may also d ecrease the strength of specifi c connections, such as the 
+reduced expression of the STL1 sugar transporter gene in budding yeast cells after 
+hyperosmotic stress [31], th e diminished response of MYC -dependent genes after repeated 
+dehydration stress in Arabidopsis [51] and the imm une tolerance of macrophages after 
+repeated lipopolysaccharide exposure [23]. Several of these dir ect, anti-Hebbian molecular 
+mechanisms lead to habituation, whe re the cell displays a decre ased response to repeated 
+stimulation. Biological pathway network models were able to dis play both sensitisation 
+(Hebbian) and habituation (an ti-Hebbian) behaviour [52]. 
+ 
+Cellular memory and forgetting  
+ 
+As first suggested by Françoi s Jacob and Jacques Monod in 1961 [53], individual cells also 
+have a memory, i.e. the  persistence of a ce llular state, which is acquired after a stimulus. 
+Cellular memory allows the estab lishment and maintenance of the  identity of individual cells 
+in heterogeneous cellular populati ons. Memory of the cells is m anifested by bistable feedback 
+loops or epigenetic marks confe rring hysteresis and simple cogn itive functions to cellular 
+behaviour [25,54,55]. Intertwined  feedback loops reduce cellula r noise [50] and induce 
+hysteresis, since stabilization of the ‘signalling-on’ state cr eates a resistance to return to the 
+initial, ‘signalling-off’ state . While simple, hysteresis-type memory can be maintained by self- 
+sustaining feedback loops, there  seems to be a minimal network size requirement  of at least 5 
+nodes to display richer me mory functions [52]. 
+ 
+Forgetting of organisms such as C. elegans is induced by cellular mechanisms, like the 
+Musashi, MSI1-induced  down-regulation of t he ARP2/3 complex (pl aying a major role in the 
+organization of the cytoskelet on) [56]. Increased cellular nois e is a key factor of ‘forgetting’ 
+in single, non-neuronal cells [50] . As a more specific example for the effect of cellular noise, 
+robustness of the MAPK pathway b ecomes reduced, if environmenta l fluctuations (extrinsic 
+noise) or variances of inherent chemical reaction rates (intrin sic noise) grow beyond a certain 
+threshold [57]. 
+ 
+We list three examples, where individual molecular mechanisms a re involved in cellular 
+‘forgetting’. First, erasure o f DNA-methylation is meditated by  ten-eleven translocation 
+(TET) DNA-demethylases [58] . Second, the long noncoding RNA, or iginating at –2700 5  upstream of the budding yeast HO endonuclease, erased previous molecular memory of 
+nutrient deprivation- or pheromone-induced cell cycle arrest [5 9]. Third, molecular 
+chaperones may help the disorga nization of protein sequences, t hus they may act as 
+facilitators of both molecular me mory formation and cellular ‘f orgetting’ [60]. However, 
+currently beyond these mechan isms we do not know enough about t he molecular systems 
+regulating ‘forgetting’ in individual, non-neuronal cells. 
+ 
+We note that anti-Hebbian learni ng diminishes the strength of c ertain molecular connections, 
+while cellular ‘forgetting’ may  also induce a more general decr ease of connection strengths. 
+However, there is an obvious overl ap between the two phenomena.  
+ 
+Desensitisation of signalling networks  
+ 
+Desensitisation of signalling responses is a general, habituati on-type regulatory mechanism of 
+signalling pathways. The most wid espread way of desensitisation  is receptor down-regulation 
+by internalization ( many times involving a utophagy) and consequ ent degradation. We list 
+here only a few examples of the m any: the key plant stress sign alling hormone, abscisic acid 
+is desensitised by numerous steps  of directed protein degradati on [61]. An early example was 
+the desensitisation of protein k inase C by its nonmetabolizable , long-term agonist, phorbol 
+ester [62]. 
+ 
+As an archetype of desensitisation G-protein-coupled receptor ( GPCR) kinases (GRKs) 
+induce arrestin binding to GPCRs,  dissociating G-proteins and l eading to GPCR 
+internalization [63,64]. While shor t term activation of GPCRs c auses receptor desensitisation 
+via β-arrestin-mediated decoupli ng from G proteins, long-term (hour s to days) activation 
+induces receptor down-regulati on by internalization into vesicl es, lysosomal degradation and 
+decrease of receptor mRNAs [65].  The GPCR cardiac β-adrenorecep tors became 
+downregulated after prolonged in vivo infusion of catecholamines  in rat [66]. GPCR α1- 
+adrenoreceptors could be downregul ated by the specific α1 agoni st, R-(-)-N6-(2- 
+phenylisopropyl)adenosine in r at atria inducing their uncouplin g from G proteins and loss of 
+Gi proteins [67]. Desensitisation of  rat heart contractility after  sustained adenosine treatment 
+seems to be mediated by the α1- adrenoreceptor and protein kinas e C [68]. 
+ 
+Continuous exposure of rat pancr eatic islets to high glucose (3 00 mg/dl) induced glucose 
+hypersensitivity after 3 hours wh ich turned to glucose insensit ivity after 6 hours of exposure 
+[69]. Insulin receptor auto-anti bodies (as agents able to provo ke a sustained activation) 
+induced an insulin-resistant sta te of glucose metabolism in 3T3 -L1 adipocyte-like fatty 
+fibroblasts after 6 hours of exp osure blocking a n early step in  insulin signalling (but leaving 
+insulin binding ability constant) [70]. 
+ 
+Signalling of human cells is not m ore complex than that of e.g.  Caenorhabditis elegans or 
+Drosophila melanogaster because of more human signalling pathways, but b ecause of much 
+more cross-talks between signalling pathways in humans [71]. Du e to this complexity 
+desensitisation may often act on d ifferent pathways than that o f the provoking agent. 
+Signalling pathways often act as ‘Darwinian competitors’. If on e of them becomes stronger 
+(e.g. by a cellular learning proce ss), it induces molecular eve nts (such as protein 
+phosphorylation), which desensitis e (inhibit, down-regulate, et c.) of ‘competing’ pathways. 
+An example for this from the m any is the heterologous desensiti sation of G-protein coupled 
+receptor (GPCR) and insulin-like growth factor pathways by insu lin [72]. Conversely, chronic 
+endothelin exposure desensitises  the insulin pathway [73]. 6  Stress-induced desensitisation of signalling  
+ 
+Desensitisation of a wide range of  signals is occurring, if the  cell or the animal experiences 
+stress, such as heat shock, UV light, immob ilization, or endopl asmic reticulum stress. 
+Immobilization reduced the numbe r of α1- and β-adrenoreceptors in rat hearts [74]. In 
+agreement with the  internalization degradation sequence, imm obilization stress first 
+reduced the number of surface β-adrenoreceptors, and only then the total number of receptors 
+[75]. Suppression of microRNA-16 g ave a protection against acut e myocardial infarction 
+reversing β2-adrenergic receptor downregulation in rats [76]. E pidermal growth factor (EGF) 
+receptor down-regulation was obs erved in the colon cancer cell lines SW480, HT29, and 
+DLD-1 after ultraviolet light-C t reatment inhibiting cell proli feration and survival [77]. UV 
+light induced EGF, tumour necrosis  factor (TNF) and interleukin -1 receptor down-regulation 
+in mammalian cells activating the Jun-kinase cascade [78]. 
+ 
+Insulin signalling desensitisa tion potentially leads to diabete s. Insulin receptor tyrosine 
+phosphorylation was reduced by tuni camycin-provoked endoplasmic  reticulum stress, which 
+was reversed by the overexpression of activating transcription factor 6 (ATF6), a key signal of 
+endoplasmic reticulu m stress [79]. Sim ilar, autophagy (but not proteasome) dependent down 
+regulation of insulin signalli ng was observed after endoplasmic  reticulum stress in fat tissue 
+of obese human subjects and 3T3-L 1 adipocytes [80]. Heat stress  downregulated insulin 
+signalling in pig testicular cells [81]. 
+ 
+Aging-induced signalling desensitisation  
+ 
+Aging can be perceived as a cumul ative result of the continuous  stress by free radicals and 
+other harmful effect s inducing inflammati on [82–86]. Aging is d ownregulating the renin- 
+angiotensin system in rat kidneys  [87]. Klotho-induced activati on of the retinoic acid- 
+inducible gene I/nucle ar factor-κB (RIG-I/NF-κB) signalling pat hway, as well as the 
+subsequent production o f proinflammatory me diators (tumour necr osis factor α and 
+interleukin-6) and inducible nitri c oxide synthase were reduced  in the kidneys of aged 
+senescence-accelerated mouse prone-8  (SAMP8) mice [88]. Downreg ulation of angiogenesis- 
+related vascular endothelial grow th factor (VEGF) signalling wa s reported in hearts of aging 
+rats living a sedenta ry lifestyle, but was recovered in aging r ats with exercise training [89]. 
+Endoplasmic reticulum stress was activated in fatty livers of o ld mice by inhibiting hepatocyte 
+nuclear factor 1 alpha (HNF1α) a nd downregulating farnesoid X r eceptor (FXR) [90]. 
+Desensitisation of insulin recepto r growth factor (in particula r: downregulation of Irs1 and 
+upregulation of Let-7 microRNA expression) was shown as a hallm ark of the aged phenotype 
+in developing B lymphocytes by a g enome organization and chroma tin study. These changes 
+were associated with specific a lterations in histone H3K27me3 o ccupancy, suggesting that 
+Polycomb-mediated repr ession plays a role in precursor B cell a ging [91]. 
+ 
+Learning, desensitisation, stre ss and aging in system-level sig nalling: phases of the same 
+response?  
+ 
+There are only a few reports of  time-dependent changes in cellu lar signalling upon shorter 
+versus longer extracellular signals. One  of these was made on rat panc reatic islets, where 300 
+mg/dl, high concentrations of extracellular glucose induced a s tronger response after 3 hours, 
+which turned to glucose insensi tivity after 6 hours [69]. This is clearly a two-step cellular 
+response, where the pancreatic b eta-cells first learned the pre sence of glucose and made a 7  preconditioned, stronger response t o them. However , after a lon ger time, an overload occurred 
+and the cells turned to insens itive to glucose. Note that under  natural conditions high glucose 
+is only a temporary, postprandial event. A similar effect was o bserved, when 3T3-L1 cultured 
+fat cells were exposed to insulin receptor auto-antibodies. Acu te administration of anti- 
+receptor antibodies induced a more efficient deoxyglucose uptak e, while prolonged exposure 
+led to insulin insensitivity [92 ]. Here again, high levels of t he original agonist, insulin are also 
+only transient, postprandial events. 
+ 
+If we take the examples of 1.) cellular learning and developmen t of cellular memory after a 
+few repeated stimuli [10,25,54,55];  2.) the desensitisation of signalling after a prolonged 
+exposure to the signal [61–70] a nd 3.) the result of the above studies [69,92] (where in an 
+extended timescale first learning and then desensitisation was observed) together, the 
+conclusion can be drawn that, i n fact, cellula r learning and de sensitisation may be consequent 
+phases of the same response. The c ell first becomes more ‘alert ’ and more ‘ready’ to respond 
+to environmental changes. Howev er, after a prol onged stimulus i ts signalling network 
+becomes ‘saturated’ and starts  to ‘protect its elf’ (Fig. 2). We  may also add stress [74–81] and 
+aging [82–91] to this spectrum, whe re ‘fatigue’ of the signalli ng network is induced by both 
+as examples of overloading short term (stress) and long-term (a ging) changes (Fig. 2). We 
+note that comparative studies of  agonist-, stress- and aging-in duced desensitisation are 
+missing. Therefore their comb ination on Fig. 2 is only illustra tive and hypothetical. 
+ 
+Discrimination between repeated and unexpected signals: perhaps  as also a property of 
+single cells?  
+ 
+Desensitisation protects the s ystem from the overload of inputs . At a low level of complexity 
+overload can be understood that too many of the same signal wit hin a certain time (where the 
+system may adjust its thresholds  defining the “to o many” and th e “within a certain time”). At 
+a higher level of complexity ove rload also occurs, if the syste m is not able to make ‘groups’ 
+of similar input patterns. In f act, our brain defines objects ( features, categories, concepts, etc.) 
+as groups of correlating ‘suspici ous coincidences’. Moreover, r ecognition of (and reduced 
+response to) similar input pa tterns helps to highlight unexpect ed signals, which is essential for 
+survival. If a layer of Hebbi an learning units becomes connecte d by modifiable anti-Hebbian 
+feed-backs, the resulting system  is able to learn this discrimi nation and to recognize other 
+principal components of an incom ing, complex signal than only i ts first principal component 
+[93,94]. A well-known biological ex ample is that of the mormyri d electric fish, which is able 
+to eliminate predictable inputs produced by its own, regular mo tor output. However, this 
+response is a general feature of  cerebellum-like, laminar struc tures, where anti-Hebbian 
+outputs of a deeper layer modulat e outer layers (Fig. 3A) [95].  Thus using anti-Hebbian 
+learning prevents excessive noise  (i.e. regular, correlating, e xpected input) from masking 
+important (i.e. unexpected) sensor y information. Most sensory s ystems work based on the 
+principle of fold-ch ange detection, which allows for a proporti onal response to the fold- 
+change of a signal (the unexpect ed) relative to the background (the repeated) [96]. From the 
+complexity of learning responses  of non-neuronal single cells [ 2] and the presence of 
+distributed decision making in cellular signalling [97], we may  expect that the widespread 
+occurrence of anti-Hebbian learning in signalling networks (see  examples above) is involved 
+in the discrimination between repeated and unexpected signals i n single, non-neuronal cells, 
+too. Horizontal activation at a r eceptor-proximal level, as wel l as mutual inhibition at a 
+receptor-distant level in signalli ng networks also point toward  this expectation. For instance, 
+in the TNF-induced NF- κB signalling, the well-studied upstream crosstalk conveyed by 
+TNFR-associated factors (TRAFs) acts as horizontal activation a t the receptor proximal level 8  [98]. While downstream, a networ k motif containing inhibition h as been described that can 
+impart fold-change detection to cell signalling c ircuits: the i ncoherent type-1 feedforward 
+loop (I1-FFL) (Fig. 3B) [96, 99, 100] . I1-FFL is one of the mos t frequently occurring network 
+motifs in transcriptional networ ks [101]. Besides fold-change d etection, I1-FFLs have a role 
+in response acceleration even in y east [102]. In an I1-FFL, X u pregulates Y, while it also 
+upregulates Z, a repressor of Y . This indirect repression of Y,  coupled with the direct 
+activation of Y, can be considered  an anti-Hebbian learning mec hanism. Besides NF- κB 
+signalling, I1-FFLs were also sugge sted to enable fold-change d etection in the  nuclear levels 
+of the transcription factors of t ransforming growth factor beta  (TGF-β) signalling, explaining 
+how the cells are able to give the same proportional response, even though the nuclear level of 
+transcription factors can vary g reatly from cell to cell [96]. The occurrence of I1-FFLs in 
+major signalling pathways suggest s that this learning mechanism  may be a rather general 
+feature of signalling networks . Even still, to decide whether d iscrimination between repeated 
+and unexpected signals is also a  property of single cells, futu re experiments are required. 
+ 
+Applications of cellular learni ng and ‘forgetting’ in pharmacol ogy and drug design  
+ 
+Mimicking cellular learning (memo ry) became a recent hit in dru g design. Chemically 
+induced proximity between two a djacent signalling proteins (a n ew drug design paradigm 
+[103,104]) is actually copying Hebbi an learning of the cell [10 ]. In this ‘cellular learning 
+scenario’ chemical proximity-d eveloping drugs i nduce targeted p osttranslational 
+modifications of key, otherwise  undruggable proteins. In the re versed, anti-Hebbian learning 
+model, chemically induced proximi ty promotes the selective degr adation of the target 
+[105,106]. 
+ 
+Drug resistance can be conceptua lised in a learning network mod el as habituation. Biological 
+networks may contain nodes, where  stimulation breaks the habitu ation (drug resistance) 
+developed by the network [52]. L imited drug tolerance can be co nceptualised as sensitisation 
+in a learning network model, most simply by displaying a hyster esis-type response. 
+Interestingly, breaking of sensitis ation was much rarer phenome non in a model of 35 
+biological networks than that of  habituation [52]. However, the  break of allergy-induced 
+sensitisation against drugs beca me a carefully manageable clini cal modality in the last 
+decades – as we will describe in the following paragraphs. 
+ 
+Signal desensitisation plays a majo r role in anti-cancer therap y, which can be regarded as ‘the 
+archetype’ of therapeutic intervention consequences in a number  of other diseases. As an 
+example for the first modality of  protocols, the anti-cancer ag ent, 90 kDa heat shock protein 
+(Hsp90) inhibitors induce a dese nsitisation of the EGF receptor  via p38 MAPK mediated 
+phosphorylation at Ser1046/1047 of t he EGF receptor in human pa ncreatic cancer cells. Here 
+drug-induced desensitisation of the cancer-promoting growth fac tor signal is a mode of action 
+to avoid disease [105]. As an exa mple for the second modality o f consequences, gastric 
+cancer cells become desensitised t o trastuzumab-treatment by up regulation of MUC4 
+expression and by catecholamine-i nduced β2-adrenoreceptor activ ation. Here desensitisation, 
+i.e. the development of drug r esistance is an unwanted conseque nce of drug treatment [106]. 
+As a third modality of therapeutic interventions, response-dese nsitisation (i.e . breaking the 
+sensitisation of unwanted side-r eactions for the d rug) is a gen eral goal in cancer therapy, 
+where patients often develop sensitivity towards the administer ed drugs [107,108]. 
+ 
+Supporting the notion that can cer therapy experiences are ‘ pars pro toto ’ for other conditions, 
+increased hypersensitivity to  drugs (e.g. for aspirin and non-s teroid anti-inflammatory drugs, 9  NSAIDs in patients with heart dise ase or inflammatory diseases;  for insulins, penicillin or 
+other antibiotics) became a gene ral phenomenon in the past 25 y ears due to the widespread 
+and intensive drug use. T herefore, carefully administered drug- desensitisation protocols 
+became more and more important i n the clinical  practice [109,11 0]. Similarly, drug induced 
+desensitisation of cellular mech anisms of action is also a gene ral phenomenon in a number of 
+non-cancer treatment protocols, i ncluding that of β-adrenergic agonists in asthma [111], 
+diabetes [112,113] or he art failure [114]. 
+ 
+Conclusions  
+ 
+In our previous work [10] we gave several examples for cellular  learning [3–9] (i.e. the 
+formation of cellular memory  [25,52–55]), and showed that cellu lar learning can be perceived 
+as Hebbian learning [48] of signa lling networks, where learning  is accompanied by 
+strengthening of those protein-pr otein, protein-microRNA and ch romatin interactions, which 
+participate in the learning pro cess [10]. In this review we sum marize our current knowledge 
+on the other side of the coin: w hen signalling networks ‘refuse ’ to learn more, and become 
+desensitised by prol onged presence of the provoking signal, by stress or aging. 
+ 
+Cellular learning proceeds using s everal molecular mechanisms, such as conformational 
+memory of intrinsically disorder ed proteins (IDPs ), prions and mnemons [10–16], protein 
+translocation [18–21], as well as  miRNAs and lncRNAs [6,7,22–24 ]. System level responses 
+of cellular learning include  chromatin memory [3,5,8,9,25–32], signalling protein kinase 
+cascades [33–38], as well as networ k responses other than those  of signalling networks, such 
+as metabolic reaction netwo rks and metabolons [40–47]. 
+ 
+Besides Hebbian learning [10] by t he molecular mechanisms liste d in the previous paragraph, 
+non-neural cells also display a nti-Hebbian learning, where conn ection strengths decrease 
+between the signalling netwo rk components [23,31,51,52]. Cells are also able to ‘forget’ 
+using TET DNA demethylases, lncRNAs or molecular chaperones [58 –60] besides 
+developing a cellular memory. 
+ 
+A cellular habituation-type of r esponse is the development of d esensitisation. This often 
+involves first decoupling of signalling network components from  each other followed by 
+receptor internalization and dow nregulation [61–70]. This may b e displayed by cross- 
+desensitisation, where prolonged e xposure for a pathway agonist  induces the desensitisation 
+of other pathway(s) [72,73]. A specific condition of generally increased signal intensity 
+and/or complexity is stress, whi ch desensitises a wide range of  signals [74–81]. Aging can be 
+perceived as a result of cumula tive stress [82–86], which downr egulates a large number of 
+signalling pathways [87–91]. 
+ 
+Here we propose that cellular learning, desensitisation, stress  and aging may be placed as 
+responses along the same axis of m ore and more intensive (more and more prolonged, or 
+more and more often repeated) si gnals (Fig. 2). We pose the que stion, whether single cells 
+may also display discriminati on between repeated and unexpected  signals, a common 
+property of neuronal and artific ial neural networks (Fig. 3A) [ 93–95]. As a first step in 
+answering this question, we pres ent fold-change detection enabl ing I1-FFLs as anti-Hebbian 
+learning mechanisms that are pot entially general features of si gnalling networks given their 
+occurrence in prominent signalling pathways like NF- κB (Fig. 3B) and TGF- β signalling [96, 
+98-101]. 10  Finally, we summarize applicati ons of signalling network learni ng and desensitisation in 
+clinical treatments discriminati ng between five scenarios (Fig.  4): 1.) when cellular Hebbian 
+learning is mimicked b y chemically induced proximity between si gnalling network 
+components [103,104]; 2.) when cel lular anti-Hebbian learning i s mimicked by chemically 
+induced proximity of protein d egradation [104,105]; 3.) when de sensitisation of unwanted 
+signalling (such as that in cance r) is the mechanism of drug ac tion [105]; 4.) when 
+desensitisation of wanted si gnalling occurs, and should be avoi ded (in cancer, asthma, 
+diabetes or heart failure [ 106, 110–114]); and finally, 5.) whe n sensitisation against a drug 
+occurs by allergic reaction, wh ich also should be minimized (in  cancer, inflammatory 
+diseases, diabetes or i nfections [107,109,110]). 
+ 
+We hope that our summary will prompt further investigations of the phenomena, when cells 
+learn (develop cellula r memory) by Hebbian l earning type proces ses, and when they ‘refuse’ 
+to learn more, i.e. b ecome desensitised (display anti-Hebbian l earning, i.e. cellular 
+‘forgetting’) by prolonged exposure to environmental signals, b y stress or by aging. It is an 
+interesting question, how much de sensitisation remains specific  for the given pathway, and 
+how much it is displayed as cross-desensitisation of other path ways, or as a general forgetting 
+(desensitisation) of many (if not  all) pathways. While agonist- induced desensitisation is 
+mostly the former, directed type  desensitisation against the sa me pathway (or selected 
+different pathways), stress- and aging-induced desensitisation are usually more widespread 
+phenomena involving a larger segmen t of the signa lling network.  We predict that network 
+methodologies will greatly help the  discrimination between thes e scenarios. 
+ 
+Declarations  
+Author contributions Peter Csermely initiated the idea, wrote the initial draft and finalized the manuscript. 
+Tamás Veres and Márk Kerestély f inalized paper figures and cont ributed to key concepts. All authors 
+participated in the interpretation of initial ideas and writing  the manuscript. 
+Conflict of interest The authors declare no conflict of interest. 
+Ethics approval and consent to participate This study required no ethics approval and consent to participa te. 
+Consent for publication . All authors provided consent for publication of this work. 
+Availability of data and material . This review study does not contain parts which require the de posit of data or 
+other material. 
+Funding . This work was supported by a gr ant from the Hungarian Science  Foundation (OTKA K131458) and by 
+the Thematic Excellence Programme (Tématerületi Kiválósági Prog ram TKP2021-EGA-24) of the Ministry for 
+Innovation and Technology in Hunga ry, within the framework of t he Molecular Biology thematic program of the 
+Semmelweis University. 
+ 
+References  
+1. Kandel ER, Dudai Y, Mayford MR. ( 2014) The molecular and system s biology of memory. Cell 
+157(1):163–186. https://doi.org/10.1016/j.cell.2014.03.001 . 
+2. Gershman SJ, Balbi PE, Gallist el CR, Gunawardena J. (2021) Reco nsidering the evidence for learning in 
+single cells. Elife 10:e61907. https://doi.org/10.7554/eLife.61907  
+3. D'Urso A, Takahashi YH, Xiong B, Marone J, Coukos R, Randise-Hi nchliff C, Wang JP, Shilatifard A, 
+Brickner JH. (2016) Set1/COMPASS and Mediator are repurposed to  promote epigenetic transcriptional 
+memory. Elife 5:e16691. https://doi.org/10.7554/eLife.16691 . 
+4. Chernova TA, Chernoff YO, Wilkinson KD. (2017) Prion-based memo ry of heat stress in yeast. Prion 
+11(3):151–161. https://doi.org/10.1080/19336896.2017.1328342  
+5. Liu N, Avramova Z. (2016) Molecular mechanism of the priming by  jasmonic acid of specific dehydration 
+stress response genes in Arabidopsis . Epigenetics Chromatin 9:8. https://doi.org/10.1186/s13072-016-0057-  
+5 
+6. Stief A, Altmann S, Hoffmann K, Pant BD, Scheible WR, Bäurle I.  (2014) Arabidopsis miR156 regulates 
+tolerance to recurring environmental stress through SPL transcr iption factors. Plant Cell 26(4):1792–1807.  
+https://doi.org/10.1105/tpc.114.123851  
+7. Li P, Yang H, Wang L, Liu H, Huo H, Zhang C, Liu A, Zhu A, Hu J , Lin Y, Liu L. (2019) Physiological 
+and transcriptome analyses reveal  short-term responses and form ation of memory under drought stress in 
+rice. Front Genet 10:55. https://doi.org/10.3389/fgene.2019.00055  11  8. Kamada R, Yang W, Zhang Y, Patel MC, Yang Y, Ouda R, Dey A, Wak abayashi Y, Sakaguchi K, Fujita T, 
+Tamura T, Zhu J, Ozato K. (2018) Interferon stimulation creates  chromatin marks and establishes 
+transcriptional memory. Proc Natl Acad Sci U S A 115(39):E9162– E9171.  
+https://doi.org/10.1073/pnas.1720930115  
+9. Pace L, Goudot C, Zueva E, Gue guen P, Burgdorf N, Waterfall JJ,  Quivy JP, Almouzni G, Amigorena S. 
+(2018) The epigenetic control of stemness in CD8(+) T cell fate  commitment. Science 359(6372):177–186.  
+https://doi.org/science.aah6499  
+10. Csermely P, Kunsic N, Mendik P, K erestély M, Faragó T, Veres DV , Tompa P. (2020) Learning of 
+signaling networks: Molecular mechanisms. Trends Biochem Sci 45 (4):284–294.  
+https://doi.org/10.1016/j.tibs.2019.12.005  
+11. Tompa P. (2016) The principle of conformational signaling. Chem  Soc Rev 45(15):4252–4284.  
+https://doi.org/10.1039/c6cs00011h  
+12. Van Roey K, Gibson TJ, Davey NE . (2012) Motif switches: decisio n-making in cell regulation. Curr Opin 
+Struct Biol 22(3):378–385. https://doi.org/10.1016/j.sbi.2012.03.004  
+13. Caudron F, Barral Y. (2014) Mnemons: encoding memory by protein  super-assembly. Microb Cell 
+1(3):100–102. https://doi.org/10.15698/mic2014.01.134  
+14. Reichert P, Caudron F. (2021) Mnemons and the memorization of p ast signaling events. Curr Opin Cell Biol 
+69(4):127–135. https://doi.org/10.1016/j.ceb.2021.01.005  
+15. Lau Y, Oamen HP, Grogg M, Parfenova I, Saarikangas J, Hannay R,  Nichols RA, Hilvert D, Barral Y, 
+Caudron F. (2022) Whi3 mnemon association with endoplasmic reti culum membranes confines the memory 
+of deceptive courtship to the yeas t mother cell. Curr Biol 32(5 ):963–974.  
+https://doi.org/10.1016/j.cub.2022.01.002  
+16. Csermely P, Korcsmáros T, Kiss HJ, London G, Nussinov R (2013) Structure and dynamics of molecular 
+networks: a novel paradigm of dr ug discovery: a comprehensive r eview. Pharmacology Therapeutics 138 
+(3):333–408. https://doi.org/10.1016/j.pharmthera.2013.01.016  
+17. Mendik P, Dobronyi L, Hári F, Kerepesi C, Maia-Moço L, Buszlai D, Csermely P, Veres DV. (2019) 
+Translocatome: a novel resource for the analysis of protein tra nslocation between cellular organelles. 
+Nucleic Acids Res 47(D1):D495–D505. https://doi.org/10.1093/nar/gky1044  
+18. Qu Y, Jiang J, Liu X, Yang X, Tan g C. (2020) Non-epigenetic mec hanisms enable short memories of the 
+environment for cell cycle commitment. https://www.biorxiv.org/content/10.1101/2020.08.14.250704v1  
+19. Paneni F, Mocharla P, Akhmedov A, Costantino S, Osto E, Volpe M , Lüscher TF, Cosentino F. (2012) 
+Gene silencing of the mitochondrial adaptor p66(Shc) suppresses  vascular hyperglycemic memory in 
+diabetes. Circ Res 111(3):278–289. https://doi.org/10.1161/circresaha.112.266593  
+20. Ramon S, Bancos S, Serhan CN, Phipps RP. (2014) Lipoxin A ₄ modulates adaptive immunity by decreasing 
+memory B-cell responses via an A LX/FPR2-dependent mechanism. Eu r J Immunol 44(2):357–369.  
+https://doi.org/10.1002/eji.201343316  
+21. Pallett MA, Ren H, Zhang RY, Scutts SR, Gonzalez L, Zhu Z, Malu quer de Motes C, Smith GL. (2019) 
+Vaccinia virus BBK E3 ligase adap tor A55 targets importin-depen dent NF-κB activation and inhibits CD8+ 
+T-Cell memory. J Virol 93(10):e00051-19. https://doi.org/10.1128/JVI.00051-19  
+22. Li CX, Talele NP, Boo S, Koehler A, Knee-Walden E, Balestrini J L, Speight P, Kapus A, Hinz B. (2017) 
+MicroRNA-21 preserves the fibrotic mechanical memory of mesench ymal stem cells. Nat Mater 16(3):379– 
+389. https://doi.org/10.1038/nmat4780  
+23. Seeley JJ, Baker RG, Mohamed G , Bruns T, Hayden MS, Deshmukh SD , Freedberg DE, Ghosh S. (2018) 
+Induction of innate immune memory via microRNA targeting of chr omatin remodelling factors. Nature 
+559(7712):114–119. https://doi.org/10.1038/s41586-018-0253-5  
+24. Hudson WH, Prokhnevska N, Gensheim er J, Akondy R, McGuire DJ, A hmed R, Kissick HT. (2019) 
+Expression of novel long noncoding RNAs defines virus-specific effector and memory CD8+ T cells. Nat 
+Commun 10(1):196. https://doi.org/10.1038/s41467-018-07956-7  
+25. Berenguer J, Celià-Te rrassa T. (2021) Cell memory of epithelial -mesenchymal plasticit y in cancer. Curr Op 
+Cell Biol 69(4):103–110. https://doi.org/10.1016/j.ceb.2021.01.001  
+26. Sump B, Brickner DG, D'Urso A, Kim SH, Brickner JH. (2022) Mito tically heritable, RNA polymerase II- 
+independent H3K4 dimethylation stimulates INO1 transcriptional memory. Elife 11:e77646.  
+https://doi.org/10.7554/eLife.77646  
+27. Friedrich T, Oberkofler V, Tri ndade I, Altmann S,  Brzezinka K, Lämke J, Gorka M, Kappel C, Sokolowska 
+E, Skirycz A, Graf A, Bäurle I. (2021) Heteromeric HSFA2/HSFA3 complexes drive transcriptional 
+memory after heat stress in Arabidopsis. Nat Commun 12(1):3426.  https://doi.org/10.1038/s41467-021-  
+23786-6  
+28. Gialitakis M, Arampatzi P, Makatounakis T, Papamatheakis J. (20 10) Gamma interferon-dependent 
+transcriptional memory via relo calization of a g ene locus to PM L nuclear bodies. Mol Cell Biol 30(8):2046– 
+2056. https://doi.org/ 10.1128/MCB.00906-09  12  29. Komori HK, Hart T, LaMere SA, Chew PV, Salomon DR. (2015) Defin ing CD4 T cell memory by the 
+epigenetic landscape of CpG DNA methylation. J Immunol 194(4):1 565–1579.  
+https://doi.org/10.4049/jimmunol.1401162  
+30. Nuñez JK, Chen J, Pommier GC, Cogan JZ, Replogle JM, Adriaens C , Ramadoss GN, Shi Q, Hung KL, 
+Samelson AJ, Pogson AN, Kim JYS, Chung A, Leonetti MD, Chang HY , Kampmann M, Bernstein BE, 
+Hovestadt V, Gilbert LA, Weissman JS. (2021) Genome-wide progra mmable transcriptional memory by 
+CRISPR-based epigenome editing. Cell 184(9):2503–2519. https://doi.org/10.1016/j.cell.2021.03.025  
+31. Meriem ZB, Khalil Y, Hersen P, Fabre E. (2019) Hyperosmotic str ess response memory is modulated by 
+gene positioning in yeast. Cells 8(6):582. https://doi.org/10.3390/cells8060582  
+32. Light WH, Freaney J, Sood V, Thompson A, D'Urso A, Horvath CM, Brickner JH. (2013) A conserved role 
+for human Nup98 in altering chromatin structure and promoting e pigenetic transcriptional memory. PLoS 
+Biol 11(3):e1001524. doi: https://doi.org/10.1371/journal.pbio.1001524  
+33. You T, Ingram P, Jacobsen MD, Cook E, McDonagh A, Thorne T, Len ardon MD, de Moura AP, Romano 
+MC, Thiel M, Stumpf M, Gow NA, Haynes K, Grebogi C, Stark J, Br own AJ. (2012) A systems biology 
+analysis of long and short-term memories of osmotic stress adap tation in fungi. BMC Res Notes 5:258. doi:  
+https://doi.org/10.1186/1756-0500-5-258  
+34. Mitra T, Menon SN, Sinha S. (2018) Emergent memory in cell sign aling: Persistent ad aptive dynamics in 
+cascades can arise from the dive rsity of relaxation time-scales . Sci Rep 8(1):13230.  
+https://doi.org/10.1038/s41598-018-31626-9  
+35. Côte P, Sulea T, Dignard D, Wu C, Whiteway M. (2011) Evolutiona ry reshaping of fungal mating pathway 
+scaffold proteins. mBio 2(1):e00230-10. https://doi.org/10.1128/mBio.00230-10  
+36. Klímová Z, Bráborec V, Maninová M, Čáslavský J, Weber MJ, Vomas tek T. (2016) Symmetry breaking in 
+spreading RAT2 fibroblasts requi res the MAPK/ERK pathway scaffo ld RACK1 that integrates FAK, 
+p190A-RhoGAP and ERK2 signaling. Biochim Biophys Acta 1863(9):2 189–2200.  
+https://doi.org/10.1016/j.bbamcr.2016.05.013  
+37. Lee PC, Beyrakhova K, Xu C, B oniecki MT, Lee MH, Onu CJ, Grishi n AM, Machner MP, Cygler M. 
+(2020) The Legionella kinase LegK7 exploits the Hippo pathway s caffold protein MOB1A for allostery and 
+substrate phosphorylation. Proc Natl Acad Sci U S A 117(25):144 33–14443.  
+https://doi.org/10.1073/pnas.2000497117  
+38. Kant S, Standen CL, Morel C, Jun g DY, Kim JK, Swat W, Flavell R A, Davis RJ. (2017) A protein scaffold 
+coordinates SRC-mediated JNK ac tivation in response to metaboli c stress. Cell Rep 20(12):2775–2783.  
+https://doi.org/10.1016/j.celrep.2017.08.025  
+39. Zhang J, Zhou T. (2019) Markovian approaches to modeling intrac ellular reaction processes with molecular 
+memory. Proc Natl Acad Sci U S A 116(47):23542–23550. https://doi.org/10.1073/pnas.1913926116  
+40. Wang Y, Wang Y, Wu Y, Suo Y, Guo H, Yu Y, Yin R, Xi R, Wu J, Hu a N, Zhang Y, Zhang S, Jin Z, He L, 
+Ma G. (2023) Using the inner membrane of Escherichia coli as a scaffold to anchor enzymes for metabolic 
+flux enhancement. Eng Life Sci 23(2):e2200034. https://doi.org/10.1002/elsc.202200034  
+41. Kennedy NW, Mills CE, Nichols TM, Abrahamson CH, Tullman-Ercek D. (2021) Bacterial 
+microcompartments: tiny organelles with big potential. Curr Opi n Microbiol 63:36–42.  
+https://doi.org/10.1016/j.mib.2021.05.010  
+42. Aon MA, Cortassa S. (2015) Function of metabolic and organelle networks in crowded and organized 
+media. Front Physiol 5:523. https://doi.org/10.3389%2Ffphys.2014.00523  
+43. Srere PA. (1985) The metabolon. Trends Biochem Sci 10(3):109–11 0. 
+44. Tian T, Fan J, Elf SE. (2021) M etabolon: a novel cellular struc ture that regulates specific metabolic 
+pathways. Cancer Commun (Lond) 41(6):439–441. https://doi.org/1 0.1002/cac2.12154  
+45. Zhu Y, Jin L, Shi R, Li J, Wang Y, Zhang L, Liang CZ, Narayana VK, De Souza DP, Thorne RF, Zhang 
+LR, Zhang XD, Wu M. (2022) The long noncoding RNA glycoLINC ass embles a lower glycolytic 
+metabolon to promote glycolysis. Mol Cell 82(3):542–554. https://doi.org/10.1016/j.molcel.2021.11.017  
+46. Patrick M, Gu Z, Zhang G, Wynn RM, Kaphle P, Cao H, Vu H, Cai F , Gao X, Zhang Y, Chen M, Ni M, 
+Chuang DT, DeBerardinis RJ, Xu  J. (2022) Metabolon formation re gulates branched-chain amino acid 
+oxidation and homeostasis. Nat Metab 4(12):1775–1791. doi: https://doi.org/10.1038/s42255-022-00689-4  
+47. Pedley AM, Pareek V, Benkovic SJ . (2022) The purinosome: A case  study for a mammalian metabolon. 
+Annu Rev Biochem 91:89–106. https://doi.org/10.1146/annurev-biochem-032620-105728  
+48. Hebb DO. (1949) The Organization of Behavior. Wiley & Sons, New  York. 
+49. Oja E. (1982) Simplified neuron model as a principal component analyzer. J Mathem Biol 15(3):267–273.  
+https://doi.org/10.1007%2FBF00275687  
+50. Acar M, Becskei A, van Oudenaarde n A. (2005) Enhancement of cel lular memory by reducing stochastic 
+transitions. Nature 435(7039):228–232. https://doi.org/10.1038/nature03524  13  51. Liu N, Ding Y, Fromm M, Avramova Z. (2014) Different gene-speci fic mechanisms determine the 'revised- 
+response' memory transcription patterns of a subset of A. thali ana dehydration stress responding genes. 
+Nucleic Acids Res 42(9):5556–5566. https://doi.org/10.1093/nar/gku220  
+52. Biswas S, Clawson W, Levin M. (2 023) Learning in transcriptiona l network models: Computational 
+discovery of pathway-level memory and effective interventions. Int J Mol Sci 24(1):285.  
+https://doi.org/10.3390/ijms24010285  
+53. Jacob F, Monod J. (1961) On the regulation of gene activity. Co ld Spring Harb Symp Quant Biol 26:389– 
+401. https://doi.org/10.1101/SQB.1961.026.01.024  
+54. Burrill DR, Silver PA. (2010) Making cellular memories Cell 140 (1):13–18.  
+https://doi.org/10.1016/j.cell.2009.12.034  
+55. Koseska A, Bastiaens PI. (2017) Cell signaling as a cognitive p rocess. EMBO J 36(5):568–582.  
+https://doi.org/10.15252/embj.201695383  
+56. Hadziselimovic N, Vukojevic V, Peter F, Milnik A, Fastenrath M,  Fenyves BG, Hieber P, Demougin P, 
+Vogler C, de Quervain DJ, Papa ssotiropoulos A, Stetak A. (2014)  Forgetting is regulated via Musashi- 
+mediated translational control of the Arp2/3 complex. Cell 156( 6):1153–1166.  
+https://doi.org/10.1016/j.cell.2014.01.054  
+57. Wang J, Zhang K, Wang E. (2008) Robustness and dissipation of m itogen-activated protein kinases signal 
+transduction network: underlying funneled landscape against sto chastic fluctuations. J Chem Phys 
+129(13):135101. https://doi.org/10.1063/1.2985621  
+58. Hore TA, von Meyenn F, Ravichandran M, Bachman M, Ficz G, Oxley  D, Santos F, Balasubramanian S, 
+Jurkowski TP, Reik W. (2016) Retinol and ascorbate drive erasur e of epigenetic memory and enhance 
+reprogramming to naïve pluripotency by complementary mechanisms . Proc Natl Acad Sci U S A 
+113(43):12202–12207. https://doi.org/10.1073/pnas.1608679113  
+59. Yu Y, Yarrington RM, Chuong EB, Elde NC, Stillman DJ. (2016) Di sruption of promoter memory by 
+synthesis of a long noncoding RNA. Proc Natl Acad Sci U S A 113 (34):9575–9580.  
+https://doi.org/10.1073/pnas.1601793113  
+60. Tompa P, Csermely P. (2004) The role of structural disorder in the function of RNA and protein chaperones. 
+FASEB J 18(11):1169–1175. https://doi.org/10.1096/fj.04-1584rev  
+61. Ali A, Pardo JM, Yun DJ. (2020) Desensitization of ABA-signalin g: The swing from activation to 
+degradation. Front Plant Sci 11:379. https://doi.org/10.3389/fpls.2020.00379  
+62. Hepler JR, Earp HS, Harden TK. (1988) Long-term phorbol ester t reatment down-regulates protein kinase C 
+and sensitizes the phosphoinositide signaling pathway to hormon e and growth factor stimulation. Evidence 
+for a role of protein kinase C in agonist-induced desensitizati on. J Biol Chem 263(16):7610–7619. 
+63. Premont RT, Gainetdinov RR. (2007) Physiological roles of G pro tein-coupled receptor kinases and 
+arrestins. Annu Rev Physiol 69:511–534. https://doi.org/10.1146/annurev.physiol.69.022405  
+64. Moore CA, Milano SK, Benovic JL . (2007) Regula tion of receptor trafficking by GRKs and arrestins. Annu 
+Rev Physiol 69:451–482. https://doi.org/10.1146/annurev.physiol.69.022405.154712  
+65. Rajagopal S, Shenoy SK. (2018) G PCR desensitization: Acute and prolonged phases. Cell Signal 41:9–16.  
+https://doi.org/10.1016/j.cellsig.2017.01.024  
+66. Chang HY, Klein RM, Kunos G. (1982) Selective desensitization o f cardiac beta adrenoceptors by 
+prolonged in vivo infusion of catecholamines in rats. J Pharmac ol Exp Ther 221(3):784–789. 
+67. Lee HT, Thompson CI, Hernandez A,  Lewy JL, Belloni FL. (1993) C ardiac desensitization to adenosine 
+analogues after prolonged R-PIA infusion in vivo. Am J Physiol 265(6 Pt 2):H1916–H1927.  
+https://doi.org/10.1152/ajpheart.1993.265.6.H1916  
+68. Perlini S, Khoury EP, Norton GR, Chung ES, Fenton RA, Dobson JG  Jr, Meyer TE. (1998) Adenosine 
+mediates sustained adrenergic desensitization in the rat heart via activation of protein kinase C. Circ Res 
+83(7):761–771. https://doi.org/10.1161/01.res.83.7.761  
+69. Purrello F, Rabuazzo AM, Anello M, P atanè G. (1996) Effects of prolonged glucose stimulation on 
+pancreatic beta cells: from increased sensitivity to desensitiz ation. Acta Diabetol 33(4):253–256.  
+https://doi.org/10.1007/BF00571559  
+70. Karlsson FA, Van Obberghen E, G runfeld C, Kahn CR. (1979) Desen sitization of the insulin receptor at an 
+early postreceptor step by prolon ged exposure to antireceptor a ntibody. Proc Natl Acad Sci U S A 
+76(2):809–813. https://doi.org/10.1073/pnas.76.2.809  
+71. Korcsmáros T, Farkas IJ, Szalay MS, Rovó P, Fazekas D, Spiró Z,  Böde C, Lenti K, Vellai T, Csermely P. 
+(2010) Uniformly curated signa ling pathways reveal tissue-speci fic cross-talks and support drug target 
+discovery. Bioinformatics 26(16):2042–2050. https://doi.org/10.1093/bioinformatics/btq310  
+72. Dalle S, Imamura T, Rose DW, Worrall DS, Ugi S, Hupfeld CJ, Ole fsky JM. (2002) Insulin induces 
+heterologous desensitization of G-protein-coupled receptor and insulin-like growth factor I signaling by 
+downregulating beta-arrestin-1. Mol Cell Biol 22(17):6272–6285.  https://doi.org/10.1128/MCB.22.17.6272-  
+6285.2002  14  73. Ishibashi KI, Imamura T, Sharma PM, Huang J, Ugi S, Olefsky JM.  (2001) Chronic endothelin-1 treatment 
+leads to heterologous desensitization of insulin signaling in 3 T3-L1 adipocytes. J Clin Invest 107(9):1193– 
+1202. https://doi.org/10.1172/JCI11753  
+74. Torda T, Yamaguchi I, Hirata F, K opin IJ, Axelrod J. (1981) Qui nacrine-blocked desensitization of 
+adrenoceptors after immobilizati on stress or repeated injection  of isoproterenol in rats. J Pharmacol Exp 
+Ther 216(2):334–338. 
+75. De Blasi A, Fratelli M, Wielosz M, Lipartiti M. (1987) Regulati on of beta adrenergic receptors on rat 
+mononuclear leukocytes by stress:  receptor redistribution and d own-regulation are altered with aging. J 
+Pharmacol Exp Ther  240(1):228–233. 
+76. Liu J, Sun F, Wang Y, Yang W, Xiao H, Zhang Y, Lu R, Zhu H, Zhu ang Y, Pan Z, Wang Z, Du Z, Lu Y. 
+(2017) Suppression of microRNA-16 protects against acute myocar dial infarction by reversing beta2- 
+adrenergic receptor down -regulation in rats.  Oncotarget 8(12):2 0122–20132.  
+https://doi.org/10.18632/oncotarget.15391  
+77. Adachi S, Yasuda I, Nakashima M, Y amauchi T, Kawaguchi J, Shimi zu M, Itani M, Nakamura M, Nishii Y, 
+Yoshioka T, Hirose Y, Okano Y, M oriwaki H, Kozawa O. (2011) Ult raviolet irradiation can induce evasion 
+of colon cancer cells from stimulation of epidermal growth fact or. J Biol Chem 286(29):26178–26187.  
+https://doi.org/10.1074/jbc.M111.240630  
+78. Rosette C, Karin M. (1996) Ultraviolet light and osmotic stress : activation of the JNK cascade through 
+multiple growth factor and cyt okine receptors. Science 274(5290 ):1194–1197.  
+https://doi.org/10.1126/science.274.5290  
+79. Tang X, Shen H, Chen J, Wang X, Zhang Y, Chen LL, Rukachaisirik ul V, Jiang HL, Shen X. (2011) 
+Activating transcription factor  6 protects insu lin receptor fro m ER stress-stimulated desensitization via 
+p42/44 ERK pathway. Acta Pharmacol Sin 32(9):1138–1147. https://doi.org/10.1038/aps.2011.75  
+80. Zhou L, Zhang J, Fang Q, Liu M, Liu X, Jia W, Dong LQ, Liu F. ( 2009) Autophagy-mediated insulin 
+receptor down-regulation contri butes to endoplasmic reticulum s tress-induced insulin resistance. Mol 
+Pharmacol 76(3):596–603. doi: https://doi.org/10.1124/mol.109.057067  
+81. Li N, Xiao Y, Wang H, Zhong Y, Yang H, Huang K. (2023) Insulin desensitization and cell senescence 
+induced by heat stress in pig testicular cell model. Anim Biote chnol 19:1–10.  
+https://doi.org/10.1080/10495398.2023.2214246  
+82. Holliday R. Understanding ageing. (1997) Philos Trans R Soc Lon d B Biol Sci 352(1363):1793–1797.  
+https://doi.org/10.1098/rstb.1997.0163  
+83. Kirkwood TB, Austad SN. (2000) Why do we age? Nature 408(6809): 233–238.  
+https://doi.org/10.1038/35041682  
+84. Sőti C, Csermely P. (2007) Aging cellular networks: chaperones as major participants. Exp Gerontol 42(1- 
+2):113–119. https://doi.org/10.1016/j.exger.2006.05.017  
+85. Ferrucci L, Wilson DM 3rd, Donegà S, Gorospe M. (2022) The ener gy-splicing resilience axis hypothesis of 
+aging. Nat Aging 2(3):182–185. https://doi.org/10.1038/s43587-022-00189-w  
+86. Walker KA, Basisty N, Wilson DM 3rd, Ferrucci L. (2022) Connect ing aging biology and inflammation in 
+the omics era. J Clin Invest. 132(14):e158448. https://doi.org/10.1172/JCI158448  
+87. Jung FF, Kennefick TM, Ingelfinger JR, Vora JP, Anderson S. (19 95) Down-regulation of the intrarenal 
+renin-angiotensin system in the aging rat. J Am Soc Nephrol 5(8 ):1573–1580.  
+https://doi.org/10.1681/ASN.V581573  
+88. Zeng Y, Wang PH, Zhang M, Du JR.  (2016) Aging-related renal inj ury and inflammation are associated 
+with downregulation of Klotho and induction of RIG-I/NF-κB sign aling pathway in senescence-accelerated 
+mice. Aging Clin Exp Res 28(1):69–76. https://doi.org/10.1007/s40520-015-0371-y  
+89. Iemitsu M, Maeda S, Jesmin S, Ots uki T, Miyauchi T. (2006) Exer cise training improves aging-induced 
+downregulation of VEGF angiogenic signaling cascade in hearts. Am J Physiol Heart Circ Physiol 
+291(3):H1290–H1298. https://doi.org/10.1152/ajpheart.00820.2005  
+90. Xiong X, Wang X, Lu Y, Wang E, Z hang Z, Yang J, Zhang H, Li X. (2014) Hepatic steatosis exacerbated 
+by endoplasmic reticulum stress-mediated downregulation of FXR in aging mice. J Hepatol 60(4):847–854.  
+https://doi.org/10.1016/j.jhep.2013.12.003  
+91. Koohy H, Bolland DJ, Matheson LS , Schoenfelder S, Stellato C, D imond A, Várnai C, Chovanec P, Chessa 
+T, Denizot J, Manzano Garcia R, Wingett SW, Freire-Pritchett P,  Nagano T, Hawkins P, Stephens L, 
+Elderkin S, Spivakov M, Fraser P, Corcoran AE, Varga-Weisz PD. (2018) Genome organization and 
+chromatin analysis identify transcriptional downregulation of i nsulin-like growth factor signaling as a 
+hallmark of aging in developing B cells. Genome Biol 19(1):126.  https://doi.org/10.1186/s13059-018-1489-  
+y 
+92. Grunfeld C, Jones DS, Shigenaga JK. (1985) Autoantibodies again st the insulin receptor.  Dissociation of the 
+acute effects of the antibodies from the desensitization seen w ith prolonged exposure. Diabetes 34(3):205– 
+211. https://doi.org/10.2337/diab.34.3.205  15  93. Rubner J, Schulten K. (1990) Development of feature detectors b y self-organization. Biol Cybern 62:193– 
+199. https://doi.org/10.1007/BF00198094  
+94. Földiák P. (1990) Forming sparse  representations by local anti- Hebbian learning. Biol Cybern 64:165–170.  
+https://doi.org/10.1007/BF02331346  
+95. Roberts PD, Leen TK. (2010) Anti-hebbian spike-timing-dependent  plasticity and adaptive sensory 
+processing. Front Comput Neurosci 4:156. https://doi.org/10.3389/fncom.2010.00156  
+96. Adler M, Alon U. (2018) Fold-change detection in biological sys tems. Curr Opin Syst Biol 8:81-89.  
+https://doi.org/10.1016/j.coisb.2017.12.005  
+97. Bromberg KD, Ma'ayan A, Neves SR, Iyengar R. (2008) Design logi c of a cannabinoid receptor signaling 
+network that triggers neurite outgrowth. Science 320:903–909. https://doi.org/10.1126/science.1152662  
+98. Oeckinghaus A, Hayden MS, Ghosh S. (2011) Crosstalk in NF-κB si gnaling pathways. Nat Immunol 
+12(8):695–708. https://doi.org/10.1038/ni.2065  
+99. Goentoro L, Shoval O, Kirschner MW, Alon U. (2009) The incohere nt feedforward loop can provide fold- 
+change detection in gene regulation. Mol Cell 36(5):894–899. https://doi.org/10.1016/j.molcel.2009.11.018  
+100. Lee RE, Walker SR, Savery K, Frank DA, Gaudet S. (2014) Fold ch ange of nuclear NF-κB determines 
+TNF-induced transcription in single cells. Mol Cell 53(6):867–8 79.  
+https://doi.org/10.1016/j.molcel.2014.01.026  
+101. Alon U. (2007) Network motifs: theory and experimental approach es. Nat Rev Genet  8(6):450–461.  
+https://doi.org/10.1038/nrg2102  
+102. Mangan S, Itzkovitz S, Zaslaver  A, Alon U. (2006) The incoheren t feed-forward loop accelerates the 
+response-time of the gal system of Escherichia coli. J Mol Biol  356(5):1073–1081.  
+https://doi.org/10.1016/j.jmb.2005.12.003  
+103. Stanton BZ, Chory EJ, Crabtree GR . (2018) Chemically induced pr oximity in biology and medicine. 
+Science 359(6380):1117. https://doi.org/10.1126/science.aao5902  
+104. Peng Y, Liu J, Inuzuka H, Wei W. (2023) Targeted protein posttr anslational modificat ions by chemically 
+induced proximity for cancer therapy. J Biol Chem 299(4):104572 . https://doi.org/10.1016/j.jbc.2023  
+105. Adachi S, Yasuda I, Nakashima M, Y amauchi T, Yamauchi J, Natsum e H, Moriwaki H, Kozawa O. (2010) 
+HSP90 inhibitors induce desens itization of EGF receptor via p38  MAPK-mediated phosphorylation at 
+Ser1046/1047 in human pancreatic  cancer cells. Oncol Rep 23(6): 1709–1714.  
+https://doi.org/10.3892/or_00000815  
+106. Shi M, Yang Z, Hu M, Liu D, Hu  Y, Qian L, Zhang W, Chen H, Guo L, Yu M, Song L, Ma Y, Guo N. 
+(2013) Catecholamine -Induced β2-adrenergic  receptor activation mediates desensitizati on of gastric cancer 
+cells to trastuzumab by upregulating MUC4 expression. J Immunol  190(11):5600–5608.  
+https://doi.org/10.4049/jimmunol.1202364  
+107. Vega A, Jimenez-Rodriguez TW, Ba rranco R, Bartra J, Diéguez MC,  Doña I, Fernández-Rivas M, 
+Gandolfo-Cano M, Gastaminza-Lasa rte G, González-Mancebo E, de l a Hoz Caballer B, Sánchez-Morillas 
+L, Torres MJ, Berges-Gimeno MP, Muñoz-Cano R. (2021) Hypersensi tivity reactions to cancer 
+chemotherapy: Practical recommendations of ARADyAL for diagnosi s and desensitization. J Investig 
+Allergol Clin Immunol 31(5):364–384. https://doi.org/10.18176/jiaci.0712  
+108. Alen Coutinho I, Costa Sousa F, Cunha F, Frutuoso C, Ribeiro C,  Loureiro C, Águas F, Todo Bom A. 
+(2022) Key elements in hypersensitivity reactions to chemothera py: experience with rapid drug 
+desensitization in gynaecological cancer in a Tertiary Hospital . Eur Ann Allergy Clin Immunol 54(6):265– 
+276. https://doi.org/10.23822/EurAnnACI.1764-1489.207  
+109. Yang BC, Castells MC. (2022) The w ho, what, where, when, why, a nd how of drug desensitization. 
+Immunol Allergy Clin North Am 42(2):403–420. https://doi.org/10.1016/j.iac.2021.12.004   
+110.Cernadas JR, Brockow K, Roma no A, Aberer W, Torres MJ, Birc her A, Campi P, Sanz ML, Castells M, 
+Demoly P, Pichler WJ. (2010) European Network of Drug Allergy a nd the EAACI interest group on drug 
+hypersensitivity. General considerations on rapid desensitizati on for drug hypersensitivity - a consensus 
+statement. Allergy 65(11):1357–1366. https://doi.org/10.1111/j.1398-9995.2010.02441.x  
+111. Morris HG. (1980) Drug-induced desensitization of beta adrenerg ic receptors. J Allergy Clin Immunol 
+65(2):83–86. https://doi.org/10.1016/0091-6749(80)90190-6  
+112. Ball AJ, Flatt PR, McClenaghan NH. (2000) Desensitization of su lphonylurea- and nutrient-induced insulin 
+secretion following prolonged treatment with glibenclamide. Eur  J Pharmacol 408(3):327–333.  
+https://doi.org/10.1016/s0014-2999(00)00782-2  
+113. Irwin N, McKinney JM, Bailey CJ, Flatt PR, McClenaghan NH. (201 0) Effects of metformin on BRIN- 
+BD11 beta-cell insulin secretory desensitization induced by pro longed exposure to sulphonylureas. Diabetes 
+Obes Metab 12(12):1066–1071. https://doi.org/10.1111/j.1463-1326.2010.01294.x  
+114. Tilley DG, Rockman HA. (2006) Rol e of beta-adrenergic receptor signaling and desensitization in heart 
+failure: new concepts and prosp ects for treatment. Expert Rev C ardiovasc Ther 4(3):417–432.  
+https://doi.org/10.1586/14779072.4.3.417  16   
+ 
+Fig. 1 Molecular mechanisms of connec tion strength inc rease by cellula r Hebbian learning- 
+type processes. a.) Stronger a nd faster binding of ‘conformatio nally primed’ IDPs (prions and 
+mnemons) to their signalling par tners. b.) New connection sets of translocating p roteins. c.) 
+New connections of overexpresse d miRNAs and lncRNAs. d.) Chroma tin memory. e.) 
+Scaffolded protein kinase and met abolic pathways. This figure w as created with 
+BioRender.com. 17   
+ 
+Fig. 2 Repeated signals induce cellular learning; persistent signals l ead to cellular 
+desensitisation; permanent signa ls (such as the accumulated sig nals and damage in aging) 
+overload the signalling networ k and provoke cellular stress. No te that on the contrary to the 
+few studies showing a change fro m cellular lear ning to desensit isation in the same system 
+[69,92], comparative studies of a gonist-, stress- and aging-ind uced desensitisation are 
+missing. Therefore, this figure is only hypothetical, illustrat ive and by no means quantitative. 18   
+ 
+Fig. 3 Hebbian and anti-Hebbian learni ng layers in neuronal and signal ling networks. A) 
+Schematic representation of the  combination of Hebbian- and ant i-Hebbian learning layers, 
+which result in the discrimina tion between predictable and unex pected inputs. The 
+cerebellum-like laminar structure of the figure is widespread i n various animal and human 
+neuronal networks [95] and wa s also shown to w ork in computatio nal neural networks 
+[93,94]. Note that self-inhibitor y connections (‘autapses’) are  not necessarily needed for the 
+circuit. B) Proposed Hebbian and a nti-Hebbian learning layers i n the NF- κB signalling. 
+Receptor proximally, the signalli ng of multiple receptors can l ead to the activation of the NF- 
+κB pathway through TRAFs. Concurre ntly, some can lead to the act ivation of the adjacent 
+AP-1 signalling pathway [98]. T his constitutes a horizontal act ivation in the proposed 
+Hebbian learning layer in the upstream signalling. In the downs tream signalling, AP1 and the 
+non-canonical NF- κB pathway modulate NF- κB target genes (e.g., inter leukin-8, interleukin- 
+6). The canonical NF- κB (RelA-p52 heterodimer) has also  been shown [100] to upregulat e the 
+formation of the transcripti onally inactive p50-p50/p52-p52 hom odimers that act as 
+competitors to NF- κB for κB sites in the target genes’ promoters. These interactions, 
+highlighted in red, constitute a Type-1 incoherent feed-forward  loop (I1-FFL, see inset) that 
+can be understood as an anti-Hebbi an learning mechanism. This s ystem enables fold-change 
+detection of the incoming signal in NF- κB nuclear levels, that is analogous to discrimination 
+between predictable a nd unexpected inputs. This figure was crea ted with yEd Graph Editor. 19   
+   
+ 
+Fig. 4 Clinical treatments for and against Hebbian and anti-Hebbian le arning of the signalling 
+network. a.) Cellular Hebbian lea rning is mimicked by chemicall y induced proximity between 
+signalling network components. b.)  Anti-Hebbian learning is mim icked by chemically 
+induced proximity of protein deg radation. c.) Desensitisation ( drug-induced anti-Hebbian 
+learning) of unwanted signalling (such as that in cancer). d.) Prevention of desensitisation of 
+wanted signalling (cellular anti-Hebbian learning) in cancer, a sthma, diabetes or heart failure. 
+e.) Prevention of allergy-induced  sensitisation (Hebbian-learni ng) against the drug in cancer, 
+inflammatory diseases, diabetes or infections. This figure was created with BioRender.com 

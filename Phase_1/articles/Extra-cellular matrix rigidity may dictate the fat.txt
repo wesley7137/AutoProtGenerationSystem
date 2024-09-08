@@ -1,0 +1,1258 @@
+Title: Extra-cellular matrix rigidity may dictate the fate of injury outcome
+Abstract:   After injury, if regeneration can be observed in hydra, planaria and some
+vertebrates, regeneration is rare in mammals and particularly in humans. In
+this paper, we investigate the mechanisms by which biological tissues recover
+after injury. We explore this question on adipose tissue, using the
+mathematical framework recently developed in Peurichard et al, J. Theoret.
+Biol. 429 (2017), pp. 61-81. Our assumption is that simple mechanical cues
+between the Extra-Cellular Matrix (ECM) and differentiated cells can explain
+adipose tissue morphogenesis and that regeneration requires after injury the
+same mechanisms. We validate this hypothesis by means of a two-dimensional
+Individual Based Model (IBM) of interacting adipocytes and ECM fiber elements.
+The model successfully generates regeneration or scar formation as functions of
+few key parameters, and seems to indicate that the fate of injury outcome could
+be mainly due to ECM rigidity.
+
+Full Text: Extra-cellular matrix rigidity may dictate the fate of injury
+outcome
+D. Peurichard1, M. Ousset2, J. Paupert2, B. Aymard3, A. Lorsignol2, L. Casteilla2,
+and P. Degond4
+1INRIA Paris, 2, rue Simone I, 75589 Paris Cedex 12, France
+2STROMALab, Universit de Toulouse, Inserm U1031, EFS, INP-ENVT, UPS, CNRS ERL5311,
+Toulouse, France Batiment INCERE, 4 bis Avenue Hubert Curien 31100 Toulouse, 31 432 Toulouse
+France
+3MathNeuro Team, Inria Sophia Antipolis Mditerrane, 2004 Route des Lucioles, BP93, 06902 Valbonne
+cedex, France
+4Department of Mathematics, Imperial College London, London SW7 2AZ, United Kingdom.
+Abstract
+After injury, while regeneration can be observed in hydra, planaria and some vertebrates,
+regeneration is rare in mammals and particularly in humans. In this paper, we investigate
+the mechanisms by which biological tissues recover after injury. We explore this question on
+adipose tissue, using the mathematical framework recently developed in Peurichard et al.,
+J. Theoret. Biol. 429 (2017), pp. 61-81. Our assumption is that simple mechanical cues
+between the Extra-Cellular Matrix (ECM) and dierentiated cells can explain adipose tissue
+morphogenesis and that regeneration requires after injury the same mechanisms. We validate
+this hypothesis by means of a two-dimensional Individual Based Model (IBM) of interacting
+adipocytes and ECM ber elements. The model successfully generates regeneration or scar
+formation as functions of few key parameters, and seems to indicate that the fate of injury
+outcome could be mainly due to ECM rigidity.
+Key words: regeneration, individual-based model, constrained minimization, tissue remod-
+eling, ber insemination
+1 Introduction
+The discoveries of stem cells largely open the door for the development of regenerative medicine
+and address many issues on regeneration processes and their basic cues. Regeneration is described
+as the come back to the initial shape and function of a tissue or organ after injury. Largely
+described and investigated in animal models such as hydra, zebra sh or salamander, regeneration
+was considered as largely impaired in adult mammals for the benet of a brotic scar after healing
+obligatory associated with dysfunctions. In mammals, regenerative capacities seem present until
+a few days after birth and then further replaced by healing and scar formation in adult. This
+strongly suggests that regeneration could take place in adult mammals but is inhibited during
+postnatal development [1, 2, 3] and that brosis impairs tissue regeneration. The possibility to
+circumvent this inhibition and to identify basic cues to re-induce regeneration in adults represents
+a fundamental challenge in regenerative medicine. One of these issues is to investigate whether
+basic cues driving the development of mature tissues and organs could be similarly involved in the
+post-injury rebuilding of these mature tissues. Because of the severe pandemic rise of obesity and
+several associated diseases (diabetes, cardiovascular diseases, metabolic disorders, cancer), adipose
+tissue (AT) has become a growing point of interest in the last decades. Previously considered as
+a passive energy store, AT is now recognized to be an important endocrine organ involved in all
+physiological functions [35]. Beside this historical role related to its metabolic functions, adipose
+pad is classically removed in obese people or injected in patients for plastic and reconstructive
+1arXiv:1811.12315v2  [q-bio.TO]  3 Mar 2019surgery although, its true regenerative capabilities after lipectomy are poorly documented [51].
+It also recently emerges as a reservoir of therapeutic multipotent adipose-derived stromal/stem
+cells (ASCs) for regenerative medicine [41, 62]. These cells have been extensively investigated
+and increasingly tested and used in clinical trials [38]. Therefore, understanding the mechanisms
+involved in adipose tissue morphogenesis and homeostasis is of major importance either to limit
+its expansion or to promote and regenerate it according to the applicative elds. Alternatively and
+independently of these applied interests, AT can be considered as a model because it is a relatively
+simple organ, composed of mature adipocytes with a spherical shape composed of lipid droplets
+storing excess energy and a population of other cells (endothelial, immune cells, broblast-like cells
+[57]) among which ASCs that behave as adipocyte progenitors. In white AT, the dierentiated
+adipocytes are densely packed together in specic structures referred to as lobules, surrounded by an
+organized (aligned) collagen ber network [60]. These cellular and brous structures show dierent
+organization according to the location in the tissue as well as according to states of development
+and pathologies. These global organization and structure largely impact the functioning of the
+tissue and metabolic dys-regulations of AT are associated with the development of brosis in obese
+patients [20, 20, 44].
+Assuming that the structuring agents contributing the most to adipose tissue emergence are
+the Extra-Cellular Matrix (ECM) bers and the adipocytes interactions [46], we proposed a 2D
+individual based model (IBM) which produces structures quantitatively similar (shape of the cell
+clusters in particular) to the experimental observations of healthy AT in adults. This model
+indicates that AT homeostasis and organization could spontaneously emerge as a result of simple
+mechanical interactions between dierentiated cells (i.e. adipocytes) and bers. Our model bears
+analogies with the model of [6], in which an individual based model for the simulation of intestinal
+organoid formation in the gut is discussed. The main dierences between our model and that of
+[6] lie in the way the Extra-Cellular Matrix and its interactions with the cells are modelled. In
+[6], the basal membrane is described by a sti triangulated network modelling interlinked long
+polymer molecules. The network edges can stretch or compress and the network nodes may move
+in response to the forces exerted by the cells. However, network reorganization does not occur
+spontaneously but only when some faces are too large or too small, which triggers the insertion
+or deletion of a vertex. The present model allows for ECM spontaneous reorganization via the
+creation and suppression of links dynamically in time. Thus, in the present paper, the ECM has
+the ability to reorganize independently from the action of the cells. This is a key feature which
+allows us to explore how the ECM remodelling capability inuences the regeneration process.
+Another dierence is cell adhesion to the ECM which is key to [6] and is not considered here,
+because cell-ber repulsion is sucient to provide containment of cells.
+The goal of the present study is, via a mathematical model based on our previously developed
+2D-IBM and using the same framework, to investigate whether the same rules drive the fate of
+AT reconstruction after injury. To this aim, we rst summarize the main steps of tissue repair,
+which consist of three phases (summarized in Fig. 1 left) : Hemostasis/inammation, proliferation
+and remodeling/maturation. The rst stage of acute tissue repair is dedicated to stop bleeding
+(hemostasis) and damaged-cell death. Cell death is characterized by rupture of the cell membrane
+and release of intracellular factors. This release induces an acute inammation which is associated
+to specic immune cell type recruitment responsible for phagocytosis of dead cell debris but also
+for the production of the anti-inammatory cytokines required for the down-regulation of the in-
+ammatory response and necessary to prevent further inammation-related damages. Progressive
+resolution of inammation is ultimately responsible for the passage from a necrotic environment
+to one favorable to stem cells homing, proliferation and dierentiation necessary to tissue repair.
+This proliferation stage is associated to granulation tissue formation characterized by deposition of
+an immature provisional ECM, composed of poorly organized brous components. In parallel, this
+environment induces broblasts dierentiation into myobroblasts, responsible of brous collagen
+synthesis, which marks the transition to remodeling stage. This maturation phase allows terminal
+dierentiation of progenitor cells and remodeling of collagen-enriched ECM. ECM remodeling and
+maturation in a strongly organized network is controlled by its synthesis, its degradation proper-
+ties as well as by its post-translational modications such as ber cross-linking ensured by specic
+enzymes. This remodeling is a key step in driving tissue regeneration since collagen accumulation
+upon tissue repair is associated with brotic scar formation. This brosis alters tissue mechanical
+2Creation of chemical components 
+at the edge of the wound:
+- block stem cell differentiation
+- Trigger fiber insemination
+- Diffuse in the tissue
+- Finite lifetime
+Creation of new fibers at the edge of the wound
+where local density of cells is low
+Maximal local density of agent reached
+=> Fiber insemination stopsExtinction of chemical components:
+=> stem cell differentiation where local density 
+of linked ECM is lowPhases of tissue repairModelling steps
+Initial condition
+Equilibrium state
+Figure 1: Left: Schematic view of the three phases of tissue repair: Hemostasis/inammation,
+proliferation and remodeling/maturation. Right: Schematic view of the model components at
+dierent time points.
+properties especially increasing its stiness and eventually impairs tissue regeneration.
+The model developed in this paper is based on an existing model [46] which we modify to
+take into consideration the previously described phases of tissue repair. In section 2., we will rst
+present the main ingredients of the model and motivate the choice of the model parameter values
+with biological measurements (section 2). Section 3. is devoted to numerical results: in sections
+3.1 and 3.2, we show numerical results which we compare qualitatively to biological observations,
+and in section 3.3 we quantify the numerical structures obtained to study the inuence of key
+model parameters on the tissue reconstruction abilities after injury.
+2 Methods
+2.1 Biological experiments
+In Fig. 2, we show biological images of inguinal adipose tissue in non-injured conditions (A) and in
+regenerative (B) or scar (C) conditions one month after injury. Adipocytes (Red) were stained with
+Bodipy and collagen bers (green) were imaged using collagen SHG (Second Harmonic Generation)
+signal (see Appendix B for more details on the methods). As one can observe in Figs. 2, the
+adipocyte lobules and ECM structures are reconstructed 1 month post-injury for regenerative
+tissues while the injured zone in scar conditions is lled with a very sti ECM network with very
+few adipocytes.
+2.2 Description of the model
+(i) Introduction of new bers/cells. To create a simulation framework that addresses the mechan-
+ical features of adipogenesis and homeostasis, a 2D individual based model (IBM) was introduced
+in [46]. Here, we use the same framework to model tissue repair after injury. ECM bers are
+discretized into unit ber elements consisting of line segments of xed and uniform lengths repre-
+sented by their centers and their directional unit vectors. In the previous model, we supposed that
+two ber elements that cross each other can form links, thereby creating longer bers. By analogy
+with what is observed in vivo, these segments represent collagen bers as they are secreted in the
+3Uninjured tissueRegenerated tissue
+1 month post-injuryScar tissue
+1 month post-injury
+Figure 2: Biological images of inguinal adipose tissue (AT) in non-injured conditions (A) and in
+regenerative (B) or scar (C) conditions one month after injury. Adipocytes (Red) were stained with
+Bodipy and collagen bers (green) were imaged using collagen SHG (Second Harmonic Generation)
+signal. Images were obtained using average intensity projections of 8 (A), 7(B) and 5(C) stack
+images. The white scale bars at the bottom right correspond to 150 m.
+extracellular compartment in vivo and their ability to be cross-linked. The cells/adipocytes are
+described as 2D spheres represented by their centers and radii. The dierentiation of immature
+cells into adipocytes is represented by their ability to grow regularly in size (hypertrophy). At any
+given time, the two sets of agents are supposed to realize the minimum of the mechanical energy
+of the system (further described). To model tissue injury, we start with situations of tissues at
+equilibrium, and remove all the components (cells and bers) present in a given zone of the domain.
+Thus, to drive the emergence of bers at the leading edge of the wound, we create a gradient which
+triggers ber insemination. This gradient is generated by a ux of chemical components produced
+by surrounding cells, mimicking secretions of cells acting during inammatory and proliferation
+phases (see Fig. 1 right). The wound is lled with new bers and the injury signaling chemicals
+disappear, enabling maturation of new adipocytes. All these phenomena force the cells and bers
+to move in order to reach a new equilibrium. New bers are inseminated randomly in time via a
+Poisson process of frequency f(X) which negatively depends on the agent local density and its
+gradient and which has typical value 
+f, an agent being either a cell or a ber element. Therefore,
+ber insemination is supposed to occur more likely on the boundaries of the wound and where
+the agent density does not exceed a given threshold (to avoid accumulation of bers). As we
+do not model proliferating broblasts for the sake of simplicity, the collagen ber elements are
+supposed to spontaneously emerge at the borders of the wound. Fiber elements in our model are
+not intended to reproduce a whole biological structured ber too long to be represented by a single
+short ber element but they rather produce a discretization of such bers into rigid elements that
+can be computationally manipulated. At initialization, the insemination of a new ber is modeled
+by the insemination of a group of 4 ber elements organized in linked 'diamond' congurations cor-
+responding to non-orientated collagen ber secretion. The major axis orientation of the diamonds
+is randomly chosen in [0; 2 ] with uniform probability. Moreover, we suppose that newly insemi-
+nated bers can link with their neighbors when they intersect with a xed probability Pf, at the
+time they are created. Note that these links are dynamical in time, due to the linking/unlinking
+process (further described). Therefore, the diamond shape structures might be dissolved or persist
+according to how fast the unlinking process is. Considering an initial ber network consisting of
+bers longer than cell diameters is biologically plausible as collagen bers are produced before any
+implantation of adipocytes.
+Simultaneously with ber insemination, we suppose that the agents at the leading edge of
+the wound create a ux of injury signaling chemicals. These signals are modeled as particles
+created with the same rules as newly inseminated bers (described before), with space-dependent
+insemination frequency R(X) having typical value 
+R. They are supposed to have a nite lifetime:
+injury signaling particles die according to a Poisson process of nite frequency D. These injury-
+signaling particles are supposed to diuse through the ECM in a directed manner, the direction
+being given by the mean local orientation of the brous tissue (comprised between  =2 and=2
+as the ber elements are not directed). The dynamics of these signaling particles are described
+4by a continuum model (shown in the Appendix), discretized using particles following a Smoothed-
+Particle Hydrodynamics (SPH) approach. The SPH method performs better than classical grid
+methods in the presence of zero-density regions where traditional grid-based methods are likely
+to generate unphysical negative densities which severly compromise the simulation. With SPH
+methods, zero-density regions are simply devoid of particles. Here, the density of injury signalling
+molecules is initially zero, and there remain large zero-density regions in the simulation domain
+throughout the computation, which makes the choice of the SPH method a necessity. Following
+[43], we suppose that the stem cells have a negligible impact on the mechanical equilibrium and
+we do not incorporate them in the model. The dierentiation of a stem cell into an adipocyte
+is modeled as the creation (or 'insemination') of a new adipocyte, of space-dependent frequency
+a(X) having typical value 
+a. All new adipocytes are inseminated with the same small radius. In
+order to delay cell dierentiation during tissue reconstruction, new adipocytes are inseminated at
+random times following a Poisson process the frequency of which depends on: (a) The density of
+injury-signaling particles: New adipocytes appear more likely where the density of injury signaling
+particle is low, (b) the number of ber links in the ECM: new adipocytes appear more likely in
+regions of low ECM ber links and (c) the density of existing agents: new adipocytes appear more
+likely where existing bers are already present. The dierentiation yield is modeled through the
+regular growth of the cells. We assume that the volume of each adipocyte reaches a maximal value
+beyond which it stays constant. Because adipocytes are lled with an incompressible liquid we
+assume that two neighboring disks can not overlap.
+(ii) Fiber-adipocyte interactions: We view the ECM as composed of bers having locally pre-
+ferred directions. Each ber element exerts an elementary mechanical action corresponding to
+a fraction of the action the ECM exerts on neighboring cells. It carries directional information
+corresponding to the preferred direction of the collagen bers. The largest mechanical action of a
+ber is exerted normally to this direction. The bers repel the cells by means of a soft potential
+allowing some penetration of the cells inside the ECM. A ber element produces a unit of potential
+strength. Larger mechanical actions are achieved by having several of these unit ber elements
+in a close neighborhood. In practice, we assume that the ber-cell repulsion potential isolines are
+ellipses with foci at the two ends of the ber segment and that the potential vanishes beyond a cer-
+tain distance from the ber. The choice of elliptic isolines corresponds to the simplest anisotropic
+shape in 2D.
+(iii) Fiber growth, elongation and ability to bend: In addition to carrying a unit of ECM ber
+strength, ber elements also carry a unit of ber length. However, ber elongation [8] is created
+by allowing two crossing bers to create a cross-link. Any displacement of a cross-linked ber pair
+maintains the position of the cross-link relative to the center of each ber. Several consecutively
+cross-linked ber elements model a long ber having the ability to bend or even take possible
+tortuous geometries. Pairs of cross-linked bers can also spontaneously unlink, allowing for ber
+breakage describing ECM remodeling processes. Linking and unlinking processes follow Poisson
+processes with frequencies `anddrespectively, and the parameter `=`
+`+d, where2[0;1]
+represents a measure of the fraction of linked bers among the pairs of intersecting bers. To model
+the ability of long bers (those made of several cross-linked ber units) to oer a certain resistance
+to bending, linked bers are subjected to a potential torque at their junction. This torque vanishes
+when the bers are aligned, and consequently acts as a linked bers alignment mechanism. Any
+force exerted by a cell in the vicinity of a cross-link would result in the cross-linked bers making
+an obtuse angle with respect to one another until the exerted torque at the cross-link balances
+the eect of the force, thereby providing a discrete representation of the bending of a continuous
+beam. This torque is characterized by a parameter c1>0 playing the role of a exural modulus.
+This parameter reects the linking forces as well as the number of links existing between bers.
+The larger the c1the less elastic the ber assembly is. Finally, steric interactions among the bers
+are considered by adding a ber-ber mechanical repulsion. Each ber element represents the
+elementary mechanical action acting on neighboring bers. The bers repel each other by means
+of a soft potential carrying directional information and the potential is stronger in the orthogonal
+direction of the bers.
+TheNAadipocytes are modeled as 2D spheres of center Xiand time dependent radius Ri
+fori2[1; NA], and theNfECM ber elements are represented by straight lines of xed length
+Lf, of centerYkand orientation angle kfork2[1; Nf]. We generate an injury that occurs at a
+5chosen simulation time (in which the tissue is at mechanical equilibrium) and leads to the complete
+destruction of half of the whole tissue. We delete all the elements (cells and bers) the centers of
+which are contained in [  xmax
+2;xmax
+2][ ymax; ymax] where the 2D square simulation domain
+
+ = [ xmax; xmax][ ymax; ymax]. The details of the model are presented in Appendix C.
+2.3 Biological relevance of the model parameters
+The reference time trefis chosen to be 0.05 times the cell growth time tg, i.e the time for which
+a cell reaches its maximal radius. As it takes approximately 100 days for a nascent adipocyte to
+grow to its maximal size and tg= 20 in our simulations, we can assume that trefis about 5 days
+[5]. Simulations are stopped at dimensionless time t= 80tref. In the following, we consider three
+ber unlinking times td=1
+d:td=f10;100;1000gtref, and the linking time t`=`
+1 `td(we use
+`= 0:35 or 0.1). Note that these are linking/unlinking times per ber but the actual frequencies
+of linking/unlinking events must be multiplied by the number of bers elements Nf. As in [46], we
+can estimate that there is signicant ECM remodelling when at least 10% of the bers (i.e about
+100 bers) have been linked or unlinked. Therefore, the ECM remodelling rate can be related to
+100dand consequently, the ECM remodelling time td=100 ranges between 0 :1 and 10 days. In
+[11], it is estimated that ECM remodelling takes about 15 days. Therefore we will refer to the
+rst cases as 'highly dynamical tissues' and the last ones as 'regular tissues'. The choice of ber
+length and width is motivated by studies of [57], where it is shown that the collagen bers are
+organized into bundles of collagen brils the width of which varying from 1 to 20 mdepending
+on tissues and organs. In order to enable the bers to bend around the cells, the ber elements
+are chosen to be 20 mwide and 60 mlong (the adipocyte diameter being 60 m, see [46]). The
+model parameters used for the simulations are given in table 1.
+3 Results
+The simulations are performed on a 2D square domain with periodic boundary conditions. Each
+simulation starts from a tissue at equilibrium that we cut in half to mimic an injury. We consider
+two types of tissues: (i) 'Regular tissues' with low remodelling rate, i.e with a low cross-linked
+ber unlinking frequency d= 10 3and (ii) 'Highly dynamical tissues' with d= 10 1. Note that
+the ECM remodelling parameters `;dand`are the same for computing the tissue homeostasis
+phase before injury and for the reconstruction phase after injury. To obtain the tissue before injury,
+we start the simulations with a ber network randomly distributed and randomly linked at 40%
+(see table 1) and let the simulation run until reaching equilibrium (see [46]). The cell insemination
+frequency parameter 
+a, the injury signaling chemicals insemination rate 
+Rand death rate 
+D
+and the sensitivity to the matrix local number of links for cell insemination are xed, and we study
+the inuence of the ber insemination frequency parameter 
+fand of the linking probability of
+new bers Pfon the structures obtained after injury, for two dierent types of tissues (playing
+on the dynamics of the tissue via the unlinking frequency d).
+3.1 Regular tissues
+In Fig.3 (I) (see also A.1), we show simulation results for `= 0:1 andd= 10 3at dierent
+timest= 0:2tref,t= 0:4tref,t= 10tref,t= 20trefandt= 80tref, for low ber insemination rate
+after injury 
+f= 0:25 and moderate linking of new bers Pf= 0:2. As shown in Fig. 3, for slow
+ber creation and moderate ber linking, lobule-like clusters of cells emerge in the reconstructed
+zone, with similar features as before the injury and same number of adipocytes as before injury
+(compare left and right images of Fig. 3).
+In Fig. 3 (II) (see also A.2), we use the same initial condition, i.e with simulation parameters
+`= 0:1,d= 10 3, but with dierent ECM reconstruction parameters: We consider a fast ber
+insemination with rate 
+f= 2 with large linking probability of new bers Pf= 0:5. In this case,
+the injured zone is lled with a highly interconnected ber network possessing very few adipocytes,
+structure which resembles a scar. These results show that the ber network reconstruction speed
+and reconstructed ECM can trigger regeneration or scar formation in 'regular networks'. In the
+next section, we study the case of highly dynamical networks.
+6Figure 3: Left panel: Simulation results before injury for tissue with low ber remodelling rate:
+`= 0:1,d= 10 3. Right panel: Reconstruction steps (I) We consider slow ber reconstruction
+rate
+f= 0:25 and moderate linking of new bers Pf= 0:2, (II) We consider fast ber reconstruc-
+tion rate
+f= 2 and large linking of new bers Pf= 0:5. From left to right: at time t= 0:2tref
+(before injury), t= 0:4tref,t= 10tref,t= 20trefandt= 80tref.
+Remark: Note that simulations of this section are performed for tissues with low remodelling
+rated= 10 3, i.e each ber link has a large lifetime. For such slow remodelling network, the
+total number of links is not proportional to `but rather close to the initial linking proportion, in
+this case around 40% of crossed-bers. To compare this tissue with more dynamical ones, we will
+use the value `= 0:35for tissues with larger d(see next section).
+3.2 Highly dynamical tissues
+In this section, we consider what is referred to as 'highly dynamical networks', i.e ber networks
+with fast remodelling rate d= 10 1. In order to compare these tissues with the ones considered
+in the previous section, we use the value `= 0:35 such that the two compared tissues have the
+same proportion of links before injury (around 35% of crossed-bers are linked before injury).
+In Fig. 4 (I) (see also A.3), we show simulations results for slow ber insemination rate after
+injury
+f= 0:25 and moderate linking probability of newly inseminated bers Pf= 0:2. After
+injury, the tissue is regenerated in the sense that we observe the same structures as before injury
+for this set of parameters.
+Finally, coupling fast ECM reconstruction with large linking probability of newly inseminated
+bers (
+f= 2,Pf= 0:5) -shown in Fig.4 (II) (see also A.4)- leads to the emergence of a highly
+interconnected and organized (aligned) ber network containing few adipocytes.
+When comparing the two reconstructed tissues displayed in Fig.4 (II right) and in Fig. 3 (II,
+right), one can note that highly dynamical networks (Fig. 4 II) do not enable the formation of a scar
+even when considering fast creation of highly interconnected bers, contrary to the observations
+in 'regular tissues' (Fig.3 II). This is due to the fact that highly dynamical tissues rapidly remodel
+the ber network, thereby creating organized (aligned) ber structures. By rapidly creating and
+suppressing new links, these networks have a larger plasticity than the 'regular tissues'. As stem
+cell dierentiation is sensitive to the local number of links in the ECM network, this results in the
+creation of new adipocytes in these tissues.
+3.3 Parametric analysis of the model
+In order to enable the quantitative comparison between the tissue states before and after injury,
+we proceed as in [46] and we dene quantiers EandNCmeasuring the elongation and number of
+7Figure 4: Left panel: Simulation results before injury for tissue with low ber remodelling rate:
+`= 0:35,d= 1. Right panel: Reconstruction steps (I) We consider slow ber reconstruction rate
+
+f= 0:25 and moderate linking of new bers Pf= 0:2, (II) We consider fast ber reconstruction
+rate
+f= 2 and large linking of new bers Pf= 0:5. From left to right: at time t= 0:2tref(before
+injury),t= 0:4tref,t= 10tref,t= 20trefandt= 80tref.
+cell clusters respectively, and Ameasuring the mean alignment of ber clusters (see C.4 for more
+details on their computation). As we are interested in comparing the reconstructed tissue with the
+state before injury (to identify cases of regeneration or scar formation), we dene the 'global error'
+ as a weighted norm of the quantiers before and after injury:
+ =s
+ E
+E02+ A
+A02+ NC
+NC02+ NE
+NE02;
+whereNEis the number of cells and  X=X80tref X0for all quantiers X. We choose E0= 0:6,
+A0= 0:2,NC0= 10 andNE0= 0:2 for all simulations, which correspond to the values of the
+dierence of the quantiers between a regular tissue and a scar. Thus dened, large values of 
+indicate that the reconstructed tissue is far from its initial state (before injury), while small values
+of  indicate that the nal structures resemble the ones before injury. As functions of the ECM
+reconstruction parameters, we observe three dierent nal states: (i) Regeneration, i.e complete
+reconstruction of the tissue after injury with the same number of adipocytes and formation of
+lobule-like clusters of cells in the new network (low values of ), (ii) formation of an unstructured
+tissue with the same number of cells as before injury, but which does not display any organization
+of the cell and ber clusters and (iii) scar formation, where the injured zone is lled with highly
+interconnected and disorganized bers with very few adipocytes (large values of ). In Fig. 5, we
+show the values of the global error  as a function of the linking probability of newly inseminated
+bers Pf, for three dierent ber insemination frequencies after injury: 
+f= 0:25 (blue curve),
+
+f= 1 (red curve) and 
+f= 2 (green curve), and for 'regular tissues' i.e with `= 0:1 and
+d= 10 3. Figs. 6 and 7 show the simulation results for `= 0:35 andd= 10 2(Fig. 6) and
+d= 10 1(Fig. 7). As shown in Fig. 5, the regeneration phase (where  is low) is observed
+forPf2[0:1;0:2] and better regeneration is obtained for a moderate ber insemination frequency
+
+f= 1 compared to the cases 
+f= 0:25 or
+f= 2. Regeneration is therefore obtained with a
+moderate ECM reconstruction speed and when the newly inseminated bers are suciently linked.
+ForPf= 0 indeed, the new tissue after injury is unstructured, showing that the new ECM must
+be suciently linked to enable tissue regeneration. However if the new ECM is too linked (large
+values of Pf), we observe the formation of a structure like scar, i.e a brotic tissue composed
+of highly interconnected ber structures with very few adipocytes. Indeed, for 'regular tissues'
+with low remodelling rate d= 10 3, the initially highly interconnected ber network fails to
+8BEFORE INJURY
+SCAR FORMATION
+REGENERATIONFigure 5: Values of the global error  as a function of the linking probability of newly inseminated
+bers Pf, for dierent values of ber insemination rates after injury 
+f:
+f= 0:25 (blue curve),
+
+f= 1 (red curve) and 
+f= 2 (green curve), and for tissues with low remodelling rate `=
+0:1;d= 10 3.
+self-organize and prevent new cells to appear, generating a scar. Note that the ber insemination
+rate after injury 
+fhas little inuence on the global error  for small values of linking probability
+of newly inseminated bers Pf, while for larger values of Pf, increasing the ber insemination
+speed favors scar formation. The dependency of the scar formation on the ber insemination
+speed is enhanced when considering more dynamical ber networks (Fig. 6). Indeed for larger
+linking/unlinking frequency d= 10 2, the ber network is more able to organize even when
+initially highly interconnected (for Pf= 0:5). When the ber insemination speed is low, the
+ber structures can align and enable the apparition of new cells, preventing scar formation in
+this case and generating an unstructured tissue. As shown in Fig. 6 for moderately dynamical
+BEFORE INJURY
+SCAR FORMATION
+REGENERATION
+Figure 6: Values of the global error  as function of the linking probability of newly inseminated
+bers Pf, for dierent values of ber insemination rates after injury 
+f:
+f= 0:25 (blue curve),
+
+f= 1 (red curve) and 
+f= 2 (green curve), and for tissues with moderate remodelling rate
+`= 0:35;d= 10 2.
+9networksd= 10 2, no regeneration is obtained for large ber insemination speeds 
+f= 1 or 2,
+and regeneration is only obtained for 
+f= 0:25 and Pf= 0:1. This shows that the reconstruction
+of more plastic ber networks must be slower than for 'regular tissues' to enable regeneration to
+occur. When considering highly dynamical networks ( d= 10 1, Fig. 7), one can note that scar
+BEFORE INJURY
+REGENERATION
+UNSTRUCTURED
+Figure 7: Values of the global error  as a function of the linking probability of newly inseminated
+bers Pf, for dierent values of ber insemination rates after injury 
+f:
+f= 0:25 (blue curve),
+
+f= 1 (red curve) and 
+f= 2 (green curve), and for tissues with large remodelling rate `=
+0:35;d= 10 1.
+formation is not observed no matter the linking probability of newly inseminated bers Pfnor the
+ber insemination speed 
+f. In this case indeed, as the ber network remodelling is very fast, the
+ber structures quickly self-organize and align, enabling the apparition of new cells. For slow ber
+insemination, the state before injury is recovered independently of Pf(regeneration), while larger
+ber insemination speed lead to the formation of unstructured tissues.
+Finally, we show in Fig. 8 the same computations as in Figs. 5-7 but with injury signaling
+particles lifetime increased by a factor 2 ( 
+D= 1 instead of 
+D= 0:5 as before). As we can observe,
+we obtain the same results as before (compare Figs. 8 (A) - (C) to Figs. 5, 6, 7 respectively).
+These results show that in the regime of parameters chosen here, the lifetime of the injury signaling
+particles is not a key parameters in the fate of injury reconstruction. Note that the presence of
+injury signaling particles -blocking cell dierentiation as long as they are present locally- together
+with ber insemination are the only new model ingredients compared to the previous model for
+AT morphogenesis. The model results suggest that if these new ingredients are essential to enable
+tissue reconstruction after injury, they are not determinant in the choice of regeneration/scar
+formation. The characteristics of the reconstructed tissues seem to mostly be determined by the
+mechanical properties of the reconstructed ECM.
+4 Discussion
+In our previous study [43], we demonstrated that AT morphogenesis results from a self-organization
+process principally driven by simple mechanical interactions between adipocytes and the ECM.
+Using the same framework, this study represents a step forward into the understanding of the
+mechanisms of AT repair after injury. The originality of our work lies in the hypothesis that the
+same mechanisms as for AT morphogenesis could be at play in tissue reconstruction after injury.
+Here, we showed that our mathematical model is either able to reproduce regenerated states or
+formation of scars after injury, by simply varying few key parameters. As a comparison, the
+main dierence between the morphogenesis model and the tissue repair one is that tissue injury
+10𝛘l=0.1, ν d = 10-3𝛘l=0.35, ν d = 10-2
+𝛘l=0.35, ν d = 0.1 (A)(B) (C)Figure 8: Values of the global error  as a function of the linking probability of newly inseminated
+bers Pf, for dierent values of ber insemination rates after injury 
+f:
+f= 0:25 (blue curve),
+
+f= 1 (red curve) and 
+f= 2 (green curve), and for dierent tissues (low remodelling rate large
+`= 0:1;d= 10 3(A), moderate remodelling rate `= 0:35;d= 10 2(B), low remodelling rate
+`= 0:35;d= 10 1(C)), and for injury signaling death rate D= 1.
+is represented as a gap in the tissue, whereas the tissue lled all the space in the morphogenesis
+model. This means that new components (cells and bers) appear to ll the gap.
+The states after injury that emerge from the mathematical model can be classied into three
+types: (i) Regeneration, i.e. complete reconstruction of the tissue after injury with the same number
+of adipocytes and formation of lobule-like clusters of cells in the new network, (ii) formation of
+an unstructured tissue with the same number of cells as before injury, but which do not display
+any organization of the cell and ber clusters and (iii) scar formation, where the injured zone
+is lled with highly interconnected and disorganized bers with very few adipocytes. Each state
+corresponds to a range of model parameters among which the rate of new ber insemination 
+f
+and the linking probability between bers at insemination Pfseem to play a crucial role (Figure
+1,2,3,4). To weigh the relative roles of these two parameters in driving tissue regeneration or scar
+formation, we ran our model in three dierent tissues exhibiting low, moderate or high remodeling
+rates respectively (Figure 5,6,7). This remodeling rate correspond to the unlinking frequency d
+for a xed fraction of linked bers `(the larger the unlinking frequency the larger the linking
+frequency as `=`
+1 `d). Regardless of the rate of new ber insemination, the outcome of
+tissue repair is the same in a tissue exhibiting low ber linking-unlinking dynamic (enabling low
+remodeling of ber structures). In such tissues, the key parameter driving tissue reconstruction is
+the linking probability of new bers Pfas tissue regeneration is favored in a range of Pfcomprised
+between 0.1 and 0.2 whereas, higher values of Pfare associated with scar formation. In tissues
+exhibiting moderate or high remodeling capabilities, a large rate of new ber insemination decreases
+tissue regeneration capabilities. Moreover, under conditions of low rate of new ber insemination,
+regeneration can be obtained for a wider range of linking probabilities of newly inseminated bers
+(Pfcomprised between 0.1 and 0.3) compared to tissues exhibiting low remodeling rates. For
+higher ber insemination rates, we observe either the formation of an unstructured tissue or of a
+scar. This observation is related to the fact that highly dynamical tissues exhibiting large plasticity
+quickly remodel their ber network allowing the creation of organized (aligned) ber structures as
+long as ber density is not too high. All these tissue features provide ECM physical properties
+which control stem cell dierentiation through cell-matrix protein interactions. Thus, in our model,
+a low ber insemination rate associated to a high plasticity of the ECM induce the creation of new
+adipocytes in AT and facilitate tissue regeneration compared to tissues with lower remodeling rate.
+Our model suggests that there exists a value of ECM link proportion at creation after injury
+Pf= 0:1 for which the tissues regenerate, independently of other parameters (i.e independently
+of the type of tissue -exhibiting low, moderate or high ECM remodelling abilities- or of the ber
+insemination frequency 
+f). On the other hand, the capability of a tissue to generate a scar is mul-
+tifactorial. Indeed, scar formation was only observed for tissues with low or moderate remodelling
+abilities and for which the proportion of ber links at creation is above a given threshold. This
+threshold itself depends on the ber insemination rate and the type of tissue considered. Moreover,
+11qualitatively, this study showed that the same model can be used to study tissue homeostasis or
+induce regeneration. On the other hand, quantitatively, our work showed that tissue regeneration
+is possible for specic values of the ECM link proportion at creation Pfwhich is lower than the
+one corresponding to ECM of the homeostasis phase (before injury).
+In conclusion, our results show that ECM reconstruction capabilities are key elements in the
+fate of injury outcome, thereby highlighting the importance of the ECM and the mechanical forces
+induced by it. They are consistent with recent papers demonstrating the impact of the ECM and
+of its dysregulation (i.e. brosis/scar) on repair processes [20, 36, 44].
+Further improvements of the model could be made. From a mathematical viewpoint, the
+development of a macroscopic model from the present IBM would enable simulations on larger
+domains and address the question of the organization of the whole tissue. A rst step has been made
+in [13] where a macroscopic model for interacting bers has been derived. This macroscopic model
+has been further analyzed and its derivation has been numerically validated in [46]. Moreover, the
+model could also be extended to 3D without profound methodological modications (see discussion
+in [46]). From a biological viewpoint, the development of a model including a time scale similar to
+what is observed in vivo in mouse models of AT regeneration and scar healing should allow us to
+dene a precise time window during which pharmacological treatments would act on ECM ber
+linking and in ne drive tissue repair towards regeneration.
+Acknowledgments
+PD acknowledges support from the Engineering and Physical Sciences Research Council (EPSRC)
+under grant ref. EP/M006883/1 and EP/N014529/1, from the Royal Society and the Wolfson
+foundation through a Royal Society Wolfson Research Merit Award no. WM130048 and from
+the National Science Foundation (NSF) under grant RNMS11-07444 (KI-Net). PD is on leave
+from CNRS, Institut de Math ematiques, Toulouse, France. D.P. acknowledges support by the
+Vienna Science and Technology Fund (WWTF) under project number LS13-029, and gratefully
+acknowledges the Institut de Math ematiques de Toulouse (IMT) for sharing computing resources
+enabling the present study.
+Data statement
+No new data were collected in the course of this research.
+A Supplementary material: videos of numerical simulations
+A.1 S1 Video
+Simulation: Reconstruction of 'regular tissues' ( `= 0:1;d= 10 3) after injury, with
+slow ber reconstruction rate and moderate linking of new bers . This video shows a
+simulation of the reconstruction steps of a 'regular tissue' ( `= 0:1;d= 10 3), with slow ber
+reconstruction rate and moderate linking of new bers after injury: 
+f= 0:25 and Pf= 0:2.
+Cells are represented as 2D spheres (red), the bers before injury in dark blue and new bers
+in cyan, ber links are represented as green dots and injury signalling particles as magenta dots.
+At timet= 1 the tissue at equilibrium is cut in half and we let the tissue reconstruct during
+100tref(400 days). Left panel: Initial condition (tissue at homeostasis before injury). Center
+panel: tissue reconstruction after injury (the injury zone is marked by white dashed lines). Right
+panel: evolution in time of the global error  which measures the distance between the tissue
+quantiers at time tand before injury (small values of  indicate a regeneration while large values
+indicate scar formation). At equilibrium, the tissue is reconstructed with structures similar to the
+ones before injury, showing that this set of parameters lead to regeneration for regular tissues.
+12A.2 S2 Video
+Simulation: Reconstruction of 'regular tissues' ( `= 0:1;d= 10 3) after injury, with
+large ber reconstruction rate and large linking of new bers . This video shows a sim-
+ulation of the reconstruction steps of a 'regular tissue' ( `= 0:1;d= 10 3), with large ber
+reconstruction rate and large linking of new bers after injury: 
+f= 2 and Pf= 0:5. Cells are
+represented as 2D spheres (red), the bers before injury in dark blue and new bers in cyan, ber
+links are represented as green dots and injury signalling particles as magenta dots. At time t= 1
+the tissue at equilibrium is cut in half and we let the tissue reconstruct during 100 tref(400 days).
+Left panel: Initial condition (tissue at homeostasis before injury). Center panel: tissue recon-
+struction after injury (the injury zone is marked by white dashed lines). Right panel: evolution
+in time of the global error  which measures the distance between the tissue quantiers at time
+tand before injury (small values of  indicate a regeneration while large values indicate scar for-
+mation). At equilibrium, the injury zone is lled with a highly connected ber network possessing
+no adipocytes, which resemble a scar.
+A.3 S3 Video
+Simulation: Reconstruction of 'highly dynamical tissues' ( `= 0:35;d= 10 1) after
+injury, with slow ber reconstruction rate and moderate linking of new bers . This
+video shows a simulation of the reconstruction steps of a 'highly dynamical tissue' ( `= 0:35;d=
+10 1), with slow ber reconstruction rate and moderate linking of new bers after injury: 
+f= 0:25
+andPf= 0:2. Cells are represented as 2D spheres (red), the bers before injury in dark blue
+and new bers in cyan, ber links are represented as green dots and injury signalling particles
+as magenta dots. At time t= 1 the tissue at equilibrium is cut in half and we let the tissue
+reconstruct during 100 tref(400 days). Left panel: Initial condition (tissue at homeostasis before
+injury). Center panel: tissue reconstruction after injury (the injury zone is marked by white dashed
+lines). Right panel: evolution in time of the global error  which measures the distance between
+the tissue quantiers at time tand before injury (small values of  indicate a regeneration while
+large values indicate scar formation). At equilibrium, the tissue is reconstructed with structures
+similar to the ones before injury, showing that this set of parameters lead to regeneration for highly
+dynamical tissues.
+A.4 S4 Video
+Simulation: Reconstruction of 'highly dynamical tissues' ( `= 0:35;d= 10 1) after
+injury, with large ber reconstruction rate and large linking of new bers . This video
+shows a simulation of the reconstruction steps of a 'highly dynamical tissue' ( `= 0:35;d= 10 1),
+with large ber reconstruction rate and large linking of new bers after injury: 
+f= 2 and Pf= 0:5.
+Cells are represented as 2D spheres (red), the bers before injury in dark blue and new bers in
+cyan, ber links are represented as green dots and injury signalling particles as magenta dots. At
+timet= 1 the tissue at equilibrium is cut in half and we let the tissue reconstruct during 100 tref
+(400 days). Left panel: Initial condition (tissue at homeostasis before injury). Center panel:
+tissue reconstruction after injury (the injury zone is marked by white dashed lines). Right panel:
+evolution in time of the global error  which measures the distance between the tissue quantiers
+at timetand before injury (small values of  indicate a regeneration while large values indicate
+scar formation). Contrary to 'regular tissues' (see Video A.2), scar formation is not observed for
+highly dynamical tissues. By rapidly creating and suppressing new links, ECM networks of highly
+dynamical tissues have a larger plasticity than the 'regular tissues', enabling new adipocytes to
+appear.
+B Immunouorescence and biphoton microscopy.
+Mouse inguinal adipose tissues (AT) were xed, embedded in agarose gel and cut into 300 m
+slices. Slices were incubated in Bodipy in PBS/0 :2% triton 2h at room temperature. Imaging was
+13performed using a Biphotonic Laser Scanning microscope (LSM880 Carl Zeiss, Jena, Germany)
+with an objective lens LCI 'Plan Apochromat' 10x/0.45 and excited using 561 and 800 nm lasers.
+C Details of the components of the model
+In this section, we detail the model ingredients for the simulations shown in the main text, and we
+refer to [46] for more details. The two-dimensional Individual Based Model (IBM) consists of NA
+adipocytes, which are modelled as 2D growing spheres of center Xiand radius Riforiin [1;NA],
+andNfextra-cellular-matrix ber elements which are represented by straight segments of xed
+lengthLf, of centerYkand orientation angle kfork2[1;Nf]. Adipocytes are prevented to overlap
+to model volume exclusion between cells. Fiber elements have the ability to link to or unlink from
+each other to model ber elongation or rupture. The resistance of bers to growing adipocytes
+is modelled by a repulsion potential Wpotbetween cells and bers, and bers are supposed to
+repel each other by the same potential. Additionally, bers oer resistance to bending through an
+alignment potential Walacting between two linked ber elements. Cells and bers seek to minimize
+their mechanical interaction energy resulting from these potentials, subject to the non-overlapping
+constraint between cells and to the linkage constraint between linked bers. In the course of the
+simulation, an injury occurs, new cross-linked bers are inseminated, new adipocytes appear as a
+result of stem-cell dierentiation, adipocytes grow, new ber links can appear and existing links
+can disappear. These phenomena disrupt the mechanical equilibrium and force the cells and bers
+to move in order to restore the equilibrium.
+C.1 Mechanical potential
+Given a conguration at a xed time, we denote by Cthe set of cell center positions and radii:
+C=f(Xi;Ri); i2[1;NA]gand byFthe set of ber center positions and ber directional angles:
+F=f(Yk;k); k2[1;Nf]g. The global mechanical energy of the system reads:
+W(C;F) =Wpot(C;F) +Wal(F); (1)
+whereWpotcontains the ber-cell and ber-ber repulsion potentials, and Walis the linked ber-
+ber alignment potential:
+Wpot(C;F) =X
+1iNAX
+1kNfW(Xi;Yk;k;d0;i;~Wk) +X
+1fNfX
+1kNfW(Yk;Yf;f;2d0;~W)
++W(Yf;Yk;k;2d0;~W)
+(2)
+Wal(F) =c1X
+1kNfX
+1mNfpt
+kmsin2(k m): (3)
+The time-dependent coecients pt
+kmare set to 1 if bers kandmare linked at time tand to 0
+otherwise. The alignment potential Walof intensity c1consists of the sum of elementary alignment
+potentials between bers of a linked pair. The repulsion potential Wpotis supposed to be the sum
+of two-particle potential elements, W(Xi;Yk;k;d0;i;~Wk), modeling the mechanical interaction
+between cell iand berk, and the sum of two-ber potential elements W(Yf;Yk;k;2d0;~W),
+modeling the mechanical interaction between ber kand berf. The isolines of these potential
+elements consist of ellipses with foci located at the two ends of the ber segment corresponding
+to the second and third variables of the functional W. Given two vectors X,Y2R2, an angle
+2[ 
+2;
+2], a distance d0and an intensity ~W,W(X;Y;;d 0;~W) reads:
+W(X;Y;;d 0;~W) =(~W
+g(d0) 
+g(d0) d(X;Y; )
+ifd(X;Y; )g(d0)
+0 otherwise(4)
+where:
+d(X;Y; ) =jX Y+Lf
+2!()j+jX Y Lf
+2!()j;
+14Fiber fd0Xfd
+0    +RiRiCell i
+Xf
+2d0
+XkFiber f
+Fiber k
+Repulsion zone sensed by cell i center eﬀective size of ﬁbersRepulsion zone sensed by ﬁber k center(A) (B)Figure 9: Scheme of the repulsion potential exerted by ber fon (A) cell i, with orthogonal
+distanced0+Rifrom berfcenter to cell icenter and (B) ber k, orthogonal distance 2 d0from
+berfcenter to ber kcenter. The isolines of the ber frepulsion potential are indicated in
+color and the eective size of bers (inside which no overlapping occurs with any other part of the
+neighboring agents) is indicated in red dashed lines.
+and!() =cos
+sin
+is the unit vector associated to the ber angle . We suppose that ber kcan
+repel celliand berfup to a distance d0in its orthogonal direction. Note that ber-cell repulsion
+(resp. ber-ber repulsion) aims to model repulsion of the ber by the border of the cell (resp. by
+the border of the other ber), while a cell (resp. a ber) is modeled by its center. The repulsion
+distance is accordingly chosen to d0;i=d0+Rifor a cell and to 2 d0for a ber (see Fig. 9). A
+direct computation gives:
+g(d0) = 2s
+L2
+f
+4+d2
+0:(5)
+Finally, we let the strength of each cell-ber repulsion potential element ~Wkdepend on the local
+alignment of the ber network [20]. To this aim, we let ~Wkbe a function comprised between W0
+andW1, equal toW0when the local alignment around ber kis weak and W1when it is strong
+(see [46] for more details).
+At each time step, the minimization of the global mechanical energy under the constraints
+reads:
+(C;F) = argmin
+(~C)0;	(~F)=0W(~C;~F); (6)
+where ( ~C)0 expresses cell-cell non-overlapping inequality constraints (iii) and 	( ~F) = 0
+expresses ber-ber linkage equality constraints (v) (further detailed), where:
+(C) = 
+ij(Xi;Xj)
+(i;j)2[1;NA]2;
+	(F) = ~	km(Yk;Ym;k;m)
+(k;m)2Nf:
+Here,Nfdenotes the dynamical set of linked ber pairs: Nf=f(k;m)2[1;Nf]2; k <m; pt
+km=
+1g.
+C.2 Constraints
+The non overlapping constraint between cells iandjis written as an inequality constraint on the
+following function  ij:
+ij(Xi;Xj) = (Ri+Rj)2 jXi Xjj2: (7)
+One immediately notes that cells iandjdo not overlap if and only if  ij(Xi;Xj)0.
+To model ber growth and elongation or conversely rupture, unlinked (resp. linked) intersecting
+bers have the possibility to link (resp. unlink) at random times. As long as a pair of linked bers
+15remains linked, the attachment sites of the two linked bres are kept at the same point. The
+maitenance of the link between bers kandmis modeled as an equality constraint ~	km= 0 with:
+~	km(Yk;Ym;k;m) =Yk+`km!(k) Ym `mk!(m); (8)
+where`kmis the distance of the center of ber kto its attachment site with ber m(see [46] for
+more details).
+C.3 Biological Phenomena
+In this section, we give details on the treatment of the biological phenomena of the model (cell and
+ber insemination and insemination of injury signaling chemicals after injury). The insemination
+locations of new agents (cells and bers) are supposed to depend on some local densities of existing
+agents at the time of their creation: bers and injury signaling chemicals are created at the -moving-
+edges of the tissue, and cells are inseminated in an existing ECM which is not too linked locally.
+To this aim, we rst describe how we compute the densities of existing agents at a given time of
+the simulation, and then describe the treatment of each biological phenomenon.
+Computation of the agent density The agent density (cells and bers) around the geometri-
+cal pointX2
+ is computed thanks to a Particle-In-Cell (PIC) method. It indicates the number of
+agents per unit volume. To compute it, the computational domain 
+ is rst discretized into Nx+1
+(respNy+ 1) nodes in the x-direction (resp. y-direction) regularly distributed with distance  x
+(resp. y) from their neighbors, with N
+= 4NxNynumber of numerical boxes for the PIC method.
+Then, the contribution of each agent i(cell or ber) located at ( xi;yi) is distributed among the
+nodes surrounding ( xi;yi) such as in Fig. 10. Denoting ( x1;y1);(x2;y2);(x3;y3);(x4;y4) the four
+Figure 10: Distribution of agent icenter (in gray) among the surrounding nodes
+(x1;y1);(x2;y2);(x3;y3);(x4;y4). The weights of each node corresponds to the area with matching
+color.
+nodes (from the below left corner and numbered in trigonometric order) around ( xi;yi),(xk;yk)
+fork= 1:::4 is computed with:
+(xk;yk) =X
+ij(xi;yi)2[x1;x2][y1;y2]ci
+(xy)2!k(xi;yi);
+where the weights !kfork= 1:::4 read:
+!1(xi;yi) = (x3 xi)(y3 yi)
+!2(xi;yi) = (xi x4)(y4 yi)
+!3(xi;yi) = (xi x1)(yi y1)
+!4(xi;yi) = (x2 xi)(yi y2):
+16andciis the agent-type dependent weight. As the maximal cell area is chosen to R2
+max1:4 and
+the eective size of an individual ber is set to Lf
+2d0
+20:36Ac
+5(see Fig. 9), it is reasonable to
+consider that a cell occupies 5 times more space than an individual ber. We therefore choose the
+weightci= 1 for a cell i,ci=1
+5for a beri. The agent density biased by the local amount of linked
+bers`(used for dening the cell insemination frequency a(X) of section 'Cell insemination') is
+computed in the same way, but letting the weight ci=Ni;`
+5for a beri, whereNi;`is the number
+of bers linked to ber i. Note that if ber iis not linked to any other ber, ci= 0, and therefore
+the unlinked bers do not contribute to the biased density of agents `.
+The gradient of is computed using nite dierences on the numerical grid used for the PIC
+method (previously described). On the left boundary of the wound we use a forward second order
+nite dierence scheme: @
+@x
+i 3i+ 4i+1 i+2
+2x;
+while for the right boundary we use a backward nite dierence scheme:
+@
+@x
+i3i 4i 1+i 2
+2x;
+and nally in the center we use centered nite dierences:
+@
+@x
+ii+1 i 1
+2x:
+Fiber insemination We suppose that ber insemination follows a Poisson process in time,
+of spatially dependent frequency f(X)2[0;
+f],X2
+. In order to let the ber insemination
+frequency depend on the local agent (cells of bers) density as well as on the local agent density
+gradient length g(;r), inspired from [1], we set:
+f(X) =
+f L0
+cg 
+(X);r(X)
+ 1
+hs
+ 1 (X)
+s
+hs
+;
+where
+f;L0
+c;hs;sare real positive model parameters, (X) is the agents density around point X
+(further described) and
+ (z) =1
+2(1 + tanh(z)) (smoothing function)
+g(;r) =jjrjj
++0(inverse of gradient length) :
+Here,0is introduced to avoid singularities of the function g(;r) in cases where the local agents
+densityis close to 0. The increasing smoothing function  (z
+hs)2[0;1] allows to control the
+dependency of the frequencies of the Poisson processes on the quantities contained in the variable
+z, with scaling control hs(see Fig. 11). Thus dened, ber insemination will occur more likely
+in zones of high agent gradient (close to the boundaries of the wound) and with low local agent
+density. The Poisson process is discretized as follows: we randomly pick up N
+points in the
+computational domain 
+ and, for each point, we compute the value f(X) and inseminate a ber
+the center of which is at Xwith probability 1  exp f(X)St, whereS=j
+j
+N
+. Note that N
+is the
+number of numerical boxes used to compute the agent density with the PIC method (explained
+further).
+Injury signaling chemicals As for the bers, we suppose that a ux of injury signaling
+chemicals (of density R) is created at the boundaries of the wound. We therefore inseminate
+these injury signaling chemicals following a Poisson process in time, of spatially dependent density
+R(X),X2
+:
+R(X) =
+R L0
+cg 
+(X);r(X)
+ 1
+hs
+ 1 (X)
+s
+hs
+;
+where
+R>0 is a parameter of the model. The Poisson process of frequency R(X) is discretized
+as for the ber insemination (see previous paragraph). We suppose that injury signaling particles
+17Figure 11: Function  (z
+hs) as a function of z2[0;1], for dierent values of hs:hs= 0:01 (blue
+curve),hs= 0:1 (orange curve), hs= 0:5 (yellow curve) and hs= 1 (purple curve).
+have a lifetime1
+D. Hence, the probability of suppressing an injury signalling particle between time
+stepstandt+ tis 1 e Dt. Once created, these injury signaling particles are supposed to
+diuse in the brous network in a directed manner, i.e the ux speed at location Xis supposed to
+be biased by the mean orientation of bers around point X. The time evolution of the density of
+injury signalling particles then reads:
+@tR=r: 
+RD(X)rR
+R+
+R
+(9)
+where
+R>0 is a parameter introduced to avoid singularities where R= 0 andDis a 22
+diusion matrix of the tissue around point X. In order to let injury signalling particles diuse
+locally in a directed manner throughout the surrounding tissue, we let the diusion matrix be the
+sum of the projection matrices on the direction vectors of the bers contained in the ball centered
+inXand of radiusLf
+4:
+D(X) =d0X
+fjjjYf XjjLf
+4!f
+!f;
+whered0>0 is the diusion parameter and !f=cosf
+sinf
+is the directional vector of ber f. We
+consider Neumann boundary conditions on the right and left boundaries and periodic boundary
+conditions on the top and bottom. For any y2[ ymax;ymax]:
+@R
+@x(x= xmax;y) = 0;@R
+@x(x=xmax;y) = 0:
+In order to compute the uxes, we use a Smooth Particle Hydrodynamic approach [39], enabling
+the modelling of uid elements as discrete objects. To this aim, let us denote by Zthe coordinate
+vector of an injury signalling particle. The Lagrangian description of the uid following Eq. (9)
+then reads:dZ
+dt= D(X)rR
+R+
+R: (10)
+Given a function f(X),X2
+ we have:
+f(X) =Z
+
+f(X0)(X X0)dX0:
+At the discrete level, replacing the delta function by a smoothing kernel W(X;h) with characteristic
+widthhsuch that:
+lim
+h!0W(X;h) =(X);
+subject to the normalization Z
+
+W(X0;h)dX0= 1;
+18we have:
+f(X) =Z
+
+f(X0)
+R(X0)W(X X0;h)R(X0)dX0+O(h2):
+After discretizing the continuous eld in a series of NparticlesZjof massmj,f(X) can be written:
+f(X)NX
+j=1mj
+jf(Zj)W(X Zj;h);
+and where jR(Zj) andmj
+jis the volume of a discrete particle j. The interpolated gradient
+of function fthen reads:
+rf(X) =NX
+j=1mj
+jf(Zj)rW(X Zj;h):
+In our model, we use the poly6 kernel dened in 2D by:
+W(X;h) =(
+4
+h8(h2 jjXjj2)3if 0jjXjjh
+0 otherwise ;
+the gradient of which reads:
+rW(X;h) =(
+ 24
+h8(h2 jjXjj2)2X if 0jjXjjh
+0 otherwise :
+The support radius his chosen such that the region of inuence of each particle contains 10 to 20
+neighbouring particles. Equation (10) for each particle ( Zj;mj)2
+R;j2[1;N] then reads:
+dZj
+dt= DjrR(Zj)
+j+
+R;
+whereDj=D(Zj) and
+rR(Zj) =NX
+k=1mkrW(Zj Zk;h):
+We consider an explicit time discretization: for tn= t1+:::+ tn, we write for every j2[1;N]:
+Zn+1
+j=Zn
+j tnDn
+jrR(Zn
+j)
+n
+j+
+R;
+where tnis time-dependent and respects the CFL condition:
+tnCh
+sup
+j2[1;N]jjDn
+jrR(Zn
+j)
+n
+j+
+Rjj;
+withC1
+2.
+Cell insemination Cell insemination is supposed to follow a Poisson process in time of space
+dependent frequency a(X). In order to let cell insemination occur at locations where there is a
+low density of injury signaling particles R, enough agents (cells or bers) but not too much cells
+and linked bers `, we dene:
+a(X) =
+a  1 2`(X)
+s
+hs
+  1 2R(X)
+s
+hs
+  2(X)
+s 1
+hs
+where
+a>0 is a model parameter, and `(X) is the density of agents biased by the local amount
+of linked bers, computed as explained in the next section. New cells are inseminated with a small
+radiusRi= 0:1.
+19Cell growth After insemination, the volumes of the cells are supposed to grow linearly with
+time. Given a cell iat timet, the radius of cell iat timet+ treads:
+R3
+i(t+ t) =R3
+i(t) +Kg(1 +g)
+whereis a random number chosen uniformly in [0 ;1] andKg,gare two parameters such thatKg
+t
+is the mean volumetric cell growth per unit of time andKgg
+tis related to the standard deviation
+of the volumetric cell growth per unit of time. The characteristic time of cell growth tgis dened
+as the mean time needed for a cell to reach its maximal radius Rmaxand reads:
+tg=R3
+maxt
+Kg:
+C.4 Statistical quantiers
+This section is devoted to the computation of statistical quantiers used to describe cell and ber
+structures in both numerical simulations and biological images. A cell cluster is dened as a set of
+cells almost in contact. Let abe the reexive and symmetric relation:
+jai,j2Ni;
+whereNiis the set of cell ineighbors:
+Ni=fj2[1;Na];j6=i;jjXi Xjj(Ri+Rj+a)2g; (11)
+whereais the maximal allowed distance up to which two cells not in contact are dened as
+neighbors and is set to 50% max( Ri;Rj). The equivalence relation Athen reads:
+jAi,9n2N;9(a1::an)
+such thatjaa1a:::aanai:
+Cellsiandjbelong to the same cluster if and only if iAj.
+The statistical quantier NCis dened as the total number of cell clusters which have more
+than 5 adipocytes per 100 adipocytes.
+The statistical quantier Emeasures the mean elongation of the cell clusters, and is dened
+as the number of cells at the boundary of the clusters normalized by the total number of cells in
+the clusters. As the parameter Eis irrelevant for clusters with less than 5 cells, its computation is
+restricted for clusters csuch thatnc>5 and reads:
+E=PNC
+c=1Card(R\Cc)
+PNC
+c=1nc:
+Here,Ccis the set of indices of the cells belonging to cluster c,ncis the number of cells in cluster
+candRis the set of indices of all cells with less than 5 neighbors:
+R=fi2[1;NA];Card(Ni)5g;
+whereNiis dened by Eq. (11).
+In order to describe the ber structures, we dene a ber cluster as a set of neighboring quasi-
+aligned ber elements. For this purpose, let us dene Mkas the set of neighbors of ber k,
+quasi-aligned with ber k. Then:
+Mk=fm2[1;Nf];m6=k;
+min(df(Yk;Ym);df(Ym;Yk))0
+andjsin(k m)j<sin(
+4)g;
+wheredf(Yk;Ym) reads:
+df(Yk;Ym) =d(Yk;Y 
+m) +d(Yk;Y+
+m) 2r
+(Lf
+2)2+ (fLf)2:
+20Here,Y
+m=YmLf
+2!mandd(X;Y ) is the distance of point Xto pointY. Note that df(Yk;Ym)
+0 (resp.df(Ym;Yk)0) if the center of ber k(resp.m) is contained in the ellipse of foci Y
+m
+(resp.Y
+k) with semi minor axis of length fLfand semi major axis of lengthq
+(Lf
+2)2+ (fLf)2.
+We chosef=1
+3, which means that a ber detects a neighboring ber up to a distanceLf
+3in its
+orthogonal direction. This allows us to dene ber clusters as sets of quasi-aligned neighboring
+bers. Let us dene the reexive and symmetric relation fby:
+kfm,m2Mk:
+Dene the equivalence relation Fsuch that:
+kFm,9n2N;9(a1::an)
+such thatkfa1f:::fanfm:
+Then, we say that bers kandmbelong to the same cluster if and only if mFk.
+We dene the SQ Ato quantify the mean alignment of the bers of a cluster. Given a ber
+clustercf, the mean alignment of its bers is dened as the maximal eigenvalue +
+cfof the mean
+projection matrix on the direction vectors all bers of cluster cf:
+Pf=1
+nfX
+m2cf!m
+!m;
+wherenfdenotes the number of bers contained in the cluster cf, and!mis the directional vector
+of berm. Then,Ais dened as the mean of the ber cluster alignment, weighted by the number
+of bers in the cluster:
+A=1
+NFX
+1cfNTf+
+cfncf;
+wherencfis the number of bers in cluster cf.
+C.5 Parameters of the model
+If not otherwise stated, the model parameters used in the simulations are given by table 1
+21Parameters Numerical Value Biological value Description
+Model parameters
+Agents
+Na 190 N/A Number of cells before injury
+Rmax 0.66 30 m Maximal cell radius
+Nf 1600 N/A Number of bers before injury
+Lf 1.2 60 m Fiber length
+Mechanical Interactions
+d0 0.4 20 m Fiber width
+W0 10 N/A Minimal cell-ber repulsion force
+W1 15 N/A Maximal cell-ber repulsion force
+~W 5 N/A Fiber-ber repulsion force
+Biological phenomena
+
+f adapted between Fiber insemination frequency
+Pf adapted N/A New ber linking probability
+
+R 20 4 days 1Injury signalling particle insemination frequency
+
+D 0.5 0.1 days 1Injury signalling particle suppression frequency
+
+a 0.2 0.04 days 1Cell insemination frequency
+Numerical parameters
+j
+j 1300 2.6 mm2Area of the square domain
+N
+ 1444 N/A Number of numerical boxes for the PIC method
+h L f=3 N/A Radius for the SPH method
+L0
+c 0.6 N/A Critical gradient length
+s .5 N/A Critical agent density
+hs .1 N/A Length of the distribution  
+Table 1: Numerical and model parameters of the simulations of the main text.
+References
+[1] Aceves-Sanchez P, Aymard B, Peurichard D, Plourabou e F, Kennel P, Lorsignol A, Casteilla
+L, Degond P (2018) A new model for the emergence of blood capillary networks, submitted.
+[2] Ailhaud G (1999) Cross talk between adipocytes and their precursors: relationships with
+adipose tissue development and blood pressure. Ann. N. Y. Acad. Sci. 892:127-135.
+[3] Alonso R, Young J, Cheng Y (2014) A particle interaction model for the simulation of biological
+and cross-linked bres inspired from ocking theory. Cellular and molecular bioengenering
+7(1):58-72.
+[4] Ambrosi D, Bussolino F, Preziosi L (2005) A review of vasculogenesis models. Journal of
+Theoretical Medecine 6(1):1-19.
+[5] Arner E, et al. (2010) Adipocyte turnover: relevance to human adipose tissue morphology.
+Diabetes 59(1):105-109.
+[6] Buske P, et al. (2012) On the biomechanics of stem cell niche formation in the gut - modelling
+growing organoids, FEBS J. , 279:3475-3487.
+[7] Casadai A, et al. (2012) Adipose tissue regeneration: a state of the art, J. Biomed. Biotech.
+vol. 2012, Article ID 462543, 12 pages, 2012. doi:10.1155/2012/462543
+[8] Chen C-Y, Byrne H-M, King J-R (2001) The inuence of growth induced stress from the
+surrounding medium on the development of multicell spheroids. J. Math. Biol. 43:191-220.
+[9] Ciarletta P, Ben Amar M (2009) A nite dissipative theory of temporary interllar bridges in
+the extra-cellular matrix of ligaments and tendons. J. Roy. Soc. Interface 6(39):909-924.
+22[10] Corvera S, Gealekman O (2014) Adipose tissue angiogenesis: impact on obesity and type-2
+diabetes. Biochim. Biophys. Acta 1842(3):463-72.
+[11] Cowin SC (2004) Tissue growth and remodelling. Annu. Rev. Biomed. Eng. 6:77-107.
+[12] Crisan M, Yap S, Casteilla L, Chen CW, Corselli M, Park TS, Andriolo G, Sun B, Zheng
+B, Zhang L, Norotte C, Teng PN, Traas J, Schugar R, Deasy BM, Badylak S, Buhring HJ,
+Giacobino JP, Lazzari L, Huard J, P eault B (2008) A perivascular origin for mesenchymal
+stem cells in multiple human organs. Cell Stem Cell 3:301-313.
+[13] Cristancho A-G, Lazar M-A (2011) Forming functional fat: a growing understanding of
+adipocyte dierentiation. Nat. Rev. Mol. Cell Biol. 11:722-34.
+[14] Degond P, Delebecque F, Peurichard D (2015) Continuum model for linked bers with align-
+ment interactions. Math. Models Methods Appl. Sci. 26:269-318.
+[15] Dickinson R-B (2000) A generalized transport model for biased cell migration in an anisotropic
+environment. J. Math. Biol. 40:97-135.
+[16] Divoux A, Clement K (2011) Architecture and the extracellular matrix: the still unappreciated
+components of the adipose tissue. Obes. Rev. 12:494-503.
+[17] Drasdo D (2003) On Selected Individual-based Approaches to the Dynamics in Multicellu-
+lar Systems. Multiscale modelling and Numerical Simulations , eds W. Alt, M. Chaplain, M.
+Griebel, J. Lenz (Birkh auser, Basel, Switzerland), pp 109-203.
+[18] Drasdo D, H ohme S (2005) A single cell based-model of tumor growth in-vitro: monolayers
+and spheroids. Phys. Biol. 2(3):135-47.
+[19] Francis M E, Uriel S, Brey E M (2008) Endothelial cellmatrix interactions in neovasculariza-
+tion. Tissue Engineering Part B: Reviews 14(1):19-32. doi:10.1089/teb.2007.0115.
+[20] Friedl P, Br ocker E-B (2000) The biology of cell locomotion within three dimensional extra-
+cellular matrix. Cell. Mol. Life Sci. 57(1):41-64
+[21] Friedl P, Hegerfeldt Y, Tusch M (2004) Collective cell migration in morphogenesis and cancer.
+Int. J. Dev. Biol. 48:441-449.
+[22] Fu X, Fang L, Li H, Li X, Cheng B, Sheng Z. (2007) Adipose tissue extract enhances skin
+wound healing. Wound Repair Regen. 15(4):540-8.
+[23] Galanis J , Nossala R, Harries D (2010) Depletion forces drive polymer-like self-assembly in
+vibrouidized granular materials. Soft Matter 6:1026-1034.
+[24] Galle J, Homann M, Aust G (2009) From single cells to tissue architecture: a bottom-up
+approach to modelling the spatio-temporal organization of complex multicellular systems. J.
+Math. Biol. 58(1-2):261-83.
+[25] Guido S, Tranquillo R-T (1993) A methodology for the systematic and quantitative study
+of cell contact guidance in oriented collagen gels correlation of broblast orientation and gel
+birefringence. J. Cell Sci. 105:317-351.
+[26] Hemmingsen M, et al. (2013) The role of paracrine and autocrine signaling in the early phase
+of adipogenic dierentiation of adipose-derived stem cells. PloS One 8(5):e63638.
+[27] Hillen T (2006) Mesoscopic and macroscopic models for mesenchymal motion. J. Math. Biol.
+53(4):585-616.
+[28] Hillen T, Hinow P, Wang Z-A (2010) Mathematical analysis of a kinetic model for cell move-
+ment in network tissues. Discrete Contin. Dyn. Syst. 14(3):1055-1080.
+[29] Hosek M, Tang J.X (2004) Polymer-induced bundling of F actin and the depletion force. Phys.
+Rev. E 69:051907.
+23[30] Hwang M, Garbey M, Berceli S-A, Tran-Son-Tay R (2009) Rule-Based Simulation of Multi-
+Cellular Biological Systems-A Review of modelling Techniques, Cell Mol. Bioeng. 2(3):285-294.
+[31] Javierre E, Vermolen F J, Vuik C, van der Zwaag S (2009) Mathematical analysis of physiologi-
+cal and morphological aspects of wound closure, J. Math. Biol. 59:605630 DOI 10.1007/s00285-
+008-0242-7
+[32] Joanny J-F, J ulicher F, Kruse K, Prost J (2007) Hydrodynamic theory for multicomponent
+active polar gels. New J. Phys. 9:422.
+[33] Jungblut S., Tuinier R., Binder K. and Schilling T (2007) Depletion induced isotropic-isotropic
+phase separation in suspensions of rod-like colloids. J. Chem. Phys. 127:244909.
+[34] Karagianni M, Schulze T J, Bieback K (2012) Towards Clinical Application of Mesenchy-
+mal Stromal Cells: Perspectives and Requirements for Orthopaedic Applications, chapter in
+Tissue Regeneration - From Basic Biology to Clinical Application Edited by Jamie Davies,
+ISBN 978-953-51-0387-5, 520 pages, Publisher: InTech, Chapters published March 30, DOI:
+10.5772/1354
+[35] Kershaw E. E, Flier J.S (2004) Adipose Tissue as an Endocrine Organ, J. Clin. Endocrinol.
+Metab. , 89(6):2548-2556.
+[36] Khan T, Muise ES, Iyengar P, Wang ZV, Chandalia M, Abate N, Zhang BB, Bonaldo P, Chua
+S, Scherer PE (2009) Metabolic dysregulation and adipose tissue brosis: role of collagen VI.
+Mol. Cell Biol. 29:1575-1591.
+[37] Lushnikov P-M, Chen N, , Alber M (2008) Macroscopic dynamics of biological cells interacting
+via chemotaxis and direct contact. Phys. Rev. E 78:061904
+[38] Monsarrat P et al (2016)An Innovative, Comprehensive Mapping and Multiscale Analysis of
+Registered Trials for Stem Cell-Based Regenerative Medicine, Stem Cells Transl. Med. 6:826-
+35.
+[39] J.J. Monaghan (1988) An introduction to SPH, Comput. Phys. Commun. , vol. 48, pp. 88-96,
+1988
+[40] Murray J-D, Oster G-F, Harris A-K (1983) A mechanical model for mesenchymal morpho-
+genesis. J. Math. Biol. 17:125-129.
+[41] Nambu M, et al (2009) Accelerated wound healing in healing-impaired db/db mice by autol-
+ogous adipose tissue-derived stromal cells combined with atelocollagen matrix. Ann. Plast.
+Surg. 62(3):317-21. doi: 10.1097/SAP.0b013e31817f01b6.
+[42] Napolitano L (1963) The dierentiation of white adipose cells: an electron microscope study.
+J. Cell Biol. 18:663-679.
+[43] Ouchi N, Parker J-L, Lugus J-J and Walsh K (2011), Adipokines in inammation and
+metabolic disease. Nat. Rev. Immunol. 11:85-97.
+[44] Pellegrinelli V, Heuvingh J, du Roure O, Rouault C, Devulder A, Klein C, Lacasa M, Cl ement
+E, Lacasa D, Cl ement K (2014) Human adipocyte function is impacted by mechanical cues.
+J. Pathol. 235:183-95.
+[45] Peurichard D (2016) Macroscopic model for cross-linked bers with alignment interactions:
+existence theory and numerical simulations. Multiscale Model. Simul. 14(4):1175-1210.
+[46] D. Peurichard, F. Delebecque, A. Lorsignol, C. Barreau, J. Rouquette , X. Descombes, L.
+Casteilla and P. Degond, Simple mechanical cues could explain adipose tissue morphology, J.
+Theoret. Biol. 429:61-81. https://doi.org/10.1016/j.jtbi.2017.06.030
+[47] Preibisch S, Saalfeld S, Tomancak P (2009) Globally optimal stitching of tiled 3d microscopic
+image acquisitions. Bioinformatics 25(11):1463-1465.
+24[48] Rodriguez E-K, Hoger A, McCulloch A-D (1994) Stress-dependent nite growth in soft elastic
+tissues. J. Biomech. 27(4):455-467.
+[49] Sbarbati A, Accorsi D, Benati D, Marchetti L, Orsini G, Rigotti G, Panettiere P (2010)
+Subcutaneous adipose tissue classication. Eur. J. Histochem. 54:e48.
+[50] Sepe A, Tchkonia T, Thomou T, Zamboni M, Kirkland J-L (2011) Aging and regional dier-
+ences in fat cell progenitors - a mini-review. Gerontology 57(1):66-75.
+[51] Seretis K, Goulis D.G, Koliakos G, Demiri E (2015)The eects of abdominal lipectomy in
+metabolic syndrome components and insulin sensitivity in females: a systematic review and
+meta-analysis, Metabolism 12: 1640-49.
+[52] Shoham N, et al. (2014) Adipocyte stiness increases with accumulation of lipid droplets.
+Biophys. J. 106(6):1421-31.
+[53] Shraiman B-I (2005) Mechanical feedback as a possible regulator of tissue growth. Proc. Natl.
+Acad. Sci. USA 102(9):3518-3523.
+[54] Sun K, Tordjman J, Clement K, Scherer PE (2013) Fibrosis and adipose tissue dysfunction.
+Cell Metab. 18(4):470-477.
+[55] Taber L-A, Shi Y, Yang L, Bayly P-V (2011) A poroelastic model for cell crawling including
+mechanical coupling between cytoskeletal contraction and actin polymerization. J. Mech. Mat.
+Struct. 6:569-589.
+[56] Tang W, Zeve D, Suh JM, Bosnakovski D, Kyba M, Hammer RE, Tallquist MD, Gra JM
+(2008) White fat progenitor cells reside in the adipose vasculature. Science 322:583-586.
+[57] Ushiki T (2002), Collagen bers, reticular bers and elastic bers. A comprehensive under-
+standing from a morphological viewpoint. Arch. Histol. Cytol. 65(2):109-126.
+[58] Arrow KJ, Hurwicz L, Uzawa H (1958) Studies in linear and nonlinear programming, Stanford
+University Press.
+[59] Vermolen F, van RijnChapter O (2012) A Mathematical Model for Wound Contraction and
+Angiogenesis, chapter in Tissue Regeneration - From Basic Biology to Clinical Application
+Edited by Jamie Davies, ISBN 978-953-51-0387-5, 520 pages, Publisher: InTech, Chapters
+published March 30, DOI: 10.5772/1354
+[60] Vincent L, Soille P (1991) Watersheds in digital spaces: an ecient algorithm based on
+immersion simulations. IEEE Trans. Pattern Anal. Mach. Intell. 13(16):583-598.
+[61] Wasserman F (2011) The development of adipose tissue. Compr. Physiol. Supplement
+15: Handbook of Physiology, Adipose Tissue:87-100 First published in print 1965.
+doi:101002/cphycp050110.
+[62] Vindigni V, Giatsidis G, Reho F, Venezia E D, Mammana M, Franco B (2012) Adipose
+Derived Stem Cells: Current State of the Art and Prospective Role in Regenerative Medicine
+and Tissue Engineering, chapter in Tissue Regeneration - From Basic Biology to Clinical
+Application Edited by Jamie Davies, ISBN 978-953-51-0387-5, 520 pages, Publisher: InTech,
+Chapters published March 30, DOI: 10.5772/1354
+25

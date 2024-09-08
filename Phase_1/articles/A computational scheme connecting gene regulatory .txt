@@ -1,0 +1,843 @@
+Title: A computational scheme connecting gene regulatory network dynamics with
+  heterogeneous stem cell regeneration
+Abstract:   Stem cell regeneration is a vital biological process in self-renewing
+tissues, governing development and tissue homeostasis. Gene regulatory network
+dynamics are pivotal in controlling stem cell regeneration and cell type
+transitions. However, integrating the quantitative dynamics of gene regulatory
+networks at the single-cell level with stem cell regeneration at the population
+level poses significant challenges. This study presents a computational
+framework connecting gene regulatory network dynamics with stem cell
+regeneration through a data-driven formulation of the inheritance function. The
+inheritance function captures epigenetic state transitions during cell division
+in heterogeneous stem cell populations. Our scheme allows the derivation of the
+inheritance function based on a hybrid model of cross-cell-cycle gene
+regulation network dynamics. The proposed scheme enables us to derive the
+inheritance function based on the hybrid model of cross-cell-cycle gene
+regulation network dynamics. By explicitly incorporating gene regulatory
+network structure, it replicates cross-cell-cycling gene regulation dynamics
+through individual-cell-based modeling. The numerical scheme holds the
+potential for extension to diverse gene regulatory networks, facilitating a
+deeper understanding of the connection between gene regulation dynamics and
+stem cell regeneration.
+
+Full Text: A computational scheme connecting gene regulatory network dynamics with
+heterogeneous stem cell regeneration
+Yakun Lia, Xiyin Lianga, Jinzhi Leia,∗
+aSchool of Mathematical Sciences, Center for Applied Mathematics, Tiangong University, Tianjin, 300387, China
+Abstract
+Stem cell regeneration is a vital biological process in self-renewing tissues, governing development and tis-
+sue homeostasis. Gene regulatory network dynamics are pivotal in controlling stem cell regeneration and
+cell type transitions. However, integrating the quantitative dynamics of gene regulatory networks at the
+single-cell level with stem cell regeneration at the population level poses significant challenges. This study
+presents a computational framework connecting gene regulatory network dynamics with stem cell regen-
+eration through a data-driven formulation of the inheritance function. The inheritance function captures
+epigenetic state transitions during cell division in heterogeneous stem cell populations. Our scheme allows
+the derivation of the inheritance function based on a hybrid model of cross-cell-cycle gene regulation network
+dynamics. The proposed scheme enables us to derive the inheritance function based on the hybrid model
+of cross-cell-cycle gene regulation network dynamics. By explicitly incorporating gene regulatory network
+structure, it replicates cross-cell-cycling gene regulation dynamics through individual-cell-based modeling.
+The numerical scheme holds the potential for extension to diverse gene regulatory networks, facilitating a
+deeper understanding of the connection between gene regulation dynamics and stem cell regeneration.
+Keywords: cell plasticity, inheritance function, gene regulatory network, cell division
+1. Introduction
+Stem cell regeneration is a critical biological process in the development and maintenance of tissues,
+ensuring their self-renewal and homeostasis[1]. The intricate interplay between gene expression regulation
+and cell population dynamics is central to maintaining dynamic equilibrium during stem cell regeneration.
+However, as these processes are typically described by distinct mathematical models, bridging the gap
+between their scales of dynamics is imperative.
+In the context of heterogeneous stem cell regenerations, a comprehensive mathematical framework has
+emerged, integrating cell division behavior with cell heterogeneity and random transition of epigenetic
+∗Corresponding author: jzlei@tiangong.edu.cn (J. Lei)
+Preprint submitted to Elsevier April 19, 2024arXiv:2404.11761v1  [q-bio.MN]  17 Apr 2024states[2, 3]. This framework introduces a variable x, often a high-dimensional vector, to represent the
+epigenetic state of a cell. The evolution of the population of cells with epigenetic state x, denoted as Q(t,x),
+is governed by a differential-integral equation[2, 3]
+
+
+∂Q(t,x)
+∂t=−Q(t,x)(β(c(t),x) +κ(x))
++ 2Z
+Ωβ(c(t−τ(y)),y)Q(t−τ(y),y)e−µ(y)τ(y)p(x,y)dy,
+c(t) =Z
+ΩQ(t,x)ζ(x)dx.(1.1)
+Here, β,κ, and µrepresent the rates of cell proliferation, differentiation/senescence, and apoptosis, re-
+spectively; τindicates the duration of cell proliferation; ζsignifies the rate of cytokine secretion. The
+concentration of growth factors secreted by all cells is denoted by c, and p(x,y) quantifies the probabil-
+ity of transferring epigenetic states during cell division. The equation (1.1) was proposed by generalizing
+the classical G0 cell cycle model and incorporating the epigenetic state of individual cells represented by a
+continuous multidimensional variable[2].
+The epigenetic state xin (1.1) represents intrinsic cellular states that may dynamically change over time
+within a cell cycle or during cell division. Biologically, the epigenetic state of a cell can refer to molecular
+level changes that are independent of the DNA sequences, including DNA methylation, nucleosome histone
+modifications, and gene expression[4, 5, 6, 7, 8, 9]. The epigenetic state may influence the quantification
+of cellular behaviors, such as proliferation ( β), differentiation ( κ), apoptosis ( µ), and cell cycle ( τ), which
+collectively define the kinetotype of a cell[2].
+Gene regulatory dynamics within a cell cycle are often described by a set of ordinary or stochastic
+differential equations
+dX
+dt=F(X) +η(t), (1.2)
+where Xrepresents the vector of gene expression. The function Fdescribes the regulatory relationship
+defined by gene regulatory networks, and η(t) denotes the stochastic fluctuations in molecular concentration
+changes. When the epigenetic state xis associated with gene expression levels X, e.g., x= log(1 + X),
+equation (1.2) describes the dynamics of the epigenetic state inside a single cell.
+In addition to gene regulatory dynamics within a cell cycle, epigenetic states undergo random changes
+during cell division, leading to cell plasticity in regeneration. This randomness is encapsulated by the
+inheritance function p(x,y) in (1.1), which plays a crucial role in characterizing cell type changes. However,
+precisely formulating this function poses challenges due to the complexity of biochemical reactions during
+cell divisions.
+Biologically, p(x,y) represents the probability that a daughter cell with state xoriginated from a mother
+2cell with state yafter division. Thus, treating p(x,y) as a conditional probability density
+p(x,y) =P(state of dauther cell = x|state of mother cell = y), (1.3)
+we can focus on the epigenetic state before and after cell division while simplifying the analysis of the interme-
+diate processes. The mathematical formulation of the inheritance function is often difficult to derive following
+the complex biological process. Numerical simulations based on epigenetic state inheritance laws[10, 11, 12]
+offer phenomenological representations of the inheritance function. For instance, normalized nucleosome
+modifications follow a beta distribution[10], while transcript levels follow a gamma distribution[13]. Never-
+theless, how the structure of the gene regulation network may be involved in the inheritance function remains
+not known.
+This study aims to develop a computational scheme linking gene regulatory network dynamics and stem
+cell regeneration through a data-driven formulation of the inheritance function. We focused on a well-
+studied gene network governing cell fate decisions and cell type switches, devising a numerical scheme to
+obtain the conditional probability density p(x,y). The obtained density function, verified through stochastic
+simulation, provides insights into how gene regulatory network structure influences inheritance. Importantly,
+our numerical scheme offers a pathway for extending these findings to broader gene regulatory networks,
+facilitating deeper insights into the nexus between gene regulation dynamics and stem cell regeneration.
+2. Model and Method
+We referred to the hybrid model of stem cell differentiation developed to study the dynamics of cell-type
+transitions mediated by epigenetic modifications[14]. This model integrates individual-cell-based modeling
+of a multicellular system, dynamics of a gene regulation network (GRN) involving two genes, a G0 cell cycle
+model governing cell regeneration, and stochastic inheritance of epigenetic states during cell divisions.
+2.1. Hetereogeneous G0 cell cycle model
+In our model, we focused solely on cells capable of cycling, excluding those that had lost this capacity from
+the simulation pool. We utilized the G0 cell cycle model to describe the dynamics of stem cell regeneration[15,
+16]. According to this model, cells progress through a resting phase known as G0, during which they undergo
+growth and prepare to enter the proliferative phase upon receiving cell cycling checkpoint signals (Fig. 1).
+Each cell in the resting phase has the potential to either enter the proliferating phase at a rate βor exit the
+resting pool at a rate κdue to processes such as terminal differentiation, senescence, or death. Cells in the
+proliferating phase are random eliminated at a rate µdue to apoptosis or undergo mitosis at a fixed time τ
+following entry into the proliferative compartment. Mitosis results in the generation of two daughter cells
+from each mother cell. The newborn cells then enter the resting phase, initiating the next cycle.
+3Figure 1: G0 cell cycle model of cell regeneration . Schematic representation of the G0 model depicting stem cell
+regeneration. Cells in the resting phase either enter the proliferative phase at a rate βor exit the resting pool at a rate κdue
+to differentiation, senescence, or death. Proliferating cells undergo apoptosis at a rate µ.
+Biologically, the self-renewal capability of a cell is intricately linked to microenvironmental conditions,
+including growth factors, various cytokines, and intracellular signaling pathways[17, 18, 19]. Despite the
+complexity of these pathways, the phenomenological formation of Hill function dependence can be derived
+from simple assumptions regarding interactions between signaling molecules and receptors[2, 20], expressed
+as:
+β=β0θn
+θn+cn, (2.1)
+where β0denotes the maximum proliferation rate, crepresents the impact of cytokine signals released from all
+stem cells, θrepresents the half-effective concentration of cytokines, and nstands for the Hill coefficient. This
+cytokine signal often depends on the collective state of all stem cells within the niche under consideration,
+forming a feedback loop in cell growth.
+Proliferation, differentiation, senescence, and cell apoptosis (or cell death at the resting phase) are piv-
+otal in determining the population dynamics of multicellular systems. Furthermore, cellular heterogeneity,
+characterized by variance in the epigenetic state of each cell, significantly influences these processes. The
+kinetic rates of proliferation, differentiation, and apoptosis of each cell are dependent on its epigenetic states.
+To represent this heterogeneity, we introduced a variable x(typically a high-dimensional vector) for the epi-
+genetic state of a cell and Ω as the space encompassing all potential epigenetic states of the resting-phase
+stem cells[2, 3, 21]. Through the epigenetic state x∈Ω, let Q(t,x) denote the count of cells in the resting
+phase at time twith epigenetic state x, and the total cell count is given by
+Q(t) =Z
+ΩQ(t,x)dx.
+Ifξ(x) represents the rate of cytokine secretion by a cell with the state x, the effective cytokine concentration
+4regulating cell proliferation is expressed as
+c(t) =Z
+ΩQ(t,x)ζ(x)dx.
+Moreover, the kinetic rates β,κ,µ, and the duration of the proliferating phase τare dependent on the
+epigenetic state x. The quadruple ( β(c,x), κ(x), µ(x), τ(x)) constitutes the kinetotype of a cell[2].
+During cell division, a single mother cell divides into two daughter cells. However, these daughter cells
+may not share the same epigenetic state as the mother cell, leading to cell plasticity in cellular regulation. By
+introducing an inheritance function (also known as the transition function) p(x,y) defined by the conditional
+probability density (3.9), the evolution equation (1.1) for the cell population Q(t,x) can be derived from the
+G0 cell cycle model as follows[2]:
+
+
+∂Q(t,x)
+∂t=−Q(t,x)(β(c(t),x) +κ(x))
++ 2Z
+Ωβ(c(t−τ(y)),y)Q(t−τ(y),y)e−µ(y)τ(y)p(x,y)dy,
+c(t) =Z
+ΩQ(t,x)ζ(x)dx.(2.2)
+Equation (2.2) provides a comprehensive mathematical framework for modeling the dynamics of hetero-
+geneous stem cell regeneration with epigenetic transitions.
+2.2. Gene regulation network
+2.2.1. Ordinary differential equation model
+We introduced gene regulation networks to establish connections between the epigenetic state and gene
+expressions within individual cells. For simplicity, we considered a basic gene network comprising two master
+transcription factors (TFs), namely gene A and gene B. These factors exhibit self-activation and mutual
+repression, as illustrated in Figure 2. Let X1andX2denote the expression levels (protein concentration)
+of genes A and B, respectively. While we focus on the master genes A and B, the gene expression levels
+X= (X1, X2) define the epigenetic state of a cell.
+The kinetics of gene expression within one cell cycle is modeled using the following ordinary differential
+equations (ODEs):
+
+
+dX1
+dt=g1 
+1 +λ21(X2
+h21)n21
+1 + (X2
+h21)n21! 
+1 +λ11(X1
+h11)n11
+1 + (X1
+h11)n11!
+−k1X1,
+dX2
+dt=g2 
+1 +λ12(X1
+h12)n12
+1 + (X1
+h12)n12! 
+1 +λ22(X2
+h22)n22
+1 + (X2
+h22)n22!
+−k2X2.(2.3)
+Here, the parameters gi,λij,nij,hij, and ki(i, j= 1,2) are non-negative parameters. The parameters
+girepresent the basal protein production rates of the two genes; λijdenote the regulatory strength from
+5Figure 2: Schematic diagram depicting the gene regulatory network . Green arrows indicate self-activating interactions
+of genes, and red bars indicate repressive interactions between genes.
+gene jto gene i, with λij<1 indicating repression and λij>1 indicating activation; hijrepresent the
+half-effective protein concentrations for the corresponding regulation; nijare the Hill coefficients; kidenote
+the degradation rates of the two proteins.
+Folllowing the setup in RACIPE[22], we define a function Has
+H(X;h, n, λ ) =1 +λ(X
+h)n
+1 + (X
+h)n,
+and equation (2.3) can be expressed as
+dXi
+dt=gi2Y
+j=1H(Xj;hji, nji, λji)−kiXi,(i= 1,2) (2.4)
+for simplicity.
+It is worth noting that the gene network in Figure 2 can be modeled using two different approaches:
+additive or multiplicative regulations, where the production rates from positive and negative feedbacks are
+either added or multiplied, respectively[23, 24]. This study adopts the multiplicative modeling approach,
+consistent with the model described by Jolly et al. (2015)[23]. However, the computational scheme presented
+in this study remains consistent with additive feedback regulations.
+2.2.2. Random perturbation to model parameters
+In equation (2.4), the production rates gi, effective concentrations hij, and degradation rates kimay
+experience random fluctuations due to the extrinsic noise in the cellular environment. To incorporate the
+effects of these random perturbations, we introduced stochastic fluctuations to each parameter a(a=gi, hij,
+orki) as follows:
+a= ¯aeση−σ2/2, (2.5)
+6where σrepresents the intensity of the noise perturbation, and ηfollows a colored noise pattern defined by
+the Ornstein-Uhlenbeck process:
+dη=−(η/ϑ)dt+p
+2/ϑdW, (2.6)
+where Wdenoting the Wiener process and ϑrepresents the relaxation coefficient.
+Unlike the conventional Langevin stochastic differential equation approach, the random perturbation η
+in (2.5) is expressed exponentially. This form has been previously utilized in research studies to simulate
+extrinsic noise perturbations in gene expression[11, 14, 25]. The exponential form (2.5) avoids potential is-
+sues with negative parameter values that may arise with the Langevin approach a→a+ση. In biochemical
+reactions, a chemical rate ais often associated with a chemical potential µthrough a=ce−βµ. Consequently,
+a perturbation to the chemical potential µnaturally translates into an exponential form perturbation in the
+chemical reaction rate. Moreover, gene expression rates have been observed to follow a log-normal distri-
+bution rather than a normal distribution[26]. Thus, formulating the random perturbation by multiplying
+the log-normal distribution random number is appropriate. Here, the random perturbation is defined by an
+Ornstein-Uhlenbeck process. For a more detailed discussion, please refer to Lei (2011)[27] and Huang et al.
+(2024)[14].
+It is important to note that (2.5)-(2.6) provide a general formulation for noise perturbation to a parameter.
+However, the perturbations ηto different parameters gi,hijandkiin equation (2.4) are independent of each
+other. Additionally, parameters σandϑdefining the noise perturbations differ for perturbations to different
+parameters. Thus, the ODE model (2.3) can be extended as the following stochastic differential equation
+(SDE) model:
+
+
+dXi
+dt=gi2Y
+j=1H(Xj;hji, nji, λji)−kiXi,(i= 1,2)
+gi= ¯gieσ1η1−σ2
+1/2
+hij=¯hijeσ2η2−σ2
+2/2
+ki=¯kieσ3η3−σ2
+3/2
+dη1=−(η1/ϑ1)dt+p
+2/ϑ1dW1
+dη2=−(η2/ϑ2)dt+p
+2/ϑ2dW2
+dη3=−(η3/ϑ3)dt+p
+2/ϑ3dW3(2.7)
+2.2.3. Cross-cell-cycling dynamics
+The SDE model (2.7) describes the gene regulation dynamics within a single cell cycle. To extend these
+dynamics across multiple cycles and link them with the heterogeneous G0 cell cycle model (2.2), we must
+integrate the cell cycling process into the equation (2.7).
+7Figure 3: Illustration of a cell cycle and the cycling age. Here Tdenotes the duration of one cycle, T1means the duration
+of G0/G1 phase, and T2represents the duration of S phase.
+During the proliferative phase, a cell undergoes DNA replication, resulting in a change in its genetic
+content. Consequently, the gene expression rates vary throughout this phase. For simplicity, let Trepresent
+the duration of one cycle, with the cycling age ℓdenoted as 0 < ℓ < T 1for the G0/G1 phase, T1< ℓ < T 1+T2
+for the S phase (DNA replication), and T1+T2< ℓ < T for the G2 and M phase post-DNA replication
+(Figure 3). Let ℓ(t) represents the cycling age defining as
+ℓ(t) =t−kT, kT ≤t <(k+ 1)T,(k= 0,1,2,···). (2.8)
+We defined the changes in DNA content with the cell cycling age as
+ν(t) =
+
+1, 0≤ℓ(t)< T1
+(1 +ℓ−T1
+T2), T 1≤ℓ(t)<(T1+T2)
+2, (T1+T2)≤ℓ(t)< T(2.9)
+for simplicity. Through the DNA content ν(t), we replaced giwith giν(t) and rewrote (2.4) as:
+dXi
+dt=giν(t)2Y
+j=1H(Xj;hji, nji, λji)−kiXi,(i= 1,2) (2.10)
+when kT≤t <(k+ 1)T.
+The cell undergoes mitosis when t=kT. Molecules such as proteins and mRNAs redistribute stochasti-
+cally to two daughter cells. Therefore, the protein concentrations X1andX2in the newborn cell should be
+reset post-mitosis while molecules are allocated to the two daughters. Thus, we reset the initial condition at
+t=kTas
+Xi(kT) =χilim
+t→kT−Xi(t) (2.11)
+where χiis a beta distribution random number.
+8We assumed a beta distribution random number with a density function exhibiting various shapes based
+on shape parameters aandb, including strictly decreasing ( a <1, b≤1), strictly increasing ( a >1, b≤1),
+U-shaped ( a <1, b < 1), or unimodal ( a >1, b > 1). We denote the beta distribution random number as
+χi∼Beta( a, b), where shape parameters a, bsatisfy
+E(χi) =a
+a+b=1
+2.
+We can select proper parameters to describe the situations of either symmetry or asymmetry division. In
+this study, we introduced two parameters 0 < ϕ < 1 and η >0 so that
+E(χi) =ϕ,var(χi) =1
+1 +ηϕ(1−ϕ), (2.12)
+then the shape parameters aandbare given by
+a=ηϕ, b =η(1−ϕ).
+In particular, we took ϕ=1
+2, then η >2 yields a unimodal distribution, corresponding to symmetry division,
+while η <2 gives a U-shape distribution, corresponding to asymmetry division (Figure 4).
+0 0.5 100.511.52Probability density(a)
+0 0.5 100.511.52Probability density(b)
+0 0.5 10.511.522.533.5Probability density(c)
+0 0.5 10123456Probability density(d)
+Figure 4: Probability density function of the beta distribution. (a). ϕ= 0.4,η= 2.2.(b). ϕ= 0.6,η= 2.2.(c). ϕ= 0.5,
+η= 1.0.(d). ϕ= 0.5,η= 60.
+Therefore, considering cell cycling, we integrated equations (2.7)-(2.11) to formulate a hybrid model as
+9follows (where m= 2 represents the number of genes):
+
+
+dXi
+dt=giν(t)mY
+j=1H(Xj;hji, nji, λji)−kiXi,(i= 1,···, m)
+gi= ¯gieσ1η1−σ2
+1/2
+hij=¯hijeσ2η2−σ2
+2/2
+ki=¯kieσ3η3−σ2
+3/2
+dη1=−(η1/ϑ1)dt+p
+2/ϑ1dW1
+dη2=−(η2/ϑ2)dt+p
+2/ϑ2dW2
+dη3=−(η3/ϑ3)dt+p
+2/ϑ3dW3
+(kT≤t <(k+ 1)T)
+Xi(kT) =χilim
+t→kT−Xi(t)
+χi∼Beta( a, b).(2.13)
+In the equation (2.13), the coefficient λjiin the function H(xj;hji, nji, λji) represents positive regulation
+(λji>1), negative regulation ( λji<1), or no regulation ( λji= 0) between genes jandi. Thus, it is easy
+to extend the model equation to the dynamics of a general gene regulation network with mgenes.
+The equation (2.13) describes the dynamics of the gene regulation network over multiple cell cycles, with
+the protein levels reset after cell division.
+This study does not consider the effect of cell volume change. Cell growth and volume changes are
+significant biological processes that play essential roles in cell-fate decisions[28, 29]. Moreover, biological
+mechanisms controlling cell growth and division are complex and not fully understood for mammalian cells[30,
+31, 32]. In this study, we focused on the computational scheme connecting gene regulation network dynamics
+with stem cell regeneration to avoid complexity. We assumed that the volume remains unchanged during
+cell cycling, so cell growth does not affect the protein concentration.
+2.2.4. Numerical implementation
+Implementing the model equation (2.13) numerically includes solving the SDE model within a cell cycle
+and managing the process of cell division. Cell division may lead to cell splitting and the resetting of initial
+conditions for newborn cells. This numerical scheme can be realized using the object-oriented programming
+language C++. The dynamics of gene regulatory networks within a cell cycle are modeled with the SDE model,
+which is numerically solved through the Runge-Kutta method. Additionally, we designed an individual-cell-
+based numerical scheme to monitor the dynamics of each cell within the system. Specific algorithm details
+are provided in the Appendix.
+10In our numerical implementations, we focused on symmetric gene regulations, assuming k1=k2,λ12=
+λ21,λ11=λ22,n11=n12=n21=n22, and normalized the protein concentrations so that h11=h12=h21=
+h22. The parameter values were estimated based on previous studies for the similar gene network[14, 23, 33],
+and further adjustments were made to ensure that cells could exhibit various phenotypes with different gene
+expression levels.
+2.3. Inheritance function
+Connecting the dynamics of the gene regulation network with the heterogeneous cell cycle model (2.2)
+requires identifying the epigenetic state xand deriving the inheritance function p(x,y) based on the gene
+regulation dynamics (2.13) across a cell cycle.
+It is important to note that while the epigenetic state xin (2.2) represents a constant reflecting the state
+of a cell during the resting phase, it dynamically changes over time in (2.13), representing gene expression
+dynamics during a cell cycle. We need to identify the epigenetic state xin accordance with the gene
+expression dynamics X(t) in one cell cycle. For consistency, we define the epigenetic state xof a cell
+through log normalization of gene expression X(t) as
+x= log( X(t) + 1)|ℓ(t)=ℓ∗ (2.14)
+with the time tcorresponding to a specific cell cycling age ℓ∗. In our simulations, we took T= 50, and
+T1= 25, T2= 8. We considered the state at ℓ∗=T1, which is the time point before DNA replication, as the
+cycling age to define the epigenetic state of a cell during a cell cycle.
+To obtain the inheritance function from simulation results, we numerically solved the cross-cell-cycle
+stochastic differential equation (2.13) and tracked the gene expression X(t) of individual cells over cell
+divisions. Since (2.13) describes the gene expression dynamics of a single cell over multiple cycles, two
+daughter cells were recorded when a cell divided. Thus, we repeated the numerical scheme to obtain an
+ensemble of multiple cells, with each simulation starting with a randomly selected initial condition. For each
+cell under simulation, record the state X=X(t)|ℓ=T1so that x= log( X+1) represents the epigenetic state
+of the cell. This process yields a dataset D={xk,yk}, where ykrepresents the state of the k’th mother cell
+andxkthe state of one daughter cell of the k’th mother cell. Through dataset D, we obtain the inheritance
+function p(x,y) via the conditional probability density defined by (3.9).
+For the probability density function p(x,y), we assumed that the inheritances of gene A and gene B were
+independent of each other, yielding
+p(x,y) =2Y
+i=1pi(xi,y),
+where pi(xi,y) denotes the conditional density function of xigiven the state of the mother cell y= (y1, y2).
+11In our study, we presumed the mixed conditional gamma distribution for epigenetic states so that
+pi(xi,y) =kX
+j=1αi,jGamma( xi;ai,j, bi,j),(i= 1,2), (2.15)
+where kis the number of independent distributions, αi,jare combination coefficients, and Gamma( x;a, b)
+represents the probability function of gamma distribution with shape parameters aandb, expressed as
+Gamma( x;a, b) =xa−1e−(x/b)
+baΓ(a),Γ(z) =Z∞
+0e−xxz−1dx, z > 0. (2.16)
+The combination coefficients αi,jsatisfy
+kX
+j=1αi,j= 1, α i,j≥0.
+In (2.15), the shape parameters ai,jandbi,jdepend on the state yof the mother cell.
+To determine the shape parameters, we consider that, given the probability density function (2.16), the
+conditional mean and variance are
+E(x|y) =a(y)b(y),var(x|y) =a(y)b(y)2.
+Thus, while we assume the conditional mean and variance as
+E(x|y) =ψ(y),var(x|y) =ψ(y)2
+ζ(y), (2.17)
+we have
+a(y) =ζ(y), b(y) =ψ(y)/ζ(y). (2.18)
+Thus, to obtain the inheritance function p(x,y), we only need to derive, for each component xi, the
+functions ψi,j(y) and ζi,j(y) through the conditional mean and variance from the simulation data. The
+detailed procedure for obtaining the inheritance function is provided in Section 3.2.
+3. Results
+3.1. Identification of cell types through epigenetic states
+To quantitatively define cell phenotypes, we conducted a bifurcation analysis based on the ODE model
+(2.3). We varied the production rates g1andg2while keeping other parameters fixed and examined the
+dependence of steady states on these parameter values. Figure 5a illustrates the number of steady states
+with randomly varying parameters ( g1, g2). When g1andg2are large, three steady states emergy (depicted
+12Figure 5: Bifurcation analysis of gene expression kinetics .(a). Dependence of the number of steady states of the ODE
+model (2.3) with randomly selected parameters ( g1, g2). Blue dots represent 1 steady state, while red dots represent 3 steady
+states. (b). Trajectories for the ODE model (2.3) with randomly selected initial conditions. Solid dots marked the two stable
+steady states, and the hollow dot represents the unstable steady state. Parameters are λ21=λ12= 0.1,λ11=λ22= 5.0,
+k1=k2= 1.0,hij= 1, nij= 2, and ( g1, g2) = (0 .4,0.4) in (b). The parameters for time units have been normalized in our
+study.
+by red dots in Figure 5a). Additionally, at ( g1, g2) = (0 .4,0.4), solving the ODE (2.3) with varying initial
+conditions results in the convergence of solutions ( x1(t), x2(t)) to one of the two stable steady states, as
+indicated by the black dots in Figure 5b. These stable steady states exhibit expression patterns of either
+(+,−) or (−,+) for the maker genes A and B, defining two distinct cell phenotypes.
+The bifurcation analysis reveals bistable steady states in gene network dynamics, corresponding to differ-
+ent cell types defined by marker gene expression patterns. To further explore how external noise perturbation
+and cell divisions may shape the heterogeneous within a cell clone, we examined the dynamics of the hybrid
+model (2.13) under various noise strength σ(assuming σ1=σ2=σ3=σ) and cell division scenarios.
+First, we excluded cell cycling and focused solely on gene expression dynamics with external noise
+perturbation. To achieve this, we solved the SDE model (2.7) with randomly selected initial conditions
+0< X i(0)<2. Figure 6a illustrates the distributions of the epigenetic state of cells at one cycle ( T= 50)
+with varying noise strength σ. Results indicate distinct cell phenotypes when the external noise is small
+(σ= 0.2 or 0 .4); however, the two cell types merge as the noise strength σincreases.
+Next, we explored the influence of cell division using the hybrid model (2.13). The effect of cell division is
+depicted by the redistribution of molecules through (2.11), with parameters ϕandηdefining the distribution
+of the coefficient χi. We fixed ( ϕ, η) = (0 .5,60) (Figure 4d) and varied the noise strength σto solve (2.13).
+Here, we initiated the system with one cell and simulated model dynamics for 15 cycles, resulting in 215
+cells at the 15th cycle, all originating from a single cell. Figure 6b displays the epigenetic states of all cells,
+showing a similar pattern to Figure 6a, generated from multiple cells with different initial conditions. This
+suggests that a single cell can give rise to a heterogenous cell clone through cell division.
+Furthermore, to investigate the effects of different assumptions in cell division, we varied the parameter η
+13Figure 6: Distribution of the epigenetic state of cells under different model assumptions .(a). Epigenetic states of
+cells at t= 50 (one cell cycle) without cell division. The cell states were obtained by solving the SDE model (2.7) with initial
+conditions randomly distributed over 0 < Xi(0)<2.(b). Epigenetic state of cells derived from a single cell after 15 divisions.
+The cell states were obtained by solving the hybrid model (2.13), with initially a single cell having random gene expression
+states 0 < Xi(0)<2.(c). Same as (b) with symmetric division ( η >2) and different distributions for the parameter χi.(d).
+Same as (b) with asymmetric division ( η <2) and different distributions for the parameter χi. Here, the epigenetic states are
+represented by x= log( X(t) + 1)|ℓ(t)=T1. In (a), no cell division was considered, and different external perturbation strengths
+σwere applied. In (b)-(d), cell division was considered, with ϕ= 0.5 and different parameters ηfor the distribution of χi(refer
+to (2.12)). The values of σandηare shown in the figure; the parameters ϑ1=ϑ2=ϑ3= 0.3; the conditional perspective ϕ
+in (2.12) was set as ϕ= 0.5; the cell cycling parameters were T= 50, T1= 25, T2= 8; other parameters were the same as in
+Figure 5.
+14in defining the distribution of the coefficient χi. Fixing σ= 0.4, we adjusted ηto reflect symmetry division
+(10 to 1000), resulting in a decreased variance of χi. The distribution of epigenetic states in Figure 6 appears
+independent of the parameter η. Similarly, varying ηto reflect asymmetric division (ranging from 1 to 0 .01)
+yields consistent distributions of epigenetic states at the 15th cycle, as shown in Figure 6d. These results
+suggest that the distribution of the epigenetic states of a cell clone remains insensitive to the variance of χi
+in cell division.
+For subsequent discussions below, we focused on the method of obtaining the inheritance function through
+simulation data, with fixed values of ϕ= 0.5, η= 60, and σ= 0.4.
+3.2. Data-driven inheritance function
+In Figure 6, we have demonstrated the variability of epigenetic states in individual cells originating from
+a single cell. The variability reflects the stochastic changes in cell states during cell division. To derive the
+inheritance function p(x,y) based on the gene regulation dynamics (2.13), we tracked the process of cell
+division through numerical simulations. We recorded the state of the mother cells ( y) and the daughter
+cells ( x) following each cell division event. In our simulations, we initiated 106cells. For each cell, we
+simulated the model for 3 cell cycles, considering all cells at the second cycle as mother cells and denoting
+their epigenetic states as y. For each mother cell with state y, we paired it with the epigenetic state xof
+the corresponding daughter cell at the third cycle, forming a pair [ x,y] = [( x1, x2),(y1, y2)]. Here, x1and
+y1represent the state associated with gene A, while x2andy2represent the state associated with gene B.
+Figure 7a and 7b present scatter plots illustrating the epigenetic states of genes A and B in mother cells
+and their daughter cells. These plots reveal distinct cell types: mother cells with lower expression in gene
+A (or gene B) typically produce daughter cells with similarly lower expression levels in the same gene, while
+those with higher expression tend to generate daughter cells with elevated expression levels in the same
+gene. However, we also observe instances of cell type switches during cell divisions, where some daughter
+cells exhibit gene expression patterns differing from those of their mother cells.
+To establish the mathematical formulation of the inheritance function, we utilized gene A as an example
+to illustrate the computational method. We identified all mother cells with a specific expression level (as
+delineated by the two strips in Figure 7a) and examined the probability density of the expression levels of all
+daughter cells. Figure 7c illustrates the resulting conditional probability densities with the epigenetic state
+of mother cells y1= 0.3 and y1= 0.8, respectively. These density functions exhibit characteristics akin to a
+combination of two unimodal distributions (solid lines in Figure 7c).
+Drawsing insights from Figure 7c, we modeled the probability density p1(x1,y) with a combination of
+two gamma distributions:
+p1(x1,y) =α1×Gamma( x1;a1,1, b1,1) + (1 −α1)×Gamma( x1;a1,2, b1,2). (3.1)
+15Figure 7: Data-driven inheritance function .(a). Scatter plot of daughter cell (gene A) versus mother cell (gene B) ( x1
+versus y1). Each point represents a cell, with lighter colors indicating higher density. Two vertical strips represent the sampling
+of data points with 0 .3≤y1<0.31 and 0 .8≤y1<0.81, respectively. (b). Scatter plot of daughter cell (gene B) versus mother
+cell (gene B) ( x2versus y2).(c). Probability density of daughter cells (gene A) given the state of the mother cell (gene A).
+Dots were obtained from data analysis, and solid lines represent the functions of a combined gamma distribution. The densities
+were obtained from data in the two strips in (a). (d). The function ψ1,1(y1).(e). The function ζ1,1(y1).(f). The function
+ψ1,2(y1).(g). The function ζ1,2(y1).(h). The function α1(y1, y2).(i). The function α2(y1, y2). In (d)-(i), dots were obtained
+from data analysis, while curves or surfaces were derived from mathematical formulations.
+16Here, the shape coefficients a1,jandb1,jdepend on the state of the mother cell ythrough the functions
+ψ1,j(y|) and ζ1,j(y), which are associated with the conditional mean and variance E( x1|y) and var( x1|y) in
+accordance with (2.17). Additionally, the combination coefficients α1may vary based on the state of the
+mother cell y.
+To determine the coefficients α1,a1,jandb1,j, we initially presumed their dependence solely on the com-
+ponent y1. From Figure 7a, we partitioned the data into multiple bins based on the y1value. Subsequently,
+we segregated the x1values in each bin into two subgroups and calculated the mean and variance in each
+subgroup, thus deriving the conditional means E(x1|y1) and variances var( x1|y1) for the two gamma distri-
+butions Gamma( x1;a1,j, b1,j),j= 1,2. This process yielded the functions ψ1,j(y1) and ζ1,j(y1) as Hill-type
+functions following (2.17) (Figure 7d-g):
+
+
+ψ1,1(y1) = 0 .64 + 0 .22×y2
+1
+0.222+y2
+1,
+ζ1,1(y1) = 10 .38 + 20 .46×y4
+1
+0.384+y4
+1,
+ψ1,2(y1) = 0 .20 + 0 .18×y8
+1
+0.648+y8
+1,
+ζ1,2(y1) = 2 .95 + 0 .15×1
+0.424+y4
+1.(3.2)
+The shape parameters were formulated as
+a1,j(y1) =ψ1,j(y1), b1,j(y1) =ψ1,j(y1)/ζ1,j(y1). (3.3)
+Subsequently, we assumed that the combination coefficient α1depends on both y1andy2. Consequently,
+we partitioned the ( y1, y2) phase plane into multiple bins and gathered the daughter cell epigenetic states
+x1in each bin. We then employed the expectation-maximization (EM) algorithm, as per (3.1), to determine
+the coefficients α1,jfor each bin. The results, illustrated in Figure 7h, closely align with a Hill-type function:
+α1(y) = 0 .16 +y6
+1
+0.466+y6
+1×1
+1.076+y6
+2. (3.4)
+Thus, the function α1(y) and the shape parameters a1,j(y1), b1,j(y1) collectively define the inheritance func-
+tionp1(x1;y) per (3.1).
+Similarly, we derive the inheritance function p2(x2;y) for gene B:
+p2(x2;y) =α2(y)×Gamma( x2;a2,1, b2,1) + (1 −α2(y))×Gamma( x2;a2,2, b2,2). (3.5)
+Remarkably, owing to the symmetry between gene A and gene B, simulation data exhibit the same forms of
+17ψ2,j(y2) and ζ2,j(y2) as the functions ψ1,j(y1) and ζ1,j(y1), respectively. Consequently:
+
+
+ψ1,1(y2) = 0 .64 + 0 .22×y2
+2
+0.222+y2
+2,
+ζ1,1(y2) = 10 .38 + 20 .46×y4
+2
+0.384+y4
+2,
+ψ1,2(y2) = 0 .20 + 0 .18×y8
+2
+0.648+y8
+2,
+ζ1,2(y2) = 2 .95 + 0 .15×1
+0.424+y4
+2,(3.6)
+and
+a2,j(y2) =ψ2,j(y2), b2,j(y2) =ψ2,j(y2)/ζ2,j(y2). (3.7)
+Likewise, α2(y) assumes the same form as α1(y), thus:
+α2(y) = 0 .16 +1
+1.076+y6
+1×y6
+2
+0.466+y6
+2. (3.8)
+The function α2(y) is shown in Figure 7i.
+Finally, the inheritance function is expressed as:
+p(x;y) =p1(x1;y)×p2(x2;y). (3.9)
+The above procedure delineates the processes of acquiring the inheritance function in (2.2) from simulation
+data based on the gene regulation network model in (2.13). Validation of the inheritance function (3.9) is
+presented in section 3.3.
+The gamma distribution density functions Gamma( xi;ai,j(yi), bi,j(yi)) defined by (3.1), (3.5), and (3.9)
+describe the inheritance of daughter cells from the mother cells for the same gene, while the combination
+coefficients α1(y) and α2(y) elucidate the property of cell type transition regulated by the gene regulation
+network. Notably, α1(y) increases with y1and decreases with y2, signifying the activation of gene A by itself
+and the inhibition of gene B to gene A. A similar pattern is observed in α2(y). Thus, the gene regulation
+network structure influences the inheritance function through its qualitative dependence on the state of
+mother cells.
+3.3. Validation of the inheritance function
+To verify the data-driven inheritance function, we compared simulation results obtained from the hetero-
+geneous G0 cell cycle model (2.2) and the gene regulation network model (2.13).
+Initially, we utilized the cell cycle model (2.2) to reproduce the process of cell clone generation from a
+single cell and compared our findings with those in Figure 6. To achieve this, we defined the kinetotype in
+18(2.2) as follows:
+β= 1/T1, κ=µ= 0, τ=T−T1. (3.10)
+Given that solving the high-dimensional integral in (2.2) directly is computationally expensive, we applied
+an individual-cell-based simulation approach, adhering to the scheme outlined in equation (2.2).
+To replicate the process illustrated in Figure 7, we initialized the system with 106cells, emulating the
+setup in Figure 7, and performed individual-cell-based simulations to model the cell division process. During
+cell division, each mother cell generated two daughter cells, with the epigenetic state of each daughter cell
+determined by the inheritance function p(x,y) defined in (3.9) (see the Appendix for the detailed numerical
+scheme). Similar to the methodology in Figure 7, we conducted simulations over 3 cycles and collected the
+cells from the 2nd and the 3rd cycles for data analysis.
+Figure 8 presents the data points of daughter cell epigenetic states against mother cell epigenetic states,
+obtained from both the gene regulation network model (2.13) and the G0 cell cycle model (2.2) with the
+inheritance function (3.9). A comparison of Figure 8a with Figure 8b demonstrates that the data-driven
+inheritance function (3.9) effectively reproduces the distribution of the cross-cell cycling epigenetic states.
+Figure 8: Comparison between the gene regulation network model and the G0 cell cycle model .(a). Scatter
+plot of daughter cell epigenetic state (gene A) versus mother cell epigenetic state (gene A and B) following the gene regulation
+network model (2.13). (b). Scatter plot of daughter cell epigenetic state (gene A) versus mother cell epigenetic state (gene A
+and B) following the G0 cell cycle model (2.2) with inheritance function given by (3.9). Parameters were identical to those in
+Figure 7, with cell cycling parameters given by (3.10) in G0 cell cycle model.
+Next, we applied the G0 cell cycle model to investigate the biological process of heterogeneous cell growth
+with additional regulations in proliferation and differentiation. For this purpose, we defined the kinetotype
+as:
+κ= 0.009, µ= 0.0007, τ=T−T1,
+and
+β(c,x) =β0θ
+θ+c, c=Z
+ΩQ(t,x)dx,
+19with β0= 0.2 and θ= 106. Employing identical assumptions, we simulated the cell growth process following
+the G0 cell cycle model (2.2) with the inheritance function (3.9). In our simulations, we initialized 104cells,
+randomly assigning epigenetic states to each cell. We employed individual-cell-based simulation to model
+cell growth up to t= 2500 (about 50 cycles).
+In this scenario, we introduced nonzero differentiation and apoptosis rates, assuming that the prolifer-
+ation rate decreases with the total cell number. Consequently, the cell number would eventually reach an
+equilibrium state following an extended period of cell growth (Figure 9a). Figure 9b displays the distribution
+of the epigenetic state of cells at t= 2000 (marked by the dashed line in Figure 9a). Notably, two subtypes
+of cells are evident, with their epigenetic state distributions closely resembling those obtained from the gene
+regulation network model in Figure 6. We further examined the dynamics of individual cell-type transitions.
+Figure 9c-d illustrates the evolution dynamics of gene A and gene B while tracking a single cell during the
+cell growth process. Our simulations demonstrate that cells can transition between the two subtypes as
+the cell growth process unfolds. These results underscore the capability of the G0 cell cycle model (2.2) to
+simulate the long-term dynamics of cell growth with heterogeneity.
+0 500 1000 1500 2000 2500
+time0510cell number105 (a)
+0 0.5 1 1.5
+gene A00.511.5gene B(b)
+0 500 1000 1500 2000 2500
+time00.511.5gene A(c)
+0 500 1000 1500 2000 2500
+time00.511.5gene B(d)
+Figure 9: Heterogeneous cell growth. (a) . Dynamics of cell number evolution. (b). Scatter plot of the epigenetic state of
+cells at t= 2000 (dashed line in (a)). (c. Evolution of gene A epigenetic state of two cells during the cell growth process. (d).
+Evolution of gene B epigenetic state of two cells during the cell growth process.
+204. Discussions
+Our study investigated the inheritance of epigenetic states in cells using a combination of computational
+modeling and data analysis. We developed a data-driven inheritance function based on the gene regulation
+dynamics model and validated it using simulations from both a gene regulation network model and a het-
+erogenous G0 cell cycle model. Our results demonstrate that the data-driven inheritance function effectively
+captures the distribution of epigenetic states across cell generations. Furthermore, we applied the G0 cell
+cycle model to simulate the long-term dynamics of cell growth with heterogeneity, showcasing its capability
+to replicate the behavior observed in the gene regulation network model.
+The findings of our study shed light on the mechanisms underlying the inheritance of epigenetic states in
+cells. By combining computational modeling with data analysis, we were able to derive a robust inheritance
+function that accurately predicts the distribution of epigenetic states in daughter cells based on their mother
+cell’s states. This suggests that epigenetic inheritance is governed by complex regulatory processes embedded
+within the gene regulation network.
+Moreover, our simulations using the G0 cell cycle model revealed intriguing insights into the dynamics of
+cell growth with heterogeneity. The model successfully reproduced the emergence of distinct cell subtypes
+and their transitions over time, indicating that the heterogeneity observed in experimental data can be
+attributed to underlying regulatory mechanisms within the cell cycle.
+In conclusion, our study provides valuable insights into the inheritance of epigenetic states and the
+dynamics of cell growth with heterogeneity. By developing and validating a data-driven inheritance function,
+we have contributed to a deeper understanding of the regulatory processes governing cell behavior. Moving
+forward, our findings could inform further research into the molecular mechanisms underlying epigenetic
+inheritance and their implications for cellular function and disease.
+Acknowledgments
+This work was funded by the National Natural Science Foundation of China (NSFC 12331018).
+Appendix
+A. Numerical scheme for the hybrid kinetic modeling
+We applied the numerical scheme to solve the hybrid model (2.13) by combining the numerical method
+of stochastic differential equation and the random process of cell division. During numerical simulation,
+the cell number is changed over time due to cell division. Each cell corresponds to a stochastic differential
+equation defined by the gene regulatory network. Therefore, we need to track the gene expression dynamics
+of each individual cell. The number scheme is given below:
+21•input The topology file of the gene regulatory network, containing gene nodes, regulatory relation-
+ships, and related parameters.
+•initialization Read the topology file and model parameters. Initialize the number of simulation
+cycles cycle = 0, set the cycle length T= 50, and set the initial time t= 0. Set the initial cell number
+N. For each cell Σ = {Cj(Xj) :j= 1,···, N}, set the initial condition for the gene expression level
+Xj(0).
+•simulation process
+forcycle = 0 to maxcycle do
+Copy the sytem Σ′= Σ.
+forall cells Cj∈Σdo
+-Gene regulation dynamics Solve the stochastic differential equation (2.13) with the
+stochastic Runge-Kutta method for 0 ≤t≤T.
+-Cell division
+Generate two new cells Cj,1(Y1) and Cj,2(Y2),Yl= (Yl,1,···, Yl,m) (l= 1,2) store the
+initial gene expression state of the cell l.
+forl= 1 to 2 and i= 1 to mdo
+Generate a parameter χi∼Beta( a, b);
+Reset the expression state Y1,i(0) = χiXj,i(T).
+end for
+Replace the cell Cjin Σ′with the new cells Cj,1andCj,2.
+end for
+cycle =cycle + 1.
+Copy the system Σ = Σ′.
+end for
+B. Numerical scheme of the individual-cell-based simulation method
+The differential-integral equation (2.2) can be solved numerically through the Euler method and numerical
+integration. However, it is expensive to calculate the numerical integration due to the high-dimensional
+epigenetic states. Hence, we usually do not solve the equation (2.2) directly. We apply an individual-cell-
+based simulation method to simulate the cell cycling process.
+In the model simulation, a multiple-cell system is represented as a collection of epigenetic states, and the
+individual-cell-based simulation tracks the behaviors of each cell according to its own epigenetic states. The
+sketch of the numerical scheme is given below.
+22•input The parameters, kinetotype functions β,κ,µ, and τ, inheritance function p(x,y), and the time
+step ∆ t.
+•initialize Set the time t= 0, the initial cell number N0, and all cells Σ = {[Ci(x)]Q
+i=1}. At the initial
+state, all cells are at the resting phase ( S= 0), and the corresponding age at the proliferating phase
+isa= 0. Set the cell number at the resting phase as Nq=N0and the cell number at the proliferative
+phase as Np= 0.
+•simultion process
+fortfrom 0 to Tendwith step ∆ tdo
+foreach cell in Σ do
+Kinetotype Calculate the proliferation rate β, the apoptosis rate µ, and the terminate
+differentiation rate κ.
+Cell fate decision Determine the cell fate during the time interval ( t, t+ ∆t):
+- When the cell is at the resting phase, undergo terminal differentiation with a probability
+κ∆t, or enter the proliferation phase with a probability β∆t, or, if otherwise, remain
+unchanged.
+- When a cell is at the proliferative phase, if the age a < τ , the cell is either removed
+(through apoptosis) with a probability µ∆tor remains unchanged; if the age a≥τ, the
+cell undergoes mitosis and divides into two cells.
+end for
+system update :foreach cell in Σ do
+- If the cell fate is differentiation or apoptosis, remove the cell, and reduce the total cell number
+by 1, N=N−1. Accordingly, reduce the number of resting or proliferative cells: Nq=Nq−1
+orNp=Np−1.
+- If the cell fate is entering the proliferative state, set the cell state at proliferative ( S= 1) and
+the proliferating age a= 0, and let Nq=Nq−1,Np=Np+ 1, the total cell number Nis
+unchanged.
+- If the cell is at the proliferative phase and remains unchanged, update the proliferative age
+a=a+ ∆t, the cell numbers Nq,Np, and Nare unchanged.
+- If the cell is under mitosis, it produces two daughter cells, and the epigenetic state of each
+daughter cell is determined according to the inheritance probability p(x,y). The proliferating
+age of each daughter cell is set as a= 0, and update the cell number: Nq=Nq+2,Np=Np−1,
+andN=N+ 1.
+23end for
+end for
+To determine the epigenetic state of daughter cells according to the inheritance probability p(x,y) defined
+by the combination gamma distribution (3.9), we applied the following numerical scheme:
+•calculates the αi, ψi,j, ηi,jaccording to the state of the mother cell, and the coefficients ai,jandbi,j;
+•fori= 1 to 2 do
+- generates a random number q=rand();
+- ifq < α i, produce the epigenetic state of gene ifor daughter cell according to the first gamma
+distribution function Gamma( xi;ai,1, bi,1), otherwise, produce the epigenetic state according to
+the second gamma distribution function Gamma( xi;ai,2, bi,2).
+•set the epigenetic state of the daughter cells.
+In simulations, the cell number may increase to a very high number through cell division, which may
+cause a challenge issue in simulations. To overcome this issue, we applied a technique of downsampling . The
+process of downsampling is often used in signaling analysis to reduce the data rate or the size of data. Here,
+we applied a similar technique to reduce the number of cells under simulation.
+We predefine a maximum number of cells to be simulated and stored ( Nmax= 106cells in the current
+simulation). Let Nk=Nk,q+Nk,q(Nk≤Nmax) be the number of cells under simulation at step k, where
+Nk,qrepresents the number of cells at the resting phase, and Nk,prepresent the number of cells at the
+proliferative phase. We first opened a temporary storage space for Nk,q+ 2Nk,pcells (the maximum number
+of cells if all proliferative phase cells undergo mitosis). After performing cell fate decisions for each cell,
+we have potentially Ntemp =N′
+k,q+N′
+k,p(Ntemp≤Nk,q+ 2Nk,p) cells. If Ntemp > N max, we selected all
+cells ( N′
+k,pcells) in the proliferative phase and at most ( Nmax−N′
+k,q) cells in the resting phase (select each
+cell with a probability p= max {1,(Nmax−N′
+k,q)/N′
+k,q}) to obtain Nnextcells for the next step simulation;
+otherwise, we select all Ntempcells, and set Nnext=Ntemp. Finally, we stored the state of all selected Nnext
+cells, let fpro,k=Ntemp/Nkfor the proliferation rate, and Nk+1=Nnextfor the number of cells simulated
+at step k+ 1.
+According to the approach of downsampling simulation, at step k, there are Nk≤Nmaxcells under
+simulation, and the states of these cells are stored; the real cell number is given by
+Nreal number at step k=N0k−1Y
+i=0fpro,i.
+This gives the cell number at step k.
+24References
+[1] H. Clevers, What is an adult stem cell?, Science 350 (6266) (2015) 1319–1320.
+[2] J. Lei, A general mathematical framework for understanding the behavior of heterogeneous stem cell
+regeneration, J Theor Biol 492 (2020) 110196.
+[3] J. Lei, Evolutionary dynamics of cancer: from epigenetic regulation to cell population dynamics—
+mathematical model framework, applications, and open problems, Sci China Math 63 (3) (2020) 411–
+424. doi:10.1007/s11425-019-1629-7 .
+[4] A. V. Probst, E. Dunleavy, G. Almouzni, Epigenetic inheritance during the cell cycle, Nat Rev Mol Cell
+Biol 10 (3) (2009) 192–206. doi:10.1038/nrm2640 .
+[5] T. Schepeler, M. E. Page, K. B. Jensen, Heterogeneity and plasticity of epidermal stem cells., Develop-
+ment 141 (13) (2014) 2559–2567.
+[6] A. Serra-Cardona, Z. Zhang, Replication-coupled nucleosome assembly in the passage of epigenetic
+information and cell identity., Trends Biochem Sci 43 (2) (2018) 136–148.
+[7] Z. S. Singer, J. Yong, J. Tischler, J. A. Hackett, A. Altinok, M. A. Surani, L. Cai, M. B. Elowitz,
+Dynamic heterogeneity and DNA methylation in embryonic stem cells., Mol Cell 55 (2) (2014) 319–331.
+[8] K. Takaoka, H. Hamada, Origin of cellular asymmetries in the pre-implantation mouse embryo: a
+hypothesis., Philos Trans R Soc Lond B Biol Sci 369 (2014) 20130536.
+[9] H. Wu, Y. Zhang, Reversing DNA methylation: mechanisms, genomics, and biological functions., Cell
+156 (1-2) (2014) 45–68.
+[10] R. Huang, J. Lei, Dynamics of gene expression with positive feedback to histone modifications at bivalent
+domains, Int J Mod Phys B 32 (07) (2018) 1850075.
+[11] R. Huang, J. Lei, Cell-type switches induced by stochastic histone modification inheritance, Discrete
+and Continous Dynamical Systems-B 24 (10) (2019) 5601–5619.
+[12] S. Sahoo, A. Mishra, H. Kaur, K. Hari, S. Muralidharan, S. Mandal, M. K. Jolly, A mechanistic model
+captures the emergence and implications of non-genetic heterogeneity and reversible drug resistance in
+ER+ breast cancer cells, NAR Cancer 3 (3) (2021) zcab027.
+[13] L. Cai, N. Friedman, X. S. Xie, Stochastic protein expression in individual cells at the single molecule
+level, Nature 440 (7082) (2006) 358–362.
+25[14] R. Huang, Q. Situ, J. Lei, Dynamics of cell-type transition mediated by epigenetic modifications, J
+Theor Biol 577 (2024) 111664.
+[15] F. J. Burns, I. F. Tannock, On the existence of a G0-phase in the cell cycle, Cell Proliferation 3 (4)
+(1970) 321–334.
+[16] M. C. Mackey, Unified hypothesis for the origin of aplastic anemia and periodic hematopoiesis, Blood
+51 (5) (1978) 941–956.
+[17] A. Moustakas, K. Pardali, A. Gaal, C. H. Heldin, Mechanisms of TGF- βsignaling in regulation of cell
+growth and differentiation, Immunol Lett 82 (1-2) (2002) 85–91.
+[18] L. Yang, Y. L. Pang, H. L. Moses, TGF- βand immune cells: an important regulatory axis in the tumor
+microenvironment and progression, Trends Immunol 31 (6) (2010) 220–227.
+[19] D. M. Ornitz, N. Itoh, Fibroblast growth factors, Genome Biol. 2 (3) (2001) 3005.1–3005.12.
+[20] S. Bernard, J. B´ elair, M. C. Mackey, Oscillations in cyclical neutropenia: new evidence based on
+mathematical modeling, J Theor Biol 223 (3) (2003) 283–298.
+[21] J. Lei, S. A. Levin, Q. Nie, Mathematical model of adult stem cell regeneration with cross-talk between
+genetic and epigenetic regulation., Proc Natl Acad Sci USA 111 (10) (2014) E880–E887.
+[22] B. Huang, D. Jia, J. Feng, H. Levine, J. N. Onuchic, M. Lu, RACIPE: a computational tool for modeling
+gene regulatory circuits using randomization, BMC Syst Biol 12 (2018) 74.
+[23] M. K. Jolly, D. Jia, M. Boareto, S. A. Mani, K. J. Pienta, E. Ben-Jacob, H. Levine, Coupling the
+modules of EMT and stemness: a tunable ‘stemness window’ model, Oncotarget 6 (28) (2015) 25161–
+25174. doi:10.18632/oncotarget.4629 .
+[24] L. Xu, K. Zhang, J. Wang, Exploring the mechanisms of differentiation, dedifferentiation, reprogram-
+ming and transdifferentiation, PLoS One 9 (8) (2014) e105216. doi:10.1371/journal.pone.0105216 .
+[25] J. Lei, G. He, H. Liu, Q. Nie, A delay model for noise-induced bi-directional switching, Nonlinearity
+22 (12) (2009) 2845–2859. doi:10.1088/0951-7715/22/12/003 .
+[26] D. W. Austin, M. S. Allen, J. M. McCollum, R. D. Dar, J. R. Wilgus, G. S. Sayler, N. F. Samatova,
+C. D. Cox, M. L. Simpson, Gene network shaping of inherent noise spectra, Nature 439 (7076) (2006)
+608–611. doi:10.1038/nature04194 .
+[27] J. Lei, Stochastic modeling in systems biology, arXiv (2011) arXiv:1104.4524v1.
+26[28] A. Doncic, M. Falleur-Fettig, J. M. Skotheim, Distinct interactions select and maintain a specific cell
+fate, Mol Cell 43 (4) (2011) 528–539. doi:10.1016/j.molcel.2011.06.025 .
+[29] M. B. Ginzberg, R. Kafri, M. Kirschner, On being the right (cell) size, Science 348 (6236) (2015)
+1245075. doi:10.1126/science.1245075 .
+[30] R. Kafri, J. Levy, M. B. Ginzberg, S. Oh, G. Lahav, M. W. Kirschner, Dynamics extracted from
+fixed cells reveal feedback linking cell growth to cell cycle, Nature 494 (7438) (2013) 480–483. doi:
+10.1038/nature11897 .
+[31] C. Cadart, S. Monnier, J. Grilli, P. J. S´ aez, N. Srivastava, R. Attia, E. Terriac, B. Baum, M. Cosentino-
+Lagomarsino, M. Piel, Size control in mammalian cells involves modulation of both growth rate and cell
+cycle duration, Nat Commun 9 (1) (2018) 3275. doi:10.1038/s41467-018-05393-0 .
+[32] E. Zatulovskiy, J. M. Skotheim, On the molecular mechanisms regulating animal cell size homeostasis,
+Trends Genet 36 (5) (2020) 360–372. doi:10.1016/j.tig.2020.01.011 .
+[33] B. Huang, M. Lu, D. Jia, E. Ben-Jacob, H. Levine, J. N. Onuchic, Interrogating the topological robust-
+ness of gene regulatory circuits by randomization, PLoS Comput Biol 13 (3) (2017) e1005456.
+27

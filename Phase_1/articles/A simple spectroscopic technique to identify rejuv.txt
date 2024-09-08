@@ -1,0 +1,1243 @@
+Title: A simple spectroscopic technique to identify rejuvenating galaxies
+Abstract:   Rejuvenating galaxies are unusual galaxies that fully quench and then
+subsequently experience a "rejuvenation" event to become star-forming once
+more. Rejuvenation rates vary substantially in models of galaxy formation:
+10%-70% of massive galaxies are expected to experience rejuvenation by z = 0.
+Measuring the rate of rejuvenation is therefore important for calibrating the
+strength of star formation feedback mechanisms. However, these observations are
+challenging because rejuvenating systems blend in with normal star-forming
+galaxies in broadband photometry. In this paper, we use the galaxy spectral
+energy distribution (SED)-fitting code Prospector to search for observational
+markers that distinguish normal star-forming galaxies from rejuvenating
+galaxies. We find that rejuvenating galaxies have smaller Balmer absorption
+line equivalent widths (EWs) than star-forming galaxies. This is analogous to
+the well-known "K + A" or post-starburst galaxies, which have strong Balmer
+absorption due to A-stars dominating the light: in this case, rejuvenating
+systems have a lack of A-stars, instead resembling "O - A" systems. We find
+star-forming galaxies that have H$\beta$, H$\gamma$, and/or H$\delta$
+absorption EWs $\lesssim 3${\AA} corresponds to a highly pure selection of
+rejuvenating systems. Interestingly, while this technique is highly effective
+at identifying mild rejuvenation, "strongly" rejuvenating systems remain nearly
+indistinguishable from star-forming galaxies due to the well-known stellar
+outshining effect. We conclude that measuring Balmer absorption line EWs in
+star-forming galaxy populations is an efficient method to identify rejuvenating
+populations, and discuss several techniques to either remove or resolve the
+nebular emission which typically lies on top of these absorption lines.
+
+Full Text: Draft version July 14, 2023
+Typeset using L ATEXtwocolumn style in AASTeX631
+A simple spectroscopic technique to identify rejuvenating galaxies
+Junyu Zhang,1, 2, 3Yijia Li,1, 2, 3Joel Leja,1, 2, 3Katherine E. Whitaker,4, 5Angelos Nersesian,6Rachel Bezanson,7
+and Arjen van der Wel6
+1Department of Astronomy & Astrophysics, The Pennsylvania State University, University Park, PA 16802, USA
+2Institute for Computational & Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
+3Institute for Gravitation and the Cosmos, The Pennsylvania State University, University Park, PA 16802, USA
+4Department of Astronomy, University of Massachusetts, Amherst, MA 01003, USA
+5Cosmic Dawn Center (DAWN), Niels Bohr Institute, University of Copenhagen, Jagtvej 128, København N, DK-2200, Denmark
+6Sterrenkundig Observatorium, Universiteit Gent, Krijgslaan 281 S9, 9000 Gent, Belgium
+7Department of Physics and Astronomy and PITT PACC, University of Pittsburgh, Pittsburgh, PA 15260, USA
+ABSTRACT
+Rejuvenating galaxies are unusual galaxies that fully quench and then subsequently experience a “re-
+juvenation” event to become star-forming once more. Rejuvenation rates vary substantially in models
+of galaxy formation: 10%-70% of massive galaxies are expected to experience rejuvenation by z= 0.
+Measuring the rate of rejuvenation is therefore important for calibrating the strength of star forma-
+tion feedback mechanisms. However, these observations are challenging because rejuvenating systems
+blend in with normal star-forming galaxies in broadband photometry. In this paper, we use the galaxy
+spectral energy distribution (SED)-fitting code Prospector to search for observational markers that
+distinguish normal star-forming galaxies from rejuvenating galaxies. We find that rejuvenating galax-
+ies have smaller Balmer absorption line equivalent widths (EWs) than normal star-forming galaxies.
+This is analogous to the well-known “K + A” or post-starburst galaxies, which have strong Balmer
+absorption due to A-stars dominating the light: in this case, rejuvenating systems have a lack of A-
+stars, instead resembling “O - A” systems. We find star-forming galaxies that have H β, Hγ, and/or H δ
+absorption EWs ≲3˚A corresponds to a highly pure selection of rejuvenating systems. Interestingly,
+while this technique is highly effective at identifying mild rejuvenation, “strongly” rejuvenating systems
+remain nearly indistinguishable from star-forming galaxies due to the well-known stellar outshining ef-
+fect. We conclude that measuring Balmer absorption line EWs in star-forming galaxy populations
+is an efficient method to identify rejuvenating populations, and discuss several techniques to either
+remove or resolve the nebular emission which typically lies on top of these absorption lines.
+Keywords: Galaxy evolution (594); Galaxy formation (595); Green valley galaxies (683); Star formation
+(1569); Galaxy accretion (575); Post-starburst galaxies (2176)
+1.INTRODUCTION
+It has long been observed that the optical colors of
+galaxies are bimodal (e.g., Strateva et al. 2001; Baldry
+et al. 2004). This is true in both the local universe
+and at higher redshift (e.g., Bell et al. 2004; Franzetti
+et al. 2007; Whitaker et al. 2011; Straatman et al. 2016).
+Galaxy populations can be divided by this bimodality
+into two dominant regions: the “blue cloud” and “red
+sequence”. The blue cloud is mainly populated by star-
+forming galaxies, while the red sequence is mainly pop-
+ulated by quiescent galaxies which show little ongoing
+star formation. There is also a transition area called the
+“green valley” that separates the blue cloud from the redsequence (e.g., Strateva et al. 2001; Fang et al. 2012;
+Salim 2014). Many studies show the number density
+of quiescent galaxies increases as the universe gets old
+(Pozzetti et al. 2010; Brammer et al. 2011; Moustakas
+et al. 2013; Muzzin et al. 2013; Leja et al. 2022), which
+suggests that galaxies evolve from being star-forming to
+quiescent.
+However, some quiescent galaxies may experience “re-
+juvenation”, with a secondary burst of star formation
+after a long period of low-level star formation. Through
+the rejuvenation event, galaxies in the red sequence
+may be able to return to the green valley and occasion-
+ally even to the blue cloud (e.g., Rowlands et al. 2018;arXiv:2211.10450v2  [astro-ph.GA]  13 Jul 20232 Zhang et al.
+Chauke et al. 2019). The nature of this rejuvenation
+process is still poorly understood, although gas accre-
+tion during gas-rich minor mergers and smooth accre-
+tion from the intergalactic medium (IGM) are thought
+to be possible triggers of the rejuvenation process (e.g.,
+Kaviraj et al. 2009; Fang et al. 2012; Dressler et al. 2013;
+Rowlands et al. 2018). Understanding the rejuvenation
+process is crucial because it can help better constrain the
+wide range of star formation regulation prescriptions in
+theoretical models of galaxy formation.
+Observations of rejuvenating galaxies suggest that the
+frequency of rejuvenation is low and possibly redshift-
+dependent. Rejuvenation appears to happen more fre-
+quent in the local universe, with ∼10%-30% of early-
+type galaxies at z <0.1 showing evidence of rejuvena-
+tion (Treu et al. 2005; Schawinski et al. 2007; Donas
+et al. 2007; Thomas et al. 2010). Furthermore, there
+are hints that rejuvenation happens less frequently at
+high redshift. Recent high-redshift observations suggest
+that <1-16% of high stellar mass quiescent galaxies
+(logM∗>11M⊙) have experienced past rejuvenation
+events, depending on the definition of a rejuvenation
+(Belli et al. 2017; Chauke et al. 2019; Tacchella et al.
+2022; Woodrum et al. 2022). In addition, Akhshik et al.
+(2021) found a rejuvenating galaxy at z = 1.88 and esti-
+mated that only about 1% of massive quiescent galaxies
+at 1 <z<2 are possibly rejuvenating. However, due
+to the different methodologies and definitions, it is hard
+to determine the consistency between these studies, or
+establish a true global rejuvenation rate.
+Rejuvenation rates can be measured more easily in
+simulations of galaxy formation. Rodiguez-Montero
+et al. (2019) demonstrate in the Simba simulation that
+the frequency of rejuvenation is much lower than the
+rate of mergers and quenching events, suggesting it is a
+sub-dominant process in the quiescent population. The
+frequency of rejuvenation is found to be higher in both
+intermediate mass galaxies regardless of redshift and low
+mass galaxies of low redshift, which is consistent with
+the aforementioned observational results. Alarcon et al.
+(2022) have shown that 40%-70% of massive z= 0 galax-
+ies experience a rejuvenation event in UniverseMachine
+(Behroozi et al. 2019), while the rate in IllustrisTNG
+(Pillepich et al. 2017; Springel et al. 2017; Nelson et al.
+2017) is only ∼10%. We note, however, that since there
+is no universal quantitative definition of rejuvenation,
+there is some uncertainty in comparing the fractions of
+rejuvenation from different studies.
+However, finding galaxies that are undergoing reju-
+venation, is extremely challenging since rejuvenating
+galaxies are likely to be highly degenerate with the reg-
+ular star-forming population in colors from broadbandphotometry. In addition to the specific star formation
+rate (sSFR = SFR/ M∗), metallicity and dust attenua-
+tion can also significantly affect the color of a galaxy,
+further scrambling the relationship between color and
+past star formation activity. Moreover, the UV upturn
+phenomenon caused by hot evolved helium-burning stars
+can make galaxies with low recent star formation lie in
+the blue side in FUV-V color (Jeong et al. 2009), which
+further complicates the interpretation of galaxy color at
+low redshift. We caution that the techniques used to es-
+timate rejuvenation frequency vary dramatically in each
+of the aforementioned observational studies, and an ac-
+curate observational census across redshift will require
+a consistent approach. This is the goal of this paper.
+In the past decade, numerous techniques have been
+created to separate star-forming and quiescent galaxy
+populations. Rest-frame color-color diagrams, notably
+the UVJ diagram (Williams et al. 2009) and the NUVrK
+diagram (Arnouts et al. 2013), are widely employed to
+distinguish between quiescent and star-forming galaxies,
+since they are able to place approximate constraints on
+sSFR (e.g., Wang et al. 2017; Leja et al. 2019a). Addi-
+tionally, spectroscopic features such as D n4000 and H δ
+absorption line equivalent width (EW) are utilized to
+diagnose the age of stellar populations and to help de-
+termine if galaxies have experienced recent star bursts
+(Kauffmann et al. 2003; Borgne et al. 2006; Kauffmann
+2014; Maltby et al. 2016; Wu et al. 2018). These spectral
+diagnostics can be used to identify types of recent star
+formation such as post-starburst galaxies (Suess et al.
+2022), and so in this work we investigate whether such
+techniques can be also used to differentiate the rejuve-
+nating population from the normal star-forming popu-
+lation. In this paper, we employ the Bayesian inference
+machine Prospector (Leja et al. 2017; Johnson et al.
+2022; Johnson et al. 2021) to simulate SEDs of reju-
+venating and star-forming populations at z= 0.7 and
+search for the possible observational characteristics of
+the rejuvenating population.
+The paper is structured as follows. In Section 2 and
+3, we describe the SED model for generating simulated
+galaxy populations and how we measure the EW and
+Dn4000. In Section 4, we generate the model rejuve-
+nating and star-forming populations. In Section 5, we
+present the observational characteristics of the rejuve-
+nating population we find in our simulated populations,
+and propose a new spectroscopic identification criteria
+for rejuvenating galaxies, while also identifying the con-
+taminants. In Section 6, we discuss the advantages and
+limitations of our technique. Finally, in Section 7, we
+summarize our conclusions.A simple spectroscopic technique to identify rejuvenating galaxies 3
+2.SED MODELING
+For this work, we employ the Prospector Bayesian
+inference framework (Leja et al. 2017; Johnson et al.
+2022; Johnson et al. 2021) and the Flexible Stellar Pop-
+ulation Synthesis (FSPS; Conroy et al. 2009; Conroy &
+Gunn 2010) code to simulate galaxy SEDs. We adopt
+the physical model Prospector −αdescribed in Leja et al.
+(2017, 2019b), which uses isochrones based on MIST
+stellar tracks (Choi et al. 2016; Dotter 2016). The phys-
+ical model defines fixed and free parameters for gen-
+erating the SED, plus their associated priors. Model
+SEDs of star-forming and rejuvenating populations are
+generated by drawing from the priors for free parame-
+ters in this model. Here we briefly introduce the fea-
+tures included in this model with a special emphasis on
+the changes made for generating realistic populations of
+normal star-forming and rejuvenating galaxies. The de-
+tailed model parameters and priors are described in Leja
+et al. (2019b).
+The Prospector −αmodel includes a two-component
+dust attenuation model with a flexible attenuation
+curve, dust emission powered via energy balance, and
+free stellar metallicity. This model also includes a 7-bin
+nonparametric star formation history (SFH). The non-
+parametric SFH is necessary for this work as it allows a
+galaxy to increase in SFR after an initial period of quies-
+cence, making it possible to create rejuvenating galaxies
+in the simulation.
+We make a few changes to the Prospector −αmodel
+to remove the effects of spectral renormalization and
+emission lines, and simplify the definition of rejuvenat-
+ing population. First, in our modified Prospector −α
+model, we fix the model redshift to 0.7 to make it con-
+sistent with the redshift of the LEGA-C data (van der
+Wel et al. 2016), since we aim to use the LEGA-C data
+to verify our results in the future. Furthermore, since
+the total mass formed mostly affects the normalization
+of the SEDs and we do not want to select rejuvenating
+galaxies from their masses, we fix the total mass formed
+at 1010M⊙to remove the impact of a variable mass on
+the model SEDs. In addition, we combine the first two
+fixed age bins (0 - 30 Myr and 30 - 100 Myr) to sim-
+plify our calculation of the average sSFR in the last 100
+Myr. This means we do not marginalize over any rapid
+changes in star formation rate in the last 100 Myr.
+We also turn off nebular emission, because nebular
+emission in galaxies is often difficult to interpret due
+to complex dust distributions and uncertain ionization
+sources. This means we are searching for observational
+signatures of rejuvenation which are solely stellar in na-
+ture. We discuss the effects of this change further in
+Section 6. Gas metallicity is also no longer a free pa-rameter since nebular emission is off. Other parameters
+in Prospector −αmodel such as dust attenuation are free
+and follow the prior described in Leja et al. (2019b). Ta-
+ble 1 lists all free parameters and their associated priors
+for the modified Prospector −αphysical model used in
+this paper.
+3.MEASUREMENTS OF SPECTRAL FEATURES
+As in the identification of post-starburst (or “K + A”)
+galaxies, Balmer absorption lines EW and D n4000 are
+promising diagnostics for the identification of variable
+SFRs. Hence, we prepare to investigate their potential
+in distinguishing rejuvenating galaxies using our simu-
+lated populations. We describe here how we measure
+Balmer absorption line EWs and D n4000.
+We measure the H β, Hγand H δEWs in our simu-
+lated populations using the following steps. First, we
+fit the spectra from 4000 ˚A to 5000 ˚A with a 4thde-
+gree polynomial to determine the continuum (i.e., C(λ))
+near H β, Hγand H δlines. We mask 4071-4131 ˚A, 4290-
+4370 ˚A, 4600-4750 ˚A and 4831-4891 ˚A, since the spec-
+tra usually show strong absorption lines at these wave-
+lengths. As the next step, we subtract the continuum
+from the spectra and fit the difference with a Voigt pro-
+file (i.e., Voigt( λ)), which is the convolution of a Lorentz
+profile and a Gaussian profile, and is frequently applied
+to examine the spectral broadening of hydrogen Balmer
+lines (e.g., Luque et al. 2003; Tremblay & Bergeron 2009;
+Falcon et al. 2015; Wu et al. 2022). Finally, we integrate
+Voigt( λ)
+C(λ)to get the EW,
+EW =−ZVoigt( λ)
+C(λ)dλ. (1)
+By doing the profile fitting, we can make sure our EW
+measurements consistent.
+For the measurement of D n4000, we adopt the Balogh
+et al. (1999) definition: the ratio between the average
+flux density Fνbetween 4000 and 4100 ˚A and that be-
+tween 3850 and 3950 ˚A.
+4.CREATING A SIMULATED STAR-FORMING &
+REJUVENATING POPULATION
+To better understand how star-forming and rejuvenat-
+ing galaxies behave differently in photometry and spec-
+tra, we randomly draw model SEDs from the priors of 11
+free parameters from our modified Prospector −αmodel
+discussed in Section 2, and then define rejuvenating and
+normal star-forming galaxies by their sSFRs in differ-
+ent age bins. We simulate 25,000 rejuvenating galaxies
+and 25,000 star-forming galaxies in total based on the
+following criteria:4 Zhang et al.
+Table 1. Free Parameters and Their Associated Priors for the modified Prospector −αPhysical Model
+Parameter Description Prior
+log(Z/Z⊙) Stellar metallicity TopHat: min = -1.0, max = 0.19
+log(SFR ratios) Ratio of the SFRs in adjacent bins of the six-bin nonparametric SFH (five parameters total) Student’s t-distribution with mean = 0, σ= 0.3 and ν= 2
+ˆτ2 Diffuse dust optical depth Clipped normal: min = 0, max = 2, mean = 0.3, σ= 1
+ˆτ1 Birth-cloud dust optical depth Clipped normal in ( ˆτ1/ˆτ2): min = 0, max = 2, mean = 1, σ= 0.3
+n Power-law modifier to the shape of the Calzetti et al. (2000) attenuation curve TopHat: min = -1.0, max = 0.4
+fAGN AGN luminosity as a fraction of the galaxy bolometric luminosity Log-uniform: min = 10−5, max = 3
+τAGN Optical depth of AGN torus dust Log-uniform: min = 5, max = 150
+•Normal star-forming galaxy:
+sSFR 100−1000Myr >10−11yr−1;
+sSFR 0−100Myr >10−10yr−1
+•Rejuvenating galaxy:
+sSFR 100−1000Myr <10−11yr−1;
+sSFR 0−100Myr >10−10yr−1.
+where sSFR 0−100Myr and sSFR 100−1000Myr stand for the
+sSFR averaged over the most recent 100 Myr and the
+sSFR averaged over 100 Myr to 1000 Myr respectively.
+In other words, all objects we have drawn are currently
+star-forming, but rejuvenating ones were quiescent 100-
+1000 Myr ago.
+In Figure 1 we show the median SFHs of simulated
+star-forming and rejuvenating populations. The light
+blue and light orange region represent the 16% to 84%
+range of the SFR of the star-forming and rejuvenating
+populations in each age bin, respectively. Unlike the
+normal star-forming population, the rejuvenating popu-
+lation has an “U-shape” SFH which indicates that they
+return from being quiescent to star-forming.
+It is important to note that in our simulation the re-
+juvenating population is undergoing a stronger burst of
+star formation on average (i.e., higher sSFR 0−100Myr )
+compared to the normal star-forming population. This
+difference is expected and can be explained by our
+parameter settings: as we fix the total stellar mass
+formed in the model and set the upper limit on
+sSFR 100−1000Myr of rejuvenating galaxies, the rejuvenat-
+ing population is forced to have high sSFR 0−100Myr to
+meet the total stellar mass formed. However, we do
+not want to select rejuvenating galaxies based on their
+higher sSFRs, as that would render this exercise mean-
+ingless. To make a fair comparison, we instead assume
+that the rejuvenating population follows the similar
+sSFR 0−100Myr distribution as the normal star-forming
+population. For this purpose, we reweigh the rejuve-
+nating samples by drawing rejuvenating samples based
+on weights from the distribution of normal star-forming
+samples. Hence, the distribution of rejuvenating sam-
+ples’ sSFR 0−100Myr is consistent with that of the normal
+Figure 1. The median SFHs of the simulated star-forming
+population (blue line) and rejuvenating population (orange
+line). The light blue and light orange region represent the
+16% to 84% range of the SFR in each age bin. The re-
+juvenating population is reweighted by the distribution of
+sSFR 0−100Myr of star-forming population and therefore, the
+median SFRs of two populations are matched with each
+other in the 0-100 Myr age bin. The red dashed line rep-
+resents a constant SFH and the green line represents our
+star-forming criterion in the most recent age bin. Since we
+require star-forming galaxies to have a higher SFR than the
+green line, the resulting median star-forming SFH rises with
+cosmic time.
+star-forming sample in the simulation. This reweighing
+can be seen in the rightmost age bin of Figure 1, where
+the median SFRs of rejuvenating and star-forming pop-
+ulation coincide with each other. Note that in the later
+sections of this paper, the simulated rejuvenating pop-
+ulation always refers to the sSFR-weighted simulated
+rejuvenating population, unless otherwise specified.
+It is noteworthy that the model star-forming popu-
+lation has a median rising SFH in Figure 1. To illus-
+trate the reason, we draw a constant SFH (red) and
+the star-forming criterion (green) in the most recent age
+bin. Since we require star-forming galaxies to have a
+higher SFR than the green line, the resultant median
+SFH which meets this criterion rises with time.A simple spectroscopic technique to identify rejuvenating galaxies 5
+5.RESULTS
+5.1. The Observational Characteristics of Rejuvenating
+Galaxies
+In this section, we use the model star-forming and re-
+juvenating populations to search for observational char-
+acteristics to separate the two. First, we look for differ-
+ences in the broadband colors.
+Figure 2. The median spectra of star-forming (black) and
+rejuvenating (blue) populations, normalized by the average
+flux density between 4000 ˚A and 4400 ˚A of each spectra. The
+grey and light blue regions represent the 16% to 84% range of
+the normalized flux density of star-forming and rejuvenating
+populations respectively. This illustrates the extreme chal-
+lenge of selecting rejuvenating systems by their photometry
+colors alone
+In Figure 2 we show the median spectra of the simu-
+lated star-forming and rejuvenating populations. For a
+better comparison, the median spectra were normalized
+by the average flux density between 4000 ˚A and 4400 ˚A.
+The grey and light blue regions represent the 16% to 84%
+range of the normalized flux density of star-forming and
+rejuvenating populations respectively. It can be seen
+that the simulated rejuvenating and star-forming popu-
+lations have almost identical range of broadband colors
+within ±1σregion, which implies the color difference is
+not sufficient to differentiate rejuvenating galaxies from
+normal star-forming galaxies.
+This result makes sense and can be explained in two
+ways. First, the broadband colors of galaxies are deter-
+mined not only by their sSFR, but also their dust, metal-
+licity and longer-term variations in their SFHs (see, e.g.,
+Conroy 2013 and references therein). Thus, the effect of
+sSFR on the broadband colors of rejuvenating galaxies
+can be washed out by the variations of other parame-
+ters. Second, it is hard to tell from broadband colorsalone whether a galaxy in the “green valley” is undergo-
+ing quenching or rejuvenation. As we mentioned before,
+rejuvenating galaxies are likely to be in green valley (see,
+e.g., Chauke et al. 2019; Akhshik et al. 2021). However,
+when the star-forming galaxies have their star forma-
+tion quenched, they will also pass through the green
+valley on their way to becoming completely quiescent.
+Hence, those recently quenching galaxies can have indis-
+tinguishable broadband colors from rejuvenating galax-
+ies.
+Figure 2 demonstrates that broadband colors alone
+are not able to identify the rejuvenating population, so
+we now turn to spectra. In the top panel of Figure 3,
+we show the median spectra of rejuvenating and star-
+forming populations from 4000 ˚A to 5000 ˚A. To high-
+light the differences in absorption lines between the two
+populations, we normalize spectra by dividing their in-
+dividual continua before taking the median. It can be
+seen that the rejuvenating population shows relatively
+weaker Balmer absorption lines compared to the star-
+forming population. The physical driver of the Balmer
+absorption line EWs difference will be further discussed
+in Section 5.2. Here we draw an analogy with post-
+starburst galaxies. These “E + A” or “K + A” galaxies
+have a significant drop in SFR ∼100 - 500 Myr ago,
+and show strong Balmer absorption lines which indicates
+strong recent star formation but weak ongoing star for-
+mation (Zabludoff et al. 1996; Dressler et al. 1999; Goto
+2005; Brown et al. 2009; French et al. 2015; Suess et al.
+2022). Since the rejuvenating population is currently
+star-forming but was nearly dead between 100 Myr and 1
+Gyr, it is expected to contain fewer A-type stars (which
+have the strongest Balmer absorption lines) relative to
+the star-forming population. Therefore, it is reasonable
+that the spectra of rejuvenating galaxies are likely to
+demonstrate features of “O - A” galaxies such as weak
+Balmer absorption lines.
+However, the key question is whether this difference
+is strong enough to differentiate individual rejuvenating
+galaxies from normal star-forming galaxies. The bottom
+row of Figure 3 shows the EW histograms of H β, Hγand
+Hδfor the rejuvenating and star-forming populations.
+In agreement with the top panel, the rejuvenating pop-
+ulation shows small EWs of Balmer absorption lines,
+while the star-forming population exhibits a broad dis-
+tribution centered at large EWs. Figure 3 suggests that
+we can select rejuvenating galaxies based on their small
+Balmer absorption line EWs, even though the mod-
+est overlapping region may contaminate the selection.
+Therefore, we conclude here that weak Balmer absorp-
+tion lines is one observational characteristic of the reju-
+venating population that can differentiate them from the6 Zhang et al.
+Figure 3. (Top) The median spectra of rejuvenating (red) and star-forming (black) populations from 4000 ˚A to 5000 ˚A with
+Hβ λ4861 ˚A, Hγ λ4340 ˚A and H δ λ4101 ˚A marked. To normalize the spectra, we divide each spectrum by their continuum and
+then take the median value. The light red and grey regions represent the 16% to 84% range of the normalized flux density of
+rejuvenating and star-forming populations respectively. We use a Gaussian filter with σ= 3 pixels to smooth the spectra for
+presentation purposes
+. (Bottom) Histograms of EW of H β, Hγand H δfor rejuvenating (orange) and star-forming (blue) populations. The
+rejuvenating sample is sSFR-weighted as described in Section 4.
+normal star-forming population in our simulated galax-
+ies. Contaminants and Balmer EW-based criteria to dis-
+tinguish star-forming and rejuvenating populations will
+be further discussed in Section 5.3.
+It is worth noting that other Balmer lines also have
+distinguishing power and we choose these three Balmer
+lines for observational reasons only: they are all strong
+and within the LEGA-C spectral window. By using
+three Balmer lines we can also beat down observational
+errors of an individual EW measurement. This point is
+further discussed in Section 5.3.5.2. Why Balmer Absorption Helps In Identifying
+Rejuvenating Galaxies
+In this section, we employ simple stellar populations
+(SSPs), which are coeval stellar population with a homo-
+geneous metallicity and abundance pattern (e.g., Con-
+roy 2013), to explore the dependence of EW of Balmer
+absorption lines on age and metallicity. In Figure 4
+we show the evolution of the EWs of H β, Hγand H δ
+over time with two sets of stellar metallicities. We only
+choose two metallicities here, one solar and the other
+sub-solar, to span a reasonable range of metallicities;A simple spectroscopic technique to identify rejuvenating galaxies 7
+super-solar looks almost identical to solar (Mannucci
+et al. 2010).
+Figure 4 reveals two important pieces of information.
+First, we note that the EWs of all three Balmer ab-
+sorption lines peak in the age range of approximately
+100 Myr to 1 Gyr. This result nicely explains why, in
+Figure 3, our model star-forming galaxies have larger
+Balmer absorption line EWs compared to model reju-
+venating galaxies. Due to the continuing strong star
+formation, star-forming galaxies have more stars with
+intermediate age (i.e., 100-500 Myr) in Figure 4. Hence,
+they show stronger Balmer absorption lines in spectra.
+In contrast, rejuvenating galaxies do not have that pop-
+ulation of stars and so have weaker Balmer absorption
+lines.
+Another key result we obtain from Figure 4 is that
+metallicity generally does not affect our selection via
+Balmer absorption line EW. For these two stellar popu-
+lations with different metallicities, their Balmer absorp-
+tion lines EWs both approximately peak in the same age
+range, although the lower metallicity results in a weaker
+peak. Hence, while it is effective to distinguish rejuve-
+nating galaxies regardless of their metallicities through
+Balmer absorption lines EW, lower metallicity may lead
+to more contaminants.
+5.3. Efficiency of Detecting Rejuvenating Galaxies
+Although Figure 3 shows that relatively weak Balmer
+absorption lines are a signature of the rejuvenating pop-
+ulation, it is important to understand the source of the
+contaminants in the bottom panels of Figure 3. In Fig-
+ure 5, we show EW of H βversus sSFR 100−1000Myr for
+the rejuvenating and star-forming populations. Ob-
+jects are color-coded by their ratio of sSFR 0−100Myr to
+sSFR 100−1000Myr , which is referred to as the strength
+of rejuvenation. As we indicate in Figure 5, due to
+the sSFR cuts we use to classify rejuvenating and star-
+forming populations, these two different populations are
+naturally separated.
+There are two important notes about our construction
+of Figure 5: firstly, we do not use the sSFR-weighted
+rejuvenating population in this plot, since the distribu-
+tion of sSFR 0−100Myr for the rejuvenating population is
+implicitly shown by combining the y-axis and the color-
+coding of the plot. Secondly, we examine the other two
+Balmer absorption lines and find that they give the same
+information. Therefore, we only draw the plot for H β
+here, but the results for H γand H δare similar. The
+reason why all three Balmer absorption lines contain
+the same information is explained later in this section.
+It is interesting that when considering the strength
+of rejuvenation (indicated by the sSFR ratio), the EWsof the rejuvenating and star-forming populations show
+opposite trends. As the strength of rejuvenation in-
+creases, the EW of H βfor the rejuvenating population
+goes up while that of the star-forming population de-
+creases. This is mainly due to the criteria we put on
+sSFR 100−1000Myr . When the sSFR ratio increases for
+the star-forming population, that means they are closer
+to quiescent at 100-1000 Myr, thus they start to look
+like rejuvenating galaxies. However, when it comes to
+the rejuvenating population, a larger sSFR ratio means
+that they have a lot more recent SFR of young stars
+which outshine the older stars. Increasing the ratio adds
+more sources of EWs. Therefore, for the rejuvenating
+population, stronger rejuvenation means larger EWs for
+Balmer absorption lines.
+Figure 5 can be thought of as the key figure of this
+paper since it demonstrates both detectable rejuvenat-
+ing galaxies and the most common contaminant popula-
+tion. We here adopt similar definitions as Alarcon et al.
+(2022) for strong and mild rejuvenating galaxies. We
+use log(sSFR0−100Myr
+sSFR100−1000Myr)>2 to define strong rejuvenat-
+ing galaxies and log(sSFR0−100Myr
+sSFR100−1000Myr)>1 &<2 to define
+mild rejuvenating galaxies. The EW distribution of the
+rejuvenating population shows that strong rejuvenating
+galaxies have relatively large EWs and resemble star-
+forming galaxies with slightly weaker Balmer absorption
+lines, which are likely themselves experiencing mild re-
+juvenation. This suggests that the Balmer EW selection
+is most efficient at identifying mild rejuvenating galax-
+ies. Additionally, the distribution of star-forming popu-
+lation indicates the contaminants which overlap with the
+rejuvenating population in the bottom panel of Figure
+3, are mostly normal star-forming galaxies undergoing
+weak rejuvenation and were not quiescent between 100
+Myr and 1000 Myr. Finally, the rejuvenating popula-
+tion has a smaller lower bound in EW compared to the
+star-forming population. This means that despite the
+presence of contaminants, we can still find a parameter
+space which is solely occupied by the rejuvenating pop-
+ulation in our simplified simulation, under the assump-
+tion that the star-forming population and the quiescent
+population can be easily differentiated by other tech-
+niques such as rest-frame color-color diagrams. This is
+consistent with the conclusion we draw from Figure 3.
+In Figure 6, we show the interrelationship of the EW
+of Hβ, Hγand H δfor rejuvenating and star-forming
+populations. The color coding represents the density of
+each population. Figure 6 demonstrates that different
+Balmer absorption lines show similar contrast between
+the rejuvenating and star-forming galaxies. Since they
+are all Balmer absorption lines, they are governed by
+analogous physics and, therefore, react similarly to the8 Zhang et al.
+Figure 4. Time evolution of EW of H β, Hγand H δ(from left to right) at a given metallicity. The blue and orange lines
+represent log Z/Z⊙= -1.25 and log Z/Z⊙= 0, respectively.
+Figure 5. EW of H βversus sSFR 100−1000Myr for rejuvenating and star-forming populations. Points are color-coded by their
+ratio of sSFR 0−100Myr to sSFR 100−1000Myr . We can identify galaxies experiencing mild rejuvenation by applying a reasonable
+cut in the EW, but galaxies experiencing strong rejuvenation start to blend in with the star-forming galaxy population
+changing stellar age. For this reason, it is feasible to
+lower the observational uncertainty by combining mul-
+tiple Balmer absorption lines.
+5.4. Hδvs D n4000
+A popular way to categorize galaxies is via the
+Dn4000-H δplane (e.g., Kauffmann et al. 2003; Borgne
+et al. 2006; Kauffmann 2014; Maltby et al. 2016; Wu
+et al. 2018; Dhiwar et al. 2023). To investigate howdifferent types of galaxy populations are located in
+the D n4000-H δplane, we also include model quiescent
+and post-starburst populations here for comparison pur-
+poses. We do not include the model quiescent and post-
+starburst populations in previous sections, since we al-
+ready have effective methods such as rest-frame color-
+color diagrams to separate recent star-forming from qui-
+escent galaxies and post-starburst galaxies. The quies-A simple spectroscopic technique to identify rejuvenating galaxies 9
+Figure 6. (From left to right) The density plot of H γvs Hβ, Hγvs Hδand H δvs HβEWs for rejuvenating (orange) and
+star-forming populations (blue). This figure shows that different Balmer absorption lines have the same information. This is
+due to the fact that they are all Balmer absorption lines, and so are governed by analogous physics and respond similarly to
+changing stellar age. In this way, it is possible to mitigate the observational error by measuring multiple Balmer absorption
+lines and averaging them.
+cent galaxy population and post-starburst galaxy pop-
+ulation are defined as:
+•Quiescent galaxy:
+sSFR 0−100Myr <10−11yr−1;
+sSFR 100−1000Myr <10−10yr−1.
+•Post-starburst galaxy:
+sSFR 0−100Myr <10−11yr−1;
+sSFR 100−1000Myr >10−10yr−1;
+This means that we allow quiescent galaxies transit from
+the green valley between 100 Myr and 1 Gyr in lookback
+time, i.e. they can quench recently.
+Figure 7 shows model star-forming, rejuvenating,
+quiescent galaxies, and post-starburst galaxies on the
+Dn4000-H δplane and the two contours in each pop-
+ulation represent 1 σand 2 σregions respectively. We
+weight our model rejuvenating population by the
+sSFR 0−100Myr in this contour plot. Figure 7 demon-
+strates that the rejuvenating population predominantly
+lives in the bottom-left corner of the D n4000-H δplane
+in our simulation.
+Figure 7 depicts the top-left corner of the D n4000-H δ
+plane as being populated by model star-forming galax-
+ies, whereas the bottom-right corner is populated by
+model quiescent galaxies. This is consistent with Figure
+6(b) of Wu et al. (2018) result based on the LEGA-C
+galaxies. Furthermore, Figure 7 shows the simulated re-
+juvenating galaxies have a small D n4000. This is due
+to their strong star formation over the past 100 Myr.
+On the contrary, in Figure 7, post-starburst galaxies
+exhibit strong Balmer absorption lines because of their
+high SFRs ∼500 Myr ago, but due to their weak current
+Figure 7. The distribution of model star-forming (blue), re-
+juvenating (orange), quiescent (red), and post-starburst (vi-
+olet) populations on the D n4000-H δplane. The two contours
+in each population represent 1 σand 2 σrespectively.
+star formation, they also show relatively larger D n4000.
+As a result, Figure 7 suggests that it is possible to em-
+ploy reasonable cuts on the D n4000-H δplane to separate
+rejuvenating galaxies from other galaxy populations.
+5.5. Verification with the LEGA-C survey
+Here we verify that such a population of rejuvenating
+galaxies as suggested by our model may exist in the data
+from the LEGA-C survey (van der Wel et al. 2016; van
+der Wel et al. 2021). The LEGA-C survey is a spec-
+troscopic survey observed ∼4,000 galaxies in the COS-
+MOS field at a redshift range of 0.6 <z<1.0 with
+VLT/VIMOS. Each galaxy in the survey was observed10 Zhang et al.
+Figure 8. The distribution of 1,429 LEGA-C galaxies on
+the D n4000-H δplane, after removing AGNs and low S/N
+(i.e. average S/N < 10˚A−1) sources. The black window
+represents the proposed selection criteria: H δEW<2.3˚A &
+Dn4000 <1.4. We also overplot the contours of Figure 7 for
+the comparison purpose.
+for∼20 hours, resulting in spectra with S/N∼20˚A−1
+and resolution R∼3500. Such a high resolution allows
+us to resolve emission within absorption lines.
+Since many sources in the LEGA-C survey do not have
+rest-frame coverage of H βor Hγ, it is difficult to improve
+the purity of our selection by combining the EW criteria
+of multiple Balmer absorption lines. Therefore, we in-
+stead examine how LEGA-C galaxies are distributed on
+the D n4000-H δplane. Based on Figure 7, we can select
+a highly pure rejuvenating populations by using H δEW
+<2.3˚A and D n4000 <1.4 in our simple simulation. We
+adopt these two values as the cutoffs on the D n4000-
+Hδplane to select potential rejuvenating galaxies in the
+LEGA-C data. Since we note that active galactic nu-
+cleus (AGN) and noisy spectra may contaminate our se-
+lections, we remove 5 types of AGN (i.e. MEx (Juneau
+et al. 2011), mid-IR, radio, X-ray, and broad-line) and
+lowS/N (i.e. average S/N < 10˚A−1) sources from the
+LEGA-C data, which leaves 1,429 sources with available
+Dn4000 and H δmeasurements. In Figure 8, we show
+the distribution of these 1,429 LEGA-C galaxies on the
+Dn4000-H δplane. The cutoffs that we use are repre-
+sented by the black lines. In addition, we overplot the
+contours of Figure 7 in Figure 8 to make the comparison
+of the parameter space better.
+As seen in Figure 8, there are 14 galaxies within our
+cutoffs for rejuvenating galaxies, indicating that at least
+some galaxies matching with these selection criteria ex-
+ist, though full SED-fitting is required to confirm thatthese are indeed rejuvenating galaxies. Since the LEGA-
+C team uses lick indexes (Worthey et al. 1994; Worthey
+& Ottaviani 1997) rather than the profile fitting to mea-
+sure the EW, we caution that EW measurement offset
+between lick indexes and profile fitting will likely need
+to be addressed in order to ensure robust selection. Fur-
+thermore, we also note that superpositions of unrelated
+objects on the sky can produce potential contaminates.
+For example, the superposition of a star-forming galaxy
+and a quiescent galaxies can mimic the spectral feature
+of a rejuvenating galaxy. In spite of the above poten-
+tial contaminates, we do not expect many rejuvenating
+galaxies at z=0.7 as our discussion in Section 1. The
+confirmation of even one rejuvenating galaxy or no reju-
+venating galaxies in the LEGA-C data would be valuable
+for understanding the star-formation regulation process
+in a cosmological context. In a future study, we will
+take a detailed investigation on the rejuvenating can-
+didates in the LEGA-C data, and report on the purity
+and completeness of our selection criteria, by fitting the
+LEGA-C data with a nonparametric SFH (Nersesian et
+al. in prep).
+6.DISCUSSION
+6.1. Searching for rejuvenating systems in large-scale
+spectroscopic surveys
+In the previous sections, we demonstrate that rejuve-
+nating galaxies tend to have small D n4000 features and
+weak Balmer absorption lines. Here we will describe how
+to efficiently find such objects in large spectroscopic sur-
+veys.
+The main challenge for characterizing the frequency
+of rejuvenating galaxies with our technique is emis-
+sion line infilling, which occurs because Balmer line
+emission in star-forming galaxies will typically render
+the underlying absorption inaccessible. This is an im-
+portant limitation because separating rejuvenating and
+star-forming galaxies requires measuring their Balmer
+absorption depths to within an accuracy of ∼1˚A as
+demonstrated in this work, but these absorption lines
+are often buried under emission lines with width ∼5−50
+˚A. Measuring and removing this nebular emission is rela-
+tively easier to deal with by using the medium-resolution
+VLT/VIMOS LEGA-C spectra R∼3500) because the
+spectra are sufficiently high resolution as to be able to
+separate measurements of Balmer absorption and emis-
+sion, but harder in more typical moderate resolution sur-
+veys (e.g., Sloan Digital Sky Survey (SDSS, R= 1500 at
+3800 ˚A and = 2500 at 9000 ˚A, Abdurro’uf et al. 2022)),
+where there is more blending. Crucially, these moderate-
+resolution surveys cover larger volumes needed to give
+the best constraints on number densities of rejuvenat-A simple spectroscopic technique to identify rejuvenating galaxies 11
+ing galaxies. One promising upcoming survey is the
+Prime Focus Spectrograph survey (PFS, R= 2300-5000,
+Greene et al. 2022), which covers a wide area and mod-
+erate spectral resolution, though the S/N for most expo-
+sures will not be as high as LEGA-C. Another promising
+option is the Dark Energy Spectroscopic Instrument sur-
+vey (DESI, R= 2000-5500, DESI Collaboration et al.
+2016), which is ongoing now.
+One possible solution to the challenge is employing
+the Balmer decrement (Calzetti et al. 2000; Brinchmann
+et al. 2004; Garn & Best 2010; Price et al. 2014) (e.g.,
+Hα/Hβ) to estimate the emission line fluxes. Since the
+atomic properties of hydrogen are well understood, the
+relative strengths of the Balmer emission lines can be
+well determined if we know the number of ionizing pho-
+tons. We can tell the amount of reddening due to dust
+from the ratio of two Balmer emission line luminosities,
+as their intrinsic luminosity ratio can be calculated from
+theory. If we assume a dust reddening curve we can then
+obtain the dust attenuation at any given wavelength.
+Then we can predict the integrated flux in any of the
+Balmer emission lines. Finally, the Balmer absorption
+line fluxes can be calculated by subtracting the emission
+line fluxes from the spectra.
+Spectral flux calibration problems can make long-
+wavelength baselines challenging to interpret (e.g.,
+Hα/Hβ). However, this can be mitigated by using ad-
+jacent emission lines (e.g., H δ/Hγ), though the shorter
+wavelength baseline here makes the relationship to dust
+attenuation more subtle.
+Ultimately, this technique would rely on a tradeoff
+between a flux-calibration-sensitive long-baseline and a
+less dust-sensitive short baseline. Therefore, our tech-
+nique can also be applied to surveys that have relatively
+deep spectra but not high resolution, if they have a wide
+range of wavelengths to include as many Balmer lines as
+possible and have continuum detected to calculate EWs.
+6.2. Effect of Stellar Population Synthesis (SPS)
+Models on EW Measurement
+The choice of SPS models can have an impact on the
+value of EW as a function of age/metallicity of the SSP.
+Groves et al. (2012) use different stellar population syn-
+thesis models to investigate the dependence of Balmer
+absorption line EWs on age and metallicity. Their re-
+sults mostly agree with our Figure 4, which conclude
+that the Balmer absorption line EWs show a strong de-
+pendence on age but weak dependence on metallicity. It
+is also consistent with our results that all of their Balmer
+absorption line EWs peak at 0.5 - 1 Gyr and that the
+peak age varies slightly with metallicity.However, we notice that the ranges of EWs shown in
+Groves et al. (2012) are different from ours. Their re-
+sults show peak EWs are typically 20% - 70% larger
+than our results, with the larger difference occuring at
+younger ages. We cannot establish whether this is due
+to the methodology of measuring EWs or the choice of
+SPS models. That being said, in Groves et al. (2012),
+they find the variation between SPS models is at the 2x
+level at fixed age/metallicity, which is likely consistent
+with variation between SPS models. Therefore, when
+applying our technique, it will be important to empiri-
+cally calibrate the EW threshold for rejuvenating galax-
+ies by comparing to independent techniques for identi-
+fying these objects, as discussed in the next section.
+6.3. Comparison to other techniques for identifying
+rejuvenating galaxies
+There are several other methods proposed in the lit-
+erature to identify rejuvenating galaxies. One possi-
+ble way is to identify rejuvenation events via measuring
+the spatial distribution of metallicity within early-type
+galaxies, as early-type galaxies with recent star forma-
+tion are found to be more metal-poor than quiescent
+early-type galaxies due to their metal-poor young stellar
+populations (i.e., Werle et al. 2020; Jeong et al. 2021).
+However, this approach only identifies a certain type of
+rejuvenation, i.e., rejuvenation triggered by metal-poor
+gas inflow.
+Another widely used method is nonparametric SFH
+analysis (e.g., Chauke et al. 2019; Woodrum et al. 2022),
+where the SFH of galaxies is directly inferred via SED-
+fitting. This is the most direct approach, but is often
+computationally expensive because SED-fitting includes
+many parameters accounting for the complex physics in
+galaxies. Moreover, results of SED-fitting are sensitive
+to the adopted priors, which are not always tuned to
+find rejuvenating systems (Leja et al. 2019b). Further-
+more, Akhshik et al. (2021) mention that rejuvenation
+events can occur in both the outskirts and the center of
+galaxies, depending on the triggers of the rejuvenation
+process. Hence, if rejuvenation occurs in the center, a
+spatially resolved spectrum is required.
+This study shows that rest frame spectral coverage
+of 4000-5000 ˚A proves highly efficient at identifying re-
+juvenating systems with a nonparametric SFH analy-
+sis. Nonparametric SFH analysis can help confirm the
+“quick” results from simply measuring Balmer EWs; our
+method can give us a useful heuristic and fast way to
+identify these systems. As a result, our technique com-
+plements SFH inference by showing the Balmer lines are
+crucial for identifying systems.12 Zhang et al.
+Nevertheless, our method has some limitations. For
+example, as we discuss in Section 6.1, measuring Balmer
+absorption line EWs is best performed at sufficient res-
+olution to resolve emission within absorption lines. Low
+resolution can make it hard to separate absorption lines
+from emission lines and so reduces the accuracy of
+Balmer absorption line EWs measurements. This limi-
+tation can be mitigated if the survey includes multiple
+Balmer emission lines and the continuum is detected.
+As we show in Figure 5, since strong rejuvenat-
+ing galaxies resemble star-forming galaxies experiencing
+mild rejuvenation in the Balmer absorption lines EWs,
+our methods are most efficient in the selection of mild
+rejuvenating galaxies. Therefore, the completeness of
+selection could be a concern if we require a high purity
+of strong rejuvenating galaxies. However, we note that
+Alarcon et al. (2022) show that both the UniverseMa-
+chine and IllustrisTNG predict many mild rejuvenation
+events whereas strong ones are rare. If mild rejuvenation
+events also dominate in the real universe, our inability
+to identify strongly rejuvenating systems would be sig-
+nificantly less important.
+6.4. Contrast in the Distribution of Rejuvenating
+Galaxies between Simulations and Real Universe
+In our simulated populations, we assume equal num-
+bers of rejuvenating galaxies and star-forming galaxies,
+and thus purity/completeness calculations performed on
+this population implicitly assume these two galaxy pop-
+ulations have the same number density. However, as
+we discuss in Section 1, the frequency of rejuvenation is
+very low in the real universe. If there are 20 times more
+star-forming galaxies then most “rejuvenating” candi-
+dates selected from our technique will be false ones with
+a EW criterion of high completeness. Therefore, the
+real distribution of rejuvenating galaxies in the universe
+can be a concern for our technique. To examine how
+the real distribution of rejuvenating galaxies in the uni-
+verse affects our technique, we reduce the percentage of
+rejuvenating galaxies in our simulation. We find that
+when the percentage of the rejuvenating population is
+reduced to ∼4% of the total number of star-forming
+galaxies, the density of the rejuvenating population be-
+comes comparable with the density in the wings of the
+star-forming distribution. This means that there may
+be more star-forming contaminants in the real Universe;
+however, this is only a rough prediction due to the un-
+known true distribution of recent star formation histo-
+ries in star-forming galaxies. A future step is to cal-
+ibrate our purity and completeness limits by estimat-
+ing observed number densities with nonparametric SFH
+analyses.6.5. The Effect of Extra Dust Attenuation Around
+Young Star-forming Regions
+In our simulated populations, we employed a two-
+component dust model (Charlot & Fall 2000) to compute
+the effects of dust on the integrated spectral properties
+of galaxies. In brief, dust has two components in our
+model: one is the optical depth of the diffuse dust (i.e.,
+ˆτ2) and the other is the optical depth of the birth cloud
+dust (i.e., ˆ τ1). Young stars are attenuated not only by
+dust in the ambient interstellar medium, but also by
+dust in their birth clouds. It is worth noting that in our
+model, ˆ τ2is a free parameter and ˆ τ1is sampled from
+another free parameter, dust ratio (i.e.,ˆτ1
+ˆτ2). Therefore,
+ˆτ1is not fixed in our model.
+We notice that ˆ τ1has impacts on the EW in our
+model. In Figure 9, we show the variation of EW of
+Hδas a function of ˆ τ1for both the simulated rejuvenat-
+ing and star-forming populations. We find a Spearman
+coefficient ∼0.274 for the rejuvenating system, which
+increases to ∼0.477 if we require a high ˆ τ1and EW,
+while the star-forming system has a Spearman coeffi-
+cient∼0.117. This result indicates that the EW of Hδ
+is strongly correlated with ˆ τ1in the simulated rejuve-
+nating system, where the correlation becomes stronger
+at high ˆ τ1and EW, while the correlation is much weaker
+in the simulated star-forming system.
+This is due to the fact that ˆ τ1only affects the
+youngest stars, which are the main sources of contin-
+uum in the simulated rejuvenating population, whereas
+the older stars which contribute the dominant share of
+the Balmer absorption are unaffected by this birth-cloud
+dust. Thus, larger ˆ τ1will increase the Balmer absorp-
+tion line EWs for rejuvenating population. However,
+for the normal star-forming population, the continuum
+has significant contributions from older stellar popula-
+tions as well, and therefore, their EWs are marginally
+less affected by ˆ τ1increment. On the contrary, since the
+diffuse dust affects both the young and old stars, ˆ τ2has
+no impact on the EW.
+This result implies that large ˆ τ1will reduce the EW
+contrast between rejuvenating galaxies and star-forming
+galaxies, thus decreasing the purity of our technique.
+However, we caution that the birth cloud dust model is
+only a rough approximation for the complex star-dust
+geometry in typical galaxies (see Viaene et al. 2016;
+Bianchi et al. 2018; Narayanan et al. 2018; Nersesian
+et al. 2019 for a review), and so while there is sig-
+nificant observational support for extra attenuation to-
+wards young stars, (e.g., Calzetti et al. 1994; Price et al.
+2014; Reddy et al. 2015) in detail the boundary between
+young and old stars in our predictive model may behave
+quite differently in the real universe. Furthermore, theA simple spectroscopic technique to identify rejuvenating galaxies 13
+Figure 9. HδEW for simulated rejuvenating and star-forming populations as a function of the amount of birth-cloud dust
+(i.e. ˆτ1). The H δEWs of the rejuvenating population increase with ˆ τ1, while the trend for the star-forming population is much
+weaker, for reasons discussed in 6.5. Increasing levels of extra dust around young stars in galaxies has the potential to marginally
+decrease the purity of the Balmer EW selection of rejuvenating systems.
+amount of dust in rejuvenating systems and star-forming
+system may be different in the real universe than our
+simple model; this question can be answered once we
+more closely examine candidates in a large survey.
+7.CONCLUSION
+In this work, we investigate the observational char-
+acteristics of simulated rejuvenating and star-forming
+populations at z= 0.7 using the modified Prospector −α
+SED model. We first demonstrate that the star-forming
+and rejuvenating galaxies have nearly identical broad-
+band colors in our simulation, suggesting that color-
+color diagrams cannot distinguish between the two types
+of galaxies. Next, we show that the model rejuvenating
+galaxies have weaker Balmer absorption lines than the
+model star-forming galaxies. This is because rejuvenat-
+ing galaxies had recently been quenched, which leaves
+them with fewer A-type stars which are distinguished
+by strong Balmer absorption lines, so called “O - A”
+galaxies.
+We find that there is a small fraction of star-forming
+contaminants that have weak Balmer absorption lines
+similar to those of the rejuvenating population, visible
+in the bottom panel of Figure 3. We look into these con-
+taminants and come to the conclusion that star-forming
+galaxies which undergo weak rejuvenation, without in
+fact having experienced quiescence, have similar Balmer
+absorption lines EW to rejuvenating galaxies that un-
+dergo strong rejuvenation. Therefore, we claim thatBalmer absorption line EWs are primarily efficient in
+identifying weak or mild rejuvenating galaxies.
+In addition to the weak Balmer absorption lines, a re-
+gion in the D n4000-H δplane is found to be almost com-
+pletely populated by the rejuvenating galaxies. The re-
+juvenating population exhibits weak Balmer absorption
+lines due to recent quenching, and has low D n4000 due
+to relatively high ongoing star formation rate. Figure
+7 demonstrates that, at least in our simulation, rejuve-
+nating galaxies can be chosen with reasonable purity by
+placing suitable cutoffs in the D n4000-H δplane.
+Based on the above results, this study offers an ef-
+ficient technique to identify rejuvenating populations
+through measuring Balmer absorption line EWs. More-
+over, this technique provides an intuitive guide for the
+expected outcome of SED-fitting results. Understand-
+ing this technique will also help in survey design such as
+what range of wavelengths should be detected to better
+observe rejuvenating populations. However, our tech-
+nique also has some limitations. First, high resolution
+spectral data like LEGA-C are required to separate the
+Balmer absorption from the Balmer emission. If a sur-
+vey does not have a high enough resolution but mea-
+sures multiple Balmer emission lines and the continuum,
+Balmer decrements can also be employed to calculate
+Balmer emission EWs and thus the absorption EWs.
+Second, as we discuss herein, the proposed technique is
+primarily efficient at selecting mild rejuvenating galax-
+ies.14 Zhang et al.
+Although both Balmer absorption lines EW and the
+Dn4000-H δplane exhibit high purity selection criteria in
+our models, purity resulting from these criteria are yet to
+be tested on real data. In order to confirm whether the
+candidates are actually rejuvenating galaxies, detailed
+SED-fitting is still essential for measuring metallicities
+and reconstructing the detailed SFHs.
+A logical next step is to use this technique to estimate
+the number density of rejuvenating systems in LEGA-C
+survey, and to characterize their detailed SFH and abun-dances. It will additionally be useful to compare the re-
+sults from the quick-look observational selection criteria
+presented here to results from detailed SFH modeling
+from the LEGA-C survey.
+We thank the anonymous referee for their helpful com-
+ments, which greatly improved the paper. Computa-
+tions for this research were performed on the Pennsyl-
+vania State University’s Institute for Computational and
+Data Sciences’ Roar supercomputer.
+REFERENCES
+Abdurro’uf, Accetta, K., Aerts, C., et al. 2022, ApJS, 259,
+35, doi: 10.3847/1538-4365/ac4414
+Akhshik, M., Whitaker, K. E., Leja, J., et al. 2021, The
+Astrophysical Journal Letters, 907, L8,
+doi: 10.3847/2041-8213/abd416
+Alarcon, A., Hearin, A. P., Becker, M. R., &
+Chaves-Montero, J. 2022, Diffstar: A Fully Parametric
+Physical Model for Galaxy Assembly History, arXiv,
+doi: 10.48550/ARXIV.2205.04273
+Arnouts, S., Floc’h, E. L., Chevallard, J., et al. 2013, A&A,
+558, A67, doi: 10.1051/0004-6361/201321768
+Baldry, I. K., Glazebrook, K., Brinkmann, J., et al. 2004,
+The Astrophysical Journal, 600, 681, doi: 10.1086/380092
+Balogh, M. L., Morris, S. L., Yee, H. K. C., Carlberg,
+R. G., & Ellingson, E. 1999, The Astrophysical Journal,
+527, 54, doi: 10.1086/308056
+Behroozi, P., Wechsler, R. H., Hearin, A. P., & Conroy, C.
+2019, Monthly Notices of the Royal Astronomical
+Society, 488, 3143, doi: 10.1093/mnras/stz1182
+Bell, E. F., Wolf, C., Meisenheimer, K., et al. 2004, The
+Astrophysical Journal, 608, 752, doi: 10.1086/420778
+Belli, S., Genzel, R., Schreiber, N. M. F., et al. 2017, The
+Astrophysical Journal, 841, L6,
+doi: 10.3847/2041-8213/aa70e5
+Bianchi, S., Vis, P. D., Viaene, S., et al. 2018, A&A, 620,
+A112, doi: 10.1051/0004-6361/201833699
+Borgne, D. L., Abraham, R., Daniel, K., et al. 2006, The
+Astrophysical Journal, 642, 48, doi: 10.1086/500005
+Brammer, G. B., Whitaker, K. E., van Dokkum, P. G.,
+et al. 2011, The Astrophysical Journal, 739, 24,
+doi: 10.1088/0004-637x/739/1/24
+Brinchmann, J., Charlot, S., White, S. D. M., et al. 2004,
+Monthly Notices of the Royal Astronomical Society, 351,
+1151, doi: 10.1111/j.1365-2966.2004.07881.x
+Brown, M. J. I., Moustakas, J., Caldwell, N., et al. 2009,
+The Astrophysical Journal, 703, 150,
+doi: 10.1088/0004-637x/703/1/150Calzetti, D., Armus, L., Bohlin, R. C., et al. 2000, The
+Astrophysical Journal, 533, 682, doi: 10.1086/308692
+Calzetti, D., Kinney, A. L., & Storchi-Bergmann, T. 1994,
+ApJ, 429, 582, doi: 10.1086/174346
+Charlot, S., & Fall, S. M. 2000, The Astrophysical Journal,
+539, 718, doi: 10.1086/309250
+Chauke, P., van der Wel, A., Pacifici, C., et al. 2019, The
+Astrophysical Journal, 877, 48,
+doi: 10.3847/1538-4357/ab164d
+Choi, J., Dotter, A., Conroy, C., et al. 2016, The
+Astrophysical Journal, 823, 102,
+doi: 10.3847/0004-637x/823/2/102
+Conroy, C. 2013, Annual Review of Astronomy and
+Astrophysics, 51, 393,
+doi: 10.1146/annurev-astro-082812-141017
+Conroy, C., & Gunn, J. E. 2010, The Astrophysical
+Journal, 712, 833, doi: 10.1088/0004-637x/712/2/833
+Conroy, C., Gunn, J. E., & White, M. 2009, The
+Astrophysical Journal, 699, 486,
+doi: 10.1088/0004-637x/699/1/486
+DESI Collaboration, Aghamousa, A., Aguilar, J., et al.
+2016, arXiv e-prints, arXiv:1611.00036,
+doi: 10.48550/arXiv.1611.00036
+Dhiwar, S., Saha, K., Dekel, A., et al. 2023, MNRAS, 518,
+4943, doi: 10.1093/mnras/stac3369
+Donas, J., Deharveng, J.-M., Rich, R. M., et al. 2007, The
+Astrophysical Journal Supplement Series, 173, 597,
+doi: 10.1086/516643
+Dotter, A. 2016, The Astrophysical Journal Supplement
+Series, 222, 8, doi: 10.3847/0067-0049/222/1/8
+Dressler, A., Oemler, A., Poggianti, B. M., et al. 2013, The
+Astrophysical Journal, 770, 62,
+doi: 10.1088/0004-637x/770/1/62
+Dressler, A., Smail, I., Poggianti, B. M., et al. 1999, The
+Astrophysical Journal Supplement Series, 122, 51,
+doi: 10.1086/313213A simple spectroscopic technique to identify rejuvenating galaxies 15
+Falcon, R. E., Rochau, G. A., Bailey, J. E., et al. 2015, The
+Astrophysical Journal, 806, 214
+Fang, J. J., Faber, S. M., Salim, S., Graves, G. J., & Rich,
+R. M. 2012, The Astrophysical Journal, 761, 23,
+doi: 10.1088/0004-637x/761/1/23
+Franzetti, P., Scodeggio, M., Garilli, B., et al. 2007, A&A,
+465, 711, doi: 10.1051/0004-6361:20065942
+French, K. D., Yang, Y., Zabludoff, A., et al. 2015, The
+Astrophysical Journal, 801, 1,
+doi: 10.1088/0004-637x/801/1/1
+Garn, T., & Best, P. N. 2010, Monthly Notices of the Royal
+Astronomical Society, 409, 421,
+doi: 10.1111/j.1365-2966.2010.17321.x
+Goto, T. 2005, Monthly Notices of the Royal Astronomical
+Society, 357, 937, doi: 10.1111/j.1365-2966.2005.08701.x
+Greene, J., Bezanson, R., Ouchi, M., Silverman, J., & the
+PFS Galaxy Evolution Working Group. 2022, arXiv
+e-prints, arXiv:2206.14908.
+https://arxiv.org/abs/2206.14908
+Groves, B., Brinchmann, J., & Walcher, C. J. 2012,
+Monthly Notices of the Royal Astronomical Society, 419,
+1402, doi: 10.1111/j.1365-2966.2011.19796.x
+Jeong, H., Oh, K., Joo, S.-J., & Yi, S. K. 2021, Monthly
+Notices of the Royal Astronomical Society, 509, 550,
+doi: 10.1093/mnras/stab2990
+Jeong, H., Yi, S. K., Bureau, M., et al. 2009, Monthly
+Notices of the Royal Astronomical Society, 398, 2028,
+doi: 10.1111/j.1365-2966.2009.15238.x
+Johnson, B., Leja, J., Bowman, W., et al. 2022,
+bd-j/prospector: v1.1, v1.1.0, Zenodo,
+doi: 10.5281/zenodo.6192136
+Johnson, B. D., Leja, J., Conroy, C., & Speagle, J. S. 2021,
+ApJS, 254, 22, doi: 10.3847/1538-4365/abef67
+Juneau, S., Dickinson, M., Alexander, D. M., & Salim, S.
+2011, ApJ, 736, 104, doi: 10.1088/0004-637X/736/2/104
+Kauffmann, G. 2014, Monthly Notices of the Royal
+Astronomical Society, 441, 2717
+Kauffmann, G., Heckman, T. M., White, D. M. S., et al.
+2003, Monthly Notices of the Royal Astronomical
+Society, 341, 33, doi: 10.1046/j.1365-8711.2003.06291.x
+Kaviraj, S., Peirani, S., Khochfar, S., Silk, J., & Kay, S.
+2009, Monthly Notices of the Royal Astronomical
+Society, 394, 1713
+Leja, J., Johnson, B. D., Conroy, C., van Dokkum, P. G., &
+Byler, N. 2017, The Astrophysical Journal, 837, 170,
+doi: 10.3847/1538-4357/aa5ffe
+Leja, J., Tacchella, S., & Conroy, C. 2019a, The
+Astrophysical Journal, 880, L9,
+doi: 10.3847/2041-8213/ab2f8cLeja, J., Johnson, B. D., Conroy, C., et al. 2019b, The
+Astrophysical Journal, 877, 140,
+doi: 10.3847/1538-4357/ab1d5a
+Leja, J., Speagle, J. S., Ting, Y.-S., et al. 2022, ApJ, 936,
+165, doi: 10.3847/1538-4357/ac887d
+Luque, J., Calzada, M., & S´ aez, M. 2003, Journal of Physics
+B: Atomic, Molecular and Optical Physics, 36, 1573
+Maltby, D. T., Almaini, O., Wild, V., et al. 2016, Monthly
+Notices of the Royal Astronomical Society: Letters, 459,
+L114, doi: 10.1093/mnrasl/slw057
+Mannucci, F., Cresci, G., Maiolino, R., Marconi, A., &
+Gnerucci, A. 2010, Monthly Notices of the Royal
+Astronomical Society, 408, 2115,
+doi: 10.1111/j.1365-2966.2010.17291.x
+Moustakas, J., Coil, A. L., Aird, J., et al. 2013, The
+Astrophysical Journal, 767, 50,
+doi: 10.1088/0004-637x/767/1/50
+Muzzin, A., Marchesini, D., Stefanon, M., et al. 2013, The
+Astrophysical Journal, 777, 18,
+doi: 10.1088/0004-637x/777/1/18
+Narayanan, D., Conroy, C., Dav´ e , R., Johnson, B. D., &
+Popping, G. 2018, The Astrophysical Journal, 869, 70,
+doi: 10.3847/1538-4357/aaed25
+Nelson, D., Pillepich, A., Springel, V., et al. 2017, Monthly
+Notices of the Royal Astronomical Society, 475, 624,
+doi: 10.1093/mnras/stx3040
+Nersesian, A., Xilouris, E. M., Bianchi, S., et al. 2019,
+A&A, 624, A80, doi: 10.1051/0004-6361/201935118
+Pillepich, A., Springel, V., Nelson, D., et al. 2017, Monthly
+Notices of the Royal Astronomical Society, 473, 4077,
+doi: 10.1093/mnras/stx2656
+Pozzetti, L., Bolzonella, M., Zucca, E., et al. 2010, A&A,
+523, A13, doi: 10.1051/0004-6361/200913020
+Price, S. H., Kriek, M., Brammer, G. B., et al. 2014, The
+Astrophysical Journal, 788, 86,
+doi: 10.1088/0004-637x/788/1/86
+Reddy, N. A., Kriek, M., Shapley, A. E., et al. 2015, The
+MOSDEF Survey: Measurements of Balmer Decrements
+and the Dust Attenuation Curve at Redshifts z 1.4-2.6,
+arXiv, doi: 10.48550/ARXIV.1504.02782
+Rodiguez-Montero, F., Dav´ e, R., Wild, V., Angl´ es-Alc´ azar,
+D., & Narayanan, D. 2019, Monthly Notices of the Royal
+Astronomical Society, 490, 2139,
+doi: 10.1093/mnras/stz2580
+Rowlands, K., Wild, V., Bourne, N., et al. 2018, Monthly
+Notices of the Royal Astronomical Society, 473, 1168,
+doi: 10.1093/mnras/stx1903
+Salim, S. 2014, Serbian Astronomical Journal, 1,
+doi: 10.2298/saj1489001s16 Zhang et al.
+Schawinski, K., Kaviraj, S., Khochfar, S., et al. 2007, The
+Astrophysical Journal Supplement Series, 173, 512,
+doi: 10.1086/516631
+Springel, V., Pakmor, R., Pillepich, A., et al. 2017, Monthly
+Notices of the Royal Astronomical Society, 475, 676,
+doi: 10.1093/mnras/stx3304
+Straatman, C. M. S., Spitler, L. R., Quadri, R. F., et al.
+2016, The Astrophysical Journal, 830, 51,
+doi: 10.3847/0004-637x/830/1/51
+Strateva, I., Ivezi´ c, ˇZ ., Knapp, G. R., et al. 2001, The
+Astronomical Journal, 122, 1861, doi: 10.1086/323301
+Suess, K. A., Kriek, M., Bezanson, R., et al. 2022, The
+Astrophysical Journal, 926, 89,
+doi: 10.3847/1538-4357/ac404a
+Tacchella, S., Finkelstein, S. L., Bagley, M., et al. 2022, The
+Astrophysical Journal, 927, 170,
+doi: 10.3847/1538-4357/ac4cad
+Thomas, D., Maraston, C., Schawinski, K., Sarzi, M., &
+Silk, J. 2010, Monthly Notices of the Royal Astronomical
+Society, doi: 10.1111/j.1365-2966.2010.16427.x
+Tremblay, P.-E., & Bergeron, P. 2009, The Astrophysical
+Journal, 696, 1755
+Treu, T., Ellis, R. S., Liao, T. X., et al. 2005, The
+Astrophysical Journal, 633, 174, doi: 10.1086/444585
+van der Wel, A., Noeske, K., Bezanson, R., et al. 2016, The
+Astrophysical Journal Supplement Series, 223, 29,
+doi: 10.3847/0067-0049/223/2/29
+van der Wel, A., Bezanson, R., D’Eugenio, F., et al. 2021,
+ApJS, 256, 44, doi: 10.3847/1538-4365/ac1356Viaene, S., Baes, M., Bendo, G., et al. 2016, A&A, 586,
+A13, doi: 10.1051/0004-6361/201527586
+Wang, W., Faber, S. M., Liu, F. S., et al. 2017, Monthly
+Notices of the Royal Astronomical Society, 469, 4063,
+doi: 10.1093/mnras/stx1148
+Werle, A., Cid Fernandes, R., Vale Asari, N., et al. 2020,
+MNRAS, 497, 3251, doi: 10.1093/mnras/staa2217
+Whitaker, K. E., Labb´ e , I., van Dokkum, P. G., et al.
+2011, The Astrophysical Journal, 735, 86,
+doi: 10.1088/0004-637x/735/2/86
+Williams, R. J., Quadri, R. F., Franx, M., van Dokkum, P.,
+& Labb´ e, I. 2009, ApJ, 691, 1879,
+doi: 10.1088/0004-637X/691/2/1879
+Woodrum, C., Williams, C. C., Rieke, M., et al. 2022,
+Molecular Gas Reservoirs in Massive Quiescent Galaxies
+at z∼0.7 Linked to Late Time Star Formation, arXiv,
+doi: 10.48550/ARXIV.2210.03832
+Worthey, G., Faber, S. M., Gonzalez, J. J., & Burstein, D.
+1994, ApJS, 94, 687, doi: 10.1086/192087
+Worthey, G., & Ottaviani, D. L. 1997, ApJS, 111, 377,
+doi: 10.1086/313021
+Wu, P.-F., van der Wel, A., Gallazzi, A., et al. 2018, The
+Astrophysical Journal, 855, 85,
+doi: 10.3847/1538-4357/aab0a6
+Wu, Y., Chen, H., Tian, H., et al. 2022, ApJ, 928, 180,
+doi: 10.3847/1538-4357/ac5897
+Zabludoff, A. I., Zaritsky, D., Lin, H., et al. 1996, The
+Astrophysical Journal, 466, 104, doi: 10.1086/177495

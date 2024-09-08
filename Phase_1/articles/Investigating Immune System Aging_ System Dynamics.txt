@@ -1,0 +1,640 @@
+Title: Investigating Immune System Aging: System Dynamics and Agent-Based
+  Modeling
+Abstract:   System dynamics and agent based simulation models can both be used to model
+and understand interactions of entities within a population. Our modeling work
+presented here is concerned with understanding the suitability of the different
+types of simulation for the immune system aging problems and comparing their
+results. We are trying to answer questions such as: How fit is the immune
+system given a certain age? Would an immune boost be of therapeutic value, e.g.
+to improve the effectiveness of a simultaneous vaccination? Understanding the
+processes of immune system aging and degradation may also help in development
+of therapies that reverse some of the damages caused thus improving life
+expectancy. Therefore as a first step our research focuses on T cells; major
+contributors to immune system functionality. One of the main factors
+influencing immune system aging is the output rate of naive T cells. Of further
+interest is the number and phenotypical variety of these cells in an
+individual, which will be the case study focused on in this paper.
+
+Full Text: Investigating Immune System Aging: System Dynamics and Agent-Based
+Modeling
+Grazziela P. Figueredo, Uwe Aickelin
+IMA Research Group, Computer Science School, Nottingham University, Wollaton Road, Nottingham, NG8 1BB UK
+gzf@cs.nott.ac.uk, uxa@cs.nott.ac.uk
+Keywords: Immunosenescence, thymic output, naive T cell
+dynamics, system dynamics, agent based simulation
+Abstract
+System dynamics and agent based simulation models can
+both be used to model and understand interactions of enti-
+ties within a population. Our modeling work presented here
+is concerned with understanding the suitability of the differ-
+ent types of simulation for the immune system aging prob-
+lems and comparing their results. We are trying to answer
+questions such as: How ﬁt is the immune system given a cer-
+tain age? Would an immune boost be of therapeutic value,
+e.g. to improve the effectiveness of a simultaneous vaccina-
+tion? Understanding the processes of immune system aging
+and degradation may also help in development of therapies
+that reverse some of the damages caused thus improving life
+expectancy. Therefore as a ﬁrst step our research focuses on
+T cells; major contributors to immune system functionality.
+One of the main factors inﬂuencing immune system aging is
+the output rate of naive T cells. Of further interest is the num-
+ber and phenotypical variety of these cells in an individual,
+which will be the case study focused on in this paper.
+1. INTRODUCTION
+System dynamics (SD) is an approach to help understand
+the behaviour of complex systems over time. It works with
+feedback loops, stocks and ﬂows that help describe a sys-
+tem’s nonlinearity. The methodology of developing SD mod-
+els suggest some stages that should be accomplished in order
+to reach the ﬁnal model. The ﬁrst stage is identiﬁcation of the
+problem followed by development of a dynamic hypothesis
+explaining its causes. The next stages are building the com-
+putational model, testing, validation and implementation.
+Agent based modelling (ABS) is concerned with models in
+which agents interact with each other, with a view to observ-
+ing their behaviors given changes to the environment.
+This work compares SD and ABS immune system aging
+models that involve interactions which inﬂuence the naive T
+cell populations over time. The models are based on the math-
+ematical equations deﬁned in [9]. In their work, Murray et al.
+[9] propose a model with a set of equations to ﬁt observed
+data and estimate the likely contribution of each of the naive
+T cell repertoire maintenance method.In our work, we converted the original model into simula-
+tions and observe other important points not explored in [9].
+Our objective is to understand the suitability of simulation for
+immune system aging problems. Moreover, we want to estab-
+lish a comparison between the SD and ABS results, in terms
+of accuracy and complexity. In order to understand the prob-
+lem and how the model was created, some concepts involving
+the aging of the immune system will be presented.
+This paper is organized as follows. Section 2 presents the
+related work review, section 3 presents the immunological
+concepts necessary for the understanding of the modelled
+problem. Next, in Section 4, the conceptual and mathematical
+model are presented. Sections 5 and 6 present, respectively,
+the system dynamics and the agent based models, followed
+by the results obtained, conclusions and next steps of this on-
+going work.
+2. RELATED WORK
+In this section, we brieﬂy present some of the research lit-
+erature related to the comparison of ABS with SD.
+In [15], the authors show the application of both SD and
+ABS to simulate non-equilibrium ligand-receptor dynamics
+over a broad range of concentrations. They concluded that
+both approaches are powerful tools and are also complemen-
+tary. In addition, in their case study, they did not indicate a
+preferred paradigm, although SD is an obvious choice when
+studying systems at a high level of aggregation and abstrac-
+tion, and ABS is well suited to studying phenomena at the
+level of individual receptors and molecules.
+In [11] the authors present a cross-study of SD and ABS.
+They deﬁne their features and characteristics and contrast the
+two methods. In addition they present ideas of how to in-
+tegrate both approaches. The theoretical work presented by
+[10] compares ABS and SD conceptually, and discusses the
+potential synergy between them in order to solve problems of
+teaching decision-making processes.
+The work presented in [13] also compares these modelling
+approaches and identify a list of likely opportunities for cross-
+fertilization. The list presented is not exhaustive and should
+be a starting point to other researchers to take such synergistic
+views even further.
+In our work, we intend to proceed with this investigation
+using as case studies simulations related to the aging of thearXiv:1306.6206v1  [cs.CE]  26 Jun 2013immune system. In the next section we present concepts nec-
+essary to understand our case study.
+3. BACKGROUND
+Aging is a complex process that negatively impacts on the
+development of the immune system and its ability to func-
+tion [1]. The changes that characterise the aging of the im-
+mune system are called collectively immunosenescence orde-
+crease in immunocompetence .
+The decrease of immunocompetence in the elderly can be
+envisaged as the result of the continuous challenge of the un-
+avoidable exposure to a variety of viruses, bacteria, food and
+other harmful substances [6]. These exposures cause persis-
+tent life-long immune system stress, responsible for ﬁlling of
+the “immunological space” by an accumulation of immune
+cells and immune memory cells [6].
+With age, there is also a signiﬁcant reduction of certain
+speciﬁc kinds of immune cells, such as naive T cells, caused
+by the shrinkage of the organ that generates them, i.e. the thy-
+mus. Naive T cells are able to respond to novel pathogens that
+the immune system has not yet encountered. Lower numbers
+of these cells eventually leave the body more susceptible to
+infectious and non-infections diseases [9].
+Before 20 years of age, naive T cells are sustained primar-
+ily from thymic output [9]. However, in middle age there is a
+change in the source of naive T cells; as the thymus involutes,
+there is considerable reduction in its T cell output. Thus, new
+T cells are mostly produced by peripheral expansion. There
+is also a belief that some memory cells have their phenotype
+reverted back to naive cells [9]. Over time, the repertoire of
+naive T cells shrinks proportionately to faced threats, while
+memory increases [9] [8] [6].
+Thus, late in life, the T cell population becomes less diverse
+and a small number of antigen-speciﬁc T cell clones can grow
+to a great percentage of the total T cell population. This takes
+over the space needed for other T cells, resulting in a less di-
+verse and ineffective immune system. Eventually, there might
+be not enough naive T cells left to mount an effective defense
+and the immunological space is ﬁlled with memory cells.
+The aim of this work is to develop models consider-
+ing each of the above characteristics in order to investigate
+if these simulation techniques are suitable for investigating
+the immunosenescence phenomenon. De Martinis [8] and
+Franceschi [6] state that the most important characteristics of
+immunosenescence are the accumulation of memory T cells,
+reduction of naive T cells, shrinkage of the thymus and a ﬁll-
+ing of immunological space.
+As we can see from the above, one of the main fac-
+tors in the process of immunosenescence is the number
+and phenotypical variety of naive T cells in an individual,
+which changes with age in quantity and diversity. Recent
+research [2][5][7] suggests that population-based models ofT-cell repertoire evolution may guide new developments for
+treating diseases and help the recovery of the system after de-
+pletion caused by infections, radiation and age. These factors
+inﬂuenced the choice of the simulation case study developed
+in this research. Some work [14] has been done in simula-
+tion to understand certain aspects of immunology and other
+biological tissue patterns. However relatively little has been
+done in terms of immune degradation. Hence, our concep-
+tual model considers shrinkage of the thymus and depletion
+of naive T cells, which will be explained in the next section.
+4. THE MODEL
+4.1. Naive T Cell Output
+Thymic contribution in an individual are quantiﬁed by the
+level of a biological marker called ‘T cell receptors excision
+circle’ (TREC). TREC is circular DNA originated during the
+formation of the T-cell receptor. The percentage of T cells
+possessing TRECs decays with shrinkage of thymic output
+and activation and reproduction of naive T cells [9]. This
+means that naive T cells originating from the thymus have
+a greater percentage of TREC than those originating through
+other proliferation.
+Our model proposed here is based on data and equations
+obtained in [9], which is concerned with establishing an un-
+derstanding naive T cell repertoire dynamics. The objective
+of the model is to determine the likely contribution of each
+of the naive T cell’s sources by comparing estimates of the
+presence of TREC in the cells (see Figure 1). The dynamics
+of the sustaining sources, i.e. naive proliferation, TREC and
+reversal of memory to naive T cells are modelled mathemati-
+cally.
+Figure 1. Dynamics of Naive T cells.4.2. The Mathematical Model
+The mathematical model proposed in [9] is described by
+equations (1) to (6) below. In these equations, Nis the total
+number of naive cells of direct thymic origin, Npis the num-
+ber of naive cells that have undergone proliferation, Ais the
+number of activated cells, Mis the number of memory cells
+andtis time (in years). The ﬁrst differential equation is:
+dN
+dt=s0e ltts(Np) [ln+µng(Np)]N;(1)
+where: s0is the thymic output; ltis the thymic decay rate;
+s0e ltts(Np)represents the number of cells that arise from
+the thymus where s(Np)is the rate of export of the thymus
+deﬁned by:
+s(Np) =1
+1+¯sNp
+¯Np(2)
+Also, lnNrepresents the naive cells’ incorporation into the
+naive proliferating pool where lnis the naive proliferation
+rate; µnis the thymic naive cells death rate; µng(Np)Nrepre-
+sents the naive cell death rate where the function g(Np)is the
+death rate of between naive TREC-positive and naive TREC-
+negative, deﬁned as:
+g(Np) =1+bNp
+¯Np
+1+Np
+¯Np;(3)
+¯Npand ¯sare equilibrium and scaling values respectively.
+The second differential equation is:
+dNp
+dt=lnN+[ch(N;Np) µn]Np+lmnM (4)
+where: cis the proliferation rate; ch(N;Np)Nprepresents the
+naive proliferation where h(N;Np)is the dilution of thymic-
+naive through proliferation deﬁned by:
+h(N;Np) =1
+1+N+Np
+¯Np(5)
+µnNpis the death rate of proliferation-originated naive cells
+andlmnis the reversion rate from memory into Np. The ﬁnal
+differential equation is:
+dM
+dt=laA µmM lmnM:(6)
+where: lais the reversion rate into memory and µmis the
+death rate of memory cells. The parameter values for the
+model’s can be seen in Table 1.
+For the mathematical model and subsequent simulations,
+s0=56615 and the active cells were obtained by a look-uprate value(s)
+ltlog(2)
+15:7(year 1)
+ln 0.22, 2.1, 0.003
+µn 4.4
+c 0 (no proliferation) or µn(1+300
+¯Np)
+lmn 0
+µm 0.05
+la 0
+Table 1. Rate values for the mathematical model.
+table based on data collected by [3]. This table contains the
+number of activated CD4 cells per mm3for early years. This
+table was used as a stock for the active cells. From the active
+cell stock we update the values of the memory cell stock.
+Equations (1) to (6) will be incorporated in the SD and
+ABS models in order to investigate if it is possible to repro-
+duce and validate the results obtained in [9]. Moreover, vari-
+ations of the ratio variables are investigated to understand the
+importance of each individual integrand in the system. For
+example, it is important to establish how much the prolifera-
+tion rate impacts the depletion of naive T cells over age; also,
+at which point in time can the system be deﬁned as losing
+functionality.
+5. THE SYSTEM DYNAMICS MODEL
+The system dynamics model objective is to simulate the
+processes involved in the maintenance of naive T cells. The
+model was built taking into consideration all the interactions
+described by the mathematical equations deﬁned in the pre-
+vious section. The simulation was built using AnyLogic 6.5
+University Edition [12].
+The naive T cells, naive T cells from proliferation and
+memory cells are stock variables. The stock variable that rep-
+resents the number of naive T cells is subject to thymic out-
+put, proliferation and death rates, which are ﬂow variables.
+The ﬂows between naive cells and active cells are not deﬁned
+in the mathematical model. Therefore we assume that these
+ﬂows only interfere on the stock of active cells, which will not
+be considered in the SD model. The number of active cells,
+which is a stock, will be given by a look up table containing
+real values of active cells in the organism. The graphical rep-
+resentation of the stock of naive T cells and its ﬂows, which
+corresponds to Equation 1 on the mathematical model, can be
+seen in Figure 2.
+The amount of naive cells from proliferation is changed
+by death, proliferation and reversion from memory rates, ac-
+cording to Equation 2. The memory repertoire is modiﬁed by
+death and reversion to a naive phenotype (Equation 6). All
+the stocks put together form the SD model and can be seen in
+Figure 6.Figure 2. The naive T cell stock variable and its ﬂows:
+thymic output, proliferation, activation and death.
+Figure 3. The naive T cells from proliferation stock variable
+and its ﬂows: death, activation, proliferation and memory re-
+verted to naive.
+Figure 4. The memory T cells stock variable and its ﬂows:
+death and reversion to a naive phenotype.
+6. THE AGENT BASED MODEL
+The SD model was then converted into an ABS model
+shown in Figure 7. T cells are the agents and the state chart
+represents all the stages these agents can assume, i.e. naive,
+naive from proliferation, active or memory cells. The agents’
+state changes and their death rates are given by the ratios de-
+ﬁned in the mathematical model. Initially all the agents are in
+thenaive state. As the simulation proceeds they can assume
+other stages according to the transition pathways deﬁned in
+the state chart. The agents also reproduce, and the newborn
+agents which are also T cells, should assume the same state
+as their original agent.
+At the beginning of the simulation, there are only agents in
+theNaive state generated by thymic output. From the Naive
+state, the agents can proliferate and go to the NaiveProlifera-
+tionstate. If the T cells in the NaiveProliferation state repro-
+duce according to the NaiveProliferationRate , more agents
+will be generated in the same state ( NaiveProliferation ) as
+their progenitors. The same thing happens to the state Mem-
+ory. The agents can also die according to speciﬁc rates, de-
+termined by the mathematical model. The agents in this sim-
+ulation respond to changes in time and do not interact with
+each other directly. Therefore, what we intended to get from
+Figure 5. The system dynamics model’s functions and pa-
+rameters. The function RealActives returns the values for ac-
+tive CD4+ cells at a certain time. The parameters NPActi-
+vationRate, NPActivation, NPDeathRate, MemoryToNP and
+MemoryToNPRate correspond to naive cells from prolifera-
+tion (NP).
+this simulation is the response of each individual cell to the
+proposed environment.
+Figure 6. The ABS model. In this simulation, The number
+of active agents is also given by a look up table.7. EXPERIMENTS
+We study three simulation scenarios deﬁned by [9] with
+different values for the parameters. A summary of parameters
+changed for each scenario can be seen in Table 2.
+One of the case study simulation’s objectives is to inves-
+tigate if there is the need for naive peripheral proliferation
+throughout life. Therefore, for the ﬁrst scenario the naive pe-
+ripheral proliferation rate is set to zero. It also considers re-
+version from memory to a naive phenotype.
+The second scenario assumes peripheral proliferation with
+a bigger rate of naive cells becoming naive proliferating cells
+(2.1): There is no reversion from memory to a naive phe-
+notype and no homeostatic reduction in thymic export. The
+functions s,gandhfrom the mathematical model are re-
+sponsible for controlling the thymic export, naive death rate
+and naive peripheral proliferation, respectively. In order to
+alter the thymic export, the parameters sandNphave been
+changed. The parameter bwas set to zero so that the function
+gwould remain constant during all the simulation and so the
+death rate of naive cells.
+The third scenario alters the function gover time by set-
+ting the parameter bgreater than zero ( b=4:2). This means
+that the death rate of naive T cells from thymus will increase
+along the years as the number of naive from peripheral prolif-
+eration increases. There is no change of the thymic export, no
+reversion from memory to a naive phenotype and the conver-
+sion rate of naive from thymus to naive proliferation is low
+(equal to 0.003).
+The data used for validation of the mathematical model and
+the simulations is displayed in Table 3. The data set contains
+information about the TREC marker in individuals grouped
+in age ranges. The ﬁrst column of Table 3 shows the age
+range of the individuals; the second column has the mean
+log10T REC
+106PBMC (peripheral blood mononuclear cell) and the
+third column contains the number of individuals in each age
+range. The total number of individuals in the experiment was
+506. The graphic containing the TREC data (naive from thy-
+mus) and total naive cell data provided by [4] is shown in
+Figure 8.
+Each simulation was run for a period of one hundred years
+considering the impact of thymic shrinkage per mm3of pe-
+ripheral blood and 3673 initial naive cells from thymus for
+the SD model.
+8. RESULTS
+The SD simulation results for the ﬁrst scenario can be seen
+in Figure 9. The ABS results are shown in Figure 10. The re-
+sults for both simulation techniques show a very similar trend
+curve, although the ABS results exhibit a more noisy behavior
+in time. For this ﬁrst scenario, the simulation results did notAgelog10T REC
+106nPBMCnumber of individuals
+0 5.03 48
+1-4 4.93 53
+5-9 4.86 19
+10-14 4.86 19
+15-19 4.56 33
+20-24 3.88 26
+25-29 3.75 47
+30-34 3.61 65
+35-39 3.54 73
+40-44 3.52 52
+45-49 3.37 55
+50-54 3.17 16
+Table 3. The dataset used for validation obtained in [9].
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sO r i g i n a l d a t a c o l l e c t e d f o r v a l i d a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u s
+Figure 7. The dataset used for validation was provided by
+[9] and [4]. The data represented by the symbol is the TREC
+data shown in Table 3 and represents the total percentage of
+CD4+.
+ﬁt the original data. The naive cells from thymus curve pro-
+duced shows a big decay in thymic export on the beginning
+of life because of the high death rate.
+After the twenties, an exponential decay of thymic export is
+observed and the dynamics follows the thymic decay rate rule
+deﬁned in the mathematical model. The naive proliferation
+curve increases with the decrease of naive from thymus, but
+as there is no proliferation of peripheral cells, they die with
+no replacement. Thus they follow the same pattern of their
+only source, i.e. thymic naive cells. The results indicate that
+peripheral proliferation is important for maintenance of naive
+T cells.
+For scenario 2, results match the original data more closely
+than in the previous scenario. In this case peripheral prolifera-
+tion is considered as well as a high rate of naive cells from the
+thymus turning into peripheral naive cells. Figure 11 showsScenario Description Parameters
+1 No peripheral proliferation c=0;ln=0:22;lmn=0:05;Np=387 ;s=0:48;b=3:4;µNp=0:13
+2 No homeostatic reduction in thymic export, s=0;b=0;ln=2:1;lmn=0;Np=713
+no homeostatic alteration of naive death rate
+3 Homeostatic alteration of naive death rate s=0;ln=0:003 ;lmn=0;Np=392 ;b=4:2
+but not thymic export
+Table 2. Simulation parameters for different scenarios.
+the results for SD and Figure 12 for ABS. The naive from
+thymus curve shows a big decay in the beginning of life be-
+cause of the death and proliferation rates. On the other hand,
+the naive from proliferation curve increases with the decrease
+of the naive from thymus curve. This pattern is controlled by
+thegfunction.
+The main difference between these results and results form
+the previous scenario is that the amount of naive cells from
+proliferation reaches a stable value after the age of twenty
+with no further decay. The results indicate the importance of
+peripheral expansion, but the need of a smaller rate of naive to
+peripheral naive conversion. Moreover, reversion from mem-
+ory is not important.
+Scenario 3 takes into account the results produced in the
+previous scenarios and adjusts the parameters in a way that
+a more accurate output is obtained. The results for SD and
+ABS can be seen in Figures 13 and 14, respectively. The naive
+from thymus curve presents a decay at the beginning of life
+followed by an interval of stability ruled by s0. By the age of
+twenty the thymic export decreases in an exponential trend.
+With the decay of naive from thymus, the naive repertoire
+changes from the thymic source to peripheral proliferation
+source. Therefore, by performing these simulations it is pos-
+sible to have an idea of how the decay of naive cells happens
+over time. The results now closely match the original data.
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e m a t h e m a t i c a l a n d S D m o d e l − s c e n a r i o 1
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u s
+Figure 8. Results for scenario 1 with SD.
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e A B S m o d e l − s c e n a r i o 1
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u sFigure 9. Results for scenario 1 with ABS.
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e m a t h e m a t i c a l a n d S D m o d e l − s c e n a r i o 2
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u s
+Figure 10. Results for scenario 2 with SD.
+For the three scenarios studied, the simulations produced
+similar results for both SD and ABS techniques matching the
+original data. Hence, it is possible to conclude that the math-
+ematical model, as well as immunosenescence problems are
+suitable for simulation using both techniques. The differences
+between the SD and ABS simulations are in how the concep-
+tual model is represented and manipulated.
+SD gives a systemic view of the conceptual model and tries0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e A B S m o d e l − s c e n a r i o 2
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u sFigure 11. Results for scenario 2 with ABS.
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e m a t h e m a t i c a l a n d S D m o d e l − s c e n a r i o 3
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u s
+Figure 12. Results for scenario 3 with SD.
+0 2 0 4 0 6 0 8 0 1 0 001 02 03 04 05 06 07 08 09 01 0 0N a i v e %
+Y e a r sR e s u l t s f o r t h e A B S m o d e l − s c e n a r i o 3
+T o t a l T c e l l s
+N a i v e T c e l l s
+N a i v e f r o m p r o l i f e r a t i o n
+N a i v e % C D 4 + d a t a
+L o g 1 0 p e r c e n t a g e T c e l l s f r o m t h y m u s
+Figure 13. Results for scenario 3 with ABS.to forecast how the system as a whole would evolve in time in
+an aggregate manner. This means that each change ratio will
+be applied to the entire set of cells. One could argue that SD
+represent an idealised version of the system.
+In the ABS model, cells are subject to individual rates that
+occur during the time slice they were created in. This makes
+the output more noisy than the SD results. It also seems to
+be more realistic, because in real immune systems, cells have
+individual behaviours and responses to the environment. In
+addition, the ABS model is easier to adapt to changes in the
+conceptual model, such as when change rates occur during a
+cell’s life span or new cellular interactions between cells.
+We also believe that the individual cellular behavior could
+be captured in a more simpliﬁed mathematical model. For ex-
+ample, the s,gandhfunctions’ control could be incorporated
+in the way cells change over time. This would help to further
+understand the biological system behavior. On the other hand,
+SD is simpler to implement and demands less computational
+resources such as memory, processing time and complexity
+as it can be seen in the comparison of Tables 4 and 5. The
+precision measure on the table is the sum of the square errors
+(SSE) of the percentages of naive T cells from thymus. The
+best results are given by the smaller numbers of SSE. The
+other measurements are time in seconds and memory usage
+in megabytes. The numbers for the system dynamics are bet-
+ter in terms of resources consumption as well as precision.
+We believe that precision for the ABS was not better because
+of the instabilities that occurred in the resulting graphs.
+Scenario Time (sec) RAM SSE
+1 0.7 11 71696
+2 0.8 11 5924.4
+3 0.7 10 589.9
+Table 4. SD processing time, memory usage and precision.
+Scenario Time (sec) RAM (MB) SSE
+1 28800 40 10349
+2 61700 50 20668
+3 64800 50 45834
+Table 5. ABS processing time, memory usage and precision.
+9. CONCLUSIONS
+Understanding immunosenescence and its causes may help
+direct research into therapies that reverse some of its con-
+sequences and improve life expectancy. The research ques-
+tion raised within this work focuses on the feasibility of us-
+ing SD and ABS simulation tools to understand immune sys-
+tem aging and comparing the two strategies. The ability to
+model immune system aging will provide new means to de-
+ﬁne a patient-speciﬁc ‘Immune Risk Phenotype’. Modellingthis Risk Type will improve our knowledge of immune fac-
+tors that contribute to morbidity and mortality and facilitate
+the design of appropriate interventions.
+The main factors inﬂuencing the process of immunosenes-
+cence include the number and phenotypical variety of naive T
+cells in an individual, which change with age in quantity and
+diversity. At the beginning of life, the thymus is the principal
+source of naive T cells. With age, there is a decay in thymus
+output and a shift between the main source of naive T cells.
+It is believed that the sustenance of naive T cells in the or-
+ganism is provided by peripheral expansion, reversion from
+a memory phenotype, and long-lived T cells. Data related to
+thymic output rate was collected by [9] and a mathematical
+model was build. This mathematical model was used as the
+baseline for the development of SD and ABS models.
+Three simulation scenarios were studied and the simulation
+outputs were broadly similar for both SD and ABS. Hence, it
+is possible to conclude that the mathematical model, as well
+as immunosenescence problems are suitable for simulation
+using both techniques. The differences between the SD and
+ABS outputs are in how the conceptual model is represented
+and manipulated.
+The SD based simulation is closer to the underlying math-
+ematics, but has the disadvantage of being high-level, with
+complete homogeneity of simulated entities. On the other
+hand, ABS allowed a representation of each entity and het-
+erogeneity. However, ABS increases the demand for compu-
+tational resources.
+As future work, it is intended to build a framework to de-
+velop immunosenescence simulation models. We also want
+to deﬁne guidelines to help decide when each simulation type
+should be used in an immunosenescence model.
+Finally, we are interested to investigate how combining
+ABS and SD models could help improving the simulations.
+As we have shown, immunosenescence can be simulated by
+more than one simulation type, however our hypothesis is that
+a combination of methodologies will provide higher predic-
+tion accuracy given the same amount of input data and com-
+putational resources.
+REFERENCES
+[1] Matteo Bulatti, Mariavaleria Pellican `o, Sonya Vasto, and
+Guiseppina Colonna-Romano. Understanding ageing:
+Biomedical and bioengineering approaches, the immunologic
+view. Immunity & Ageing , 5(9), september 2008.
+[2] Michael P. Cancro, Yi Hao, Jean L. Scholz, Richard L. Ri-
+ley, Daniela Frasca, Deborah K. Dunn-Walters, and Bonnie B.
+Blomberg. B cells and aging: molecules and mechanisms.
+Trends in Immunology , 30(7):313–318, July 2009.
+[3] W. Marieke Comans-Bitter, Ronald de Groot, and Ren ´e
+van den Beemd. Immunophenotyping of blood lymphocytes in
+childhood. reference values for lymphocites subpopulations. J.
+Pediatr. , (130):388–393, 1997.[4] Andrea Cossarizza, Claudio Ortolani, Roberto Paganelli,
+Daniela Barbieri, Daniela Monti, Paolo Sansoni, Umberto Fa-
+giolo, Gastone Castellani, Ferdinando Bersani, Marco Londei,
+and Claudio Franceschi. CD45 isoforms expression on CD4+
+and CD8+ T cells throughout life, from newborns to centenar-
+ians: implications for T cell memory. Mechanisms of Ageing
+and Development , 86(3):173 – 195, 1996.
+[5] Mark R. Dowling and Philip D. Hodgkin. Why does the thy-
+mus involute? a selection-based hypothesis. Trends in Im-
+munology , 30(7):295–300, July 2009.
+[6] Claudio Franceschi, Massimiliano Bonaf `e, and Silvana
+Valensin. Human immonosenescence: the prevailing of innate
+immunity, the failing of clonotypic immunity, and the ﬁlling of
+immunological space. Vaccine , 18:1717–1720, 2000.
+[7] Elizabeth J. Kovacs, Jessica L. Palmer, Carl F. Fortin,
+Tamas Fulop Jr, Daniel R. Goldstein, and Phyllis-Jean Linton.
+Aging and innate immunity in the mouse: impact of intrinsic
+and extrinsic factors. Trends in Immunology , 30(7):319–324,
+July 2009.
+[8] Massimo De Martinis, Claudio Franceschi, Daniela Monti,
+and Lia Ginaldi. Inﬂamm-ageing and lifelong antigenic load
+as major determinants of ageing rate and longevity. FEBS ,
+579:2035–2039, february 2005.
+[9] John M. Murray, Gilbert R. Kaufmann, Philip D. Hodgkin,
+Sharon R. Lewin, Anthony D. Kelleher, Miles P. Davenport,
+and John Zaunders. Naive T cells are maintained by thymic
+output in early ages but by proliferation without phenotypic
+change after twenty. Immunology and Cell Biology , 81:487–
+495, June 2003.
+[10] John Pourdehnad, Kambiz Maani, and Habib Sedehi. System
+dynamics and intelligent agent based simulation: where is the
+synergy? In Proceedings of the XX International Conference
+of the System Dynamics society. , 2002.
+[11] Nadine Schieritz and Peter M. Milling. Modeling the forrest
+or modeling the trees: A comparison of system dynamics and
+agent based simulation. In Proceedings of the XXI Interna-
+tional Conference of the System Dynamics society. , 2003.
+[12] XJ Technologies Simulation Software and Services.
+Anylogic Muti-Method Simulation Tool , Available:
+http://www.xjtek.com/anylogic/download/, Last accessed
+02 Jun 2010.
+[13] Luminita Stemate, Ivan Taylor, and Codrin Pasca. A com-
+parison between system dynamics and agent based modeling
+and opportunities for cross-fertilization. In Proceedings of
+the 2007 Winter Simulation Conference . S. G. Henderson, B.
+Biller, M.-H. Hsieh, J. Shortle, J. D. Tew, and R. R. Barton,
+2007.
+[14] Bryan C. Thorne, Alexander M. Bailey, and Shayn M. Peirce.
+Combining experiments with multi-cell agent-based modelling
+to study biological tissue patterning. Brieﬁngs in Bioinformat-
+ics, 8(4):245–257, may 2007.
+[15] Wayne W. Wakeland, Edward J. Gallaher, Louis M. Macov-
+sky, and C. Athena Aktipis. A comparison of system dynamics
+and agent-based simulation applied to the study of cellular re-
+ceptor dynamics. Hawaii International Conference on System
+Sciences , 3:30086b, 2004.

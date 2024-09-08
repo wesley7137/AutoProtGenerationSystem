@@ -1,0 +1,569 @@
+Title: Moderate stem cell telomere shortening rate postpones cancer onset in
+  stochastic model
+Abstract:   Mammalian cells are restricted from proliferating indefinitely. Telomeres at
+the end of each chromosome are shortened at cell division and, when they reach
+a critical length, the cell will enter permanent cell cycle arrest - a state
+known as senescence. This mechanism is thought to be tumor suppressing, as it
+helps prevent precancerous cells from dividing uncontrollably.
+  Stem cells express the enzyme telomerase, which elongates the telomeres,
+thereby postponing senescence. However, unlike germ cells and most types of
+cancer cells, stem cells only express telomerase at levels insufficient to
+fully maintain the length of their telomeres leading to a slow decline in
+proliferation potential. It is not yet fully understood how this decline
+influences the risk of cancer and the longevity of the organism. We here
+develop a stochastic model to explore the role of telomere dynamics in relation
+to both senescence and cancer. The model describes the accumulation of
+cancerous mutations in a multicellular organism and creates a coherent
+theoretical framework for interpreting the results of several recent
+experiments on telomerase regulation. We demonstrate that the longest average
+cancer free life span before cancer onset is obtained when stem cells start
+with relatively long telomeres that are shortened at a steady rate at cell
+division. Furthermore, the risk of cancer early in life can be reduced by
+having a short initial telomere length. Finally, our model suggests that
+evolution will favour a shorter than optimal average cancer free life span in
+order to postpone cancer onset until late in life.
+
+Full Text: Moderate stem cell telomere shortening rate postpones cancer onset in stochastic
+model.
+Simon Holbek, Kristian Moss Bendtsen, Jeppe Juul
+University of Copenhagen, Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen, Denmark
+(Dated: November 3, 2018)
+Mammalian cells are restricted from proliferating indenitely. Telomeres at the end of each
+chromosome are shortened at cell division and, when they reach a critical length, the cell will enter
+permanent cell cycle arrest - a state known as senescence. This mechanism is thought to be tumor
+suppressing, as it helps prevent precancerous cells from dividing uncontrollably.
+Stem cells express the enzyme telomerase, which elongates the telomeres, thereby postponing
+senescence. However, unlike germ cells and most types of cancer cells, stem cells only express
+telomerase at levels insucient to fully maintain the length of their telomeres leading to a slow
+decline in proliferation potential. It is not yet fully understood how this decline inuences the risk
+of cancer and the longevity of the organism.
+We here develop a stochastic model to explore the role of telomere dynamics in relation to both
+senescence and cancer. The model describes the accumulation of cancerous mutations in a multicel-
+lular organism and creates a coherent theoretical framework for interpreting the results of several
+recent experiments on telomerase regulation.
+We demonstrate that the longest average cancer free life span before cancer onset is obtained when
+stem cells start with relatively long telomeres that are shortened at a steady rate at cell division.
+Furthermore, the risk of cancer early in life can be reduced by having a short initial telomere length.
+Finally, our model suggests that evolution will favour a shorter than optimal average cancer free
+life span in order to postpone cancer onset until late in life.
+PACS numbers: 87.10.Mn, 87.19.xj, 82.39.Rt
+INTRODUCTION
+Telomeres are the non-coding ends of chromosomes
+that prevent loss of genomic information during chromo-
+some replication [1]. Each cell division leads to a telom-
+ere shortening of 50-100 base pairs, partly due to what is
+known as the end-replication problem [2, 3]. When the
+telomeres reach a critical length the cell goes senescent, a
+state of permanent replication arrest that prohibits any
+further proliferation [4]. The number of divisions a cell
+can undergo before it reaches senescence is called the
+Hayick limit [5].
+Short telomeres have been linked to increased mor-
+tality and age related diseases [6] and accumulation of
+senescent cells is seen as one of the major causes of age-
+ing [5, 7, 8]. However, the proliferation limit associated
+with telomere attrition is thought to work as a fail-safe
+mechanism against cells that divide in an uncontrolled
+and rapid fashion, particularly cancer cells [9].
+Genes that are critical in maintaining cells in a non-
+cancerous state are called proto-oncogenes or tumor sup-
+pressor genes. Estimates of the number of mutations in
+these genes needed for a healthy cell to turn cancerous
+range from 3-6 [10] and above [11].
+Cancer cells replicate uncontrollably and have unlim-
+ited proliferation capability, known as cellular immor-
+tality [12]. Consequently, the cancerous cell must by-
+pass the end-replication problem, which in 90% of can-
+cers is done by expressing the enzyme telomerase [13].
+Telomerase, which mainly consists of the two componentsTERT and TERC, elongates the telomeres such that the
+telomere length of cancer cells is maintained during repli-
+cation [14]. Besides being present in cancer cells, telom-
+erase is also found in stem cells and germ line cells [12].
+The amount of telomerase in germ line cells is sucient
+to maintain telomere length [1]. For stem cells, however,
+the level of telomerase is so low that telomeres are still
+shortened after each cell division, but at a lower rate than
+for somatic cells [15].
+It is an open question why stem cells express telom-
+erase, and why the level of telomerase is not high enough
+to avoid a shortening of the telomere length throughout
+life.
+It has been suggested that telomere shortening is
+a trade-o between limiting oncogenesis and reducing
+physiological ageing [16{18].
+The capability of cells to tune their telomere shorten-
+ing rate by varying the expression of telomerase suggests
+the possibility of optimal telomere shortening strategies.
+In this paper we present a stochasticl model that anal-
+yses how shortening of stem cell telomeres are coupled to
+the trade-o between ageing and postponing cancer. Pre-
+vious mathematical models for telomere dynamics have
+mostly focused on the cellular transition to a senescent
+state [19, 20], and previous cancer models have focused
+mostly on oncogenesis [21, 22]. This work tries to bridge
+these areas of focus, developing a more coherent math-
+ematical modelling framework for considering telomere
+dynamics in relation to both senescence and cancer. We
+nd that there exists a telomere shortening rate that op-arXiv:1305.4264v1  [q-bio.CB]  18 May 20132
+timizes the cancer free life span of the organism. Our
+results also show that a suboptimal cancer free life span
+strategy may be selected in order to reduce the risk of
+cancer before the childbearing age.
+THE MODEL
+The stochatic model describes the accumulation of can-
+cerous mutations in a multicellular organism, where each
+cell division will result in a shortening of the telomere
+sequence due to the end-replication-problem.
+Mutations can arise during division of either somatic
+cells or stem cells. Initially an unmutated stem cell di-
+vides, thereby creating a somatic cell and a daughter
+stem cell. The somatic cell then proliferates until it, af-
+terH0divisions, reaches the Hayick limit and undergoes
+senescence.
+The Hayick limit can be interpreted as the conversion
+of an initial telomere length, since a correlation between
+the replicative capacity of a cell and its initial telomere
+length has been shown [23].
+During each division, the somatic cell has a probability
+pof acquiring a cancerous mutation, which is then prop-
+agated through the cell lineage in our model. In order
+to maintain homeostasis, only one daughter cell survives
+after each replication.
+When the somatic cell has gone senescent it is removed
+and all mutations accumulated in the somatic cell lineage
+are lost.
+The daughter stem cell then divides to produce a new
+daughter stem cell and a new generation of somatic cells.
+Each time a stem cell divides, the Hayick limit HG
+is reduced by a constant amount  > 0, corresponding
+to the daughter stem cell having shorter telomeres than
+its parent. Additionally, there is a probability pscof a
+cancerous mutation occurring in the self-renewing stem
+cell. Such mutations are permanent and are inherited by
+all stem cells in the stem cell lineage in the model.
+If at any point the cell accumulates more than Cmmu-
+tations, the organism is no longer cancer free. This will
+inevitably happen as mutations are steadily accumulated
+in the stem cell lineage, such that somatic cell lines start
+with more and more mutations.
+The total number of cell divisions that the system un-
+dergoes before the onset of cancer is interpreted as the
+cancer free life span of the organism. A schematic illus-
+tration of the model is shown in Fig. 1.
+THEORETICAL ANALYSIS
+In this section we derive a mathematical expression for
+the average cancer free life span obtained for dierent
+telomere shortening strategies.
+Divisions
+Stem cellgenerati onsHG−αH03mutations
+2mutations
+1mutation
+0mutations
+Stem CellFigure 1: Schematic illustration of the model. The ow of
+time follows the dashed arrows. Initially, a stem cell divides.
+One daughter cell specializes into a somatic cell, which pro-
+liferates until it reaches the Hayick limit and goes senescent
+(rst vertical row). The daughter stem cell then divides to
+produce a new daughter stem cell and a new generation of
+somatic cells (subsequent vertical rows). For each genera-
+tion the Hayick limit HGis reduced by a constant amount
+. At every cell division, somatic cells and stem cells have
+the probabilities pandpsc, respectively, to acquire cancer-
+ous mutations. Mutations in stem cells are permanent, while
+mutations in somatic cell lineages are lost when the cell line
+reaches the Hayick limit. When the system has accumulated
+more thanCmmutations (which in this illustration is 2), the
+organism will have developed cancer. The total cancer free
+life span is thus the sum of all somatic divisions.
+Each time a stem cell is introduced to the tissue, the
+Hayick limit is reduced from its initial value H0due to
+the telomere shortening of the stem cell. After Ggener-
+ations the Hayick limit HGis given by
+HG=bH0 Ge (1)
+wherebedenotes rounding to the nearest integer. Dur-
+ing each of the subsequent HGcell divisions, the cells
+have a probability pof acquiring a cancerous mutation.
+The probability F(x) that the cell line acquires xor fewer
+mutations before it reaches the Hayick limit is given by
+the Binomial cumulative distribution function
+F(x) =xX
+i=0HG
+i
+pi(1 p)HG i: (2)
+At each stem cell division there is a risk pscof acquir-
+ing a permanent mutation in the stem cell lineage. The
+probability for the organism to have jmutations in the
+stem cells after Ggenerations, but still be cancer free, is
+denotedSG;j. This is given by the recurrence relation
+SG+1;j= 
+SG;j(1 psc) +SG;j 1psc
+F(Cm j);(3)
+where the expression in the bracket is the probability
+of havingjmutations in the stem cell, and F(Cm j)3
+is the probability of not exceeding the critical number
+ofCmmutations during the somatic divisions, thereby
+developing cancer.
+The initial stem cell is unmutated, S0;0= 1, so in terms
+of Kroeniker-delta the starting condition is
+S0;j=0j (4)
+Using Eq. (3) and Eq. (4), the system can be solved
+numerically. Notice that when >0, the Hayick limit
+will eventually drop to zero, after which the stem cell
+undergoes senescence even if the cell line is still cancer
+free. According to Eq. (1) this will happen afterH0 0:5
+
+generations, which therefore gives an upper bound for
+the total cancer free life span of the organism.
+The overall probability that the organism will not have
+developed cancer at a given generation is dened as.
+SG=(P
+jSG;j forGH0 0:5
+
+0 for G>H0 0:5
+(5)
+The average cancer free life span hL(H0;)iis the
+mean number of cell divisions the organism will live be-
+fore exceeding the critical number of mutations. It can
+be found by multiplying the probability of getting cancer
+at each generation ( SG SG+1) by the number of cancer
+free generations and the average Hayick limit each of
+these consisted of.
+hL(H0;)i=1X
+G=1(SG SG+1)GH0+HG
+2(6)
+When= 0 the Hayick limit H0is constant and Eq.
+(6) becomes
+hL(H0;0)i=H01X
+G=1SG (7)
+Note that for this case SGwill never reach 0 and a cut
+o is necessary. This is made when SG<10 5and has
+negligible inuence on the cancer free life span.
+RESULTS
+We now x the ratio between the mutation probabili-
+ties such thatp
+psc= 100 according to [24, 25], and set p
+= 10 2andCm= 6.
+These choices of parameter values are not essential for
+the conclusions and other choices yield qualitatively sim-
+ilar results (see supplementary material).
+The average cancer free life span is calculated from
+Eq. (6) and Eq. (7) and their performance compared to
+50
+ 55
+ 60
+ 65
+ 70
+0
+0.2
+0.4
+0.6
+0.8
+1x 10-3
+H
+0α3
+12
+Percent deviation from the mean 
+cancer free life span of strategy 1
+-20-10012Shorter Initial
+telomeres
+Telomerase
+Knockout
+Telomerase upregulationFast Ageing
+Slow AgeingFigure 2: Deviation in average cancer free life span for dif-
+ferent initial Hayick limits and shortening factors com-
+pared to the longest possible cancer free life span for constant
+Hayick limit (strategy 1). The overall longest cancer free
+life span (strategy 2) is obtained for a higher initial Hayick
+limit, which is then slowly reduced through telomere short-
+ening in stem cells. Strategy 3 has the same initial Hayick
+limit as strategy 1 and the same telomere shortening rate as
+strategy 3. Black arrows show how dierent experimental
+setups can change the position in parameter space through
+modications of the initial Hayick limit of stem cells and
+the telomere shortening rate. A low initial Hayick limit and
+high telomere shortening rate cause premature ageing due to
+increased accumulation of senescent cells. Parameters: Cm=
+6,p= 10 2,psc= 10 4.
+the strategy with no stem cell telomere shortening that
+yields the longest cancer free life span, as obtained from
+Eq. (7). The result is shown in Fig. 2, where three
+strategies for further study are labeled in the following
+way:
+1. The strategy where stem cells express a telomerase
+activity, such that the telomere length of stem cells
+is constant over time ( = 0). The initial Hayick
+limit is chosen such that the cancer free life span is
+maximized.
+2. The strategy that gives the longest cancer free life
+span when allowing stem cell telomeres to shorten
+at each division ( >0). Again, the initial Hayick
+limit is chosen such that the cancer free life span is
+maximized. This results in a larger initial Hayick
+limit than for strategy 1.
+3. The strategy that combines the initial Hayick
+limit from strategy 1 and the stem cell telomere
+shortening rate from strategy 2. Note that this
+strategy yields similar cancer free life span as ob-
+tained for strategy 1.4
+The shorter the telomere length of stem cells is, the
+more frequent is the need for self renewal in order to
+maintain homeostasis in the tissue. Every self renewal is
+accompanied with the risk of accumulating an additional
+permanent mutation [25]. Therefore, a lower value for
+H0increases the rate at which mutations occur in the
+stem cells.
+Furthermore, a shorter H0will reduce the amount of
+cell divisions before stem cell senescence, resulting in
+faster ageing and a shorter maximum cancer free life
+span.
+KeepingH0xed and down-regulating the telomerase
+production is equivalent to increasing , thus moving up-
+wards in Fig. 2. The higher will suppress the risk of
+developing cancer, as the risk can be managed by un-
+dergoing fewer divisions before senescence. The higher
+turnover rate results in systems where cancer is rarely
+developed, but where the cancer free life span of other-
+wise healthy cell lineages is limited by stem cells going
+senescent.
+Up-regulation of telomerase in stem cells results in a
+lowerwhile up-regulation of telomerase in somatic cells
+will increase the proliferation potential, which is equiv-
+alent to a higher H0. These two eects combined can,
+therefore, in Fig. 2 be illustrated as a shift downwards
+to the right.
+This shift of strategy can in small quantities be ad-
+vantageous and prolong life, but is also associated with
+an increased risk of developing cancer since somatic cells
+are able to continue proliferating for longer before the
+senescent fail-safe mechanism sets in.
+These observation are supported by Fig. 3a and 3b,
+which show the probability of the organism to still be
+cancer free as a function of time, for each of the strategies
+1, 2, and 3.
+Surprisingly, we see that strategy 2, which yields the
+longest cancer free life span, is also the one that is most
+exposed to cancer early in life. This strategy benets
+from less stem cells attrition late in life, thereby supply-
+ing the system with less mutated cells, which in the end
+increases the average time before cancer development.
+Minimizing the risk of developing cancer at an early age
+can be done by lowering H0, raising, or both. With
+strategy 3 a higher percentage of a population would
+therefore still be a cancer free in the early in life com-
+pared to other strategies as 1 and 2 that have similar or
+longer cancer free life span.
+These results indicate that evolution would favour
+species with a restricted telomerase production in their
+stem cells above species that maintain their stem cells
+telomere length fully throughout life. This shortening
+rate can then be adjusted such that a lower cancer risk is
+obtained at the childbearing age, thereby increasing the
+chance of giving birth.
+Therefore, strategies that solely optimize cancer free
+life span may not be advantageous from an evolutionary
+0 0.5 1 1.5 200.20.40.60.81
+Probability to be cancer free
+strategy 1 
+strategy 2
+strategy 3
+0 0.5 1 1.5 2−0.0200.020.04
+Fraction of mean cancer free life span of strategy 1Probability to be cancer free 
+compared to strategy 1 strategy 2 − strategy 1 
+strategy 3 − strategy 1 A)
+B)Fraction of mean cancer free life span of strategy 1Figure 3: Probability of not yet having developed cancer as a
+function of time for dierent telomere shortening strategies.
+A:For all three strategies, the probability slowly decreases
+with time. Only very few individuals will develop cancer later
+than twice the mean cancer free life span of the population.
+B:Probability of not yet having developed cancer for strategy
+2 and 3 compared to strategy 1. Strategy 2, which has the
+longest average cancer free life span, will have a higher prob-
+ability of cancer development early in life. Strategy 3, which
+has a low initial Hayick limit, is able to postpone cancer
+until later in life.
+point of view, if they increase the risk of cancer early in
+life when reproduction takes place, as seen with strat-
+egy 2. We also nd that cancer free life span for some
+strategies, e.g. Strategy 3, can be prolonged even further
+if telomerase is up-regulated at a later stage in life (see
+supplementary materials).
+Strategy 3 and other stem cell shortening strategies are
+not without downsides, as the somatic cells will undergo
+senescence after fewer and fewer divisions. Shorter telom-
+eres and an accumulation of senescent cells are closely re-
+lated to biological ageing [26, 27], hence, strategies that
+suppresses cancer early in life by shortening their telom-
+eres are associated with accelerated aging.
+DISCUSSION AND CONCLUSION
+In our model a decrease of telomerase activity (TERT
+or TERC) leads to a faster shortening of stem cell telom-5
+eres per cell division. Our model predicts that any reduc-
+tion of telomerase activity decreases the risk of cancers
+early in life, but at the same time causes a higher rate
+of stem cell replications. The increased replication rate
+leads to an increased rate of cancerous mutations in the
+stem cells. For certain regimes the advantages of telom-
+erase activity down regulation resulting in a low risk of
+cancer early in life is outweighed by the higher risk of
+cancer later in life, and therefore the total cancer free
+life span of the organism is reduced. The increased can-
+cer risk when telomerase is removed was observed in a
+study by Gonzlez et al. (2000) , where they found a
+slight increase in oncogenesis in highly proliferating tis-
+sue for TERC decient mice[28]. In addition our model
+also predicts that stem cells will go senescent faster, and
+therefore cause faster ageing. This is also consistent with
+experimental observations; in a TERC mouse study Liu
+et al. (1998) found that a lack of telomerase caused the
+mice to present premature ageing symptoms, especially
+in highly proliferating tissue [29].
+Our model demonstrates that telomerase up-
+regulation, in general, leads to an organism more
+prone to developing cancer, which was observed
+experimentally by Gonzlez et al. (2002)[30].
+Furthermore, the model predicts that a temporal in-
+duction of telomerase could increase cancer free life span
+(see Supplementary). If the organism starts with a mod-
+erate telomerase activity and then increases the activity,
+the organism could prevent cancer onset at an early stage
+of life and postpone ageing, thereby increasing longevity.
+A recent study by Bernandes de Jesus et al. (2012) sup-
+ports this result. By inducing telomerase activity in adult
+mice, they were able to increase longevity without in-
+creasing the risk of cancer [31].
+Additionally, it has been shown that, when comparing
+two types of TERC decient mice with dierent genetic
+backgrounds - one type with initially shorter telomeres
+and one with normal initial telomere length - the mice
+with shorter telomeres show decreased viability, not due
+to cancer, but due to premature ageing [32, 33]. Our
+model demonstrates that decreasing H0leads to a faster
+attrition of the stem cell pool and therefore faster ageing.
+In conclusion, our model oers an explanation to why
+stem cells express telomerase at a moderate level, such
+that their telomere lengths are not conserved but is short-
+ened at a lower rate than in somatic cells. Furthermore,
+our results suggest that, in stem cells, evolution will favor
+short initial telomeres that are slowly shortened at each
+division (strategy 3), as this strategy is able to reduce
+the likelihood of cancer early in life.
+[1] M. A. Blasco, Nat Rev Genet 6, 611 (2005).
+[2] M. Lorenz, G. Saretzki, N. Sitte, S. Metzkow, and T. vonZglinicki, Free Radical Biology and Medicine 31, 824
+(2001).
+[3] K. E. Human, S. D. Levene, V. M. Tesmer, J. W. Shay,
+and W. E. Wright, Journal of Biological Chemistry 275,
+19719 (2000).
+[4] J. Campisi and F. d'Adda di Fagagna, Nat Rev Mol Cell
+Biol8, 729 (2007).
+[5] J. Campisi, Cell 120, 513 (2005).
+[6] R. M. Cawthon, K. R. Smith, E. O'Brien, A. Sivatchenko,
+and R. A. Kerber, Lancet 361, 393 (2003).
+[7] M. Collado, M. A. Blasco, and M. Serrano, Cell (2007).
+[8] K. M. Bendtsen, J. Juul, and A. Trusina, PloS one 7,
+e36018 (2012).
+[9] M. Collado and M. Serrano, Nature Reviews Cancer 10,
+51 (2010).
+[10] B. Alberts, Molecular Biology of the Cell , Reference Edi-
+tion (Garland Pub, 2008).
+[11] R. A. Beckman and L. A. Loeb, Seminars in cancer biol-
+ogy (2005).
+[12] E. Hiyama and K. Hiyama, British journal of cancer
+(2007).
+[13] J. W. Shay, R. R. Reddel, and W. E. Wright, Science
+336, 1388 (2012).
+[14] M. A. Blasco, Nature chemical biology (2007).
+[15] Y.-S. Cong, W. E. Wright, and J. W. Shay, Microbiology
+and molecular biology reviews 66, 407 (2002).
+[16] J. Campisi, S.-h. Kim, C.-S. Lim, M. Rubio, et al., Ex-
+perimental gerontology 36, 1619 (2001).
+[17] J. Campisi, Mech. Ageing Dev. (2005).
+[18] F. Rodier and J. Campisi, The Journal of Cell Biology
+192, 547 (2011).
+[19] R. D. Portugal, M. G. P. Land, and B. F. Svaiter, Biosys-
+tems91, 262 (2008).
+[20] J. op den Buijs, P. P. J. van den Bosch, M. W. J. M.
+Musters, and N. A. W. van Riel, Mech. Ageing Dev. 125,
+437 (2004).
+[21] I. Tomlinson, P. Sasieni, and W. Bodmer, The american
+journal of pathology 160, 755 (2002).
+[22] R. A. Beckman and L. A. Loeb, PNAS 103, 14140 (2006).
+[23] R. C. Allsopp, H. Vaziri, C. Patterson, S. Goldstein,
+E. V. Younglai, A. B. Futcher, C. W. Greider, and C. B.
+Harley, Proceedings of the National Academy of Sciences
+89, 10114 (1992).
+[24] R. J. Albertini, J. A. Nicklas, J. P. O'Neill, and S. H.
+Robison, Annual review of genetics 24, 305 (1990).
+[25] R. B. Cervantes, J. R. Stringer, C. Shao, J. A. Tis-
+cheld, and P. J. Stambrook, Proceedings of the National
+Academy of Sciences 99, 3586 (2002).
+[26] R. M. Cawthon, K. R. Smith, E. O'Brien, A. Sivatchenko,
+and R. A. Kerber, The Lancet 361, 393 (2003).
+[27] U. Herbig, M. Ferreira, L. Condel, D. Carey, and J. M.
+Sedivy, Science 311, 1257 (2006).
+[28] E. Gonz alez-Su arez, E. Samper, J. M. Flores, and M. A.
+Blasco, Nat Genet 26, 114 (2000).
+[29] H. W. Lee, M. A. Blasco, G. J. Gottlieb, J. W. Horner,
+C. W. Greider, and R. A. DePinho, Nature 392, 569
+(1998).
+[30] E. Gonz alez-Su arez, J. M. Flores, and M. A. Blasco,
+Molecular and cellular biology 22, 7291 (2002).
+[31] B. Bernardes de Jesus, E. Vera, K. Schneeberger, A. M.
+Tejera, E. Ayuso, F. Bosch, and M. A. Blasco, EMBO
+Molecular Medicine 4, 691 (2012).
+[32] K. L. Rudolph, S. Chang, H.-W. Lee, M. Blasco, G. J.
+Gottlieb, C. Greider, and R. A. DePinho, Cell 96, 7016
+(1999).
+[33] E. Herrera, E. Samper, J. Mart n-Caballero, J. M. Flores,
+H.-W. Lee, and M. A. Blasco, The EMBO Journal 18,2950 (1999).7
+{ SUPPLEMENTARY MATERIAL {
+In this supplementary note, we show that the choices of the parameter values Cm;pandpscare not essential for
+the overall conclusions drawn in the article regarding cancer free life span obtained by shortening the Hayick limit
+after each stem cell division.
+We here present three cases where the value of one parameter is varied, compared to those used for generating
+gure 2 in the article, while the two others kept constant. We show again, that some shortening strategies can both
+prolong life and postpone cancer early in life, and that the benets of this depends on the choice of parameter values.
+The black dot on the gures represents the strategy with a constant Hayick limit that produces the longest cancer
+free life span. First we keep pandpscxed and change Cmto 4. See gure 4
+25 30 35 400246x 10−4
+H0α
+-20-15-10-500.51
+Percent deviation from the mean cancer free
+ life span of strategy  indicated by 
+Figure 4: Deviation in average cancer free life span for dierent initial Hayick limits and shortening factors compared to the
+longest possible cancer free life span for constant Hayick limit (black dot). Decreasing Cmreduces the benet one can obtain
+by shortening the stem cell telomeres in order to maximize the cancer free life span compared to the strategy with constant
+Hayick limit. Parameters: Cm= 4,p= 10 2andpsc= 10 4.8
+Second, the stem cell mutation rate pscis increased by a factor 10, with Cmandpkept xed. See gure 5
+65 75 85 95 10500.0050.010.015
+H0α
+-30-20-10012
+Percent deviation from the mean cancer free
+ life span of strategy  indicated by 
+Figure 5: Keeping Cmandpxed, but increasing pscby a factor 10, results in optimal strategies with higher H0andas
+stem cells should be introduced less frequent due to their increased mutation probability. Parameters: Cm= 6,p= 10 2and
+psc= 10 3.9
+Lastly, the mutation rate for somatic cells pis increased by a factor 2, with Cmandpsckept unchanged. See gure
+6
+25 30 35 400246x 10−4
+H0α
+-40-30-20-100123
+Percent deviation from the mean cancer free
+ life span of strategy  indicated by 
+Figure 6: Increasing the mutations rate for somatic cells will shift the optimal strategies towards lower H0andas stem cells
+should now be introduced more frequently. Parameters: Cm= 6,p= 2 10 2andpsc= 10 4.10
+In order to verify that life can be prolonged by adding telomerase later in life, we here present one example of how
+this could occur. In this example we compare strategy 3 with strategy 3*. Strategy 3* has the same initial conditions
+as strategy 3, but will, when reaching HG= 39, double its telomerase production (halving ) for the remaining cancer
+free life span. With this up-regulation in telomerase production the longevity can be increased. The increased cancer
+free life span relies solely on the ability to postpone stem cell senescence by stimulating it with telomerase. The steep
+peak in Fig. (7), which is seen after a time 2.1 longer than the mean cancer free life span, is caused by the stem cells
+of strategy 3 going senescent so SGimmediately drops to 0.
+0 0.5 1 1.5 2 2.5 300.020.04
+Strategy 3* −Strategy 3Telom erase up reg ulatio nProbability to be cancer free 
+compared to strategy 3
+Fraction of mean cancer free life span of strategy 3
+Figure 7: Increased probability to be cancer free for two strategies with same initial conditions but with strategy 3* having an
+up-regulation of telomerase later in life. The up-regulation (lower ) leads to slightly increased cancer risk, but the strategy
+turns advantageous later on, as the increased telomerase production postpones the time at which the stem cells go senescent.
+The stem cells of strategy 3 go senescent shortly after a time 2.1 longer than the mean cancer free life span, whereas this is
+postponed for strategy 3*.

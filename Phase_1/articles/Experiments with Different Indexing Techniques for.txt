@@ -1,0 +1,444 @@
+Title: Experiments with Different Indexing Techniques for Text Retrieval tasks
+  on Gujarati Language using Bag of Words Approach
+Abstract:   This paper presents results of various experiments carried out to improve
+text retrieval of gujarati text documents. Text retrieval involves searching
+and ranking of text documents for a given set of query terms. We have tested
+various retrieval models that uses bag-of-words approach. Bag-of-words approach
+is a traditional approach that is being used till date where the text document
+is represented as collection of words. Measures like frequency count, inverse
+document frequency etc. are used to signify and rank relevant documents for
+user queries. Different ranking models have been used to quantify ranking
+performance using the metric of mean average precision. Gujarati is a
+morphologically rich language, we have compared techniques like stop word
+removal, stemming and frequent case generation against baseline to measure the
+improvements in information retrieval tasks. Most of the techniques are
+language dependent and requires development of language specific tools. We used
+plain unprocessed word index as the baseline, we have seen significant
+improvements in comparison of MAP values after applying different indexing
+techniques when compared to the baseline.
+
+Full Text:  
+  
+Abstract—This paper presents results of various experiments 
+carried o ut to improve text retrieval of gujarati text documents . Text 
+retrieval involves searching and ranking of text documents for a given 
+set of query terms. We have tested various retrieval models that uses 
+bag-of-words approach. Bag -of-words approach is a tra ditional 
+approach that is being used till date where the text document is 
+represented as collection of words. Measures like frequency count , 
+inverse document frequency etc.  are used to signify and rank relevant 
+documents for user queries . Different ranking  models have been used 
+to quantify ranking performance using the metric of mean average 
+precision. Gujarati is a morphologically rich language, we have 
+compared techniques like stop word removal, stemming and frequent 
+case generation against baseline to measure  the improvements in 
+information retrieval tasks. Most of the techniques are language 
+dependent and requires development of language specific tools. We 
+used plain unprocessed word index as the baseline, we have seen 
+significant improvements  in compari son of MAP values after applying 
+different indexing techniques when compared to the baseline.  
+ 
+Keywords —Information  Retrieval  (IR), Frequent Ca se 
+Generation  (FCG) , Gujarati  Language , Mean Average 
+Precision (MAP), Stemming , Stop Words, Text Mining, 
+Text Retrieval.  
+I. INTRODUCTION  
+NFORMATION RETRIEVAL (IR)  is defined as the 
+technique  of retrieving data /documents that are relevant to an 
+information need. It is usually concerned with searching, 
+manipulating and representing large collection of electronic text 
+data. Information retrieval tasks have been executed since 
+nearly six decades [1], with the evolution of data representation 
+techniques, numerous techniques have developed to fulfil 
+information needs .  IR systems process information needs of any 
+user, it  does not restrict  itself  to text data, it may include image, 
+audio or video formats [2]. Text retrieval is the discipline that 
+ 
+Manuscript received December 14,  2016. This work was supported by the 
+University Grants Commission (UGC) Minor R esearch Project, grant number: F. 
+No: 41 -1360/2012 (SR) . 
+ Dr. Jyoti Pareek is a Professor with Department of Computer Science, Gujarat 
+University, India  
+Hardik Joshi is an Asst. Profe ssor with Department of Computer Science, 
+Gujarat University, India (e-mail: hardikjoshi@gujaratuniversity.ac.in ). 
+Krunal Chauhan is a Sr. Software Engineer at LogiCeil Solutions, Ahmedabad , 
+India  and Rushikesh Patel is a Solution Analyst at Canada Technol ogy Partners  
+Ltd., India.  deals with retrieval of unstructured or partially structured text 
+data, especially textual documents . The relevant documents are 
+retrieved in response to a set of query which itself may be 
+structured or unstructured. The typical interaction between a 
+user and an IR system can be modeled as the user submitting 
+information needs in the form of queries to t he system; the 
+system returning a ranked list of relevant documents that 
+matches the queries. The ranked list of documents is  ordered 
+such that the most relevant documents are at the top of the list.  
+When the information need is not known in advance and in  the 
+situation where the user query is fired once on an indexed data, 
+the task is referred as ad hoc information retrieval [3]. 
+The need for effective methods of automated indexing and 
+automated IR has grown due to  tremendous explosion in the 
+amount of text documents and increase in the sources of 
+information over the Internet. In the last decade, there has been 
+a significant growth in the amount of text documents in Indian 
+languages. Researchers have been performing IR tasks in 
+English and European languages since many years through 
+evaluation forums like TREC [4], CLEF [5] etc., efforts are being 
+made to encourage IR tasks for the Indian languages through 
+evaluation forum FIRE [6].  
+IR evaluation forums and research communities uses 
+resources know as test collection [7]. The classic components of 
+a test collection are:  
+1) A huge corpus that includes collection  of text 
+documents; a tag “docid” is used to identify each 
+document uniquely . 
+2) A set of queries  (also referred as topics ); a tag “qid” is 
+used to identify ea ch query uniquely. The query is 
+further classified as T (title), TD (title and description) 
+and TDN (title, description and narration) .  
+3) A collection  of query relevance judgements  (also 
+referred as qrels or relevance judgement ) which 
+consists of pairs deta iling the matching documents for 
+each query , that is gold standard for each query . 
+Ad hoc IR can be represented as deriving a ranked list of the 
+most relevant documents among a static collection of 
+documents with regards to one time  information need in th e 
+form of a query. A scoring function (a.k.a. retrieval model) is 
+used to estimate the relevance and rank of each document 
+among the document collection with reference to the query. In Experiments with Different  Indexing Techniques 
+for Text Retrieval tasks on  Gujarati Language 
+using Bag -of-Words Approach  
+Dr. Jyoti Pareek, H ardik  Joshi , Krunal Chauhan, Rushikesh Patel  
+I  
+ bag-of-words approach, the document is taken into account as 
+a collecti on of words, the semantic information like 
+co-occurrence of words or linguistic information like parts of 
+speech etc. are not taken into account.  
+  
+II. RETRIEVAL  MODELS  
+In information retrieval, the query itself is represented as a 
+document that may share the  same document representation as 
+the documents within the collection. Therefore, the relevance of 
+any document can be interpreted as a measure of similarity 
+between two documents (document belonging to the document 
+collection and query document). In the ca se of bag -of-words 
+approach, the document relevance  is aggregated from the 
+relevance of each query term taken separately. It is usually 
+defined as the sum of each query term’s weights in the query 
+document and the collection. The IR task is to judge that h ow 
+much each query term contributes to the overall relevance of the 
+document belonging to the document collection.  So, the 
+documents matching more query terms that the others should be 
+favored. However, large documents may contain more query 
+terms, to reso lve such cases;  various statistical measures have 
+been proposed to penalize large documents to some extent as 
+they have more chance of containing a query term.  
+ Several retrieval models have been proposed to improve on 
+indexing and retrieval tasks. In thi s paper, we have 
+experimented with Guajarati  document collection using Terrier 
+tool[8] that has implemented few widely used retrieval models 
+like vector space model (TF -IDF model) [9],  probabilistic 
+models like BM25 [10], language models like drichlet prior [11], 
+information based approaches [12] and the divergence from 
+randomness framework [13].  These are the s tate-of-art methods 
+to perform ad hoc IR using bag -of-words approach.  
+ 
+III. EXPERIMENTAL  SETUP  
+Gujarati language is resource constrained language. To the 
+best of our knowledge, there is a single corpus available to 
+perform ad hoc IR tasks. An IR task must use Gold Standard 
+data to evaluate various tools and techniques. Details of 
+document collection (corpus) and topics (queries) are as 
+following:  
+A. Document Collection (Corpus)  
+To conduct our experiments, we used the collection of Gujarati 
+text documents that were  made available by Forum for 
+Information Retrieval and Evaluation ( FIRE ) in 2011 [6].  
+Details of Gujarati test c ollection  used for experiments  are 
+mentioned in Table I. The test collection was created from the 
+news article of the daily newspaper, “Gujarat Samachar” , where 
+the articles are included  from 2001 to 2010. Each news article 
+represents a unique document in our test collection.  Statistical 
+summary of the Gujarati  document collection is given in Table 1. The test collection  is available in Unicode text format (UTF)   
+where each article is marked up using the following tags:  
+<doc> and </doc> : Tags to represent beginning  of the 
+document  and end of document.  
+<docno > </docno > : Tags to uniquely identify the document.  
+<text> </text > : Tags to represent the content of document.  
+ 
+TABLE  I 
+STATISTICS OF GUJARATI  TEST  COLLECTION  (CORPUS ) 
+Particulars  Quantity  
+Approx. Size of Collection  2.7 Giga Bytes  
+Approx. Number of text Documents  3,13,000  
+Number of unique Terms  20,92,000 (Approx..)  
+Number of Tokens  13,92,7 3,000 (Approx.)  
+Average   Number of Token s  per 
+Document  445 
+B. Queries  (Topics)  
+ IR models were tested against 50 different queries in Gujarati 
+langua ge available as topic collections for FIRE exercise [6]. On 
+the lines of  TREC evaluation exercise [14], each query  made 
+available through FIRE is divided into three secti ons: the title 
+(T) which indicates  title  of the query , the description (D) that 
+gives a one -two sentence description of query and the narrative 
+part (N), which specifies the releva nce assessment criteria for a 
+particular query .  The following is an exampl e of a single query  
+document in the col lection of queries : 
+<top> 
+<num> </num> : Unique identifier of the Query  
+<title> </title> : Title of the Query  
+<desc> </desc> : Short description of the Query  
+<narr> </ narr> : Detailed Query in narrative form  
+</top>     
+ Each query document is represented using UTF format, the ad 
+hoc retrieval tasks in FIRE [15] released a set of 25 queries for 
+the year 2011 and another 25 queries for the year 2012. 
+Different experiments were carried out on a total of 50 que ries 
+made available and subsequently the results were evaluated 
+against the qrels (query relevance judgment ) released under 
+these evaluation exercises.  
+IV.  EXPERIMENTS WITH INDEXING  TECHNIQUES  
+Although IR tasks are language independent, it is observed that 
+they do not suite well with the Indian Languages. As most of the 
+Indian languages are morphologically rich, when information 
+retrieval is performed using language specific notion, better 
+results are obtained [16]. We performed four different indexing 
+experiments on Gujarati  test col lection. Most of the e xperiments 
+were conducted using open source text retrieval tool, Terrier [8]. 
+However, Gujarati being a resource constrained language, few 
+resources like stop words  list, stemming rules and fcg rules were 
+created  with the help of domain experts  and are made publicly 
+available on github repository [17]. A brief overview of different 
+experiments is as given below:   
+ A. Baseline Approach  
+Our first experiment did not optimize indexing techniques for 
+text collection. The document terms were unprocessed to 
+generate  index and subsequently perform retrieval and 
+evaluation tasks. Detailed performance of each retrieval model 
+is given in Pareek [18]. 
+B. Stop Word Removal  
+Stop words are the terms that frequently occur in a document 
+but carry less significant meaning. In English lan guage, words 
+like the, is, at, which, and, etc. are considered as stop words.  In 
+most of the cases prepositions, conjunctions result in stop words.  
+In our experiments, a set of 400 words were extracted that had 
+highest frequency count in text collection a nd subsequently 282 
+words were considered as stop words with the help of linguistic 
+experts who had manually inspected each word.   In this 
+experiment, we eliminated the stop words from index to perform 
+IR tasks.  A detailed discussion on experiments perform ed by 
+eliminating stop words are discussed in Pareek [19]. 
+C. Stemming  
+Gujarati language is morphologically rich, which means that 
+it involves many terms that can be of deri ved form or are 
+inflected. Most of the cases, Gujarati terms are inflected with the 
+use of suffixes. For better performance of IR systems, a 
+technique called “stemming is applied”, s temming  is the 
+process of reducing inflected terms  into their  root form.  For 
+instance, terms like “ study ”, “st udying ”, “st udies ”, “st udied ”, 
+etc. can be reduced to the base form “st udy”.  In our 
+experiment s, we created a list of Gujarati suffixes for  verbs, 
+nouns, adjectives and adverbs  and subsequently stemmed the 
+terms to its root form for indexing of text documents. We 
+experimented with statistical stemmer and rule based stemmer . 
+Details of algorithm used for rule based stemmer can be fo und in 
+Joshi, et al. [20] 
+D. Frequent Case Generation (FCG)  
+Gujarati is a highly inflectional language [15] where one root 
+can produce several morphological variants. Unlike English, 
+proper nouns can also have a numb er of variations. In most of 
+the cases, variants are generated by adding suffixes to the end of 
+the root. There are six oblique forms in Gujarati that correspond 
+to case forms nominative, genitive, instrumental, locative, 
+accusative -dative. Gujarati verbs inflect for tense, aspect, mood, 
+voice, person, number and gender. Therefore, Gujarati verbs 
+agree with their subjects, adjectives inflect with gender, number, 
+case and with nouns. However, adverbs do not inflect.  
+Kettunen and Airio [21] and Kettunen et al. [22] have 
+developed a linguistic frequency based method call Frequent 
+Case Generation (FCG) to generate variations of a given term. 
+For instance, give a basic form “stem”, the generator produces 
+all the varia nt forms of it, in this case “stemmer”, “stemmed”, 
+“stemming”, “stems”. These generated variants become input to 
+the search engine which matches them in the plain inflected 
+word form within the index.  V. EVALUATION  
+Evaluation metrics are required to compare  the performance 
+of different IR systems. Although various metrics exist to 
+evaluate IR systems, the widely used metrics are recall, 
+precision and fallout [23]. Recall measures the fraction of 
+relevant documents that are retrieved by the system whereas 
+precision measures the fraction of retrieved documents that are 
+relevant to the information need and fallout is a measure  to 
+indicate  the fraction of non -relevant documents that are 
+retrieved  by the I R system . In the presence of multiple queries, a 
+widely used metric, MAP (mean average precision) [24] is used 
+to evaluate the performance of IR systems.  
+In our experiments, to evaluate the performance  of IR 
+systems , we used the evaluation metric, mean aver age precision 
+(MAP) values for comparison of various IR systems.  We 
+evalu ated the results separately for the queries tags with title 
+(T), combination of title and description (TD) and the 
+combination of title, description and narration (TDN). Mean 
+average precision is derived from average precision  (AP) values, 
+where AP  is the average of the precision value s obtained for the 
+topmost  k number of documents retrieved . To calculate MAP , 
+the AP  value s are then averaged over performance of multiple  
+queries . For each query qj that belongs to a set of queries Q, we 
+retrieve  the set of r elevant documents for that query denoted by a 
+set {d1, …d mj}and  let us assume that  Rjk is the set of ranked 
+retrieval results topmost  result s until we get document d k,  then 
+mean average precision (MAP) can be calculated as in (1).  
+MAP (Q) = 
+Q1
+
+Q
+jjm11
+
+jm
+k1 Precision (R jk)      (1)  
+ 
+ 
+VI. RESULTS & ANALYSIS  
+We performed four categories of experiments with different 
+indexing techniques using a set of 50 queries. Each experiment 
+was performed on 20 different retri eval models to test the 
+efficacy of these models on Gujarati language. The queries were 
+varied by using combination of title (T), title & description (TD) 
+and title, description & narration (TDN).  Table 2 summarizes 
+the results of each experiment.  
+ 
+TABLE  2 
+SUMMARY OF MAP VALUES FOR VARIOUS RETRIEVAL 
+MODELS  
+BaseLine  
+ T TD TDN  
+Average  0.217  0.232  0.152  
+Max 0.234  0.265  0.206  
+Min 0.194  0.126  0.018  
+Stop words Elimination  
+ T TD TDN  
+Average  0.224  0.252  0.186  
+Max 0.237  0.269  0.220 
+Min 0.206  0.234  0.149  
+Stemming   
+  T TD TDN  
+Average  0.223  0.259  0.212  
+Max 0.233  0.275  0.238  
+Min 0.202  0.243  0.190  
+Frequent Case Generation (FCG)  
+ T TD TDN  
+Average  0.320  0.348  0.254  
+Max 0.336  0.398  0.347  
+Min 0.282  0.178  0.055  
+ 
+ From the results as shown in Table 2, the following 
+conclusions can be derived:  
+1) Combination of Title & Description (TD) in queries 
+results in better precision rather than T or TDN.  
+2) It is observed that all the techniques have improved the 
+MAP values of low performing models.  
+3) Applying stop word elim ination, stemming and FCG 
+techniques give better MAP values when compared to 
+the baseline.  
+4) FCG technique improves the MAP values to nearly 67% 
+of baseline for the TD case.  
+     When we compare the performance of different retrieval 
+models, it is observed  that in most of the cases, the model 
+In_expB2   (Inverse Expected Document Frequency model with 
+Bernoulli after -effect and normalization 2) [14] is outperforming 
+rest of the models resulting in highest MAP values for all 
+experiments while the Hiemstra language model [10] falls below 
+the baseline in most of the experiments.  
+VII. CONCLUSION  
+On investigating the performance of each query within the set 
+of 50 queries, it is observed that although bag -of-words 
+approach is resulting in significant improvement of precision 
+values, however, it does not take into account the semantics of 
+query terms. For instance, a query “cat chases rat” and “rat 
+chases cat” result s in similar set of ranked retrieved documents. 
+The bag -of-words approach is purely a statistical approach, 
+additional techniques are required to restore the semantics with 
+the text documents for efficient retrieval tasks.   
+REFERENCES    
+[1] C. Mooers, “Zatocoding applied to mechanical organization of 
+knowledge,” Am. Doc. , 1951.  
+[2] F. Lancaster, Information retrieval systems; characteristics, testing, 
+and evaluation . John Wiley & Sons, 1968.  
+[3] W. Croft, D. Me tzler, and T. Strohman, Search engines: Information 
+retrieval in practice . 2010.  
+[4] “Text REtrieval Conference (TREC) Home Page.” [Online]. Available: 
+http://trec.nist.gov/. [Accessed: 12 -Dec-2016].  
+[5] “Conference and Labs of the Evaluation Forum (CLEF I nitiative).” 
+[Online]. Available: http://www.clef -initiative.eu/. [Accessed: 
+12-Dec-2016].  
+[6] “Forum for Information Retrieval and Evaluation (FIRE).” [Online]. 
+Available: http://fire.irsi.res.in/fire/2016/home. [Accessed: 
+12-Dec-2016].  
+[7] T. Saracevic, “Eva luation of evaluation in information retrieval,” …  
+Res. Dev. Inf. Retr. , 1995.  
+[8] “Terrier IR Platform.” [Online] . Available:http://www.terrier.org. [Accessed: 12 -Dec-2016]  
+[9] A. Singhal, J. Choi, and D. Hindle, “At&amp;t at TREC -7,” NIST Spec. , 
+1999. 
+[10] S. Robertson, S. Walker, and S. Jones, “Okapi at TREC -3,” NIST Spec. , 
+1995.  
+[11] C. Zhai and J. Lafferty, “A study of smoothing methods for language 
+models applied to ad hoc information retrieval,” Proc. 24th Annu. Int. 
+ACM , 2001.  
+[12] S. Clinchant  and E. Gaussier, “Information -based models for ad hoc IR,” 
+Proc. 33rd Int. ACM , 2010.  
+[13] G. Amati and C. Van Rijsbergen, “Probabilistic models of information 
+retrieval based on measuring the divergence from randomness,” ACM 
+Trans. Inf. Syst. , 2002.  
+[14] E. Voorhees and D. Harman, TREC: Experiment and evaluation in 
+information retrieval . 2005.  
+[15] P. Majumder, M. Mitra, and D. Pal, “The FIRE 2008 evaluation 
+exercise,” ACM Trans.  … , 2010.  
+[16] J. Paik, K. Kettunen, D. Pal, and K. Järvelin, “Frequent Case  Generation 
+in Ad Hoc Retrieval of Three Indian Languages –Bengali, Gujarati and 
+Marathi,” Multiling. Inf. Access , 2013.  
+[17] “Gujarati Language Resources & Tools.” .  
+[18] J. Pareek and H. Joshi, “Evaluation of some Information Retrieval 
+models for Gujarati  Ad hoc Monolingual Tasks,” VNSGU J. Sci. 
+Technol. , vol. 3, no. 2, pp. 176 –181, 2012.  
+[19] H. Joshi, J. Pareek, and R. Patel, “To stop or not to stop —Experiments on 
+stopword elimination for information retrieval of Gujarati text 
+documents,” NUiCONE 2012 Co nf., 2012.  
+[20] K. Chauhan, R. Patel, and H. Joshi, “Towards Improvement in Gujarati 
+Text Information Retrieval by Using Effective Gujarati Stemmer,” J. 
+Information,  2013.  
+[21] K. Kettunen and E. Airio, “Is a morphologically complex language really 
+that co mple x in full -text retrieval?,” Adv. Nat. Lang. Process. , 2006.  
+[22] K. Kettunen, “Reductive and generative approaches to management of 
+morphological variation of keywords in monolingual information 
+retrieval: an overview,” J. Doc. , 2009.  
+[23] A. Kent, M. Berry, and F. Luehrs, “Machine literature searching VIII. 
+Operational criteria for designing information retrieval systems,” 
+American , 1955.  
+[24] P. Clough and M. Sanderson, “Evaluating the performance of 
+information retrieval systems using test collection s.,” Inf. Res. , 2013.  
+ 
+ 
+Dr. Jyoti Pareek is a Professor with Department 
+of Computer Sc., Gujarat University  She teaches 
+students of MCA & M.Tech and is a PhD guide at 
+Gujarat University & Banasthali University.She is 
+a coordinator of MTech (NT) program a t the 
+department.  She is a Senior IEEE member. Her 
+research area includes Natural Language 
+Processing, Software Engineering.   
+ 
+ 
+ 
+Hardik Joshi  is Asst. Professor with the 
+Department of Computer Sc ., Gujarat University. 
+He teaches students of MCA & M.Tech o f Gujarat 
+University. He is a coordinator of M.Tech(WT) 
+program and Animation department of Gujarat 
+University. He is a member of ACM and his 
+research area includes Natural Language 
+Processing & Information Retrieval.  
+ 
+Krunal Chauhan  is a Sr. Software Engi neer at LogiCeil Solutions, Ahmedabad, 
+India and Rushikesh Patel  is a Solution Analyst at Canada Technology Partners  
+Ltd., India. Both Krunal & Rushikesh work in the area of Big Data Analytics on 
+Industrial Projects.  

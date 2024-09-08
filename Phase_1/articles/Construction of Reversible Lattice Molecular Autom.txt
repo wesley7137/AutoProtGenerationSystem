@@ -1,0 +1,1041 @@
+Title: Construction of Reversible Lattice Molecular Automata
+Abstract:   Several cellular automata (CA) models have been developed to simulate
+self-organization of multiple levels of structures. However, they do not obey
+microscopic reversibility and conservation laws. In this paper, we describe the
+construction of a reversible lattice molecular automata (RLMA) model, which
+simulates molecular interaction and self-organization of higher-order
+structures. The model's strict reversibility entails physically relevant
+conservation laws, and thus opens a way to precise application and validation
+of the methods from statistical physics in studying the necessary conditions
+for such multiple levels of self-organization.
+
+Full Text: arXiv:0802.4365v2  [nlin.CG]  29 Jan 2009Construction of Reversible Lattice Molecular
+Automata
+Takayuki Nozawa and Toshiyuki Kondo
+tknozawa@cc.tuat.ac.jp
+Abstract
+Several cellular automata (CA) models have been developed t o sim-
+ulate self-organization of multiple levels of structures. However, they do
+not obey microscopic reversibility and conservation laws. In this pa-
+per, we describe the construction of a reversible lattice molecular au-
+tomata(RLMA) model, which simulates molecular interaction and se lf-
+organization of higher-order structures. The model’s stri ct reversibility
+entails physically relevant conservation laws, and thus op ens a way to pre-
+cise application and validation of the methods from statist ical physics in
+studyingthenecessaryconditionsforsuchmultiplelevels ofself-organization.
+Keywords: Reversible Cellular Automata; Molecular Aggregation; Sel f-
+organization; Artiﬁcial Chemistry
+1 Introduction
+Possessing and utilizing multiple levels of self-organized structures— sometimes
+addressed as dynamical hierarchies [1,2]—is a characteristic feature of biologi-
+cal systems. Cellular automata (CA) and similar discrete paradigms h ave been
+eﬀective in modeling such dynamical self-organization hierarchies. I n the con-
+text of molecular aggregation, lattice molecular automata (LMA) simulates self-
+organizationof water(polar solvent), monomers, and polymers int o clusters and
+higher-order structures such as micelles[ 3,4,5], and similar models have been
+developed to simulate organizationof compartment structure and proto-cell-like
+self-reproduction[ 6,7].
+However, these models do not obey microscopic reversibility and conser-
+vation laws, and therefore, the possibility and stability of the self-o rganized
+structures in these models are, to some extent, implied in their irrev ersible time
+evolution rules. Under the laws of physics, stable persistence of an organized
+structure requires eﬀective utilization of limited resources and smo oth disposal
+of generated entropy. Therefore, the constraint of reversibilit y should not be
+omitted in studying the necessary conditions for stable structure s, using, for
+example, the canonical methods of statistical physics.
+1In this paper, we describe the construction of reversible lattice molecular
+automata (RLMA), which simulates self-organization of water, monomers, an d
+polymers with a strictly reversible dynamics and physically appropriat e conser-
+vation laws. Although several reversible CA models have been propo sed to sim-
+ulate self-organization processes[ 8,9], our model can simulate self-organization
+of structures with mobility, which will be essential for realizing higher-order
+structures and higher functionality such as autonomy.
+The rest of the paper is organized as follows. A formal deﬁnition of C A is
+providedandusefultechniquesinconstructingreversibleCAareb rieﬂyreviewed
+in Section 2. Features of the original LMA model and its relation to ot her
+models are also brieﬂy reviewed there. The construction of our RLM A model
+is described in Section 3, along with the conservation laws derived fro m the
+reversible dynamics. Some simulations of monomers and polymers in po lar
+solvent are presented in Section 4. Finally, our conclusion is drawn in S ection
+5. Appendix A presents an alternative approach for implementing re versible
+molecular rotation.
+2 Preliminaries
+2.1 Formalization of CA
+On ad-dimensional spatial lattice Zd, each site (cell) i∈Zdis assigned with
+itslocal stateωi∈A. The ﬁnite set Aof local states is called an alphabet. A
+speciﬁcation of local states over the whole space ω/defines(ωi)i∈Zd∈Ω=AZdis
+called aglobal state orconﬁguration .
+The dynamics of a CA is given by the local transition map ϕas
+ωt+1
+i=ϕ/parenleftbig
+(ωt
+j)j∈N(i)/parenrightbig
+, (1)
+where the neighbor function N:i/mapsto→(j1,...,jN) deﬁnes interaction range for
+each site i. By applying the local map ϕover the lattice, the global transition
+map
+ωt+1=Φ(ωt) (2)
+from a conﬁguration at tto the one at t+1 is derived. Although the applica-
+tion ofϕover the space is synchronous in simple CA, making it asynchronous
+can be eﬀective in satisfying reversibility and other constraints, as shown later.
+Furthermore, in more complicated CA, the local map ϕconsists not of a single
+map but of several maps (sub-steps), and the local states ωi∈Aalso have inner
+structures such as “partitions” or “layers.”
+When the global transition map Φis bijective, that is, when for any conﬁg-
+urationωt+1its pre-image ωtis unique, the CA is reversible (orinvertible ).
+2.2 Construction of reversible CA
+Reversibility entails conservation of information —diﬀerences in states cannot
+just appear from or vanish into nowhere. Hence the manner in which to prevent
+2information loss is crucial in constructing reversible CA.
+Since the many-to-onelocaltransitionmap ϕin Eq.(1) obviouslylosesinfor-
+mationbyitself(Fig. 1(a)),thelossshouldbepreventedbywell-counterbalanced
+distribution among the interacting cells. However, designing such ma ps is far
+from trivial. Indeed, judging the reversibilityof a global transition m apΦ, given
+its corresponding local map ϕ, is a diﬃcult task in itself.
+An easier method to construct reversible CA is by adopting a permutation
+(reversible transformation on a ﬁnite set) ψ,
+ψ:AB→AB, (3)
+instead of a many-to-one mapping ϕ, as a constituent of the transition rule
+(Fig.1(b)). Here, Bdenotes a “block” of cells under the permutation. In
+Partitioning CA (orblock CA )[10], for example, both the reversibilityand global
+transmission of information are satisﬁed by combining the permutat ion and
+alternation of diﬀerent partitioning schemes of a given space into ce ll-blocks.
+The permutation ( 3) can be generalized into a conditional permutation as
+ψc:AS→AS, c∈AC. (4)
+Out of the set C+Sof cells that are subject to the mapping, the states of cells
+inCwork as “control signals,” which determine a permutation for the st ates of
+S, and reappear unchanged as outputs (Fig. 1(c)). The Fredkin gate and the
+Toﬀoli gate are well-known examples of conditional permutations.
+Figure 1: Mappings to constitute transition: (a) many-to-one map ping, (b)
+permutation, and (c) conditional permutation.
+To prevent information loss, the outputs of the (conditional) perm utations
+should be reused as inputs or conditional signals, and to achieve this , one needs
+to implement certain techniques such as dividing a time step into sever alsub-
+steps, and arranging the permutations sparsely and asynchronously in space-
+time[11].
+For synchronous information transmission, one can also use global shifts,
+which uniformly displace some partitions or layers of local states. Th e transla-
+tional movement of free particles can be eﬀectively modeled by the s hifts. In
+lattice gas automata (LGA)[12,13], for example, shifts are utilized to express
+the translation of gas particles, in combination with permutations th at repre-
+sent the collisions of the particles. Partitioned CA [14] is virtually equivalent to
+the LGA.
+32.3 LMA model and other models
+Variousmodelshavebeenproposedandusedtosimulatemolecularse lf-organization
+processes. On the one hand, the molecular dynamics (MD) method m odels
+molecules as particles with appropriate interaction potentials, and s olves their
+equations of motion in continuous space[ 15]. While the MD enables micro-
+scopically detailed description of the dynamics, size of the simulated s ystem is
+restricted by the available computer resources. On the other han d, lattice-type
+models have been successful on simulating macroscopic behavior of phase sepa-
+ration and aggregation processes. Especially the Larson model[ 16,17,18] and
+its variants[ 19,20,21,22] are widely used and many results are reported. In the
+traditional Larson model simulating ternary mixture of water, oil ( hydropho-
+bic monomers), and surfactant (amphiphilic polymers), water and h ydrophobic
+monomers are represented by a set of up and down (+1 ,−1) spins, respectively,
+and polymers are represented by strings of spins. Monte Carlo met hod is used
+for update and the ferromagnetic interaction between the spins in duces phase
+separation, micelle formation, etc.
+The original LMA model bridges the gap between the MD method and t he
+Larson-typemodels[ 5]: While realizedin adiscrete mannerandthus keepingthe
+eﬃciency of the lattice setting, it includes some microscopic molecular details,
+such as hydrodynamics conserving momenta in the molecular collision, direc-
+tions of polar molecules and accompanied anisotropy of molecular pot ential
+energy. A distinguishing feature of the LMA model is the equienerge tic inter-
+action for the pairs water–hydrophobic monomer and hydrophobic monomer–
+hydrophobic monomer, following experimental data on enthalpy exc hanges in
+mixtures[ 23]. This setting is in contrast to the Larson models, which deﬁne
+positive enthalpic gains for oil–oil interaction but not for water–oil in teraction.
+Consequently, in the LMA model phase separation is realized via entropy-driven
+hydrophobic eﬀect, and not enthalpy-driven as in the Larson-typ e models.
+Although update rule of the LMA model partially keeps the conserva tion
+laws, its dynamics is not microscopically reversible (refer to section I V.B and
+V of Ref. [ 3] for example to see the total energy is conserved in the mean but
+not strictly and explicitly). Therefore, utilizing the techniques intro duced in
+section2.2, we construct our RLMA model in the next section.
+3 RLMA Model
+3.1 Space
+WeformalizetheRLMAmodelonthetwo-dimensionaltriangularlattic e(Fig.2(a),
+(b)) as in the literature[ 3,4], although generalization to other lattice struc-
+tures and to higher dimensions will be straightforward. We use the v ariable
+l∈ {+1,+2,+3,−1,−2,−3}≡Lto denote the principal directions, and l(i) to
+denote cell i’s nearest neighbor in direction l, as shown in Fig. 2(c).Lcorre-
+sponds to {0,π/6,...,5π/6}in the equilateral triangular lattice with a proper
+coordinate system (Fig. 2(c)), and on L, we deﬁne a cyclic permutation ∆ of
+4length 6,
+∆ =/parenleftbigg+1 +2 +3 −1−2−3
++2 +3 −1−2−3 +1/parenrightbigg
+, (5)
+which corresponds to + π/6 rotation operator for the principal directions.
+Figure 2: Two-dimensional triangular lattice: (a) structure, (b) c orresponding
+cells, and (c) principal directions and nearest neighbors.
+3.2 Local states
+Each local state has the layers(internal data structure) shown in Table 1.
+Table 1: Structure of local states.
+Layer name and variable Values
+Molecular type mti Water (W), hydrophilic monomer (I),
+hydrophobic monomer (O), or vacuum
+(V)
+Molecular orientation moi moi∈Lfor polar molecules, moi=
+nullotherwise
+Translational kinetic energy ( tkei,l)l∈Ltkei,l∈ {0,1}for molecules, while non-
+zero values in the opposing directions
+are forbidden
+Rotational kinetic energy rkei {−1,0,+1}(polar:{±1}, non-polar: 0)
+Molecular bonds ( mbi,l)l∈L Up to two bonds for hydrophilic or hy-
+drophobic monomers
+Heat particles ( hi,l)l∈L hi,l∈ {0,...,H max}for eachl∈L
+Preferential direction pdi pdi∈L
+Foreachcell i∈Z2,molecular type mt itakesoneofthreetypesofmolecules—
+water(W),hydrophilic monomer (I),hydrophobic monomer (O), orvacuum
+(empty; V). For example, one can consider the hydrophilic monomer to be
+acetic acid and the hydrophobic monomer to be methane. A site can c ontain at
+most one molecule; this constraint corresponds to excluded volume .
+5Figure 3: Molecular types. Upper row: schematic illustrations. Lowe r row:
+representations in visualization of the simulation results; bars indica te the ori-
+entations of polar molecules.
+Water and hydrophilic monomers are polar molecules; therefore, th ey have
+molecule orientation mo i∈L. (For hydrophobic monomers and vacuum,
+moi= null.) We deﬁne that, for water in orientation mo, the same direction
+represents negative polarization (corresponding to one oxygen) and ∆±2(mo)
+represents positive polarization (corresponding to two hydrogen s), and for a
+hydrophilic monomer in orientation mo, ∆±1(mo) represents negative polariza-
+tion (corresponding to O or OH) (See Fig. 3). Molecular orientation aﬀects the
+strength of potential energy induced by several kinds of molecular interaction
+(see section 3.3).
+The sites occupied by molecules have translational kinetic energy (TKE)
+tkei,l∈ {0,1}in every principal direction l∈L, although non-zero energy
+values in opposite directions on the same line are forbidden ( tkei,l+tkei,−l≤1).
+Hence, there are 27 possible TKE states for a molecule (Fig. 4).
+Figure 4: Possible states of translational kinetic energy for a molec ule.
+Molecules can have rotational kinetic energy (RKE)rkei, which allows the
+rotation of the polar molecules to be reversible (see section 3.4.4). For proper
+6update by the rotation rule given here, we conﬁne the value of rkeito{+1,−1}
+for polar molecules, and to zero for non-polar molecules or vacuum. (For an
+alternative setting, see Appendix A.)
+Hydrophilic and Hydrophobic monomers can have molecular bonds with
+neighboring monomers. We deﬁne that
+mbi,l=/braceleftbigg
+1 if two monomers at iandl(i) are bonded ,
+0 otherwise .(6)
+(Thus,mbi,l=mbl(i),−l.)Polymers can be composed as a group of monomers
+linked by the bonds, as shown in Fig. 5. In the current study, we suppose that
+for each monomer to have the bonds in at most two directions,/summationtext
+l∈Lmbi,l≤2;
+thus, the polymers are one-dimensional. One can consider the polym ers to be
+fatty acids.
+Figure 5: Schematic representation of a polymer.
+For the above layers, which are related to molecules, we also overlay theheat
+particles layer on each cell. The heat particle variable hi,lcan take values of
+{0,...,H max}independently for every direction l∈L.
+Finally, we append the preferential direction pdi∈Lfor each cell i. In the
+transitionrule given below, the preferentialdirection worksas a “ﬂ uctuation”to
+breakirreversibility-inducingsymmetry. The parityofthepreferentialdirection,
+deﬁned by
+parity(pdi) =/braceleftbigg+1 ifpdi∈ {+1,+3,−2},
+−1 ifpdi∈ {+2,−1,−3},(7)
+is also utilized in the transition rule.
+Molecular type, orientation, TKE and, molecular bonds (or variables equiv-
+alent to them) are included in the original LMA[ 4,5]. On the other hand,
+RKE, heat particles, and preferential direction are introduced in t his model to
+implement reversibility in a physically appropriate manner.
+73.3 Potential energy
+Every molecule interacts with its nearest neighboring molecules;1therefore, it
+haspotential energies for each of the six principal directions. In calculating
+potential energy, we consider only pairwise interactions, and let Vi,l(i)denote
+potential energy arising from the interaction between molecules at iandl(i).
+The molecular interaction is divided into three classes:2
+•Electrostaticinteractionsbetween permanent multipoles, which ta ke place
+when the polarized directions of the two polar molecules face each ot her.
+LetVperm−permrepresent the potential energy contribution from this class
+of interactions.
+•Induction-based interactions between a permanent multipole and a n in-
+ducedmultipole, whichtakeplacewhenapolarizeddirectionofonemole cule
+faces an originally non-polarized direction of another. Let Vperm−indrep-
+resent the potential energy contribution from this class of intera ctions.
+•London dispersion interactions between induced multipoles, which ta ke
+place when the surfaces of two non-polar molecules face each othe r. Let
+Vind−indrepresent the potential energy contribution from this class of in-
+teractions.
+Then, the total potential energy in the system is calculated as
+Vtotal=1
+2/summationdisplay
+i/summationdisplay
+l∈LVi,l(i)=1
+2/summationdisplay
+i/summationdisplay
+l∈L/parenleftig
+Vi,l(i)
+perm−perm+Vi,l(i)
+perm−ind+Vi,l(i)
+ind−ind/parenrightig
+.
+(8)
+For the full speciﬁcation of the potential terms in our model, the int eger
+parameters listed in Table 2must be given.
+3.4 Transition rule
+In the original LMA model, each unit-time update consists of the follo wing
+sub-steps[ 4]:
+1. propagation of the molecular type and redistribution of kinetic en ergies,
+2. construction of type-speciﬁc force ﬁelds,
+3. calculation of potential energies,
+4. calculation of the most proper move direction,
+5. readjustment of bonds in polymers according to the move direct ion, and
+6. movement of the molecule and clearing of the old lattice position.
+1Although wider range of interaction can also be modeled, it r equires larger number of site
+groupsand more complicated update schemes (see section 3.4).
+2We omit cooperativity eﬀects because of their minor inﬂuenc e on the simulation results.
+8Table 2: Parameters of potential energy. Potentials of other neig hboring direc-
+tions of molecular pairs are set to 0.
+Class Potential Applied cases
+VWH−WHWhere positively polarized directions (Hs) of two water
+molecules (Ws) face each other
+VWO−WOWhere negatively polarized directions (Os) of two Ws
+face each other
+VWH−WOWhere an H and an O of two Ws face each other
+Vperm−perm
+VWH−IPWhere an H of a W faces a negatively polarized direc-
+tion (O or OH) of a hydrophilic monomer (I)
+VWO−IPWhere an O of a W faces a negatively polarized direc-
+tion of an I
+VIP−IPWhere two negatively polarized directions of two Is face
+each other
+VWH−WNWhere an H and a non-polarized direction of two Ws
+face each other
+VWH−INWhere an H of a W faces a non-polarized direction of
+an I
+VWH−OWhere an H of a W faces any one of directions of a
+hydrophobic monomer (O)
+VWO−WNWhere an O and a non-polarized direction of two Ws
+face each other
+Vperm−indVWO−INWhere an O of a W faces a non-polarized direction of
+an I
+VWO−OWhere an O of a W faces any one of directions of an O
+VIP−WNWhere a negatively polarized direction of an I faces a
+non-polarized direction of a W
+VIP−INWhere a negatively polarized direction and a non-
+polarized direction of two Is face each other
+VIP−OWhere a negatively polarized direction of an I faces any
+one of directions of O
+Vind−indVO−OWhere any directions of two Os face each other
+9AlthoughstatedotherwiseinRef.[ 5], manyofthesesub-stepsareirreversible
+in actuality, involving erasure and duplication of information. To realiz e re-
+versibility, therefore, we reconstruct the sub-steps and creat e new ones, utilizing
+the techniques introduced in section 2.2.
+3.4.1 Molecular translation, collision, and excluded volu me
+In the LMA, for each molecule, the most proper move direction is calc ulated
+based on its TKEs and potentials, and the molecule moves to the direc tion if
+the movement satisﬁes the constraints of excluded volume and mole cular bond
+maintenance. This rule causes situations whose pre-images are not unique (e.g.,
+a molecule at a site might havecome from one ofthe neighboringsites a ccording
+to the most proper move direction, or might have been at the same s ite a unit
+time ago because of the constraints), and thus it is irreversible.
+To satisfy the constraints of excluded volume and molecular bond ma inte-
+nance, and to realize reversibility at the same time, we introduce site groups .
+Sites in each group should be scattered uniformly and sparsely enou gh (to pre-
+vent interference of the pairwise interactions deﬁned below, the s ites in each
+group should be separated by at least four times the unit distance) . We deter-
+mine the group to which site ibelongs at time tby the following map
+g(i,t) ={4(ixmod 4)+(iymod 4)+t}mod 16, (9)
+andletG={0,1,...,15}denotetherangeof g. Here(ix,iy) arethecoordinates
+of siteigiven by the axis in Fig. 2(c), and each site is assigned to a group, as
+shown in Fig. 6.
+Figure 6: Site groups for interleaved interaction. Sites in the group indexed “6”
+are shaded.
+Using the site groups and the preferential directions, molecular tr anslation
+and collision are performed in an interleaved manner using the scheme shown
+in Fig.7.
+10begin
+forgin site groups Gdo
+forkin (0,1,...,5)do
+foreveryiin a groupgdo
+j:=pdi(i);
+if∆k(pdj) =pdithen
+ψmtc(ωi,ωj); //pairwise interaction between iandj.
+end
+Figure 7: Interleaved paired site interaction scheme. Note Eq. ( 5) for the deﬁ-
+nition of ∆.
+For the interaction between paired neighboring sites iandj=pdi(i) in
+Fig.7, we deﬁne a composite conditional permutation ψmtc, which represents
+molecular translation and collision.
+When both sites are vacuum, no interaction takes place:
+mti=mtj= V⇒ψmtc(ωi,ωj) = (ωi,ωj) (identity). (10)
+Wheniis occupied by a molecule and jis vacuum, the molecule at imoves
+tojif the TKE in this direction pdiis positive, or the molecule’s TKE in
+this direction is inverted if the TKE in the opposite direction is positive, or no
+change takes place if the molecule’s TKEs are zero in both directions:
+mti/ne}ationslash= V,mtj= V⇒
+
+ψmtc
+
+mti
+moi
+(tkei,l)l
+rkei
+(mbi,l)l
+,
+mtj
+moj
+(tkej,l)l
+rkej
+(mbj,l)l
+
+=
+
+mtj
+moj
+(tkej,l)l
+rkej
+(mbj,l)l
+,
+mti
+moi
+(tkei,l)l
+rkei
+(mbi,l)l
+
+
+if (tkei,pdi,tkei,−pdi) = (1,0),
+ψmtc(tkei,pdi,tkei,−pdi) = (tkei,−pdi,tkei,pdi)
+if (tkei,pdi,tkei,−pdi) = (0,1),
+ψmtc(ωi,ωj) = (ωi,ωj)
+if (tkei,pdi,tkei,−pdi) = (0,0).
+(11)
+(Here, internal layers that are unaﬀected by ψmtcare omitted.) Conversely,
+wheniis vacuum and jis occupied by a molecule, the molecule’s move direction
+pdiis replaced by −pdiin the above equation. Note that if the preferential
+directions are uniform over all of the sites, a free molecule without m olecular
+interaction always maintains the directions of its TKEs after one full unit-time
+update, because whenever an inversion of TKE takes place, it is can celed by
+another inversion in the update scheme of Fig. 7. This does not hold, however,
+if the preferential directions are not uniform. This issue will be addr essed again
+in section 3.6.
+11When both iandjare occupied by molecules, the two molecules exchange
+TKEs as in an elastic collision
+mti/ne}ationslash= V∧mtj/ne}ationslash= V
+⇒ψmtc(tkei,±pdi,tkej,±pdi) = (tkej,±pdi,tkei,±pdi).(12)
+3.4.2 Maintenance of molecular bonds
+As mentioned earlier, polymers are composed as chains of monomers linked by
+molecular bonds (Fig. 5). Integrated and coherent motion of such a multi-site
+structure(“solidbody”) is diﬃcult to model usingCA. Apossibleappr oachis to
+express the structure’s motion states by its deforming shape[ 24,25]. Although
+this method can replicate many aspects of Hamiltonian mechanics as w ell as the
+structure’s integrity, it makes it diﬃcult to formalize proper interac tion between
+such a structure and the single-site particles (molecules) whose mo tion states
+are expressed as their internal states. In the RLMA, the mainten ance of bonds
+is ensured by using the bond information as another conditional sign al for the
+molecular translational permutation ( 11).
+First, it is checked if the molecular bonds (provided they exist) are m ain-
+tained when the molecule at imoves to the vacuum site j=pdi(i). Bonds
+with molecules at ∆±1(pdi)(i) are not destroyed by the movement because the
+bonded molecules remain neighbors (the bond directions after move ment be-
+come ∆±2(pdi); Fig.8(a)). If the molecule has bonds in other directions, these
+bondsaredestroyedbythemovement(Fig. 8(b)). Therefore,weappendanother
+condition to the permutation ( 11):
+mti/ne}ationslash= V,mtj= V⇒/braceleftbiggApply (11) followed by bond readjustment ψbrifmbi,∆±2(pdi)=mbi,−pdi= 0,
+ψmtc(ωi,ωj) = (ωi,ωj) otherwise .
+(13)
+The readjustment of bonds ψbrtakes place not only at the moved molecule’s
+new position jbut also at ∆±1(pdi)(i) if the bonds exist:
+ψbr
+mbj,∆+1(pdi),mbj,∆+2(pdi)
+mb∆+1(pdi)(i),∆−2(pdi),mb∆+1(pdi)(i),∆−1(pdi)
+mbj,∆−1(pdi),mbj,∆−2(pdi)
+mb∆−1(pdi)(i),∆+2(pdi),mb∆−1(pdi)(i),∆+1(pdi)
+=
+0,mbj,∆+1(pdi)
+0,mb∆+1(pdi)(i),∆−2(pdi)
+0,mbj,∆−1(pdi)
+0,mb∆−1(pdi)(i),∆+2(pdi)
+,
+(14)
+A drawback of this rule is that it occasionally causes motion of polymer s
+that has less physical relevance. For example, when a polymer’s con stituent
+monomers are arranged on a straight line and all of the monomers ha ve positive
+TKE only on the line, the polymer cannot move even if all of the monome rs’
+TKE directions are identical. However, if some of the monomers have posi-
+tive TKEs in other directions, this polymer can move on average to its most
+proper direction with respect to TKE, while becoming deformed and k eeping
+its integrity.
+12Figure 8: Translational movement and molecular bonds. If a molecule atiis
+moving to j=pdi(i), (a) its bonds in directions ∆±1(pdi) are maintained with
+their directions readjusted to ∆±2(pdi), but (b) bonds in directions ∆±2(pdi)
+and−pdiwould not be maintained.
+3.4.3 Self-organization and reversibility
+In irreversible models such as the LMA, the tendency of self-organ ization from
+disordered high-entropystates to ordered low-entropystruct ures is embedded in
+their information-losing transition rules themselves. To realize “app arent” self-
+organization of ordered structures by a reversible rule without inf ormation loss,
+the rule needs additional degrees of freedom that work as a heat bath into which
+the entropy generated in the organization process should be dispo sed of. The
+deterministic Ising model[ 8] and the reversible generalization[ 9] of the diﬀusion
+limited aggregation (DLA) model[ 26] are examples of this approach. We also
+adopt this approach, using the heat particle layer as the heat bath.
+When both of the neighboring sites iandjhave molecules, in advance of
+the collision ( 12) byψmtc, we apply site-respective TKE–heat interaction ψth
+deﬁned as follows. For the molecule at site x(i.e., either iorj), when it has
+positive TKE in one direction lout of{±pdi}(i.e., along the line connecting the
+two molecules), and when the heat particles satisfy hx,l<Hmaxandhx,−l= 0
+at sitex, then the positive TKE is transformed into a heat particle in the same
+directionl(heat release):
+mti/ne}ationslash= V,mtj/ne}ationslash= V then for x∈ {i,j}
+
+ψth/parenleftbiggtkex,±pdi
+hx,±pdi/parenrightbigg
+=/parenleftbiggtkex,±pdi−1
+hx,±pdi+1/parenrightbiggif (tkex,±pdi,tkex,∓pdi) = (1,0)
+andhx,±pdi<Hmax,hx,∓pdi= 0,
+ψth(ωx) =ωx otherwise.
+(15)
+On the other hand, when the molecule at xdoes not have a TKE in either
+of{±pdi}and heat particles exist in only one of the two directions, one heat
+13particle is transformed into the TKE in the same direction (heat abso rption):
+mti/ne}ationslash= V,mtj/ne}ationslash= V then for x∈ {i,j}
+
+ψth/parenleftbiggtkex,±pdi
+hx,±pdi/parenrightbigg
+=/parenleftbiggtkex,±pdi+1
+hx,±pdi−1/parenrightbiggif (tkex,pdi,tkex,−pdi) = (0,0)
+andhx,±pdi>0,hx,∓pdi= 0,
+ψth(ωx) =ωx otherwise.
+(16)
+Introduction of this TKE–heat interaction makesthe interaction b etween neigh-
+boring molecules non-elastic.
+For molecular translation, potentials work as yet another control signal for
+the permutation in ψmtcof Eq. (11), and the translation is executed only if the
+changes in potentials entailed by the movement of molecule from itoj, given
+that their neighbors are ﬁxed, can be compensated for by emission /absorption
+of heat particles at iandj:
+mti/ne}ationslash= V,mtj= V⇒
+
+Proceed to ( 13) if 0 ≤hi,l−δ(−)Vi,l(i)≤Hmaxand
+0≤hj,l−δ(+)Vj,l(j)≤Hmaxforl∈L,
+ψmtc(ωi,ωj) = (ωi,ωj) otherwise .
+(17)
+Here,δ(−)Vi,l(i)represents the potential change in direction lcaused by remov-
+ing the molecule from its current site i, andδ(+)Vj,l(j)represents a potential
+change in direction lcaused by placing the molecule (while maintaining its ori-
+entation) at vacuum site j. Further, when the translation is actually induced
+by the permutation ( 11), it is followed by the potential change compensation
+ψpcc:
+ψpcc((hi,l)l,(hj,l)l) =/parenleftig
+(hi,l−δ(−)Vi,l(i))l,(hj,l−δ(+)Vj,l(j))l/parenrightig
+.(18)
+Thus, a molecule moving to a more stable site (/summationtext
+lδ(+)Vj,l(j)<0) releases
+heat particles in total, and it can be dissociated again from its neighbo rs only
+when enough energy is supplied by the heat particle layer.
+3.4.4 Rotation of polar molecules
+Polar molecules such as water and hydrophilic monomers can take diﬀe rent po-
+tential values depending on their orientations. According to the LM A rule, the
+polar molecules are rotated irreversibly into their more stable (lower -potential)
+orientations. Tomaintainreversibilityand atthe same time toenable r elaxation
+into a more stable direction conﬁguration, we utilize RKE and also the h eat par-
+ticle layer. Similar to the paired site interaction in Fig. 7, rotational update is
+also performed in the interleaved scheme shown in Fig. 9. Here, we again use
+the site groups of Eq. ( 9) (although for the rotational permutation given below,
+interference can be prevented if the sites in each group are separ ated by more
+than a unit distance).
+14start
+forgin site groups Gdo
+foreveryiin a groupgdo
+ifmti∈ {W,I}then //polar molecule
+ρ(moi,rkei,(hi,l)l∈L); //rotational update
+end
+Figure 9: Interleaved update scheme for molecular orientation and RKE with
+heat interaction.
+The rotational update ρis deﬁned as follows: the polar molecule at irotates
+according to the sign of RKE and the orientation becomes ∆rkei(moi) if the
+change in potentials caused by the rotation can be compensated fo r by emis-
+sion/absorption of heat particles at the site. Otherwise, the molec ule does not
+rotate and RKE is inverted:
+ρ
+moi
+rkei
+(hi,l)l
+=
+
+
+∆rkei(moi)
+rkei
+(hi,l−δ(moi,∆rkei)Vi,l(i))l
+
+if 0≤hi,l−δ(moi,∆rkei)Vi,l(i)≤Hmaxfor∀l∈L,
+moi
+−rkei
+(hi,l)l
+otherwise.
+(19)
+Here
+δ(k,∆n)Vi,l(i)(20)
+represents the potential change in direction lthat occurs when the orientation
+of the molecule at iis changed from kto ∆n(k), with the neighboring molecules
+ﬁxed.
+In this rule, the RKEs work as a kind of “second-order” signal[ 10], which
+preserves the history of the molecules’ rotational states. Ther efore, the polar
+molecules cannot stop rotating i.e., rke/ne}ationslash= 0 (or given rke/ne}ationslash= 0 as the initial
+condition, they cannot change their orientations forever). For a n alternative
+rotation rule that allows RKEs to take values on Z, including the stationary
+staterke= 0, see Appendix A.
+3.4.5 Transportation of heat particles
+For the heat particle layer to function as a heat bath, the released heat particles
+should be eﬀectively diﬀused into open areas. In ourRLMA model, the diﬀusion
+ofheat particlesis conducted bya rule similarto that forthe Frisch– Hasslacher–
+Pomeau lattice gas automata (FHP-LGA)[ 13], that is, for every unit-time up-
+date, a synchronous shift (translation) σhis performed in each direction
+σh:hi,l/mapsto→h−l(i),lforl∈L (21)
+15followed by a local collision φhat each site:
+φh:
+
+/parenleftbig
+(hi,∆l(k))/parenrightbig
+= (m,0,0,m,0,0)/mapsto→/braceleftbigg(0,m,0,0,m,0) if parity( pdi) = +1,
+(0,0,m,0,0,m) if parity( pdi) =−1,/parenleftbig
+(hi,∆l(k))/parenrightbig
+= (m,0,m,0,m,0)/mapsto→(0,m,0,m,0,m)/parenleftbig
+(hi,∆l(k))/parenrightbig
+/mapsto→/parenleftbig
+(hi,∆l(k))/parenrightbig
+otherwise
+(22)
+with 0<m≤Hmaxandk∈ {1,2,3}. Note that the collision φhis deterministic
+and utilizes the parity of preferential direction at each site.
+3.5 Composition of unit-time update
+After integrating the sub-steps deﬁned above, a unit-time updat e of the RLMA
+can be performed through the following time sub-steps (variables in parentheses
+are those aﬀected by the particular sub-step):
+1. Transportation of heat particles (( hi,l),pdi)
+Heat particles are diﬀused by the FHP-LGA-like combination of the sh ift
+(21) and collision ( 22).
+2. Rotation of polar molecules ( mti,moi,rkei,(hi,l))
+Using the interleaved scheme of Fig. 9, molecular rotation is performed by
+the conditional permutation ( 19).
+3. Moleculartranslationandinteraction( mti,moi,(tkei,l),(mbi,l),(hi,l),pdi)
+Using the interleaved scheme of Fig. 7,
+•molecular translation is performed by the paired site conditional per -
+mutation ( 11) with the conditions ( 13) and (17), while
+•molecular interaction is performed by the conditional permutation
+(12) with the heat release ( 15) and absorption ( 16).
+4. Update of preferential direction ( pdi)
+To ensure unbiasedness for the principal directions, the prefere ntial direc-
+tion should be updated according to time. We use the simple uniform
+rotation pdi/mapsto→∆+1(pdi), although synchronous shifts and deterministic,
+invertible pseudorandom number generators can also be combined.
+Thesesub-stepsareindependent; therefore,theordercanbe changed. Eachsub-
+time step is reversible; therefore, the inverse update is achieved b y performing
+this construction in reverse.
+3.6 Conservation laws
+From the above deﬁnitions, the transition rule of RLMA conserves mass(num-
+ber of molecules) and the total energy that is given as a sum of TKEs, RKEs,
+16potential energies, and heat particles over the sites:
+Etotal=/summationdisplay
+i/summationdisplay
+l∈Ltkei,l+/summationdisplay
+i|rkei|+Vtotal+/summationdisplay
+i/summationdisplay
+l∈Lhi,l. (23)
+These conservation laws enable precise application and validation of m ethods
+and theoremsin statisticalmechanics, both equilibrium (microcanon ical, canon-
+ical, and grand-canonical) and nonequilibrium ( e.g., relaxation, Fourier’s law of
+heat conduction, Green–Kubo relations), as is done for simpler (an d in many
+cases more abstract) CA models[ 8,9,27,28,29,30,31,32].
+On the other hand, conservation of momenta does not hold becaus e of
+the TKE inversion in the translational permutation ( 11), as mentioned in sec-
+tion3.4.1. (Angular momenta are not conserved either, because the rotat ional
+permutation ( 19) also contains uncompensated inversion of RKE.) From the
+macroscopic viewpoint, this non-conservation of momenta seems t o work posi-
+tively to enhance the model’s ergodicity, instead of the eﬀect of cha os dynamics,
+which discrete CA models lack.
+4 Simulation
+In this section, we demonstrate by simulation that the RLMA can rep roduce
+the original LMA’s self-organization results[ 3] as special cases. We also show
+that the RLMA reproduces results which are qualitatively consisten t with the
+traditional Larson-type models. More extensive results and their statistical
+treatment will be given in a future work.
+In the following simulations, the parameters are set as follows: Hmax= 8,
+VWH−WH=VWO−WO=VWO−IP=VIP−IP= +4,VWH−WO=VWH−IP=−4,
+VWH−WN=VWH−IN=VWH−O=VWO−WN=VWO−IN=VWO−O=VIP−WN=
+VIP−IN=VIP−O=VO−O=−1. The simulations in section 4.1and4.2adopted
+lattice space consisting of N= 24×24 cells, while the simulations in section 4.3
+used lattice spaceof N= 100×100cells. Periodicboundarycondition is applied
+in all the simulations, so the systems are isolated.
+4.1 Hydrophobic monomers in a polar environment
+Fig.10shows snapshots of the molecular layer in a simulation of a mixture of
+waterandhydrophobicmonomers(25%water, 25%hydrophobicmo nomer, 50%
+vacuum). Starting from a homogeneously mixed initial conﬁguration with no
+heat particles (Fig. 10(a)), clustering and phase separation gradually take place
+(Fig.10(b), (c)), accompanied by emission of heat particles (not shown in t he
+ﬁgures).
+Note also that phase separation takes place in spite of the setup th at the
+induction-basedforces vWO−HandvWO−Obetweenahydrophobicmonomerand
+a water molecule are set equal to the dispersion interaction force vOObetween
+two hydrophobic monomers, and they are much weaker than the wa ter–water
+17Figure 10: Snapshots of the molecular layer in a simulation of a water–
+hydrophobic monomer system. The molecules cluster preferentially with those
+of the same type, and phase separation occurs.
+bindingvWH−WO, as is the case in Ref. [ 3] (see also section 2.3). Since the
+system is isolated, this self-organization process is entropy-driven .
+Fig.11shows the time evolution of mean energies per cell—TKE (sum for
+all of the principal directions /an}bracketle{t/summationtext
+l∈Ltkei,l/an}bracketri}hti), RKE (absolute value /an}bracketle{t|rkei|/an}bracketri}hti),
+potential energy (sum for all of the principal directions1
+2/an}bracketle{t/summationtext
+l∈LVi,l/an}bracketri}hti), heat
+particles (sum for all of the principal directions /an}bracketle{t/summationtext
+l∈Lhi,l/an}bracketri}hti)—in the simulation
+run of Fig. 10. In this relaxation process, as the molecules are organized into
+Figure 11: Time evolution of mean values of TKE, RKE, potential ener gy, and
+heat particles per cell in a simulation of a water–hydrophobic monome r system.
+a more stable conﬁguration, the energy released from the molecula r layer is
+transferred into the heat particle layer, with the total energy co nserved (mean
+totalenergypercell, etotal=Etotal/N, is0.68). Itisobservedthatalargepartof
+the energy transfer takes place in the ﬁrst few thousand steps. This corresponds
+to quick dissolution of high-potential, unstable partial conﬁguratio ns.
+Fig.12shows the time evolution of mean numbers of neighboring molecules
+18of the same types (water and hydrophobic monomer)—calculated a s/an}bracketle{t|{l(i)|
+mtl(i)=X}|/an}bracketri}htis.t.mti=XforX= W,O, respectively—in the same simulation.
+The mean neighboringmolecules of the same types start from the init ial random
+Figure 12: Time evolution of mean numbers of neighboring molecules of the
+same types (water and hydrophobic monomer) in the simulation of a w ater–
+hydrophobic monomer system.
+conﬁguration (where the value ∼0.25×6 = 1.5 for both water and hydrophobic
+monomers) and increase relatively slowly, taking a few million steps to r each
+the equilibrium state. This result is consistent with observations of t he physico-
+chemicalmolecularaggregationprocess,wheresmallclustersare quicklyformed,
+butasthesizegrows,theirmobilitydecreasesandintegrationintola rgerclusters
+requires more time.
+4.2 Amphiphilic polymers in a polar environment
+Fig.13shows snapshots of the molecular layer in three simulations of am-
+phiphilic tetramers (each consisting of three hydrophilic monomers p lus one
+hydrophobic head monomer, see Fig. 5) in solvent water, with diﬀerent settings
+for the initial distribution of heat particles.
+InthesimulationofFig. 13(a),initially,therearenoheatparticles,represent-
+ing the “low-temperature” condition (mean total energy per cell etotal= 0.95).
+Although the low-temperature condition is the same as the one adop ted in the
+simulation of Fig. 10, this simulation requires a longer relaxation time, because
+the polymers’ mobility is lower than that of the monomers (mainly beca use of
+the bond maintenance condition ( 13)). Starting from the initial condition where
+the tetramers are homogeneously distributed, they aggregate in to micelle-like
+structures, their hydrophilic heads staying in contact with water a nd their hy-
+drophobic tails trying to cluster. The micelle-like structures are an e lementary
+exampleof higher-order structures[ 1], withemergentpropertiessuchasintegrity
+19Figure 13: Snapshots of the molecular layer in three simulations of wa ter–
+amphiphilic polymer systems with diﬀerent initial distributions of heat p articles
+(“temperature”): (a) low-, (b) moderate-, and (c) high-tempe rature conditions.
+and even lower mobility.
+Fig.13(b) corresponds to the “moderate-temperature” condition, wh ere the
+initialhi,lis given randomly from [0 ,1] with/an}bracketle{thi,l/an}bracketri}hti= 1 forl∈L(mean total
+energy per cell etotal= 3.93). Compared with the low-temperature condition,
+while the sizes of the organized micelle-like structures and water agg regates
+become smaller, their motion becomes faster.
+Fig.13(c)correspondstothe “high-temperature”condition, whereth e initial
+hi,lis given randomly from [0 ,4] with/an}bracketle{thi,l/an}bracketri}hti= 2 forl∈L(mean total energy
+per celletotal= 13.01). In this condition, the molecular motion becomes even
+faster and no distinct self-organization is observed.
+Fig.14shows the time evolution of mean energies per cell, and Fig. 15
+shows the time evolution of mean numbers of neighboring molecules of the same
+types (water and hydrophobic monomer) in the three abovementio ned simula-
+tions with the diﬀerent temperature conditions. Note the diﬀerenc e in the time
+scales. These results indicate the temperature dependency of th e molecular pro-
+20Figure 14: Time evolution of mean values of TKE, RKE, potential ener gy, and
+heat particles per cell in a simulation of water–amphiphilic polymer syst ems
+in the diﬀerent temperature conditions: (a) low-, (b) moderate-, and (c) high-
+temperature conditions.
+cess. That is, at lower temperature, polymers aggregate into larg er structures;
+however, the formation process takes a longer time. On the other hand, at
+higher temperature, large structures cannot be maintained while t he motion of
+polymers gets faster. This kind of temperature dependency is der ived (rather
+than being presupposed) in a precise manner only from dynamical mo dels with
+reversibility and energy conservation. Fig. 15(especially (a)) also shows that
+the aggregation of polymers is slower than the clustering of water.
+4.3 Phase separation dynamics in ternary mixtures
+To compare in more detail the behavior of our RLMA with experimenta l obser-
+vations and other models (especially the Larson-type ones), we co nducted sim-
+ulation of ternary mixtures of water, hydrophobic monomers, and amphiphilic
+polymers, and analyzed the phase separation dynamics with diﬀeren t concen-
+tration and temperature (total energy) settings.
+Theories as well as successful models have shown that the phase s eparation
+or domain growth dynamics generally obeys dynamic scaling[ 33,15,34,36,22],
+where domain structure remains statistically invariant in time under r escaling
+by the characteristic length scale L, andLgrows as a function of time following
+the asymptotic power law, L(t)∼t1/z. The theories typically suggest z= 1/3,
+though the value can diﬀer depending on the stages of phase separ ation.
+To check if the RLMA realizesthe dynamic scaling behavior, we investig ated
+the evolution of mean cluster radius . A molecule of type X(in this case, Xcan
+be water W, hydrophobic monomer O, or amphiphile A) belongs to a clus ter
+of typeXif any of its nearest neighbor are of the same type and are already
+counted as part of the cluster. Using the cluster distribution {nX(s)}s, where
+nX(s) is the number of type Xclusters with size s, the mean cluster size χXof
+21Figure 15: Time evolution of mean numbers of neighboring molecules of the
+same types (water and hydrophobic monomer) in the simulations of w ater–
+amphiphilic polymer systems with the diﬀerent temperature condition s: (a)
+low-, (b) moderate-, and (c) high-temperature conditions.
+typeXis estimated as
+χX=smax,X−1/summationdisplay
+s=1s2nX(s)/slashiggsmax,X/summationdisplay
+s=1snX(s), (24)
+wheresmax,Xis the largest cluster of type X. In two dimensions, the mean
+cluster radius of type Xis estimated as RX∼χ1/2
+X.
+Fig.16shows the evolution of averaged mean cluster radius /an}bracketle{tR/an}bracketri}ht= [1
+2(χW)+
+χO)]1/2, with diﬀerentconcentrationratiosofwater φW, hydrophobicmonomers
+φO, and amphiphilic polymers φA(the ratio of vacuum φV= 0.4 is common),
+in a temperature setting (mean total energy etotal= 1.18). Power law behavior
+is observed for all the concentration ratios ( φW,φO,φA) = (0.288,0.288,0.024),
+(0.27,0.27,0.06), and (0 .24,0.24,0.12). For each setting, the scaling exponent
+1/zis estimated as 0 .213±0.004, 0.199±0.005, and 0.121±0.004, by ﬁtting
+the data within time region [10000 ,200000]into /an}bracketle{tR/an}bracketri}ht(t)∼t1/z. These estimated
+values, especially the former two (1 /z∼0.2) are similar to the ones obtained
+by simpler Ising spin models for binary systems [ 34,35,36], but smaller than
+the theoretical value z= 1/3 which is also obtained in Ref. [ 22] by adding small
+amount of amphiphile into binary mixture, like in this simulation. The small
+values are possibly because the asymptotic late stage is not reache d due to the
+small size of the system, but other possible reasons can be also sug gested: (i)
+the existence of hydrodynamics, which is supposed to be absent in t he dynamic
+scaling hypothesis[ 33] as well as the Larson-type model in Ref. [ 22], (ii) the
+constant-energy condition, where the temperature increases a s the clustering
+proceeds and the dynamic exponent becomes smaller compared to t he isother-
+mal condition[ 15], while the latter is usually used in the Larson-type models
+and other Monte Carlo methods, and (iii) other conservation laws, w hich also
+work to decrease the exponent [ 36]. The decrease in the growth rate of /an}bracketle{tR/an}bracketri}ht
+221e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+time steps<R>
+1e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+1e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+time steps<R>
+1e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+1e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+time steps<R>
+1e+03 5e+03 2e+04 5e+04 2e+052 4 6 8 10
+Figure 16: Time evolution of the averaged mean cluster radius /an}bracketle{tR/an}bracketri}ht, with dif-
+ferent molecular ratios. ◦represents ( φW,φO,φA) = (0.288,0.288,0.024),△
+represents ( φW,φO,φA) = (0.27,0.27,0.06), and ⋄represents ( φW,φO,φA) =
+(0.24,0.24,0.12). The lines show power law relations with estimated scaling
+exponents 1 /zfor their slopes.
+accompanying the increase of concentration φAof amphiphile is consistent with
+the result in Ref. [ 22].
+For diﬀerent temperaturesettings we alsocalculatedthe equal-time structure
+factorsSX(k,t), whichisthe Fouriertransformofthe equal-time pair correlation
+function, deﬁned as
+SX(k,t) =/integraldisplay
+CXX(/vector r,t)ei/vectork·/vector rd/vector r, (25)
+CXX(/vector r,t) =/an}bracketle{tδρX(/vector r,t)δρX(/vector0,t)/an}bracketri}ht. (26)
+The equal-time pair correlation CXX(/vector r,t) of typeXis calculated by drawing
+shells of radius randr+ 1 around each molecule of type X, counting the
+number of the same type molecules between the shells, and ﬁnally nor malizing
+by dividing by r.
+Fig.17shows the equal-time water–waterstructure factor SW(k,t) for a sys-
+tem with (φW,φO,φA) = (0.288,0.288,0.024) and diﬀerent temperature (total
+energy) settings. In the lower temperature settings as Fig. 17(a) and (b) (mean
+23(a)
+0 5 10 15 20 25 300 2 4 6 8 10
+kSw(k,t)t=2000
+t=20000
+t=200000(b)
+0 5 10 15 20 25 300 2 4 6 8 10
+kSw(k,t)t=2000
+t=20000
+t=200000(c)
+0 5 10 15 20 25 300 2 4 6 8 10
+kSw(k,t)t=2000
+t=20000
+t=200000
+Figure 17: The equal-time water–water structure factor for a sy stem with
+(φW,φO,φA) = (0.288,0.288,0.024) and diﬀerent temperature (total energy)
+settings: (a) etotal= 0.37, (b)etotal= 1.18, (c)etotal= 5.63.SW(k,t) at times
+t= 2,10,20,50,100,200×103are shown.
+total energy etotal= 0.37 andetotal= 1.18, respectively), the structure factor
+develops a peak at nonzero wave number that grows in time and the p osition
+of the peak moves to lower kastincreases. The peak at k∼1 indicates that
+the system is approaching to a global separation into spanning netw orks. The
+growthrate ofthe peak is higher for the “warm”condition etotal= 1.18than the
+“cool” condition etotal= 0.37. Above a critical total energy (that corresponds
+to thedemixing temperature ), as Fig. 17(c) (etotal= 5.63), the structure factor
+does not show any structure. These are again in good agreement w ith the result
+in Ref. [22], as well as experiment[ 37].
+5 Conclusion
+In this paper, we described the construction of RLMA, which simulat es physico-
+chemical interaction of molecules and their self-organization proce ss. The deﬁ-
+nition of the model has shown how to eliminate the irreversibility in the o riginal
+LMA using several techniques to construct reversible CA. Simulatio n results of
+RLMA dynamics have demonstrated that the RLMA can deal with bro ader sit-
+uations, with the original LMA’s self-organization results as special cases. The
+results also showed that the RLMA reproduces qualitatively consist ent results
+with the traditional Larson-type models.
+Although several reversible CA models have been proposed to simula te self-
+organization processes[ 8,9], to our knowledge, this is the ﬁrst deterministic CA
+model that simulates self-organization of higher-order structures, while satisfy-
+ing strict reversibility.
+Reversibility and conservation laws of the model enable precise applic ation
+and validation of the various methods in both equilibrium and nonequilibr ium
+statistical mechanics. Reversibility also enables rigorous tracking o f the infor-
+mation ﬂow driven by the dynamics, with no veiled sources or sinks. Th erefore,
+24the model will be preferable in analyzing the self-organization and dy namics
+of multiple levels of structures from a information-theoretic viewpo int (e.g.,
+Ref. [2]), as well as from the physically grounded viewpoint.
+Thisstudyfocusedontheprocessofmolecularassembly. However ,themodel
+canbe extendedtoincorporatechemicalreactionsandcatalytice ﬀects, byintro-
+ducing more types of molecules and setting proper values of excitat ion energies
+for the reactions, with their modulation in the existence of neighbor ing catalytic
+molecules. We are currently working on the construction of such a r eversible
+and thermodynamically consistent model that realizes “protocells” [6] with self-
+maintenance of compartment structures, metabolism, and self-r eproduction.
+Acknowledgments
+This study was in part supported by “Symbiotic Information Techno logy Re-
+search Project” of Tokyo University of Agriculture and Technolog y, and also by
+the Grant-in-Aid for “Scientiﬁc Research on Priority Areas (Area N o. 454)”
+from the Japanese Ministry of Education, Culture, Sports, Scienc e and Tech-
+nology.
+A Alternative implementation of molecular ro-
+tation
+Here, we present an alternative rotation rule, which enables the st ationary state
+rke= 0forthe polarmolecules. Using the sameinterleavedschemeofFig. 9, the
+rotational permutation ρof (19) is replaced by the new conditional permutation
+ρadeﬁned below.
+First, consider that a polar molecule at iis rotating, i.e., rkei/ne}ationslash= 0. Then, ρa
+maintains the rotation and changes the molecule’s orientation by ∆sgn(rkei)3if
+the magnitude of rkeiis more than suﬃcient to compensate for the change in
+potential induced by the rotation; else, it inverts the direction of r otation if the
+magnitude of rkeiis not large enough. If the magnitude of rkeiis just suﬃcient
+to compensate for the potential change, ρaeither executes the rotation and
+brings the molecule to the stationary state, or inverts the directio n of rotation,
+3The sign function, sgn( rkei) = +1 if rkei>0,−1 ifrkei<0, indicates the direction of
+rotation.
+25depending on some conditions to avoid irreversibility:
+ρa/parenleftbigg
+moi
+rkei/parenrightbigg
+=
+
+/parenleftbigg∆sgn(rkei)(moi)
+rkei−sgn(rkei)δ(moi,∆sgn(rkei))Vi/parenrightbigg
+ifrkei/ne}ationslash= 0 and
+
+
+|rkei|>δ(moi,∆sgn(rkei))Vi,or
+|rkei|=δ(moi,∆sgn(rkei))Vi
+∧δ(∆sgn(rkei)(moi),∆sgn(rkei))Vi≥0,or
+|rkei|=δ(moi,∆sgn(rkei))Vi
+∧δ(∆sgn(rkei)(moi),∆sgn(rkei))Vi<0
+∧parity(pdi)/ne}ationslash= sgn(rkei),
+
+
+/parenleftbiggmoi
+−rkei/parenrightbigg
+ifrkei/ne}ationslash= 0 and
+
+
+|rkei|<δ(moi,∆sgn(rkei))Vi,or
+|rkei|=δ(moi,∆sgn(rkei))Vi
+∧δ(∆sgn(rkei)(moi),∆sgn(rkei))Vi<0
+∧parity(pdi) = sgn(rkei).
+
+
+(27)
+Next, consider that a polar molecule at iis in the stationary state, i.e.,
+rkei= 0. Then, ρastarts the rotation if changing the molecule’s orientation by
+one of the directions ∆±1induces a negative potential change. If rotations in
+both of the directions ∆±1induce negative potential changes, ρastarts the rota-
+tion according to the preferential direction. On the other hand, if the molecule’s
+orientation is at a local potential minimum, the molecule maintains its st ation-
+ary state:
+ρa/parenleftbiggmoi
+rkei/parenrightbigg
+=
+
+/parenleftbigg∆±1(moi)
+∓δ(moi,∆±1)Vi/parenrightbigg
+ifrkei= 0 and
+
+
+δ(moi,∆±1)Vi<0
+∧δ(moi,∆∓1)Vi≥0,or
+δ(moi,∆+1)Vi<0
+∧δ(moi,∆−1)Vi<0∧parity(pdi) =±1,
+
+
+/parenleftbigg
+moi
+0/parenrightbigg
+ifrkei= 0 and
+δ(moi,∆+1)Vi≥0∧δ(moi,∆−1)Vi≥0.
+(28)
+Here
+δ(k,∆n)Vi=/summationdisplay
+l∈Lδ(k,∆n)Vi,l(i)(29)
+represents the total potential change at ithat occurs when the orientation of
+the molecule at iis changed from kto ∆n(k) (see the notation ( 20), too).
+The main point is that, in ρa, change in RKE and not heat compensates for
+the change in potential. Therefore, the RKE layer can work as anot her energy
+storage. Recall that in the rotation rule ( 19), RKE worksjust as “second-order”
+signals to preserve reversibility; hence, it cannot change to 0. It s hould also be
+noted that the parity ( 7) of the preferential direction is utilized to avoid non-
+26uniqueness of the ρa’s pre-images, which could be derived from unstable ﬁxed
+points (stationary states at orientations of local maximum potent ial).
+One drawback of this alternative rotation rule is that the value of RK E is
+unbounded in principle; thus, the model is not a CA in the strict sense . In
+practice, however, due to the energy conservation ( 23), limitless divergence of
+RKE cannot occur unless an inﬁnite amount of energy is injected into a ﬁnite
+region.
+The RLMA model with the alternative rotation permutation ρashows quali-
+tativelysimilar behavior. Fig. 18showssnapshotsofthe molecularlayer, Fig. 19
+shows the time evolution of mean energies per cell, and Fig. 20shows the time
+evolution of mean numbers of neighboring molecules of the same type s in a
+simulation of a water–hydrophobic monomer system, with the same in itial con-
+ﬁguration as that in section 4.1.
+Figure 18: Snapshots of the molecular layer in a simulation of a water–
+hydrophobicmonomer system, using the alternative rotationrule ρa. Clustering
+and phase separation occur in a similar manner to those shown in Fig. 10.
+References
+[1] S. Rasmussen, N. A. Baas, B. M. M. Nilsson, and M. W. Olesen, Artif. Life
+7, 329 (2001).
+[2] S. McGregor and C. Fernando, Artif. Life 11, 459 (2005).
+[3] B. Mayer, G. K¨ ohler, and S. Rasmussen, Phys. Rev. E 55, 4489 (1997).
+[4] B. Mayer and S. Rasmussen, Int. J. Mod. Phys. C 9, 157 (1998).
+[5] B. Mayer and S. Rasmussen, Int. J. Mod. Phys. C 11, 809 (2000).
+[6] N. Ono, BioSystems 81, 223 (2005).
+[7] T. J. Hutton, Artif. Life 13, 11 (2007).
+[8] M. Creutz, Annals of Physics 167, 62 (1986).
+[9] R. M. D’Souza, Phys. Rev. E 60, 264 (1999).
+27Figure 19: Time evolution of mean values of energies per cell in a simulat ion
+of a water–hydrophobic monomer system, using ρa. The mean absolute value
+of RKE /an}bracketle{t|rkei|/an}bracketri}htiﬂuctuates; this is in contrast to Fig. 11where the value is
+constant.
+[10] T. Toﬀoli and N. Margolus, Physica D 45, 229 (1990).
+[11] T. Toﬀoli, S. Capobianco, and P. Mentrasti, Theor. Comput. Sci. 325, 329
+(2004).
+[12] J. Hardy, Y. Pomeau, and O. de Pazzis, J. Math. Phys. 14, 1746 (1973).
+[13] U. Frisch, B. Hasslacher, and Y. Pomeau, Phys. Rev. Lett. 56, 1505 (1986).
+[14] K. Morita and M. Harao, Trans. IEICE Japan E72, 758 (1989).
+[15] S. W. Koch, R. C. Desai, and F. F. Abraham, Phys. Rev. A 27, 2152
+(1983).
+[16] R. G. Larson, L. E. Scriven, and H. T. Davis, J. Chem. Phys. 83, 2411,
+(1985).
+[17] R. G. Larson, J. Chem. Phys. 89, 1642, (1988).
+[18] R. G. Larson, J. Chem. Phys. 91, 2479, (1989).
+[19] D. Stauﬀer, N. Jan and R. B. Pandey, Physica A 198401 (1993).
+[20] M. Sahimi and P. Nowroozi, Phys. Rev. Lett. 731182 (1994).
+[21] T. B. Liverpool and A. T. Bernardes, J. Phys. (France) II 51457 (1995).
+[22] A. T. Bernardes and T. B. Liverpool and D. Stauﬀer, Phys. Rev. E 54
+R2220 (1996).
+28Figure 20: Time evolution of mean numbers of neighboring molecules of the
+same types in the simulation of a water–hydrophobic monomer syste m, using
+ρa. The evolution is similar to that shown in Fig. 12.
+[23] P. L. Privalov and S. J. Gill, Pure Appl. Chem. 61, 1097 (1989).
+[24] B. Chopard, J. Phys. A: Math. Gen. 23, 1671 (1990).
+[25] S. Marconi, Ph.D. thesis, UNIVERSIT ´E DE GEN ´EVE, 2003.
+[26] J. T. A. Witten and L. M. Sander, Phys. Rev. Lett. 47, 1400 (1981).
+[27] S. Takesue, Physica D 45, 278 (1990).
+[28] S. Takesue, Phys. Rev. Lett. 64, 252 (1990).
+[29] S. Takesue, Physica D 103, 190 (1997).
+[30] T. Niwa, J. Stat. Phys. 89, 801 (1997).
+[31] K. Saito, S. Takesue, and S. Miyashita, Phys. Rev. E 59, 2783 (1999).
+[32] D. Stauﬀer, Comput. Phys. Commun. 127, 113 (2000).
+[33] K. Binder and D. Stauﬀer, Phys. Rev. Lett. 33, 1006 (1974).
+[34] J. Amar, F. Sullivan, and R. D. Mountain, Phys. Rev. B 37, 196 (1988).
+[35] S. C. Glotzer, D. Stauﬀer, and N. Jan, Phys. Rev. Lett. 72, 4109 (1994).
+[36] T. B. Liverpool, Physica A 224, 589 (1996).
+[37] F. Mallamace, N. Micali, S. Trusso, and S. H. Chen, Phys. Rev. E 51, 5818
+(1995).
+29

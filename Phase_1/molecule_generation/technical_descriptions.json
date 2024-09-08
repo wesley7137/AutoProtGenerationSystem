@@ -1,0 +1,12 @@
+[
+  {
+    "technical_instruction": "Design novel small molecules aimed at inhibiting the ATP-dependent binding of RAD51 homolog 1 (RAD51). These compounds should target the enzyme's function in DNA repair processes to mitigate genomic instability, which is associated with various diseases including cancer. The design will focus on developing inhibitors that can specifically interfere with the interaction between RAD51 and its substrates without significant impact on healthy cellular functions."
+  },
+  {
+    "technical_instruction": "Design a peptide-based molecule that is amphipathic in structure to enable it to interact with progranulin across cellular membranes. Incorporate bioactive groups at both ends of the molecule for specific binding to progranulin, allowing for precise modulation of its functions without disrupting other protein interactions within the cell."
+  },
+
+  {
+    "technical_instruction": "Design a selective small molecule inhibitor that targets Telomeric Repeat-Binding Factor 1 (TERF1), which plays a critical role in negatively regulating telomere length and maintaining genomic stability. The molecular design will be focused on selectively interacting with TERF1's DNA binding domain without affecting TRF2, whose main function is to protect chromosome ends from degradation."
+  }
+]

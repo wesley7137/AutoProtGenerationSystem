@@ -1,0 +1,710 @@
+Title: Stem cell population asymmetry can reduce rate of replicative aging
+Abstract:   Cycling tissues such as the intestinal epithelium, germ line, and hair
+follicles, require a constant flux of differentiated cells. These tissues are
+maintained by a population of stem cells, which generate differentiated
+progenies and self-renew. Asymmetric division of each stem cell into one stem
+cell and one differentiated cell can accomplish both tasks. However, in
+mammalian cycling tissues, some stem cells divide symmetrically into two
+differentiated cells and are replaced by a neighbor that divides symmetrically
+into two stem cells. Besides this heterogeneity in fate (population asymmetry),
+stem cells also exhibit heterogenous proliferation-rates; in the long run,
+however, all stem cells proliferate at the same average rate (equipotency). We
+construct and simulate a mathematical model based on these experimental
+observations. We show that the complex steady-state dynamics of
+population-asymmetric stem cells reduces the rate of replicative aging of the
+tissue --potentially lowering the incidence of somatic mutations and genetics
+diseases such as cancer. Essentially, slow-dividing stem cells proliferate and
+purge the population of the fast-dividing --older-- cells which had undertaken
+the majority of the tissue-generation burden. As the number of slow-dividing
+cells grows, their proliferation-rate increases, eventually turning them into
+fast-dividers, which are themselves replaced by newly emerging slow-dividers.
+Going beyond current experiments, we propose a mechanism for equipotency that
+can potentially halve the rate of replicative aging. Our results highlight the
+importance of a population-level understanding of stem cells, and may explain
+the prevalence of population asymmetry in a wide variety of cycling tissues.
+
+Full Text: Stem cell population asymmetry can reduce rate of
+replicative aging
+Sahand Hormoz
+Kavli Institute for Theoretical Physics, Kohn Hall, University of California, Santa
+Barbara, CA 93106, USA
+Abstract
+Cycling tissues such as the intestinal epithelium, germ line, and hair follicles,
+require a constant ux of dierentiated cells. These tissues are maintained
+by a population of stem cells, which generate dierentiated progenies and
+self-renew. Asymmetric division of each stem cell into one stem cell and one
+dierentiated cell can accomplish both tasks. However, in mammalian cycling
+tissues, some stem cells divide symmetrically into two dierentiated cells and
+are replaced by a neighbor that divides symmetrically into two stem cells.
+Besides this heterogeneity in fate (population asymmetry), stem cells also
+exhibit heterogenous proliferation-rates; in the long run, however, all stem
+cells proliferate at the same average rate (equipotency). We construct and
+simulate a mathematical model based on these experimental observations.
+We show that the complex steady-state dynamics of population-asymmetric
+stem cells reduces the rate of replicative aging of the tissue {potentially low-
+ering the incidence of somatic mutations and genetics diseases such as cancer.
+Essentially, slow-dividing stem cells proliferate and purge the population of
+the fast-dividing {older{ cells which had undertaken the majority of the
+tissue-generation burden. As the number of slow-dividing cells grows, their
+Preprint submitted to Journal of Theoretical Biology May 16, 2013arXiv:1212.1241v2  [q-bio.CB]  16 May 2013cycling-rate increases, eventually turning them into fast-dividers, which are
+themselves replaced by newly emerging slow-dividers. Going beyond current
+experiments, we propose a mechanism for equipotency that can potentially
+halve the rate of replicative aging. Our results highlight the importance of a
+population-level understanding of stem cells, and may explain the prevalence
+of population asymmetry in a wide variety of cycling tissues.
+Keywords: somatic stem cells, tissue renewal, stochastic fate, intestinal
+crypt, cancer
+1. Introduction
+As cells replicate they accumulate damage, such as somatic mutations,
+which can eventually manifest as a malady; cancer is the deadliest culmina-
+tion of such replicative misfortunes [1, 2, 3, 4, 5]. Cells that undergo many
+rounds of divisions are more likely to develop cancer; particularly susceptible
+are the somatic stem cells of tissues that constantly cycle, i.e. the mammalian
+intestinal epithelium, epidermis, and germ line [6, 7].
+Stem cells are dened for their capability to generate more stem cells {
+self-renewal{ and daughter cells that dierentiate [8]. Asymmetric divisions
+of a stem cell into one stem cell and one dierentiated cell will satisfy both
+these objectives: replenish the stem cell pool and generate the dierentiated
+progenies cycling through the tissue [9, 10]. However, lineage-tracing experi-
+ments have demonstrated that in a diverse set of mammalian cycling tissues,
+stem cells divide symmetrically, generating daughter cells that acquire the
+same fate [11, 12, 13, 14, 15]. The balance between proliferation and dieren-
+tiation is maintained at the population level: some stem cells divide into two
+2stem cells, whereas others generate two dierentiated cells and are lost [16].
+To maintain homeostasis {constancy in cell number and tissue organization,
+both outcomes occur with frequency one-half.
+The justication for the prevalence of population asymmetry in cycling
+tissues remains elusive. The assertion that symmetric divisions are required
+for regenerating the tissue following injury and during development [10, 17],
+motivates the capability but not the continual use of this strategy in home-
+ostasis. For instance, although germ line stem cells in the Drosophila ovaries
+are capable of symmetric division when a stem cell is lost, during normal
+proliferation all divisions are asymmetric [19]. We propose that population
+asymmetry reduces the rate of replicative aging in mammalian cycling tissue
+maintained by rapidly dividing stem cells.
+Herein, we formulate a model and simulate the complex dynamics of stem
+cells with population asymmetry and external regulation: stem cells lost to
+dierentiation are replaced by their neighbors. The source of stochasticity in
+stem cell fate is the asynchronous waiting time before division. We show that
+heterogenous stem cells {cells that cycle at dierent rates{ with population
+asymmetry undergo fewer divisions for the same ux of dierentiated cells
+compared with stem cells that use division asymmetry.
+The degree of heterogeneity does not need to be large: the slowest di-
+viders are only four times slower than the fastest dividers in the population,
+consistent with experimental observations. A single stem cell's cycling-rate
+uctuates, but its long-time average is equal to the population average. All
+stem cells are therefore equipotent; no single cell has a proliferative advantage
+over the others in the long run.
+3Going beyond current experiments, we show that the replicative-aging
+rate can be further reduced using the following strategy: stem cells by de-
+fault divide faster than the average rate of cycling in the population. External
+stimuli slow down the division rate, a trait which is encoded in methylation
+patterns and passed on to the daughter cells. After a random number of
+divisions the methylation signal is lost and the daughter stem cells revert to
+their default behavior. This simple strategy can reduce the rate of replica-
+tive aging by a factor of two; we conjecture that this mechanism is used in
+mammalian cycling tissues.
+2. Results
+We will refer to replicative aging {the cumulative number of divisions
+undergone by a cell{ simply as `aging'. Cell aging without replication can
+occur through post-mitotic mutations in mitrochondrial DNA [20], stress-
+induced DNA damage, or accumulation of altered proteins [21, 22].
+If a population of stem cells divides synchronously, all the stem cells will
+age by the same amount regardless of their ancestry; both division asym-
+metric and population asymmetric strategies are equivalent. A slight degree
+of heterogeneity in the division rates, however, can lower the average aging
+rate, if symmetric divisions are allowed, where some stems cells can replace
+others (Fig.1). In such a population, the fast-dividing cells take over most of
+the proliferative burden and are eventually replaced by slow-dividing cells.
+We consider an idealized model of cycling tissues (Methods, Fig.2): a
+xed number of stem cells form an epithelial basal layer [23]. After a ran-
+dom waiting-time, stem cells divide asynchronously {along their out of plane
+4Figure 1: Heterogeneous proliferation rates. A) Two stem cells (orange) divide asymmet-
+rically three times at a constant rate generating six dierentiated progenies (blue). Both
+stem cells will have aged by the same amount (three divisions). The phylogeny tree of each
+stem cell {neglecting the branches corresponding to somatic cells{ is simply a straight line.
+B) The stem cell on the left undergoes four asymmetric divisions followed by a symmetric
+division into two dierentiated cells. Stem cell on the right divides symmetrically into
+two stem cells at a lower rate. The net product is the same as A. The two stem cells,
+however, have aged by only one division. With symmetric divisions, the phylogeny of a
+stem cell is more complicated. An example of a phylogeny tree is shown for stem cells
+with heterogenous cycling rates and symmetric divisions; terminal nodes correspond to
+stem cells currently in the population. The highlighted part of the tree depicts a stem cell
+that has undergone 8 divisions and is younger than some of the other descendants.
+5axis{ into two dierentiated progenies, which leave the layer. In response, a
+randomly-chosen neighbor symmetrically divides in the lateral direction and
+replaces the lost stem cell {externally regulated division. This model closely
+resembles the actual dynamics of mammalian cycling tissues [12, 13, 14, 15].
+Since a division into two dierentiated cells is always accompanied by an-
+other into two stem cells, the frequency of both types of division is 0.5,
+ensuring a constant ux of dierentiated cells and self-renewal of the stem
+cell population.
+We will address in detail the validity of the assumptions behind this model
+in the Discussion section. However, we note two key points at the onset.
+Division into two dierentiated progenies can be replaced by a stem cell that
+simply dierentiates and leaves the basal layer. This simpler picture does not
+change the results. However, as we will show below, it is essential that loss
+of a stem cell to dierentiation trigger symmetric division of a neighboring
+cell, and not the other way around.
+The above proliferation strategy results in dynamics that closely resemble
+the `stepping-stone' model of neutral drift in population dynamics [24, 16]
+(see also `voter' models in statistical physics [25]). If we initially label all cells
+in the population with a dierent color (Fig.3), overtime, we observe that
+most cells leave the stem cell layer, and are replaced by their neighbor. Those
+that remain, grow in number, forming clusters of daughter cells (of the same
+color) called clones. If all stem cells are equivalent and cycling at the same
+rate, no clone is more likely to survive than its neighbors. The boundaries
+between adjacent clones diuse back and forth, roughly expanding asp
+t; the
+size of the surviving clones therefore increases as t(this argument only holds
+6Figure 2: Population asymmetry. Stem cells form an epithelium attached to the basal
+membrane. A stem cell divides symmetrically into two dierentiated cells and leaves the
+basal layer. The lost stem cell is replaced by one of its neighbors which divides laterally
+into two stem cells. All division are symmetric; each type occurs with frequency 1 =2. The
+net product of the two divisions is two dierentiated cells and two stem cells. Above, the
+third stem cell from the left has divided symmetrically into two dierentiated cells and is
+leaving the basal layer. Its neighbor to the right is dividing symmetrically into two stem
+cells to replace the lost cell.
+7Figure 3: Clonal expansion and loss of heterogeneity. Cells are initially colored at random
+and their evolution followed. Color of the daughter cells is inherited from the parent.
+Eventually the clone of a red stem cell xates. The time steps from left to right and top to
+bottom are, t=1, 20, 60, 100,140, 200, and 260. The stem cells have heterogenous division
+rates,= 0:15.
+in 1 and 2 dimensions, for a rigorous derivation and the log correction to
+this scaling in 2D, see [26]). Eventually, in a nite population, one clone will
+take over, achieving xation; in Fig.3, a stem cell initially labeled red xates.
+The resulting distribution of clone sizes is self-similar: the distribution of the
+ratio of clone sizes to the average clone size at any given time is constant.
+Statistical signatures of clone sizes have been used to experimentally conrm
+the above dynamics in cycling tissues in vivo [16].
+2.1. Heterogeneity
+Next, consider a heterogenous population, where stem cells cycle at dier-
+ent rates: stem cell iterminally divides into dierentiated progenies at rate
+ridrawn from a Gaussian distribution with mean 0.5 and standard deviation
+8. The cycling-rate is inherited by the daughter cells following a division
+into two stem cells. The average cycling-rate of the population is held xed
+to ensure a constant ux of one dierentiated cell per stem cell per unit of
+time (Methods).
+We emphasize that cycling refers to a stem cell dividing into dierentiated
+progenies and its subsequent replacement by a neighbor. The term slow-
+dividers will refer to cells that are less likely to divide into dierentiated
+progenies and leave the stem cell population in a given interval of time. As
+the name implies, a cluster of slow-dividers will also undergo fewer stem cell
+to stem cell divisions in a give period of time since fewer cells need to be
+replaced. However, stem cells will always divide to replace a lost neighbor;
+the rate of this division is not related to the cell's own cycling rate, r, but
+indirectly to that of the neighbor. This distinction is important when a slow-
+divider is adjacent to a fast-divider. Alternatively, we can think of ras the
+rate of dierentiation, which indirectly sets the division rate of a cell through
+its neighbors.
+The clones are no longer equivalent; some are descendants of fast-dividing
+cells and others of slow-dividing cells. Clusters of fast-dividing cells con-
+tribute more to the ux since they cycle more quickly. However, at their
+interfaces, the slow-dividing clones invade the fast-dividing clones, since at
+any time-step, the fast-dividing cells are more likely to undergo terminal dif-
+ferentiation and be replaced by a neighbor. The fast-dividing cells that are
+contributing more to the ux {and thereby aging faster{ are systematically
+removed from the population and replaced by younger cells.
+Dene the population-averaged aging rate (t) as the ratio of the total
+9number of divisions starting from time t= 0 undergone by the stem cells
+present in the population at time tto the total number of dierentiated cells
+produced since t= 0.= 1 for homogenous population {where all cells
+proliferate at the same rate, since all the stem cells contribute to the ux
+equally and on average one dierentiated cell is produced by each division.
+Similarly,= 1 for a population with division asymmetry. Surprisingly,
+simulations show that the aging-rate with heterogeneity is lower than that
+of a homogenous or division asymmetric population, (t)<1, at early times
+(Fig.4A); eventually, lim t!1!1.
+We can understand the eventual reversion to = 1 by considering the
+dynamics more carefully. The initially heterogenous population of cells rst
+gives rise to an abundance of slow-dividing cell, since they are more likely
+to invade their neighbors. As the number of slow-dividing cells grows {
+clonal expansion, their cycling-rate increases to ensure a constant ux of
+dierentiated progenies. The initially Gaussian distribution of cycling-rates
+in the population develops a spike at the slowly-dividing rates, the spike
+grows and reverts to the mean (Fig.4B). Eventually the distribution becomes
+a-function at 0.5 when xation has occurred and every stem cell has the
+same proliferation rate.
+2.2. Phenomenological model
+A simple phenomenological model can elucidate the essential mechanisms
+for lowering the rate of aging. We include the following key facts in the
+model: 1) The boundaries of the slow-dividing clones grow faster than would
+be expected from neutral dynamics (Fig.4D). At early times, the boundaries
+grow on average with velocity 0 :5 r, whereris the cycling-rate. 2) As
+10Figure 4: Heterogeneous but not equipotent. A) Population-averaged aging rate as a
+function of time. Initially <1 before reverting to its asymptotic value of 1. 50 runs are
+superimposed for each value of . The thick colored lines are the average over the runs.
+Solid-blue lines are the analytical results of the phenomenological model. B) Frequency of
+observing a cell with cycling-rate r for the rst 120 time steps superimposed ( = 0:15).
+The distribution narrows over time, eventually becoming a -function as one clone xates.
+C) Clone sizes in the population as a function of time for the same parameter values. Some
+clones expands as others shrink. D) Average clone size as a function of time. There is a
+signicant deviation at early times from the linear prediction of the neutral drift model.
+11the number of slow-dividing cells increases, their cycling-rate also increases,
+approaching the population-average rate, 0.5. We assume that the fractional
+rate of increase of the cycling-rate ris the same as the fractional increase in
+the number of cells dividing at rate r.
+Using a Lagrangian framework, we follow the evolution of the cells that at
+t= 0 cycled at rate r0; at timet, the number of these cells in the population
+is denoted as N(r0;t) and their cycling-rate as r(r0;t). In 2D, the dynamical
+evolution is given by,
+1
+2p
+N(r0;t)@N(r0;t)
+@t=1
+2 r(r0;t) (1)
+@r(r0;t)
+@t=1
+N(r0;t)@N(r0;t)
+@tr(r0;t) (2)
+The number of stem cells cycling at rate r0at timetis
+N(r0;t) =Z
+N(r0;t)1
+j@r0
+@rjt(r0 r(r0;t))dr0: (3)
+Eqs. 1 and 2 can be combined into the following non-linear ODE {
+denotingN(r0;t) asNfor simplicity,
+d2N
+dt2=1
+2N 1p
+NdN
+dt+1
+NdN
+dt2
+: (4)
+The initial distribution of proliferation rates in the simulations is a Gaus-
+sian with mean 0.5 and standard deviation . For simplicity, we follow two
+population of cells from this distribution: fast-dividing cells cycling at rate
+rf= 0:5 +, and slow-dividing cells cycling at rate rs= 0:5 . Sim-
+ulations (Fig.4) show a monotonous decrease in the second moment of the
+cycling-rate distribution due to loss of heterogeneity {the mean is xed by
+12construct; the third moment, however, peaks when is at its minimum. We
+claim that to the lowest order, the rate of aging at time tis a function of
+the third moment of the distribution of the cycling-rates in the population at
+timet. The more lop-sided the distribution, the more prevalent the presence
+of slow-dividing clusters that invade their fast-dividing neighbors, ensuring
+<1. The analytical estimate of (t) is
+1 (t)
+N(rs;t) 1
+2 r(rs;t)3 N(rf;t) 
+r(rf;t) 1
+231
+3: (5)
+The exact shape of the curve (t) depends on the system size. Loss of
+heterogeneity {rate of reversion of (t) to its asymptotic value{ will be slower
+for larger systems since there is a larger pool of initially slow-dividing cells.
+The analytical theory is a good t to the simulations results (Fig.4A, Fig.7C);
+only two tting parameters are used (Methods).
+2.3. Heterogeneous and equipotent
+To sustain the low rate of aging, we need to ensure that heterogeneity
+is not lost by clonal expansion, and somehow reintroduced into the system.
+Inspired by methylation as a method of passing epigenetic information to
+daughter cells (see Discussion), we assume that after a random number of
+divisions the inherited methylation patterns are lost and the cell's cycling-
+rate randomized (see Methods for implementation). The average number of
+divisions (time-scale) to losing inherited information is denoted as eq. If we
+average the behavior of the cells over time-scales much longer than eq, all
+cells are equipotent: there are no slow or fast dividers, all cells proliferate at
+the average rate. With equipotency, reaches a steady-state value 1, which
+13is approximately equal to (eq) in the heterogenous but non-equipotent case
+(Fig.5A).
+A steady-state rate of aging 1<1 does not imply that there is a
+steady-state distribution of cycling-rates, i.e. a constant number of slow and
+fast dividers. The dynamics is more complicated: as in the non-equipotent
+case, slow dividers expand as their cycling-rate increases (Fig.5B). Equipo-
+tency, however, ensures that somewhere else in the population, a new slow-
+divider emerges and expands, continuing the cycle (Fig.6). Time-averaging
+the cycling-rate distribution for a suciently-long periods, yields a static
+skewed distribution {non-zero third moment (Fig.5C). There is an abun-
+dance of slow-dividers (tail of the distribution) which are compensated by an
+abundance of cells that divide only slightly faster than the average.
+Equipotency also restores the self-similar dynamics; stem cells behave like
+a homogenous population for time scales larger than eq. For example, the
+self-similar character of the clone size distributions, and the linear growth
+of the average clone size is restored (Fig. 5D), consistent with experimental
+observations [11, 12, 13, 14, 15, 16].
+2.4. Optimizing
+If cycling-rates randomize too quickly, slow-dividing cells do not have
+sucient time to replace their faster dividing neighbors. If the randomization
+rate is too slow, the slow-dividing clones expand too much, reducing the
+heterogeneity, and increasing the rate of aging. There is an intermediate
+optimal time-scale for equipotency. We examined the dependence of the
+steady-state value of aging rate 1oneq(Fig.7A). The optimal value of 
+eq
+that minimizes aging rate is approximately the time required to achieve the
+14Figure 5: Heterogenous and equipotent. A) Aging rate as a function of time for = 0:15
+and four dierent values of eq; 50 runs and their average. B) Distribution of cycling-rates
+superimposed for 20 time steps (3981 to 4000) for eq= 250. At steady-state, waves of
+slow dividers are generated and sent towards the mean, where they annihilate (see Fig.6).
+C) Distribution of proliferation-rates averaged for 1000 steps (3001 to 4000). The time-
+averaged distribution looks Gaussian but is asymmetric (non-zero third moment). The
+inset shows the ratio of the actual distribution to a Gaussian t. There is an excess of
+slow-dividers {at the tail on the left-side. D) Average clone size as a function of time for
+eq= 1. The self-similar behavior of the neutral drift models is recovered.
+15Figure 6: Maintaining heterogeneity. The color-coding corresponds to the cycling-rate of
+each cell. Each cell randomizes its cycling rate (drawn from a normal distribution with
+= 0:15) foreq= 50. A slow-divider in the middle proliferates while increasing its
+cycling-rate, eventually reaching the mean rate 0.5. A new cluster of slow-dividing cells
+has formed in the bottom-left corner and is expanding. The time steps shown are from
+left to right and top to bottom, t=90 to 140 in increments of 10.
+16transient minimum in a heterogenous non-equipotent population; 
+eqis the
+point of extremum in Eq.5:d(t)
+dtjeq0.
+To further optimize , we consider other feasible mechanisms:
+Bimodal distribution of cycling-rates . Thus far, equipotency was
+implemented by randomizing cycling-rates after a few divisions. Can a dif-
+ferent mechanism do better? In Fig.7B, cells establish equipotency by reset-
+ting their cycling-rate to a xed value above-average  + 0:5. Physically, this
+corresponds to stem cells that are programmed by default as fast-dividers.
+However, global signaling establishes a methylation pattern where most cells
+divide slower; after a random number of divisions the cell loses the methyla-
+tion program and reverts to its default behavior.
+This approach results in a bimodal distribution of cycling-rates: slow-
+dividing cells that replace their neighbors and proliferate, balanced by the
+fast-dividing cells that are constantly injected into the population when cells
+reset their cycling-rates. For optimal equipotency time-scale, 
+eq, and a fac-
+tor of 6 dierence between the proliferation-rates of the fastest and slowest
+dividers, we nd 1= 0:4. This, implies approximately a two-order of
+magnitude (99%) reduction in incidence of ve somatic mutations {on av-
+erage required for onset of cancer{ compared with homogenous or division-
+asymmetric populations (Methods). For our choice of parameters, the opti-
+mal time-scale for equipotency is now much shorter (around 3-5 divisions).
+Quick addition of fast-dividers is required to balance the growing number of
+slow-dividing stem cells. This strategy is so eective that we conjecture that
+it is potentially implemented in cycling tissues (see Discussion).
+Biassed replacement . We consider the possibility that beside terminal
+17dierentiation a stem cell can also proliferate by forcing the terminal dif-
+ferentiation of a neighbor. Fig.7C shows the aging-rate where a stem cell
+cycling at rate r, proliferates with probability 1  r. A modest improvement
+is observed (4% for our choice of parameters) since the fast-dividing cells are
+even more likely to be purged from the population.
+One-dimension . Finally, we consider a population of stem cells con-
+strained to one-dimension. Although the steady-state aging rate 1is not
+signicantly dierent from that of the two-dimensional case, the dynamics of
+clonal expansion and loss of heterogeneity is qualitatively dierent (Fig.7D).
+For little or no heterogeneity, the clone boundaries expand by diusion: the
+average surviving clone size increases asp
+t(as opposed to tin 2D). As het-
+erogeneity increases the boundaries drift rather than diuse and the clone
+size scaling becomes closer to linear. The slower clonal expansion implies
+that heterogeneity is lost at lower a rate, which maximizes the transient pe-
+riod where  < 1. 1D systems can help optimize the aging rate for nite
+durations for systems without equipotency.
+3. Discussion
+We found that population asymmetry in stem cells with heterogeneous
+division rates and external regulation can substantially reduce the rate of
+replicative aging; potentially lowering incidence of somatic mutations and
+proliferative-maladies such as cancer. Our analysis revealed a non-trivial
+steady-state dynamics: slow-dividing cells constantly replace their fast-dividing
+(older) neighbors who had shouldered the brunt of the proliferative demand.
+A key requirement was equipotent stem cells: in the long run no cell had
+18Figure 7: Minimizing rate of aging. A) Asymptotic value of aging-rate as a function of
+eqfor dierent degrees of heterogeneity . Optimaleqis at some intermediate value. B)
+Instead of randomizing, the cell's cycling-rate is reset to  + 0:5. (Top)as a function of
+t for dierent values of eq; = 0:15. Minimum occurs at the high equipotency rate of
+eq= 2:5. The bimodal distribution of the division rates is shown on the bottom {every
+5th step for the rst 2000 iterations: cells are either fast dividers or slow dividers. The
+inset shows the spatial heterogeneity of the two types of stem cells (color-coding as in
+Fig.6). On the bottom-left, we plot 1as a function of eqfor various value of  . C)
+Decision of fate is biassed so that slow-dividing cells are more likely to replace a neighbor.
+(Top)as a function of time and no equipotency. The solid blue lines are the ts from
+the phenomenological model (Methods). (Bottom) Equipotency for four dierent values
+ofeq;= 0:15. D) 1D system of size 10000x1. (Top) as a function of time. Loss of
+heterogeneity (clonal expansion) is slower in 1D. (Bottom) Average clone size as a function
+of time for two values of . The clones grow sub-linearly. B) Top, C), and D) Top, multiple
+trajectories are 50 runs and their average (thick line).
+19a proliferative advantage over the others; every cell divided at the same
+average rate. Equipotency was enforced by assuming that after a random
+number of divisions, the resulting daughter cells lost their inherited traits.
+Going beyond current experiments, we conjectured that equipotency resets
+the cycling-rate of the cells to a default value that is larger than the mean
+division-rate of the population.
+Stem cell population asymmetry using external regulation {where termi-
+nal dierentiation of a stem cell triggers the expansion of a neighbor{ has
+been veried using lineage-tracing experiments in the mammalian intestinal
+crypt and germ line [12, 13, 14, 15]. These quantitative studies have demon-
+strated that these tissues are maintained by an equipotent quickly-cycling
+population of stem cells. Do these populations also exhibit heterogeneity?
+Direct observation of heterogeneity in the intestinal epithelium was made by
+Pruitt et al. [27] who using tamoxifen induced Cre-recombinase activity on
+the Mcm2 gene observed cell-cycle times ranging from 1 to 4 days, consistent
+with the degree of heterogeneity assumed above. An even larger discrepancy
+in cycling rates is exhibited by progenies of the Lgr5+stem cells in the in-
+testinal crypt that remain dormant (for weeks) as precursors to the secretory
+cells, but are capable of reverting back to a cycling stem cell [28].
+Despite a lack of direct evidence of heterogeneity of cycling-times in the
+germ line, there are observations of heterogeneous gene-expression in undif-
+ferentiated cells of the mammalian spermatogonia [29]. Two types of un-
+dierentiated cells AsandAprshow an expression level low in Ngn3 and
+high inGFR 1, whereas undierentiated Aalcells have the opposite ex-
+pression levels. Aalcells are thought to be primed for dierentiation and
+20could correspond to the fast-cycling cells in our model. Short-term lineage
+tracing experiments have shown that the expression patterns can reversibly
+change with GFR 1lo/Ngn3hicells becoming GFR 1hi/Ngn3lo, ensuring
+equipotency [15]. When AsandAprcells commit to dierentiation, they are
+replaced by fragmentation of a neighboring Aalcell that reverses its expres-
+sion patterns [14]. However, the inter-conversion rate between Aalcells and
+the undierentiated cells AsandApris comparable to their cycling rates [29];
+the equipotency time-scale eqmight be too short for a noticeable impact on
+the rate of replicative aging.
+Intestinal crypt stem cells are also believed to exhibit dynamics where
+the terminal dierentiation and loss of one stem cell results in expansion of a
+neighbor. Wnt signaling [30, 31] {in particular a global Wnt gradient along
+the crypt [32]{ is thought to control the average proliferation rate [33]; as do
+insulin-like growth factors like IGF1 [27]. Nearest-neighbor communication
+seems to be mediated by Notch signaling and lateral inhibition. In the crypt,
+stem cells laterally inhibit their neighbors to ensure that the neighbor's fate
+at division is dierentiation [34]. A biological mechanisms for the biassed
+expansion proposed above (Fig.7C) might be the build-up of excess Notch
+ligands by slow-dividing cells.
+We assumed that cycling-rates were passed on to daughter cells after
+division. Moreover, to establish equipotency, we required that the rates
+randomize after a few divisions; the inherited information forgotten. Both of
+these requirements can be implemented through epigenetic methylation tags
+[35, 36]. Yatabe et al. [37] studied methylation patterns in the human colon
+crypts and observed somatic inheritance, random methylation changes, and
+21evidence of population asymmetry.
+Our model is an idealized picture of stem cell proliferation. We only fo-
+cused on aging in the somatic stem cells and not the dierentiated progenies
+as they are continually discarded. We also assumed that stem cells divided
+symmetrically into two dierentiated cells. The product of this division can
+also be thought of as transit-amplifying (TA) progenies that undergo a few
+more rounds of division before terminal dierentiation. Including TA cells
+as the dierentiation product of rapidly cycling stem cells does not change
+the relative improvement observed using population asymmetry over divi-
+sion asymmetry. Of course, a hierarchical strategy, where extremely slowly-
+dividing (quiescent) stem cells give rise to TA cells that undergo many rounds
+of division before terminal dierentiation [6], signicantly reduces the aging
+rate of the stem cells {regardless of the division strategy. However, experi-
+mental evidence [11, 12, 13, 14, 15] suggests that many mammalian cycling
+tissues are supported by a population of rapidly dividing stem cells.
+We assumed that after a random waiting time a stem cell divides into two
+dierentiated cells. However, it is not clear that dierentiation is tied to cell
+cycle. Our results will not change if stem cells simply dierentiate and leave
+as opposed to dividing into dierentiated cells that leave. Heterogeneity
+in cycling-rate will then be a consequence of heterogeneity in dwell-time
+before dierentiation. However, it is essential that dierentiation triggers
+the proliferation of a neighbor. If, on the contrary, dierentiation is triggered
+by a neighbor's division into two stem cells, the opposite behavior emerges
+{aging rate increases. We also assumed that all divisions were symmetric;
+stem cell to two stem cells, or stem cell to two dierentiated progenies. A
+22mixed strategy can also be considered where some fraction of divisions are
+asymmetric. This will not change our results qualitatively. However, the
+observed improvement in aging rate decreases as the fraction of asymmetric
+divisions increases.
+The geometry of a 2D and 1D epithelium of stem cells used in the model
+is an over-simplication of real tissues. Although stem cells seem to be
+predominantly conned to a thin {few cells deep{ layer in cycling tissues,
+they are usually interspersed with other types of somatic cells. For example,
+stem cells at the base of the crypt (Lgr5 cells) are juxtaposed by Paneth cells,
+and in the germ line by large somatic Sertoli cells [15]. A more comprehensive
+model should account for this added complexity, however, the results will
+not be qualitatively dierent. Previous models of population asymmetry
+that have relied on eective simplied `lattices' of stem cells are in good
+agreement with experiments [16].
+Notion of heterogeneity can be employed in a dierent context. Most
+populations of stem cells contain quiescent cells [38, 39] that cycle so slowly
+that are eectively dormant. Despite suggestions that quiescent stem cells
+can increase longevity by replacing actively-dividing stem cells [39], lineage-
+tracing experiments [15, 16] suggest that these cells play little to no role in
+homeostatic cycling of tissues. Rather, they seem to be prominent in tissue
+repair following a catastrophic perturbation [18] and during development [38].
+The heterogeneity used in our model is subtle and the slow-dividing cells are
+in no way quiescent. To ensure that extremely slow-dividing cells were not
+essential for our results, we repeated the simulations while constraining the
+cycling-rates to3and observed the same reduction in the aging rate. For
+23instance, constraining the division probability of the bimodal strategy (Fig.
+7B) to 0.2-0.8, resulted in a population where the fastest dividers proliferated
+only 3 times faster than the slowest dividers; the dynamics still generated
+= 0:87, a potential 50% reduction in incidence of cancer.
+Our results motivate a population level understanding of stem cells. Be-
+cause of heterogeneity and complex dynamics, static gene-expression proles
+provide limited insight into stem cell phenotypes. Study of population epi-
+genetics and population dynamics of stem cells can bring fresh insight into
+the delicate interplay that occurs in homeostatic cycling tissues.
+4. Methods
+4.1. Simulations
+An asynchronous cellular automata algorithm was used: A 2D hexagonal
+lattice ofNpoints with periodic boundaries is generated and perturbed by
+adding a random number drawn from a Gaussian distribution with zero mean
+and standard deviation 30% of the lattice constant to the x and y coordinates
+of each point. The Ncells are constructed by a Voronoi decomposition of
+the randomized lattice; two cells that share a common edge are denoted as
+neighbors. Each cell is initially assigned a cycling-rate r{corresponding to a
+Poisson rate parameter{ drawn from a Gaussian distribution with mean 0.5
+and standard deviation .
+In each time step, the following sequence is executed Ntimes: 1) A cell is
+chosen at random from the lattice. With probability r, it divides terminally
+into two dierentiated cells. 2) If the division occurs, one of its neighbors is
+chosen at random to divide into two stem cells and replace the lost cell. The
+24daughter cells inherit the cycling rate, and the age (number of prior divisions
+plus one) of their parent. 3) If equipotency is turned on, at every division
+with probability Ne=eq{whereeqis the time-scale for equipotency and Ne
+the number of steps required prior to equipotency{ the cell advances one step
+to resetting its cycling rate. After completing Nesteps, the cycling rate of
+the cell is redrawn from a Gaussian distribution with mean 0.5 and standard
+deviation. The new cycling rate is inherited by all the daughter cells in
+subsequent divisions. At the end of each time step, every cell's cycling rate
+is modied by the same amount to ensure that the population-average of r
+is 0.5. On average, at every time step a total of Ndierentiated cells are
+generated.
+Above algorithm was modied for two cases: 1) In Fig. 7B (Optimization)
+equipotency is introduced by always resetting the cell's cycling rate to 0 :5+.
+Moreover, the cycling rates are constrained to the range 3; 2) In Fig. 7C
+(Optimization) the selected cell divides symmetrically into dierentiated cells
+(step 1 above) with probability r; with probability 1  rit divides into two
+stem cells and removes a random neighbor. 3) In Fig. 7D (Optimization) the
+above algorithm was modied to run for a one-dimensional lattice. Ne= 1 for
+all plots with equipotency, except for Fig. 7A, where Ne= 10. The algorithm
+was implemented in Matlab R2011b. We used a 100x100 and 10000x1 lattice
+for the 2D and 1D simulations respectively (N = 10000). For generating the
+mosaic plots of the lattices (Fig. 3, 5, inset in 7B) a 30x30 lattice (N=900)
+was used.
+254.2. Estimating incidence of cancer
+Cells need to accumulate a series of independent mutations for tumorige-
+nesis [3]. Assume each step (mutation) iis an independent Poisson process
+with rateki. The probability that step iwill occur in the time interval tto
+t+dtis an exponential distribution, wi(t) =kie kit{known as dwell time.
+The probability that step 2 occurs at time tis contingent on step 1 having oc-
+curred at some time before t0<t,p2(t) =Rt
+0w1(t0)w2(t t0)dt0= (w1
+w2)(t),
+where
+is the convolution operator. Similarly, probability of completing N
+steps at time tis given by,
+pN(t) = (w1
+:::wi
+:::wN)(t): (6)
+Assuming that cancer is an unlikely event ( kit1), we can use a Taylor
+expansion in t(Tom Chou, private communication),
+pN(t)tN
+(N 1)!NY
+i=1ki: (7)
+pN(t) is the incidence of cancer; the probability that an individual of age tde-
+velops cancer in the time interval dt. Heterogeneous population-asymmetric
+stem cells will age at a lower rate, k0
+i=ki. The likelihood of incidence
+of cancer is smaller by a factor of N. For= 0.9, and 0.4, and a typical
+value ofN= 5 [3], incidence of cancer is roughly reduced by 40%, and 99%
+respectively.
+4.3. Fitting the data
+To t the simulation, we numerically solved Eq.4 using the initial condi-
+tionN(rs=f;t= 0) =NG(0:5), whereGis a Gaussian distribution with
+26mean 0.5 and standard deviation , andNis a system-size dependent tting
+parameter. The other tting parameter is the proportionality constant in
+Eq.5. For Fig. 4A, N = 85000 and = 1.15. In above scheme, the random
+nature of the lattice (for our choice of randomness, the mean coordination
+number is 6 with standard deviation 1) biases the average aging rate so
+that a homogeneous population ( =0) will have = 1.015. When a hexago-
+nal lattice with no randomness is used, =1. A 0.015 oset is added to the
+theoretical curves to account for this. For Fig.7C (top) N = 200000 and =
+1.25. For each gure, the four curves shown are tted simultaneously using
+the same two tting parameters.
+Acknowledgments
+The author thanks Boris Shraiman, Adel Dayarian, and Sid Goyal for
+helpful discussions and critical reading of the manuscript, and Arnie Levine
+for introduction to the subject. This research was supported in part by the
+National Science Foundation under Grant No. NSF PHY11-25915.
+References
+[1] D. Hanahan, R.A. Weinberg RA, The hallmarks of cancer, Cell 100
+(2000) 57-70.
+[2] J.M. Bishop, Cancer: the rise of the genetic paradigm, Genes Dev. 9
+(1995) 1309-1315.
+[3] B. Vogelstein, K.W. Kinzler, The multistep nature of cancer, Trends
+Genet. 9 (1993) 138-141.
+27[4] B. Vogelstein, D. Lane, A.J. Levine, Surng the p53 network, Nature
+408 (2000) 307.
+[5] B. Vogelstein, K.W. Kinzler, Cancer genes and the pathways they con-
+trol, Nat. Med. 10 (2004) 789-799.
+[6] J. Cairns, Mutation selection and the natural history of cancer, Nature
+255 (1975) 197-200.
+[7] F. Michor, Y. Iwasa, M.A. Nowak, Dynamics of cancer progression, Nat.
+Rev. Cancer 4 (2004) 197-206.
+[8] L. Siminovitch, E.A. McCulloch, J.E. Till, The distribution of colony-
+forming cells among spleen colonies, J. Cell. Comp. Physiol. 62 (1963)
+327-336.
+[9] C.S. Potten, M. Loeer, Stem cells: attributes, cycles, spirals, pitfalls
+and uncertainties. Lessons for and from the crypt, Development 110
+(1990) 1001-1020.
+[10] S.J. Morrison, J. Kimble, Asymmetric and symmetric stem-cell divisions
+in development and cancer, Nature 441 (2006) 1068-1074.
+[11] E. Clayton, D.P. Doupe, A.M. Klein, D. Winton, B.D. Simons, P.H.
+Jones, A single type of progenitor cell maintains the epidermis, Nature
+446 (2007) 185.
+[12] C. Lopez-Garcia, A.M. Klein, B.D. Simons, D.J. Winton, Intestinal stem
+cell replacement follows a pattern of neutral drift, Science 330 (2010)
+822-825.
+28[13] H.J. Snippert, L.G. van der Flier, T. Sato, J.H. van Es, M. van den
+Born, C. Kroon-Veenboer, N. Barker, A.M. Klein, J. van Rheenen, B.D.
+Simons, Intestinal crypt homeostasis results from neutral competition
+between symmetrically dividing Lgr5 stem cells, Cell 143 (2010) 134-
+144.
+[14] A.M. Klein, T. Nakagawa, R. Ichikawa, S. Yoshida, B.D. Simons, Mouse
+germ line stem cells undergo rapid and stochastic turnover, Cell Stem
+Cell 7 (2010) 214-224.
+[15] B.D. Simons, H. Clevers, Strategies for homeostatic stem cell self-
+renewal in adult tissues, Cell 145 (2011) 851-862.
+[16] A.M. Klein, B.D. Simons, Universal patterns of stem cell fate in cycling
+adult tissues, Development 138 (2011) 3103-3111.
+[17] F.M. Watt, B.L. Hogan, Out of Eden: stem cells and their niches, Sci-
+ence 287 (2000) 1427-1430.
+[18] K.S. Yan, L.A. Chia, X. Li, A. Ootani, J. Su, J.Y. Lee, N. Su, Y. Luo,
+S.C. Heilshorn, M.R. Amieva, E. Sangiorgi, M.R. Capecchi, C.J. Kuo,
+The intestinal stem cell markers Bmi1 and Lgr5 identify two functionally
+distinct populations. PNAS 109 (2012) 466-471.
+[19] A. Spradling, D. Drummond-Barbosa, T. Kai, Stem cells nd their niche,
+Nature 414 (2001) 98.
+[20] D.C. Wallace, Mitochondrial diseases in man and mouse, Science 283
+(1999) 1482-1488.
+29[21] T.B. Kirkwood, Understanding the odd science of aging, Cell 120 (2005)
+437-447.
+[22] J. Campisi, F. dAdda di Fagagna, Cellular senescence: When bad things
+happen to good cells, Nat. Rev. Mol. Cell Biol. 8 (2007) 729-740.
+[23] S.J. Morrison, A.C. Spradling, Stem cells and niches: Mechanisms that
+promote stem cell maintenance throughout life, Cell 132 (2008) 598-611.
+[24] M. Kimura, G.H. Weiss, The stepping stone model of population struc-
+ture and the decrease of genetic correlation with distance, Genetics 49
+(1964) 561.
+[25] R.A. Holley, T.M. Liggett, Ergodic theorems for weakly interacting sys-
+tems and the voter model, Ann. Probab. 4 (1976) 195-228.
+[26] M. Bramson, D. Grieath, Asymptotics for interacting particle systems
+onzd, Probability Theory and Related Fields 53 (1980) 183-196.
+[27] S.C. Pruitt, A. Freeland, A. Kudla, Cell cycle heterogeneity in the small
+intestinal crypt and maintenance of genome integrity, Stem Cells 28
+(2010) 1250-1259.
+[28] S.J.A. Buczacki, H.I. Zecchini, A.M. Nicholson, R. Russell, L. Ver-
+meulen, R. Kemp, D.J. Winton, Intestinal label-retaining cells are se-
+cretory precursors expressing Lgr5, Nature (2013) 495:65-69.
+[29] T. Nakagawa, M. Sharma, Y.I. Nabeshima, R.E. Braun, S. Yoshida S,
+Functional hierarchy and reversibility within the murine spermatogenic
+stem cell compartment, Science 328 (2010) 62-67.
+30[30] L.G. van der Flier, H. Clevers, Stem cells, self-renewal, and dierentia-
+tion in the intestinal epithelium, Annu. Rev. Physiol. 71 (2009) 241-260
+[31] A. Gregorie, H. Clevers, Wnt signaling in the intestinal epithelium:
+from endoderm to cancer, Genes. Dev 19: 877-890.
+[32] E. Batlle et al., Beta-catenin and TCF mediate cell positioning in the
+intestinal epithelium by controlling the expression of EphB/ephrinB,
+Cell 111 (2002) 251-263.
+[33] P. Buske et al., A comprehensive model of the spatio-temporal stem cell
+and tissue organisation in the intestinal crypt, PLOS Comput. Biol. 7
+(2011) e1001045.
+[34] P. Buske et al., Notch/gamma-secretase inhibition turns proliferative
+cells in intestinal crypts and adenomas into goblet cells, Nature 435
+(2005) 959-963.
+[35] G.P. Pfeifer, S.D. Steigerwald, R.S. Hansen, S.M. Gartler, A.D.
+Riggs, Polymerase chain reaction-aided genomic sequencing of an X
+chromosome-linked CpG island: methylation patterns suggest clonal
+inheritance, CpG site autonomy, and an explanation of activity state
+stability, Proc. Natl. Acad. Sci. USA 87 (1990) 8252-8256.
+[36] A.J. Silva, K. Ward, R. White, Mosaic methylation in clonal tissue, Dev.
+Biol. 156 (1993) 391-398.
+[37] Y. Yatabe, S. Tavare, D. Shibata, Investigating stem cells in human
+colon by using methylation patterns, Proc. Natl. Acad. Sci. USA 98
+(2001) 10839-44.
+31[38] E. Fuchs, The tortoise and the hair: Slow-cycling cells in the stem cell
+race, Cell 137 (2009) 811-819.
+[39] L. Li, H. Clevers, Coexistence of quiescent and active adult stem cells
+in mammals, Science 327 (2010) 542-545.
+32

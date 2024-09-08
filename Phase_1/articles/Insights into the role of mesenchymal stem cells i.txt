@@ -1,0 +1,449 @@
+Title: Insights into the role of mesenchymal stem cells in cutaneous medical aesthetics: from basics to clinics.
+Abstract: With the development of the economy and the increasing prevalence of skin problems, cutaneous medical aesthetics are gaining more and more attention. Skin disorders like poor wound healing, aging, and pigmentation have an impact not only on appearance but also on patients with physical and psychological issues, and even impose a significant financial burden on families and society. However, due to the complexities of its occurrence, present treatment options cannot produce optimal outcomes, indicating a dire need for new and effective treatments. Mesenchymal stem cells (MSCs) and their secretomics treatment is a new regenerative medicine therapy that promotes and regulates endogenous stem cell populations and/or replenishes cell pools to achieve tissue homeostasis and regeneration. It has demonstrated remarkable advantages in several skin-related in vivo and in vitro investigations, aiding in the improvement of skin conditions and the promotion of skin aesthetics. As a result, this review gives a complete description of recent scientific breakthroughs in MSCs for skin aesthetics and the limitations of their clinical applications, aiming to provide new ideas for future research and clinical transformation.
+Full Text: Insights into the role of mesenchymal stem cells in cutaneous medical aesthetics: from basics to clinics
+With the development of the economy and the increasing prevalence of skin problems, cutaneous medical aesthetics are gaining more and more attention. Skin disorders like poor wound healing, aging, and pigmentation have an impact not only on appearance but also on patients with physical and psychological issues, and even impose a significant financial burden on families and society. However, due to the complexities of its occurrence, present treatment options cannot produce optimal outcomes, indicating a dire need for new and effective treatments. Mesenchymal stem cells (MSCs) and their secretomics treatment is a new regenerative medicine therapy that promotes and regulates endogenous stem cell populations and/or replenishes cell pools to achieve tissue homeostasis and regeneration. It has demonstrated remarkable advantages in several skin-related in vivo and in vitro investigations, aiding in the improvement of skin conditions and the promotion of skin aesthetics. As a result, this review gives a complete description of recent scientific breakthroughs in MSCs for skin aesthetics and the limitations of their clinical applications, aiming to provide new ideas for future research and clinical transformation.
+Background
+The skin, the biggest organ in the human body, serves several vital physiological and biological functions in addition to its aesthetic value, such as protecting the body from harmful substances, assisting in the perception of diverse sensations, and regulating temperature. Skin problems not only reduce patients’ quality of life and create psychological strain, but also bring a heavy economic burden to families and society. Many skin diseases are associated with adult depression. Human skin wounds cause a significant epidemiological and financial cost. With the aging of the population and the increase of known comorbidity incidence rate affecting wound healing, its impact will continue to increase. Hypopigmentation can cause aesthetic and psychological problems, reducing patients’ quality of life. Scar is a common phenomenon after wound healing that seriously affects the appearance of the wound and brings about aesthetic, functional, and/or psychological issues. Especially facial scars are more likely to lead to functional defects and psychological burden. The market for scar therapy is anticipated to grow to around 32 billion US dollars by 2027.
+Therefore, skin aesthetics have become increasingly fashionable in recent years as the economy has grown. Internal aging and the stimulation of numerous external irritants ultimately affect the skin structure, resulting in cosmetic issues such as wrinkles and hair loss as well as functional issues such as barrier maintenance hurdles. The internal aging mechanism of the skin is complex, including the accumulation of gene mutations, DNA damage, cellular aging, inflammation, and oxidative stress (OS). External aging is the consequence of a combination of environmental causes, including ultraviolet (UV) light, PM2.5, nitrogen dioxide, ground ozone, cigarette smoke, food additives, and heavy metal ions, ultimately leading to DNA damage and cellular dysfunction. This has a significant influence on the lives of patients, resulting in a variety of physiological and psychological issues. As a result, individuals are increasingly looking for effective and safe medical cosmetic treatments to tackle skin concerns. There are many ways to improve the skin condition, such as through skin care, medications, laser, and surgery. However, each of these approaches has its own set of drawbacks and fails to produce the desired results in terms of skin repair and regeneration. As a current hot research topic, by promoting and controlling endogenous stem cell populations and/or restocking cell pools for organizational stability and regeneration, stem cell-based treatments constitute a crucial subspecialty of regenerative medicine and have achieved superior therapeutic effects.
+Stem cells possess advantageous characteristics, like being able to self-regenerate and specialize into several cell types. Stem cells alone, stem cell secretion groups, and stem cells combined with nanomaterials are the three major ways that stem cell treatment is now applied. They have been extensively investigated in treatments to treat numerous human maladies, including Type 1 diabetes, Alzheimer’s disease, Parkinson’s disease, spinal cord injury, and cancer. Yet there are certain risks to stem cell treatment that cannot be overlooked, such as genomic instability during cell expansion, cell malignancy, the possibility of increased tumor development in vivo, and the possibility of poor cell differentiation. There are three types of stem cells employed for therapeutic purposes: embryonic stem cells (ESCs), induced pluripotent stem cells (iPSCs), and adult stem cells like MSCs. ESCs, originating from embryos’ inner cell aggregate, possess pluripotent properties and hold the potential to differentiate into a full range of cell types. However, there are major restrictions on using ESCs in clinical practice due to ethical issues. The essence of ethical issues in ESCs is that obtaining ESCs requires the devastation of early embryos, which are considered to have the moral status of a complete human and possess enormous moral sanctity. Therefore, it is not morally permissible to use them for scientific research or therapeutic purposes. The potential alternatives for ESCs are iPSCs and MSCs. IPSCs may be created from mature cells by gene editing and ectopic expression of particular pluripotent stem factors, thus avoiding many ethical issues. However, there are still challenges in the process of creating iPSCs, such as monitoring and reducing the genetic instability of iPSCs and enhancing immune compatibility. And due to genetic instability, iPSCs have tumorigenic potential. Therefore, further study is required to develop a reliable, repeatable, and successful reprogramming strategy. MSCs can be derived from various tissues. Most studies agree that these adult stem cells are abundant, diverse in origin, easy to harvest and isolate, have strong pluripotent differentiation ability, and therefore have multiple applications. Recent research has revealed that MSCs can promote skin wound healing, pigmentation modulation, and anti-aging as a therapeutic option for cutaneous medical aesthetics.
+Currently, research on the combined use of MSCs and nanomaterials focuses on employing materials to create an environment that favors cell survival, differentiation, proliferation, and paracrine secretion, promoting the greater efficacy of MSCs. Although these nanomaterials have achieved good preclinical efficacy, biocompatibility issues, immune issues, and mechanical properties still need improvement.
+We systematically searched PubMed and Web of Science for papers related to mesenchymal stem cells, dermatological aesthetics, wound healing, scar repair, skin rejuvenation, and anti-pigmentation from 1975 to February 2024. Here, we will describe the most current findings on the processes and uses of MSCs and their secretomics in skin medical aesthetics, such as wound healing, scar repair, skin rejuvenation, and pigmentation modification. A deeper knowledge of their respective roles will clarify the use of stem cell therapy in cutaneous medical aesthetics, providing new strategies for the future.
+Mechanisms underlying skin damage
+The basis of the skin physiology
+The skin, comprising the epidermis, dermis, and subcutaneous tissues, serves as the human body’s biggest biological, chemical, and immunological barrier. The cuticle, which is the skin’s exterior layer, measures 10–20 μm thick and is composed of 10–15 layers of interconnected dead cells. The subsequent layer, known as the living epidermis, has a thickness of 100–150 μm and primarily comprises keratin-producing cells in various stages of differentiation. The third layer, the dermis, is abundant in growth factors and extracellular matrix (ECM) proteins. Important cell types within the dermal layer include keratinizing cells, macrophages, fibroblasts, and adipocytes, which can communicate with each other in the skin environment. The subcutaneous layer, which comprises adipocytes, MSCs, and connective tissue, is the last layer.
+However, genetic composition, lifestyle, environmental pollution, food additives, solar irradiance, heavy metal exposure, and particulate matter in the air can cause skin cytotoxicity, weakening of the skin barrier, damage to matrix protein, and an active inflammatory response. Loss of skin composition, as well as impairment of physiological functioning and natural structures, can result in skin abnormalities such as aging, hyperpigmentation, and poor skin healing after injury, all of which can have a detrimental effect on skin aesthetics (Fig. 1).
+The effects of external factors on the skin. Skin cytotoxicity, skin barrier degradation, and inflammatory response activation can be caused by gene composition, environmental pollution, dietary additives, solar irradiance, heavy metal exposure, and particulate matter in the air
+The physiological basis of skin wound healing
+Skin wound repair is a complicated procedure that comprises many closely connected activities, which are broadly classified as inflammatory reactions, epithelialization, wound shrinkage, collagen deposition, and remodeling. During the inflammatory response stage, immune cells prepare the wound for healing by eliminating pathogens, cell fragments, and apoptotic cells from the wound location. Local monocytes travel into the wound, mature into macrophages, consume cellular debris and apoptotic cells, and produce a substantial amount of growth factors. Inflammation increases the change of M1 macrophages into M2 macrophages. M2 macrophages enhance tissue repair and enormous ECM production by managing the multiplication and migration of keratin-forming cells, fibroblasts, and endothelial cells. Afterwards, the earlier formed wound matrix will gradually be replaced by granulation tissue, which contains capillaries, fibroblasts, and collagen bundles and serves as a scaffold for cell migration and growth. Then, entering the epithelialization stage, keratinocytes migrate to the damaged dermis and reestablish the epithelial barrier function. Cells rapidly proliferate, and new vessels and epithelium emerge. Afterwards, fibroblasts differentiate into myofibroblasts and contract the wound. During the collagen deposition stage, high concentrations of immature type III collagen are first released by fibroblasts into the stroma. During the final remodeling phase, fibroblasts continue to secrete collagen. Over time, fibroblasts release matrix metalloproteinase (MMP) to remodel type III collagen into type I collagen, allowing the wound to seal. Collagen fibers gradually arrange, and when the wound’s tensile strength rises, the wound’s healing is complete. Throughout the process, many skin cells, like fibroblasts, adipocytes, endothelial cells, keratinocytes, macrophages, and other immune cells, interact to promote wound healing. Among them, proliferation, migration, differentiation, and apoptosis of epidermal keratin-forming cells and dermal fibroblasts with damaged healing functions are the major causes.
+Chronic wounds are defined as those that are deep, full, or partial thickness injuries and fail to recover within six weeks. They heal slowly and are linked with severe fibrosis, which can result in hyperplastic scars and keloids in some people. Aside from its bad visual appearance, the tissue near the scar lacks several fundamental dermal components, like glandula sebacea, folliculus pili, and sensory nerve receptors. There are several risk factors for the formation and maturation of scarring, including excessive collagen deposition, reduced fibroblast apoptosis, delayed keratinocyte function, increased transforming growth factor β1 (TGF-β1) expression, excessive angiogenesis, prolonged inflammation, and even aging. Early management of the inflammatory reaction is crucial for renewal since unresolved long-term inflammation favors scar formation over regeneration. Keloids and proliferative keloids are fibrous, proliferative malignant processes caused by excessive collagen and ECM protein buildup. Through exosome-mediated intercellular communication, M2 macrophages are essential for the creation of permanent scars.
+The physiological basis of skin aging
+The skin ineluctably loses structural and functional features due to a variety of internal and external factors. External factors, like airborne pollutants, lifestyle decisions, and notably UV radiation, are the principal causes of skin aging. Aging reduces skin elasticity and changes skin thickness and collagen tissue, leading to wrinkles. UV-induced photoaging is symbolized by sunburn, uneven pigmentation, roughness, dryness, and wrinkles, which are generated mostly by alterations in the ECM material.
+Skin aging mechanisms are complicated, and they may include genetic mutations, DNA damage, cellular senescence, inflammation, and OS. The accumulation of mutations in multicellular organisms may lead to age-related cell degeneration and death, resulting in the aging of the organism. Age-related deficiencies in stem cells’ DNA repair machinery can result in chromosomal rearrangements or mutations that impair epidermal stem cells’ capacity to self-renew and thus accelerate the aging of the skin and/or the development of cancer. OS has been demonstrated to have a major impact on the aging of the skin, and antioxidants like melatonin, vitamin C, and glutathione have the potential to aid skin renewal. Excess reactive oxygen species (ROS) can directly harm cell function and structure, regulate inflammatory reactions, damage genetic components, and speed up the aging process of the skin. MMPs are important regulatory targets of ROS-induced skin aging because they regulate the breakdown of numerous ECM components, especially collagen. Human dermal fibroblasts (HDFs) are cells that primarily synthesize structural elements like pre-collagen and elastic fibers. Aging alters the amount and growth of HDFs, decreases collagen production and repair, and speeds up MMP destruction of the existing skin matrix. ROS-stimulated MMP synthesis is mediated by the mitogen-activated protein kinase (MAPK) signaling cascade, which includes p38, extracellular signal-regulated kinase, and c-Junn-terminal kinase. Then the transcriptional factor activator protein 1 (AP-1) becomes activated and governs MMP-1, MMP-3, MMP-9, and MMP-12 transcription. Another MMP-mediated signaling mechanism associated with the aging of skin is the TGF-β/SMAD system, which is hampered by TRII expression downregulation, resulting in decreased type I collagen formation. Another transcription factor that is activated is nuclear factor-κB (NF-κB), which controls the response to photoaging and UV radiation by mediating the production of inflammation and MMP.
+The interplay between melanocytes and keratin-forming cells in the epidermis is responsible for skin pigmentation. When exposed to UV radiation, keratin-forming cells release paracrine hormones such as endothelin-1 and α-melanocyte-stimulating hormone (α-MSH), which stimulate melanocytes to produce melanin. Appropriate melanin serves as a natural sunblock, but excess melanin production, on the other hand, can lead to hyperpigmentation, which presents as UV-related pigmentation disorders such as solar freckle disease and melasma. When excessively exposed to UV light, fibroblasts age and create a number of skin aging-associated secretory proteins, including differentially expressed secretory factors that control melanogenesis. UV-irradiated fibroblasts, in particular, generate stem cell factor and secrete frizzled-related protein-2, which alter melanogenesis and contribute to the hyperpigmentation seen in solar freckles or melasma.
+Mesenchymal stem cells and their secretory group
+Mesenchymal stem cells
+A major challenge in the field of healthcare is the damage to tissue that results from illness, aging, trauma, and other causes. Regenerative medicine seeks to solve this problem by regenerating injured tissues. Stem cells are crucial to many regeneration procedures because they are able to differentiate into specific kinds of cells. They are theoretically able to infinitely renew themselves under appropriate conditions and can maintain, produce, or restore injured tissue, which is difficult for other treatment methods to achieve. Compared with ESCs and iPSCs, MSCs have no ethical issues and possess stable cell phenotypes and a low immune status, which can reduce tumor risk and improve survival rate. Therefore, MSCs’ clinical applications are safer.
+ MSCs are pluripotent stem cells, they come from a range of body tissues, including bone marrow, umbilical cord, muscle, adipose tissue, and teeth. MSCs from various tissues have distinct biological characteristics, as evidenced by differences in differentiation ability and secreted factors (Fig. 2). MSCs may be used to treat soft tissue filling and revitalization, hair regeneration, scar reduction, and skin anti-aging. Some research has found that MSCs are able to enhance skin health by increasing skin thickness, collagen formation, and minimizing wrinkles. Mechanically, MSCs may be found at the site of damage and release wound repair cytokines like platelet-derived growth factor (PDGF), insulin-like growth factor 1 (IGF-1), and interleukin-8 (IL-8), controlling inflammatory cells and decreasing fibrosis. In addition, it can regulate the immune reaction and stimulate tissue regeneration by secreting growth factors, chemokines, cytokines, and angiogenic factors. Adipose-derived stem cells (ADSCs) and bone marrow mesenchymal stem cells (BMMSCs) have been investigated and used to limit scar formation, stimulate collagen production, enhance skin tone, and fight aging. According to the single cell map, ADSCs have less heterogeneity and rely less on mitochondrial metabolism for energy production than BMMSCs, resulting in improved stem cell maintenance and resistance to apoptosis. ADSCs can be employed alone or in conjunction with interstitial vascular fraction to treat skin damage repair in vitro, such as lowering wrinkles, facial scars, antioxidant activity, and blocking melanin formation, leading to skin whitening. Combined with other techniques, including carbon dioxide laser surface repair and cultured fibroblasts, ADSCs have shown skin-rejuvenating effects. In comparison to ADSCs, the production of BMMSCs is more intrusive and damaging to patients. However, BMMSCs are more capable of self-renewal, differentiation, and immunological control. For chronic wounds, BMMSCs move to the wound site between 7 and 8 weeks or 16–20 weeks after intravenous treatment, boosting pro-collagen production. Amniotic fluid stem cells and umbilical cord-derived stem cells (UMSCs) are two more sources of stem cells. They are highly successful in restoring skin and immunological compatibility. It cannot, however, get an adequate amount of cells for therapy.
+The source and functioning mechanism of MSCs. MSCs can be derived from a variety of tissues, like bone marrow, muscle tissue, adipose tissue, teeth, and umbilical cord, etc. MSCs can function through self-renewal, differentiation, and secretion
+There are numerous treatments for improving skin health and treating skin problems, such as skin care, laser therapy, medicine, radiation therapy, and surgery. However, because of the complicated nature of skin disorders, which involve many cell types and growth factors, these therapeutic mechanisms are relatively simple and have not achieved the desired skin repair effect. MSCs not only regenerate tissue and restore damaged skin, but they also have various functions such as regulating immunity, reducing inflammatory reactions, and promoting angiogenesis. They have diverse treatment mechanisms, minimal trauma, significant preclinical effects, and no obvious toxic side effects in current research. Therefore, they can be used as a reliable alternative therapy.
+MSCs secretory group
+MSCs can secrete or shed numerous growth and trophic substances into the extracellular environment, creating the so-called secretome. This includes the soluble fractions and the extracellular vesicle (EV) fractions. EVs are important in the delivery of different genetic materials and proteins.
+EVs are divided into exosomes (Exo), microvesicles (MV), and apoptotic vesicles based on their size, content, and origin. Among them, Exos have been extensively studied, which are tiny particles (40–120 nm in size) formed by multivesicular bodies (MVB). Exos include a variety of physiologically active macromolecules, including nucleic acids (such as miRNA, IncRNA, CircRNA, and DNA), proteins, and lipids that are important in cellular bioregulation. Tetraspanins (CD9, CD63, CD81, and CD86), membrane-linked proteins, and heat shock proteins (HSP60, HSP70, and HSP90) are abundant in Exos (Fig. 3). Exos act by injecting their contents straight into cells, avoiding the requirement for specialized receptor expression. Exos may therefore serve as intercellular communication carriers, helping to overcome biological boundaries. Exo possesses unique proteins and nucleic acids, depending on the origin of the cell, that support tissue regeneration through intercellular communication and are engaged in the control of apoptosis through immunomodulatory functions, anti-oxidative stress, and other mechanisms (Fig. 4).
+Hallmarks of exomes. Exo membranes contain tetraester proteins (CD9, CD63, CD81, and CD86), and transmembrane proteins. Exo contains heat shock proteins (HSP60, HSP70, and HSP90), nucleic acids, amino acids, and lipids
+Formation and secretion of exosomes. The secretory cells are stimulated to transform early endosomes into multivesicular bodies, which secrete exosomes via fusing with cell membranes, and then exosomes carry various substances into recipient cells
+Exo could modulate vital biological functions such as cell division, migration, differentiation, and death. Studies have shown that endogenous exosomes shuttle through many types of skin cells and that their mediated messaging and intercellular contact are required for maintaining cell function and tissue homeostasis. Exo from stem cells is expected to be a useful treatment in regenerative and cosmetic medicine, particularly in scar avoidance and reduction, pigmentation modulation, and hair growth. Unlike stem cells, exosomes are small, inactive substances that can be stored at -80 °C for over 6 months without toxic cryoprotectants while still functioning. There is no requirement to sustain cell viability and efficiency from production to storage to delivery. They also may avoid problems associated with cell therapy, including the potential for poor cell survival, immunological rejection, age-associated genetic instability, functional inactivation, and unfavorable differentiation.
+MSC lysates are cell breakdown products containing cell membrane surface proteins and cellular contents that have a direct effect on injured tissues; they are not immunorejected like cells and play a function in regeneration comparable to exosomes and cell supernatants. MSC lysates have anti-apoptotic activity, reducing tissue damage and promoting regeneration by inhibiting apoptosis. The lysate of dental pulp stem cells (DPSCs) is abundant in various cytokines that enhance the cellular development environment and encourage the production of collagen in the skin. In terms of safety, no serious negative effects, such as allergic reactions leading to death, have been observed using MSC lysate. However, the main limitation is that the active ingredients are not yet well defined.
+The effect and possible mechanism of MSCs in improving wound healing and scar repair
+MSCs promote wound healing
+MSCs achieve the effect of promoting wound healing through various mechanisms. Firstly, what works is the multi-directional differentiation ability of MSCs. MSCs may develop into a range of cells, for example, ADSCs can develop into adipocytes, endothelium cells, skeletal muscle cells, and smooth muscle cells to enhance skin wound healing. ADSCs are better suited to directed adipocyte growth than stem cells from the rest of the body. According to previous research on injury healing and regeneration, adipocytes can govern fibroblast recruitment and play a key role in skin reconstruction. Previous studies have shown that fibroblasts are reduced in animals with fat accumulation problems, and adipocytes may indirectly encourage fibroblast recruitment by regulating the generation of unknown fibroblast precursor cells in the skin. There is also evidence that direct intercellular communication between adipocytes and fibroblasts may influence fibroblast migration during skin wound repair. Dermal adipocytes are critical in the initial stages of injury-induced immune activation. Shook et al. discovered that adipocytes at the wound site dilate and then shrink due to adipose triacylglyceride lipase dependent lipolysis. The products of lipolysis recruit immune cells, which are necessary for effective wound closure. Adipocytes have also been shown to recruit fibroblasts necessary for wound healing and promote ECM deposition. After the wound heals, the adipocytes along the wound’s edge undergo lipolysis, which releases free fatty acids, activates macrophages, induces angiogenesis, and promotes tissue repair. ADSCs can grow into vascular endothelial cells. Under the stimulation of bone morphogenetic protein 4 (BMP-4) and TGF, ADSCs can develop into smooth muscle cells (SMCs). Because smooth muscle is essential for blood vessel physiological performance, the creation of SMCs is necessary for the in vitro construction of blood vessels with correct physiological function. Blood vessels rely on SMCs for structural support and contraction. The vascular system facilitates the transfer of nutrients and oxygen, and creates an inflammatory environment. Therefore, the formation of a new circulatory system throughout the regeneration and repair phase is critical for the entire healing process. Damaged wound vascular reconstruction can impede healing and contribute to the development of chronic wounds. ADSCs can also differentiate into skeletal muscle cells to promote tissue healing.
+The paracrine function of MSCs is also crucial. MSCs can colonize at the site of injury and express high levels of wound-healing cytokines like IGF-1, PDGF, and IL-8, thereby regulating inflammatory cells and down-regulating fibrosis. ADSCs, in particular, may produce almost all of the growth factors required for healthy wound repair, like vascular endothelial growth factor (VEGF), hepatocyte growth factor (HGF), basic fibroblast growth factor (bFGF), and PDGF. They can also stimulate the excretion of those growth factors in chronic wounds in a hypoxic environment. MSCs also promote new blood formation, modulate the immune response, and inhibit excessive inflammation. Without neovascularization, acute injuries could turn chronic, and EVs generated from different MSC sources have been demonstrated to induce angiogenic responses in vivo. MSCs enhance angiogenesis and facilitate the growth of a functioning vascular system during this stage of wound healing. MSCs may promote neovascularization in adults by releasing pro-angiogenic factors like VEGF, hypoxia inducible factor-1 (HIF-1), epithelial growth factor (EGF), and C-X-C motif chemokine ligand 12 (CXCL12), and secreting various molecules that improve vascular stability and protection. ADSCs release angiogenic cytokines such as TGF-β, VEGF, HGF, bFGF, PDGF, and angiopoietin-1 (Ang-1), which increase angiogenesis in granulation tissue, enhance local blood circulation, accelerate tissue regeneration at the ischemic site, and shorten healing time. The continuation of an inflammatory reaction that should have halted after the inflammatory phase is one reason for wound healing problems, resulting in a delayed healing process. ADSCs diminish pro-inflammatory factors like tumor necrosis factor-α (TNF-α) and interferon-γ (IFN-γ) while increasing anti-inflammatory ones like interleukin-4 (IL-4) and interleukin-10 (IL-10). Systematically infused BMMSCs migrate to local wound sites, interact with the inflammatory microenvironment, and induce macrophage polarization toward the M2 phenotype. ADSCs regulate cytokines by suppressing T-lymphocyte activation and B-lymphocyte apoptosis. ADSCs can also suppress the immune response via direct cell-to-cell contacts and paracrine cytokines such as IL-10, HGF, indoleamine 2,3-dioxygenase 1, and TGF-β. MSC therapy improves fibroblast survival and migration as well as fibroblast ECM deposition, which improves healing.
+Due to the fact that paracrine function is one of MSCs’ primary mechanisms of action, in-depth research has been conducted on the secretomics of MSCs. The following will provide a detailed introduction. For example, ADSC extracellular vesicles promote wound healing by increasing phosphorylation of aging biomarkers VEGF, VEGF receptor 2 (VEGFR2), and senescence marker protein 30 (SMP30) while inhibiting the creation of ROS and inflammatory cytokines like interleukin-1 (IL-1), TNF-α, and interleukin-6 (IL-6). ADSC-exos perform a crucial part in wound healing by acting on key target cells like HDFs and human immortalized keratinocytes (HaCaTs) through multiple signaling pathways. Ma et al. treated HaCaTs with H2O2 to simulate skin damage and discovered that ADSC-exos can improve HaCaTs proliferation and migration, and prevent apoptosis via the Wnt/β-linked protein signaling pathway. He et al. recently demonstrated that malat1-containing ADSC-exos promoted wound repair by stimulating the Wnt/β-linked protein pathway. By upregulating the phosphoinositide 3-kinase/Akt (PI3K/Akt) pathway, ADSC-exos may promote and improve collagen production during skin wound healing. Li et al. discovered that when diabetes rats were given exosomes from ADSCs with high expression of NF-E2-related factor 2 (Nrf2), the wound ulcer area of their feet was greatly reduced. Collagen formation is particularly vital in the initial phases of recovery, whereas matrix rebuilding is of greater significance later in the healing process. ADSC-exos improves ECM remodeling and reduces scarring by modulating the ratio of type III/type I collagen, TGF-β3/TGF-β1, and MMP-3/tissue inhibitor of metalloproteinases 1 (TIMP-1) and promoting HDFs differentiation. To prevent scar formation in an incision treatment model, ADSCs exosomes increase type I and III collagen formation early in the recovery phase while inhibiting collagen production later in wound healing (Fig. 5).
+The mechanism by which MSCs promote skin wound healing. In damaged skin, MSCs promote the secretion of VEGF, bFGF, PDGF, IGF-1, HIF-1, EGF, CXCL12, Ang-1, HGF, TGF-β, IL-10, IL-4, inhibit the secretion of TNF-α, IFN-γ, IL-1, IL-6, and the level of ROS, resulting in enhanced differentiation migration and reduced apoptosis of HaCaTs and HDFs, thus promoting skin collagen synthesis, hematopoietic formation, and ECM deposition, leading to the tendency of skin wound healing
+Bandages, hydrogels, and sponges are the main nanodrugs used to assist wound healing. Mozafari et al. designed thermosensitive hydrogel capsules to reduce the level of inflammation and promote wound recovery. When BMMSCs were cultivated in hydrogels and administered to skin wounds in a mouse model, the therapy aided in wound healing, epithelial cell multiplication and re-epithelialization, and lowered inflammatory responses in serious skin lesions. Graphene has good biocompatibility, which can stimulate cell proliferation and have antibacterial properties. Previous research has discovered that the interaction of graphene-based nanomaterials with cells involved in wound repair reactions might improve the selectivity of MSC Exos in regulating gene expression, thereby promoting wound healing. Silver nanoparticle (AgNP)-based nanomaterials have been widely studied and have a wide range of applications. RPS-AgNPs nanocomposites synthesized by impregnating radiosterilized pig skin (RPS) with AgNPs suspension reduce bacterial growth and contribute to the survival and proliferation of MSCs. The synthesis of AgNPs from the water extract of turmeric leaves and the biosynthesis of AgNPs through polycystis algae showed significant antibacterial and wound healing potential. CuS@BSA nanoparticles can induce MSCs to differentiate into fibroblasts, making them an effective tool for influencing MSC differentiation.
+MSCs promote scar repair
+Plenty of research has proven that MSC can both improve wound healing and reduce scar formation. Fang et al. discovered that UMSCs decreased scar development and myofibroblast production in a mouse model of skin defects. Liu et al. demonstrated that MSCs transplanted through the ear artery dramatically decreased proliferative scar development in a rabbit ear proliferative scarring model, implying that MSCs may have practical uses in regulating wound healing. Similar to that, another experiment in a rabbit model found that local application of MSCs effectively reduced proliferative scar development by controlling inflammation. In the rabbit model, Li et al. discovered that transplanting BMMSCs overexpressing TGF-β3 dramatically enhanced wound repair and decreased the production of skin scar.
+MSCs paracrine activity is crucial in this regard. MSCs produce a variety of antifibrotic mediators and growth factors, including HGF, IL-10, and adrenal medulla. MSCs that migrate to the site of injury emit HGF and Prostaglandin E2, which inhibit myofibroblast differentiation and avoid epithelial-mesenchymal transition. MSCs may also influence the formation of ECM and fibroblasts for better scarring. Cecelia C. Yates et al. discovered that allogeneic MSCs transplantation increased fibroblast proliferation, migration, and ECM deposition, all of which are required for wound healing and reduced post-traumatic inflammation. Similar to cutaneous tissue, MSCs signaling causes other nearby cells to form the right ECM.
+MSC exosomes promote collagen deposition and have antifibrotic properties in proliferative scarring. Wang et al. indicated in a mouse model that ADSC-exos improved ECM remodeling and scar-free healing. The underlying process may be connected to the modulation of the type III: type I collagen ratio, MMP3:TIMP-1, TGF-β3:TGF-β1, and the inhibition of myofibroblast differentiation. Furthermore, in a mouse model with full-thickness skin injuries, ADSC-exos shortened healing time, promoted collagen synthesis, and reduced scarring by activating the signaling pathway of PI3K/Akt. Hu et al. discovered that topical administration of human umbilical stalk plasma exosomes overexpressing miR-21-3p expedited re-epithelialization, decreased scar breadth, and improved angiogenesis in mouse skin wounds by reducing phosphatase and tensin homolog (PTEN), and sprouting homologue 1 (SPRY1). Zhang et al. revealed that placental MSC-exos-induced wound restoration may be done mostly by downregulating the Yes-associated protein signaling pathway, thereby inhibiting Engraviled-1 to reduce scar formation. Yuan et al. discovered that exogenous miR-29a90-modified ADSC-exo treatment reduces scar growth by blocking the TGF-β2/SMAD3 signaling pathway. Fang et al. revealed that UMSC-Exos enriched with particular microRNAs (miR-21, miR-23a, miR-125b, and miR-145) decrease myofibroblast production and anti-scarring by suppressing the TGF-β2/SMAD2 pathway. In a mouse model of skin abnormalities, UMSCs-exos inhibits TGF-β2/SMAD2 pathway activity, decreasing myofibroblast differentiation and over-aggregation, and therefore reducing hyperfibrosis and scar formation. These data suggest that MSC-exos, especially ADSC-exos, can modulate fibroblast activity, as well as collagen deposition or alignment, to promote scar-free patterns (Fig. 6).
+The mechanism by which MSCs promote skin scar repair. MSCs have the ability to stimulate the release of HIF-1, VEGF, EGF, CXCL12, HGF, and IL-10 in scarred skin while inhibiting the release of PTEN, SPRY1, and Engraviled-1. Exosomes secreted by MSCs contain miR-21, miR-23a, miR-125b, and miR-145 that can suppress the TGF-β2/SMAD2 pathway, promote fibroblast differentiation and migration, and inhibit myofibroblast differentiation and aggregation. This can reduce fibrosis and promote ECM remodeling, collagen deposition remodeling, and epithelial regeneration
+In the application of nanomaterials, Zheng et al. found that MSCs-rich hydrogels helped skin wound healing and formed scar-free tissue with hair follicles. When used in conjunction with a multifunctional polysaccharide-based dressing scaffold, ADSC-exos can accelerate recovery by increasing cell proliferation, granular tissue growth, collagen accumulation, re-epithelialization, and remodeling while decreasing scar tissue development and skin attachment regeneration. Table 1 points out recent clinical research on the use of MSCs to treat different kinds of wounds. More clinical studies with MSCs transplantation are expected to be conducted in the future.
+Current clinical studies of skin wound healing and scar repair
+Source	Research Contents	Finding	References	 	ADSCs	a phase I trial of seven participants with recurrent ulcers and ischemic limb injuries	ADSCs improve wound healing by lowering leg pain and ulcer size	Bura et al. 2014 	 	ADSCs	treat chronic wounds with a biological bandage made of ADSCs and adult acellular collagen matrix	the dressing greatly increase dermal revascularization and wound reformation	Lafosse et al. 2015 	 	UMSCs	a clinical trial with randomization and control to treat diabetic foot ulcers	three months after UMSCs implantation, ulcer is entire or progressing recovery	Qin et al. 2016 	 	placental MSCs	local application of alginate sodium gel containing placental MSCs to ulcerative diabetes foot	the ulcer basically heals after three weeks	Zeng et al. 2017 	 	ADSCs	treatment of diabetes foot with allogeneic ADSCs tablets based on hydrogel	the ADSCs group has a higher rate of full wound healing	Moon et al. 2019 	 	UMSCs	the impact of serum-containing human UMSC medium on laser therapy recovery	reduce the recovery time after treatment for erythema and laser ablation treatment	Jihee Kim et al. 2020 	 	ADSCs	the ability of ADSCs to accelerate the healing of skin wounds	ADSCs promote wound healing	Zhou et al. 2022 	 	MSCs	utilize fibrin polymer sprays to apply cultured autologous MSCs to wounds	increase healing in those with chronic, non-healing lower limb wounds	Falanga et al. 2007 	 	MSCs	give MSCs to wounds with matrix or hydrogel	accelerate healing and significantly improve clinical outcomes	Dash et al. 2009 	 	
+The role and possible mechanism of MSCs in promoting skin rejuvenation
+By increasing fibroblast growth and biological activity, lowering inflammation and ROS, boosting collagen production, and decreasing MMP expression, MSCs have also demonstrated promising results in the therapy of aging skin. ADSCs can be employed individually or in conjunction with stromal vascular fraction to repair skin defects such as face scars, antioxidants, wrinkles, and melanin synthesis, resulting in skin whitening. Nuclear receptor-interacting protein 1 (Nrip1), according to Hu et al., plays an important function in aging. Treated with ADSCs, skin aging was slowed with decreased expression of inflammation-related genes (IL-6, p65, and IL-1α), aging-related genes (p21 and p53), and growth factor-related genes (Igf1, mTOR) under Nrip1 knockdown. ADSCs have exhibited anti-aging and skin-rejuvenating characteristics when combined with other approaches like CO2 laser surface repair and cultivated fibroblasts. Potential connections include the MAPK and TGF-β pathways, which modulate MMP production and ECM formation. ADSC-conditioned medium (ADSC-CM) was discovered to reduce ROS production and suppress photoaging through inhibiting IL-6 and MMP-1 production and enhancing the antioxidant gene heme oxygenase-1 (HO-1) expression. Hwang et al. discovered NF-κB pathway activation in another investigation. Both ROS production and MMP expression were improved in the therapy group using neural stem cell-conditioned medium (NSC-CM) and its released components, TIMP-1 and TIMP-2. The activation of the DNA repair enzyme Rad50 and consequent suppression of the DNA damage biomarker γ-H2AX serve to highlight the protective impact of NSC-CM. In the treated skin tissue, higher levels of tissue proteinase K and MMP-12, as well as enhanced M2 macrophage infiltration were found, suggesting elastinolytic and perhaps anti-inflammatory effects.
+In vitro tests have revealed that HDFs are shielded from oxidative damage by ADSC-CM. In an in vitro study of UVB irradiation, Li et al. found that ADSC-CM effectively upregulated the production of antioxidant response factors, like TGF and HO-1, while downregulating the activity and transcription of UVB-induced signaling pathways, like AP-1, MAPKs, and NF-κB. Therefore, ADSC-CM exerts protective properties on HDFs and HaCaTs against UVB-induced photoaging. Guo et al. reported that platelet-derived growth factor AA (PDGF-AA), which is present in ADSC-CM, also activates the PI3K/Akt signaling pathway, mediating ECM deposition, photoaging-induced proliferation, and HDFs remodeling. The results suggest that well-prepared ADSC-CM has a positive preventive effect on preventing intrinsic and extrinsic aging damage of HDFs to some extent. Also, the results clarify that PDGF-AA may help to obtain better results with other elements of ADSC-CM.
+Nevertheless, the components of ADSC-CM are quite complicated and do not work synergistically to achieve anti-aging goals. Exosomes are important components of ADSC-CM and may have positive independent or synergistic effects. Exosomes have the ability to facilitate intercellular communication as well as control HDFs characteristics. Exosomes formed by three-dimensional growth of HDFs spheres (3D-HDF-exos) boost type I procollagen expression while decreasing MMP-1 expression via TNF-α downregulation and TGF-β upregulation. Exosomes transport a variety of membrane proteins and cytoplasmic components, and they modulate pigmentation in both healthy and pathological situations through controlling gene expression and enzyme activity. 3D-HDF-exos led to greater amounts of skin collagen deposition in vitro and in a naked mouse photoaging model than BMMSC-derived exosomes. Thus, 3D-HDF-exos may control cutaneous fibroblasts, stimulate appropriate collagen formation, reduce inflammatory responses, and have anti-aging properties. Oh et al. reported that in UVB-driven photoaging and normal aging models, human iPSC-exos ameliorated genetic and phenotypic abnormalities in photoaging HDFs. The favorable benefits of iPSC-exo were accomplished mechanistically by lowering MMP1/3 and senescence-associated β galactosidase expression while increasing type I collagen production in aged HDFs. Wang et al. discovered that ADSCs and their CM effectively reduced UVB or α-MSH-induced hyperpigmentation in B16F10 cells in mice ears or human skin substitutes in vivo and in vitro by suppressing melanin formation and boosting melanosome breakdown. They also found that miR-199a and miR-181a-5p extracted from ADSCs exosomes significantly suppressed melanogenesis via inhibiting microphthalmia-associated transcription factor, a major regulator that controls melanogenesis and promotes melanosome degradation through activation of autophagy.
+Bae et al. discovered that exosomes expressing mmu-miR-291a-3p mechanically corrected HDFs aging via the TGF-β receptor 2 pathway. According to this research, ESC-exo mmu-miR-291a-3p has the ability to slow the aging of the skin. Some research has indicated that exosome has numerous growth factors linked to skin regeneration, like EGF and bFGF. According to the activation of Col-1 and glutathione peroxidase-1 and a decrease of MMP-1, hucMSC-derived extracellular vesicles prevent photoaging via lowering ROS production, increasing fibroblast growth, and avoiding the arrest of the cell cycle. Using ADSC-exo treatment, Liang et al. published PCR data indicating enhanced type I collagen mRNA expression and reduced MMP-1, MMP-3, and type III collagen expression. Meanwhile, TGF-β1 and TIMP-1 expression were upregulated, leading to the restoration of photodamaged dermal fibroblasts (Fig. 7).
+The mechanism by which MSCs promote skin rejuvenation. In aging skin, MSCs stimulate the release of Rad50, HO-1, TGF-β, and TIMP-1, lower ROS levels, suppress inflammatory responses, inhibit the expression of MMP, IL-6, γ-H2AX, MAPKs, AP-1, NF-κB, and TNF-α, and promote the differentiation and migration of HaCaTs and HDFs, which in turn stimulate the synthesis of collagen and ECM, leading to skin rejuvenation
+Liposomes, vesicles, solid lipid nanoparticles, and metal nanoparticles are some of the most popular nanocarriers utilized in cosmetics. The active ingredients are often packaged in nanocarriers to promote skin absorption and achieve better cosmetic and therapeutic effects. Nanomaterials have been employed in sunscreen for their excellent encapsulation capabilities, better stability of encapsulated bioactive ingredients, and controlled release. Nanoparticles based on zein exhibit antioxidant effects on matrix metalloproteinase MMP-1. Natural compounds and poly ε-caprolactone nanofibers can combat stem cell aging and prevent aging caused by ultraviolet radiation. Alginate/gelatin hydrogel bioink and glucosamine-based supramolecular nanotubes can maintain the pluripotency of MSCs. Gold nanoparticles can be used as anti-aging components. Nanoparticles created from Rosa Floribunda Charisma could be an organic source of a new anti-aging ingredient for the skincare and cosmetics industries. Future research can consider the combination therapy of multiple nanomaterials and MSCs to achieve higher anti-aging effects. Table 2 presents recent clinical studies using MSCs therapy to promote skin rejuvenation. More related research is expected to be conducted in the future.
+Current clinical studies of skin anti-aging/rejuvenation
+Source	Research Contents	Finding	References	 	amniotic MSCs	the effects of amniotic MSC-CM on photoaging	significant improvement in photoaging after treatment	Prakoeswa et al. 2019 	 	amniotic fluid MSCs	use stem cell conditioned media together with acupuncture for facial rejuvenation	enhance skin texture, improve collagen and elastin production, and help regulate face aging	El-Domyati, M. et al. 2020 	 	ADSCs	use ADSCs for ECM regeneration in patients with solar elastosis	obtain the full recovery of solar elastosis	Luiz Charles-de-Sá et al. 2020 	 	ADSCs	investigate the effect of protein isolates from ADSC medium applied via microneedles to Asian skin	present rejuvenating and whitening efficacy	Wang et al. 2018 	 	red deer umbilical cord lining MSCs	compare the efficiency of red deer MSCs extract to a vehicle for face rejuvenation	effective restorative function on aging faces	Marwan Alhaddad et al. 2019 	 	ADSCs	analyze the impact of combining niacinamide with ADSC-CM in topical post-laser treatment	valid anti-aging impact	Lee et al. 2020 	 	ADSCs	nano method implantation of adipose tissue containing stem cells for skin therapy in patients	better skin quality, reduced spots and pigmentation	Omeed Memar et al. 2014 	 	MSCs	bioactive substances made from MSC-CM to address dark under-eye circles	reduce the under-eye dark circles and improve the overall look of the eye zone	Samatha Bhat et al. 2022 	 	
+Conclusions
+Cutaneous medical aesthetics has gained more attention recently, particularly in relation to skin renewal and scarless skin wound healing. Mesenchymal stem cell therapy has demonstrated significant promise in encouraging skin repair and rejuvenation via paracrine actions, immunological regulation, inflammatory management, and tissue differentiation. The paracrine influence of MSCs is the most important, controlling intercellular contacts via cytokines such as VEGF, bFGF, and PDGF, and extracellular vesicles such as exosomes, of which exosomes have been the most extensively studied. The newly proposed stem cell lysates have also shown promising therapeutic effects, helping to combat skin photoaging and improve skin condition. Unfortunately, there isn’t much research being done on this topic right now.
+Clinical application of MSC therapy is still far off, despite the fact that in vitro and in vivo trials have shown great promise. First of all, basic cell and animal research cannot correctly reflect human situations. This is due to species variances in human and animal skin tissues, resulting in differences in dermatological and healing mechanisms between human and animals. For instance, mouse skin is laxer than human skin, and mice recover via wound contraction, which differs markedly from human wound healing. Another issue is the time it takes for scar onset. Most mouse models produce mature hyperplastic or keloid scars weeks to months after incisional injuries. Excessive scarring may occur after a few months in people, with biomolecular proof of disease progression after one year; keloids and hyperplastic scars have been found to return months to years after successful treatment. Thus, the brief life of the mouse model could not provide enough evidence to determine whether the positive impacts of MSCs treatment persist. Future investigations of porcine models with extensive follow-up periods may aid in this. Furthermore, differences in clinical trials like cell source, dosage, and drug delivery technique make direct comparisons between studies difficult. From differentiation potential to immunomodulatory capacity, MSCs of different tissue origins differ greatly in their biological properties. Future research is needed to determine which cell types have the most effective therapeutic effects. This data will be valuable for MSCs quality control in clinical settings, ensuring predictable repair results. It is also critical to create appropriate and consistent patient selection criteria, which will serve as the basis for subsequent treatment comparisons. Furthermore, the number of patients currently participating in completed and ongoing clinical trials is minimal, most clinical trials lack adequate controls, and no conventional treatment is utilized as a positive control to establish the efficacy of a beneficial MSCs-based treatment. Thus, future high-quality clinical studies, particularly massive, randomly assigned, double-blind, controlled clinical studies with a lengthy follow-up period, are urgently needed. Last but not least, the safety of stem cell treatment is still being researched. The use of MSCs involves some risk, which can’t be overlooked while developing clinical protocols. Genomic instability has been reported to accumulate in the progeny of MSCs during ex vivo amplification. As a result, adequate cell passages ought to be found while performing clinical studies; in particular, graft cell genotype should be assessed prior to cell transplantation. MSCs have been shown in animal models to migrate to tumors and promote tumor development and progression. Although current clinical studies have not reported any occurrences of tumor formation following in vivo MSCs delivery to our knowledge, it is still vital to exclude any unfavorable effects through cell monitoring and long-term follow-up.
+Therefore, considering that the primary wound repair mechanism for MSCs-based treatments is paracrine impact and that cell-free therapy is safer, MSC- conditioned medium is regarded as a potential technique to aid chronic wound repair since it contains several paracrine substances released by MSCs during in vitro culture, as demonstrated by several animal tests. The exosomes isolated from MSC-conditioned media are the hot spot of stem cell therapy, which reduces the possibility of inadequate differentiation or cancerous transformation of transplanted cells, making it a safer technique. MSCs lysate also have the same advantages, making them safer and more convenient for storage and transportation. As a result, future studies can focus on MSC exosomes and lysates. More preclinical and clinical researches are needed in the future, especially for clinical assessments of both the safety and effectiveness of MSC conditioned media and lysates.
+To summarize, MSCs therapy offers a very broad applicability promise in dermatology and cosmetic medicine, but the particular mechanism of action remains unknown, and high-quality clinical trials are uncommon. MSCs have varying biological features based on their origin. ADSCs are now the most studied in the skin, but whether they are the best choice requires additional research and validation. In the future, more mechanism research and large-scale clinical studies are required to establish production or application guidelines for MSCs therapy. To boost the healing capacity of MSCs, the dosage, duration, frequency, and manner of treatment, which have yet to be standardized, should be carefully considered. Therefore, standardized clinical guidelines that can ensure safety and efficacy should be developed before MSCs treatment enters clinical use, so that MSCs can play their maximum role in cosmetic dermatology while being harmless to the human body.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Junyi Li, Ye Liu and Rui Zhang contributed equally to this work.
+Author contributions
+Conceptualized and supervised the work: Qingsong Ye and Yan He. Designed and wrote the manuscript: Junyi Li, Ye Liu and Rui Zhang. Revised the content: Junyi Li, Wei Xiong and Qingsong Ye. Modified the language: Ye Liu, Qianyu Yang and Yan He. Draw the images: Junyi Li and Ye Liu (Created with BioRender.com). All authors examined and approved the final version of the article.
+Funding
+This work was funded by the key R&D Program of Hubei Province of China (YFXM2022000264); key Project of Ministry of Science and Technology China (2022YFC2504200), and Chutian Researcher Project (X22020024).
+Data availability
+All data are available on request.
+Declarations
+Ethics approval and consent to participate
+Not applicable.
+Consent for publication
+Not applicable.
+Competing interests
+The authors state that there are no known competing financial interests or personal ties that could have influenced the work described in this paper.
+Footnotes
+All statements expressed in this article are solely the author’s statements and do not necessarily represent statements from affiliated organizations, nor do they necessarily represent statements from publishers, editors, and reviewers. Any products that may be evaluated in this article, or any claims that their manufacturers may make, are not guaranteed or recognized by the publisher.
+Abbreviations
+MSCs
+Mesenchymal stem cells
+ESCs
+Embryonic stem cells
+iPSCs
+Induced pluripotent stem cells
+ECM
+Extracellular matrix
+MMP
+Matrix metalloproteinase
+TGF-β
+Transforming growth factor β
+UV
+Ultraviolet
+OS
+Oxidative stress
+ROS
+Reactive oxygen species
+HDFs
+Human dermal fibroblasts
+MAPK
+Mitogen-activated protein kinase
+AP-1
+Activator protein 1
+NF-κB
+Nuclear factor-κB
+α-MSH
+α-melanocyte-stimulating hormone
+PDGF
+Platelet-derived growth factor
+IGF-1
+Insulin-like growth factor 1
+IL-8
+Interleukin-8
+TNF-α
+Tumor necrosis factor-α
+ADSCs
+Adipose-derived stem cells
+BMMSCs
+Bone marrow mesenchymal stem cells
+UMSCs
+Umbilical cord-derived stem cells
+EV
+Extracellular vesicle
+Exo
+Exosomes
+MV
+Microvesicles
+MVB
+Multivesicular bodies
+DPSCs
+Dental pulp stem cells
+BMP-4
+Bone morphogenetic protein 4
+SMCs
+Smooth muscle cells
+VEGF
+Vascular endothelial growth factor
+HGF
+Hepatocyte growth factor
+bFGF
+Basic fibroblast growth factor
+VEGFR2
+Vascular endothelial growth factor receptor 2
+SMP30
+Senescence marker protein 30
+IL-1
+Interleukin-1
+IL-6
+Interleukin-6
+HaCaTs
+Human immortalized keratinocytes
+TIMP-1
+Tissue inhibitor of metalloproteinases 1
+Ang-1
+Angiopoietin-1
+HIF-1
+hypoxia inducible factor-1
+CXCL12
+C-X-C motif chemokine ligand 12
+Nrf2
+NF-E2-related factor 2
+IFN-γ
+Interferon-γ
+IL-4
+Interleukin-1
+IL-10
+Interleukin-10
+PI3K/Akt
+Phosphoinositide 3-kinase/Akt
+PTEN
+Phosphatase and tensin homolog
+SPRY1
+Sprouting homologue 1
+Nrip1
+Nuclear receptor-interacting protein 1
+ADSC-CM
+ADSC-conditioned medium
+HO-1
+Heme oxygenase-1
+NSC-CM
+Neural stem cell-conditioned medium
+PDGF-AA
+Platelet-derived growth factor AA
+3D-HDF-exos
+Exosomes formed by three-dimensional growth of HDFs spheres
+EGF AgNP
+Epithelial growth factor Silver nanoparticle
+References
+The relationship between skin function, barrier properties, and body-dependent factors
+Mohammed Y, Kumeria T, Benson HAE, Ali M, Namjoshi S. Skin biomechanics: breaking the dermal barriers with microneedles. Nano TransMed 2022;1(1).
+Tottoli EM, Dorati R, Genta I, Chiesa E, Pisani S, Conti B. Skin wound healing process and New Emerging technologies for skin Wound Care and Regeneration. Pharmaceutics 2020;12(8).
+Silver nanoparticles: Advanced and promising technology in diabetic wound therapy
+Wound healing and treating wounds: chronic wound care and management
+Are common skin diseases among Norwegian dermatological outpatients Associated with psychological problems compared with controls? An observational study
+Dermatologists across Europe underestimate depression and anxiety: results from 3635 dermatological consultations
+The potential impact of Social Genomics on Wound Healing
+Pijpe A, Gardien KLM, van Meijeren-Hoogendoorn RE, Middelkoop E, van Zuijlen PPM. Scar Symptoms: Pigmentation Disorders. In: Textbook on Scar Management: State of the Art Management and Emerging Technologies edn. Edited by Téot L, Mustoe TA, Middelkoop E, Gauglitz GG. Cham (CH): Springer Copyright 2020, The Author(s). 2020:109–115.
+Burden of Keloid Disease: a cross-sectional health-related quality of Life Assessment
+Evaluation of psychological well-being and social impact of atrophic acne scarring: a multinational, mixed-methods study
+Human wound and its Burden: updated 2020 Compendium of estimates
+Biocompatible nanoparticles and vesicular systems in transdermal drug delivery for various skin diseases
+The aging skin: from Basic mechanisms to clinical applications
+Skin aging from mechanisms to interventions: focusing on dermal aging
+Environmentally-Induced (extrinsic) skin aging: exposomal factors and underlying mechanisms
+Ogawa R. Keloid and hypertrophic scars are the result of chronic inflammation in the reticular dermis. Int J Mol Sci 2017, 18(3).
+The novel mechanisms and applications of exosomes in dermatology and cutaneous medical aesthetics
+Stem cell therapy and regenerative medicine
+Exploring the potential of stem cell-based therapy for aesthetic and plastic surgery
+Developments in stem cell-derived islet replacement therapy for treating type 1 diabetes
+The future of stem cell therapies of Alzheimer’s disease
+Pre-clinical study of induced pluripotent stem cell-derived dopaminergic progenitor cells for Parkinson’s disease
+Cell-adaptable dynamic hydrogel reinforced with stem cells improves the functional repair of spinal cord injury by alleviating neuroinflammation
+Therapeutic roles of mesenchymal stem cell-derived extracellular vesicles in cancer
+Passage-dependent accumulation of somatic mutations in mesenchymal stromal cells during in vitro culture revealed by whole genome sequencing
+Clonal chromosomal and genomic instability during human multipotent mesenchymal stromal cells long-term culture
+Multipotent (adult) and pluripotent stem cells for heart regeneration: what are the pros and cons?
+A brief overview of global trends in MSC-Based cell therapy
+Human embryonic stem cells: research, ethics and policy
+Lancet Commission: stem cells and regenerative medicine
+Translation of Human-Induced pluripotent stem cells: from clinical trial in a dish to Precision Medicine
+The ethics of human-embryoids model: a call for consistency
+Genomic instability of iPSCs: challenges towards their clinical applications
+MSCs vs. iPSCs: potential in therapeutic applications
+Tumorigenic and immunogenic properties of Induced Pluripotent Stem cells: a Promising Cancer Vaccine
+Targeted disruption of HLA genes via CRISPR-Cas9 generates iPSCs with enhanced Immune Compatibility
+Buduru SD, Gulei D, Zimta AA, Tigu AB, Cenariu D, Berindan-Neagoe I. The potential of different origin stem cells in modulating oral bone regeneration processes. Cells 2019, 8(1).
+Chu DT, Nguyen Thi Phuong T, Tien NLB, Tran DK, Minh LB, Thanh VV, Gia Anh P, Pham VH. Thi Nga V: adipose tissue stem cells for therapy: an update on the progress of isolation, Culture, Storage, and clinical application. J Clin Med 2019, 8(7).
+GMP-compliant isolation and large-scale expansion of bone marrow-derived MSC
+Manufacturing human mesenchymal stem cells at clinical scale: process and regulatory challenges
+FGF9 induces functional differentiation to Schwann cells from human adipose derived stem cells
+Exosomes from adipose-derived stem cells and application to skin wound healing
+Exosomes-loaded thermosensitive hydrogels for corneal epithelium and stroma regeneration
+Gentile P, Garcovich S. Adipose-derived mesenchymal stem cells (AD-MSCs) against Ultraviolet (UV) Radiation effects and the skin photoaging. Biomedicines 2021, 9(5).
+Human umbilical cord-derived mesenchymal stem cells ameliorate skin aging of Nude mice through autophagy-mediated anti-senescent mechanism
+Fibrous scaffolds potentiate the paracrine function of mesenchymal stem cells: a new dimension in cell-material interaction
+Shahi S, Dehghani F, Abdolahinia ED, Sharifi S, Ahmadian E, Gajdács M, Kárpáti K, Dizaj SM, Eftekhari A, Kavetskyy T. Effect of gelatinous spongy scaffold containing nano-hydroxyapatite on the induction of odontogenic activity of dental pulp stem cells. J King Saud Univ Sci 2022, 34(8).
+Nanofiber scaffolds based on extracellular matrix for articular cartilage engineering: a perspective
+Insights into the role of adipose-derived stem cells: wound healing and clinical regenerative potential
+Gaur M, Dobke M, Lunyak VV. Mesenchymal stem cells from adipose tissue in clinical applications for dermatological indications and skin aging. Int J Mol Sci 2017, 18(1).
+Extracellular matrix regulation of fibroblast function: redefining our perspective on skin aging
+Skin aging as a mechanical phenomenon: the main weak links
+Skin ageing
+Gentile P, Garcovich S. Concise Review: adipose-derived stem cells (ASCs) and adipocyte-secreted exosomal microRNA (A-SE-miR) modulate Cancer Growth and proMote Wound Repair. J Clin Med 2019, 8(6).
+Acute wound healing an overview
+Exploring the full spectrum of macrophage activation
+The wound healing process: an overview of the cellular and molecular mechanisms
+Defects in skin gamma delta T cell function contribute to delayed wound repair in rapamycin-treated mice
+Wound repair and regeneration
+Wound repair and regeneration
+Collagen polymorphism in experimental granulation tissue
+Fibroblasts from chronic wounds show altered TGF-beta-signaling and decreased TGF-beta type II receptor expression
+Skin stem cells, their niche and tissue Engineering Approach for skin regeneration
+Characteristics and roles of extracellular vesicles released by epidermal keratinocytes
+Rani Raju N, Silina E, Stupin V, Manturova N, Chidambaram SB, Achar RR. Multifunctional and smart wound Dressings-A review on recent research advancements in skin regenerative medicine. Pharmaceutics 2022, 14(8).
+Wound healing–aiming for perfect skin regeneration
+Application of macromolecular crowding in vitro to investigate the naphthoquinones shikonin, naphthazarin and related analogues for the treatment of dermal scars
+Transition from inflammation to proliferation: a critical step during wound healing
+Resolution of inflammation: the beginning programs the end
+Points of control in inflammation
+Hypertrophic scars, keloids, and contractures. The cellular and molecular basis for therapy
+Cutaneous wound healing
+Adipose tissue-derived stromal cells for Wound Healing
+Mechanism of action and therapeutic effects of oxidative stress and stem cell-based materials in skin aging: current evidence and future perspectives
+Tran DK, Nguyen Thi Phuong T, Bui NL, Singh V, Hao Looi Q, Koh B, Mohd Shahrin BMZU, Biau Foo J, Wu CC, Loke Show P et al. Exploring the potential of stem cell-based therapy for aesthetic and plastic surgery. IEEE Rev Biomed Eng 2021, Pp.
+Age-related dermal collagen changes during development, maturation and ageing - a morphometric and comparative study
+Role of Age-Associated alterations of the dermal Extracellular Matrix Microenvironment in Human skin aging: a Mini-review
+Photoaging: mechanisms and repair
+Cytoprotective polyphenols against chronological skin aging and cutaneous photodamage
+Genome instability: a conserved mechanism of ageing?
+DNA damage checkpoints in stem cells, ageing and cancer
+Oxidation events and skin aging
+Matrix-degrading metalloproteinases in photoaging
+The hallmarks of fibroblast ageing
+Biomarkers, oxidative stress and autophagy in skin aging
+AP-1 as a regulator of cell life and death
+Solar ultraviolet irradiation reduces collagen in photoaged human skin by blocking transforming growth factor-beta type II receptor/Smad signaling
+NF-κB signaling in skin aging
+The genetics of sun sensitivity in humans
+Melanin pigmentation in mammalian skin and its hormonal regulation
+Ultraviolet-irradiated endothelial cells secrete stem cell factor and induce epidermal pigmentation
+Repeated exposure of human fibroblasts to UVR induces secretion of stem cell factor and senescence
+Secreted frizzled-related protein 2 (sFRP2) functions as a Melanogenic Stimulator; the Role of sFRP2 in UV-Induced Hyperpigmentary disorders
+Therapeutic potential of mesenchymal stem cell-derived exosomes for regenerative medicine applications
+Liao X, Chen M, Zhang Y, Li S, Li Y, He Y, Zhao Y, Luo L. Platelet lysate promotes proliferation and angiogenic activity of dental pulp stem cells via store-operated Ca2 + entry. Nano TransMed 2023, 2(4).
+Application of telomere biology and telomerase in mesenchymal stem cells
+Tissue engineering for cutaneous wounds
+Stem cells in epithelial tissues
+Barrera-Saldaña HA: mesenchymal stem cells current clinical applications: a systematic review
+Stem cell and research in plastic surgery
+Alzheimer’s disease: pathophysiology and dental pulp stem cells therapeutic prospects
+The effects of adipose stem cell-conditioned media on fibrogenesis of dermal fibroblasts stimulated by transforming growth Factor-β1
+Bar JK, Lis-Nawara A, Grelewski PG. Dental Pulp Stem Cell-Derived Secretome and its regenerative potential. Int J Mol Sci 2021, 22(21).
+Stem cells in Dermatology and Anti-aging Care of the skin
+Therapeutic applications of adipose cell-free derivatives: a review
+Therapeutic effect of mesenchymal stem cells on histopathological, immunohistochemical, and molecular analysis in second-grade burn model
+Single-cell profiles and clinically useful properties of Human mesenchymal stem cells of adipose and bone marrow origin
+Exosomes derived from human adipose mensenchymal stem cells accelerates cutaneous wound healing via optimizing the characteristics of fibroblasts
+Anti-aging effect of adipose-derived stem cells in a mouse model of skin aging induced by D-galactose
+Adipose-derived stem cells: fatty potentials for therapy
+Franck CL, Senegaglia AC, Leite LMB, de Moura SAB, Francisco NF, Ribas Filho JM. Influence of Adipose Tissue-Derived Stem Cells on the Burn Wound Healing Process. Stem Cells Int 2019, 2019:2340725.
+Whitening effects of adipose-derived stem cells: a preliminary in vivo study
+Negative regulation of skin pigmentation in three-Dimensional reconstructs by adipose-derived mesenchymal cells
+Mazini L, Rochette L, Amine M, Malka G. Regenerative capacity of adipose derived stem cells (ADSCs), comparison with mesenchymal stem cells (MSCs). Int J Mol Sci 2019, 20(10).
+Improvement of photoaged skin wrinkles with cultured human fibroblasts and adipose-derived stem cells: a comparative study
+Mesenchymal stem cells are recruited into wounded skin and contribute to wound repair by transdifferentiation into multiple skin cell type
+Autologous bone marrow-derived cultured mesenchymal stem cells delivered in a fibrin spray accelerate healing in murine and human cutaneous wounds
+The use of stem cells in aesthetic dermatology and plastic surgery procedures. A compact review of experimental and clinical applications
+Umbilical cord tissue mesenchymal stem cells: characterization and clinical applications
+Therapeutic application of multipotent stem cells
+Pinho AG, Cibrão JR, Silva NA, Monteiro S, Salgado AJ. Cell secretome: Basic insights and Therapeutic opportunities for CNS disorders. Pharmaceuticals (Basel) 2020, 13(2).
+Insight into the proteomic profiling of exosomes secreted by human OM-MSCs reveals a new potential therapy
+Harrell CR, Fellabaum C, Jovicic N, Djonov V, Arsenijevic N, Volarevic V. Molecular mechanisms responsible for therapeutic potential of mesenchymal stem cell-derived Secretome. Cells 2019, 8(5).
+Stem cell secretome, regeneration, and clinical translation: a narrative review
+Cell secretome based drug substances in regenerative medicine: when regulatory affairs meet basic science
+Application of mesenchymal stem cell-derived exosomes in kidney diseases
+Extracellular vesicles for tissue repair and regeneration: evidence, challenges and opportunities
+Mesenchymal stem cell-based therapy of osteoarthritis: current knowledge and future perspectives
+Advances in mesenchymal stem cell exosomes: a review
+Yin L, Liu X, Shi Y, Ocansey DKW, Hu Y, Li X, Zhang C, Xu W, Qian H. Therapeutic advances of Stem Cell-Derived Extracellular vesicles in Regenerative Medicine. Cells 2020, 9(3).
+Mesenchymal stem cell-derived exosomes: toward cell-free therapeutic strategies in regenerative medicine
+Vizoso FJ, Eiro N, Cid S, Schneider J, Perez-Fernandez R. Mesenchymal stem cell secretome: toward cell-free therapeutic strategies in Regenerative Medicine. Int J Mol Sci 2017, 18(9).
+Exosomes from adipose-derived stem cells: the emerging roles and applications in tissue regeneration of Plastic and Cosmetic surgery
+Characteristics of culture-condition stimulated exosomes or their loaded hydrogels in comparison with other extracellular vesicles or MSC lysates
+Can mesenchymal stem cell lysate reverse aging?
+Duan XX, Luo Y, Zhang R, Zhou H, Xiong W, Li RH, Huang ZY, Luo LH, Rong S, Li MC et al. ZIF-8 as a protein delivery system enhances the application of dental pulp stem cell lysate in anti-photoaging therapy. Mater Today Adv 2023, 17.
+Filtrated adipose tissue-derived mesenchymal stem cell lysate ameliorates experimental Acute Colitis in mice
+Mesenchymal stem cells and their microenvironment
+Adipose stem cells in tissue regeneration and repair: from bench to bedside
+Intradermal adipocytes mediate fibroblast recruitment during skin wound healing
+Dermal adipocyte Lipolysis and Myofibroblast Conversion are required for efficient skin repair
+Insights into the unique roles of dermal white adipose tissue (dWAT) in wound healing
+Peña OA, Martin P. Cellular and molecular mechanisms of skin wound healing. Nat Rev Mol Cell Biol 2024.
+Differentiation of adipose tissue-derived stem cells towards vascular smooth muscle cells on modified poly(L-lactide) foils
+Lin J, Zhu Q, Huang J, Cai R, Kuang Y. Hypoxia Promotes Vascular Smooth Muscle Cell (VSMC) Differentiation of Adipose-Derived Stem Cell (ADSC) by Regulating Mettl3 and Paracrine Factors. Stem Cells Int 2020, 2020:2830565.
+Adipose derived stem cells and smooth muscle cells: implications for regenerative medicine
+Gao X, Gao M, Gorecka J, Langford J, Liu J, Luo J, Taniguchi R, Matsubara Y, Liu H, Guo L et al. Human-Induced Pluripotent stem-cell-derived smooth muscle cells increase angiogenesis to treat Hindlimb Ischemia. Cells 2021, 10(4).
+Research progress on the mechanism of angiogenesis in wound repair and regeneration
+Wound Healing angiogenesis: innovations and challenges in Acute and Chronic Wound Healing
+Exosomes from differentiating human skeletal muscle cells trigger myogenesis of stem cells and provide biochemical cues for skeletal muscle regeneration
+Exosomes secreted by mesenchymal stem cells promote endothelial cell angiogenesis by transferring miR-125a
+Exosomes derived from hypoxia-treated human adipose mesenchymal stem cells enhance Angiogenesis through the PKA Signaling Pathway
+Human umbilical cord mesenchymal stem cell exosomes enhance angiogenesis through the Wnt4/β-catenin pathway
+Exosomes of human placenta-derived mesenchymal stem cells stimulate angiogenesis
+Influence of adult mesenchymal stem cells on in vitro vascular formation
+Bone marrow-derived mesenchymal stem cells facilitate engineering of long-lasting functional vasculature
+Mesenchymal stem cell therapy for attenuation of scar formation during wound healing
+Guillamat-Prats R. The role of MSC in Wound Healing, Scarring and Regeneration. Cells 2021, 10(7).
+Mesenchymal stem cell modification of endothelial matrix regulates their vascular differentiation
+Adrenomedullin: a protective factor for blood vessels
+Cytokine profile of human adipose-derived stem cells: expression of angiogenic, hematopoietic, and pro-inflammatory factors
+Treatment of inflammatory diseases with mesenchymal stem cells
+Human gingiva-derived mesenchymal stem cells elicit polarization of m2 macrophages and enhance cutaneous wound healing
+Application of nanomedicine and mesenchymal stem cells in burn injuries for the elderly patients
+Nanovesicles from adipose-derived mesenchymal stem cells inhibit T lymphocyte trafficking and ameliorate chronic experimental autoimmune encephalomyelitis
+Multipotent stromal cells/mesenchymal stem cells and fibroblasts combine to minimize skin hypertrophic scarring
+Exosomes derived from human adipose mesenchymal stem cells attenuate hypertrophic scar fibrosis by miR-192-5p/IL-17RA/Smad axis
+Exosomes from adipose-derived stem cells overexpressing Nrf2 accelerate cutaneous wound healing by promoting vascularization in a diabetic foot ulcer rat model
+Prospective application of exosomes derived from adipose-derived stem cells in skin wound healing: a review
+Adipose mesenchymal stem cell-derived exosomes promote cell proliferation, migration, and inhibit cell apoptosis via Wnt/β-catenin signaling in cutaneous wound healing
+He L, Zhu C, Jia J, Hao XY, Yu XY, Liu XY, Shu MG. ADSC-Exos containing MALAT1 promotes wound healing by targeting miR-124 through activating Wnt/β-catenin pathway. Biosci Rep 2020, 40(5).
+Cell-free therapy based on adipose tissue stem cell-derived exosomes promotes wound healing via the PI3K/Akt signaling pathway
+Exosomes secreted by human adipose mesenchymal stem cells promote scarless cutaneous repair by regulating extracellular matrix remodelling
+Mesenchymal stem cell derived Extracellular vesicles: promising Nanomedicine for Cutaneous Wound Treatment
+Yi Y, Yang Z, Zhou C, Yang Y, Wu Y, Zhang Q. Quercetin-encapsulated GelMa Hydrogel Microneedle reduces oxidative stress and facilitates Wound Healing. Nano TransMed 2024.
+Li Y, Ye Z, Yang W, Zhang Q, Zeng J. An Update on the Potential of Mesenchymal Stem Cell Therapy for Cutaneous Diseases. Stem Cells Int 2021, 2021:8834590.
+Bone marrow-derived mesenchymal stem cells laden novel thermo-sensitive hydrogel for the management of severe skin wound healing
+Advances on Graphene-based nanomaterials and mesenchymal stem cell-derived Exosomes Applied in Cutaneous Wound Healing
+Silver-pig skin nanocomposites and mesenchymal stem cells: suitable antibiofilm cellular dressings for wound healing
+Green synthesis of silver nanoparticles from Curcuma longa L. and coating on the cotton fabrics for antimicrobial applications and wound healing activity
+Younis NS, Mohamed ME, El Semary NA. Green Synthesis of Silver Nanoparticles by the Cyanobacteria Synechocystis sp.: characterization, Antimicrobial and Diabetic Wound-Healing actions. Mar Drugs 2022, 20(1).
+Ultrasmall CuS@BSA nanoparticles with mild photothermal conversion synergistically induce MSCs-differentiated fibroblast and improve skin regeneration
+Umbilical cord-derived mesenchymal stem cell-derived exosomal MicroRNAs suppress myofibroblast differentiation by inhibiting the transforming growth Factor-β/SMAD2 pathway during Wound Healing
+Mesenchymal stem cell-mediated suppression of hypertrophic scarring is p53 dependent in a rabbit ear model
+Mesenchymal stem cells prevent hypertrophic scar formation via inflammatory regulation when undergoing apoptosis
+Genetically-modified bone mesenchymal stem cells with TGF-β(3) improve wound healing and reduce scar tissue formation in a rabbit model
+Mesenchymal stem cell transplantation attenuates cardiac fibrosis associated with isoproterenol-induced global heart failure
+Paracrine factors of mesenchymal stem cells recruit macrophages and endothelial lineage cells and enhance wound healing
+A novel mechanism by which hepatocyte growth factor blocks tubular epithelial to mesenchymal transition
+Prostaglandin E2 is a potent inhibitor of epithelial-to-mesenchymal transition: interaction with hepatocyte growth factor
+Mesenchymal stem cells induce dermal fibroblast responses to injury
+Zhang J, Qu X, Li J, Harada A, Hua Y, Yoshida N, Ishida M, Sawa Y, Liu L, Miyagawa S. Tissue sheet Engineered using human umbilical cord-derived mesenchymal stem cells improves Diabetic Wound Healing. Int J Mol Sci 2022, 23(20).
+Exosomes derived from TSG-6 modified mesenchymal stromal cells attenuate scar formation during wound healing
+The application of mesenchymal stromal cells (MSCs) and their derivative exosome in skin wound healing: a comprehensive review
+Exosomes from human umbilical cord blood accelerate cutaneous wound healing through mir-21-3p-mediated promotion of angiogenesis and fibroblast function
+Placental stem cells-derived exosomes stimulate cutaneous wound regeneration via engrailed-1 inhibition
+Yuan R, Dai X, Li Y, Li C, Liu L. Exosomes from miR-29a-modified adipose-derived mesenchymal stem cells reduce excessive scar formation by inhibiting TGF-β2/Smad3 signaling. Mol Med Rep 2021, 24(5).
+Microskin-inspired Injectable MSC-Laden Hydrogels for Scarless Wound Healing with Hair Follicles
+Efficient angiogenesis-based Diabetic Wound Healing/Skin Reconstruction through Bioactive Antibacterial Adhesive Ultraviolet shielding nanodressing with Exosome Release
+Phase I trial: the use of autologous cultured adipose-derived stroma/stem cells to treat patients with non-revascularizable critical limb ischemia
+Autologous adipose stromal cells seeded onto a human collagen matrix for dermal regeneration in chronic wounds: clinical proof of Concept
+Clinical evaluation of human umbilical cord mesenchymal stem cell transplantation after Angioplasty for Diabetic Foot
+Three-week topical treatment with placenta-derived mesenchymal stem cells hydrogel in a patient with diabetic foot ulcer: a case report
+Potential of allogeneic adipose-derived stem cell-hydrogel complex for treating Diabetic Foot Ulcers
+The effect of human umbilical cord blood-derived mesenchymal stem cell media containing serum on recovery after laser treatment: a double-blinded, randomized, split-face controlled study
+Zhou L, Wang H, Yao S, Li L, Kuang X. Efficacy of Human Adipose Derived Mesenchymal Stem Cells in Promoting Skin Wound Healing. J Healthc Eng 2022, 2022:6590025.
+Targeting nonhealing ulcers of lower extremity in human through autologous bone marrow-derived mesenchymal stem cells
+Cell sheet composed of adipose-derived stem cells demonstrates enhanced skin wound healing with reduced scar formation
+Deletion of Nrip1 delays skin aging by reducing adipose-derived mesenchymal stem cells (ADMSCs) senescence, and maintaining ADMSCs quiescence
+Li L, Ngo HTT, Hwang E, Wei X, Liu Y, Liu J, Yi TH. Conditioned medium from human adipose-derived mesenchymal stem Cell Culture prevents UVB-Induced skin aging in human keratinocytes and dermal fibroblasts. Int J Mol Sci 2019, 21(1).
+Neural stem cells and the secreted proteins TIMPs ameliorate UVB-induced skin photodamage
+Photoaged skin therapy with adipose-derived stem cells
+Evidence supporting antioxidant action of adipose-derived stem cells: protection of human dermal fibroblasts from oxidative stress
+Adipose-derived stem cell-conditioned medium protects fibroblasts at different senescent degrees from UVB irradiation damages
+Needle-free injection of Exosomes derived from human dermal fibroblast spheroids ameliorates skin photoaging
+Chemically defined conditions for human iPSC derivation and culture
+Oh M, Lee J, Kim YJ, Rhee WJ, Park JH. Exosomes Derived from Human Induced Pluripotent stem cells ameliorate the aging of skin fibroblasts. Int J Mol Sci 2018, 19(6).
+Human amniotic stem cells-derived exosmal miR-181a-5p and miR-199a inhibit melanogenesis and promote melanosome degradation in skin hyperpigmentation, respectively
+Embryonic stem cell-derived mmu-miR-291a-3p inhibits Cellular Senescence in Human dermal fibroblasts through the TGF-β receptor 2 pathway
+Exosomes derived from human umbilical cord blood mesenchymal stem cells stimulates rejuvenation of human skin
+Human umbilical cord mesenchymal stem cell-derived and dermal fibroblast-derived extracellular vesicles protect dermal fibroblasts from ultraviolet radiation-induced photoaging in vitro
+Liang JX, Liao X, Li SH, Jiang X, Li ZH, Wu YD, Xiao LL, Xie GH, Song JX, Liu HW. Antiaging Properties of Exosomes from Adipose-Derived Mesenchymal Stem Cells in Photoaged Rat Skin. Biomed Res Int 2020, 2020:6406395.
+Functional recovery in photo-damaged human dermal fibroblasts by human adipose-derived stem cell extracellular vesicles
+Kaul S, Gulati N, Verma D, Mukherjee S, Nagaich U. Role of Nanotechnology in Cosmeceuticals: A Review of Recent Advances. J Pharm (Cairo) 2018, 2018:3420204.
+Role of Nanotechnology for Design and Development of Cosmeceutical: application in makeup and skin care
+Nanotechnology for the development of new cosmetic formulations
+Green synthesis of Zein-based nanoparticles encapsulating lupulone: Antibacterial and Antiphotoaging agents
+Bellu E, Cruciani S, Garroni G, Balzano F, Satta R, Montesu MA, Fadda A, Mulas M, Sarais G, Bandiera P et al. Natural compounds and PCL nanofibers: a Novel Tool to Counteract Stem Cell Senescence. Cells 2021, 10(6).
+Bioactive nanoparticle reinforced alginate/gelatin bioink for the maintenance of stem cell stemness
+Glucosamine-based supramolecular nanotubes for human mesenchymal cell therapy
+Assessment of antioxidant and dermoprotective activities of gold nanoparticles as safe cosmetic ingredient
+Green synthesis of magnesium nanoparticles mediated from Rosa floribunda charisma extract and its antioxidant, antiaging and antibiofilm activities
+The effects of amniotic membrane stem cell-conditioned medium on photoaging
+Facial rejuvenation using stem cell conditioned media combined with skin needling: a split-face comparative study
+Efficacy of protein extracts from medium of adipose-derived stem cells via microneedles on Asian skin
+Red deer umbilical cord lining mesenchymal stem cell extract cream for rejuvenation of the Face
+Randomized controlled study for the anti-aging effect of human adipocyte-derived mesenchymal stem cell media combined with niacinamide after laser therapy
+Nanofat grafting: basic research and clinical application
+Novel bioactive formulation derived from the conditioned medium of mesenchymal stromal cells reduces under-eye dark circles in human volunteers
+Adipose-derived stem cells-induced burn wound healing and regeneration of skin appendages in a novel skin island rat model
+Kim M, Kim H, Kang HW. Comparative evaluations of hypertrophic scar formation in in vivo models. Lasers Surg Med 2018.
+Evaluating keloid recurrence after surgical excision with prospective longitudinal scar assessment scales
+Time course of the angiogenic response during normotrophic and hypertrophic scar formation in humans
+Epidemiology and risk factors for pathologic scarring after burn wounds
+Mesenchymal stem cell therapy in hypertrophic and keloid scars
+Comparison of molecular profiles of human mesenchymal stem cells derived from bone marrow, umbilical cord blood, placenta and adipose tissue
+Comparative analysis of human mesenchymal stem cells from bone marrow and adipose tissue under xeno-free conditions for cell therapy
+Comparative analysis of mesenchymal stem cells from bone marrow, umbilical cord blood, or adipose tissue
+Mesenchymal stem cells for Chronic Wound Healing: current status of preclinical and clinical studies
+The healing effect of Wharton’s jelly stem cells seeded on biological scaffold in chronic skin ulcers: a randomized clinical trial
+Systemically infused mesenchymal stem cells show different homing profiles in healthy and Tumor Mouse models
+The Healing effects of conditioned medium derived from mesenchymal stem cells on Radiation-Induced skin wounds in rats
+Mesenchymal stem cell-conditioned medium accelerates wound healing with fewer scars
+Human Wharton’s jelly stem cells and its conditioned medium enhance healing of excisional and diabetic wounds
+Conditioned medium from umbilical cord mesenchymal stem cells induces migration and angiogenesis
+Emerging role of mesenchymal stem cell-derived exosomes in Regenerative Medicine

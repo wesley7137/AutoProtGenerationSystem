@@ -1,0 +1,590 @@
+Title: Dynamic Modeling of the Interaction Between Autophagy and Apoptosis in
+  Mammalian Cells
+Abstract:   Autophagy is a conserved biological stress response in mammalian cells that
+is responsible for clearing damaged proteins and organelles from the cytoplasm
+and recycling their contents via the lysosomal pathway. In cases of mild
+stress, autophagy acts as a survival mechanism, while in cases of severe stress
+cells may switch to programmed cell death. Understanding the decision process
+that moves a cell from autophagy to apoptosis is important since abnormal
+regulation of autophagy occurs in many diseases, including cancer. To integrate
+existing knowledge about this decision process into a rigorous, analytical
+framework, we built a mathematical model of cell fate decisions mediated by
+autophagy. Our dynamical model is consistent with existing quantitative
+measurements of autophagy and apoptosis in rat kidney proximal tubular cells
+responding to cisplatin-induced stress.
+
+Full Text: ORIGINAL ARTICLE
+Dynamic Modeling of the Interaction Between Autophagy
+and Apoptosis in Mammalian Cells
+I Tavassoly1†, J Parmar2†, AN Shajahan-Haq3, R Clarke3, WT Baumann4and JJ Tyson2*
+Autophagy is a conserved biological stress response in mammalian cells that is responsible for clearing damaged proteins
+and organelles from the cytoplasm and recycling their contents via the lysosomal pathway. In cases of mild stress, autophagy
+acts as a survival mechanism, while in cases of severe stress cells may switch to programmed cell death. Understanding the
+decision process that moves a cell from autophagy to apoptosis is important since abnormal regulation of autophagy occursin many diseases, including cancer. To integrate existing knowledge about this decision process into a rigorous, analytical
+framework, we built a mathematical model of cell fate decisions mediated by autophagy. Our dynamical model is consistent
+with existing quantitative measurements of autophagy and apoptosis in rat kidney proximal tubular cells responding tocisplatin-induced stress.
+CPT Pharmacometrics Syst. Pharmacol. (2015) 4, 263–272; doi: 10.1002/psp4.29 ; published online on 17 April 2015.
+Autophagy and its dysregulation play important roles in the
+pathogenesis of many complex diseases.1For instance,
+autophagy helps cancer cells to survive the stresses of
+nutrient deprivation and anoxia.2Autophagy is also involved
+in the development of resistance to chemotherapy; inhibi-ting autophagy can increase the therapeutic responses ofresistant cancer cells to chemotherapy, endocrine therapy,or radiation therapy.
+3,4While autophagy is normally initiated
+as a prosurvival response to stress, excessive stress cantrigger cell death.
+Recently, we proposed a systems biology approach to
+model the complex interplay among pathways for estro-gen and growth factor signaling, unfolded proteinresponse (UPR) stress, autophagy, and apoptosis in thecontext of breast cancer responses to endocrine therapy.
+5
+Other authors as well have argued that mathematical the-ories of the systems-level properties of molecular signal-ing networks will play pivotal roles in the emerging fieldof systems pharmacology.
+6In particular, several mathemat-
+ical models of autophagy have been proposed recently.Martin et al .
+7presented a computational model of auto-
+phagic vesicle dynamics in single cells, but they did notaddress the crucial interplay between autophagy and apo-ptosis. Kapuy et al .
+8addressed this interplay using a sim-
+plified mathematical model, but they did not compare theirsimulations with experimental measurements of how cellsrespond to stress. Our motivation for building mathematicalmodels of autophagy and apoptosis is to integrate currentmechanistic knowledge of these processes into a coherentframework and to determine if the mechanisms we includecan explain existing qualitative observations and quantita-tive data on autophagic responses of cells to stress. Asmore data become available, this model can serve as afoundation for better models, with the goal of accurately
+predicting how therapeutic interventions may alter cell fatesin normal and diseased tissues.
+MOLECULAR CELL BIOLOGY OF AUTOPHAGY AND
+APOPTOSIS
+Autophagy is a conserved catabolic cellular process by
+which a cell degrades its own components, including dam-aged proteins and organelles. Autophagosomes (subcellularorganelles enclosed by two or more membranes) engulfdamaged materials, fuse with lysosomes, and the resultingautolysosome then uses lysosomal enzymes to degradethe contents of the autophagic vacuoles.
+1Autophagy-
+related proteins (ATG proteins) drive autophagosome for-mation in yeast and mammalian cells.
+1,9Commitment of a
+cell to autophagy seems to occur at the earliest stages ofvesicle nucleation and formation of the isolation membrane,a small, flattened membrane sac that elongates and curvesto create an autophagosome.
+1,9
+Major molecular players in the induction of autophagy in
+mammalian cells are mTOR (the mammalian target of rapa-mycin) and ATG13. mTOR is a signal integrator that sensesstress conditions such as endoplasmic reticulum (ER)stress, hypoxia, low growth factor levels, or low levels ofessential amino acids.
+10When there are no critical stress
+conditions in the cell, a protein complex consisting of mam-malian ATG13, Unc-51-like autophagy activating kinase 1(ULK1, the mammalian homolog of yeast Atg1), and focaladhesion kinase interacting protein of 200 kD (FIP200)is repressed by mTOR phosphorylation of ATG13 andULK1. Cellular stress inactivates mTOR, allowing the
+1Graduate Program in Genetics, Bioinformatics and Computational Biology, Virginia Polytechnic Institute and State University, Blacksburg, Virgi nia, USA;2Department of
+Biological Sciences, Virginia Polytechnic Institute and State University, Blacksburg, Virginia, USA;3Lombardi Comprehensive Cancer Center, Georgetown University
+Medical Center, Washington, DC, USA;4Bradley Department of Electrical and Computer Engineering, Virginia Polytechnic Institute and State University, Blacksburg,
+Virginia, USA. Correspondence: JJ Tyson ( tyson@vt.edu )
+†These authors contributed equally to this work.
+Present affiliation for I Tavassoly: Department of Pharmacology & Systems Therapeutics, Mount Sinai School of Medicine, New York, NY, USA.Received 17 April 2014; accepted 21 February 2015; published online on 17 April 2015. doi: 10.1002/psp4.29Citation: CPT Pharmacometrics Syst. Pharmacol. (2015) 4, 263–272; doi:10.1002/psp4.29
+VC2015 ASCPT All rights reservedULK1:ATG13:FIP200 complex to be active.11The active
+complex promotes formation of the isolation membrane.
+Beclin-1, the mammalian ortholog of yeast Atg6, is nec-
+essary for autophagosome formation, playing a key role invesicle nucleation.
+1,9BCL-2 family proteins in the ER func-
+tion as antiautophagy proteins through their inhibitory bind-ing with Beclin-1. Although Beclin-1 contains a BCL-2homology domain 3 (BH3), it is not proapoptotic.
+1,12For
+autophagosome formation to begin, Beclin-1 must bereleased from BCL-2 inhibition, which is promoted by eitherphosphorylation of BCL-2 by c-Jun N-terminal kinase(JNK), or by phosphorylation of Beclin-1 by death-
+associated protein kinase (DAPK).
+13–16Free Beclin-1 then
+binds with other partners to form a “Beclin-1 core complex,”which promotes vesicle nucleation.
+1,9
+For more details about the physiology and molecular biol-
+ogy of autophagy, we refer the reader to our review article.3
+A convenient quantitative measure of autophagosome
+formation in mammalian cells is the state of microtubule-associated protein light chain 3 (LC3),
+17which is a mam-
+malian homolog of yeast Atg8. LC3 exists in two forms:LC3-I (cytosolic form, 18 kDa) and LC3-II (membrane-bound form, 16 kDa). After autophagy initiation, LC3-I isconverted to LC3-II, which then participates in the vesicleelongation step of autophagosome formation.
+1,17LC3-II can
+be distinguished from LC3-I by immunoblotting. Alterna-tively, autophagosome formation can be visualized as green“puncta” by tagging LC3 with green fluorescent protein.
+18
+In contrast to autophagy, the molecular regulatory system
+that controls apoptosis is reasonably well understood. Theextrinsic and intrinsic signaling pathways leading tocaspase-dependent apoptosis have been studied by mathe-matical modeling.
+5,19,20We focus on the intrinsic pathway,
+which leads to mitochondrial outer membrane permeabiliza-tion (MOMP), causing release of cytochrome C into the cyto-plasm and subsequent activation of executioner caspases.The induction of MOMP is dependent on oligomerization ofproapoptotic proteins (BAX or BAK) in the outer mitochon-drial membrane, while antiapoptotic BCL-2 family proteins inthe mitochondria inhibit these proapoptotic proteins. Activa-tion of BAX and BAK is triggered by BH3-only proteins.
+1,19
+Crosstalk between autophagy and apoptosis
+BCL-2 family proteins in the ER and mitochondria are
+important regulators of autophagy and apoptosis, respec-tively.
+21,22Hence, different levels of expression of BCL-2
+proteins in the ER membrane and in the mitochondrialmembrane may lead to different activation dynamics forautophagy and apoptosis. Calcium signaling from the ER tomitochondria may also play a role in autophagy-apoptosiscrosstalk.
+21–25The inositol-1,4,5-trisphosphate receptor
+(IP3R) and the sarco/endoplasmic reticulum Ca21-ATPase
+(SERCA) pump are the central regulators of Ca21
+exchange between ER and cytoplasm. By pumping Ca21
+from the cytosol into the ER, SERCA is responsible for
+maintaining very low calcium ion concentrations in the cyto-plasm. Conversely, IP3R is a stress-activated Ca
+21channel
+that releases Ca21from the ER into the cytoplasm.22–26Normally, IP3R is sequestered by BCL-2 family proteins in
+the ER membrane.27Phosphorylation of BCL-2 proteins dis-
+sociates the complex and allows for calcium release fromthe ER.
+28Sustained, elevated cytoplasmic Ca21can lead to
+apoptosis.22,23,29Cytoplasmic Ca21can also inhibit mTOR
+via activation of calmodulin-dependent kinase kinase- b
+(CaMKK b), which activates AMPK (50AMP-activated protein
+kinase). AMPK has an inhibitory effect on mTOR.30
+Calcium influx into mitochondria can induce apoptosis
+directly, and several other signaling pathways also link sus-tained calcium elevation to apoptosis.
+22,23,29,31,32For exam-
+ple, calcium activates calcineurin, which dephosphorylates
+and activates BAD, a proapoptotic BCL-2 family protein capa-
+ble of inducing apoptosis.33In addition, calcium can activate
+calpain, a cysteine protease that cleaves ATG5, an essentialprotein for autophagosome formation. Truncated ATG5 indu-ces apoptosis by suppressing antiapoptotic BCL-2 proteins inthe mitochondria.
+1,34,35The mechanism of this suppression is
+unknown; so, for modeling purposes, we assume that trun-cated ATG5 upregulates proapoptotic BH3 proteins. Duringapoptosis, the activation of caspase 8 downregulates auto-phagosome formation by cleaving Beclin-1.
+36–38
+For more details about the interplay of autophagy and
+apoptosis, we refer the reader to the excellent review articleby Marino et al.
+39
+METHODS: MATHEMATICAL MODELING APPROACH
+From these facts we draw an “influence diagram” ( Figure 1 ),
+which summarizes our hypothesis about the most relevantmolecular interactions between autophagy and apoptosis inmammalian cells. In Supplementary Text S1 , we convert
+this influence diagram into a mathematical model. Our math-ematical model is formulated in terms of 21 variables(Table 1 ) whose response to stress is described by the differ-
+ential and algebraic equations in Table 2 . The equations
+were solved numerically using the MatLab code (MathWorks,
+Natick, MA) in Supplementary Text S2 . As described in
+Supplementary Text S3 , we fitted model simulations to
+experimental data ( Supplementary Table S1 ) to obtain the
+“optimal” set of parameter values in Table 3 . Using these
+optimal parameter values, we computed the steady-state val-ues of all variables under no-stress conditions ( C50; see
+Table 1 ). These values were used as initial conditions for
+simulations of how cells respond to stress ( C>0).
+To examine the generic properties of our model, we solve
+the governing equations for fixed (optimal) values of theparameters and varying levels of stress, C. These simula-
+tions represent how an “average” cell might respond tostress, but they cannot be compared to the observedbehavior of a population of cells responding to cisplatin,because, in the latter case, we must take into account theheterogeneous response of cells to apoptotic signals. Weattribute this heterogeneity to differences among cells inthe mitochondrial concentration of BCL2, because (in ourmodel) this parameter most sensitively determines whetheror not apoptosis occurs, and if so, when. Using randomlyselected [BCL2
+mit] levels from a lognormal distribution, we
+simulate 100 cells and record the average value of everyDynamic Modeling of the Interaction
+Tavassoly et al .
+264
+CPT: Pharmacometrics & Systems Pharmacologyvariable, including the percentage of cells having under-
+gone apoptosis at each timepoint.
+Although we attribute cellular heterogeneity entirely to
+fluctuations in [BCL2 mit], this assumption is clearly an over-
+simplification. Other sources of variability, e.g., in BH3 pro-duction or ATG5 cleavage, may well contribute to thevariable commitment of cells to apoptosis. Nonetheless, ourassumption is a simple and effective way to fit the model toexperimental observations of percent apoptosis.
+Before we can compare our model to data (which has
+some level of uncertainty), we must quantify how uncertainwe are about the optimal parameter values given in
+Table 3 . To this end, we describe, in Supplementary Text
+S3, how we perturbed the optimal set of parameter values
+to obtain alternative sets of parameter values that provide“acceptable” fits of model simulations to the experimentaldata. We created a collection of 3,758 “acceptable sets ofparameter values” and all simulations of experimental dataare based on samples from this collection. In this way wetake into account our uncertainty about the parameter val-ues and the consequent range of predictions that are madeby the model. In Table 3 we record the coefficient of
+Table 1 Variables, their descriptions, and their values when cisplatin 50
+Variable DescriptionSteady-state value
+(no drug treatment)
+[ATG5] Concentration of active ATG5 0.717
+[tATG5] Concentration of truncated ATG5 0.283
+[ATG13] Concentration of active ATG13 protein 0.0184[ATPHG] Concentration of autophagosomes in cytoplasm 0.285[BCL2]
+U Concentration of unphosphorylated BCL-2 family proteins in ER 2.463
+[BCL2_P] Concentration of phosphorylated BCL-2 family proteins in ER 0.537[BECN1]
+T Concentration of total Beclin-1 protein 3
+[BECN1_P] Concentration of phosphorylated Beclin-1 protein 0.0382
+[BECN1] F Concentration of Beclin-1 protein free from suppression by BCL-2 1.121
+[BECN1] U Concentration of unphosphorylated form of Beclin-1 protein 2.962
+[BH3] Concentration of active BH3 proteins 0.0690[Ca
+21] Concentration of cytoplasmic Ca210.397
+[CALPAIN] Concentration of active CALPAIN 0.0221
+[CASP] Concentration of active caspase 0
+[DAPK] Concentration of active death-associated protein kinase 0.103
+[IP3R] F Concentration of IP3 receptors free from suppression by BCL-2 0.378
+[JNK] Concentration of active c-Jun N-terminal kinase 0.281[LIG]
+T Concentration of total ligands available for binding to BCL-2 in ER 3.962
+[LIG] F Concentration of ligands free from suppression by BCL-2 1.499
+[MTOR] Concentration of active mammalian target of rapamycin (mTOR) 0.335
+S Level of stress induced in the cell by drug treatment or other stressors 0.831
+Figure 1 The interplay between autophagy and apoptosis. ( a) Diagram of the “influences” (activation 5barbed arrows, inhibition 5
+blunt arrows) between the major proteins controlling autophagosome formation and apoptosis. ( b) More detailed diagram of the reac-
+tions involved in the dashed box in panel a. Solid arrows 5chemical reactions; dashed arrows 5catalytic activities; T-junctions 5
+reversible formation of a binary complex.Dynamic Modeling of the Interaction
+Tavassoly et al .
+265
+www.wileyonlinelibrary/psp4variation (CV 5standard deviation/ jmean j) of each param-
+eter value over the collection of acceptable parameter sets.These CV’s fall in the range 8%–19%.
+RESULTS
+The experimental data we seek to explain involve the
+response of rat kidney proximal tubule (RPT) cells to treat-ment with cisplatin, a widely and effectively used antineo-plastic drug. Cisplatin induces the UPR and activation ofJNK and DAPK in mammalian cells.
+40–42Periyasamy-
+Thandavan et al .18used RPT cells, transiently transfected
+with GFP-LC3 and treated with cisplatin, to investigate thecytoprotective role of autophagy. To study the time course ofautophagosome formation, the investigators measured tem-poral changes in cisplatin-induced LC3 puncta by fluores-cence microscopy, and LC3-II production by immunoblotting.They also measured the autophagic response and the per-centage of apoptotic cells when RPT cells were treated withcisplatin in the presence or absence of bafilomycin (BAF)and 3-methyladenine (3-MA), which are inhibitors of autoph-agy. To compare our model calculations with experimental
+data, we equated the autophagy level in our model,[ATPHG], with the LC3-II level measured by immunoblotting.Programmed cell death in our model is associated with an“indicator function” [CASP], which takes the value 0 in livingcells and the value 1 when a cell commits to apoptosis,which occurs as soon as [BH3] exceeds [BCL2
+mit].
+Generic properties of the model
+The behavior of an “average” cell to cisplatin-induced stressis predicted by simulating the equations in Table 2 with the
+optimal parameter values in Table 3 (with [BCL2
+mit] fixed at
+0.12), starting from the steady-state initial conditions in
+Table 1 .I nFigure 2a,b we show how 13 of our variables
+change over the course of time for an average cellresponding to a continuous dose of cisplatin, C520 in the
+model. (For time courses of all variables in the model, seeSupplementary Figure S1 .) Most changes occur within
+the first few hours, as the cells quickly activate autophagyto respond to the stress. Then, at t518 hours, executioner
+caspases are activated and the autophagic responseswitches off ( Figure 2c ) as the cell becomes apoptotic.
+These general characteristics of the response are consist-ent with the behavior of cells exposed to 20 lM cisplatin.
+18
+Indeed, parameter values in the model are chosen so that
+simulation results at C520 correspond to experimental
+results at a cisplatin dose of 20 lM.
+InFigure 2c we show how the level of autophagy, over
+the course of 4 days, responds to a range of cisplatin dosesup to C5100. For low doses, [ATPHG] rises quickly (6–8
+hours) to a steady-state level, in order to counteract thestress caused by cisplatin. For larger doses, [ATPHG] risesquickly but then falls to zero as BH3 proteins accumulate inthe overstressed cells, which commit apoptosis when[BH3]5[BCL2
+mit]50.12. In Figure 2c , one can see the
+activation of apoptosis as a kink in [ATPHG]( t) when [CASP]
+switches from 0 to 1. For C5100, 20, and 6, CASP is
+activated at t57.5, 18, and 59 hours, respectively. The apo-
+ptotic response (in our model) is driven primarily by calpain-dependent ATG5 cleavage, which dials back the productionof autophagosomes and produces proapoptotic, truncatedATG5 molecules. Presumably these effects are intended toforce cells to commit to apoptosis under conditions of highstress. Caspase activation cleaves Beclin-1 and turns off for-mation of autophagosomes. Beyond this timepoint, theremaining autophagosomes fuse with lysosomes and are
+degraded, with [A TPHG] ultimately decaying to zero.
+InFigure 2d we repeat this simulation for a population of
+100 cells with [BCL2
+mit] following a lognormal distribution
+and plot the population-average level of autophagy at t5
+100 hours. (We simulate to t5100 hours to be reasonably
+sure that the dynamical model has reached its steady-stateresponse.) For C<5, autophagy ramps up with stress level
+and most cells survive. For 5 <C<6, the average level of
+autophagy drops with increasing Cbecause some—but not
+all—cells in the population die. For C>6, all cells in the
+population are dead by t5100 hours. To explore this switch
+between autophagy and apoptosis more closely, we plot (inFigure 2e ) the percent apoptosis as a function of cisplatin
+dose at various timepoints from 6 hours to 100 hours.Table 2 Equations defining the model
+Differential Equations:
+d½ATG5 /C138
+dt5cA/C1ðFðrAWAÞ2½ATG5 /C138Þ
+d½ATG13 /C138
+dt5cG/C1ðFðrGWGÞ2½ATG13 /C138Þ
+d½ATPHG /C138
+dt5ka/C1ð ½BECN1 /C138F1½BECN1 P/C138Þ½ATG13 /C138½ATG5 /C1382kda/C1½ATPHG /C138
+d½BCL2 P/C138
+dt5cB/C1ð ½BCL2ER/C138/C1FðrBWBÞ2½BCL2 P/C138Þ
+d½BECN1 /C138T
+dt52kcasp /C1½CASP /C138/C1½BECN1 /C138T
+d½BECN1 P/C138
+dt5cL/C1ð ½BECN1 /C138T/C1FðrLWLÞ2½BECN1 P/C138Þ
+d½BH3 /C138
+dt5cH/C1ðFðrHWHÞ2½BH3 /C138Þ
+d½Ca21/C138
+dt5kout/C1½IP3R /C138F/C1ð ½Ca21/C138T2½Ca21/C138Þ2kin/C1½Ca21/C138
+d½CALPAIN /C138
+dt5cC/C1ðFðrCWCÞ2½CALPAIN /C138Þ
+d½DAPK /C138
+dt5cD/C1ðFðrDWDÞ2½DAPK /C138Þ
+d½JNK /C138
+dt5cJ/C1ðFðrJWJÞ2½JNK /C138Þ
+d½MTOR /C138
+dt5cT/C1ðFðrTWTÞ2½MTOR /C138Þ
+dS
+dt5kc/C1C1ksb2ðkrb1kra/C1½ATPHG /C138Þ /C1S
+Algebraic Equations:½tATG5 /C138512½ATG5 /C138
+½BCL2 /C138
+U5½BCL2 ER/C1382½BCL2 P/C138
+½BECN1 /C138U5½BECN1 /C138T2½BECN1 P/C138
+½LIG/C138T5½IP3R /C138T1½BECN1 /C138U
+½LIG/C138F5max ð0;½LIG/C138T2½BCL2 /C138u)
+½IP3R /C138F5½IP3R /C138T/C1½LIG/C138F
+½LIG/C138T
+½BECN1 /C138F5½BECN1 /C138U/C1½LIG/C138F
+½LIG/C138T
+½CASP /C138ð0Þ50; ½CASP /C138ðtÞ51 when ½BH3 /C1385½BCL2 mit/C138and ever thereafter
+Definitions:FðxÞ5
+1
+11e2x
+WA5wATG5 02½CALPAIN /C138
+WB52wBCL2P 01½JNK /C138
+WC52wCALP 01½Ca21/C138
+WD52wDAPK 01S
+WG5wATG13 02½MTOR /C138
+WH52wBH3 01wBH3 S/C1S1wBH3 Ca/C1½Ca21/C1381½tATG5 /C138
+WJ52wJNK 01S
+WL52wBCEN1P 01½DAPK /C138
+WT5wMTOR 02½Ca21/C138Dynamic Modeling of the Interaction
+Tavassoly et al .
+266
+CPT: Pharmacometrics & Systems PharmacologyApoptosis in our model is an all-or-none commitment of
+individual cells because we assume that MOMP is gov-
+erned by a bistable switch. As described in ref.19, the
+switch is flipped from the “living” state to the “dying” statewhen [BH3] exceeds [BCL2
+mit] in the mitochondrial outer
+membrane. The all-or-none nature of the transition in themodel is reflected in the fact that most cells survive for C<
+5 and most cells die for C>6. For 5 <C<6; only a frac-
+tion of cells die because of the lognormal distribution weassume for [BCL2
+mit]. Experimental confirmation of the
+“threshold” effects in Figure 2d,e provide strong support for
+a “bistable switch” underlying MOMP , an assumption of themodel that is still a subject of some disagreement amongtheoreticians.
+19,20
+Quantitative comparison of the model to autophagyand apoptosis in populations of RPT cellsFor quantitative comparison, we chose an “optimal” set ofparameter values ( Table 3 ) to best fit the data ( Supple-
+mentary Table S1 ), as detailed in Supplementary
+Text S3 . Recognizing that the available data are insufficient
+to constrain the values of all the parameters in our model,we generated a collection of 3,758 parameter sets that alsoprovided good fits to the data. Simulations using these
+acceptable parameter sets enable us to compute error bars
+for our simulation results.
+InFigure 3a , we plot the model’s prediction of autophagy
+level in response to a cisplatin dose of 20 lM(C520).
+For each of the acceptable parameter sets, we simulatedthe response of 100 cells, each with a particular value of[BCL2
+mit]. For each parameter set, we compute, from the
+sample of 100 cells, the mean value of [ATPHG]( t) and the
+percentage of apoptotic cells at each point in time. Then,from the sample of 3,758 acceptable parameter sets, weplot the mean (black line) 6one standard deviation of
+autophagy and percent apoptosis as functions of time. Thesimulations compare very favorably with the experimentaldata (circles) from figure 6d of Periyasamy-Thandavanet al .
+18The experimental points are singlets and said, by
+the authors, to be “ representative of at least three separate
+experiments .” To get an idea of the variability of these
+measurements, one should compare figures 1a, 4d, 5d,and 6d in ref.
+18. In these experiments, the level of autoph-
+agy increases to a maximum at /C246 hours, after which neg-
+ative feedback from Ca21causes the level of autophagy to
+decrease. As cells become apoptotic, the average level ofTable 3 Parameters, their descriptions, their optimal values, and their coefficients of variation over the collection of acceptable parameter sets
+Parameters Description Optimal valuesaCoeff. var.a
+C Function of cisplatin dose 0
+ka;kda Rate constants for autophagosome formation and degradation (h21) 1.77, 0.0948 15%, 14%
+kc Drug-induced stress rate ( lM21h21) 0.51 14%
+kcasp Rate constant for Beclin-1 cleavage by Caspase (h21) 2.01 16%
+kin;kout Rate constants for Ca21transport from ER to cytoplasm and vice versa (h21) 9.64, 6.31 14%, 14%
+kra Rate constant for autophagic relief of stress (h21) 3.83 18%
+krb Rate constant for background relief of stress (h21) 1.41 13%
+ksb Basal rate of stress (h21) 2.08 13%
+wATG5 0;wATG13 0 Offsets of sigmoidal function when there are no signals 0.215, 0.144 15%, 11%
+wBCL2P 0;wBECN1P 0 0.614, 0.647 11%, 10%
+wBH3 0;wCALP 0 1.26, 0.514 8%, 10%
+wDAPK 0;wJNK 0 2.98, 1.22 15%, 12%
+wMTOR 0 0.202 15%
+wBH3 S;wBH3 Ca Interaction coefficients 0.08, 0.0003 18%, 15%
+cA;cB Rate constants for changes in protein concentrations (h21) 0.524, 5.21 13%, 14%
+1.95, 4.05 15%, 13% cC;cD
+1.04, 0.01 17%, 19%
+1.73, 3.43 11%, 16%cG;cH
+cJ;cL
+1.61 13% cT
+rA;rB Steepness of sigmoidal response curves 4.83, 4.57 14%, 11%
+rC;rD 32.3, 1.01 14%, 15%
+rG;rH 20.8, 2.89 12%, 12%
+rJ;rL 2.42, 7.99 16%, 17%
+rT 3.51 12%
+½BCL2 ER/C138 Total BCL-2 family proteins in ER 3 fixed
+½BCL2 mit/C138 Total antiapoptotic BCL-2 family proteins in mitochondria
+(lognormally distributed)Mean50.120
+SD50.0292fixed
+fixed
+½Ca21/C138T Maximum cytoplasmic [Ca21] due to release of ER calcium 2 fixed
+½IP3R /C138T Total IP3R proteins in ER 1 fixed
+aC(popt)50.5364, where C(p)5cost function defined in Suppl. Text S2, for a parameter vector p.
+bCoefficient of variation 5(SD) / jmean j. Note: the mean value of a parameter 6¼its optimal value.Dynamic Modeling of the Interaction
+Tavassoly et al .
+267
+www.wileyonlinelibrary/psp4autophagy drops further. The time course of apoptosis in
+our simulated population ( Figure 3b ) is in good agreement
+with the experimental observations in figure 1e of
+Periyasamy-Thandavan et al.18
+Experiments by Periyasamy-Thandavan et al .18(their
+figure 5d) show that BCL-2 overexpression not onlydecreases the basal level of autophagy but also blocksthe activation of autophagy after treatment with 20 lM
+cisplatin ( Figure 3a , lower curves). To simulate this
+experiment, we increased BCL-2 expression by 3-fold inboth the ER and mitochondria. The reduced autophagicresponse (in the model) is due to excess BCL-2 protein
+binding Beclin-1 and preventing initiation of autophagy. At
+the same time, cell death is also inhibited because thehigher BCL-2 level in mitochondria cannot be over-whelmed by the elevated levels of BH3 in response to
+cisplatin treatment.Inhibition of autophagosome docking
+The key function of autophagosomes is to engulf damagedcellular material and then fuse with lysosomes, where thecollected material is degraded and recycled. Bafilomycin(BAF) is widely used to block the fusion of autophago-somes with lysosomes, resulting in accumulation of auto-phagosomes in the cytoplasm. Figure 3c displays the
+increased accumulation of autophagosomes in both experi-ment and simulation after cells were treated with 20 lM cis-
+platin in combination with 100 nM BAF . To simulate theeffect of BAF treatment in the model, both the absorptionrate of autophagosomes ( k
+da) and (consequently) the rate
+of stress reduction by autophagy ( kra) are reduced 5-fold. It
+is interesting to note that, when cells are challenged with20lM cisplatin 1100 nM BAF , the maximum autophagy
+level is the same as that observed with 20 lM cisplatin
+alone, although cells treated with BAF should have much
+Figure 2 Qualitative properties of the model. ( a,b) Simulated time course of the autophagy–apoptosis model for an “average” cell with
+[BCL2 mit]50.12. The equations in Table 2 are solved using the optimal parameter values in Table 3 , given the initial conditions in
+Table 1 , with C520, for 0 /C20t/C2015. Each curve is plotted in terms of an arbitrary “unit” U, as follows: UATG550.9, UATG1350.8,
+UATPHG51,UBCL2-P52.5,UBECNP52.3,UBH351,UCalpain51,UCytCa51.2,UDAPK51.5,UIP3RF51.2,UJNK51.3,UmTOR5
+0.3, UStress513. ( c) Simulated time course of the relative level of autophagy, [ATPHG]( t)/[ATPHG](0), in an “average” cell, with
+[BCL2 mit]50.12, for different levels of stressor, C, from 0 to 100. ( d) Mean relative level of autophagy at t5100 hours, in a population
+of 100 cells, with a lognormal distribution of [BCL2 mit], as a function of increasing stressor, C. For low doses of cisplatin ( C<5), the
+mean level of autophagy increases steadily to counter the effects of cisplatin-induced stress. For 5 <C<6, autophagy cannot relieve
+the stress in all 100 cells and some of them commit apoptosis. For C>6, all cells are apoptotic and [ATPHG] 50b y t5100. ( e)P e r -
+centage of apoptotic cells (in a population of 100 cells with lognormally distributed [BCL2 mit]) at particular timepoints after stimulation,
+as functions of increasing levels of stressor, C.Dynamic Modeling of the Interaction
+Tavassoly et al .
+268
+CPT: Pharmacometrics & Systems Pharmacologyhigher stress than cells treated without BAF . In the model,
+higher stress strongly activates calpain, which cleaves
+ATG5 and limits the maximum level of autophagy. If calpainis inhibited, cells are observed to die by excess autoph-agy,
+43and we see a massive increase in autophagy when
+calpain is inhibited in a simulated treatment with 20 lM cis-
+platin1100 nM BAF ( Supplementary Figure S2 ). This
+role of calpain may have evolved to avert autophagic deathin cells subjected to high stress.
+Impaired fusion of autophagosomes with lysosomes puts
+the cell under increased stress and should lead toincreased apoptosis. In the experiment, 55% of cells wereapoptotic at 12 hours, compared to 53% of the simulatedcells ( Figure 4a ). The model predicts that 89% of cells will
+be apoptotic at 24 hours ( Figure 4b ).
+Inhibition of autophagosome formation
+3-MA inhibits formation of autophagosomes. In responseto treatment with 20 lM cisplatin 110 mM 3-MA, both
+experiments and simulations show a decreased level ofautophagy ( Figure 3d ) compared to treatment with 20 lM
+cisplatin alone ( Figure 3a ). To simulate the effect of 3-
+MA, the parameter controlling formation of autophago-somes ( k
+a) was decreased 2-fold. As with BAF , the
+decrease in autophagic recycling of cellular material
+caused by 3-MA should increase cell death. Experimen-tally, 46% of cells were apoptotic at 12 hours compared to38% of the simulated cells at this point ( Figure 4a ). The
+level of apoptosis is not quite as high as for BAF treat-ment, suggesting higher autophagic recycling in the caseof 3-MA treatment. Similarly, inhibition of autophagy, byknocking down Beclin-1 while treating cells with 20 lM
+cisplatin, also results in increased apoptosis, both experi-mentally (55% at 16 hours) and in simulation (57%). (Inthe simulation, we reduced the initial value of [BECN1]
+T
+by 50%.) As expected, the model predicts significantlyhigher percentages of apoptotic cells at 24 hours in allcases ( Figure 4b ). We suggest that future experiments
+measuring apoptosis in cells responding to high cisplatinstress be carried out to 24 hours and beyond, to deter-mine whether most cells eventually commit apoptosis, aspredicted by our model ( Figure 3e ).
+Our model also accounts for the proapoptotic effect of 3-
+MA at a cisplatin dose of 5 lM(Figure 4a , as compared to
+figure 7c of Periyasamy-Thandavan et al.
+18). Because very
+few cells commit apoptosis at a dose of 5 lM cisplatin, we
+Figure 3 Time courses of autophagy and apoptosis under cisplatin treatment. In each panel we simulate an experiment from
+Periyasamy-Thandavan et al.18(circles and squares) by solving the equations in Table 2 using 3,758 different sets of parameter values
+in the collection of “acceptable” parameter sets, as described in the text and the Supplementary Material . The black line plots the
+mean level of autophagy across all 3,758 simulations, and the gray region spans one standard deviation above and below the mean.
+(a) Time courses of LC3-II and autophagy level for 24-hour treatment with 20 lM cisplatin alone (circles and solid line) and in conjunc-
+tion with BCL-2 overexpression (squares and dashed line). The experimental data (“representative of at least three separateexperiments”) are replotted from Periyasamy-Thandavan et al.18(circles from their figure 6d; squares from their figure 5d). In both sim-
+ulations, C520; for the case of BCL-2 overexpression, [BCL2 ER]59 and the mean value of [BCL2 mit]50.36 in the simulation.
+(b) Time course of percentage apoptotic cells (circles from figure 1e of Periyasamy-Thandavan et al .18). (c) Time course of LC3-II
+(circles from figure 6d of Periyasamy-Thandavan et al.18) and simulated autophagy level for 24-hour treatment with 20 lM cisplatin 1
+100 nM Bafilomycin (optimal value of kda50.019 h21and optimal value of kra50.77 h21in the simulation). ( d) Time course of LC3-II
+(circles from figure 6d of Periyasamy-Thandavan et al.18) and simulated autophagy level for 24-hour treatment with 20 lM cisplatin 1
+10 mM 3-methyladenine (optimal value of ka50.88 h21in the simulation).Dynamic Modeling of the Interaction
+Tavassoly et al .
+269
+www.wileyonlinelibrary/psp4cannot associate this dose with C55, which lies at the
+cusp of life-or-death in our model. Although the model wasparameterized to fit data at a cisplatin dose of 20 lM with
+C520, there is no reason to expect that the parameter C,
+which measures metabolic stress, should bear a linear rela-tion to cisplatin dose. Hence, we choose C52.5, where
+cells are robustly surviving in the model, to represent thecase of cisplatin 55lM in experiments.
+To see how all variables of an “average” cell respond to
+all the experimental conditions considered in this section,seeSupplementary Figure S1 .
+DISCUSSION
+Recent advances in molecular cell biology indicate that
+anticancer therapies promote cellular stress, which can trig-ger both autophagy and apoptosis.
+3,44Hence, understand-
+ing the interactions among the molecular regulators ofthese major cell survival/death pathways is critical to solv-ing clinical issues associated with drug efficacy and sideeffects. In this study, we show that a mathematical modelof cellular stress can capture the prosurvival and prodeathresponses of cells in qualitative terms and be fitted accu-rately to quantitative time-course data of autophagy andapoptosis measured by Periyasamy-Thandavan et al .
+18
+The model predicts the time courses of regulatory proteins
+(Figure 2a,b ) and the long-term extent of apoptosis
+(Figures 2e and4b), which were not measured in the origi-
+nal experiments. The model predicts that, for the rat kidneycells studied here, the role of cytoplasmic calcium ions inupregulating apoptosis proceeds less through calcineurin’sactivation of proapoptotic proteins than through calpain’s
+truncation of ATG5. Future quantitative measurements ofhow cells respond to cytotoxic stress will allow us to testthis model and build new versions with more predictivepower. In addition, experiments that interfere with apoptosisin cells responding to cisplatin, e.g., by manipulating apo-ptosis activators and inhibitors, such as secondmitochondria-derived activator of caspases (SMAC) and X-linked inhibitor of apoptosis protein (XIAP), will provide datato further support and improve the model.
+Cell stress responses, such as autophagy and apoptosis,
+are central to determining the responses of cancer patientsto pharmacological interventions. For example, autophagyis commonly associated with the acquisition of drug resist-ance by cancer cells and contributes to the poor patientsurvival rate of many cancers. On the positive side, autoph-agy plays a cytoprotective role in cisplatin nephrotoxicity.Because autophagy and apoptosis are governed by an intri-cate dynamic network of interacting proteins, it is imperative
+to identify and target key components of this network when
+designing therapeutic regimens for diseases such as can-cer.
+45–47An accurate, cancer-specific mathematical model
+can advance the pharmacodynamic analysis of prospectiveanticancer agents and help find novel combinations of exist-ing therapies that increase the death of cancer cells usinglow doses that spare normal cells.
+Acknowledgment. This work was supported by US National Insti-
+tutes of Health award U54-CA149147.
+Conflict of Interest. The authors have no conflicts of interest in the
+conduct of this research.
+Figure 4 Percentage of apoptotic cells. ( a) Percentage of apoptotic cells (mean 6one standard deviation) in experiment (light gray
+bars) and simulation (medium gray bars) under various treatments at the indicated timepoint. The experimental data are replotted
+from Periyasamy-Thandavan et al.18(their figures 7b,c and 8d). “Four fields with /C24200 cells per field were evaluated in each dish to
+estimate the percentage of cells with typical apoptotic morphology.” The simulations are done as described in the legend to Figure 3 .
+(b) For each of the experimental conditions in panel (a), we plot the percentage of apoptotic cells (mean 6one standard deviation) in
+simulations at 12 hours (light gray), 16 hours (medium gray), and 24 hours (dark gray). The 24-hour timepoints are predictions of the
+model.Dynamic Modeling of the Interaction
+Tavassoly et al .
+270
+CPT: Pharmacometrics & Systems PharmacologyAuthor Contributions. I.T., J.P., R.C., W.T.B. and J.J.T. wrote
+paper, I.T., A.N.S.-H., W.T.B., and J.J.T. Designed Research, I.T. andJ.P. analyzed data, I.T., J.P., A.N.S.-H., R.C., W.T.B., and J.J.T. analyzeddata.
+Study Highlights
+WHAT IS THE CURRENT KNOWLEDGE ON THETOPIC?
+Autophagy and apoptosis regulate cell fate in response to
+stress. Experimental studies provide quantitative dataon cell survival and death in response to stress. But nocomputational models have yet attended to the dynami-cal interplay of autophagy and apoptosis in relation tothe experimental data.
+WHAT QUESTIONS DID THIS STUDY ADDRESS?
+Can a simple mathematical model of the regulation ofautophagy and apoptosis effectively account for theobserved responses of rat cells to exposure to the cyto-toxic drug cisplatin?
+WHAT THIS STUDY ADDS TO OUR KNOWLEDGE
+Since the model presented here is consistent with thedata used for its validation, it provides an initial steptowards better understanding of the complex interac-tions among cell fate pathways.
+HOW THIS MIGHT CHANGE CLINICAL
+PHARMACOLOGY AND THERAPEUTICS
+Optimizing therapeutic protocols, especially those involving
+multiple drugs, will require a detailed understanding of the
+balance between survival and death in both diseased and
+normal cells. Dynamic models, such as the autophagy-apoptosis model presented here, can play a key role inunderstanding and computing optimal protocols.
+1. Maiuri, M.C., Zalckvar, E., Kimchi, A. & Kroemer, G. Self-eating and self-killing:
+crosstalk between autophagy and apoptosis. Nat. Rev. Mol. Cell. Biol. 8, 741–752
+(2007).
+2. Hanahan, D. & Weinberg, R.A. Hallmarks of cancer: the next generation. Cell144,
+646–674 (2011).
+3. Clarke, R. et al. Endoplasmic reticulum stress, the unfolded protein response, autoph-
+agy, and the integrated regulation of breast cancer cell fate. Cancer Res. 72,
+1321–1331 (2012).
+4. Kondo, Y., Kanzawa, T., Sawaya, R. & Kondo, S. The role of autophagy in cancer
+development and response to therapy. Nat. Rev. Cancer 5, 726–734 (2005).
+5. Tyson, J.J. et al. Dynamic modelling of oestrogen signalling and cell fate in breast
+cancer cells. Nat. Rev. Cancer 11, 523–532 (2011).
+6. Bialik, S., Zalckvar, E., Ber, Y., Rubinstein, A.D., Kimchi, A. Systems biology analysis
+of programmed cell death. Trends Biochem. Sci. 35, 556–564 (2010).
+7. Martin, K.R. et al. Computational model for autophagic vesicle dynamics in single
+cells.Autophagy 9, 74–92 (2013).
+8. Kapuy, O., Vinod, P.K., Mandl, J., Banhegyi, G. A cellular stress-directed bistable
+switch controls the crosstalk between autophagy and apoptosis. Mol. Biosys. 9,
+296–306 (2013).
+9. Kroemer, G., Marino, G., Levine, B. Autophagy and the integrated stress response.
+Mol. Cell. 40, 280–293 (2010).10. Jung, C.H., Ro, S.H., Cao, J., Otto, N.M. & Kim, D.H. mTOR regulation of autoph-
+agy.FEBS Lett. 584, 1287–1295 (2010).
+11. Ganley, I.G., Lam, D.H., Wang, J., Ding, X., Chen, S. & Jiang, X. ULK1 /C1ATG13 /C1
+FIP200 complex mediates mTOR signaling and is essential for autophagy. J. Biol.
+Chem. 284, 12297–12305 (2009).
+12. He, C., Levine, B. The Beclin 1 interactome. Curr. Opin. Cell. Biol. 22, 140–149
+(2010).
+13. Wei, Y., Pattingre, S., Sinha, S., Bassik, M. & Levine, B. JNK1-mediated phosphoryl-
+ation of Bcl-2 regulates starvation-induced autophagy. Mol. Cell. 30, 678–688 (2008).
+14. Zalckvar, E., Berissi, H., Eisenstein, M. & Kimchi, A. Phosphorylation of Beclin 1 by
+DAP-kinase promotes autophagy by weakening its interactions with Bcl-2 and Bcl-XL.
+Autophagy 5, 720–722 (2009).
+15. Kang, R., Zeh, H.J., Lotze, M.T. & Tang, D. The Beclin 1 network regulates autoph-
+agy and apoptosis. Cell. Death Differ. 18, 571–580 (2011).
+16. Wei, Y., Sinha, S. & Levine, B. Dual role of JNK1-mediated phosphorylation of Bcl-2
+in autophagy and apoptosis regulation. Autophagy 4, 949–951 (2008).
+17. Klionsky, D.J. et al. Guidelines for the use and interpretation of assays for monitoring
+autophagy. Autophagy 8, 445–544 (2012).
+18. Periyasamy-Thandavan, S., Jiang, M., Wei, Q., Smith, R., Yin, X.M. & Dong, Z.
+Autophagy is cytoprotective during cisplatin injury of renal proximal tubular cells. Kid-
+ney Int. 74, 631–640 (2008).
+19. Zhang, T., Brazhnik, P. & Tyson, J.J. Computational analysis of dynamical responses
+to the intrinsic pathway of programmed cell death. Biophys. J. 97, 415–434 (2009).
+20. Spencer, S.L. & Sorger, P.K. Measuring and modeling apoptosis in single cells. Cell
+144, 926–939 (2011).
+21. Gotow, T. et al. Selective localization of Bcl-2 to the inner mitochondrial and smooth
+endoplasmic reticulum membranes in mammalian cells. Cell. Death Differ. 7,
+666–674 (2000).
+22. Rong, Y. & Distelhorst, C.W. Bcl-2 protein family members: versatile regulators of cal-
+cium signaling in cell survival and apoptosis. Annu. Rev. Physiol. 70, 73–91 (2008).
+23. Berridge, M.J., Bootman, M.D. & Roderick, H.L. Calcium signalling: Dynamics, home-
+ostasis and remodelling. Nat. Rev. Mol. Cell. Biol. 4, 517–529 (2003).
+24. Orrenius, S., Zhivotovsky, B., Nicotera, P. Regulation of cell death: The calcium-
+apoptosis link. Nat. Rev. Mol. Cell. Biol. 4, 552–565 (2003).
+25. Pinton, P., Giorgi, C., Siviero, R., Zecchini, E. & Rizzuto, R. Calcium and apoptosis:
+ER-mitochondria Ca2 1transfer in the control of apoptosis. Oncogene 27,
+6407–6418 (2008).
+26. Arbabian, A. et al. Endoplasmic reticulum calcium pumps and cancer. Biofactors 37,
+139–149 (2011).
+27. Rong, Y.-P. et al. Targeting Bcl-2-IP3 receptor interaction to reverse Bcl-2’s inhibition
+of apoptotic calcium signals. Mol. Cell. 31, 255–265 (2008).
+28. Szegezdi, E., MacDonald, D.C., N /C19ıChonghaile, T., Gupta, S. & Samali, A. Bcl-2 fam-
+ily on guard at the ER. Am. J. Physiol. Cell. Physiol. 296, C941–C953 (2009).
+29. Harr, M.W. & Distelhorst, C.W. Apoptosis and autophagy: decoding calcium signals
+that mediate life or death. Cold Spring Harb. Perspect. Biol. 2, a005579 (2010).
+30. Hoyer-Hansen, M. et al . Control of macroautophagy by calcium, calmodulin-
+dependent kinase kinase-beta, and Bcl-2. Mol. Cell. 25, 193–205 (2007).
+31. Mattson, M.P. & Chan, S.L. Calcium orchestrates apoptosis. Nat. Cell. Biol. 5,
+1041–1043 (2003).
+32. Cerella, C., Diederich, M. & Ghibelli, L. The dual role of calcium as messenger and
+stressor in cell damage, death, and survival. Int. J. Cell. Biol. 2010, 546163 (2010).
+33. Kim, I., Xu, W. & Reed, J.C. Cell death and endoplasmic reticulum stress: disease
+relevance and therapeutic opportunities. Nat. Rev. Drug Discov. 7, 1013–1030
+(2008).
+34. Yousefi, S. et al. Calpain-mediated cleavage of Atg5 switches autophagy to apopto-
+sis.Nat. Cell. Biol. 8, 1124–1132 (2006).
+35. Luo, S. & Rubinsztein, D.C. Atg5 and Bcl-2 provide novel insights into the interplay
+between apoptosis and autophagy. Cell. Death Differ. 14, 1247–1250 (2007).
+36. Djavaheri-Mergny, M., Maiuri, M.C. & Kroemer, G. Cross talk between apoptosis and
+autophagy by caspase-mediated cleavage of Beclin 1. Oncogene 29, 1717–1719
+(2010).
+37. Li, H. et al . Following cytochrome c release, autophagy is inhibited during
+chemotherapy-induced apoptosis by caspase 8-mediated cleavage of Beclin 1. Can-
+cer Res. 71, 3625–3634 (2011).
+38. Cho, D.H., Jo, Y.K., Hwang, J.J., Lee, Y.M., Roh, S.A. & Kim, J.C. Caspase-medi-
+ated cleavage of ATG6/Beclin-1 links apoptosis to autophagy in HeLa cells. Cancer
+Lett.274, 95–100 (2009).
+39. Marino, G., Niso-Santano, M., Baehrecke, E.H. & Kroemer, G. Self-consumption: The
+interplay of autophagy and apoptosis. Nat. Rev. Mol Cell Biol. 15, 81–94 (2014).
+40. Gaddameedhi, S. & Chatterjee, S. Association between the unfolded protein
+response, induced by 2-deoxyglucose, and hypersensitivity to cisplatin: a mechanisticstudy employing molecular genomics. J. Cancer Res. Ther. 5, 61–66 (2009).
+41. Sanchez-Perez, I., Murguia, J.R. & Perona, R. Cisplatin induces a persistent activa-
+tion of JNK that is related to cell death. Oncogene 16, 533–540 (1998).
+42. Wu, J., Hu, C.P., Gu, Q.H., Li, Y.P. & Song, M. Trichostatin A sensitizes cisplatin-
+resistant A549 cells to apoptosis by up-regulating death-associated protein kinase.Acta Pharmacol. Sin. 31, 93–101 (2010).Dynamic Modeling of the Interaction
+Tavassoly et al .
+271
+www.wileyonlinelibrary/psp443. Madden, D.T., Egger, L. & Bredesen, D.E. A calpain-like protease inhibits autophagic
+cell death. Autophagy 3, 519–522 (2007).
+44. Clarke, R. et al. Endoplasmic reticulum stress, the unfolded protein response, and
+gene network modeling in antiestrogen resistant breast cancer. Horm. Mol. Biol. Clin.
+Investig. 5, 35–44 (2011).
+45. Behar, M., Barken, D., Werner, S.L. & Hoffmann, A. The dynamics of signaling as a
+pharmacological target. Cell155, 448–461 (2013).
+46. Iyengar, R., Zhao, S., Chung, S.W., Mager, D.E. & Gallo, J.M. Merging systems biol-
+ogy with pharmacodynamics. Sci. Transl. Med. 4, (2012).
+47. Janes, K.A. & Lauffenburger, D.A. Models of signalling networks—what cell
+biologists can gain from them and give to them. J. Cell. Sci. 126, 1913–1921 (2013).VC2015 The Authors CPT: Pharmacometrics & Systems
+Pharmacology published by Wiley Periodicals, Inc. onbehalf of American Society for Clinical Pharmacology andTherapeutics. This is an open access article under theterms of the Creative Commons Attribution-NonCommer-cial-NoDerivs License, which permits use and distributionin any medium, provided the original work is properlycited, the use is non-commercial and no modifications oradaptations are made.
+Supplementary information accompanies this paper on the CPT: Pharmacometrics & Systems Pharmacology website
+(http://www.wileyonlinelibrary.com/psp4)Dynamic Modeling of the Interaction
+Tavassoly et al .
+272
+CPT: Pharmacometrics & Systems Pharmacology

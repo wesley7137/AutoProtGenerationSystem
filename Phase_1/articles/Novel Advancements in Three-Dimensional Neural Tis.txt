@@ -1,0 +1,225 @@
+Title: Novel Advancements in Three-Dimensional Neural Tissue Engineering and
+  Regenerative Medicine
+Abstract:   Neurological diseases and injuries present some of the greatest challenges in
+modern medicine, often causing irreversible and lifelong burdens in the people
+whom they afflict. These diagnoses have devastating consequences on millions of
+people each year, and yet there are currently no therapies or interventions
+that can repair the structure of neural circuits and restore neural tissue
+function in the brain and spinal cord. Despite the challenges of overcoming
+these limitations, there are many new approaches under development that hold
+much promise. Neural tissue engineering aims to restore and influence the
+function of damaged or diseased neural tissue generally through the use of stem
+cells and biomaterials. In this paper, several new 3D tissue constructs and
+designs are described for functional reconstruction of neural architecture.
+With the use of induced pluripotent stem cells or induced neuronal cells, these
+3D constructs could then be studied as regional models of the central nervous
+system or could one day be implemented as autologous grafts into damaged sites
+of the nervous system in order to restore neural function, particularly for
+damaged sites of spinal cord, areas of stroke infarction, tumor resection
+sites, peripheral nerve injuries, or areas of neurodegeneration.
+
+Full Text: Novel Advancements in Three-Dimensional Neural Tiss ue Engineering and Regenerative Medicine 
+ 
+Richard J. McMurtrey 1,2  
+ 
+1 Institute of Neural Regeneration & Tissue Engineer ing, Highland, UT 84003, United States 
+Email: richard.mcmurtrey@neuralregeneration.org  
+ 
+2 Institute of Biomedical Engineering, Department of  Engineering Science, Old Road Campus Research Buil ding, University of 
+Oxford, Oxford, OX3 7DQ, United Kingdom Email: richard.mcmurtrey@eng.oxon.org  
+ 
+Keywords: Neural Tissue Engineering, Neural Regener ation, 3D Cell Culture, Organoids, Nanofiber Scaffo lds, Hydrogels 
+ 
+ 
+This is an author-created version of an open access  article published in Neural Regeneration Research and deposited under the Open Access 
+Initiative (OAI) for OAI-conforming disciplinary ar chives and institutional repositories. Any further distribution of this work must maintain 
+attribution to the author, title of the work, and j ournal citation. The Version of Record is available  online at 
+http://www.nrronline.org/text.asp?2015/10/3/352/153 674 . Reference: McMurtrey RJ. Novel advancements in thr ee-dimensional neural 
+tissue engineering and regenerative medicine. Neura l Regen Res 2015;10:352-4. 
+ 
+ 
+Neurological diseases and injuries present some of the greatest challenges in modern medicine, often c ausing 
+irreversible and lifelong burdens in the people who m they afflict. Conditions of stroke, traumatic bra in injury, spinal 
+cord injury, and neurodegenerative diseases have de vastating consequences on millions of people each y ear, and yet 
+there are currently no therapies or interventions t hat can repair the structure of neural circuits and  restore neural 
+tissue function in the brain and spinal cord. Despi te the challenges of overcoming these limitations, there are many 
+new approaches under development that hold much pro mise. Neural tissue engineering aims to restore and  
+influence the function of damaged or diseased neura l tissue generally through the use of stem cells an d biomaterials. 
+Many types of biomaterials may be implemented in va rious designs to influence the survival, differenti ation, and 
+function of developing stem cells, as well as to gu ide neurite extension and morphological architectur e of cell 
+cultures. Such designs may aim to recapitulate the cellular interactions, extracellular matrix charact eristics, 
+biochemical factors, and sequences of events that o ccur in neurodevelopment, in addition to supporting  cell survival, 
+differentiation, and integration into innate neural  tissue. 
+ 
+Much work has been done on patterning axonal guidan ce and neurite outgrowth on two-dimensional (2D) su rfaces, 
+but recent work has now demonstrated the ability to  pattern neurite extension in three-dimensional (3D ) cultures 
+using a combination of functionalized nanofiber sca ffolding embedded within hydrogel architecture (McM urtrey, 
+2014). This study demonstrated that nanofibers coul d be aligned and patterned using an external scaffo lding, and the 
+nanofiber scaffolding could be embedded within a ce llularized hydrogel architecture to create composit e 3D neural 
+tissue constructs. It was then shown that different iated neuronal cells within the hydrogel extended n eurites that 
+directly tracked along nanofibers, particularly tho se nanofibers that had been functionalized with lam inin and 
+embedded in hyaluronic acid hydrogels, thus resulti ng in significant overall alignment of neurites wit h nanofibers in 
+three dimensions. It was also shown that laminin-co ated nanofibers in hyaluronic acid hydrogels could significantly 
+enhance the length of neurite extensions. In this s tudy, even non-functionalized polymer nanofibers we re able to 
+exert some amount of control over neurite tracking and angle orientation, and although these effects w ere further 
+enhanced by laminin functionalization of the fibers , these results suggest that topographical cues alo ne can also 
+influence neurite extension and cell behavior. The mechanisms of this phenomenon are still not well un derstood, but 
+similar effects have been observed in a variety of cell types (Kim et al., 2012), and in neuronal cell s this effect may 
+relate to the ability to extend along radial glial cells in early neurodevelopment. This work suggests  that high-
+resolution patterning of scaffolds within 3D hydrog els is not only possible but provides highly advant ageous 
+capabilities in exerting directional control of neu rite extension in 3D mediums and producing desired details in the 
+structure of engineered neural tissue.  
+ 
+The function of neural tissue is highly dependent o n its intricate 3D architecture at the cellular and  subcellular levels, 
+and therefore for neural cells in particular, 3D cu lture is necessary to form the unique relationship of structure and Neural Regen. Res. 2015;10:352-4  R.J. McMurtrey  
+2 
+ function in neural tissue. Furthermore, unlike 2D c ultures, 3D cultures enable realistic reconstructio n of biochemical 
+gradients and interactions among surrounding cells and extracellular matrix. 3D constructs can simulat e mass 
+transfer characteristics reminiscent of neural tiss ue, which may help cells adapt for implantation int o the harsh 
+conditions of the body—recent evidence suggests tha t stem cells implanted into the body may have bette r survival if 
+they are cultured and prepared under certain condit ions of stress or exposure, a form of preconditioni ng cells (Sart et 
+al., 2014), and culturing cells in 3D conditions wi th limited diffusion capacities is one way of accom plishing 
+environmental preconditioning. Diffusion characteri stics may be modeled for each construct design and may also be 
+improved for diffusion-limited constructs through a  variety of means, such as bioreactor design and hy drogel 
+constructs designed with perfusion vents or vascula r-like channels.  
+ 
+A particularly useful method for creating 3D cultur es involves the use of hydrogels, which provide an aqueous 
+dispersion medium within natural or synthetic matri x molecules. Hydrogels provide the advantage of sup porting 
+structural relations among cells, preventing anoiki s, and precluding cells from washing away into medi a or 
+cerebrospinal fluid, while also delivering controll able concentrations of ions, nutrients, and growth factors. 
+Hydrogels generally have a low elastic modulus that  can be tuned to simulate the stiffness of neural t issue by means 
+of cross-linking and polymer type and density, whic h can thereby influence the differentiation of cell  lineages 
+(Aurand et al., 2012). These design choices also af fect the biocompatibility and degradation rate of t he construct, and 
+therefore must be optimized to avoid foreign body r eactions and enable biodegradation as constructs ar e replaced by 
+new tissue formation, but constructs should also en dure long enough that they support the survival and  integration 
+of newly implanted cells. Hyaluronic acid is one go od choice for neural tissue due to its cross-linkin g capabilities and 
+its natural involvement in neurodevelopment and pre sence around neurons, and cross-linked hyaluronan h ydrogels 
+have already been used to enhance survival of neura l stem cells implanted in the central nervous syste m (Liang et al., 
+2013; Moshayedi & Carmichael, 2013). Although hyalu ronan hydrogels by themselves do not provide high-a ffinity 
+cell attachment sites, the inclusion of functionali zed nanofibers can serve as cell attachment scaffol ding that directs 
+neurite outgrowth along the fibers. Conversely, Mat rigel possesses abundant cell attachment molecules throughout 
+the hydrogel, which likely explains why lower direc t neurite tracking of functionalized fibers seems t o occur in 
+Matrigel constructs, and which suggests that hydrog el choice and overall construct design can greatly influence the 
+outcome of neural structure and morphology (McMurtr ey, 2014).  
+ 
+ 
+ 
+Figure 1: 3D neural tissue constructs.  Row 1 – 
+Neuronal cultures in 3D hydrogels can be form ed 
+in a variety of shapes and designs. Row 2 – 
+Regional identities and neurite extensions can be 
+patterned with signaling factors and nanofiber 
+architecture embedded within the hydrogel. Row 
+3 – 3D tissue and organoid models will provide 
+incredible new tools and insights into 
+neurodevelopment and neurological injury and 
+disease, as well as great potential for 
+regenerating functional neural tissue from stem 
+cells. [Images used with permission of the 
+Institute of Neural Regeneration & Tissue 
+Engineering.] Neural Regen. Res. 2015;10:352-4  R.J. McMurtrey  
+3 
+ Early attempts at creating neural tissue from pluri potent stem cells focused primarily on the optimal combination of 
+signaling factors in 2D cultures, but many of these  attempts were only partially successful, with neur al tissue failing 
+to achieve proper cellular structure, organize syna ptic networks, express complete molecular markers, or mature in 
+electrophysiological function (Hansen et al., 2011) . The maturation from human pluripotent stem cells into cell types 
+from all layers of the adult human cortex was then demonstrated in 2D cultures, wherein the maturation  process was 
+shown to recapitulate that which occurs in normal d evelopment, with deep layer VI neurons maturing fir st and 
+upper layer II/III neurons later, then finally the differentiation of astrocytes and formation of func tional synaptic 
+connections reminiscent of early innate cortical ne tworks (Shi et al., 2012). Subsequently, 3D hydroge l cultures of 
+pluripotent stem cells were shown to enable the for mation of neuroanatomical structures that are simpl y not possible 
+in 2D cultures, and it seems that the cells themsel ves possess innately-programmed capabilities to sel f-assemble at 
+least some aspects of neuroanatomical structures ev en in unpatterned hydrogel constructs (Lancaster et  al., 2013). 
+These structures comprised ventricular, hippocampal , retinal, and cortical regions, including spatiall y separated 
+upper and lower layers of cortex, and, owing to the  observed multicellular differentiation and spatial  organization 
+characteristic of whole organs, these structures ha ve been termed “cerebral organoids.” Although these  constructs 
+can serve as models of organogenesis, fully mature neural structures along with the full composition o f central 
+nervous system cell types still remain incomplete o r only partially developed, and although the neuron s in these 3D 
+organoids were shown to develop spontaneous activit y, further synaptic characterization and network fu nctionality 
+has yet to be examined. The formation of functional  networks is dependent on excitatory neurons, inhib itory 
+neurons, and glial cell types, and because these ce ll types arise from different regions or at differe nt stages of 
+development, enabling the desired cell types to for m appropriate spatial structures at appropriate tim es is a difficult 
+challenge. It is not yet known to what extent neura l networks can be functionally established in 3D co nstructs, or 
+whether 3D constructs can be used to help integrate  functional neural networks into the prohibitive in vivo  central 
+nervous system environment, but the ability to repl icate neuroanatomical structures and guide neural n etwork 
+formation in three dimensions, both in vitro  and in vivo , would be a major advance in the field of neural r egeneration.  
+ 
+The formation of neuroanatomical structures at the cellular and subcellular levels will likely depend on a 
+combination of cellular, biochemical, and structura l cues that can guide desired axis patterning, regi onal identity, and 
+cellular architecture. Because hydrogels and nanofi bers can provide these components, an ideal approac h for 
+reconstructing structural and functional components  of neural tissue may therefore include the integra tion of 
+scaffolding and hydrogel into singular 3D construct s. Specific gradients and concentrations of signali ng factors can 
+be integrated into hydrogels, and nanofibers can be  coated with a variety of factors that influence ce ll attachment, 
+survival, growth, differentiation, migration, and n eurite extension. Nanofibers may also be functional ized with 
+pharmacologic agents that elute and diffuse from th e fibers to create localized gradients within the h ydrogel, or 
+agents that are chemically coupled to the fibers so  that regional concentrations remain tightly contro lled. Such 
+composite hydrogel constructs may be functionalized  to minimize foreign-body reactions and enhance int egration 
+into neural tissue, and the hydrogel architecture a lso provides stabilizing protection of neuroglial c ell cultures during 
+early structural development and during stages of t ransplantation and grafting. Also, it has been reco gnized that 
+adverse side effects of pain or spasticity might re sult from some spinal cord regeneration effects (Tu szynski & 
+Steward, 2012), but targeted connections of axonal and dendritic pathways and suppression of unwanted connections 
+might be achieved through the use of patterned scaf folding that can guide neural pathways at the cellu lar and 
+subcellular levels. Even unpatterned fibrin scaffol ds have shown significant capabilities in enhancing  functional 
+axonal extensions across long-distance lesions in r at spinal cord injuries (Lu et al., 2012), which fu rther suggests that 
+the integration of cellularized hydrogels and patte rned scaffolding constructs may provide significant  benefits for 
+successful reconstruction of functional neural tiss ue in patients. 
+ 
+The ability to use a patient’s own pluripotent stem  cells to replicate regional components of neurodev elopment and 
+rebuild neuroanatomical structures in 3D will not o nly provide a tremendous new tool for the successfu l 
+implementation of regenerative medicine, but will a lso enable detailed study of complex neurodevelopme ntal 
+processes, neurite guidance systems, and pathologic al conditions, including neurodegenerative diseases  (Choi et al., 
+2014) and neurogenetic diseases (Lancaster et al., 2013), particularly for diseases that are not easil y characterized in 
+animals and for processes and neuroanatomical organ izations that appear unique in humans, such as regi ons of 
+neural progenitor zones and activity of radial glia . These 3D constructs can also serve as useful mode ls of traumatic  
+injury and pharmacological or toxicological testing . The concept of using functionalized scaffolding w ithin hydrogels Neural Regen. Res. 2015;10:352-4  R.J. McMurtrey  
+4 
+ for neural tissue architecture can now be scaled up  to create more intricate structures that better re plicate the 
+complexity of innate neuroanatomical structures, su ch as those of the cortex, spinal cord, hippocampus , or other 
+regions. For example, the formation of multi-layere d cortex may be guided with layered nanofibers, wit h upper 
+layers designed to promote intracortical connection s and lower layers functionalized and shaped to pro mote deep 
+projections. Likewise, hippocampal anatomy may be f ormed with hydrogel architecture and nanofiber scaf folding 
+that guides perforant, collateral, and commissural pathways. Similarly, spinal cord anatomy could be r econstructed 
+with specific tracts and decussations guided by nan ofiber scaffolding through hydrogel. With the use o f induced 
+pluripotent stem cells or induced neuronal cells, t hese 3D constructs could then be studied as regiona l models of the 
+central nervous system or could one day be implemen ted as autologous grafts into damaged sites of the nervous 
+system in order to restore neural function, particu larly for damaged sites of spinal cord, areas of st roke infarction, 
+tumor resection sites, peripheral nerve injuries, o r areas of neurodegeneration.  
+ 
+References 
+ 
+Aurand ER, Lampe KJ, Bjugstad KB. Defining and desi gning polymers and hydrogels for neural tissue engi neering. Neurosci Res. 
+2012 72(3), 199-213.  
+ 
+Choi SH, Kim YH, Hebisch M, Sliwinski C, Lee S, D'A vanzo C, Chen H, Hooli B, Asselin C, Muffat J, Klee  JB, Zhang C, Wainger BJ, 
+Peitz M, Kovacs DM, Woolf CJ, Wagner SL, Tanzi RE, Kim DY. A three-dimensional human neural cell cultu re model of 
+Alzheimer's disease. Nature. 2014 Nov 13;515(7526): 274-8.  
+ 
+Hansen DV, Rubenstein JL, Kriegstein AR. Deriving e xcitatory neurons of the neocortex from pluripotent  stem cells. Neuron. 2011 
+May 26;70(4):645-60.  
+ 
+Kim DH, Provenzano PP, Smith CL, Levchenko A. Matri x nanotopography as a regulator of cell function. J  Cell Biol. 2012 Apr 
+30;197(3):351-60.  
+ 
+Lancaster MA, Renner M, Martin CA, Wenzel D, Bickne ll LS, Hurles ME, Homfray T, Penninger JM, Jackson AP, Knoblich JA. 
+Cerebral organoids model human brain development an d microcephaly. Nature. 2013 Sep 19;501(7467):373-9 .  
+ 
+Liang Y, Walczak P, Bulte JW. The survival of engra fted neural stem cells within hyaluronic acid hydro gels. Biomaterials. 2013 
+Jul;34(22):5521-9.  
+ 
+Lu P, Wang Y, Graham L, McHale K, Gao M, Wu D, Broc k J, Blesch A, Rosenzweig ES, Havton LA, Zheng B, C onner JM, Marsa la M, 
+Tuszynski MH. Long-distance growth and connectivity  of neural stem cells after severe spinal cord inju ry. Cell. 2012 Sep 
+14;150(6):1264-73.  
+ 
+McMurtrey RJ. Patterned and functionalized nanofibe r scaffolds in three-dimensional hydrogel construct s enhance neurite 
+outgrowth and directional control. J Neural Eng. 20 14 Oct 31;11(6):066009.  
+ 
+Moshayedi P, Carmichael ST. Hyaluronan, neural stem  cells and tissue reconstruction after acute ischem ic stroke. Biomatter. 2013 
+Jan-Mar;3(1). pii: e23863.  
+ 
+Sart S, Ma T, Yan Li Y. Preconditioning Stem Cells for In Vivo Delivery. BioResearch Open Access 2014 3(4), 137-149. 
+ 
+Shi Y, Kirwan P, Smith J, Robinson HP, Livesey FJ. Human cerebral cortex development from pluripotent stem cells to functional 
+excitatory synapses. Nat Neurosci. 2012 15(3), 477- 86. 
+ 
+Tuszynski MH, Steward O. Concepts and methods for t he study of axonal regeneration in the CNS. Neuron.  2012 Jun 7;74(5):777-91.  
+ 

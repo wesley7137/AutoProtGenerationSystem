@@ -1,0 +1,808 @@
+Title: FeB4RAG: Evaluating Federated Search in the Context of Retrieval
+  Augmented Generation
+Abstract:   Federated search systems aggregate results from multiple search engines,
+selecting appropriate sources to enhance result quality and align with user
+intent. With the increasing uptake of Retrieval-Augmented Generation (RAG)
+pipelines, federated search can play a pivotal role in sourcing relevant
+information across heterogeneous data sources to generate informed responses.
+However, existing datasets, such as those developed in the past TREC FedWeb
+tracks, predate the RAG paradigm shift and lack representation of modern
+information retrieval challenges. To bridge this gap, we present FeB4RAG, a
+novel dataset specifically designed for federated search within RAG frameworks.
+This dataset, derived from 16 sub-collections of the widely used \beir
+benchmarking collection, includes 790 information requests (akin to
+conversational queries) tailored for chatbot applications, along with top
+results returned by each resource and associated LLM-derived relevance
+judgements. Additionally, to support the need for this collection, we
+demonstrate the impact on response generation of a high quality federated
+search system for RAG compared to a naive approach to federated search. We do
+so by comparing answers generated through the RAG pipeline through a
+qualitative side-by-side comparison. Our collection fosters and supports the
+development and evaluation of new federated search methods, especially in the
+context of RAG pipelines.
+
+Full Text: FeB4RAG: Evaluating Federated Search in the Context of Retrieval
+Augmented Generation
+SHUAI WANG, The University of Queensland, Australia
+EKATERINA KHRAMTSOVA, The University of Queensland, Australia
+SHENGYAO ZHUANG, CSIRO, Australia
+GUIDO ZUCCON, The University of Queensland, Australia
+Federated search systems aggregate results from multiple search engines, selecting appropriate sources to enhance result
+quality and align with user intent. With the increasing uptake of Retrieval-Augmented Generation (RAG) pipelines, federated
+search can play a pivotal role in sourcing relevant information across heterogeneous data sources to generate informed
+responses. However, existing datasets, such as those developed in the past TREC FedWeb tracks, predate the RAG paradigm
+shift and lack representation of modern information retrieval challenges.
+To bridge this gap, we present FeB4RAG1, a novel dataset specifically designed for federated search within RAG frameworks.
+This dataset, derived from 16 sub-collections of the widely used BEIR benchmarking collection, includes 790 information
+requests (akin to conversational queries) tailored for chatbot applications, along with top results returned by each resource
+and associated LLM-derived relevance judgements . Additionally, to support the need for this collection, we demonstrate the
+impact on response generation of a high quality federated search system for RAG compared to a naive approach to federated
+search. We do so by comparing answers generated through the RAG pipeline through a qualitative side-by-side comparison.
+Our collection fosters and supports the development and evaluation of new federated search methods, especially in the
+context of RAG pipelines.
+CCS Concepts: •Information systems →Test collections ;Language models ; Relevance assessment; Question answering ;
+Distributed retrieval .
+Additional Key Words and Phrases: Federated search, Retrieval Augmented Generation (RAG), Large Language Models (LLMs),
+Collection.
+ACM Reference Format:
+Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon. 2024. FeB4RAG: Evaluating Federated Search in
+the Context of Retrieval Augmented Generation. 1, 1 (February 2024), 21 pages. https://doi.org/10.1145/nnnnnnn.nnnnnnn
+1 INTRODUCTION
+Often information is spread across multiple information systems and repositories [ 1]. For example consider
+a university (and example familiar to most readers) and the need for the stakeholders of that university to
+access internal information: Academic staff wanting to access information about policies and procedures, but
+1https://github.com/ielab/FeB4RAG
+Authors’ addresses: Shuai Wang, The University of Queensland, 4072 St Lucia, Brisbane, QLD, Australia, shuai.wang@uq.edu.au; Ekaterina
+Khramtsova, The University of Queensland, 4072 St Lucia, Brisbane, QLD, Australia, e.khramtsova@uq.edu.au; Shengyao Zhuang, CSIRO,
+4072 St Lucia, Brisbane, QLD, Australia, shengyao.zhuang@csiro.au; Guido Zuccon, The University of Queensland, 4072 St Lucia, Brisbane,
+QLD, Australia, g.zuccon@uq.edu.au.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first
+page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy
+otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from
+permissions@acm.org.
+©2024 Association for Computing Machinery.
+XXXX-XXXX/2024/2-ART $15.00
+https://doi.org/10.1145/nnnnnnn.nnnnnnn
+, Vol. 1, No. 1, Article . Publication date: February 2024.arXiv:2402.11891v1  [cs.IR]  19 Feb 20242 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+also about research grant opportunities, and library catalogues and so forth; Professional support staff wanting
+to access data repositories associated to HR and Finance functions, along again with policies and procedures;
+Students needing to find and access information about courses, scholarships, fee payments, events, etc. In a typical
+organisation of the size of a university, this information does not reside on a unique information system: instead
+it is spread across several resources: from internal websites (some publicly facing too), to library catalogues,
+e-learning systems, shared cloud space solutions (e.g., Microsoft’s Sharepoint and Teams), databases, among many
+other data management solutions. While this problem of information scattering [1] is even more exacerbated
+in larger organisations, we are increasingly witnessing information scattering affecting also individuals with
+their personal files and information spread across multiple information services (multiple email accounts, cloud
+storage providers, multimedia management applications, etc.).
+Federated search attempts to address information scattering by providing a search engine technology that is
+able to gather information from multiple resources, and assemble this information into a unique set of search
+results. Federated search has had extensive attention in the early 2000s, where the focus was to create meta
+Web search engines, that federated separate search engines available on the Web [ 10,11,33]; but this attention
+has largely lessened since. We believe that the recent, rapid increasing development and uptake of Retrieval
+Augmented Generation (RAG) pipelines, especially in the context of language-based information agents such as
+chatbots, will provide new impetus in research on federated search, especially in the context of such RAG pipelines.
+We show an example of such a RAG pipeline in Figure 1. Here, a user utterance that has been identified as a
+request for information is forwarded to information resources so as to trigger a search for relevant information.
+Retrieved information is then returned to the agent, which uses a Large Language Model (LLM) to aggregate and
+synthesise the search results, and generate a response for the user. Example of RAG pipelines that implement this
+are langchain [5], llamaindex [25], and DSPy [19, 20], among others.
+Key tasks in federated search are (a) resource selection, which refers to the selection of a subset of available
+resources to which forward the search request, and (b) result merging, which refers to the aggregation of the
+search result lists retrieved from each resource into a unique list of results to be passed onto the response
+generation process. If multiple resources are to be searched, some of the current RAG pipelines typically employ
+naive approaches such as the round-robin merging of the top k results from all resources. The absence of resource
+selection strategies have both quality and cost/latency implications. Obtaining information from irrelevant
+resources might increase the chances for LLMs to hallucinate [ 8]. But interacting with all resources available (i.e.
+performing an individual search on each resource), despite many not being relevant, has many other implications.
+This in fact may attract higher computational and network load, and possible payment of API costs. In addition,
+there may be higher latency for the merging process (depending on the complexity of the result merging method)
+and information aggregation/answer generation (assuming that the LLM responsible for this needs to perform
+inferences for each of the retrieved results). Similarly, the absence of effective result merging approaches also
+might have implications on the quality of the answers being generated.
+In this paper, we introduce FeB4RAG, a new federated search dataset tailored for integration within the RAG
+framework. Distinct from existing datasets, FeB4RAG addresses specific limitations previously encountered
+in federated search collections, which we elaborate upon in Section 2. A key innovation in our dataset is the
+utilization of advanced LLMs for relevance labelling. We demonstrate that these LLM-generated labels exhibit a
+high degree of agreement compared to human annotations, thereby ensuring the reliability and applicability of
+our dataset (Section 4). Furthermore, we detail the steps for constructing the FeB4RAG collection (Section 3) and
+show how to use our collection to evaluate federated search methods and directions for further expansion of
+the collection (Section 5). Lastly, we show the merits of effective federated search in RAG in Section 6. There,
+we use our FeB4RAG resource to compare a naive federated search strategy and a highly performing one in the
+context of a RAG pipeline tasked to generate answers to users requested based on information retrieved across
+multiple resources. The results, displayed in Figure 7, showcase that current naive practices to federated search
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •3
+Search enginesUser Requestwhen was penicillin ﬁrst introduced to the public?S4S3S2S1Resource Selection
+Search ResultsResult Merging
+Chatbot ResponsePenicillin was ﬁrst introduced to the public in 1942 for clinical trials [1], and it was made available to the general public in the U.S. on March 15, 1945 [2]. Request MediatorWhen search not needed
+Fig. 1. Architecture of Federated Search within RAG.
+used in RAG (e.g., round-robin selection) are far from optimal, and thus motivate researching effective methods
+for federated search in RAG. Our new proposed collection provides a mean to effectively evaluate such methods,
+addressing the limitations of previous federated search collections that make them not suitable for the considered
+RAG context.
+2 LIMITATION OF AVAILABLE FEDERATED SEARCH COLLECTIONS
+Existing federated search systems can be broadly classified into two primary categories: uncooperative and
+cooperative [ 16].Uncooperative federated search systems entail the use of individual search engines that operate
+independently of the federated search process. These engines and their underlying collections, including statistical
+data, remain opaque to the federated system. So, for example, collection statistics, such as the frequency of a
+term in one of the specific resources, are unknown to the federated system. Conversely, cooperative federated
+search systems involve engines or databases that, despite not being originally designed for federated search, offer
+some level of support for the process, e.g., provide term frequency information. To address these environments,
+current federated search test collections are divided into Uncooperative Collections and Cooperative Collections.
+However, existing datasets in both categories exhibit notable limitations that hinder their efficacy as evaluation
+tools for modern federated search systems, particularly when integrated into RAG frameworks.
+, Vol. 1, No. 1, Article . Publication date: February 2024.4 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+Uncooperative Collections: Uncooperative Collections, as exemplified by TREC FedWeb 2013 and 2014 [ 11,
+12], predominantly utilize real search engines, obtaining results through API calls. This approach presents two
+major drawbacks. Firstly, the search algorithms employed by these search engines are often proprietary and
+undisclosed. This lack of transparency poses significant challenges in understanding the specific search behaviour
+of each engine and the rationale behind the retrieval of certain results. Secondly, these collections face the risk
+of obsolescence due to their reliance on active search engine services, which are subject to discontinuation or
+updates. A notable example is the transition from TREC 2013 to 2014, where eight search engines were removed
+due to service unavailability within a single year. Such instability not only undermines the consistency of these
+collections but also poses substantial barriers to their future adoption, expansion and adaptability. This includes
+challenges when adopting new queries or integrating emerging resource selection technologies, given the reliance
+of the search engine access to API calls.
+Cooperative Collections: Standard web collections, such as ClueWeb09 [ 4] or TREC Gov2 [ 6], have been
+adapted to evaluate federated search methods, for example see Ergashev et al . [13] . These collections however
+exhibit other limitations. While they are constructed from a single dataset with sub-collections acting as ‘search
+engines’, it is important to note that they were not originally designed for federated search applications. Instead,
+they have been adapted to evaluate federated search methodologies. This adaptation process, however, while
+valid to evaluate shard selection approaches, falls short in accurately representing the diversity inherent in the
+real-world federation of search engines. These collections lack the specialization and unique characteristics of
+varied search platforms, thereby significantly diminishing their utility in mimicking realistic federated scenarios.
+This directly impacts the efficacy of the evaluation instrument in assessing how federated search systems deal
+with the complex nuances of real-world information retrieval.
+Adaptation to Modern Requirements: Both types of available collections are primarily designed for ad-hoc
+‘Web Search’ scenarios. This focus diverges from the requirements of modern RAG systems like those implemented
+by conversational agent, where user requests are contextually richer and more specific. This is for example
+demonstrated by current federated search collections containing only short keyword queries; while queries from
+RAG pipelines are likely being more akin to natural language requests.
+Additionally, the technology underpinning the search engines in previous collections, rooted in the early 2010s,
+largely involves “simpler” keyword matching or early learning-to-rank methods. In contrast, contemporary
+search methods, like those emerging from neural information retrieval research [ 15,18,22,26,41,42,47,49],
+offer a more sophisticated approach, which our collection employs.
+These limitations highlight the need for developing new federated search collections that align with current
+technological advances and nuanced user requirements, thereby advancing the field and ensuring the relevance
+of research to real-world applications.
+3 DATASET CREATION
+This section outlines the creation of the FeB4RAG dataset, focusing on search engine selection, user request
+creation and relevance labelling. Each step is crucial for ensuring the dataset’s robustness and applicability in
+federated search within a RAG framework. Table 1 lists the 16 datasets we include in the FeB4RAG collection,
+along with the corresponding retrieval models that simulate the search engine. Datasets are grouped by retrieval
+task.
+3.1 Search Engine Selection
+In our collection, we utilize existing datasets, each paired with a corresponding state-of-the-art retrieval model,
+to function as the search engines. Our selection process is guided by the BEIR benchmark, widely recognised
+for IR evaluation [ 36]. This benchmark’s datasets form the foundational basis for our search engine selection.
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •5
+Table 1. Overview of FeB4RAG with respect to each BEIR dataset. #Req refers to the number of request devised from each
+BEIR dataset; LLM Req? to whether an LLM was needed to devise requests; Size to the number of documents in the dataset.
+The abbreviation Ret. stands for Retrieve.
+Task Vertical Dataset Selected Model # Req LLM Req? Size
+Ret.Passage General MS MARCO e5-large [44] 41 ✗ 8.8M
+Ret.PublicationBiomedical TREC-COVID SGPT-5.8B [28] 50 ✗ 171K
+Biomedical NFCorpus UAE-Large-V1 [23] 50 ✗ 3.6K
+Scientific SCIDOCS all-mpnet-base-v2250 ✓ 26K
+Q&AWiki NQ multilingual-e5-large [44] 50 ✗ 2.6M
+Wiki HotpotQA ember-v1350 ✗ 5.2M
+Finance FiQA-2018 all-mpnet-base-v2450 ✗ 58K
+Ret.Tweet Tweet Signal-1M gte-base [24] 50 ✓ 2.8M
+Ret.NewsNews TREC-NEWS gte-large [24] 50 ✓ 595K
+News Robust04 instructor-xl [35] 50 ✗ 528K
+Ret.ArgumentGeneral ArguAna UAE-Large-V1 [23] 50 ✓ 8.6K
+Debate Touché-2020 e5-base [44] 49 ✗ 383K
+Ret.Entity General DBPedia UAE-Large-V1 [23] 50 ✓ 4.6M
+Fact CheckingWiki FEVER UAE-Large-V1 [23] 50 ✓ 5.4M
+Wiki ClimateFEVER ember-v1 50 ✓ 5.4M
+Scientific SciFact gte-base [24] 50 ✓ 5K
+Overall FeB4RAG 790 36.9M
+The next step involves identifying effective retrieval models for each of these datasets to be used to simulate the
+individual search engines. To guide this process, we use the MTEB leaderboard [ 29], that tracks performance of
+state-of-the-art embedding models. Most BEIR collections are included in the leaderboard5.
+Of the 15 BIER datasets that are also present in the MTEB leaderboard, we exclude Quora and CQADupStack
+due to their focus on duplicate question retrieval, which does not align with our focus on tasks likely to emerge
+from users information requests in RAG systems such as conversational agents. For the remaining 13 datasets,
+we only considered those top performing models that are based on dense retrievers, because dense retrievers are
+generally characterised by low latency and computational requirements, and so we could easily scale and run.
+Note that we excluded models based on APIs, models for which no source-code was provided, and models with
+more than 6 billion parameter – again due to computational and cost constraints. Each dataset, in conjunction
+with its designated retrieval system, then serves as a simulated search engine in our federated search collection.
+In addition, we include three other datasets from the BEIR collection: TREC-News, Robust04, and Signal1M. To
+select which dense retriever to use as the search engine on these datasets, we evaluate the top 30 dense retrievers
+from the MTEB leaderboard, selecting the best-performing model for each dataset6.
+All model choices were based on the effectiveness reported on MTEB as of 31/12/2023; models released after
+this date are not included in our selection process. As a result, our final dataset comprises 16 BEIR datasets, each
+served through a specific retrieval model. While this number is considerably less than the number of search
+5Except those that are not public, such as Signal-1M, TREC-NEWS and Robust04.
+6Evaluated by nDCG@10 on the datasets’ test portions.
+, Vol. 1, No. 1, Article . Publication date: February 2024.6 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+engines used within the TREC FedWeb collections, we see this fitting many real application of RAG pipelines in
+the context of conversational agents (e.g., within enterprise settings). Table 1 enumerates the retrieval models
+used for each of the BEIR benchmark’s 16 datasets, spanning 8 tasks and 8 verticals7. In total, 9 distinct retrieval
+models are employed.
+3.2 User Requests Creation
+The presence of user requests likely to be used within RAG applications is a pivotal aspect of the FeB4RAG
+dataset. We employed a structured approach to generate high-quality, diverse information request that fit the
+datasets we included in the collection. The methodology encompasses the following steps:
+(1)Initial Query Assessment: Our process commenced with an evaluation of the original test queries from the
+selected BEIR datasets. We aimed to select roughly 50 queries per dataset, to comply with our computational
+and assessment budgets. Notably, many queries, especially argumentative ones from ArguAna [ 43] or paper
+titles from SCIDOCS [7], were deemed unsuitable for RAG settings in their original form.
+(2a) Manual Request Selection: For datasets inherently comprising question-based queries with clearly articulated
+user information needs, we conducted a manual review and selection process. For each dataset, we first ordered
+queries in descending order of the number of associated relevant documents. Then, we went down the list and
+selected queries that were deemed to be appropriate user requests likely to be used within the targeted RAG
+pipelines. During this selection, we excluded requests that lacked specific information needs, were ambiguous
+or confusing, too short and overly simplistic8.
+(2b) Objective Identification and Prompt Creation: For datasets lacking explicit information needs in all queries,
+we identified the core objective of each dataset. Based on these objectives, we developed specific prompts for a
+Large Language Model (LLM) to facilitate the formulation of queries into a conversational information request
+style. Table 1 reports for which datasets we resorted using LLMs to create requests. Table 2 illustrates the
+prompts utilized for each relevant dataset during this process.
+(3b)Query Rewriting using GPT-4: Relying on the devised prompts, we used GPT-4 to transform the original
+queries contained in the affected datasets to information requests likely to be found in RAG applications. To
+promote the inclusion of diverse user requests formats, especially for datasets in which all queries have a similar
+objective, we implemented a looping strategy. This involved generating multiple user requests variations using
+GPT-4 in a multi-step process, building upon previous LLM inputs. For this user request generation phase, we
+used thegpt-4-0125-preview model with 𝑡𝑒𝑚𝑝𝑒𝑟𝑎𝑡𝑢𝑟𝑒 =0and𝑠𝑒𝑒𝑑=1. We set temperature to zero to allow
+for replicability.
+(4b)Manual Request Selection of Rewritten Requests: The concluding phase involved a meticulous manual
+selection process of LLM-generated information requests. We prioritized requests that displayed a diverse
+range of expressions of the user information needs for analogous tasks. This selection was critical in ensuring
+the richness and diversity of the final user requests.
+Finally, our methodology resulted in the generation of 790 user requests to be included in FeB4RAG. The
+distribution of these user requests, derived from each dataset, along with their categorization, is detailed in
+Table 1. Notably, we encountered limitations in achieving the target of 50 queries for two datasets. Specifically,
+for Touché-2020 [ 2], we could only include 49 queries as the test set itself contained only 49 queries. Similarly,
+in the case of MS MARCO [ 30], we incorporated 41 queries only because a significant number of queries were
+excluded during manual request selection.
+7Vertical refers to the domain of the resource [11].
+8For our criteria of simplicity, queries consisting of four terms or less were deemed too simplistic and thus omitted
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •7
+Table 2. For datasets that only contained queries deemed unsuitable of typical RAG pipelines applications, we created
+prompts for an LLM to generate queries from one of the queries of the dataset. The table reports the prompt used for each of
+the affected datasets.
+Dataset Prompt
+System PromptYou are an helpful assistant helping to reformulate the
+provided text, that describes a need of a user, into a
+conversational question that expresses the user need. The
+generated text will be used for a user to ask a chatbot for
+a direct response. Therefore, it should not include
+information about the retrieval step.
+User Prompt start Consider the following text.
+User PromptSCIDOCSThe text is the title of a research article. I want you to
+formulate a question that asks to find related articles to
+the one provided in the text.
+Signal-1MThe text is the title of a news article. I want you to
+formulate a question that asks to find relevant Tweet
+messages about the provided news article. In your question,
+do not mention that the text is the title of the news
+article.
+TREC-NEWSThe text is a topic, The text is a topic, I want you to
+formulate a question that asks to find relevant news based
+on the topic.
+ArguAnaThe text provides an argument with claims. I want you to
+formulate a question that asks to find counter-arguments to
+the main claim in the text. In your question, specify clearly
+what that claim is, but do not refer explicitly to the text.
+DBPediaThe text provides an entity. I want you to formulate a
+question that asks to find relevant information about the
+entity. In your question, do not mention that the text is an
+entity.
+(Climate-)FEVERThe text is a claim. I want you to formulate a question that
+asks to find evidence that supports or refutes the claim
+made in the text. In your question, do not specify that you
+want to find evidence.
+SciFactThe text is a scientific claim. I want you to formulate a
+question that asks to find evidence that supports or refutes
+the claim made in the text. In your question, do not specify
+that you want to find evidence.
+User Prompt endPlease only include the formulated question in your response.
+Text:
+{query}
+User Prompt LoopPlease formulate again so that it is different from the
+previous response., Vol. 1, No. 1, Article . Publication date: February 2024.8 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+3.3 Relevance Labelling
+Relevance evaluation in a federated search collections involves two stages: (1) assessing the correct selection
+of the search engine, and (2) evaluating the relevance of search results retrieved from each search engine. In
+constructing our collection, we first determined the relevance of individual search results, which were then
+aggregated to establish search engine level relevance. This follows common practice in previous TREC FedWeb
+collections.
+Note that in creating the relevance labels for our collection, we could not rely on the original relevance
+judgements from the BEIR benchmark, due to several reasons:
+(1) Sparse judgments in datasets like ArguAna and MS MARCO, leading to many unjudged top documents.
+(2)Slight changes in query contexts due to LLM-based rewriting of test queries into user information requests.
+(3) Absence of annotations for results from search engines not aligned with the original user requests.
+(4) Varied scales of relevance judgments in the labels from the BEIR datasets.
+3.3.1 Search Result Preparation. To initiate the relevance judgment process for search results, we ran the user
+requests onto each identified search engine, as delineated in Section 3.1. We then retrieved the top- 𝑘=1results
+from each search engine for further analysis.
+3.3.2 Labelling Search Results. Recent work has considered the use of LLMs for creating reliable relevance
+judgements without human intervention [ 14,39]. In particular, Thomas et al .have demonstrated that GPT-4 can
+effectivelly produce relevance judgments that closely align with those of human annotators [ 39]. We adopt their
+approach, modifying their most effective prompts to suit our specific needs.
+As outlined in Table 3, we categorize relevance into four levels: key (score=3), high relevance (score=2), minimal
+relevance (score=1), and not relevant (score=0), paralleling the TREC FedWeb datasets [ 11,12]. However, we
+omitted the ‘nav’ label due to its similarity with ‘key’ in relevance signal in TREC FedWeb. The description of
+each label we include in the prompt is informed by a recent study that developed prompts for evaluating search
+results in RAG systems [17].
+However, employing GPT-4 for relevance judgement incurs substantial costs9. As an alternative to this, we
+identified two high-performing models from the open LLM leaderboard10:
+•upstage/SOLAR-10.7B-Instruct-v1.0 [21]: a 10.7 billion parameters LLM, which relies on depth up-scaling
+(DUS): Mistral 7B weights were integrated into the upscaled layers and continued pre-training was adopted for
+the entire model. It also uses state-of-the-art instruction fine-tuning methods including supervised fine-tuning
+and direct preference optimization (DPO) [31].
+•RubielLabarta/LogoS-7Bx2-MoE-13B-v0.1 (lgs-13b )11: a 13 billion parameters LLM, which relies on a
+mixture of expert using the spherical linear interpolation merge method.
+Our use of these two open LLMs to generate relevance labels resulted in two distinct labels for each search
+result. We then subsequently aggregated these labels to produce a final label. The final judgment label for each
+result was determined by averaging the integer number (i.e., score) associated with the label produced by each
+model (e.g. not relevant is 0, key is 3), and then rounding down to the nearest integer. This method mirrors human
+annotation scenarios where multiple annotators are used for a single document to obtain a final label through
+aggregation and adjudication. This process typically enhances the reliability and objectivity of the relevance
+assessments.
+9We estimated a cost of approximately USD $2000 for using the GPT-4 API service to judge the top-10 results from all resources, amounting
+to 7,901,016 judgements.
+10https://huggingface.co/open-llm-leaderboard. This leaderboard evaluates the effectiveness of generative Large Language Models across
+multiple natural language processing tasks.
+11https://huggingface.co/RubielLabarta/LogoS-7Bx2-MoE-13B-v0.1
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •9
+MS MARCOTREC-COVID TREC-NEWSDBPedia Robust04 SCIDOCS
+T ouché-2020ArguAnaSciFact
+Signal-1MFEVER
+Climate-FEVERNFCorpusFIQA-2018NQ
+HotpotQA0.00.20.40.60.81.0KappaKappa=0.50
+(a) solar-11b
+MS MARCOTREC-NEWSSCIDOCS DBPedia 
+TREC-COVIDRobust04
+T ouché-2020ArguAnaSciFact
+Signal-1MFEVER
+Climate-FEVERNFCorpusFIQA-2018NQ
+HotpotQA0.00.20.40.60.81.0KappaKappa=0.54 (b) lgs-13b
+MS MARCOTREC-NEWSDBPedia 
+TREC-COVIDSCIDOCS
+T ouché-2020Robust04ArguAnaSciFact
+Signal-1MFEVER
+Climate-FEVERNFCorpusFIQA-2018NQ
+HotpotQA0.00.20.40.60.81.0KappaKappa=0.57 (c) Fused (solar-11b + lgs-13b)
+Fig. 2. Cohen’s Kappa between labels generated by the LLM and labels provided by humans (from the original datasets); red
+line indicates overall Kappa for all annotations.
+3.3.3 Labelling Search Engines. Search engine level labels are derived from aggregated search result labels using
+graded precision scores, following TREC FedWeb practice [ 11,12]. The graded precision score for a user request
+𝑟with respect to a search engine 𝑠is calculated as:
+Graded Precision(r, s) =Í10
+𝑖=1𝑤𝑖(𝑟, 𝑠)
+10
+×100 (1)
+where the weight for each search result level relevance is: 𝑤not_relevant =0,𝑤minimal_relevance =0.25,𝑤high_relevance =
+0.5, and 𝑤key=1. After this, the computed relevance score for a search engine ranges from 0 to 100, with 100
+indicating the highest relevance to the information request.
+4 ANALYSIS OF RELEVANCE LABELLING
+This section delves into a comprehensive analysis of relevance labelling within the FeB4RAG collection. This is
+important because we break with common practice in IR, and use LLMs rather than human annotators to obtain
+relevance assessments. Our focus encompasses several key areas: the overall labelling statistics, agreements
+between labels generated by LLMs and human annotations, cross-LLM labelling agreements, and the importance
+of each search engine vertical as inferred from the engine-level labels.
+4.1 Labelling Statistics
+Table 4 summarises the primary statistics with respect to our relevance labelling. We note a predominance of
+search results classified as either minimally relevant or not relevant. Key and high relevance labels are relatively
+rare, averaging at 0.32% and 5.57%, respectively. This trend suggests the LLMs may have followed a stringent
+labelling criterion, ensuring that only the most pertinent results are categorized as highly relevant.
+Upon comparing relevance labels at the search result level across different search engines, we observed distinct
+patterns based on the corpus size. Smaller scale corpora, such as NFCorpus (3.6k), SciFact (5k), and ArguAna
+(8.67k), exhibit a higher prevalence of non-relevant assessments, with 84.10%, 81.82%, and 80.16% of the search
+results being judged as not relevant, respectively. This trend highlights the challenge in extracting relevant
+information from smaller datasets, and the likely misalignment of some of the resources with a portion of the
+information requests in the collection. This characteristic is likely found also in real applications where federated
+search might be used.
+In terms of engine-level relevance scores, a similar trend emerges. Larger collections, like MS MARCO,
+demonstrate a higher chance of being relevant collections to most user information requests, compared to smaller
+collections. We highlight that this may not only be due to the size of the collection but also to the actual nature
+of the collection itself (i.e. a broad, general collection, compared to focused collections such as FEVER).
+, Vol. 1, No. 1, Article . Publication date: February 2024.10 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+Table 3. Prompt used for obtaining relevance judgements from the employed LLMs.
+PromptSystem PromptGiven a user request and a search result, you must provide a score on an integer
+scale of 0 to 3 with the following meanings:
+3 = key, this search result contains relevant, diverse, informative and correct
+answers to the user request; the user request can be fulfilled by relying only on
+this search result.
+2 = high relevance, this search result contains relevant, informative and correct
+answers to the user request; however, it does not span diverse perspectives, and
+including another perspective can help with a better answer to the user request.
+1 = minimal relevance, this search result contains relevant answers to the user
+request. However, it is impossible to answer the user request based solely on the
+search result.
+0 = not relevant, this search result does not contain any relevant answer to the
+user request.User PromptAssume that you are collecting all the relevant search results to write a final
+answer for the user request.
+User Request:
+A user typed the following request.
+{request}
+Result:
+Consider the following search result:
+—BEGIN Search Result CONTENT—
+{result}
+—END Search Result CONTENT—
+Instructions:
+Split this problem into steps:
+Consider the underlying intent of the user request.
+Measure how well the content matches a likely intent of the request (M)
+Measure how trustworthy the search result is (T).
+Consider the aspects above and the relative importance of each, and decide on a
+final score (O).
+Produce a JSON of scores without providing any reasoning. Example:{"M": 2, "T":
+1,"O": 1}
+Results:
+4.2 LLM-based Labels vs. Human Annotations
+Since the relevance labels in our experiments are derived from two LLMs (solar-11b and lgs-13b), an essential
+aspect of our collection’s integrity is verifying the agreement between LLM-derived relevance labels and human
+annotations. For this purpose, we conducted an experiment using the two LLMs to validate their reliability in
+relevance judgment.
+To ensure a comprehensive evaluation of the agreement between LLM-derived labels and human annotations,
+our methodology involved a systematic selection process. For each of the 790 user requests in our FeB4RAG
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •11
+Table 4. Statistics with respect to annotations from Feb4RAG with respect to search result level and engine-level.
+Search Engine Result Level (%) Engine Level
+Collection Key HR MR NR Avg Max
+MS MARCO 1.41 10.91 52.15 35.53 20.14 90
+TREC-COVID 0.16 4.84 22.82 72.18 8.48 56
+NFCorpus 0.01 2.14 13.75 84.10 4.63 45
+SCIDOCS 0.05 2.04 25.84 72.08 7.72 53
+NQ 0.28 10.34 43.38 46.00 16.52 60
+HotpotQA 0.41 6.44 41.59 51.56 14.27 58
+FIQA-2018 0.06 1.33 19.63 78.97 5.82 43
+Signal-1M 0.00 1.01 29.04 69.95 7.97 48
+TREC-NEWS 0.22 11.23 53.63 34.92 19.48 65
+Robust04 0.04 4.08 43.86 52.03 13.24 40
+ArguAna 0.01 1.29 18.53 80.16 5.42 40
+Touché-2020 0.08 2.16 28.18 69.58 8.39 48
+DBPedia 0.41 5.24 42.68 51.67 13.92 53
+FEVER 0.99 11.77 47.84 39.41 19.08 80
+Climate-FEVER 0.97 11.90 47.76 39.37 19.11 80
+SciFact 0.05 2.39 15.73 81.82 5.31 48
+Overall 0.32 5.57 34.15 59.96 11.84 90
+collection, which were derived from the queries in the BEIR dataset, we randomly selected one relevant and one
+irrelevant search result. These selections were based on the human annotations provided in their corresponding
+BEIR datasets. It is important to note that for those collections within BEIR where only relevant judgments are
+provided, our selection was constrained to these relevant judgments only.
+Following this, the selected search results were labelled using the two LLMs. To facilitate a meaningful
+comparison with the original BEIR datasets — which employed heterogeneous labelling scales, including binary,
+3-level, and 5-level scales — we binarized the LLM labels into two classes: relevant (graded label > 0) and not
+relevant (graded label = 0). This binarization was crucial to align our 4-level labelling scale to the diverse scales
+of the original datasets.
+We then calculated Cohen’s Kappa for each collection to determine the level of agreement between the LLM
+judgments and human annotations. The results, illustrated in Figure 2, show a substantial level of agreement
+between the two. All datasets achieved a Cohen’s Kappa above 0.4, which indicates moderate agreement. Notably,
+the aggregated labels from both LLMs often resulted in the highest average Kappa, 0.57, compared to 0.54 when
+using lgs-13b and 0.5 when using solar-11b. This underlines the efficacy of our LLM-based labelling approach
+based on the aggregation of the labels produced by the two separate LLMs.
+, Vol. 1, No. 1, Article . Publication date: February 2024.12 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+0 1 2 3 4 5 6 7 8 910 11 12 13 14 15 16
+Number of search engines with relevant content0255075100125150175200Number of Queries
+Fig. 3. We report the number of queries for which 𝑛search engines contain relevant information; we vary 𝑛from not to 16.
+These results enhance our confidence in the reliability of LLM-based relevance judgments, demonstrating
+their considerable similarity to human-annotated judgments. This experiment substantiates our methodology of
+employing LLM-judged results for relevance assessment in the FeB4RAG collection.
+4.3 Agreements between LLMs
+Next, we assess the agreement level with respect to the relevance labels between the two LLMs, solar-11b and
+lgs-13b. For this, we used the same scale of relevance for both LLMs, thereby obviating the need for binarization
+in the computation of Cohen’s Kappa, differently from the previous section. The agreement was computed across
+all search results from all search engines, based on the 790 user requests in our collection. This amounted to a
+substantial total of 7,901,610 individual comparisons.
+Figure 5 reports the Cohen’s Kappa results, indicating the level of agreement between the two LLMs. The
+overall Kappa stood at 0.57, signifying a moderate level of agreement. This degree of agreement is noteworthy,
+especially when considered in the context of human annotator agreements. For instance, in the Trec FedWeb
+2013 collection, a Cohen’s Kappa of 0.6 was reported between two human annotators [ 10,46]. The fact that the
+LLMs we used agreed with each other almost as much as human annotators do in similar contexts reinforces
+the reliability of our LLM-based annotations; it also highlights the potential viability of using LLMs in other
+relevance assessment tasks [14].
+4.4 Importance of each Resource
+In federated search, queries are routed to a subset of relevant search engines. But, how many search engines (i.e.
+BEIR datasets) are relevant for each given query in ReB4RAG? We analyse this aspect in Figure 3. We find that on
+average, for each query there are 11.9 search engines that contain relevant content, and that the collection only
+contains a handful of queries for which there is just one resource that contains relevant information.
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •13
+BiomedicalFinance General DebateWikiNews
+ScientificSocial020406080100Graded Precision of Best Vertical
+Fig. 4. Highest graded precision among all resources within a vertical, over 790 user requests.
+4.5 Importance of Resource Vertical
+To understand how each vertical contributes across user requests in FeB4RAG, we plot the graded precision of
+the best resource vertical for each query. This entails selecting the highest graded precision resource for each
+user request and then categorizing this resource according to its specific vertical, mapped out in Table 1.
+Figure 4 displays the variance in importance for each vertical in our collection. A striking observation is the
+contrast in vertical distribution trends between FeB4RAG and the TREC FedWeb 2014 collection. In FeB4RAG,
+we observe a more balanced distribution of resource verticals compared to FedWeb. This equitable distribution
+is significant as it fosters a fairer testing ground for federated search methodologies, at least with respect to
+verticals. For instance, in previous collections, a resource selection method that prioritized resources based solely
+on their vertical could inadvertently bias the results but go undetected in the evaluation. Our collection, with
+its more uniform vertical representation, mitigates this risk, thereby ensuring a more equitable evaluation of
+federated search methods.
+5 USE OF THE COLLECTION
+Next we delineate the practical applications of FeB4RAG, highlighting its utility to evaluate federated search
+tasks like resource selection and result merging. Additionally, we explore potential avenues for expanding the
+collection to encompass new tasks that emerge from situating the collection within the RAG pipeline.
+, Vol. 1, No. 1, Article . Publication date: February 2024.14 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+Robust04
+TREC-NEWSMS MARCOFEVER
+Climate-FEVERSignal-1M HotpotQADBPedia NQ
+SCIDOCS
+TREC-COVIDFIQA-2018
+T ouché-2020ArguAnaSciFact
+NFCorpus0.00.20.40.60.81.0KappaKappa=0.57
+Fig. 5. Cohen’s Kappa between two LLM annotators: solar-11b and lgs-13b; red line indicates overall Kappa for all annotations.
+5.1 Resource Selection
+Resource selection is a pivotal task in federated search. It involves choosing the most appropriate resources in
+response to a query. Our FeB4RAG collection facilitates this process by allowing for the ranking or classification
+of the 16 included search engines.
+The methodology for resource selection may vary depending on the specific approach being developed. In
+an uncooperative setting, the selector typically does not have access to the underlying corpus of each search
+engine, necessitating reliance on other factors like the vertical and task associated with each search engine [ 16].
+Approaches in this setting include sample-based methods, which obtain a document sample from the search
+engine either through query logs, or by issuing single-term queries. Examples of unsupervised methods in
+this category are ReDDE [ 34], CRCS [ 32], SUSHI [ 38], and ResLLM [ 46], alongside supervised methods like
+SVMrank [ 9] and SLAT-ResLLM [ 46]. Conversely, in a cooperative setting, selectors can utilize the underlying
+corpus of each search engine, potentially leading to more informed and effective resource selection [ 16]. Methods
+in this setting often involve Lexicon-based approaches that leverage collection statistics based on terms in the
+collection, as developed by Callan [3], Xu and Croft [48]. Common evaluation metrics employed in TREC FedWeb
+are applicable to our FeB4RAG collection as well, such as nDCG@k and nP@k [10, 11].
+5.2 Result Merging
+Result merging is another key task in federated search, involving the integration of results from multiple search
+engines into a coherent and effective response. Common techniques for result merging include the naive execution
+of a round-robin merging (this is often the approach deployed as default in open-source RAG pipelines), and
+more complex result fusion techniques [ 27,40]. In the context of FeB4RAG, the effectiveness of result merging is
+contingent upon the effectiveness of the resource selection process.
+Common evaluation measures used in TREC FedWeb, such as nDCG@k, can also be used on FeB4RAG.
+However, in the specific context of RAG, alternative evaluation measures, as suggested by recent research in the
+field [ 17], might be more suitable. We note this is still an open line of research, but we believe our collection can
+support alternative evaluation paradigms.
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •15
+5.3 Expanding the Collection
+The design of FeB4RAG inherently accommodates future expansion and adaptation, aligning with the dynamic
+nature of advances in federated search and retrieval. We provide a comprehensive codebase that automates most
+of the processes involved in creating and updating the collection, thus facilitating potential expansions with
+minimal effort12. Key expansion possibilities include:
+•Incorporation of New User Requests: Our collection is structured to easily integrate new user requests,
+which can be derived from additional queries in the BEIR dataset. This capability allows for continuous
+enrichment and diversification of the collection.
+•Integration of New Dense Retrievers: As newer and more specialized dense retriever models become
+available, they can replace or augment the current models used to determine the top-10 search results. This
+ensures that the collection remains at the forefront of retrieval technology. We also highlight that other search
+technologies, aside from dense retrievers, could be used to implement a search engine within our collection.
+The choice of limiting ghd search engines to be dense retrievers as opposed to other, more computationally
+expensive search technologies (e.g., zero-shot LLM rankers [ 45,50,51]), was based purely on computational
+budget constraints.
+•Utilization of Advanced LLMs for Relevance Assessment: Currently, we employ two high-performing
+LLMs to undertake relevance labelling. With the advent of more advanced LLMs, new models can be incorpo-
+rated to enhance the quality and reliability of relevance labels, thereby continuously improving the collection’s
+accuracy and usefulness.
+•Integration into Full RAG Pipelines: The outcome from the result merging task can be integrated into a
+complete RAG pipeline. This integration facilitates direct evaluation through the quality of responses generated
+in a federated search-embedded RAG system. We demonstrate such an evaluation approach in the following
+section, highlighting the practical application of the collection in real-world scenarios, as well as the need for
+our collection.
+6 DEMONSTRATING THE NEED FOR FEB4RAG
+We motivated the creation of FeB4RAG with the need to evaluate federated search technology in the context of
+RAG pipelines, like those implemented by conversational agents. In this section we demonstrate the importance
+of having a tailored federated search approach within a RAG pipeline, compared to a naive approach to the
+federation of the resources.
+6.1 RAG Systems with Federated Search
+We simulated two distinct federates search systems:
+•Naive-federated ( naive-fed ): This system uses all search engines, with no resource selection taking place.
+Thus, an information request is routed to each of the search engines; then results from the individual search
+engines are merged using a round-robin strategy to form the aggregated result list, and the list is then culled to
+the top-k results. This in turn is provided as input to an LLM (via the prompt) to generate a text response to
+the information request.
+•Best-federated ( best-fed ): This system performs resource selection to route the information request only to
+search engines that are relevant to the request. For this, for each information request, we rely on the search
+engine labels and select a search engine only if its graded precision is higher than zero. This simulates an
+optimal resource selection strategy. Then, search results are aggregated into a top-k ranking by considering
+only search results that are at least of minimal relevance (label score 1), and ranked in decreasing order of
+12https://github.com/ielab/FeB4RAG
+, Vol. 1, No. 1, Article . Publication date: February 2024.16 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+Table 5. Prompt for GPT-4 model to generate a response from user request and search results.
+PromptSystem PromptYou are a helpful assistant helping to answer user requests
+based on the provided search result.
+Your responses should directly address the user’s request and
+must be based on the information obtained from the provided
+search results.
+You are forbidden to create new information that is not
+supported by these results.
+You must attribute your response to the source from the search
+results by including citations, for example, [1].User PromptUser Request:
+{request}
+Search Results:
+{search_results}
+Response:
+relevance. This simulates an optimal result merging strategy. This aggregated search engine result list in then
+provided as input to an LLM (via the prompt) to generate a text response to the information request.
+For both systems, we set 𝑘=16, so that each resource contributes a single search result when operating
+thenaive-fed system (round-robin). The search results, coupled with the information request, are fed into
+GPT-413, following the prompt structure reported in Table 5, which is similar to those present in open-source
+RAG pipelines.
+6.2 Evaluation Methodology
+We conducted a pairwise evaluation of the responses generated by the LLM when using each of the two simulated
+federated systems above, utilizing a framework based on four criteria adapted from the work of Gienapp et al .
+[17]:
+(1)Coverage : This criterion evaluates the comprehensiveness of the information in addressing the user’s query.
+(2)Consistency : This criterion assesses whether the information aligns consistently with the cited sources.
+(3)Correctness : This criterion measures the factual accuracy and reliability of the information provided.
+(4)Clarity : This criterion gauges the ease of understanding the provided information from the user’s perspective.
+For the pairwise comparison evaluation process, we developed a web interface using Streamlit14; the interface
+is shown in Figure 6, and implements a side-by-side comparison [ 37]. To mitigate bias, the interface randomizes
+the presentation order of responses for each new information request. We then employed human assessors (the
+authors of this paper) to express preferences towards the responses. Assessors were instructed to select the best
+13we use gpt-4-0125-preview and set temperature=0 for deterministic responses.
+14https://streamlit.io/
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •17
+…
+Fig. 6. The evaluation interface we used for side-by-side preference comparison among RAG responses. Note that we cut the
+middle part of the page for space purposes – the part of the image left out reported the remaining of response 1.
+response among the two based on the specific evaluation criteria. If no clear preference is found, they were
+directed to select ‘No Preference‘.
+Then, a response is deemed better than the alternative by the counting of preferences towards each response
+with respect to the four criteria. Responses that receive an equal number of preferences are considered to be
+equivalent. To keep the evaluation workload within our hourly budget, we selectively sampled 80 requests from
+the FeB4RAG collection15, choosing five requests from each BEIR dataset.
+15However, we do include responses generated by the LLM for the whole set of requests as part of the published collection.
+, Vol. 1, No. 1, Article . Publication date: February 2024.18 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+Coverage
+Consistency CorrectnessClarityFinal0.020.040.060.080.0Preference Percentage (%)naive-fed
+best-fed
+equal
+Fig. 7. Pairwise evaluation of generated responses with respect to each evaluation criteria, comparing naive-fed andbest-fed
+methodologies. Equal indicates instances where no preference was observed between the two approaches.
+6.3 Result Analysis
+Figure 7 shows the breakdown of preferences across the four criteria, along with the final aggregated preferences.
+Responses generated using results from best-fed are preferred more often than those obtained using naive-fed :
+this occurs both at a criteria level (though differences for the clarity and consistency criteria are marginal) and
+when preferences are aggregated. Preferences for the coverage criteria exhibited the most differences across the
+two responses, with also correctness criteria exhibiting a smaller but comparatively sizeable difference.
+Further insights are reported in Figure 8, where we facet the aggregated preferences with respect to the BEIR
+datasets from which the information requests originated. Recall that for the experiments in this section, we
+sampled from the set of 790 requests, with five requests for each dataset. The figure shows that preferences for
+responses generated by the RAG pipeline that rely on best-fed occur across all datasets; we note this is not
+the case for naive-fed (e.g. see, TREC-COVID and ArguAna). In addition, in most datasets best-fed receives a
+higher number of preferences compared to naive-fed , except for Climate-FEVER.
+7 CONCLUSION
+This paper introduces FeB4RAG, a new test collection designed for evaluating federated search within RAG
+pipelines. The collection, in particular, provides a comprehensive framework to explore resource selection
+strategies and result merging techniques within RAG pipelines. The key characteristics of our collection are:
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •19
+020406080100Percentage (%)MS MARCO
+020406080100TREC-COVID
+020406080100NFCorpus
+020406080100SCIDOCS
+020406080100Percentage (%)NQ
+020406080100HotpotQA
+020406080100FIQA-2018
+020406080100Signal-1M
+020406080100Percentage (%)TREC-NEWS
+020406080100Robust04
+020406080100ArguAna
+020406080100T ouché-2020
+020406080100Percentage (%)DBPedia 
+020406080100FEVER
+020406080100Climate-FEVER
+020406080100SciFact
+naive-fed best-fed equal
+Fig. 8. Preferences towards federated systems faceted according to the BEIR dataset from which the information request
+originated.
+•A set of 790 information requests, distinct from those in existing collections in that they more likely represent
+what users submit to RAG applications.
+, Vol. 1, No. 1, Article . Publication date: February 2024.20 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+•Integration of 16 search engines built on top individual datasets of the BEIR benchmark, and based on state-of-
+the-art dense retrieval methods.
+•Comprehensive relevance judgements obtained using Large Language Models at both the search result and
+search engine levels, facilitating the evaluation of methods for federated search, as well as offering new avenues
+for evaluation.
+•An expandable codebase that can be re-used and adapted to integrate more assessments, search engines and
+information requests, ensuring that FeB4RAG remains relevant for future RAG-related developments.
+REFERENCES
+[1]Suresh K Bhavnani and Concepción S Wilson. 2009. Information scattering. Encyclopedia of library and information sciences (2009),
+2564–2569.
+[2]Alexander Bondarenko, Maik Fröbe, Meriem Beloucif, Lukas Gienapp, Yamen Ajjour, Alexander Panchenko, Chris Biemann, Benno Stein,
+Henning Wachsmuth, Martin Potthast, et al .2020. Overview of Touché 2020: argument retrieval. In Experimental IR Meets Multilinguality,
+Multimodality, and Interaction: 11th International Conference of the CLEF Association, CLEF 2020, Thessaloniki, Greece, September 22–25,
+2020, Proceedings 11 . Springer, 384–395.
+[3]Jamie Callan. 2002. Distributed information retrieval. In Advances in information retrieval: Recent research from the Center for Intelligent
+Information Retrieval . Springer, 127–150.
+[4] Jamie Callan, Mark Hoy, Changkuk Yoo, and Le Zhao. 2009. Clueweb09 data set.
+[5] Harrison Chase. 2022. LangChain . https://github.com/langchain-ai/langchain
+[6] Charles LA Clarke, Nick Craswell, Ian Soboroff, et al. 2004. Overview of the TREC 2004 Terabyte Track.. In TREC , Vol. 4. 74.
+[7]Arman Cohan, Sergey Feldman, Iz Beltagy, Doug Downey, and Daniel S Weld. 2020. SPECTER: Document-level Representation Learning
+using Citation-informed Transformers. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics .
+2270–2282.
+[8]Florin Cuconasu, Giovanni Trappolini, Federico Siciliano, Simone Filice, Cesare Campagnano, Yoelle Maarek, Nicola Tonellotto, and
+Fabrizio Silvestri. 2024. The Power of Noise: Redefining Retrieval for RAG Systems. arXiv preprint arXiv:2401.14887 (2024).
+[9]Zhuyun Dai, Yubin Kim, and Jamie Callan. 2017. Learning to rank resources. In Proceedings of the 40th International ACM SIGIR Conference
+on Research and Development in Information Retrieval . 837–840.
+[10] Thomas Demeester, D Trieschnigg, D Nguyen, and D Hiemstra. 2013. Overview of the TREC 2013 federated web search track. In Text
+Retrieval Conference (TREC-2013) . 1–11.
+[11] Thomas Demeester, Dolf Trieschnigg, Dong Nguyen, Djoerd Hiemstra, and Ke Zhou. 2014. Overview of the trec 2014 federated web
+search track. In Proceedings of The Twenty-Third Text REtrieval Conference, TREC 2014, Gaithersburg, Maryland, USA, November 19-21,
+2014.
+[12] Thomas Demeester, Dolf Trieschnigg, Dong Nguyen, Djoerd Hiemstra, and Ke Zhou. 2015. FedWeb greatest hits: Presenting the new
+test collection for federated web search. In Proceedings of the 24th International Conference on World Wide Web . 27–28.
+[13] Ulugbek Ergashev, Eduard Dragut, and Weiyi Meng. 2023. Learning To Rank Resources with GNN. In Proceedings of the ACM Web
+Conference 2023 . 3247–3256.
+[14] Guglielmo Faggioli, Laura Dietz, Charles LA Clarke, Gianluca Demartini, Matthias Hagen, Claudia Hauff, Noriko Kando, Evangelos
+Kanoulas, Martin Potthast, Benno Stein, et al .2023. Perspectives on large language models for relevance judgment. In Proceedings of the
+2023 ACM SIGIR International Conference on Theory of Information Retrieval . 39–50.
+[15] Yixing Fan, Xiaohui Xie, Yinqiong Cai, Jia Chen, Xinyu Ma, Xiangsheng Li, Ruqing Zhang, Jiafeng Guo, et al .2022. Pre-training methods
+in information retrieval. Foundations and Trends ®in Information Retrieval 16, 3 (2022), 178–317.
+[16] Adamu Garba, Shengli Wu, and Shah Khalid. 2023. Federated search techniques: an overview of the trends and state of the art. Knowledge
+and Information Systems 65, 12 (2023), 5065–5095.
+[17] Lukas Gienapp, Harrisen Scells, Niklas Deckers, Janek Bevendorff, Shuai Wang, Johannes Kiesel, Shahbaz Syed, Maik Fröbe, Guide
+Zucoon, Benno Stein, et al. 2023. Evaluating Generative Ad Hoc Information Retrieval. arXiv preprint arXiv:2311.04694 (2023).
+[18] Jiafeng Guo, Yixing Fan, Liang Pang, Liu Yang, Qingyao Ai, Hamed Zamani, Chen Wu, W Bruce Croft, and Xueqi Cheng. 2020. A deep
+look into neural ranking models for information retrieval. Information Processing & Management 57, 6 (2020), 102067.
+[19] Omar Khattab, Keshav Santhanam, Xiang Lisa Li, David Hall, Percy Liang, Christopher Potts, and Matei Zaharia. 2022. Demonstrate-
+Search-Predict: Composing Retrieval and Language Models for Knowledge-Intensive NLP. arXiv preprint arXiv:2212.14024 (2022).
+[20] Omar Khattab, Arnav Singhvi, Paridhi Maheshwari, Zhiyuan Zhang, Keshav Santhanam, Sri Vardhamanan, Saiful Haq, Ashutosh
+Sharma, Thomas T. Joshi, Hanna Moazam, Heather Miller, Matei Zaharia, and Christopher Potts. 2023. DSPy: Compiling Declarative
+Language Model Calls into Self-Improving Pipelines. arXiv preprint arXiv:2310.03714 (2023).
+, Vol. 1, No. 1, Article . Publication date: February 2024.FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation •21
+[21] Dahyun Kim, Chanjun Park, Sanghoon Kim, Wonsung Lee, Wonho Song, Yunsu Kim, Hyeonwoo Kim, Yungi Kim, Hyeonju Lee, Jihoo
+Kim, Changbae Ahn, Seonghoon Yang, Sukyung Lee, Hyunbyung Park, Gyoungjin Gim, Mikyoung Cha, Hwalsuk Lee, and Sunghun
+Kim. 2023. SOLAR 10.7B: Scaling Large Language Models with Simple yet Effective Depth Up-Scaling. arXiv:2312.15166 [cs.CL]
+[22] Hang Li, Shuai Wang, Shengyao Zhuang, Ahmed Mourad, Xueguang Ma, Jimmy Lin, and Guido Zuccon. 2022. To interpolate or not to
+interpolate: Prf, dense and sparse retrievers. In Proceedings of the 45th International ACM SIGIR Conference on Research and Development
+in Information Retrieval . 2495–2500.
+[23] Xianming Li and Jing Li. 2023. AnglE-optimized Text Embeddings. arXiv preprint arXiv:2309.12871 (2023).
+[24] Zehan Li, Xin Zhang, Yanzhao Zhang, Dingkun Long, Pengjun Xie, and Meishan Zhang. 2023. Towards general text embeddings with
+multi-stage contrastive learning. arXiv preprint arXiv:2308.03281 (2023).
+[25] Jerry Liu. 2022. LlamaIndex . https://doi.org/10.5281/zenodo.1234
+[26] Bhaskar Mitra, Nick Craswell, et al .2018. An introduction to neural information retrieval. Foundations and Trends ®in Information
+Retrieval 13, 1 (2018), 1–126.
+[27] André Mourao, Flávio Martins, and Joao Magalhaes. 2013. NovaSearch at TREC 2013 Federated Web Search Track: Experiments with
+rank fusion.. In TREC .
+[28] Niklas Muennighoff. 2022. SGPT: GPT Sentence Embeddings for Semantic Search. arXiv preprint arXiv:2202.08904 (2022).
+[29] Niklas Muennighoff, Nouamane Tazi, Loïc Magne, and Nils Reimers. 2022. MTEB: Massive text embedding benchmark. arXiv preprint
+arXiv:2210.07316 (2022).
+[30] Tri Nguyen, Mir Rosenberg, Xia Song, Jianfeng Gao, Saurabh Tiwary, Rangan Majumder, and Li Deng. 2016. MS MARCO: A human
+generated machine reading comprehension dataset. choice 2640 (2016), 660.
+[31] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D Manning, and Chelsea Finn. 2023. Direct preference
+optimization: Your language model is secretly a reward model. arXiv preprint arXiv:2305.18290 (2023).
+[32] Milad Shokouhi. 2007. Central-rank-based collection selection in uncooperative distributed information retrieval. In European Conference
+on Information Retrieval . Springer, 160–172.
+[33] Milad Shokouhi, Luo Si, et al. 2011. Federated search. Foundations and Trends ®in Information Retrieval 5, 1 (2011), 1–102.
+[34] Luo Si and Jamie Callan. 2003. Relevant document distribution estimation method for resource selection. In Proceedings of the 26th
+annual international ACM SIGIR conference on Research and development in informaion retrieval . 298–305.
+[35] Hongjin Su, Weijia Shi, Jungo Kasai, Yizhong Wang, Yushi Hu, Mari Ostendorf, Wen-tau Yih, Noah A Smith, Luke Zettlemoyer, and Tao
+Yu. 2022. One embedder, any task: Instruction-finetuned text embeddings. arXiv preprint arXiv:2212.09741 (2022).
+[36] Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, and Iryna Gurevych. 2021. BEIR: A Heterogeneous Benchmark for
+Zero-shot Evaluation of Information Retrieval Models. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and
+Benchmarks Track (Round 2) .
+[37] Paul Thomas and David Hawking. 2006. Evaluation by comparing result sets in context. In Proceedings of the 15th ACM international
+conference on Information and knowledge management . 94–101.
+[38] Paul Thomas and Milad Shokouhi. 2009. Sushi: Scoring scaled samples for server selection. In Proceedings of the 32nd international ACM
+SIGIR conference on Research and development in information retrieval . 419–426.
+[39] Paul Thomas, Seth Spielman, Nick Craswell, and Bhaskar Mitra. 2023. Large language models can accurately predict searcher preferences.
+arXiv preprint arXiv:2309.10621 (2023).
+[40] Kien Tjin-Kam-Jet and Djoerd Hiemstra. 2010. Learning to merge search results for efficient distributed information retrieval. (2010).
+[41] Nicola Tonellotto. 2022. Lecture notes on neural information retrieval. arXiv preprint arXiv:2207.13443 (2022).
+[42] Mohamed Trabelsi, Zhiyu Chen, Brian D Davison, and Jeff Heflin. 2021. Neural ranking models for document retrieval. Information
+Retrieval Journal 24 (2021), 400–444.
+[43] Henning Wachsmuth, Martin Trenkmann, Benno Stein, Gregor Engels, and Tsvetomira Palakarska. 2014. A Review Corpus for
+Argumentation Analysis. In Proceedings of the 15th International Conference on Intelligent Text Processing and Computational Linguistics
+(Kathmandu, Nepal), Alexander Gelbukh (Ed.). Springer, Berlin Heidelberg New York, 115–127. https://doi.org/10.1007/978-3-642-
+54903-8_10
+[44] Liang Wang, Nan Yang, Xiaolong Huang, Binxing Jiao, Linjun Yang, Daxin Jiang, Rangan Majumder, and Furu Wei. 2022. Text Embeddings
+by Weakly-Supervised Contrastive Pre-training. arXiv preprint arXiv:2212.03533 (2022).
+[45] Shuai Wang, Harrisen Scells, Shengyao Zhuang, Martin Potthast, Bevan Koopman, and Guido Zuccon. 2024. Zero-shot Generative Large
+Language Models for Systematic Review Screening Automation. arXiv preprint arXiv:2401.06320 (2024).
+[46] Shuai Wang, Shengyao Zhuang, Bevan Koopman, and Guido Zuccon. 2024. ReSLLM: Large Language Models are Strong Resource
+Selectors for Federated Search. arXiv preprint arXiv:2401.17645 (2024).
+[47] Shuai Wang, Shengyao Zhuang, and Guido Zuccon. 2021. Bert-based dense retrievers require interpolation with bm25 for effective
+passage retrieval. In Proceedings of the 2021 ACM SIGIR international conference on theory of information retrieval . 317–324.
+[48] Jinxi Xu and W Bruce Croft. 1999. Cluster-based language models for distributed retrieval. In Proceedings of the 22nd annual international
+ACM SIGIR conference on Research and development in information retrieval . 254–261.
+, Vol. 1, No. 1, Article . Publication date: February 2024.22 •Shuai Wang, Ekaterina Khramtsova, Shengyao Zhuang, and Guido Zuccon
+[49] Yutao Zhu, Huaying Yuan, Shuting Wang, Jiongnan Liu, Wenhan Liu, Chenlong Deng, Zhicheng Dou, and Ji-Rong Wen. 2023. Large
+language models for information retrieval: A survey. arXiv preprint arXiv:2308.07107 (2023).
+[50] Honglei Zhuang, Zhen Qin, Kai Hui, Junru Wu, Le Yan, Xuanhui Wang, and Michael Berdersky. 2023. Beyond yes and no: Improving
+zero-shot llm rankers via scoring fine-grained relevance labels. arXiv preprint arXiv:2310.14122 (2023).
+[51] Shengyao Zhuang, Honglei Zhuang, Bevan Koopman, and Guido Zuccon. 2023. A Setwise Approach for Effective and Highly Efficient
+Zero-shot Ranking with Large Language Models. arXiv preprint arXiv:2310.09497 (2023).
+, Vol. 1, No. 1, Article . Publication date: February 2024.

@@ -1,0 +1,384 @@
+Title: Eventually Number-Conserving Cellular Automata
+Abstract:   We present a preliminary study of a new class of two-input cellular automata
+called eventually number-conserving cellular automata characterized by the
+property of evolving after a finite number of time steps to states whose number
+of active sites remains constant. Eventually number-conserving cellular
+automata are models of open systems of interacting particles, that is, system
+of particles interacting with the external world, The particle aspect of
+eventually number-conserving cellular automata can be emphasized by the motion
+representation of the cellular automaton evolution rule. This new class of
+cellular automata contains, as strict subclasses, number-conserving cellular
+automata, monotone cellular automata, and cellular automata emulating
+number-conserving ones. Our main objective is to show that they are not what
+one might naively think they are.
+
+Full Text: arXiv:cond-mat/0410563v2  [cond-mat.dis-nn]  1 Feb 2005Eventually Number-Conserving Cellular
+Automata
+Nino Boccara
+Department of Physics
+University of Illinois at Chicago
+boccara@uic.edu
+Abstract
+We present a preliminary study of a new class of two-input cellular aut omata
+calledeventually number-conserving cellular automata characterized by the
+property of evolving after a ﬁnite number of time steps to states w hose num-
+ber of active sites remains constant. Eventually number-conserv ing cellular
+automata are models of open systems of interacting particles, tha t is, sys-
+tem of particles interacting with the external world, The particle as pect of
+eventually number-conserving cellular automata can be emphasized by the
+motion representation of the cellular automaton evolution rule. This new
+class of cellular automata contains, as strict subclasses, number- conserving
+cellular automata, monotone cellular automata, and cellular automat a emu-
+lating number-conserving ones. Our main objective is to show that t hey are
+not what one might naively think they are.
+1 Introduction
+Whereas cellular automata have been widely used to model complex sy s-
+tems in which the local character of the evolution rule plays an essen tial
+role [1, 2, 3, 4, 5], the theory of cellular automata is still in its infancy a nd
+very few exact results—as, for example, the necessary and suﬃc ient condi-
+tion for a cellular automaton rule, either deterministic or probabilistic , to be
+number-conserving— have been obtained [6, 7, 8, 9, 10, 11] Recen tly most
+1of the theoretical research carried out into this ﬁeld is devoted to deﬁnition
+and characterization of new families of rules. In order to extend th e fam-
+ily of number-conserving rules a number of papers on monotone rule s (the
+set of number-conserving rules is a subset of monotone rules) hav e been pub-
+lished [12]. The complexity of problems concerning characterizations of these
+properties may be illustrated by a recent result [13] showing that m onotony
+is decidable in dimension one but not in higher dimensions. This paper is
+devoted to the study of a new class of cellular automata called eventually
+number-conserving cellular automata deﬁned by the property of evolving af-
+ter a ﬁnite number of time steps to states whose number of active s ites re-
+mains constant. The characterization of this new class of cellular au tomata
+is challenging since both number-conserving and monotone rules are special
+cases of eventually number-conserving rules, and it is not, theref ore, obvious
+that eventual number conservation is a decidable property.
+A one-dimensional cellular automaton (CA) is a discrete dynamical sy s-
+tem, which may be deﬁned as follows. Let s:Z×N/mapsto→ Qbe a function
+satisfying the equation
+s(i,t+1) =f/parenleftbig
+s(i−rℓ,t),s(i−rℓ+1,t),...,s(i+rr,t)/parenrightbig
+,(1)
+for alli∈Zand allt∈NwhereZdenotes the set of all integers, Nthe
+set of nonnegative integers, and Qa ﬁnite set of states, usually equal to
+{0,1,2,...,q−1}.s(i,t) represents the state of site iat timet, and the
+mapping f:Qrℓ+rr+1→ Qis thelocal CA evolution rule . The positive
+integersrℓandrrare, respectively, the leftandright radii of the rule. In
+what follows, fwill be referred to as an n-input rule , wherenis the number
+rℓ+rr+1 of arguments of f. Any map c:ZL/mapsto→ Qis called a conﬁguration .
+Following Wolfram [14], to each rule fwe assign a code number N(f) such
+that
+N(f) =/summationdisplay
+(x1,x2,...,xn)∈Qnf(x1,x2,...,x n)qqn−1x1+qn−2x2+···+q0xn.
+Two-state, three-input cellular automata (CAs) are referred to aselementary
+CAs.
+In this paper, we will only consider ﬁnite (or periodic) CAs, and replac e
+the setZby the set ZLof integers modulo L. Any element of the set QLwill
+be called a cyclic conﬁguration of length L.
+2A one-dimensional q-staten-input CA rule fisnumber-conserving if,
+for all cyclic conﬁgurations of length L≥n, it satisﬁes
+f(x1,x2,...,x n−1,xn)+f(x2,x3,...,x n,xn+1)+···
++f(xL,x1...,xn−2,xn−1) =x1+x2+···+xL.(2)
+It can be shown [7] that:
+A one-dimensional q-staten-input CA rule fis number-conserving if,
+and only if, for all (x1,x2,...,x n)∈ Qn, it satisﬁes
+f(x1,x2,...,x n) =x1+n−1/summationdisplay
+k=1/parenleftbig
+f(0,0,...,0/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+k,x2,x3,...,x n−k+1)
+−f(0,0,...,0/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+k,x1,x2,...,x n−k)/parenrightbig
+,(3)
+The purpose of this paper is to study eventually number-conserving CA
+rules. This new class of CA rules, which is an extension of the class of
+number-conserving CA rules, is deﬁned as follows:
+A one-dimensional q-staten-input CA rule fiseventually number-con-
+serving(ENC) if, after a ﬁnitenumber of iterations of rule f, it satisﬁes
+condition (2) for all cyclic conﬁgurations of length L≥n.
+While number-conserving CAs may be viewed as models of isolated sys-
+tems of interacting particles in which processes of annihilation or cre ation of
+particles are forbidden, ENC CAs are models of open systems of inte racting
+particles exchanging particles with the external world such that at after a
+ﬁnite transient time the numbers of particles moving from and to the sys-
+tem exactly counterbalance each other. Numerical simulations sho w that the
+constant number of active sites in conﬁgurations of the limit set of a n ENC
+CA depend not only upon the initial number of active sites but also on t he
+detailed structure of the initial conﬁguration.
+In the two following sections we consider classes of CAs that one migh t
+think coincide with ENC CAs. In the last section the motion representation
+of CA rules is introduced. More explicitly than the usual rule table, it s hows
+how to represent particle motion either inside the system or betwee n the
+system and the external world, stressing the fact that ENC CAs c an be
+viewed as systems of interacting particles.
+32 Monotone CA rules
+A one-dimensional q-staten-input CA rule fisnumber-nondecreasing if,
+for all cyclic conﬁgurations of length L≥n, it satisﬁes
+f(x1,x2,...,x n−1,xn)+f(x2,x3,...,x n,xn+1)+···
++f(xL,x1...,xn−2,xn−1)≥x1+x2+···+xL.(4)
+Theq-staten-input CA rule C(f), deﬁned by
+C(f)(x1,x2,...,x n) =f(q−1−x1,q−1−x2,...,q−1−xn),
+is called the conjugate of rulef. This deﬁnition implies that the conjugate
+of a number-nondecreasing CA rule fisnumber-nonincreasing , that is, for
+all cyclic conﬁgurations of length L≥n, it satisﬁes
+f(x1,x2,...,x n−1,xn)+f(x2,x3,...,x n,xn+1)+···
++f(xL,x1...,xn−2,xn−1)≤x1+x2+···+xL.(5)
+A CA rule is monotone if it is either number-nondecreasing or number-
+nonincreasing. SomepropertiesofmonotoneCAshave beendiscus sed in[12].
+If a CA rule is number-nondecreasing andnumber-nonincreasing , it is
+number-conserving . The class of number-conserving rules is therefore a sub-
+class of the class of monotone rules.
+It isclear thatall monotonerules areENC, but have wea theoremst ating
+a necessary and suﬃcient condition for a CA rule fto be monotone? The
+answer is “yes.” It can be shown [15], that1
+A one-dimensional q-staten-input CA rule fisnumber-nondecreasing
+(resp.number-nonincreasing ) if, for all cyclic conﬁgurations of lengths 2n−2
+and 2n−1it satisﬁes relation (4) (resp. (5)) .
+Remark. The word andis essential since the CA rules that verify (4) or
+(5) for all cyclic conﬁgurations of either length 2 n−2 or 2n−1 are not
+necessarily monotone. To be monotone, say nondecreasing, a rule has to
+verify relation (4) for all conﬁgurations of lengths 2 n−2 and 2n−1. This
+is, in particular, the case for three-state two-input CA rules. The sets of
+rules that satisfy relation (4) for all cyclic conﬁgurations of length s 2 and 3
+1Another, less practical, necessary and suﬃcient condition can be f ound in [12].
+4have, respectively, 864 and 724 elements while the intersection of t hese two
+sets contains only 708 CA rules which are the only monotone nondecr easing
+rules.
+There exist 87 monotone elementary CA rules. The sets of nonincre asing
+and nondecreasing elementary CA rules both contain 46 rules. The in tersec-
+tion of these two sets consists of the ﬁve number-conserving elem entary CA
+rules.2
+Although all monotone rules are ENC rules, are all ENC rules monoton e?
+The answer is “no.” In other words, the class of monotone rules is strictly
+included in the class of ENC rules. For example, elementary CA rules 99 ,
+173, and 229 are ENC but not monotone. They are deﬁned, respec tively, by
+f99(0,0,0) = 1, f99(0,0,1) = 1, f99(0,1,0) = 0, f99(0,1,1) = 0,
+f99(1,0,0) = 0, f99(1,0,1) = 1, f99(1,1,0) = 1, f99(1,1,1) = 0,
+f173(0,0,0) = 1, f173(0,0,1) = 0, f173(0,1,0) = 1, f173(0,1,1) = 1,
+f173(1,0,0) = 0, f173(1,0,1) = 1, f173(1,1,0) = 0, f173(1,1,1) = 1,
+and
+f229(0,0,0) = 1, f229(0,0,1) = 0, f229(0,1,0) = 1, f229(0,1,1) = 0,
+f229(1,0,0) = 0, f229(1,0,1) = 1, f229(1,1,0) = 1, f229(1,1,1) = 1.
+3 Emulating number-conserving rules
+A CA rule femulates rule gif, for all ﬁnite conﬁguration of length Lbe-
+longing to the limit set Λfof rulef, its images by either forgare equal.
+That is, for all c∈Λfand alli∈ZL,
+g/parenleftbig
+c(i−rℓ),c(i−rℓ+1),...,c(i+rr)/parenrightbig
+=f/parenleftbig
+c(i−rℓ),c(i−rℓ+1),...,c(i+rr)/parenrightbig
+.
+Itwouldbetemptingtodeﬁne aENCCAruleasaCArulethatemulates,
+at least, one number-conserving rule. Here are two examples.
+2See the appendix for a complete list.
+5Example 1. Elementary CA rule 176, deﬁned by
+f176(0,0,0) = 0, f176(0,0,1) = 0, f176(0,1,0) = 0, f176(0,1,1) = 0,
+f176(1,0,0) = 1, f176(1,0,1) = 1, f176(1,1,0) = 0, f176(1,1,1) = 1,
+is number-nonincreasing. One can readily verify that it emulates num ber-
+conserving elementary CA rules 184 and 240 (see top ﬁgure 1). Con ﬁgura-
+tions belonging to its limit set consist of isolated 1s separated by sequ ences
+of 0s whose lengths depend upon the initial conﬁguration.
+Example 2. Elementary CA rule 99 deﬁned above, which is not monotone,
+emulates elementary CA rule 226. Conﬁgurations of its limit set consis t of
+alternating sequences of 0s and 1s with, depending upon the initial c onﬁgu-
+ration, either a few pairs of 0s, separating two successive 1s, or a few pairs
+of 1s, separating two successive 0s (see bottom ﬁgure 1).
+Figure 1: The spatiotemporal patterns of elementary CA rules 176 (top ) and
+99 (bottom) show clearly that these rules emulate, respecti vely, elementary
+CA rules 184 and 240, and elementary rules 226.
+In Appendix 2 we show how to determine ENC CA rules emulating
+number-conserving rules.
+Are there ENC CA rules that do not emulate a number-conserving ru le?
+Surprisingly, the answer is “yes,” and deﬁning ENC CA rules as rules, w hich
+after a ﬁnite number of iterations emulate number-conserving rule s would be
+6inadequate. As for monotone rules, the set of rules that emulate a number-
+conserving rules is strictlyincluded in the set of ENC rules. For example,
+elementary CA rules 74 and 88, obtained by reﬂection3of rule 74, are exam-
+ples of such rules. They are deﬁned by
+f74(0,0,0) = 0, f74(0,0,1) = 1, f74(0,1,0) = 0, f74(0,1,1) = 1,
+f74(1,0,0) = 0, f74(1,0,1) = 0, f74(1,1,0) = 1, f74(1,1,1) = 0,
+and
+f88(0,0,0) = 0, f88(0,0,1) = 0, f88(0,1,0) = 0, f88(0,1,1) = 1,
+f88(1,0,0) = 1, f88(1,0,1) = 0, f88(1,1,0) = 1, f88(1,1,1) = 0,
+They are not monotone and do not emulate number-conserving rule s. Actu-
+ally, conﬁgurations belonging to their limit sets contains all the 8 diﬀer ent
+triplets. Both spatiotemporal patterns exhibit the propagation in opposite
+directions of similar structures (see ﬁgure 2). Rules 173 and 229, d eﬁned
+above, and that are respectively conjugate of rules 74 and 88, do not emulate
+number-conserving rules and have spatiotemporal patterns tha t, like rules 74
+and 88, exhibit the propagation in opposite directions of similar struc tures.
+Since there exist ENC rules that are not monotone and do not emulat e
+any number-conserving one, the union of the set of monotone rule s and the
+set of rules emulating number-conserving rules is strictlyincluded in the set
+of ENC rules.
+4 Motion representation
+The particle dynamics is not clearly exhibited by the CA rule table. A
+simpler and more visual picture of the evolution rule can be given by its
+motion representation . This representation, which has been ﬁrst introduced
+for number-conserving rules [6], was deﬁned as follows. List all the neigh-
+borhoods of an occupied site represented by its site value s∈ Q. Then, for
+each neighborhood, indicate the displacements of the sparticles by arrow(s)
+3Theq-staten-input CA rule R(f), deﬁned by
+R(f)(x1,x2,...,x n) =f(xn,xn−1,...,x 1),
+is called the reﬂected of rulef.
+7Figure 2: Spatiotemporal patterns of elementary CA rules 74 (top) and
+88 (bottom). Both rules—one being the reﬂected rule of the ot her—are not
+monotone and do not emulate number-conservative rules. Ini tial conﬁgura-
+tions are random.
+joining the site where the particle(s) is (are) initially located to its (th eir)
+ﬁnal position(s). A number above the arrow indicates how many par ticles
+are moving to the ﬁnal position. To simplify the representation only n eigh-
+borhoods for which, at least one particle is moving. are listed. Here a re two
+examples. The motion representation of the two-state three-inp ut rule 184,
+which represents the simplest car moving rule on a one-lane highway, is
+1/archrightdown
+10.
+Since a particle located on the left of an occupied site cannot move to the
+right (which the direction of motion) we do not mention it. In a less com pact
+notation we could complete the above representation with
+/anticlockwise
+11.
+The motion representation of the three-state three-input rule 6 171534259461
+is
+1/archrightdown
+101/archrightdown
+112/archrightdown
+201/archrightdown
+21
+8In both examples particles move only to the right. It is, therefore, not nec-
+essary to indicate the state of the left neighboring site of the part icle(s).
+It is rather straightforward to extend this representation to no nconserva-
+tive rules. The only diﬀerence with number-conserving rules is to indic ate
+the possibility of creations and annihilations of particles. This is done b y
+adding either a + or a −sign above the site state followed by a positive
+numbernto represent, respectively, creation and annihilation of nparticles
+at that site. Although the number of particles is not conserved, we shall keep
+the name motion representation , since creations and annihilations of parti-
+cles may be viewed as particles moving between the system and the ex ternal
+world. Here are two examples illustrating that ENC CAs rules can be vie wed
+as evolving systems of particles and not just ﬁnite sequences of no nnegative
+integers obeying abstract transformation rules.
+Example 1. The motion of particles in a system evolving according to CA
+rule 176 is represented by4
+1/archrightdown
+10•,0−1
+1•,
+where the symbol •may represent either a 0 or a 1. The second term shows
+that only isolated 1s can survive, as illustrated in top ﬁgure 1. In add ition,
+when no more particles can be annihilated, that is, when all particles h ave
+empty neighboring sites, the evolution rule of the system coincides w ith CA
+rules 184 and 240, in agreement with the fact that rule 176 emulates these
+two rules.
+Example 2. The evolution of a system of particles evolving according to
+CA rule 74 is represented by
+01/archleftdown
+01,0−1
+10,1−1
+11.
+The ﬁrst term shows that isolated 1s move to the left (see top ﬁgur e 2),
+furthermore, starting from a triplet of 1s in a sea of 0s, the combin ation
+of these three terms generates t a composite particle of length 6 o scillating
+between two states: 001110 and 011010 propagating to the left, or the two-
+row composite particle
+001110
+011010
+4A systematic determination of motion representations is given in [15].
+9which, then propagates to the left. Note that the motion represe ntation lists
+only neighborhoods of moving particles, where “moving” stands for motion
+to or from the external world.
+5 Conclusion
+We have introduced a new class of CAs called eventually number-conserving
+(ENC) CAs adopting the following deﬁnition: A one-dimensional q-staten-
+input CA rule fiseventually number-conserving if, after a ﬁnitenumber
+of iterations, it satisﬁes the number-conserving conditio n (2) for all cyclic
+conﬁgurations of length L≥n. ENC CAs are models of open systems of
+interacting particles exchanging particles with the external world b ut that,
+after a ﬁnite transient time, the numbers of particles moving from a nd to
+the system exactly counterbalance each other. The interpretat ion in terms
+of particles is emphasized by the motion representation of the CA ev olution
+rule. We have shown that the set of ENC CA rules strictlyincludes the
+set of number-conserving rules, the set of monotone rules, and t he set of
+rules emulating a number-conserving rule. The set of ENC rules also s trictly
+includes the union of all these sets showing that the set of ENC rules actually
+contains rules which do not belong to any of these sets. This challeng ing
+result suggests that the characterization of this new apparently simple class
+is probably not a trivial problem.
+Appendix 1
+The code numbers of monotone nonincreasing and nondecreasing e lementary
+CA rules are respectively:
+{0,2,4,8,10,12,16,24,32,34,40,42,48,56,64,66,68,72,76,80,96,98,112,
+128,130,132,136,138,140,144,152,160,162,168,170,176,184,192,194,
+196,200,204,208,224,226,240},
+and
+{170,171,174,175,184,185,186,187,188,189,190,191,204,205,206,207,
+220,221,222,223,226,227,230,231,234,235,236,237,238,239,240,241,
+242,243,244,245,246,247,248,249,250,251,252,253,254,255}.
+10There are ﬁve number-conserving elementary CA rules given by the intersec-
+tion of these two sets. Their code numbers are: {170,184,204,226,240}.
+Appendix 2
+In this appendix we show how to ﬁnd examples of ENC CA rules emulating
+given number-conserving CA rules.
+Four-input rule 50358 is number-conserving. It is deﬁned by
+f50358(0,0,0,0) = 0, f50358(0,0,0,1) = 1, f50358(0,0,1,0) = 1,
+f50358(0,0,1,1) = 0, f50358(0,1,0,0) = 1, f50358(0,1,0,1) = 1,
+f50358(0,1,1,0) = 0, f50358(0,1,1,1) = 1, f50358(1,0,0,0) = 0,
+f50358(1,0,0,1) = 0, f50358(1,0,1,0) = 1, f50358(1,0,1,1) = 0,
+f50358(1,1,0,0) = 0, f50358(1,1,0,1) = 0, f50358(1,1,1,0) = 1,
+f50358(1,1,1,1) = 1.
+Asshowninﬁgure3,itslimitset, whentheleftandrightradiiareresp ectively
+equal to 3 and 0, can be viewed as 2-row tiles of one of the following ty pes:
+1110000 1011000
+1011000 1110000
+concatenated with any number of 2-row tiles of type:
+0
+0
+Figure 3: Spatiotemporal pattern showing the limit set of 4-input rul e 50358,
+where left and right radii have been chosen equal, respectiv ely, to 3 and 0.
+11Among the 16 diﬀerent quadruplets of 0s and 1s, the limit set of rule 5 0358
+contains only the following ones:
+(0,0,0,0),(0,0,0,1),(0,0,1,0),(0,0,1,1),(0,1,0,1),
+(0,1,1,0),(0,1,1,1),(1,0,0,0),(1,0,1,1),(1,1,0,0),
+(1,1,1,0).
+Among all the four-input rules having the same images as rule 50358 f or all
+these 11 quadruplets one can verify that only rules 16566, 49334, and 50870
+are ENC and have the same limit set as rule 50358. These three rules a re
+not monotone.
+References
+[1] P. Manneville, N. Boccara, G. Vichniac and R. Bidaux eds., Cellular
+Automata and Modeling of Complex Systems, Proc. of a Worksho p,
+Les Houches (Heidelberg: Springer-Verlag, 1989).
+[2] H. Gutowitz ed., Cellular Automata: Theory and Experiments, Proc.
+of a Workshop, Los Alamos (Amsterdam: North-Holland, 1990).
+[3] N. Boccara, E. Goles, S. Mart´ ınez, and P. Picco eds., Cellular
+Automata and Cooperative Phenomena, Proc. of a Workshop, Le s
+Houches (Dordrecht: Kluwer, 1993).
+[4] S. Bandini, R. Serra, and F. Suggi Liverani eds., Cellular Automata:
+Research Towards Industry, Proceedings of the Third Confer ence on
+Cellular Automata for Research and Industry (Heidelberg: Springer-
+Verlag, 1998).
+[5] N. Boccara, Modeling Complex Systems (New York: Springer-Verlag,
+2004).
+[6] N. Boccara and H. Fuk´ s, Cellular Automaton Rules Conserving the
+Number of Active Sites , Journal of Physics A: Mathematical and
+General316007–6018 (1998).
+[7] N. Boccara and H. Fuk´ s, Number-Conserving Cellular Automaton
+Rules, Fundamenta Informaticae 521–13 (2002).
+12[8] B. Durand, E. Formenti, and Z. R´ oka, Number-Conserving Cellular
+Automata I: Decidability , Theoretical Computer Science 299523–535
+(2003).
+[9] E. Formenti and A. Grange, Number-Conserving Cellular Automata
+II: Dynamics , Theoretical Computer Science 304269–290 (2003).
+[10] A. Moreira, Universality and Decidability of Number-Conserving Cel-
+lular Automata , Theoretical Computer Science 292711-721 (2003).
+[11] H. Fuk´ s, Probabilistic cellular automata with conserved quantitie s,
+Nonlinearity 17159–173 (2004).
+[12] A.Moreira, N.Boccara,andE.Goles, On Conservative and Monotone
+One-Dimensional Cellular Automata and Their Particle Repr esenta-
+tion, Theoretical Computer Science 325285–316 (2004).
+[13] V. Bernardi. B, Durand. E, Formenti. and J, Kari. ;textitA new
+dimension-sensitive property for cellular automata, Proceedings o f
+MFCS 2004, Lecture Notes in Computer Science, (New York:
+Springer-Verlag 2004).
+[14] S. Wolfram, Cellular Automata and Complexity: Collected Papers ,
+(Reading: Addison-Wesley, 1994).
+[15] N. Boccara and H. Fuk´ s, One-dimensional monotone cellular au-
+tomata,nlin.CG/0501043 .
+13

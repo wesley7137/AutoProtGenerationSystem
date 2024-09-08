@@ -1,0 +1,1377 @@
+Title: On Relative Ageing of Coherent Systems with Dependent Identically
+  Distributed Components
+Abstract:   Relative ageing describes how a system ages with respect to another one. The
+ageing faster orders are the ones which compare the relative ageings of two
+systems. Here, we study ageing faster orders in the hazard and the reversed
+hazard rates. We provide some sufficient conditions for proving that one
+coherent system dominates another system with respect to ageing faster orders.
+Further, we investigate whether the active redundancy at the component level is
+more effective than that at the system level with respect to ageing faster
+orders, for a coherent system. Furthermore, a used coherent system and a
+coherent system made out of used components are compared with respect to ageing
+faster orders.
+
+Full Text: arXiv:1906.08488v1  [stat.AP]  20 Jun 2019On Relative Ageing of Coherent Systems with Dependent
+Identically Distributed Components
+Nil Kamal Hazra∗aand Neeraj Misrab
+aDepartment of Mathematics, Indian Institute of Technology Jodh pur, Karwar 342037,
+India
+bDepartment of Mathematics and Statistics, Indian Institute of Te chnology Kanpur,
+Kanpur 208016, India
+Abstract
+Relative ageing describes how a system ages with respect to anothe r one. The ageing
+faster orders are the ones which compare the relative ageings of t wo systems. Here, we
+study ageing faster orders in the hazard and the reversed hazar d rates. We provide some
+suﬃcient conditions for proving that one coherent system dominat es another system with
+respect to ageing faster orders. Further, we investigate wheth er the active redundancy at
+the component level is more eﬀective than that at the system level with respect to ageing
+faster orders, for a coherent system. Furthermore, a used co herent system and a coherent
+system made out of used components are compared with respect t o ageing faster orders.
+Keywords: Coherent system, dual distortion/domination function, k-out-of-nsystem, redun-
+dancy, residual lifetime, stochastic orders
+2010 Mathematics Subject Classiﬁcation: Primary 90B25
+Secondary 60E15; 60K10
+1 Introduction and Preliminaries
+Ageing is a common phenomenon experienced by both living org anisms and mechanical sys-
+tems. It largely describes how a system/living organism imp roves or deteriorates with age. The
+study of stochastic ageing has receieved considerable atte ntion from researchers in the last few
+decades. In the literature, many diﬀerent types of stochasti c ageing concepts (e.g., increasing
+failure rate (IFR), increasing failure rate in average (IFR A), etc.) have been developed to de-
+scribe diﬀerent ageing characteristics of a system. There ar e three types of ageings, namely,
+∗Corresponding author, email: nkhazra@iiitdm.ac.in
+1positive ageing, negative ageing and no ageing. A brief disc ussion on diﬀerent ageing concepts
+could be found in Barlow and Proschan [4], and Lai and Xie [31] . Similar to these ageing
+concepts, there is another useful notion of ageing, called r elative ageing, which describes how a
+system ages relative to another one.
+Theproportionalhazard(PH)ratemodel,commonlyknownasC ox’sPHmodel(seeCox[10]),
+iswidelyusedtoanalyzethefailuretimedatainreliabilit y andsurvivalanalysis. Later, diﬀerent
+other models were introduced, namely, proportional mean re sidual lifetime model, proportional
+reversed hazard rate model, proportional odds model, etc (s ee Marshall and Olkin [35], Lai
+and Xie [31], and Finkelstein [18]). In many real life scenar ios, the phenomenon of crossing
+hazards/mean residual lives has been observed (see Pocock e t al. [50], Champlin et al. [9], and
+Mantel and Stablein [34]). To handle this crossing hazard ra tes problem, Kalashnikov and
+Rachev [26] introduced a stochastic order (called ageing fa ster order in the hazard rate) based
+on the concept of relative ageing. Indeed, this approach cou ld be considered as a reasonable
+alternative to the PH model. A detailed study of this order is done by Sengupta and Desh-
+pande [54]. In addition, they have also introduced two other similar kinds of stochastic orders.
+Later, Finkelstein [17] proposed a stochastic order, based on mean residual lifetime functions,
+that describes the relative ageings of two life distributio ns, whereas Rezaei [52] introduced a
+similar stochastic order in terms of the reversed hazard rat e functions. Some generalized order-
+ings in this direction were proposed by Hazra and Nanda [25].
+The basic structures of most of the real life systems match wi th the so called coherent sys-
+tem. A system is called coherent if its all components are rel evant and its structure function
+(see Barlow and Proschan [4] for the deﬁnition) is monotonic ally non-decreasing with respect
+to each argument (which means that an improvement in perform ance of a component cannot
+decrease the lifetime of the system). The well known k-out-of-nsystem is a special case of
+coherent systems. A system of ncomponents is said to be k-out-of-nsystem if it functions as
+long as at least kof itsncomponents function. Two extreme cases of a k-out-of-nsystem are
+1-out-of-nsystem (called parallel system) and n-out-of-nsystem (called series system). Further,
+there is an one-to-one correspondence between a k-out-of-nsystem and an ( n−k+1)-th order
+statistic (of lifetimes of ncomponents). Thus, the study of a k-out-of-nsystem is essentially
+the same as the study of an order statistic.
+Stochastic comparisons of coherent systems is considered a s one of the important problems
+in reliability theory. The list of results, so far developed , on various stochastic comparisons of
+k-out-of-nsystems with independent components could be found in Pledg er and Proschan [49],
+Proschan and Sethuraman [51], Balakrishnan and Zhao [3], Ha zra et al. [21], and the references
+therein. Further, stochastic comparisons of general coher ent systems were considered in Esary
+and Proschan [16], Nanda et al. [42], Kochar et al. [29], Belz unce et al. [7], Navarro and Ru-
+bio [47], Navarro et al. [43, 44, 46], Samaniego and Navarro [ 53], Amini-Seresht et al. [1], to
+name a few. Note that all these results are developed using di ﬀerent stochastic orders, namely,
+usual stochastic order, hazard rate order, likelihood rati o order, etc. However, the study of co-
+2herent systems using ageing faster orders are not substanti ally done yet. Misra and Francis [37],
+Li and Lu [32], and Ding and Zhang [15] developed some results fork-out-of-nsystems using
+ageing faster orders. Later, Ding et al. [14] have given some suﬃcient conditions in terms of
+signatureto compare thelifetimes of two coherent systems ( with independentcomponents) with
+respect to ageing faster orders. However, there is no such re sult where the suﬃcient conditions
+are given in terms of reliability functions. Furthermore, t he coherent systems with dependent
+components are also not considered yet. Thus, one of our majo r goals of this paper is to provide
+some suﬃcient conditions (in terms of reliability function s) under which one coherent system
+dominates another one with respect to ageing faster orders.
+One of the eﬀective ways to enhance the lifetime of a system is b y incorporating spares (or
+redundant components) into the system. Then the key questio n is−how to allocate spares
+into the system so that the system’s lifetime will be optimum in some stochastic sense? In
+Barlow and Proschan [4], it is shown that the allocation of ac tive redundancy at the component
+level (of a coherent system) is superior to that at the system level with respect to the usual
+stochastic order. Later, many other researchers have studi ed this problem in diﬀerent directions
+(see Boland and El-Neweihi [6], Misra et al. [36], Nanda and H azra [40], Hazra and Nanda [22],
+Zhao et al. [57], Da and Ding [11], Zhang et al. [56], and the re ferences therein). However, to
+the best of our knowledge, this problem using ageing faster o rders is not studied yet. Thus,
+another goal of this paper is to derive some necessary and suﬃ cient conditions under which the
+lifetime of a coherent system with active redundancy at the c omponent level is larger (smaller)
+than that at the system level with respect to ageing faster or ders.
+The real life systems are either formed by new components or b y used components. Consider
+two coherent systems, namely, a used coherent system (i.e., a coherent system formed by a set
+of new components, and then the system has been used for some t imet >0) and a coherent
+system of used components (i.e., a coherent system formed by a set of components which have
+already been used for time t >0). It is a fact that a coherent system of new components
+does not always have larger lifetime than a coherent system m ade out of used components (see
+Navarro et al. [45]). Similarly, a used coherent system may o r may not perform better than a
+coherent system of used components. The stochastic compari sons between these two systems
+have been done in numerous papers, see, for example, Li and Lu [33], Gupta [19], Gupta et
+al. [20], Hazra and Nanda [24], to name a few. However, to the b est our knowledge, the ageing
+faster orders have not yet been used, as a tool, to compare the se two systems. Thus, the study
+of stochastic comparisons between a used coherent system an d a coherent system of used com-
+ponents is another thrust area that is to be focused here.
+In what follows, we introduce some notation that will be used throughout the paper. For a
+random variable W(with absolutely continuous cumulative distribution func tion), we denote
+its probability density function (pdf) by fW(·), the cumulative distribution function (cdf) by
+FW(·), the hazard rate function by rW(·), the reversed hazard rate function by ˜ rW(·) and the
+survival/reliability function by ¯FW(·);¯FW(·) = 1−FW(·).
+3Let us consider a coherent system with lifetime τ(X) formed by ncomponents having de-
+pendent and identically distributed (d.i.d.) lifetime vec torX= (X1,X2,...,X n), where Xi’s
+are identically distributed, say Xid=X, i= 1,2,...,n, for some non-negative random variable
+X; hered= means equality in distribution. Then the joint reliabilit y function of Xis given by
+¯FX(x1,x2,...,x n) =P(X1> x1,X2> x2,...,X n> xn)
+=K/parenleftbig¯FX(x1),¯FX(x2),...,¯FX(xn)/parenrightbig
+,
+whereK(·,·,...,·) is a survival copula describing the dependency structure a mong compo-
+nents of the system. Indeed, this representation is well kno wn through Sklar’s Theorem (see
+Nelsen [48]). In the literature, many diﬀerent types of survi val copulas have been studied in
+order to describe diﬀerent dependency structures among comp onents. Some of the widely used
+copulas are Farlie-Gumbel-Morgenstern (FGM) copula, Arch imedean copula with diﬀerent gen-
+erators, Clayton-Oakes (CO) copula, etc. We refer the reade r to Nelsen [48] for a detailed dis-
+cussionon thecopulatheory, andits various applications. Inwhat follows, wegive alemmathat
+describes a fundamental bridge between a system and its corr esponding components through
+the domination function.
+Lemma 1.1 (Navarro et al. [43]) Letτ(X)be the lifetime of a coherent system formed by n
+d.i.d. components with the lifetime vector X= (X1,X2,...,X n). Then the reliability function
+ofτ(X)can be written as
+¯Fτ(X)(x) =h/parenleftbig¯FX(x)/parenrightbig
+,
+whereh(·) : [0,1]→[0,1], called the domination (or dual distortion) function, depe nds on the
+structure function φ(·)(see Barlow and Proschan [4] for deﬁnition) and on the surviv al copula
+KofX1,X2,...,X n. Furthermore, h(·)is an increasing continuous function in [0,1]such that
+h(0) = 0andh(1) = 1. ✷
+Below we give an example (borrowed from Navarro et al. [43]) t hat illustrates the result
+given in the above lemma.
+Example 1.1 Letτ(X) = min{X1,max{X2,X3}}, whereX= (X1,X2,X3)is described by
+the FGM Copula (see Nelsen [48])
+K(p1,p2,p3) =p1p2p3(1+θ(1−p1)(1−p2)(1−p3)),forpi∈(0,1), i= 1,2,3,andθ∈[−1,1].
+Further, let X1,X2andX3be identically distributed with a random variable X. Then the mini-
+mal path sets (see Barlow and Proschan [4]) of τ(X)are given by {1,2}and{1,3}. LetX{1,2},
+X{1,3}andX{1,2,3}be the lifetimes of the path sets {1,2},{1,3}and{1,2,3}, respectively. Then
+4the reliability function of τ(X)can be written as
+¯Fτ(X)(x) =P/parenleftbig
+{X{1,2}> x}∪{X{1,3}> x}/parenrightbig
+=P/parenleftbig
+X{1,2}> x)+P(X{1,3}> x/parenrightbig
+−P(X{1,2,3}> x)
+=¯FX(x,x,0)+¯FX(x,0,x)−¯FX(x,x,x)
+=K/parenleftbig¯FX(x),¯FX(x),1/parenrightbig
++K/parenleftbig¯FX(x),1,¯FX(x)/parenrightbig
+−K/parenleftbig¯FX(x),¯FX(x),¯FX(x)/parenrightbig
+=h/parenleftbig¯FX(x)/parenrightbig
+,
+where
+h(p) =K(p,p,1)+K(p,1,p)−K(p,p,p)
+= 2p2−p3−θp3(1−p)3,forp∈(0,1)andθ∈[−1,1].
+Stochasticordersarecommonlyusedtocomparetworandomva riables(ortwosetsofrandom
+variables), and have been extensively studied in the litera ture due to their various applications
+in diﬀerent branches of science and engineering. An encyclop edic information on this topic is
+nicely encapsulated in the book written by Shaked and Shanth ikumar [55] (also see Belzunce et
+al. [8]). For the sake of completeness, we give the following deﬁnitions of the stochastic orders
+that are used in our paper.
+Deﬁnition 1.1 LetXandYbe two absolutely continuous random variables with cumulat ive
+distribution functions FX(·)andFY(·), respectively, supported on [0,∞). ThenXis said to be
+smaller than Yin
+(a)hazard rate (hr) order, denoted as X≤hrY, if
+¯FY(x)/¯FX(x)is increasing in x∈[0,∞);
+(b)reversed hazard rate (rhr) order, denoted as X≤rhrY, if
+FY(x)/FX(x)is increasing in x∈[0,∞).
+Similar to the above discussed stochastic orders, there are two more sets of stochastic orders
+which are useful to describe the relative ageings of two syst ems. The ﬁrst set of stochastic
+orders, known as transform orders (namely, convex transfor m order, quantile mean inactivity
+time order, star-shaped order, super-additive order, DMRL order, s-IFR order, etc.), describes
+whether a system is ageing faster than another one in terms of the increasing failure rate, the
+increasing failure rate on average, the new better than used , etc. A detailed discussion on these
+orderscould befoundin Barlow and Proschan[4], Bartoszewi cz [5], DeshpandeandKochar[13],
+Kochar and Wiens [30], Arriaza et al. [2], Nanda et al. [41], a nd the refernces therein. The
+second set of stochastic orders, called ageing faster order s, is deﬁned based on monotonocity of
+5ratios of some reliability measures, namely, hazard rate fu nction, reversed hazard rate function,
+mean residual lifetime function, etc. For motivation and us efulness of these orders, we refer
+the reader to Kalashnikov and Rachev [26], Sengupta and Desh pande [54], Di Crescenzo [12],
+Finkelstein [17], Razaei et al. [52], Hazra and Nanda [25], M isra et al. [39], Kayid et al. [28],
+and Misra and Francis [38]. Below we give the deﬁnitions of th e ageing faster orders that are
+used in our paper.
+Deﬁnition 1.2 LetXandYbe two absolutely continuous random variables with failure rate
+functions rX(·)andrY(·), respectively, and reversed failure rate functions ˜rX(·)and˜rY(·),
+respectively. Then Xis said to be ageing faster than Yin
+(a)failure rate, denoted as X≺
+cY, if
+rX(x)/rY(x)is increasing in x∈[0,∞);
+(b)reversed failure rate, denoted as X≺
+bY, if
+˜rX(x)/˜rY(x)is decreasing in x∈[0,∞).
+The theory of totally positive functions has various applic ations in diﬀerent areas of proba-
+bility and statistics (see Karlin [27]). Below we give the de ﬁnitions of TP 2and RR 2functions.
+Diﬀerent properties of these functions are used in proving th e main results of our paper.
+Deﬁnition 1.3 LetXandYbe two linearly ordered sets. Then, a real-valued function κ(·,·)
+deﬁned on X ×Y, is said to be TP 2(resp. RR 2) if
+κ(x1,y1)κ(x2,y2)≥(resp.≤)κ(x1,y2)κ(x2,y1),
+for allx1< x2andy1< y2. ✷
+Throughout the paper increasing and decreasing, as usual, m ean non-decreasing and non-
+increasing, respectively. Similarly, positive and negati ve mean non-negative and non-positive,
+respectively. Assume that all random variables considered in this paper are absolutely contin-
+uous and non-negative (i.e., distributional support is [0 ,∞)). Byasgn=b, we mean that aandb
+have the same sign, whereas adef.=bmeans that ais deﬁned as b. Further, we use bold symbols
+to represent vectors, and the symbol Nis used to represent the set of natural numbers. We
+writeτk|nandτl|mto represent the lifetimes of a k-out-of-nand al-out-of-msystems, respec-
+tively. We use the acronyms i.i.d.andd.i.d.for ‘independent and identically distributed’ and
+‘dependent and identically distributed’, respectively.
+The rest of the paper is organized as follows. In Section 2, we discuss some useful lemmas
+which are intensively used in the proofs of the main results. In Section 3, we provide some
+suﬃcient conditions under which the lifetime of one coheren t system is larger than that of an
+6another system with respect to ageing faster orders in terms of the hazard and the reversed
+hazard rates. In Section 4, we discuss a redundancy allocati on problem in a coherent system.
+We derive some necessary and suﬃcient conditions under whic h the allocation of active redun-
+dancy at the component level (of a coherent system) is superi or to that at the system level with
+respect to ageing faster orders. Stochastic comparisons be tween a used coherent system and a
+coherent system made by used components are discussed in Sec tion 5. The concluding remarks
+are given in Section 6.
+All proofs of lemmas and theorems, wherever given, are defer red to the Appendix.
+2 Useful Lemmas
+In this section we discuss some lemmas which will be used in pr oving the main results of this
+paper. In the ﬁrst lemma we discuss the sign change property o f the integral of a function.
+The following lemma is adopted from Karlin ([27], Theorem 11 .2, pp. 324-325), and Hazra and
+Nanda ([23], Lemma 3.5).
+Lemma 2.1 Letκ(x,y)>0, deﬁned on X × Y, be RR 2(resp. TP 2), where XandYare
+subsets of the real line. Assume that a function f(·,·)deﬁned on X ×Yis such that
+(i)for each x∈ X,f(x,y)changes sign at most once, and if the change of sign does occur ,
+it is from positive to negative, as ytraverses Y;
+(ii)for each y∈ Y,f(x,y)is increasing (resp. decreasing) in x∈ X;
+(iii)ω(x) =/integraltext
+Yκ(x,y)f(x,y)dµ(y)exists absolutely and deﬁnes a continuous function of x,
+whereµis a sigma-ﬁnite measure.
+Thenω(x)changes sign at most once, and if the change of sign does occur , it is from negative
+(resp. positive) to positive (resp. negative), as xtraverses X. ✷
+In the following lemma we state an equivalent condition of a m onotonic function. The proof
+is straightforward, and hence omitted.
+Lemma 2.2 Letf(·)andg(·)be two non-negative real-valued functions deﬁned on (a,b)⊆
+(0,∞). Thenf(x)/g(x)is increasing (resp. decreasing) in x, if and only if for any real number
+c, the diﬀerence f(x)−cg(x)changes sign at most once, and if the change of sign does occur ,
+it is from negative (resp. positive) to positive (resp. nega tive), as xtraverses from atob.✷
+Some properties of the reliability functions of a k-out-of-nand al-out-of-msystems are
+discussed in the next two lemmas. Lemma 2.3 ( i) is obtained in Esary and Proschan [16],
+whereas Lemma 2.4 ( i) is obtained in Nanda et al. [42]. The other proofs are deferr ed to the
+Appendix.
+7Lemma 2.3 Lethk|n(·)andhl|m(·)be the reliability functions of the k-out-of-nand thel-out-
+of-msystems with i.i.d. components, respectively, where 1≤k≤nand1≤l≤m. Further,
+letHk|n(p) =ph′
+k|n(p)/hk|n(p)andHl|m(p) =ph′
+l|m(p)/hl|m(p)for allp∈(0,1). Then the
+following results hold.
+(i)Hk|n(p)is decreasing in p∈(0,1);
+(ii)Hk|n(p)/Hl|m(p)is decreasing in p∈(0,1), for allk≤landm−l≤n−k;
+(iii) (1−p)H′
+k|n(p)/Hk|n(p)is decreasing in p∈(0,1).
+Lemma 2.4 Lethk|n(·)andhl|m(·)be the reliability functions of the k-out-of-nand thel-out-
+of-msystems with i.i.d. components, respectively, where 1≤k≤nand1≤l≤m. Further,
+letRk|n(p) = (1−p)h′
+k|n(p)/(1−hk|n(p))andRl|m(p) = (1−p)h′
+l|m(p)/(1−hl|m(p))for all
+p∈(0,1). Then the following results hold.
+(i)Rk|n(p)is increasing in p∈(0,1);
+(ii)Rk|n(p)/Rl|m(p)is increasing in p∈(0,1), for alll≤kandn−k≤m−l;
+(iii)pR′
+k|n(p)/Rk|n(p)is decreasing in p∈(0,1).
+3 Stochastic comparisons of two coherent systems
+In this section we compare two coherent systems with respect to ageing faster orders in terms
+of the failure and the reversed failure rates. We show that th e proposed results hold for the
+k-out-of-nand thel-out-of-msystems with i.i.d. components.
+Letτ1(X) andτ2(Y) (resp.τk|n(X) andτl|m(Y)) be the lifetimes of two coherent systems
+(resp.k-out-of-nandl-out-of-msystems) formed by two diﬀerent sets of d.i.d. components
+with the lifetime vectors X= (X1,X2,...,X n) andY= (Y1,Y2,...,Y m), respectively. For
+the sake of simplicity of notation, let us assume that all Xi’s are identically distributed with
+a non-negative random variable X, and all Yj’s are identically distributed with a non-negaive
+random variable Y. Further, let h1(·) andh2(·) be the domination functions of τ1(X) and
+τ2(Y), respectively. In what follows, we use the following notat ion. For p∈(0,1),
+Hi(p) =ph′
+i(p)
+hi(p), i= 1,2,
+and
+Ri(p) =(1−p)h′
+i(p)
+1−hi(p), i= 1,2.
+In the following theorem we show that under a set of suﬃcient c onditions τ1(X) is ageing
+faster than τ2(Y) in terms of the failure rate.
+Theorem 3.1 Suppose that the following conditions hold.
+8(i)H1(p)andH1(p)/H2(p)are decreasing in p∈(0,1);
+(ii) (1−p)H′
+1(p)/H1(p)or(1−p)H′
+2(p)/H2(p)is decreasing in p∈(0,1);
+(iii)X≺
+cYandY≤rhX.
+Thenτ1(X)≺
+cτ2(Y). ✷
+Thefollowing corollary follows fromTheorem3.1 andLemma2 .3. Itisworthwile tomention
+here that Theorem 3.1 (a) of Misra and Francis [37] is the part icular case of this corollary ( k=l
+andm=n).
+Corollary 3.1 Suppose that the Xi’s are i.i.d., and that the Yj’s are i.i.d. If X≺
+cYand
+Y≤rhX, thenτk|n(X)≺
+cτl|m(Y)fork≤landm−l≤n−k.
+Remark 3.1 Let the assumption of Corollary 3.1 hold. Then from Corollary 3. 1 we have
+(i)τk|n(X)≺
+cτl|n(Y)fork≤l;
+(ii)τk|n(X)≺
+cτk|m(Y)form≤n;
+(iii)τl−r|m−r(X)≺
+cτl|m(Y)forr≤l. ✷
+One natural question may arise, which is whether the result s tated in Theorem 3.1 holds
+without the condition Y≤rhX. Below we cite a counterexample which shows that this condi-
+tion could not be relaxed.
+Counterexample 3.1 Consider two coherent systems τ1(X) = max{X1,X2,X3}andτ2(Y) =
+max{Y1,Y2,Y3}, whereXi’s are i.i.d. with the reliability function given by ¯FX(x) = exp{−2x3},
+x >0, andYi’s are i.i.d. with the reliability function given by ¯FY(x) = exp{−0.1x2},x >0.
+Then it could easily be veriﬁed that X≺
+cYbutY/notlessequalrhX(In factY/notlessequalstX). Now, by writing
+k(x) =rτ1(X)(x)/rτ2(Y)(x), we have
+k(x) = 30xe−(2x3−0.1x2)
+1−/parenleftBig
+1−e−0.1x2/parenrightBig3
+1−/parenleftbig
+1−e−2x3/parenrightbig3
+
+/parenleftBig
+1−e−2x3/parenrightBig2
+/parenleftbig
+1−e−0.1x2/parenrightbig2
+, x >0,
+which is non-monotone over x >0, and hence τ1(X)⊀
+cτ2(Y). ✷
+In the following proposition we give a necessary and suﬃcien t condition for the case when
+the lifetimes of the components of both coherent systems are identically distributed. The proof
+follows in the same line as in Theorem 3.1, and hence omitted.
+Proposition 3.1 LetXi’s be identically distributed. Then τ1(X)≺
+c(resp.≻
+c)τ2(X)if and
+only if
+H1(p)/H2(p)is decreasing (resp. increasing) in p∈(0,1).
+9The following corollary, which is obtained in Theorem 2.1 of Misra and Francis [37], follows
+from Proposition 3.1 and Lemma 2.3.
+Corollary 3.2 Suppose that the Xi’s are i.i.d. Then τk|n(X)≺
+cτl|m(X)fork≤landm−l≤
+n−k.
+Remark 3.2 Let the assumption of Corollary 3.2 hold. Then from Corollary 3. 2 we have
+(i)τk|n(X)≺
+cτl|n(X)fork≤l;
+(ii)τk|n(X)≺
+cτk|m(X)form≤n;
+(iii)τl−r|m−r(X)≺
+cτl|m(X)forr≤l. ✷
+The following corollary given in Ding and Zhang [15] follows from Proposition 3.1. It shows
+that a series system ages faster (in terms of the hazard rate) as its number of components
+increases whereas the reverse scenario is observed for the p arallel system.
+Corollary 3.3 Suppose that the Xi’s are d.i.d.components with the common Archimedean cop-
+ula generated by φ(·). Ifxln′[−φ′(x)/(1−φ(x))]is decreasing in x >0, then
+(i)τ1|n(X)≺
+cτ1|m(X)form≤n;
+(ii)τn|n(X)≺
+cτm|m(X)forn≤m. ✷
+Below we give an example that illustrates the result given in Proposition 3.1.
+Example 3.1 Consider two coherent systems τ1(X) = min{X1,max{X2,X3}}andτ2(X) =
+min{X1,X2,X3}which are formed by three identical components with lifetim esX1,X2andX3.
+Further, let the joint distribution function of (X1,X2,X3)be described by the FGM copula
+K(p1,p2,p3) =p1p2p3(1+θ(1−p1)(1−p2)(1−p3)),
+wherepi∈(0,1),i= 1,2,3, andθ∈[−1,1]. Then the domination functions of τ1(X)and
+τ2(X)are, respectively, given by
+h1(p) = 2p2−p3−θp3(1−p)3,0< p <1
+and
+h2(p) =p3+θp3(1−p)3,0< p <1.
+These give
+H1(p) =ph′
+1(p)
+h1(p)=4p2−3(1+θ)p3+12θp4−15θp5+6θp6
+2p2−(1+θ)p3+3θp4−3θp5+θp6,0< p <1
+10and
+H2(p) =ph′
+2(p)
+h2(p)=3(1+θ)p3−6θp6−12θp4+15θp5
+(1+θ)p3−θp6−3θp4+3θp5,0< p <1.
+Writing sθ(p) =H1(p)/H2(p), we have
+sθ(p) =(4p2−3(1+θ)p3+12θp4−15θp5+6θp6)((1+θ)p3−θp6−3θp4+3θp5)
+(2p2−(1+θ)p3+3θp4−3θp5+θp6)(3(1+θ)p3−6θp6−12θp4+15θp5),0< p <1.
+Now, consider the following two cases.
+Case-I: Let θ=−.9,−.8,...,.4,.5. Then it can be veriﬁed that sθ(p) =H1(p)/H2(p)is decreas-
+ing inp∈(0,1), and hence τ1(X)≺
+cτ2(X)follows from Proposition 3.1.
+Case-II: Let θ=.75,.80,...,.95,1. Then it can be checked that sθ(p) =H1(p)/H2(p)is non-
+monotone over p∈(0,1). Hence, by Proposition 3.1, we get that neither τ1(X)≺
+cτ2(X)nor
+τ1(X)≻
+cτ2(X)holds. ✷
+In the following theorem we compare τ1(X) andτ2(Y) with respect to the ageing faster
+order in the reversed hazard rate.
+Theorem 3.2 Suppose that the following conditions hold.
+(i)R1(p)andR1(p)/R2(p)are increasing in p∈(0,1);
+(ii)pR′
+1(p)/R1(p)orpR′
+2(p)/R2(p)is decreasing in p∈(0,1);
+(iii)X≺
+bYandX≤hrY.
+Thenτ1(X)≺
+bτ2(Y). ✷
+The following corollary immediately follows from Theorem 3 .2 and Lemma 2.4. Note that
+Theorem 3.1(b) of MisraandFrancis [37] is aparticular case of this corollary ( k=landm=n).
+Corollary 3.4 Suppose that the Xi’s are i.i.d., and that the Yj’s are i.i.d. If X≺
+bYand
+X≤hrY, thenτk|n(X)≺
+bτl|m(Y)forl≤kandn−k≤m−l.
+Remark 3.3 Let the assumption of Corollary 3.4 hold. Then from Corollary 3. 4 we have
+(i)τk|n(X)≺
+bτl|n(Y)forl≤k;
+(ii)τk|n(X)≺
+bτk|m(Y)forn≤m;
+(iii)τk|n(X)≺
+bτk−r|n−r(Y)forr≤k. ✷
+The following counterexample shows that the result given in Theorem 3.2 may not hold
+without the condition X≤hrY.
+11Counterexample 3.2 Consider the coherent systems τ1(X) = min {X1,X2}andτ2(Y) =
+min{Y1,Y2}, whereXi’s are i.i.d. with the cumulative distribution function giv en byFX(x) =
+exp{−(2.1/x)7},x >0, andYi’s are i.i.d. with the cumulative distribution function giv en by
+FY(x) = exp{−(2/x)3},x >0. Then it is easy to verify that X≺
+bYbutX/notlessequalhrY(In fact
+X/notlessequalstY). Now, by writing l(x) = ˜rτ2(Y)(x)/˜rτ1(X)(x), we have
+l(x) =
+24x4e−(2/x)3/parenleftBig
+1−e−(2/x)3/parenrightBig
+7×2.17e−(2.1/x)7/parenleftbig
+1−e−(2.1/x)7/parenrightbig
+
+1−/parenleftBig
+1−e−(2.1/x)7/parenrightBig2
+1−/parenleftbig
+1−e−(2/x)3/parenrightbig2
+, x >0,
+which is non-monotone over x >0, and hence τ2|2(X)⊀
+bτ2|2(Y). ✷
+In the following proposition we discuss an analog of Proposi tion 3.1 for the ageing faster
+order in the reversed hazard rate.
+Proposition 3.2 LetXi’s be identically distributed. Then τ1(X)≺
+b(resp.≻
+b)τ2(X)if and
+only if
+R1(p)/R2(p)is increasing (resp. decreasing) in p∈(0,1).
+The following corollary given in Theorem 2.2 of Misra and Fra ncis [37] follows from Propo-
+sition 3.2 and Lemma 2.4.
+Corollary 3.5 Suppose that the Xi’s are i.i.d. Then τk|n(X)≺
+bτl|m(X)forl≤kandn−k≤
+m−l.
+Remark 3.4 Let the assumption of Corollary 3.5 hold. Then from Corollary 3. 5 we have
+(i)τk|n(X)≺
+bτl|n(X)forl≤k;
+(ii)τk|n(X)≺
+bτk|m(X)forn≤m;
+(iii)τk|n(X)≺
+bτk−r|n−r(X)forr≤k. ✷
+The following corollary obtained in Ding and Zhang [15] imme diately follows from Propo-
+sition 3.2. It shows that a series system ages faster (in term s of the reversed hazard rate) as
+its number of components decreases whereas the reverse scen ario is observed for the parallel
+system.
+Corollary 3.6 Suppose that the Xi’s are d.i.d. components with the common Archimedean
+copula generated by φ(·). Ifxln′[−φ′(x)/φ(x)]is decreasing (resp. increasing) in x >0, then
+(i)τ1|n(X)≻
+b(resp.≺
+b)τ1|m(X)form≤n;
+(ii)τn|n(X)≻
+b(resp.≺
+b)τm|m(X)forn≤m. ✷
+12The result stated in Proposition 3.2 is revealed through the following example.
+Example 3.2 Consider two coherent systems which are discussed in Example 3.1. Then
+R1(p) =(1−p)h′
+1(p)
+1−h1(p)=4p−(7+3θ)p2+3(1+5 θ)p3−27θp4+21θp5−6θp6
+1−2p2+(1+θ)p3−3θp4+3θp5−θp6,0< p <1
+and
+R2(p) =(1−p)h′
+2(p)
+1−h2(p)=3(1+θ)p2−3(1+5θ)p3+27θp4−21θp5+6θp6
+1−(1+θ)p3+θp6+3θp4−3θp5,0< p <1.
+Writing vθ(p) =R2(p)/R1(p), we have
+vθ(p) =3(1+θ)p2−3(1+5θ)p3+27θp4−21θp5+6θp6
+1−(1+θ)p3+θp6+3θp4−3θp5
+×1−2p2+(1+θ)p3−3θp4+3θp5−θp6
+4p−(7+3θ)p2+3(1+5 θ)p3−27θp4+21θp5−6θp6,0< p <1.
+Forθ=−1,−.8,...,.8,1, it can be veriﬁed that vθ(p)is increasing in p∈(0,1). Hence
+τ1(X)≻
+bτ2(X)follows from Proposition 3.2.
+4 Stochastic comparisons of coherent systems with active re -
+dundancy at the component level versus the system level
+LetX= (X1,X2,...,X n) be a vector of random variables representing the lifetimes ofnd.i.d.
+components. Further, let {Y1,Y2,...,Ym}be a set of mvectors representing the lifetimes
+ofmnspares (or redundant components), where Yi= (Yi1,Yi2,...,Y in) is a vector of nd.i.d.
+random variables, for i= 1,2,...,m. Assume that all Xj’s andYij’s are identically distributed
+with a non-negaive random variable X. We write TC=τ(X∨Y1∨Y2∨ ··· ∨Ym) to denote
+the lifetime of a coherent system with active redundancies a t the component level, where the
+symbolX∨Y1∨Y2∨ ··· ∨Ymstands for a n-tuple vector Z= (Z1,Z2,...,Z n) such that
+Zjrepresents the lifetime of a parallel system formed by ( m+ 1) independent components
+{Xj,Y1j,...,Y mj}, forj= 1,2,...,n. Further, we write TS=τ(X)∨τ(Y1)∨τ(Y2)∨ ··· ∨
+τ(Ym) to denote the lifetime of a coherent system with active redu ndancies at the system level,
+where the symbol ∨stands for maximum. Furthermore, it is assumed that τ(X) andτ(Yi)’s
+are independent, and they have the same domination function asτ(Z) has. We denote this
+domination functionby h(·). Inwhatfollows, weusethenotation R(p) = (1−p)h′(p)/(1−h(p)),
+p∈(0,1).
+In the following theorem, we provide an equivalent conditio n to hold that the allocation of
+redundancy at the component level is better/worse than that at the system level with respect
+to the ageing faster order in terms of the hazard rate.
+13Theorem 4.1 Form∈N,TS≺
+c(resp.≻
+c)TCholds if and only if
+/parenleftbigg(1−h(p))mh′(p)
+1−(1−h(p))m+1/parenrightbigg/parenleftBigg
+h/parenleftbig
+1−(1−p)m+1/parenrightbig
+(1−p)mh′(1−(1−p)m+1)/parenrightBigg
+(4.1)
+is decreasing (resp. increasing) in p∈(0,1). ✷
+The following corollary follows from Theorem 4.1.
+Corollary 4.1 If allXi’s andYj’s are i.i.d., then τn|n(X)∨τn|n(Y1)≻
+cτn|n(X∨Y1).✷
+In the next theorem we discuss an analog of Theorem 4.1 under t he ageing faster order in
+the reversed hazard rate.
+Theorem 4.2 Form∈N,TS≺
+bTCholds if and only if
+R(p)
+R(1−(1−p)m+1)is increasing in p∈(0,1). ✷
+Since the condition given in Theorem 4.2 is involved with m, it is practically not easy to
+verify. In the following proposition we discuss a suﬃcient c ondition that could be useful to
+show the result.
+Proposition 4.1 IfpR′(p)/R(p)is decreasing and positive for all p∈(0,1), thenTS≺
+bTC.
+The following corollary follows from Proposition 4.1 and Le mma 2.4.
+Corollary 4.2 Suppose that all Xi’s andYj’s are i.i.d. Then, for 1≤k≤n,
+τk|n(X)∨τk|n(Y1)∨···∨τk|n(Ym)≺
+bτk|n(X∨Y1∨ ··· ∨Ym).
+Below we provide an example that illustrates the result give n in Proposition 4.1.
+Example 4.1 Letm= 1. Consider a coherent system τ(X) = min{X1,X2,...,X n}formed by
+nidentical components with the lifetime vector X= (X1,X2,...,X n). Further, let {X1,X2,...,X n}
+have the Gumbel-Hougard copula given by
+K(p1,p2,...,pn) = exp
+
+−/parenleftBiggn/summationdisplay
+i=1(−lnpi)θ/parenrightBigg1/θ
+
+,
+wherepi∈(0,1),i= 1,2,...,n, andθ∈[1,∞). Then the domination function of τ(X)is
+given by h(p) =pa, wherea=n1/θ(≥1). This gives
+R(p) =(1−p)h′(p)
+(1−h(p))=a/parenleftbig
+pa−1−pa/parenrightbig
+1−pa,0< p <1
+and
+pR′(p)
+R(p)=a−1−ap+pa
+1−p−pa+pa+1,0< p <1.
+14Since((1−pa)/(1−p))≤a, for all a≥1andp∈(0,1), we have pR′(p)/R(p)≥0, for all
+p∈(0,1). Further,
+/bracketleftbiggpR′(p)
+R(p)/bracketrightbigg′
+=γ1(p)
+(1−p−pa+pa+1)2,0< p <1,
+where
+γ1(p) =a2pa−1+2(1−a2)pa+a2pa+1−p2a−1,0< p <1.
+Now,
+γ1′(p) =pa−2γ2(p),0< p <1,
+where
+γ2(p) =a2(a−1)−2a(a2−1)p+a2(a+1)p2−2apa+1,0< p <1.
+Diﬀerentiating γ2(p) twice, we get
+γ′
+2(p) =−2a(a2−1)+2a2(a+1)p−2a(a+1)pa,0< p <1
+and
+γ′′
+2(p) = 2a2(a+1)/parenleftbig
+1−pa−1/parenrightbig
+≥0,0< p <1.
+Thus, we have γ′
+2(p)≤γ′
+2(1) = 0, for all p∈(0,1), which implies γ2(p)≥γ2(1) = 0, for all
+p∈(0,1). Further, this implies γ′
+1(p)≥0, for all p∈(0,1), which gives γ1(p)≤γ1(1) = 0,
+for allp∈(0,1). Hence pR′(p)/R(p) is decreasing in p∈(0,1). Thus, TS≺
+bTCfollows from
+Proposition 4.1.
+5 Stochastic comparisons of a used coherent system and a co-
+herent system of used components
+LetXbe a random variable representing the lifetime of a componen t/system. Then its residual
+lifetime at a time instant t(>0) is denoted by Xtand is deﬁned as
+Xt= (X−t|X > t).
+We callXtas a used component/system. Let X= (X1,X2,...,X n) be a vector of random
+variables representing the lifetimes of nd.i.d. components. Then we write
+Xt= ((X1)t,(X2)t,...,(Xn)t), t >0,
+to represent a vector of nused components {(X1)t,(X2)t,...,(Xn)t},t >0. Consequently, we
+writeτ(Xt) to denote the lifetime of a coherent system made by a set of co mponents with the
+lifetime vector Xt. Further, by ( τ(X))t= (τ(X)−t|τ(X)> t), we mean the lifetime of a
+used coherent system formed by a set of components with the li fetime vector X. For the sake
+15of simplicity, we assume that all Xi’s are identically distributed with a non-negative random
+variable X. In what follows, we denote the reliability function of τ(X) byh(·), and we write
+H(p) =ph′(p)/h(p), 0< p <1.
+In the following theorem we derive the necessary and suﬃcien t condition for a used coherent
+system to be ageing faster than a coherent system of used comp onents in terms of the hazard
+rate.
+Theorem 5.1 For any ﬁxed t≥0,τ(Xt)≺
+c(τ(X))tholds if and only if
+pH′(p)/H(p)is decreasing in p∈(0,1). (5.1)
+Inthefollowing propositionwediscussthesameresultasin Theorem5.1underadiﬀerentset
+of suﬃcient conditions which is sometimes easy to verify. Th e proof follows from Theorem 5.1.
+Hence we omit it.
+Proposition 5.1 For any ﬁxed t≥0,τ(Xt)≺
+c(τ(X))tholds if
+(1−p)H′(p)/H(p)is decreasing and negative in p∈(0,1).
+The following corollary follows from Proposition 5.1 and Le mma 2.3.
+Corollary 5.1 If theXi’s are i.i.d., then τk|n(Xt)≺
+c/parenleftbig
+τk|n(X)/parenrightbig
+t, for any ﬁxed t≥0, and
+1≤k≤n. ✷
+In the following theorem we show a similar result as in Theore m 5.1 for the ageing faster
+order in the reversed hazard rate.
+Theorem 5.2 For any ﬁxed t≥0,τ(Xt)≺
+b(resp.≻
+b) (τ(X))tholds if and only if, for all
+q∈(0,1),
+/bracketleftbiggh′(p/q)
+h′(p)/bracketrightbigg/bracketleftbiggh(q)−h(p)
+1−h(p/q)/bracketrightbigg
+is increasing (resp. decreasing) in p∈(0,q). (5.2)
+As a consequence of Theorem 5.2, we have the following coroll ary.
+Corollary 5.2 If theXi’s are i.i.d., then τ1|n(Xt)≺
+b/parenleftbig
+τ1|n(X)/parenrightbig
+t, for any ﬁxed t≥0.
+6 Concluding Remarks
+In this paper, we study ageing faster orders (in terms of the h azard and the reversed hazard
+rates) which are useful to compare the relative ageings of tw o systems. To be more speciﬁc,
+we provide suﬃcient conditions under which one coherent sys tem is ageing more faster than
+another one with respect to the hazard and the reversed hazar d rates. Further, we consider
+a problem of allocation of redundancies into a coherent syst em. We show that, under some
+16necessary and suﬃcient conditions, the allocation of activ e redundancy at the component level
+is superior (inferior) to that at the system level with respe ct to ageing faster orders, for a
+coherent system. Furthermore, a used coherent system and a c oherent system made out of used
+components are compared with respect to these ageing faster orders. Apart from these, we also
+show that most of our developed results hold for the well know nk-out-of-nand thel-out-of-m
+systems. Nevertheless, we provide a list of examples to illu strate our proposed results. Some
+counterexamples are also given wherever needed.
+Even though a vast literature exists on the study of diﬀerent s tochastic orders, there are
+a few results developed for the ageing faster orders. Since t he ageing faster orders compare
+the relative ageings of two systems and the ageing is a common phenomenon experienced by
+each and every system, the study of ageing faster orders shou ld be paid more attention from
+the researchers across the world. We believe that our study n ot only enriches the literature on
+ageing faster orders but also may be useful in some practical scenarios.
+Similar to the problems considered in this paper, the study o f other stochastic orders (as
+discussed in the introduction section), which describe the relative ageings of two systems, is
+under investigation, and will be reported in future.
+Acknowledgments
+The authors are thankful to the Editor-in-Chief, the Associ ate Editor and the anonymous
+Reviewers for their valuable constructive comments/sugge stions which lead to an improved
+version of the manuscript. The ﬁrst author sincerely acknow ledges the ﬁnancial support from
+the IIT Jodhpur, Karwar-342037, India.
+References
+[1] Amini-Seresht, E., Zhang, Y. and Balakrishnan, N. (2018 ). Stochastic comparisons of
+coherent systems under diﬀerent random environments. Journal of Applied Probability 55,
+459-472.
+[2] Arriaza, A., Sordo, M.A. and Su´ arez-Liorens, A. (2017) . Comparing residual lives and
+inactivity times by transform stochastic orders. IEEE Transactions on Reliability 66, 366-
+372.
+[3] Balakrishnan, N. and Zhao, P. (2013). Ordering properti es of order statistics from hetero-
+geneous populations: A review with an emphasis on some recen t developments. Probability
+in the Engineering and Informational Sciences 27, 403-443.
+[4] Barlow, R.E. and Proschan, F. (1975). Statistical Theory of Reliability and Life Testing .
+Holt, Rinehart and Winston, New York.
+17[5] Bartoszewicz, J. (1985). Dispersive ordering and monot one failure rate distributions. Ad-
+vances in Applied Probability 17, 472-474.
+[6] Boland, P.J. and El-Neweihi, E. (1985). Component redun dancyversus system redundancy
+in the hazard rate ordering. IEEE Transactions on Reliability 44, 614-619.
+[7] Belzunce, F., Franco, M., Ruiz, J.M. and Ruiz, M.C. (2001 ). On partial orderings between
+coherent systems with diﬀerent structures. Probability in the Engineering and Informa-
+tional Sciences 15, 273-293.
+[8] Belzunce, F., Mart´ ınez-Riquelme, C. and Mulero, J. (20 16).An Introduction to Stochastic
+Orders. Academic Press, New York.
+[9] Champlin, R., Mitsuyasu, R., Elashoﬀ, R. and Gale, R.P. (1 983). Recent advances in bone
+marrow transplantation. In: UCLA Symposia on Molecular and Cellular Biology, ed. R.P.
+Gale, New York 7, 141-158.
+[10] Cox, D.R. (1972). Regression models and life-tables. Journal of the Royal Statistical Soci-
+ety, Series B 34, 187-220.
+[11] Da, G. and Ding, W. (2016). Component level versus syste m levelk-out-of-nassembly
+systems. IEEE Transactions on Reliability 65, 425-433.
+[12] Di Crescenzo, A. (2000). Some results on the proportion al reversed hazards model. Statis-
+tics and Probability Letters 50, 313-321.
+[13] Deshpande, J.V. and Kochar, S.C. (1983). Dispersive or dering is the same as tail-ordering.
+Advances in Applied Probability 15, 686-687.
+[14] Ding, W., Fang, R.andZhao, P. (2017). Relative agingof coherent systems. Naval Research
+Logistics 64, 345-354.
+[15] Ding, W. and Zhang, Y. (2018). Relative ageing of series and parallel systems: Eﬀects of
+dependence and heterogeneity among components. Operations Research Letters 46, 219-
+224.
+[16] Esary, J.D.andProschan, F. (1963). Reliability betwe en systemfailurerateandcomponent
+failure rates. Technometrics 5, 183-189.
+[17] Finkelstein, M. (2006). On relative ordering of mean re sidual lifetime functions. Statistics
+and Probability Letters 76, 939-944.
+[18] Finkelstein M. (2008). Failure rate modeling for reliability and risk. London, Springer.
+[19] Gupta, N. (2013). Stochastic comparisons of residual l ifetimes and inactivity times of
+coherent systems. Journal of Applied Probability 50, 848-860.
+18[20] Gupta, N., Misra, N. and Kumar, S. (2015). Stochastic co mparisons of residual lifetimes
+and inactivity times of coherent systems with dependent ide ntically distributed compo-
+nents.European Journal of Operational Research 240, 425-430.
+[21] Hazra, N.K., Kuiti, M.R., Finkelstein, M. and Nanda, A. K. (2017). On stochastic compar-
+isons of maximum order statistics from the location-scale f amily of distributions. Journal
+of Multivariate Analysis 160, 31-41.
+[22] Hazra, N.K. and Nanda, A.K. (2014). Component redundan cy versus system redundancy
+in diﬀerent stochastic orderings. IEEE Transactions on Reliability 63, 567-582.
+[23] Hazra, N.K. and Nanda, A.K. (2015). A note on warm standb y system. Statistics and
+Probability Letters 106, 30-38.
+[24] Hazra, N.K. and Nanda, A.K. (2016). Stochastic compari sons between used systems and
+systems made by used components. IEEE Transactions on Reliability 65, 751-762.
+[25] Hazra, N.K. and Nanda, A.K. (2016). On some generalized orderings: In the spirit of
+relative ageing. Communications in Statistics-Theory and Methods 45, 6165-6181.
+[26] Kalashnikov, V. V. and Rachev, S.T. (1986). Characteri zation of queueing models and
+their stability. In: Probability Theory and Mathematical Statistics, eds. Yu. K. Prohorov
+et al., VNU Science Press, Amsterdam 2, 37-53.
+[27] Karlin, S. (1968). Total Positivity . Stanford University Press, Stanford, California.
+[28] Kayid, M., Izadkhah, S. and Zuo, M.J. (2017). Some resul ts on the relative ordering of two
+frailty models. Statistical Papers 58, 287-301.
+[29] Kochar, S., Mukerjee, H. and Samaniego, F. J. (1999). Th e‘signature’ of a coherent system
+and its application to comparisons among systems. Naval Research Logistics 46, 507-523.
+[30] Kochar, S.C. and Wiens, D.P. (1987). Partial orderings of life distributions with respect
+to their ageing properties. Naval Research Logistics 34, 823-829.
+[31] Lai, C. and Xie, M. (2006). Stochastic Ageing and Dependence for Reliability . Springer,
+New York.
+[32] Li, C. and Li, X. (2016). Relative ageing of series and pa rallel systems with statistically
+independent and heterogeneous component lifetimes. IEEE Transactions on Reliability 65,
+1014-1021.
+[33] Li, X. and Lu, X. (2003). Stochastic comparison on resid ual life and inactivity time of
+series and parallel systems. Probability in the Engineering and Informational Sciences 17,
+267-275.
+19[34] Mantel, N. and Stablein, D.M. (1988). The crossing haza rd function problem. Journal of
+the Royal Statistical Society, Series D 3759-64.
+[35] Marshall, A.W. and Olkin, I. (2007). Life Distributions. Springer, New York.
+[36] Misra, N., Dhariyal, I.D. and Gupta, N. (2009). Optimal allocation of active spares in
+series systems and comparison of component and system redun dancies.Journal of Applied
+Probability 4619-34.
+[37] Misra, N. and Francis, J. (2015). Relative ageing of ( n−k+1)-out-of- nsystems. Statistics
+and Probability Letters 106, 272-280.
+[38] Misra, N. and Francis, J. (2018). Relative aging of ( n−k+1)-out-of- nsystems based on
+cumulative hazard and cumulative reversed hazard function s.Naval Research Logistics 65,
+566-575.
+[39] Misra, N., Francis, J. and Naqvi, S. (2017). Some suﬃcie nt conditions for relative aging of
+life distributions. Probability in the Engineering and Informational Sciences 31, 83-99.
+[40] Nanda, A.K. and Hazra, N.K. (2013). Some results on acti ve redundancy at component
+level versus system level. Operations Research Letters 41, 241-245.
+[41] Nanda, A.K., Hazra, N.K., Al-Mutairi, D.K. and Ghitany , M.E. (2017). On some general-
+ized ageing orderings. Communications in Statistics-Theory and Methods 46, 5273-5291.
+[42] Nanda, A.K. and Jain, K. and Singh, H. (1998). Preservat ion of some partial orderings
+under the formation of coherent systems. Statistics and Probability Letters 39, 123-131.
+[43] Navarro, J., ´Aguila, Y.D., Sordo, M.A. and Su´ arez-Liorens, A. (2013). S tochastic ordering
+propertiesfor systemswith dependentidentical distribut edcomponents. Applied Stochastic
+Models in Business and Industry 29, 264-278.
+[44] Navarro, J., ´Aguila, Y.D., Sordo, M.A. and Su´ arez-Liorens, A. (2016). P reservation of
+stochastic orders under the formation of generalized disto rted distributions: applications
+to coherent systems. Methodology and Computing in Applied Probability 18, 529-545.
+[45] Navarro, J., Fern´ andez-Martinez, P., Fern´ andez-S´ anchez, J. and Arriaza, A. (2019).
+Relationships between importance measures and redundancy in systems with de-
+pendent components. Probability in the Engineering and Informational Sciences
+DOI:10.1017/S0269964819000159.
+[46] Navarro, J., Pellerey, F. and Di Crescenzo, A. (2015). O rderings of coherent systems with
+randomized dependent components. European Journal of Operational Research 240, 127-
+139.
+20[47] Navarro, J. and Rubio, R. (2010). Comparisons of cohere nt systems using stochastic prece-
+dence.TEST19, 469-486.
+[48] Nelsen, R.B. (1999). An Introduction to Copulas . Springer, New York.
+[49] Pledger, P. and Proschan, F. (1971). Comparisons of ord er statistics and of spacings from
+heterogeneous distributions. In: Rustagi, J.S. (ed.), Optimizing methods in statistics , Aca-
+demic Press, New York, pp. 89-113.
+[50] Pocock, S.J., Gore, S.M.andKeer, G.R. (1982). Long-te rm survivalanalysis: thecurability
+of breast cancer. Statistics in Medicine 1, 93-104.
+[51] Proschan, F. and Sethuraman, J. (1976). Stochastic com parisons of order statistics from
+heterogeneouspopulations, withapplicationsinreliabil ity.Journal of Multivariate Analysis
+6, 608-616.
+[52] Razaei, M., Gholizadeh, B.andIzadkhah, S.(2015). Onr elative reversedhazardrateorder.
+Communications in Statistics-Theory and Methods 44, 300-308.
+[53] Samaniego, F. J. and Navarro, J. (2016). On comparing co herent systems with heteroge-
+neous components. Advances in Applied Probability 48, 88-111.
+[54] Sengupta, D. and Deshpande, J.V. (1994). Some results o n the relative ageing of two life
+distributions. Journal of Applied Probability 31991-1003.
+[55] Shaked, M. and Shanthikumar, J.G. (2007). Stochastic Orders . Springer, New York.
+[56] Zhang, Y., Amini-Seresht, E. and Ding, W. (2017). Compo nent and system active redun-
+dancies for coherent systems with dependent components. Applied Stochastic Models in
+Business and Industry 33, 409-421.
+[57] Zhao, P., Zhang, Y. and Li, L. (2015). Redundancy alloca tion at component level versus
+system level. European Journal of Operational Research 241, 402-411.
+Appendix
+Proof of Lemma 2.3( ii):Note that, for all p∈(0,1),
+hk|n(p) =1
+B(k,n−k+1)p/integraldisplay
+0uk−1(1−u)n−kdu, (6.1)
+whereB(·,·) is the the beta function. Then
+1
+Hk|n(p)=1/integraldisplay
+0uk−1/parenleftbigg1−up
+1−p/parenrightbiggn−k
+du,0< p <1 (6.2)
+21and
+1
+Hl|m(p)=1/integraldisplay
+0ul−1/parenleftbigg1−up
+1−p/parenrightbiggm−l
+du,0< p <1.
+Combing these two, we have
+Hl|m(p)
+Hk|n(p)=1/integraltext
+0uk−1/parenleftBig
+1−up
+1−p/parenrightBign−k
+du
+1/integraltext
+0ul−1/parenleftBig
+1−up
+1−p/parenrightBigm−l
+du,0< p <1.
+Letcbe any real number. Consider the relation
+Hl|m(p)−cHk|n(p)sgn=1/integraldisplay
+0ξ1(u,p)η1(u,p)du,0< p <1,
+where
+ξ1(u,p) =ul−1/parenleftbigg1−up
+1−p/parenrightbiggm−l
+,0< u <1,0< p <1
+and
+η1(u,p) =uk−l/parenleftbigg1−up
+1−p/parenrightbiggn−k−m+l
+−c,0< u <1,0< p <1.
+Note that
+ξ1(u,p) is RR 2in (u,p)∈(0,1)×(0,1) (6.3)
+and
+η1(u,p) is increasing in p∈(0,1),for allu∈(0,1). (6.4)
+Further, since k≤landm−l≤n−k,
+uk−l/parenleftbigg1−up
+1−p/parenrightbiggn−k−m+l
+is decreasing in u∈(0,1),
+for allp∈(0,1). Then, on using Lemma 2.2 we have that, for all p∈(0,1),η1(u,p) changes
+sign at most once, and if the change of sign does occur, it is fr om positive to negative, as u
+traverses from 0 to 1. Finally, on using this together with (6 .3) and (6.4) in Lemma 2.1, we
+get that Hl|m(p)−cHk|n(p) changes sign at most once, and if the change of sign does occu r,
+it is from negative to positive, as utraverses from 0 to 1. Thus, on using Lemma 2.2, we get
+thatHl|m(p)/Hk|n(p) is increasing in p∈(0,1),which further implies that Hk|n(p)/Hl|m(p) is
+decreasing in p∈(0,1). Hence, the result is proved. ✷
+22Proof of Lemma 2.3( iii):Diﬀerentiating (6.2) on both sides, we get
+−H′
+k|n(p)
+/bracketleftbig
+Hk|n(p)/bracketrightbig2=n−k
+1−p1/integraldisplay
+0uk−1/parenleftbigg1−up
+1−p/parenrightbiggn−k−1/parenleftbigg1−u
+1−p/parenrightbigg
+du,0< p <1,
+which gives
+(1−p)H′
+k|n(p)
+Hk|n(p)=−(n−k)1/integraltext
+0uk−1/parenleftBig
+1−up
+1−p/parenrightBign−k−1/parenleftBig
+1−u
+1−p/parenrightBig
+du
+1/integraltext
+0uk−1/parenleftBig
+1−up
+1−p/parenrightBign−k
+du,0< p <1.
+Thus, to prove the result it suﬃces to show that
+N1(p)
+D1(p)def.=1/integraltext
+0uk−1/parenleftBig
+1−up
+1−p/parenrightBign−k−1/parenleftBig
+1−u
+1−p/parenrightBig
+du
+1/integraltext
+0uk−1/parenleftBig
+1−up
+1−p/parenrightBign−k
+duis increasing in p∈(0,1). (6.5)
+Letαbe any real number. Consider the relation
+N1(p)−αD1(p)sgn=1/integraldisplay
+0ξ2(u,p)η2(u,p)du,0< p <1,
+where
+ξ2(u,p) =uk−1/parenleftbigg1−up
+1−p/parenrightbiggn−k
+,0< u <1,0< p <1
+and
+η2(u,p) =/parenleftbigg1−u
+1−up/parenrightbigg
+−α,0< u <1,0< p <1.
+Note that
+ξ2(u,p) is RR 2in (u,p)∈(0,1)×(0,1) (6.6)
+and
+η2(u,p) is increasing in p∈(0,1),for allu∈(0,1). (6.7)
+Further, it could be veriﬁed that, for all p∈(0,1),
+/parenleftbigg1−u
+1−up/parenrightbigg
+is decreasing in u∈(0,1).
+23Then, on using Lemma 2.2 we have that η2(u,p) changes sign at most once, and if the change
+of sign does occur, it is from positive to negative, as utraverses from 0 to 1. Finally, on using
+this together with (6.6) and (6.7) in Lemma 2.1, we get that N1(p)−αD1(p) changes sign at
+most once, and if the change of sign does occur, it is from nega tive to positive, as utraverses
+from 0 to 1. Thus, on using Lemma 2.2, we get that N1(p)/D1(p) is increasing in p∈(0,1),
+and hence the result is proved. ✷
+Proof of Lemma 2.4( ii):From (6.1), we have
+1
+Rk|n(p)=1/integraldisplay
+0un−k/parenleftbigg1−u(1−p)
+p/parenrightbiggk−1
+du,0< p <1 (6.8)
+and
+1
+Rl|m(p)=1/integraldisplay
+0um−l/parenleftbigg1−u(1−p)
+p/parenrightbiggl−1
+du,0< p <1.
+Combing these two, we have
+Rl|m(p)
+Rk|n(p)=1/integraltext
+0un−k/parenleftBig
+1−u(1−p)
+p/parenrightBigk−1
+du
+1/integraltext
+0um−l/parenleftBig
+1−u(1−p)
+p/parenrightBigl−1
+du,0< p <1.
+Letβbe any real number. Consider the relation
+Rl|m(p)−βRk|n(p)sgn=1/integraldisplay
+0ξ3(u,p)η3(u,p)du,0< p <1,
+where
+ξ3(u,p) =um−l/parenleftbigg1−u(1−p)
+p/parenrightbiggl−1
+,0< u <1,0< p <1
+and
+η3(u,p) =un−k−m+l/parenleftbigg1−u(1−p)
+p/parenrightbiggk−l
+−β,0< u <1,0< p <1.
+Note that
+ξ3(u,p) is TP 2in (u,p)∈(0,1)×(0,1) (6.9)
+and
+η3(u,p) is decreasing in p∈(0,1),for allu∈(0,1). (6.10)
+24Further, for all p∈(0,1),
+un−k−m+l/parenleftbigg1−u(1−p)
+p/parenrightbiggk−l
+is decreasing in u∈(0,1).
+Then, on using Lemma 2.2 we have that η3(u,p) changes sign at most once, and if the change
+of sign does occur, it is from positive to negative, as utraverses from 0 to 1. Finally, on us-
+ing this together with (6.9) and (6.10) in Lemma 2.1, we get th atRl|m(p)−βRk|n(p) changes
+sign at most once, and if the change of sign does occur, it is fr om positive to negative, as u
+traverses from 0 to 1. Thus, on using Lemma 2.2, we get that Rl|m(p)/Rk|n(p) is decreasing
+inp∈(0,1),which further implies that Rk|n(p)/Rl|m(p) is increasing in p∈(0,1). Hence, the
+result is proved. ✷
+Proof of Lemma 2.4( iii):Diﬀerentiating (6.8) on both sides, we get
+R′
+k|n(p)
+/bracketleftbig
+Rk|n(p)/bracketrightbig2=k−1
+p1/integraldisplay
+0un−k/parenleftbigg1−u(1−p)
+p/parenrightbiggk−2/parenleftbigg1−u
+p/parenrightbigg
+du,0< p <1,
+which gives
+pR′
+k|n(p)
+Rk|n(p)=(k−1)1/integraltext
+0un−k/parenleftBig
+1−u(1−p)
+p/parenrightBigk−2/parenleftBig
+1−u
+p/parenrightBig
+du
+1/integraltext
+0un−k/parenleftBig
+1−u(1−p)
+p/parenrightBigk−1
+du,0< p <1.
+Thus, to prove the result it suﬃces to show that
+N2(p)
+D2(p)def.=1/integraltext
+0un−k/parenleftBig
+1−u(1−p)
+p/parenrightBigk−2/parenleftBig
+1−u
+p/parenrightBig
+du
+1/integraltext
+0un−k/parenleftBig
+1−u(1−p)
+p/parenrightBigk−1
+duis decreasing in p∈(0,1).
+Letγbe any real number. Consider the relation
+N2(p)−γD2(p)sgn=1/integraldisplay
+0ξ4(u,p)η4(u,p)du,0< p <1,
+where
+ξ4(u,p) =un−k/parenleftbigg1−u(1−p)
+p/parenrightbiggk−1
+,0< u <1,0< p <1
+and
+η4(u,p) =/parenleftbigg1−u
+1−u(1−p)/parenrightbigg
+−γ,0< u <1,0< p <1.
+25Note that
+ξ4(u,p) is TP 2in (u,p)∈(0,1)×(0,1) (6.11)
+and
+η4(u,p) is decreasing in p∈(0,1),for allu∈(0,1). (6.12)
+Further, it could be veriﬁed that, for all p∈(0,1),
+1−u
+1−u(1−p)is decreasing in u∈(0,1).
+Then, on using Lemma 2.2 we have that η4(u,p) changes sign at most once, and if the change
+of sign does occur, it is from positive to negative, as utraverses from 0 to 1. Finally, on using
+this together with (6.11) and (6.12) in Lemma 2.1, we get that N2(p)−αD2(p) changes sign at
+most once, and if the change of sign does occur, it is from posi tive to negative, as utraverses
+from 0 to 1. Thus, on using Lemma 2.2, we get that N2(p)/D2(p) is decreasing in p∈(0,1),
+and hence the result is proved. ✷
+Proof of Theorem 3.1: Note that
+¯Fτ1(X)(x) =h1/parenleftbig¯FX(x)/parenrightbig
+and¯Fτ2(Y)(x) =h2/parenleftbig¯FY(x)/parenrightbig
+, x >0,
+which gives failure rates of τ1(X) andτ2(Y) as
+rτ1(X)(x) =fX(x)h′
+1/parenleftbig¯FX(x)/parenrightbig
+h1/parenleftbig¯FX(x)/parenrightbig=rX(x)H1(¯FX(x)), x >0
+and
+rτ2(Y)(x) =fY(x)h′
+2/parenleftbig¯FY(x)/parenrightbig
+h2/parenleftbig¯FX(x)/parenrightbig=rY(x)H2(¯FY(x)), x >0,
+respectively. Then, τ1(X)≺
+cτ2(Y) holds if and only if
+rτ1(X)(x)
+rτ2(X)(x)=/bracketleftbiggrX(x)
+rY(x)/bracketrightbigg/bracketleftbiggH1(¯FX(x))
+H2(¯FY(x))/bracketrightbigg
+is increasing in x >0,
+which holds if
+rX(x)
+rY(x)is increasing in x >0 (6.13)
+and
+H1(¯FX(x))
+H2(¯FY(x))is increasing in x >0. (6.14)
+26Note that (6.13) holds because X≺
+cY. Further, (6.14) holds if and only if
+˜rY(x)/bracketleftbigg
+(1−¯FY(x))H′
+2(¯FY(x))
+H2(¯FY(x))/bracketrightbigg
+≥˜rX(x)/bracketleftbigg
+(1−¯FX(x))H′
+1(¯FX(x))
+H1(¯FX(x))/bracketrightbigg
+,for allx >0.(6.15)
+SinceY≤rhX, we have
+˜rY(x)≤˜rX(x) and¯FY(x)≤¯FX(x),for allx >0. (6.16)
+Now consider the following two cases.
+Case-I: Let (1 −p)H′
+1(p)/H1(p) is decreasing in p∈(0,1). Then
+(1−¯FY(x))H′
+2(¯FY(x))
+H2(¯FY(x))≥(1−¯FY(x))H′
+1(¯FY(x))
+H1(¯FY(x))
+≥(1−¯FX(x))H′
+1(¯FX(x))
+H1(¯FX(x)),for allx >0,
+where the ﬁrst inequality follows from condition ( i), and the second inequality follows from
+(6.16) and condition ( ii).
+Case-II: Let (1 −p)H′
+2(p)/H2(p) is decreasing in p∈(0,1). Then
+(1−¯FY(x))H′
+2(¯FY(x))
+H2(¯FY(x))≥(1−¯FX(x))H′
+2(¯FX(x))
+H2(¯FX(x))
+≥(1−¯FX(x))H′
+1(¯FX(x))
+H1(¯FX(x)),for allx >0,
+wherethe ﬁrstinequality follows from (6.16) and( ii), and thesecond inequality follows from ( i).
+Now, from Cases I and II, we get that
+−(1−¯FY(x))H′
+2(¯FY(x))
+H2(¯FY(x))≤ −(1−¯FX(x))H′
+1(¯FX(x))
+H1(¯FX(x)),for allx >0. (6.17)
+Further, ( i) implies that
+−(1−¯FX(x))H′
+1(¯FX(x))
+H1(¯FX(x))≥0,for allx >0. (6.18)
+On combing (6.16), (6.17) and (6.18), we get (6.15). Hence, t he result is proved. ✷
+Proof of Theorem 3.2: Note that
+Fτ1(X)(x) = 1−h1/parenleftbig¯FX(x)/parenrightbig
+andFτ2(Y)(x) = 1−h2/parenleftbig¯FY(x)/parenrightbig
+, x >0,
+which gives reversed failure rates of τ1(X) andτ2(Y) as
+˜rτ1(X)(x) =fX(x)h′
+1/parenleftbig¯FX(x)/parenrightbig
+1−h1/parenleftbig¯FX(x)/parenrightbig= ˜rX(x)R1(¯FX(x)), x >0
+27and
+˜rτ2(Y)(x) =fY(x)h′
+2/parenleftbig¯FY(x)/parenrightbig
+1−h2/parenleftbig¯FX(x)/parenrightbig= ˜rY(x)R2(¯FY(x)), x >0,
+respectively. Then, τ1(X)≺
+bτ2(Y) holds if and only if
+˜rτ1(X)(x)
+˜rτ2(X)(x)=/bracketleftbigg˜rX(x)
+˜rY(x)/bracketrightbigg/bracketleftbiggR1(¯FX(x))
+R2(¯FY(x))/bracketrightbigg
+is decreasing in x >0,
+which holds if
+˜rX(x)
+˜rY(x)is decreasing in x >0 (6.19)
+and
+R1(¯FX(x))
+R2(¯FY(x))is decreasing in x >0. (6.20)
+Note that (6.19) holds because X≺
+bY. Further, (6.20) holds if and only if
+rY(x)/bracketleftbigg
+¯FY(x)R′
+2(¯FY(x))
+R2(¯FY(x))/bracketrightbigg
+≤rX(x)/bracketleftbigg
+¯FX(x)R′
+1(¯FX(x))
+R1(¯FX(x))/bracketrightbigg
+,for allx >0. (6.21)
+SinceX≤hrY, we have
+rY(x)≤rX(x) and¯FX(x)≤¯FY(x),for allx >0. (6.22)
+Now consider the following two cases.
+Case-I: Let pR′
+1(p)/R1(p) is decreasing in p∈(0,1). Then
+¯FY(x)R′
+2(¯FY(x))
+R2(¯FY(x))≤¯FY(x)R′
+1(¯FY(x))
+R1(¯FY(x))
+≤¯FX(x)R′
+1(¯FX(x))
+R1(¯FX(x)),for allx >0,
+wherethe ﬁrstinequality follows from ( i), and thesecond inequality follows from (6.22) and( ii).
+Case-II: Let pR′
+2(p)/R2(p) is decreasing in p∈(0,1). Then
+¯FY(x)R′
+2(¯FY(x))
+R2(¯FY(x))≤¯FX(x)R′
+2(¯FX(x))
+R2(¯FX(x))
+≤¯FX(x)R′
+1(¯FX(x))
+R1(¯FX(x)),for allx >0,
+wherethe ﬁrstinequality follows from (6.22) and( ii), and thesecond inequality follows from ( i).
+Now, from Cases I and II, we get that
+¯FY(x)R′
+2(¯FY(x))
+R2(¯FY(x))≤¯FX(x)R′
+1(¯FX(x))
+R1(¯FX(x)),for allx >0. (6.23)
+28Further, ( i) implies that
+¯FX(x)R′
+1(¯FX(x))
+R1(¯FX(x))≥0,for allx >0. (6.24)
+On combing (6.22), (6.23) and (6.24), we get (6.21). Hence, t he result is proved. ✷
+Proof of Theorem 4.1: We have
+¯FTC(x) =h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+, x >0
+and
+¯FTS(x) = 1−/parenleftbig
+1−h(¯FX(x))/parenrightbigm+1, x >0,
+which gives failure rates of TCandTSas
+rTC(x) = (m+1)fX(x)/parenleftbig
+1−¯FX(x)/parenrightbigmh′/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig, x >0
+and
+rTS(x) = (m+1)fX(x)/parenleftbig
+1−h(¯FX(x))/parenrightbigm h′/parenleftbig¯FX(x)/parenrightbig
+1−/parenleftbig
+1−h(¯FX(x))/parenrightbigm+1, x >0,
+respectively. Then TS≺
+c(resp.≻
+c)TCholds if, and only if,
+rTS(x)
+rTC(x)=/parenleftBigg/parenleftbig
+1−h(¯FX(x))/parenrightbigmh′/parenleftbig¯FX(x)/parenrightbig
+1−/parenleftbig
+1−h(¯FX(x))/parenrightbigm+1/parenrightBigg/parenleftBigg
+h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+/parenleftbig
+1−¯FX(x)/parenrightbigmh′/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig/parenrightBigg
+is increasing (resp. decreasing) in x >0, which is equivalent to the fact that
+/parenleftbigg(1−h(p))mh′(p)
+1−(1−h(p))m+1/parenrightbigg/parenleftBigg
+h/parenleftbig
+1−(1−p)m+1/parenrightbig
+(1−p)mh′(1−(1−p)m+1)/parenrightBigg
+is decreasing (resp. incresaing) in p∈(0,1). Hence the result is proved. ✷
+Proof of Corollary 4.1: Thereliability function of an n-out-of-nsystem is given by h(p) =pn.
+Thus, to prove the result it suﬃces to show that (4.1) holds fo rh(p) =pnwithm= 1 and
+n≥2. Note that it holds if and only if
+(2−p)(1−pn)
+(1−p)(2−pn)is increasing in p∈(0,1),
+or equivalently,
+1+ζ1(p) is increasing in p∈(0,1),
+29where
+ζ1(p) =p−pn
+2−2p−pn+pn+1,0< p <1.
+Now,
+ζ′
+1(p)sgn= 2−ζ2(p),0< p <1,
+where
+ζ2(p) = 2npn−1−3(n−1)pn+npn+1−p2n,0< p <1.
+This gives
+ζ′
+2(p) =npn−2ζ3(p),0< p <1,
+where
+ζ3(p) = 2( n−1)−3(n−1)p+(n+1)p2−2pn+1
+≥(n−1)(2−3p+p2)
+= (n−1)(2−p)(1−p)≥0,0< p <1.
+This implies that ζ2(p) is increasing in p∈(0,1) withζ2(0) = 0 and ζ2(1) = 2, and hence
+0≤ζ2(p)≤2. Again, this implies that ζ1(p) is increasing in p∈(0,1),and hence the result is
+proved. ✷
+Proof of Theorem 4.2: We have
+FTC(x) = 1−h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+, x >0
+and
+FTS(x) =/parenleftbig
+1−h(¯FX(x))/parenrightbigm+1, x >0,
+which gives reversed failure rates of TCandTSas
+˜rTC(x) = (m+1)fX(x)/parenleftbig
+1−¯FX(x)/parenrightbigmh′/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+1−h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig, x >0
+and
+˜rTS(x) = (m+1)fX(x)h′/parenleftbig¯FX(x)/parenrightbig
+1−h/parenleftbig¯FX(x)/parenrightbig, x >0,
+respectively. Then TS≺
+bTCholds if and only if
+˜rTS(x)
+˜rTC(x)=/parenleftBigg
+h′/parenleftbig¯FX(x)/parenrightbig
+1−h/parenleftbig¯FX(x)/parenrightbig/parenrightBigg/parenleftBigg
+1−h/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig
+/parenleftbig
+1−¯FX(x)/parenrightbigmh′/parenleftbig
+1−(1−¯FX(x))m+1/parenrightbig/parenrightBigg
+is decreasing in x >0,
+30or equivalently,
+/parenleftbigg(1−p)h′(p)
+1−h(p)/parenrightbigg/parenleftBigg
+1−h/parenleftbig
+1−(1−p)m+1/parenrightbig
+(1−(1−(1−p)m+1))h′(1−(1−p)m+1)/parenrightBigg
+is increasing in p∈(0,1).
+This is equivalent to the fact that
+R(p)
+R(1−(1−p)m+1)is incresaing in p∈(0,1),
+and hence the result is proved. ✷
+Proof of Proposition 4.1: SincepR′(p)/R(p)isdecreasingin p∈(0,1), andp≤1−(1−p)m+1,
+for allp∈(0,1), we have
+pR′(p)
+R(p)≥/parenleftbig
+1−(1−p)m+1/parenrightbigR′(1−(1−p)m+1)
+R(1−(1−p)m+1),for allp∈(0,1). (6.25)
+Further, it can be easily checked that, for all p∈(0,1),
+1−(1−p)m+1≥(m+1)p(1−p)m.
+SincepR′(p)/R(p) is positive for all p∈(0,1), we get from the above inequality that, for all p∈
+(0,1),
+/parenleftbig
+1−(1−p)m+1/parenrightbigR′(1−(1−p)m+1)
+R(1−(1−p)m+1≥(m+1)p(1−p)mR′(1−(1−p)m+1)
+R(1−(1−p)m+1).(6.26)
+On combining (6.25) and (6.26), we get
+pR′(p)
+R(p)≥(m+1)p(1−p)mR′(1−(1−p)m+1)
+R(1−(1−p)m+1,for allp∈(0,1),
+or equivalently,
+R(p)
+R(1−(1−p)m+1)is increasing in p∈(0,1),
+and hence the result follows from Theorem 4.2. ✷
+Proof of Theorem 5.1: Note that, for any ﬁxed t >0,
+¯Fτ(Xt)(x) =h/parenleftbigg¯FX(t+x)
+¯FX(t)/parenrightbigg
+and¯F(τ(X))t(x) =h/parenleftbig¯FX(t+x)/parenrightbig
+h/parenleftbig¯FX(t)/parenrightbig, x >0, (6.27)
+which gives
+rτ(Xt)(x) =fX(t+x)h′/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig
+¯FX(t)h/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig=rX(t+x)H/parenleftbigg¯FX(t+x)
+¯FX(t)/parenrightbigg
+, x >0,
+31and
+r(τ(X))t(x) =fX(t+x)h′/parenleftbig¯FX(t+x)/parenrightbig
+h/parenleftbig¯FX(t+x)/parenrightbig=rX(t+x)H(¯FX(t+x)), x >0.
+Then,τ(Xt)≺
+c(τ(X))tholds if and only if
+rτ(Xt)(x)
+r(τ(X))t(x)=H/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig
+H(¯FX(t+x))is increasing in x >0,
+which is equivalent to the fact that, for all q∈(0,1),
+H/parenleftBig
+p
+q/parenrightBig
+H(p)is decreasing in p∈(0,q).
+Further, this holds if and only if
+p
+q/parenleftbiggH′(p/q)
+H(p/q)/parenrightbigg
+≤pH′(p)
+H(p),for all 0< p≤q <1,
+which is equivalent to the fact that
+pH′(p)
+H(p)is decreasing in p∈(0,1).
+Hence, the result is proved. ✷
+Proof of Theorem 5.2: Lett >0 be ﬁxed. From (6.27), we have
+˜rτ(Xt)(x) =fX(t+x)h′/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig
+¯FX(t)/parenleftBig
+1−h/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig/parenrightBig, x >0
+and
+˜r(τ(X))t(x) =fX(t+x)h′/parenleftbig¯FX(t+x)/parenrightbig
+h/parenleftbig¯FX(t)/parenrightbig
+−h/parenleftbig¯FX(t+x)/parenrightbig, x >0.
+Then,τ1(Xt)≺
+b(resp.≻
+b) (τ2(X))tholds if and only if
+˜rτ(Xt)(x)
+˜r(τ(X))t(x)=
+h′/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig
+¯FX(t)/parenleftBig
+1−h/parenleftBig¯FX(t+x)
+¯FX(t)/parenrightBig/parenrightBig
+/bracketleftBigg
+h/parenleftbig¯FX(t)/parenrightbig
+−h/parenleftbig¯FX(t+x)/parenrightbig
+h′/parenleftbig¯FX(t+x)/parenrightbig/bracketrightBigg
+is decreasing (resp. increasing) in x >0, which is equivalent to (5.2). Hence, the result is
+proved. ✷
+Proof of Corollary 5.2: The reliability function of a 1-out-of- nsystem is given by h(p) =
+321−(1−p)n,0< p <1.Thus, to prove the result it suﬃces to show that (5.2) holds fo r
+h(p) = 1−(1−p)n,0< p <1.Note that this holds if and only if, for every ﬁxed q∈(0,1),
+(1−p)n−(1−q)n
+(1−p)n−1(q−p)is increasing in p∈(0,q),
+or equivalently,
+ζ5(y)def.=yn−1
+(y−1)yn−1is decreasing in y >1.
+We have
+ζ′
+5(y)sgn=yn−2ζ6(y), y >1,
+where
+ζ6(y) =−yn+ny−(n−1), y >1.
+Note that ζ6(·) is a decreasing function with ζ6(1) = 0, and hence ζ6(y)≤0 for all y >1.
+Further, this implies that ζ5(y) is decreasing in y >1. Hence the result is proved. ✷
+33

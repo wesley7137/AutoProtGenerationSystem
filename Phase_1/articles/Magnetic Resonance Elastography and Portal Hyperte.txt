@@ -1,0 +1,286 @@
+Title: Magnetic Resonance Elastography and Portal Hypertension: Influence of
+  the Portal Venous Flow on the Liver Stiffness
+Abstract:   The invasive measurement of the hepatic venous pressure gradient is still
+considered as the reference method to assess the severity of portal
+hypertension. Even though previous studies have shown that the liver stiffness
+measured by elastography could predict portal hypertension in patients with
+chronic liver disease, the mechanisms behind remain today poorly understood.
+The main reason is that the liver stiffness is not specific to portal
+hypertension and is also influenced by concomitant pathologies, such as
+cirrhosis. Portal hypertension is also source of a vascular incidence, with a
+substantial diversion of portal venous blood to the systemic circulation,
+bypassing the liver. This study focuses on this vascular effect of portal
+hypertension. We propose to generate and control the portal venous flow (to
+isolate the modifications in the portal venous flow as single effect of portal
+hypertension) in an anesthetized pig and then to quantify its implications on
+liver stiffness by an original combination of MRE and 4D-Flow Magnetic
+Resonance Imaging (MRI). A catheter balloon is progressively inflated in the
+portal vein and the peak flow, peak velocity magnitude and liver stiffness are
+quantified in a 1.5T MRI scanner (AREA, Siemens Healthcare, Erlangen, Germany).
+A strong correlation is observed between the portal peak velocity magnitude,
+the portal peak flow or the liver stiffness and the portal vein intraluminal
+obstruction. Moreover, the comparison of mechanical and flow parameters
+highlights a correlation with the possibility of identifying linear
+relationships. These results give preliminary indications about how liver
+stiffness can be affected by portal venous flow and, by extension, by
+hypertension.
+
+Full Text: 1 
+ 
+1Corresponding author. E-mail address: schatelin@unistra.fr (S. Chatelin)        - Diffusion non restreinte  Magnetic Resonance Elastography  and Portal Hypertension : 
+Influence of the Portal Venous Flow on the Liver Stiffness  
+Simon CHATELINa,1, Raoul POPb,c, Céline GIRAUDEAUb, Khalid AMBARKId, Ning JINe, 
+François SEVERACa,f, Elodie BRETONa and Jonathan VAPPOUa 
+a ICube, CNRS UMR 7357, University of Strasbourg, IHU, Strasbourg, France  
+b IHU-Strasbourg, Institute for Image -Guided Surgery, Strasbourg, France  
+c University Hospital of Strasbourg, Strasbourg, France  
+d Siemens Healthcare SAS, Saint Denis, France  
+e Siemens Medical Solutions, Chicago, IL, USA  
+f Laboratory of Biostatistics and Medical Computer Science, School of Medicine, University Hospital of 
+Strasbourg, Strasbourg, France  
+ 
+Abstract . The invasive measurement of the hepatic venou s pressure gradient is still 
+considered as the reference method to assess the severity  of portal hypertension. Even though 
+previous studies have shown that the liver stiffness measured by elastography could predict 
+portal hypertension in patients with chronic liver disease , the mechanisms behind remain today 
+poorly understood. The main reas on is that the liver stiffness is not specific to portal 
+hypertension and is also influenced by concomitant pathologies, such as cirrhosis. Portal 
+hypertension is also source of a vascular incidence, with a substantial diversion of portal 
+venous blood to t he systemic circulation, bypassing the liver. This study focuses on this 
+vascular effect of portal hypertension. We propose to generate and control the portal venous 
+flow (to isolate the modifications in the portal venous flow  as single effect of portal 
+hypertension ) in an anesthetized pig and then to quantify its implications on liver stiffness by 
+an original combination of MRE and 4D -Flow Magnetic Resonance Imaging (MRI). A catheter 
+balloon is progressively inflated in the portal vein and the peak flow , peak velocity magnitude  
+and liver stiffness  are quantified in a 1.5T MRI scanner (AREA, Siemens Healthcare, Erlangen, 
+Germany). A strong correlation is observed  between the portal peak velocity magnitude, the 
+portal peak flow or the liver stiffness and the portal vein intraluminal obstruction. Moreover, the 
+comparison of mechanical and flow parameters highlights a correlation with the possibility of 
+identifying linear relationships. These results give preliminary indications about how liver 
+stiffness can be affected by portal venous flow and, by extension, by hypertension.  
+ 
+Keywords . Portal Venous Flow ; Liver Stiffness ; Portal Hypertension ; 4D-Flow M RI; Magnetic 
+Resonance Elastography ; 4D-Flow MRI  
+ 
+1. Introduction  
+ 
+In healthy volunteers, the portal vein represents about 8 7% of the  total liver inflow [1], as 
+illustrated in the figure 1 . As a major consequence of chronic liver disease, portal hypertension 
+is responsible for significant morbidity and mortality [2]. To the best of our knowledge and 
+despite its invasiveness, the measurement of the hepatic venous pressure gradient i s still 
+considered as the reference method to assess the severity  of portal hypertension [3]–[5]. The 
+hepatic  venous pressure gradient is an important indicator for the decision for portal vein 
+embolization and thus to reduce the risk of liver failure after hepatic tumor resection.  Portal 
+hypertension  is not only characterized by an increase of hepatic venous pressure gradient  but 
+is also source of  vascular effects, with  a substantial diversion of portal venous blood to the 
+systemic circulation, bypassing the liver [6]. Cirrhosis and non -cirrhotic portal fibrosis are 
+important causes for portal hypertension. During the last decade, elastography has been 
+proposed as a noninvasive alternative to the measurement of hepatic venous pressure 
+gradient  for de tecting the severity of portal hypertension  with clinical usefulness [7]–[10]. 
+Especially in case of severe degree, portal hypertension  has been shown to be related on the 
+amount of portal blood inflow [11], [12] . Previous stud ies have shown that the mechanical 
+properties (at first the liver stiffness) accurately predicts portal hypertension  in patients with 
+chronic liver disease, with comparable performance  to the  hepatic venous pressure gradient  
+[8], [10] . 2 
+Diffusion non restreinte   
+Figure 1. Schematic illustration of the portal and hepatic vascular system. (sources for the human 
+healthy flow values: [1: [1]] [2: [13]]) 
+However, little is know n about the relationship  between venous pressure and the liver 
+mechanical properties - mainly limited to systematic reviews and meta -analysis [12] - and 
+remain stil l today poorly understood, despite an obvious correlation [13]. The main reason is 
+that most of the commercial and experimental elastography imaging systems estimate liver 
+stiffness  as a mechani cal parameter, which is correlated but not specific to portal hypertension  
+and at the same time  influenced by several pathologies, such as liver fibrosis and cirrhosis 
+[14], [15] .  
+This study aims at generating and isolating the modifications in the portal venous  flow as a 
+single effect of portal hypertension  to highlight their influence on liver stiffness . Instead of 
+studying  correlations between liver stiffness  and portal hypertension  in heathy and pathological 
+cohorts, we propose to control the portal venous flow (using an inflatable balloon cathe ter) and 
+to quantify its effects on both  the portal flow characteristics and the  liver stiffness  by the original 
+combination  of 4D-Flow Magnetic Resonance Imaging (4D -Flow MRI)  and Magnetic 
+Resonance Elastography (MRE).  
+ 
+2. Material s and Methods  
+ 
+To isolate the modifications in the portal venous flow  as single effect of portal hypertension, 
+the portal venous flow is controlled,  quantif ied and the effects  on liver stiffness  are investigated 
+by an original combination of MRE and 4D-Flow MRI .  
+The tests are performed on 1 female pig weighting 2 7 kg. Anesthesia is achieved using 
+intravenous Zoletil ( 20cc, Virbac, Carros, France ) and then maintained using uniform 
+ventilation (except during MRI sequences requiring breath holding) with 2% isoflurane ( Forene, 
+AbbVie, North Chicago, IL, USA ). The experiments are performed in agreement with the 
+European Community Council Directive of 22. September 2010 ( 010/63/U E) and the French 
+local ethics committee ( protocol 38.2018.01.103 - APAFIS #14092 -2018031513247711 v1 ). 
+The p ortal venous flow is controlled by partial or complete occlusion of the portal vein using 
+a MR-compatible  balloon catheter ( XXLTM Vascular, Boston Scientific, Marlborough, MA, 
+USA), with 9 mm in diameter and 40 mm in length.  Using fluoroscopic guidance, the balloon 
+catheter is advanced in the main trunk of the portal vein. Balloon inflation is first performed 
+under fluoroscopy in order to determine t he inflation volume necessary for varying degrees of 
+portal occlusion. A 1:1 contrast (Visipaque 270, GE Healthcare, Buckinghamshire, United 
+Kingdom) saline solution is used for balloon inflation.  
+The catheter balloon is progressively inflated in the portal vein and the flow and mechanical  
+parameters are quantified  in vivo  in a 1.5T interventional MRI scanner ( MAGNETOM Aera, 
+Siemens Healthcare, Erlangen, Germany ). The protocol is divided in five suc cessive blocs  
+(steps) , each one of them corresponding to a specific inflation of the balloon in the portal vein: 
+0%, 50%, 80%, 0% and 100% of intraluminal sectional obstruction of the portal vein, 
+3 
+  Diffusion non restreinte  successively . Each bloc (step) is composed of 4 different MRI sequences acquired in a 1.5T  
+MAGNETOM  Aera MRI interventional scanner (Siemens Healthcare, Erlangen, Germany) and 
+corresponding to:  
+(1) The validation of the position  of the field -of-view (FOV) on low resolution anatomical 
+coronal images  (T1 VIBE sequence , hold breathing, TR/TE = 4.72/2.18  ms, FOV 
+243 mm x 300 mm, matrix 156  x 256, 72 slices, slice thickness 2  mm). 
+(2) The measurement of the liver stiffness  (MRE gradient recalled echo (GRE) sequence 
+with motion sensitizing gradients , hold breathing, TR/TE = 50/23.75  ms, FOV 
+239 mm x 300 mm, matrix 204 x 256, 3 slices, slice thickness 5 mm). The stiffness maps  are 
+obtained using a local estimation algorithm in a 3D region of interest over  the 3 coronal slices.  
+(3) The portal venous flow characterization by the quantitative 3D investigation  over time of 
+the peak flow and the peak velocity magnitude in the portal vein . The acquisitions are 
+performed using the prototype  4D-Flow pulse sequence [16] (Siemens Health care, Erlangen, 
+Germany)  (free breathing and respiratory gating, TR/TE = 51.68/3.77  ms, FOV 
+284 mm x 414 mm, matrix 106  x 192, 20 slices, slice thickness 2 .5 mm, 11 time frames, 
+encoding velocity 50  cm.s-1 for all directions, TT  = 20 to 440 by 52.5 steps for 9 temporal 
+frames ). The post -treatment  and the flow parameters quantif ication are performed  using the 
+prototype “ 4DFlow v2.4 ” WIP software (Siemens Healthcar e, Erlangen, Germany)  with phase 
+anti-aliasing and motion tracking filtering before flow quantifications.    
+(4) The precise measurement of the balloon  and portal vein dimensions  using high 
+resolution anatomical coronal images  (prototype sequence: SPIRAL VIBE sequence , free 
+breathing, TR/TE = 4.57/0.05  ms, FOV 300  mm x 300 mm, matrix 288  x 288, 176 slices, slice 
+thickness 1  mm).  
+The respiratory synchronization of the MRI sequences  is ensured using MR-compatible 
+electrocardiogram. The angiography  image  with 80% inflated balloon  (A), 4D-Flow image (B) , 
+MRE stiffness map  (C) and SPIRAL VIBE anatomical image (D) are shown in figure  2. 
+ 
+ 
+Figure 2. A catheter balloon is  inserted in the portal vein under angiography (A)  and then successively 
+inflated at 0%, 50%, 80%, 0% and 100% intraluminal sectional occlusion of the vein . The  portal venous  
+flow (B) and liver mechanical (C ) parameters are successively measured  for each occlusion state  using 
+4D-Flow MRI and MRE imag ing. Spiral VIBE MRI sequence image s and measure s the precise 
+dimensions of the balloon  (D). 
+ 
+3. Results  and discussions  
+ 
+From the  SPIRAL VIBE  MRI images, the successive intraluminal sectional vein occlusions  are 
+investigated by the measurement of both the inflated catheter balloon and the portal vein 
+diameter . With successive values of 0.6  mm, 7.9 mm, 5.8 mm, 0.6 mm, 9.1 mm and 8.7  mm, 
+8.9 mm, 7.9 mm, 8.7 mm, 9.1 mm for the balloon and portal vein diameter, respectively, the 
+theoretical successive sectional obstruction values of 0%, 80%, 50%, 0% and 100% are 
+adjusted to 0.4%, 79.8%, 52.5%, 0.4% and 100.0% real successive occlusion values.  
+The in sertion of the catheter balloon is thought to modify the vascular flow and velocity, first 
+of all in the portal vein. As illustrated in figure 3(A), a  significant correlation appears between 
+the portal peak flow  and the inflation state of the balloon . Similarly, the portal peak velocity 
+magnitude is correlated to the occlusion of the portal vein. Otherwise, this trend is not observed 
+in the cava vein  (figure 3(B)) . In the cava vein, the velocity and flow parameters decrease 
+4 
+Diffusion non restreinte  slowly and constantl y over the experiments,  independent ly of the inflation of the catheter 
+balloon.  The experimental conditions, and above all to the anesthesia , could explain this slow 
+and regular flow decrease in the cava vein [17], [18] . These observation s validate the specificity 
+of our results to the portal vascular system.  
+ 
+ 
+Figure 3. The portal (A) and cava vein (B) flow parameters are quantified using 4D -Flow imaging over 
+portal vein intraluminal occlusion (peak velocity magnitude and peak flow in purple squares  and red 
+circles , respectively). The liver stiffness (C) is measured using MRE over portal vein intraluminal 
+occlusion (in green diamond shape ). The investigation of the liver stiffness as a function of portal peak 
+flow (D) and portal peak velocity magnitude (E) indicates  a linear relationship.  
+ 
+From the MRE measurements, a similar trend as for portal peak flow or portal peak velocity 
+magnitude over portal occlusion state can be observed for liver stiffness (figure 3(C)). This 
+result illustrates a direct influence of the p ortal flow obstruction on the liver mechanical 
+properties measured by elastography.  
+The liver stiffness is observed as a function of the portal venous peak flow  and portal peak 
+velocity magnitude, as reported in the  figure s 3 (D) and  (E), respectively . The individual 
+correlation s between the liver stiffness and flow parameters  are performed using  non-
+parametric  Spearman’s rs rank correlation coefficients to investigate  potential  monotonic 
+relationship s. A significant correlation is observed , with the possibility of identifying linear 
+relationships, as attested by the correlation coefficient close of 0.87 and 0.97 for peak flow and 
+peak velocity magnitude, respectively . These  linear  relationships are identified for this single 
+animal as:  
+ 
+      µ[𝑃𝑎]=12.8 x PF[mL/s] + 1923            and        µ[Pa] = 11.3 x PVM [mL/s] + 1884  
+ 
+µ, PF and PVM are the liver stiffness (from MRE measurements), the portal peak flow and the 
+portal peak velocity magnitude (from 4D -Flow MRI measurements), respectivel y. 
+ 
+4. Conclusions  
+ 
+The results and conclusions of this preliminary study are limited by the observation of a case -
+specific single subject  and could be strengthened by increasing the cohort  to a complete 
+prospective study . Nevertheless, t hese preliminary results are already thought to give 
+indications about how liver stiffness  can be affected by portal inflow alterations and so by portal 
+hypertension . They contribute to give information about the effect, which would affect the 
+elastography measurements of the liver in clinical practice. Otherwise, this study provides 
+unprecedented  in vivo  information for the mechanical modeling of the liver including 
+mechanical properties and vascular flows . 
+ 
+5 
+  Diffusion non restreinte  Acknowledgements  
+ 
+The authors thank Thomas Benkert ( Siemens Healthcare GmbH, Germany ) for provided the 
+prototype SPIRAL VIBE sequence.  
+ 
+Fundings  
+ 
+This work was supported by French state funds managed by the ANR ( Agence Nationale de 
+la Recherche ) within the Investissements d’Avenir program for the IHU Strasbourg ( IHU 
+Strasbourg, Institut Hospitalo -Universitaire, Institute of Image Guided Surgery, ANR -10-IAHU -
+02). 
+ 
+References   
+ 
+[1] A. Roldán -Alzate, A. Frydrychowicz, E. Niespodzany, B. R. Landgraf, K. M. Johnson, O. Wieben, 
+and S. B. Reeder, “In vivo validation of 4D flow MRI for assessing the hemodynamics of portal 
+hypertension,” J. Magn. Reson. Imaging , vol. 37, no. 5, pp. 1100 –1108, May 2013.  
+[2] M. Y. Kim, M. Y. Cho, S. K. Baik, H. J. Park, H. K. Jeon, C. K. Im, C. S. Won, J. W. Kim, H. S. Kim, 
+S. O. Kwon, M. S. Eom, S. H. Cha, Y. J. Kim, S. J. Chang, and S. S. Lee, “Histological 
+subclassification of cirrhosis using the Laennec fibrosis scoring system correlates with clinical stage 
+and grade of portal hypertension,” J. Hepatol. , vol. 55, no. 5, pp. 1004 –1009, 2011.  
+[3] D. Lebrec, P. Sogni, and V. Vilgrain, “2 Evaluation of patients w ith portal hypertension,” Baillieres. 
+Clin. Gastroenterol. , vol. 11, no. 2, pp. 221 –241, 1997.  
+[4] T. F. Imperiale, N. Chalasani, and R. W. Klein, “Measuring the hemodynamic response to primary 
+pharmacoprophylaxis of variceal bleeding: a cost -effectiveness  analysis,” Am. J. Gastroenterol. , 
+vol. 98, no. 12, pp. 2742 –2750, 2003.  
+[5] E. Boleslawski, G. Petrovai, S. Truant, S. Dharancy, A. Duhamel, J. Salleron, P. Deltenre, G. 
+Lebuffe, P. Mathurin, and F. R. Pruvot, “Hepatic venous pressure gradient in the asse ssment of 
+portal hypertension before liver resection in patients with cirrhosis,” Br. J. Surg. , vol. 99, no. 6, pp. 
+855–863, 2012.  
+[6] A. Berzigotti, S. Seijo, U. Arena, J. G. Abraldes, F. Vizzutti, J. C. García -Pagán, M. Pinzani, and J. 
+Bosch, “Elastograp hy, spleen size, and platelet count identify portal hypertension in patients with 
+compensated cirrhosis,” Gastroenterology , vol. 144, no. 1, pp. 102 -111.e1, 2013.  
+[7] J. A. Carrión, M. Navasa, J. Bosch, M. Bruguera, R. Gilabert, and X. Forns, “Transient el astography 
+for diagnosis of advanced fibrosis and portal hypertension in patients with hepatitis C recurrence 
+after liver transplantation,” Liver Transplant. , vol. 12, no. 12, pp. 1791 –1798, 2006.  
+[8] F. Vizzutti, U. Arena, R. G. Romanelli, L. Rega, M. Fos chi, S. Colagrande, A. Petrarca, S. 
+Moscarella, G. Belli, A. L. Zignego, F. Marra, G. Laffi, and M. Pinzani, “Liver stiffness measurement 
+predicts severe portal hypertension in patients with HCV -related cirrhosis,” Hepatology , vol. 45, no. 
+5, pp. 1290 –1297 , 2007.  
+[9] C. Bureau, S. Metivier, J. M. Peron, J. Selves, M. A. Robic, P. A. Gourraud, O. Rouquet, E. Dupuis, 
+L. Alric, and J. P. Vinel, “Transient elastography accurately predicts presence of significant portal 
+hypertension in patients with chronic live r disease,” Aliment. Pharmacol. Ther. , vol. 27, no. 12, pp. 
+1261 –1268, 2008.  
+[10] M. A. Robic, B. Procopet, S. Métivier, J. M. Péron, J. Selves, J. P. Vinel, and C. Bureau, “Liver 
+stiffness accurately predicts portal hypertension related complications in p atients with chronic liver 
+disease: A prospective study,” J. Hepatol. , vol. 55, no. 5, pp. 1017 –1024, 2011.  
+[11] L. Castera, M. Pinzani, and J. Bosch, “Non invasive evaluation of portal hypertension using 
+transient elastography,” J. Hepatol. , vol. 56, no. 3, pp. 696 –703, 2012.  
+[12] G. Kim, M. Y. Kim, and S. K. Baik, “Transient elastography versus hepatic venous pressure gradient 
+for diagnosing portal hypertension: a systematic review and meta -analysis,” Clin. Mol. Hepatol. , 
+vol. 23, no. 1, pp. 34 –41, 2017.  
+[13] S. Ipek -Ugay, H. Tzschätzsch, J. Braun, T. Fischer, and I. Sack, “Physiologic reduction of hepatic 
+venous blood flow by the Valsalva maneuver decreases liver stiffness,” J. Ultrasound Med. , vol. 36, 
+no. 7, pp. 1305 –1311, 2017.  
+[14] É. Bavu, J. L. Genn isson, M. Couade, J. Bercoff, V. Mallet, M. Fink, A. Badel, A. Vallet -Pichard, B. 6 
+Diffusion non restreinte  Nalpas, M. Tanter, and S. Pol, “Noninvasive In Vivo Liver Fibrosis Evaluation Using Supersonic 
+Shear Imaging: A Clinical Study on 113 Hepatitis C Virus Patients,” Ultrasound Med. Biol. , vol. 37, 
+no. 9, pp. 1361 –1373, 2011.  
+[15] G. Ferraioli, R. Lissandrin, M. Zicchetti, and C. Filice, “Assessment of liver stiffness with transient 
+elastography by using S and M probes in healthy children,” Eur. J. Pediatr. , vol. 171, no. 9, p. 1415, 
+2012.  
+[16] M. O’Donnell, “NMR blood flow imaging using multiecho, phase contrast sequences,” Med. Phys. , 
+vol. 12, no. 1, pp. 59 –64, Jan. 1985.  
+[17] S. Gelman, K. C. Fowler, and L. R. Smith, “Liver circulation and function during isoflurane and 
+halothane anesthesia,” Anesthesiology , vol. 61, no. 6, p. 726 —730, 1984.  
+[18] N. Kanaya, M. Nakayama, S. Fujita, and A. Namiki, “Comparison of the effects of sevoflurane, 
+isoflurane and halothane on indocyanine green clearance,” Br. J. Anaesth. , vol. 74, no. 2, pp. 164 –
+167, 1995.  
+ 

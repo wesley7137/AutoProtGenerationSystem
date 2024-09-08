@@ -1,0 +1,1255 @@
+Title: Metabolic Regulatory Network Kinetic Modeling with Multiple Isotopic
+  Tracers for iPSCs
+Abstract:   The rapidly expanding market for regenerative medicines and cell therapies
+highlights the need to advance the understanding of cellular metabolisms and
+improve the prediction of cultivation production process for human induced
+pluripotent stem cells (iPSCs). In this paper, a metabolic kinetic model was
+developed to characterize underlying mechanisms of iPSC culture process, which
+can predict cell response to environmental perturbation and support process
+control. This model focuses on the central carbon metabolic network, including
+glycolysis, pentose phosphate pathway (PPP), tricarboxylic acid (TCA) cycle,
+and amino acid metabolism, which plays a crucial role to support iPSC
+proliferation. Heterogeneous measures of extracellular metabolites and multiple
+isotopic tracers collected under multiple conditions were used to learn
+metabolic regulatory mechanisms. Systematic cross-validation confirmed the
+model's performance in terms of providing reliable predictions on cellular
+metabolism and culture process dynamics under various culture conditions. Thus,
+the developed mechanistic kinetic model can support process control strategies
+to strategically select optimal cell culture conditions at different times,
+ensure cell product functionality, and facilitate large-scale manufacturing of
+regenerative medicines and cell therapies.
+
+Full Text: Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year>
+DOI: xxx/xxxx
+Metabolic Regulatory Network Kinetic Modeling with Multiple
+Isotopic Tracers for iPSCs
+Keqi Wang1| Wei Xie∗,1| Sarah W. Harcum†,2
+1Department of Mechanical and Industrial
+Engineering, Northeastern University,
+Boston, MA 02115, USA
+2Department of Bioengineering, Clemson
+University, Clemson, SC, USA
+Correspondence
+∗Department of Mechanical and Industrial
+Engineering, Northeastern University,
+Boston, MA 02115, USA.
+Email: w.xie@northeastern.edu
+†Department of Bioengineering, Clemson
+University, Clemson, SC, USA.
+Email: harcum@clemson.eduAbstract
+The rapidly expanding market for regenerative medicines and cell therapies high-
+lights the need to advance the understanding of cellular metabolisms and improve
+thepredictionofcultivationproductionprocessforhumaninducedpluripotentstem
+cells(iPSCs).Inthispaper,ametabolickineticmodelwasdevelopedtocharacterize
+theunderlyingmechanismsofiPSCcultureprocess,whichcanpredictcellresponse
+to environmental perturbation and support process control. This model focuses on
+thecentralcarbonmetabolicnetwork,includingglycolysis,pentosephosphatepath-
+way(PPP),tricarboxylicacid(TCA)cycle,andaminoacidmetabolism,whichplays
+acrucialroletosupportiPSCproliferation.Heterogeneousmeasuresofextracellular
+metabolites and multiple isotopic tracers collected under multiple conditions were
+used to learn metabolic regulatory mechanisms. Systematic cross-validation con-
+firmedthemodel’sperformanceintermsofprovidingreliablepredictionsoncellular
+metabolismandcultureprocessdynamicsundervariouscultureconditions.Thus,the
+developedmechanistickineticmodelcansupportprocesscontrolstrategiestostrate-
+gically select optimal cell culture conditions at different times, ensure cell product
+functionality,andfacilitatelarge-scalemanufacturingofregenerativemedicinesand
+cell therapies.
+KEYWORDS:
+Cell Therapy Manufacturing, Induced Pluripotent Stem Cells (iPSCs), Metabolic Regulatory Network,
+Process Dynamic Model, Stable Isotope Labeling
+1INTRODUCTION
+Celltherapeuticsandregenerativemedicineshavethepotential
+to treat and prevent diseases, such as cancers, and cardiovas-
+cular and hematologic diseases1,2. The cell therapy market is
+experiencing unparalleled growth and the projected worth of
+therelevantmarketisexpectedtobeover$8billionin20253.
+To meet the rising demand, cost reductions in manufactur-
+ing and increases in quality for human induced pluripotent
+stem cells (iPSCs) on a large scale are crucial for the success
+of cell therapies4. Unlike traditional biopharmaceuticals, thecellsaretheproductwithfunctionalidentitydependingonthe
+regulatory metabolic dynamic behaviors.
+The efficacy of the cells is very sensitive to culture condi-
+tions. Variability in the culture conditions can lead to reduced
+yieldsandheterogeneouscellpopulations.Heterogeneouscell
+populations have been observed to increase the potential for
+tumororteratomaformulationinthepatient5.Traditionalcell
+culture process control strategies often are ad hoc and rely
+solelyonexperimentalapproachesorPIDcontrollersignoring
+long-term effects. The optimal design and control of mam-
+maliancellcultureprocesses,especiallyiPSCs,canbelabori-
+ous due to the limited understanding of cellular metabolisms
+and end-to-end cultivation process dynamics6,7.arXiv:2305.00165v2  [q-bio.MN]  26 Oct 20232 WangET AL
+Inordertodeterminethebestcultureconditions,accounting
+forcelllifecycle,relationshipsbetweencultureconditionsand
+theoutputtrajectory(i.e.,cellfunctionalidentityandyield)are
+needed.Mechanisticdynamicsmodelhasthecapabilitytopre-
+dict cell outcomes (e.g., metabolic flux rates) and can be used
+to assess product quality and strategically select the optimal
+culture conditions at different times.
+The proposed mechanistic model describes an iPSC
+metabolic network regulatory mechanisms. It is associated
+with the existing studies, including (1) metabolic flux analy-
+sis (MFA)8,9, (2)13C-MFA10,11,12,13,14,15,16,17, and (3) kinetic
+models6,9,18,19,20. In MFA, metabolic flux rates (such as sub-
+strate uptake rate and metabolite secretion rate) are estimated
+based on experimental measurements subject to stoichiomet-
+ric constraints. Under the standard assumption of (pseudo)
+steady state for intracellular metabolites, the sum of all fluxes
+producing a metabolite is equal to the sum of all fluxes con-
+suming that metabolite. This technique is frequently used to
+compare the metabolism of different cell lines to assess the
+activityofindividualpathwaysunderdifferentcultivationcon-
+ditions8.However,intracellularmetabolitescanchangeduring
+cell proliferation21.
+Stableisotopestudies,integratingwithMFA,haveprovided
+moredetailedinformationonintracellularstateandmetabolic
+pathways, namely13C-MFA can precisely estimate metabolic
+reaction rates. Typically these flux rates are estimated from
+measured intracellular mass isotopomer distribution (MID)
+patterns and external metabolites concentrations. Common
+13C and2H isotopic tracers were utilized for investigating
+mammalian cell metabolism with a specific emphasis on the
+interpretation of isotopic labeling patterns16. Many existing
+studies are built on the assumption of isotopic and metabolic
+steady state10,11,12,13,14,15,16. Several modeling tools have been
+developed for situations involving isotopic and/or metabolic
+non-steady states17,10,11.
+Another approach to model cell dynamics includes kinetic-
+metabolic models6. The vast majority of the kinetic mod-
+els use Monod and Michaelis–Menten expression formalisms
+modeling the metabolic regulation mechanisms18,19,20,6,9. For
+Chinesehamsterovary(CHO)cellcultures,kinetic-metabolic
+models include glycolysis, pentose phosphate pathway (PPP),
+tricarboxylic acid (TCA) cycle, respiratory chain, as well as
+theregulatoryfunctionsfromenergyshuttles(ATP/ADP)and
+cofactors (NADH, NAD+, NADPH, NADP+); this high level
+of details is required to predict hypoxic perturbation19,20.
+For example, the study9proposed a Monod model charac-
+terizing the cell flux rate response to environmental pertur-
+bation. That study used limiting substrate kinetics to cal-
+culate the extracellular metabolite consumption/production
+rates and further infer metabolic flux rates built on a static
+MFA assumption, i.e., assuming the intracellular metabolitesare at the pseudo-steady state. Even though several in sil-
+icometabolomic platforms have been developed for CHO
+cells18,19,20,6,9, a metabolic regulatory network simulator for
+iPSC has not been developed.
+As lactate accumulation emerges as an inevitable outcome
+of iPSC metabolism, it becomes essential to explore the con-
+sequencesofaccumulatedextracellularlactateonintracellular
+iPSC metabolism. Equally important is to comprehend how
+glucose concentration acts as a regulatory factor, influencing
+lactate production. Understanding the implications of these
+concentrationvariationsisnotonlycriticalforthesurvivaland
+proliferation of iPSCs22but also essential for maintaining the
+qualityofcellproducts.Hence,themainobjectiveofthisstudy
+is to develop and validate a mechanistic model of an iPSC
+metabolic regulatory network that can precisely predict cell
+responsestoenvironmentalchanges,withaparticularfocuson
+variations in extracellular glucose and lactate concentrations.
+The proposed model primarily focuses on central
+metabolism, given its pivotal role in stem cell proliferation,
+biosynthesis, and overall functionality. To estimate model
+parameters, this model utilized experimentally obtained data
+fromwell-designedmonolayerK3iPSCcultures,asdescribed
+in the study4. During the model development, the level of
+detail required for key pathways was explored, namely the
+PPP and branched amino acids uptake rates into the TCA
+cycle.Inthispaper,theproposedkineticmodelstructurewith
+critical regulatory mechanisms will be discussed and vali-
+dated through comparisons with the experimental data, with
+the aim of ensuring the model’s ability to accurately predict
+cell responses to environmental changes.
+Theproposedmechanisticmodel,comprisingthemetabolic
+reactionnetworkstructureandfluxregulatorymechanism,can
+be easily customized to suit various mammalian cell culture
+systems, e.g., embryonic stem cells (ESCs), CHO, etc. This
+adaptability arises from the underlying principles and general
+characteristicsofmetabolicregulationthatarecommonacross
+various mammalian cells. Through the collection of extracel-
+lular metabolite concentrations and intracellular MID mea-
+surements, this mechanistic model can be adeptly employed
+to analyze and forecast the behavior of other mammalian cell
+cultures with consistent accuracy and reliability.
+2DATA DESCRIPTION
+Briefly, the data used to estimate the model parameters were
+derivedfromanexperimentalstudyofK3iPSCs,wheremono-
+layercultureswereconductedin6-wellplatesand60mmcell
+culture dishes4. The data encompassed extracellular metabo-
+litemeasurementsandisotopiclabelingdetailsforfourdistinct
+culture conditions, utilizing three tracers: glucose, glutamine,WangET AL 3
+andlactate.Thefourdifferentinitialculturemediaconcentra-
+tionswere:(1)highglucoseandlowlactate(HGLL);standard
+initialconditions,i.e.,18.3mMglucoseand0mMlactate;(2)
+high glucose and high lactate (HGHL), i.e., 18.3 mM glucose
+and 20 mM lactate; (3) low glucose and low lactate (LGLL),
+i.e., 5.6 mM glucose and 0 mM lactate; and (4) low glu-
+cose and high lactate (LGHL), i.e., 5.6 mM glucose and 20
+mM lactate. Table 1 presents the media concentrations used
+for each condition, encompassing glucose, lactate, and sup-
+plementedsodiumchlorideconcentrations.Furthermore,2.75
+mMglutaminewasincludedineachcondition.Theseconcen-
+trationswerechosentoensurecomparablegrowthratesacross
+all conditions while maintaining pluripotency4.
+Cell density, glucose, lactate, pyruvate, and extracellular
+aminoacidconcentrationswereobtainedforeachconditionat
+0-,12-,24-,36-,and48-h.IntracellularaminoacidMIDswere
+obtained from parallel labeling experiments that used [1,2-
+13C2] glucose, [U-13C5] L-glutamine, and [U-13C3] sodium
+L-lactate (when lactate was added to the culture media).
+The time-course measurements, as illustrated in Figure 1 ,
+includedthetransitiontometabolicandisotopicsteadystates4.
+These measurements were used to develop the metabolic reg-
+ulatory network kinetic model for iPSC cultures.
+TABLE 1 The media formulations for K3 iPSC cultures
+include initial concentrations of glucose, sodium L-lactate,
+andsupplementedsodiumchloride(NaCl).NaClwasaddedto
+balance osmolarity in cultures lacking sodium lactate. Addi-
+tionally, the media contains 2.75 mM L-glutamine.
+Concentrations (mM)
+Component HGLL HGHL LGLL LGHL
+Glucose 18.3 18.3 5.6 5.6
+Lactate -20.0 -20.0
+Added NaCl +20.0 -+20.0 -
+3MODEL DEVELOPMENT
+iPSCsculturedinpetri-dish2Dmonolayerhavehomogeneous
+environmentalcondition.Thus,theobjectiveofthisstudyisto
+develop a deterministic metabolic regulatory network kinetic
+model characterizing the mean metabolic dynamics, which
+is presented in four developmental stages. Section 3.1 pro-
+vides the general dynamic model description, including (1)
+metabolicreactionnetworkkineticmodel;and(2)time-course
+isotopic labeling simulation. Section 3.2 presents the iPSC
+metabolic reaction network which includes central carbon
+metabolism. In Section 3.3, the metabolic flux kinetic model,
+FIGURE 1 Schematic for cell metabolic and isotopic states
+when time-course measurements of extracellular concentra-
+tions and intracellular MIDs were taken during the exper-
+imental iPSC cultures (Adapted from Jazmin and Young23
+and created with BioRender.com). Metabolic steady state is
+reached prior to isotopic steady state4.
+characterizing cell response to environmental variations, is
+fitted by using time-course extracellular concentration mea-
+surementsandMIDs.Finally,inSection3.4,theassessmentof
+fit and validation of the dynamic model for the iPSC cultures
+is discussed, where the objective function and goodness-of-fit
+will be presented.
+3.1Metabolic Network Kinetic Modeling
+In this section, the general regulatory metabolic network
+kineticmodelandtime-courseisotopiclabelingsimulationare
+presented.Thekineticmodelcapturesthedynamicchangesin
+celldensity,andextracellularandintracellularmetabolitecon-
+centrations, where the changing rates of metabolites depend
+on the concentration of substrates and inhibitors. To incorpo-
+ratethemassisotopicdata,adynamicisotopiclabelingsystem
+was constructed, and a time-course isotopic labeling simula-
+tion was developed. Overall, the metabolic reaction network
+kinetic model provides a comprehensive understanding of the
+underlying mechanisms of the iPSC cultures.
+(1) Metabolic Reaction Network Kinetic Model. The
+data from the study for K3 iPSCs were collected during the
+exponentialgrowthphase4.Throughexperimentaldesignand
+statistical analysis, our previous study4discovered uniform
+specific cell growth rates ( 𝜇) across the four batch culture
+conditions (HGLL, HGHL, LGLL, and LGHL), maintaining
+pluripotency.Thissuggeststhatglucoseandlactateconcentra-
+tions within these ranges did not notably influence K3 iPSC
+growth rates and did not have a detrimental impact on human4 WangET AL
+K3 iPSC pluripotency. Thus the classical cell density formal-
+ismwasusedtorelategrowthandthecelldensity,denotedby
+𝑋(𝑡)(cells/cm2), at time𝑡as,
+𝑑𝑋(𝑡)
+𝑑𝑡=𝜇𝑋(𝑡). (1)
+The extracellular metabolite concentrations at time 𝑡
+are denoted by a vector with dimension 𝑝, i.e.,𝑠𝑠𝑠(𝑡) =(𝑠1(𝑡),𝑠2(𝑡),…,𝑠𝑝(𝑡))⊤.Similarly,theintracellularmetabolite
+concentrationsofinterestaredenotedbyavectorwithdimen-
+sion𝑞at time𝑡as𝓁𝓁𝓁(𝑡) =(𝓁1(𝑡),𝓁2(𝑡),…,𝓁𝑞(𝑡))⊤. Thus, at
+anytime𝑡,thestateofextracellularandintracellularmetabolite
+concentrations is denoted by
+𝑢𝑢𝑢(𝑡)=(𝑠𝑠𝑠(𝑡)⊤,𝓁𝓁𝓁(𝑡)⊤)⊤.
+To model the dynamic evolution of cell response to envi-
+ronmental fluctuations during the iPSC cultures, at any time
+𝑡, the specific reaction flux rates, represented by a vector with
+dimension𝑛, depend on both extracellular and intracellular
+metabolite concentrations, i.e.,
+𝑣𝑣𝑣[𝑢𝑢𝑢(𝑡)]=(𝑣1[𝑢𝑢𝑢(𝑡)],𝑣2[𝑢𝑢𝑢(𝑡)],…,𝑣𝑛[𝑢𝑢𝑢(𝑡)])⊤.
+Let𝑁denote a(𝑝+𝑞)×𝑛stoichiometry matrix characteriz-
+ingthestructureofmetabolicreactionnetwork.Therefore,the
+dynamic evolution of extracellular and intracellular metabo-
+lite concentrations is modeled through a mass balance on the
+system of equations,
+𝑑𝑢𝑢𝑢(𝑡)
+𝑑𝑡=𝑁𝑣𝑣𝑣[𝑢𝑢𝑢(𝑡)]𝑋(𝑡). (2)
+To capture the cell response to environmental perturbation,
+aMichaelis–Menten(MM)formalismbasedregulationmodel
+wasusedtocharacterizetherelationshipofmetabolicfluxrates
+depending on the concentrations of associated substrates and
+inhibitors. This allows leveraging the existing biology knowl-
+edgeandfacilitatingthelearningofregulationmechanismsof
+iPSC metabolic reaction network from the experimental data.
+Specifically, the 𝑔-th flux rate at the time 𝑡is modeled as,
+𝑣𝑔[𝑢𝑢𝑢(𝑡)]=𝑣𝑚𝑎𝑥,𝑔∏
+𝑦∈Ω𝑔
+𝑌𝑢𝑦(𝑡)
+𝑢𝑦(𝑡)+𝐾𝑚,𝑦∏
+𝑧∈Ω𝑔
+𝑍𝐾𝑖,𝑧
+𝑢𝑧(𝑡)+𝐾𝑖,𝑧,(3)
+for𝑔= 1,2,…,𝑛, where the set Ω𝑔
+𝑌represents the collec-
+tionofactivators(suchasnutrientsandsubstrates)influencing
+the flux rate 𝑣𝑔and the setΩ𝑔
+𝑍represents the collection of
+inhibitors dampening 𝑣𝑔. The parameters 𝐾𝑖,⋅,𝐾𝑚,⋅, and𝑣𝑚𝑎𝑥,⋅
+representthe affinityconstant, theinhibition constant,and the
+maximumspecificfluxraterespectively.ForiPSCcultures,the
+experimentaldatareferencedwereusedtoidentifythecritical
+activatorsandinhibitors,aswellaslearningtheMMregulation
+model coefficients.
+(2)Time-CourseIsotopicLabelingSimulation. Different
+13C-labeling patterns are generated by different flux distri-
+butions𝑣𝑣𝑣[𝑢𝑢𝑢(𝑡)]. Thus, incorporating the dynamic system ofisotopic labeling patterns (MID), which is a vector containing
+thefractionalabundanceofeachmassstateofmetabolites,into
+the metabolic network kinetic model can aid in understanding
+intercellular metabolic network mechanisms. However, mod-
+eling each individual atom as one system state variable is
+computationally expensive. To address this issue, the elemen-
+tary metabolite unit (EMU) framework was proposed, and
+it is based on a highly efficient decomposition method that
+can identify the minimum amount of information needed to
+simulate isotopic labeling24. Basically, the EMUs are created
+by using a decomposition algorithm and form the new basis
+for generating system equations that describe the relationship
+between fluxes and isotope measurements; see more detailed
+information in studies25,26,10,27,24,11,23.
+Basedonthestudy24,28,thereducedsystemcanbeobtained
+after decoupling based on EMUs with size 𝑟= 1,2,…,𝑅
+and connectivity. The time-dependent network was first iden-
+tified: the decoupled EMUs with size 𝑟network,𝐺𝑟(𝑡) =
+{𝑉𝑟,𝐸𝑟,𝑊𝑟(𝑡)}with𝑟= 1,2,…,𝑅. The vector 𝑉𝑟=(𝑉(𝑎)
+𝑟⊤,𝑉(𝑏)
+𝑟⊤)⊤isthesetofvertices(i.e.,EMUs)withinthe 𝑟-
+th network, the vector 𝑉(𝑏)
+𝑟with dimension |𝑉(𝑏)
+𝑟|is the set of
+input EMUs (i.e., EMUs with size smaller than 𝑟or EMUs of
+extracellular carbon sources), the vector 𝑉(𝑎)
+𝑟with dimension
+|𝑉(𝑎)
+𝑟|isthesetofEMUswithsize 𝑟.𝐸𝑟istheadjacencymatrix
+withdimension(|𝑉(𝑎)
+𝑟|+|𝑉(𝑏)
+𝑟|)×(|𝑉(𝑎)
+𝑟|+|𝑉(𝑏)
+𝑟|)represent-
+ing the dependence between each vertex. The corresponding
+weightmatrix 𝑊𝑟(𝑡)varieswithtime 𝑡.Thenon-negative (𝑖,𝑗)-
+th element𝑊(𝑖,𝑗)
+𝑟(𝑡)indicates the flux rate of the reaction
+producing𝑖-th EMU by consuming 𝑗-th EMU at time 𝑡.
+Thus, at any time 𝑡, the dynamic isotopic labeling system
+can be defined as:
+𝑑𝐶𝑟(𝑡)
+𝑑𝑡=𝐴𝑟(𝑡)⋅𝐶𝑟(𝑡)+𝐵𝑟(𝑡)⋅𝐷𝑟(𝑡)
+𝑃𝑟(𝑡), (4)
+where the rows of the state matrix 𝐶𝑟(𝑡)correspond to the
+MIDsofEMUswithin 𝑉(𝑎)
+𝑟attime𝑡.Theinputmatrix 𝐷𝑟(𝑡)is
+analogousbutwithrowsofinput/carbonsourcesEMUswithin
+𝑉(𝑏)
+𝑟at time𝑡. The concentration matrix 𝑃𝑟(𝑡)is a diagonal
+matrixwhoseelementsarepoolsizescorrespondingtoEMUs
+represented in 𝑉(𝑎)
+𝑟. The construction of 𝐴𝑟(𝑡)and𝐵𝑟(𝑡)are
+basedonthedecoupledEMUreactionnetwork 𝐺𝑟(𝑡).Thesys-
+tem matrix𝐴𝑟(𝑡)with size |𝑉(𝑎)
+𝑟|×|𝑉(𝑎)
+𝑟|and matrix𝐵𝑟(𝑡)
+with size|𝑉(𝑎)
+𝑟|×|𝑉(𝑏)
+𝑟|describe the metabolic network with
+elements defined as follows:
+𝐴(𝑖,𝑗)
+𝑟(𝑡)=⎧
+⎪
+⎨
+⎪⎩−|𝑉(𝑎)
+𝑟|∑
+𝑘=1𝑊(𝑘,𝑗)
+𝑟(𝑡), 𝑖=𝑗,
+𝑊(𝑖,𝑗)
+𝑟(𝑡), 𝑖≠𝑗;(5)
+and
+𝐵(𝑖,𝑗)
+𝑟(𝑡)=𝑊(𝑖,|𝑉(𝑎)
+𝑟|+𝑗)
+𝑟(𝑡). (6)WangET AL 5
+3.2iPSC Metabolic Reaction Network
+The developed iPSC metabolic network model leverages cen-
+tral carbon metabolism from several previously published
+metabolic frameworks5,3,20,8,19,4and further learns from data.
+The iPSC metabolic network included glycolysis, TCA cycle,
+anaplerosis, PPP, and amino acid metabolism. For simplifica-
+tion, the reactions of PPP were collapsed into two reactions:
+Oxidative phase/branch and Non-oxidative phase/branch (i.e.,
+No. 9 & 10 reaction in Table A1 ). During the exponen-
+tial phase, greater than 90% of pentose-phosphate carbons is
+returned to glycolysis for the mammalian cell21,29. Thus, the
+synthesis of nucleotides and nucleic acids is considered as an
+insignificant contributor to the model. The metabolic network
+isshowninFig.2 andthemetabolicstoichiometryislistedin
+Table A1 . The descriptions of metabolites and the enzymes
+conform to the Enzyme Commission Number (EC-No.) and
+are provided in Tables A3 and A4 , respectively.
+While this model primarily focuses on central carbon
+metabolism,it’sworthnotingthattheadditionalmodel’sstruc-
+ture, including metabolic reaction pathways (e.g., one-carbon
+metabolism,fattyacidoxidation,andnucleotidebiosynthesis)
+andtheassociatedfluxregulatorymechanisms,couldbeeasily
+incorporated.
+3.3Biokinetic Model of Flux Regulatory
+Mechanism
+Due to the lack of energetic state and redox level mea-
+surements, each metabolic flux rate is modeled as depen-
+dent on the substrates and inhibitors concentrations using
+Michaelis–Menten model formalism. Similar to the existing
+studies5,3,20, for simplification purposes and also due to a
+lack of available data in the literature, a single affinity con-
+stant value is used for each metabolite. Additionally, reaction
+reversibility was considered during the iPSC culture model
+development for some key reactions. The final model is fully
+described in Table A2 . Several regulatory mechanisms (i.e.,
+No.R1toR7) are highlighted in Fig. 2 , which were incor-
+porated into the metabolic flux kinetics model to improve
+the model’s prediction capability and better characterize the
+responses to environmental variations. These key final reac-
+tions are described below, where these new dependencies are
+highlighted in under brackets ……⏟⏟⏟with the corresponding
+regulatorymechanismNo.,whiletheoriginalnomenclatureis
+outside the brackets.
+•Lactate accumulation has previously been reported to
+reduceglycolyticactivitybyinhibitinghexokinase(HK)
+and phosphofructokinase (PFK) activity in mammalian
+cells,wherelactateactsasasignalingmoleculetodown-
+regulate PFK activity30,31,32. After evaluation of the
+FIGURE 2 An illustration of the iPSC regulatory metabolic
+network(CreatedwithBioRender.com).Glycolysis,PPP,TCA
+and anaplerosis and amino acid utilization are shown. Addi-
+tionally, the regulatory mechanisms included in the dynamic
+model are shown. The metabolites descriptions are listed in
+Table A3 . The enzyme description, including the Enzyme
+Commission Numbers (EC-No.) for each reaction, is listed in
+Table A4 .
+experimental data, the model for HK was updated to
+include this inhibitory effect of lactate on it:
+𝑣(𝐻𝐾)=𝑣𝑚𝑎𝑥,𝐻𝐾×𝐺𝑙𝑐
+𝐾𝑚,𝐺𝑙𝑐+𝐺𝑙𝑐
+×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾+𝐿𝑎𝑐
+⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟
+R1. (7)
+•Sincelactateinhibitsglutaminaseactivity–theenzyme
+responsible for converting glutamine (GLN) to gluta-
+mate (GLU)33,34– the forward ( 𝑓) flux rate for the
+reaction, i.e., Gln ↔Glu + NH4, was updated,
+𝑣(𝐺𝐿𝑁𝑆𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐺𝐿𝑁𝑆×𝐺𝑙𝑛
+𝐾𝑚,𝐺𝑙𝑛+𝐺𝑙𝑛
+×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐺𝐿𝑁𝑆
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐺𝐿𝑁𝑆+𝐿𝑎𝑐
+⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟
+R2. (8)6 WangET AL
+•Several regulatory functions, adapted from the stud-
+ies19,18,20, were evaluated using the experimental data
+to characterize activations and inhibitions. The regula-
+torymechanismsinvolvedinglycolysisaredescribedas:
+a) hexokinase inhibition by its product G6P, see R3in
+eq(9);b)activationofpyruvatekinasebyF6P,see R4in
+eq(10),aswellasc)theinhibitionoflactatedehydroge-
+nasereverse( 𝑟)reaction,see R5ineq(11),waschanged
+to include the G6P inhibition:
+𝑣(𝐻𝐾)=𝑣𝑚𝑎𝑥,𝐻𝐾×𝐺𝑙𝑐
+𝐾𝑚,𝐺𝑙𝑐+𝐺𝑙𝑐
+×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾+𝐿𝑎𝑐
+×𝐾𝑖,𝐺6𝑃
+𝐾𝑖,𝐺6𝑃+𝐺6𝑃
+⏟⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏟
+R3;(9)
+𝑣(𝑃𝐾)=𝑣𝑚𝑎𝑥,𝑃𝐾
+×𝑃𝐸𝑃
+𝐾𝑚,𝑃𝐸𝑃×[
+1+𝐾𝑎,𝐹6𝑃
+𝐹6𝑃]
+⏟⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏟
+R4+𝑃𝐸𝑃;
+(10)
+𝑣(𝐿𝐷𝐻𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐿𝐷𝐻×𝐿𝑎𝑐
+𝐾𝑚,𝐿𝑎𝑐+𝐿𝑎𝑐
+×𝐾𝑖,𝑃𝑦𝑟
+𝐾𝑖,𝑃𝑦𝑟+𝑃𝑦𝑟
+⏟⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏟
+R5. (11)
+•Both lactate and pyruvate transport across the plasma
+membrane are facilitated by proton-linked monocar-
+boxylate transporters (MCTs)29,35. More favorable lac-
+tatetransportkineticsmaydecreasepyruvateconsump-
+tion under high lactate culture conditions4,36. Thus, the
+model of PyrT was updated to:
+𝑣(𝑃𝑦𝑟𝑇)=𝑣𝑚𝑎𝑥,𝑃𝑦𝑟𝑇×𝐸𝑃𝑦𝑟
+𝐾𝑚,𝐸𝑃𝑦𝑟+𝐸𝑃𝑦𝑟
+×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝑃𝑦𝑟
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝑃𝑦𝑟+𝐿𝑎𝑐
+⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟
+R6.(12)
+•Since the transportation of extracellular-glutamine via
+cell membrane can be inhibited by intracellular-
+glutamine, the model for GlnT was updated to:
+𝑣(𝐺𝑙𝑛𝑇)=𝑣𝑚𝑎𝑥,𝐺𝑙𝑛𝑇×𝐸𝐺𝑙𝑛
+𝐾𝑚,𝐸𝐺𝑙𝑛+𝐸𝐺𝑙𝑛
+×𝐾𝑖,𝐺𝐿𝑁
+𝐾𝑖,𝐺𝐿𝑁+𝐺𝐿𝑁
+⏟⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏟
+R7. (13)3.4ModelFitandGoodness-of-fitAssessment
+The proposed iPSC metabolic network kinetic model focuses
+oncharacterizingcentralcarbonmetabolism,includingsignif-
+icant reactions from glycolysis, the TCA cycle, anaplerosis,
+PPP,andaminoacidmetabolism,alongwithregulatorymech-
+anisms,acrossdistinctculturalenvironmentscharacterizedby
+varyinglevelsofglucoseandlactateconcentrations.Thefinal
+model developed is shown in Table A1 . This model includes
+30metabolicreactionswith32variables(metabolites’concen-
+tration)inthereactionequations.TheiPSCmetabolicfluxrate
+regulationbiokineticmodel,presentedinTableA2 ,incorpo-
+rateskeyactivatorsandinhibitorsforeachreaction,describing
+the regulatory effects through the Michaelis–Menten model.
+The proposed iPSC culture kinetic model estimates model
+parameters using both extracellular and MID data collected
+overtimeunderthefourdifferentcultureconditions.Theextra-
+cellular metabolite concentration measurements at time 𝑡are
+denoted as𝑠𝑚𝑒𝑎𝑠
+𝑡for𝑡= 0,12,24,36,48hours (h). To ensure
+themodel’saccuracyandminimizetheimpactofmeasurement
+errors, values that fell below the detection limit of the Cedex
+Bioanalyzer are treated as missing data. The intracellular iso-
+topiclabelingmeasurementsattime 𝑡′aredenotedasMID𝑚𝑒𝑎𝑠
+𝑡′
+for𝑡′= 24and48hours. The MID measurements obtained
+from [U-13C3] lactate for the high glucose high lactate and
+low glucose high lactate cultures exhibited considerable mea-
+surementerrors,asreportedinthestudy4.Consequently,these
+measurements were intentionally excluded from the training
+dataset used for developing the proposed model.
+Formodelfitting,theobjectiveistominimizetheweighted
+sum of squared residuals (SSR) between the available exper-
+imental data, which includes both extracellular metabo-
+lite concentrations ( 𝑠𝑚𝑒𝑎𝑠
+𝑡) and intracellular isotopic labeling
+(MID𝑚𝑒𝑎𝑠
+𝑡′), and the corresponding model-predicted values
+(𝑠𝑠𝑖𝑚
+𝑡and MID𝑠𝑖𝑚
+𝑡′),
+minSSR=𝑇∑
+𝑡=1(𝑠𝑠𝑖𝑚
+𝑡−𝑠𝑚𝑒𝑎𝑠
+𝑡)2
+𝑣𝑎𝑟𝑠
+𝑡+𝑇′∑
+𝑡′=1(MID𝑠𝑖𝑚
+𝑡′−MID𝑚𝑒𝑎𝑠
+𝑡′)2
+𝑣𝑎𝑟𝑀
+𝑡′,
+(14)
+where the weights are the inverse of the variances of the
+experimental measurements on extracellular metabolites and
+MIDs, i.e., (𝑣𝑎𝑟𝑠
+𝑡,𝑣𝑎𝑟𝑀
+𝑡′). The fitting criteria in eq (14) allows
+the model to systematically and effectively fit the metabolic
+regulation network at different times.
+The initial conditions for extracellular metabolites were
+obtained from culture data. As the experimental data only
+includes the relative abundance and the MIDs, estimates for
+theinitialintracellularmetaboliteconcentrationsweresourced
+fromtheBRENDAEnzymeDatabase37andrelatedreferences
+for mammalian cells cultured under similar conditions. Sim-
+ilarly, the initial kinetic parameter values were taken fromWangET AL 7
+the BRENDA Enzyme Database37and relevant references for
+similar metabolic networks and pathways.
+The goodness-of-fit for the developed iPSC metabolic
+kinetic model was assessed based on predictions using a chi-
+square test. Basically, the null hypothesis is that the fitted
+model can faithfully represent the iPSC culture metabolic
+mechanism. This test assumes that the minimized variance-
+weightedSSRfollowsachi-squaredistributionwith 𝑑degrees
+offreedom,wherethedegreeoffreedom 𝑑equalsthenumber
+of observations minus the number of fitted parameters. In this
+study, the chi-square statistical test has 𝑝-value much greater
+than0.05indicatingthemodelpredictionsarenotsignificantly
+different than the measured values.
+4RESULTS AND DISCUSSION
+The proposed mechanistic model was developed based on a
+small set of experimental data (see Section 2) and the model
+predictive performance was then validated in two manners.
+First, to mimic the dynamic data collection and assess the
+rollingforecastsrequiredforprocesscontrol,atanytime 𝑡,his-
+toricaldatawereusedtofitthemodelupto 𝑡andthenthefitted
+modelwasusedtopredictthe remainderoftheculturebehav-
+ior. InSection4.1,themodel’sabilitytocapturethedynamic
+evolutionofiPSCmetaboliccharacteristicswasevaluated.The
+model was trained on experimental data collected over differ-
+ent time intervals (0-h to 12-h, 0-h to 24-h, and 0-h to 36-h),
+and used to predict the iPSC culture for up to 48-h.
+Second, to assess the model’s ability to generalize and
+extrapolatetonewcultureconditions,threedatasets,randomly
+selected from (1) high glucose and low lactate (HGLL); (2)
+high glucose and high lactate (HGHL); (3) low glucose and
+low lactate (LGLL); and (4) low glucose and high lactate
+(HGHL),wereusedtopredictthefourthdatasetwithdifferent
+initialconditionsinSection4.2.Basically,threedatasetswere
+usedtotrainthemodel,andthenthemodelwasusedtopredict
+the fourth dataset behaviors. This training/test dataset selec-
+tionandevaluationstrategyisbuiltonthephilosophyofcross
+validation (CV) that is often used in the literature on model
+selection38,39.Eachcultureconditionwasexaminedinsucces-
+sionusingtheotherthreedatasets.Therefore,byvalidatingthe
+model’s prediction performance under different experimental
+conditions, its robustness and usefulness for predicting iPSC
+characteristics in a variety of settings is verified.
+4.1Prediction of iPSC Culture Process
+Duringthemodelvalidationprocess,theproposedmodelsim-
+ulator was trained using experimental data collected over var-
+ious time intervals (0-h to 12-h, 0-h to 24-h, and 0-h to 36-h).The model’s ability to predict the dynamic trajectories of key
+metabolites, including glucose, lactate, glutamate, glutamine,
+andpyruvate,aswellascelldensity,wasevaluatedbycompar-
+ingthepredictedvaluestoexperimentalobservationsupto48
+hours. Fig. 3 provides a representative result of the cell cul-
+ture process prediction for the case starting with HGLL. The
+results for the remaining settings, including HGHL, LGLL,
+and LGHL, are presented in Appendix Fig. B1 to B3 .
+The Chi-square test was employed to assess the goodness-
+of-fit of the proposed mechanistic model trained using the
+historical data collected in different time intervals. The statis-
+tical test for the model trained on 0-h to 12-h of experimental
+data yielded a value of 33.6 with 47 degrees of freedom ( 𝑝-
+value = 0.93). Similarly, for the model trained on 0-h to
+23-h and 0-h to 36-h of experimental data, the test statistics
+was 82.6 with 107 degrees of freedom ( 𝑝-value = 0.96) and
+138.1 with 167 degrees of freedom ( 𝑝-value = 0.95), respec-
+tively. All of the p-values exceed 0.05, suggesting that the
+proposed metabolic kinetics model fits well with the exper-
+imental dataset. The results in Fig. 3 demonstrate that the
+fitted model can provide improved predictions for most of the
+metabolite trajectories as more data are collected over time.
+Overall, the predicted profiles of the iPSC cultures can
+closelytrackthedynamicpatternsofthemeasuredprofilesand
+capturethecellculturedynamics.TheexperimentaliPSCdata
+wereobtainedfromplatesanddisheswithlimitedspace.Even
+though the overall growth rates were the same across the four
+conditions by experimental design, the growth rate decreased
+with time as nutrients were consumed and metabolic wastes
+accumulated. It is important to note that the developed mech-
+anistic metabolic kinetic model is a simplified representation
+oftheiPSCcarboncentralnetwork,therecouldlikelybesome
+keymetabolicregulationsandbiochemicalreactionsthatwere
+not incorporated. The less accurate predictive performances
+forlactate(underlowlactateconditions)andglutamatemaybe
+due to the omission of key reactions or regulatory functions.
+For example, as suggested by the calibrated model in previ-
+ous studies19,18,20, the membrane transportation of glutamate
+formammaliancellsissignificantlyimpactedbytheenergetic
+state(ATPandADP),andtheforwardandreverseconversion
+of lactate to pyruvate is influenced by the redox level (NAD
+and NADH).
+Since the redox level and energetic state-related measure-
+ments were not collected for the iPSC cultures, these factors
+werenotaccountedforinthecurrentmodel.Thestudy9found
+for CHO cells, a redox parameter assisted with lactate predic-
+tions;however,theredoxparameterimplementedbythisstudy
+was unmeasurable and thus would be difficult to incorporate
+into a control model. Furthermore, the lower prediction per-
+formanceforglutamatemaybeattributedtoitsinvolvementin
+multiplereactions(seeFig.2 ),leadingtoerroraccumulation8 WangET AL
+FIGURE3 Dynamicmodeltrainedwithhistoricaldatacollectedunderdifferenttimeintervals-Cellcharacteristicpredictions
+for high glucose and low lactate cultures. (A) Cell density, (B) Glucose, (C) Lactate, (D) Glutamine, (E) Glutamate, and (F)
+Pyruvate. Times 0-h to 12-h (green dotted line); Times 0-h to 24-h (brown dashed line); and Times 0-h to 36-h (purple solid
+line). The detection limit of the Cedex Bioanalyzer is shown as the red dash-dot line.
+over time. Future work should address these limitations with
+more comprehensive experimental data for iPSC cultures.
+4.2Prediction across Different Initial
+Conditions
+To assess the predictive capability of the proposed mech-
+anistic model across various initial culture conditions and
+enhance the understanding of iPSCs response to environmen-
+talchanges,specificallyglucoseandlactate,across-validation
+approachwasemployed.Thisapproachfirsttrainedthemodel
+with three of the four datasets (i.e., HGLL, HGHL, LGLL,
+and HGHL). The remaining dataset behavior was then pre-
+dicted.Thisapproachprovidedvaluableinsightforoptimizing
+Design of Experiments (DoE) strategies in the realm of in
+silicoexperimentation.
+Themodelcross-validationpredictionfortheHGLLculture
+was evaluated using the model trained on HGHL, LGLL, and
+LGHLdatasets,asillustratedinFig.4 .Theotherthreeacross-
+validation predictions are provided in Appendix Fig. C4 to
+C6 . Cell density and key metabolites (i.e., glucose, lactate,
+glutamate, glutamine, and pyruvate) were predicted and are
+shown with the average of the measured values with standard
+deviations.Toevaluatethegoodness-of-fit,thechi-squaretest
+SSRstatisticsis783with802degreesoffreedomwith 𝑝-value
+=0.67muchgreaterthan0.05.Thisp-valueindicatesthatthemetabolickineticmodelcanfaithfullyrepresenttheiPSCcul-
+ture regulatory mechanisms under different levels of glucose
+and lactate concentrations.
+The predictions of intracellular MID from the [1,2-13C2]
+glucose and [U-13C5] glutamine tracer at 48-h under the con-
+trol (HGLL) culture condition are shown in Fig. 5 and
+Fig. 6 , respectively. Even though there is some prediction
+error, the simulation model can correctly predict the dynam-
+icsandinterdependenciesofmultivariateiPSCcultureprocess
+metabolism.Thedevelopedmetabolickineticmodelcanfaith-
+fully predict the cell response to environmental perturbation,
+which could guide the strategic feeding strategy for the inte-
+grated iPSC culture process for future research. In addition,
+by incorporating even the simplified PPP reactions, the M +1
+isotopic labeling pattern for pyruvate and related metabolites
+from [1,2-13C2] glucose tracer can be well-predicted.
+The prediction of metabolic flux maps for K3 iPSC under
+controlcultureat24-hand48-hareshowninFig7 .Thepre-
+dictionperformanceofmetabolicconcentrationtrajectoryand
+flux maps for K3 iPSC under HGHL, LGLL, and LGHL are
+provided in Appendix Fig. D7 to Fig. D9 . Since no restric-
+tive steady-state assumption was required for the developed
+metabolic kinetic model, the flow-in flux is not required to be
+equal to the flow-out flux for each metabolite.
+The prediction of metabolic flux dynamics for K3 iPSC
+culture reveals several significant observations. First, the gly-
+colytic efficiency, which measures how effectively K3 iPSCsWangET AL 9
+FIGURE 4 Dynamic model trained with three other datasets with varied initial glucose and lactate concentrations for cell
+characteristic predictions in high glucose and low lactate cultures. (A) Cell density, (B) Glucose, (C) Lactate, (D) Glutamine,
+(E) Glutamate, and (F) Pyruvate. The detection limit of the Cedex Bioanalyzer is shown as the red dash-dot line.
+FIGURE 5 MID measurements and predictions for the [1,2-
+13C2] glucose tracer at 48-h for high glucose low lactate
+cultures using the dynamic model trained on the other three
+data sets compared to literature measurements. MIDs shown
+have been corrected for natural abundance.
+utilizeglucoseasanenergysource,remainedconsistentlyhigh
+acrossallconditions,exceeding1.6andapproachingthetheo-
+reticalmaximumof2.0molesoflactateproducedpermoleof
+glucoseconsumed.ThissuggeststhatK3iPSCsareefficiently
+converting glucose into lactate with minimal byproduct pro-
+duction. Second, the [U-13C3] lactate tracer showed that K3
+iPSCs consumed and metabolized lactate in the high lactate
+cultures. However, in all four culture conditions, there was a
+net production of lactate, indicating that K3 iPSCs produced
+FIGURE 6 MID measurements and predictions for the [U-
+13C5] glutamine tracer at 48-h for high glucose low lactate
+cultures using the dynamic model trained on the other three
+data sets compared to literature measurements. MIDs shown
+have been corrected for natural abundance.
+and also consumed lactate in the high lactate culture condi-
+tions. Third, in the control experimental setting, as the iPSC
+cultures approached the late exponential phase, there was a
+gradual increase in the flux rates of the TCA cycle, consistent
+withfindingsreportedinapreviousliteraturestudy21.Finally,
+themechanisticmodelsuccessfullypredictedthereducedglu-
+tamine consumption fluxes under high lactate culture condi-
+tions, along with a decrease in the conversion of glutamine to
+AKG. Consequently, the model also predicted slightly lower10 WangET AL
+fluxesthroughkeyTCAcyclereactionssuchas 𝛼-ketoglutarate
+dehydrogenase (AKGDH), succinate dehydrogenase (SDH),
+malate dehydrogenase (MDH), fumarase (FUM), and citrate
+synthase (CS).
+Table2 liststhepredictionsofbiomass-specificuptakeand
+production rates for critical extracellular metabolites at 12-h
+and36-h.Thetablealsoincludestheaveragefluxbetween12-
+h and 36-h, as determined by the Extracellular Time-Course
+Analysis(ETA)software40,forcomparison.Thegeneralmass
+balance equation, constructed by ETA, which describes the
+dynamicsintheconcentrationofthe 𝑖-thextracellularmetabo-
+lite under batch growth conditions, is given by
+𝑑𝑠𝑖(𝑡)
+𝑑𝑡=𝑟𝑖𝑋(𝑡),
+where𝑠𝑖(𝑡)represents the concentration of the 𝑖-th metabo-
+lite at time𝑡,𝑟𝑖is the specific rate of metabolite consumption
+or production, and 𝑋(𝑡)stands for cell density at time 𝑡. This
+equation assumes no degradation of metabolites. Notice that
+ETA results are based on the assumption of metabolic steady-
+state, meaning that the consumption or production rate 𝑟𝑖of
+any𝑖-th metabolite remains constant and it is not influenced
+by the changes in extracellular or intracellular concentrations.
+Thisassumptionexplainswhymostfluxestimationsusingthe
+ETA approach for 12-h to 36-h fall within the range of the
+model predictions at 12-h and 36-h.
+Under conditions of limited substrate availability, there
+are significant changes in consumption rates, as exemplified
+by glucose in LGLL and LGHL cultures, as well as pyru-
+vate in all four conditions. Unlike averaging approaches (e.g.,
+ETAmodel),theproposedmetabolickineticmodeleffectively
+captures these essential dynamic behaviors. This capability
+holdspromiseforfacilitatingfutureresearchontheend-to-end
+cell culture process optimal control to improve high-quality
+iPSC production. Additionally, as stirred suspension cultures
+become a common choice for large-scale iPSC manufactur-
+ing41,42,thisstudycanalsocontributetotheunderstandingof
+cell behavior within aggregates, as the well-established pat-
+terninvolveslowglucoseandhighlactateconcentrationsatthe
+aggregate center43.
+By modeling the regulatory mechanisms outlined
+in Section 3.3, the results presented in Table 2 are
+consistent with observations reported in existing stud-
+ies19,18,20,30,31,32,33,34,29,35. The ability of the proposed model
+to accurately predict cell dynamic behavior and response
+under varying environmental conditions reaffirms its reliabil-
+ity and underscores its potential to enhance the optimization
+and control of iPSC culture processes. Specifically, the model
+indicates that the consumption rate of glucose increases with
+higher extracellular glucose concentrations (e.g., HGLL vs.
+LGLL and HGHL vs. LGHL), while it decreases with higher
+extracellular lactate concentrations (e.g., HGLL vs. HGHLandLGLLvs.LGHL).Thesetrendscanbeattributedtoregu-
+latory mechanism R1as described in equation (7). Regarding
+lactate, the model reveals that the net production rate is lower
+when a certain amount of lactate exists in the cultural envi-
+ronment (e.g., HGLL vs. HGHL and LGLL vs. LGHL). In
+the case of pyruvate, under high lactate culture conditions,
+more favorable lactate transport kinetics of MCTs result in
+decreased pyruvate consumption (e.g., HGLL vs. HGHL and
+LGLL vs. LGHL). These observations are associated with
+regulatory mechanism R6as explained in equation (12).
+Furthermore, the presence of lactate dampens the conversion
+of glutamine to glutamate. Consequently, under high lactate
+culture conditions, the consumption rate of glutamine and
+the production rate of glutamate decrease (e.g., HGLL vs.
+HGHL and LGLL vs. LGHL). These behaviors are linked
+to regulatory mechanisms R2in equation (8) and R7in
+equation (13).
+5CONCLUSIONS
+Inthispaper,ametabolickineticmodelisdescribedthatchar-
+acterizes the time-varying dynamics and regulatory mecha-
+nismsoftheiPSCcultures.Thismodeldetailedcentralcarbon
+metabolism, including glycolysis, TCA cycle, PPP, anaplero-
+sis, and key amino acid metabolism. The iPSC metabolic reg-
+ulatory network was calibrated using extracellular metabolite
+concentrationsandintracellularisotopicdataformultipletrac-
+ers (i.e., [1,2-13C2] glucose and [U-13C5] glutamine tracers).
+These time-course measurements were collected at multiple
+timepointsforthedifferentcultureconditions.Thevalidation
+resultsdemonstratethatthedevelopedmetabolickineticmodel
+can provide a reliable prediction on iPSC metabolic response
+to changes in extracellular glucose and lactate levels.
+This model holds substantial potential for advancing the
+understandingofcomplexintracellularregulatorymechanisms
+within iPSC cultures. Furthermore, it empowers continuous
+monitoring and precise control of cell cultures, particularly
+advantageous in the realm of large-scale manufacturing. In
+summary, the proposed mechanistic model holds the poten-
+tial to facilitate the optimization and control of iPSC cultures,
+potentiallyevenatlargescales,ensuringthesurvival,produc-
+tivity, and quality of iPSC-derived cell products.
+References
+1. Hanna E, Rémuzat C, Auquier P, Toumi M. Advanced
+therapy medicinal products: current and future perspec-
+tives. Journal of market access & health policy 2016;4(1):
+31036.WangET AL 11
+FIGURE 7 Metabolic flux maps for K3 iPSC for the high glucose and low lactate cultures at 24-h and 48-h. Predicted fluxes
+are given in nmol/106cells⋅h. The line thicknesses represent the relative fluxes.
+TABLE 2 Dynamic model prediction for biomass-specific uptake and production rates for key extracellular metabolite
+(nmol/106cells⋅h). The fluxes obtained by Extracellular Time-Course Analysis (ETA) for 12-h to 36-h are calculated averages
+frommeasurements4,whilethe12-hand36-hfluxespredictedbythedevelopedmetabolickineticmodelarecalculatedforthat
+specific time point. Negative values represent consumption rates and positive values represent production rates.
+HGLL (nmol/106cells⋅h) LGLL (nmol/106cells⋅h)
+Metabolite 12-h 36-h12-h to 36-h (ETA) 12-h36-h12-h to 36-h (ETA)
+Glucose -1,910 -1,132 -1,051 -1,664 -826 -994
+Lactate 1,410 2,145 2,108 1,4002,096 2,000
+Pyruvate -109-58.2 -67.7 -109-60.2 -75.2
+Glutamate 35.4 53.3 36.2 35.554.4 32.4
+Glutamine -221 -180 -132 -224-178 -147
+HGHL (nmol/106cells⋅h) LGHL (nmol/106cells⋅h)
+Metabolite 12-h 36-h12-h to 36-h (ETA) 12-h36-h12-h to 36-h (ETA)
+Glucose -880 -773 -874 -763-628 -860
+Lactate 1,332 1,602 1,694 1,3141,388 1,651
+Pyruvate -71.2 -53.4 -39 -71.9-53.3 -36.5
+Glutamate 31.1 49.2 28.3 31.649.8 29.4
+Glutamine -206 -161 -107 -202-160 -120
+2. Stephanopoulos G, Aristidou AA, Nielsen J. Metabolic
+engineering: principles and methodologies. 1998.
+3. Fiorenza S, Ritchie DS, Ramsey SD, Turtle CJ, Roth
+JA. Value and affordability of CAR T-cell therapy in the
+United States. Bone marrow transplantation 2020; 55(9):1706–1715.
+4. Odenwelder DC, Lu X, Harcum SW. Induced pluripo-
+tent stem cells can utilize lactate as a metabolic substrate
+to support proliferation. Biotechnology Progress 2021;
+37(2): e3090.12 WangET AL
+5. Dressel R. Effects of histocompatibility and host immune
+responsesonthetumorigenicityofpluripotentstemcells.
+In: . 33. Springer. ; 2011: 573.
+6. Kyriakopoulos S, Ang KS, Lakshmanan M, et al. Kinetic
+modeling of mammalian cell culture bioprocessing: the
+quest to advance biomanufacturing. Biotechnology Jour-
+nal2018; 13(3): 1700229.
+7. Wang LLW, Janes ME, Kumbhojkar N, et al. Cell
+therapies in the clinic. Bioengineering & translational
+medicine 2021; 6(2): e10214.
+8. Niklas J, Heinzle E. Metabolic flux analysis in systems
+biologyofmammaliancells. Genomics and Systems Biol-
+ogy of Mammalian Cell Culture 2012: 109–132.
+9. Nolan RP, Lee K. Dynamic model of CHO cell
+metabolism. Metabolic engineering 2011; 13(1): 108–
+124.
+10. AntoniewiczMR.Methodsandadvancesinmetabolicflux
+analysis: a mini-review. Journal of Industrial Microbiol-
+ogy and Biotechnology 2015; 42(3): 317–325.
+11. Antoniewicz MR. A guide to13C metabolic flux analy-
+sis for the cancer biologist. Experimental & molecular
+medicine 2018; 50(4): 1–13.
+12. Rivera-Ordaz A, Peli V, Manzini P, Barilani M, Lazzari
+L.CriticalAnalysisofcGMPLarge-ScaleExpansionPro-
+cess in Bioreactors of Human Induced Pluripotent Stem
+Cells in the Framework of Quality by Design. BioDrugs
+2021; 35(6): 693–714.
+13. Sengupta N, Rose ST, Morgan JA. Metabolic flux analy-
+sisofCHOcellmetabolisminthelatenon-growthphase.
+Biotechnology and bioengineering 2011; 108(1): 82–92.
+14. Wiechert W, Möllney M, Petersen S, De Graaf AA. A
+universal framework for 13C metabolic flux analysis.
+Metabolic engineering 2001; 3(3): 265–283.
+15. QuekLE,DietmairS,KrömerJO,NielsenLK.Metabolic
+flux analysis in mammalian cell culture. Metabolic engi-
+neering2010; 12(2): 161–171.
+16. Dong W, Moon SJ, Kelleher JK, Stephanopoulos G. Dis-
+sectingmammaliancellmetabolismthrough13C-and2H-
+isotope tracing: interpretations at the molecular and sys-
+temslevels. Industrial & Engineering Chemistry Research
+2019; 59(6): 2593–2610.
+17. Leighty RW, Antoniewicz MR. Dynamic metabolic flux
+analysis (DMFA): a framework for determining fluxes at
+metabolic non-steady state. Metabolic engineering 2011;
+13(6): 745–755.18. Ghorbaniaghdam A, Chen J, Henry O, Jolicoeur M. Ana-
+lyzingclonalvariationofmonoclonalantibody-producing
+CHO cell lines using an in silicometabolomic platform.
+PloS one 2014; 9(3): e90832.
+19. Ghorbaniaghdam A, Henry O, Jolicoeur M. A kinetic-
+metabolic model based on cell energetic state: study of
+CHOcellbehaviorunderNa-butyratestimulation. Biopro-
+cess and biosystems engineering 2013; 36: 469–487.
+20. Ghorbaniaghdam A, Henry O, Jolicoeur M. An in-silico
+study of the regulation of CHO cells glycolysis. Journal
+of theoretical biology 2014; 357: 112–122.
+21. Templeton N, Dean J, Reddy P, Young JD. Peak anti-
+body production is associated with increased oxidative
+metabolisminanindustriallyrelevantfed-batchCHOcell
+culture. Biotechnology and bioengineering 2013; 110(7):
+2013–2024.
+22. Nelson DL, Lehninger AL, Cox MM. Lehninger princi-
+ples of biochemistry . Macmillan . 2008.
+23. Jazmin LJ, Young JD. Isotopically nonstationary13C
+metabolic flux analysis. Systems Metabolic Engineering:
+Methods and Protocols 2013: 367–390.
+24. Antoniewicz MR, Kelleher JK, Stephanopoulos G. Ele-
+mentary metabolite units (EMU): a novel framework for
+modeling isotopic distributions. Metabolic engineering
+2007; 9(1): 68–86.
+25. Ahn WS, Antoniewicz MR. Metabolic flux analysis of
+CHOcellsatgrowthandnon-growthphasesusingisotopic
+tracers and mass spectrometry. Metabolic engineering
+2011; 13(5): 598–609.
+26. AhnWS,AntoniewiczMR.Parallellabelingexperiments
+with [1, 2-13C] glucose and [U-13C] glutamine provide
+new insights into CHO cell metabolism. Metabolic engi-
+neering2013; 15: 34–47.
+27. Antoniewicz MR. A guide to metabolic flux analysis in
+metabolic engineering: Methods, tools and applications.
+Metabolic engineering 2021; 63: 2–12.
+28. Young JD, Walther JL, Antoniewicz MR, Yoo H,
+StephanopoulosG.Anelementarymetaboliteunit(EMU)
+based method of isotopically nonstationary flux analysis.
+Biotechnology and bioengineering 2008;99(3):686–699.
+29. Halestrap AP. The monocarboxylate transporter family-
+structure and functional characterization. IUBMB life
+2012; 64(1): 1–9.WangET AL 13
+30. Ivarsson M, Noh H, Morbidelli M, Soos M. Insights into
+pH-induced metabolic switch by flux balance analysis.
+Biotechnology Progress 2015; 31(2): 347–357.
+31. Mulukutla BC, Gramer M, Hu WS. On metabolic shift
+tolactateconsumptioninfed-batchcultureofmammalian
+cells. Metabolic engineering 2012; 14(2): 138–149.
+32. Costa Leite T, Da Silva D, Guimarães Coelho R, Zan-
+can P, Sola-Penna M. Lactate favours the dissociation
+of skeletal muscle 6-phosphofructo-1-kinase tetramers
+down-regulating the enzyme and muscle glycolysis. Bio-
+chemical Journal 2007; 408(1): 123–130.
+33. Glacken M, Adema E, Sinskey A. Mathematical descrip-
+tions of hybridoma culture kinetics: I. Initial metabolic
+rates. Biotechnology and bioengineering 1988; 32(4):
+491–506.
+34. HassellT,GleaveS,ButlerM.Growthinhibitioninanimal
+cell culture: The effect of lactate and ammonia. Applied
+biochemistry and biotechnology 1991; 30: 29–41.
+35. Huckabee WE. Control of concentration gradients of
+pyruvate and lactate across cell membranes in blood.
+Journal of Applied Physiology 1956; 9(2): 163–170.
+36. DraouiN,FeronO.Lactateshuttlesataglance:fromphys-
+iological paradigms to anti-cancer treatments. Disease
+models & mechanisms 2011; 4(6): 727–732.
+37. Chang A, Jeske L, Ulbrich S, et al. BRENDA, the
+ELIXIR core data resource in 2021: new developments
+andupdates. Nucleic acids research 2021;49(D1):D498–
+D508.
+38. McLachlan GJ. Discriminant analysis and statistical pat-
+tern recognition . John Wiley & Sons . 2005.
+39. RefaeilzadehP,TangL,LiuH.Cross-validation. Encyclo-
+pedia of database systems 2009: 532–538.
+40. Murphy TA, Young JD. ETA: robust software for deter-
+mination of cell specific rates from extracellular time
+courses. Biotechnology and bioengineering 2013;110(6):
+1748–1758.
+41. Borys BS, So T, Colter J, et al. Optimized serial expan-
+sion of human induced pluripotent stem cells using low-
+density inoculation to generate clinically relevant quanti-
+tiesinvertical-wheelbioreactors. Stem Cells Translational
+Medicine 2020; 9(9): 1036–1052.
+42. Meng G, Liu S, Poon A, Rancourt DE. Optimizing
+humaninducedpluripotentstemcellexpansioninstirred-
+suspension culture. Stem cells and development 2017;
+26(24): 1804–1817.43. Kinney MA, Sargent CY, McDevitt TC. The multipara-
+metriceffectsofhydrodynamicenvironmentsonstemcell
+culture. Tissue Engineering Part B: Reviews 2011; 17(4).14 WangET AL
+APPENDIXWangET AL 15
+A APPENDIX: TABLE
+The following tables summarize detailed information about the constructed iPSC metabolic network and developed kinetic
+model.
+•TheiPSCmetabolicnetworkcontainsthemajorreactionsforglycolysis,theTCAcycle,anaplerosis,PPP,andaminoacid
+metabolism;seethespecificreactionsinTableA1 .ThereactionsofPPParecollapsedintotwo:Oxidativephase/branch
+and Non-oxidative phase/branch (i.e., No. 9 & 10 reactions).
+•The iPSC metabolic flux rate regulation biokinetic model is summarized in Table A2 . The Michaelis-Menten model is
+used to characterize how key activators and inhibitors influence regulatory mechanisms in each reaction.
+•The descriptions of the metabolites, considered in the developed metabolic kinetic model, are listed in Table A3 .
+•Forthedevelopedmetabolickineticmodel,thedescriptionsoftheenzymeswithEnzymeCommissionNumber(EC-No.)
+are provided in Table A4 . They are associated with metabolic flux reaction rates.16 WangET AL
+TABLE A1 Reactions of the metabolic network
+No. Pathway
+Glycolysis
+1Glc(abcdef) →G6P(abcdef)
+2G6P(abcdef) →F6P(abcdef)
+3F6P(abcdef) →GAP(cba) + GAP (def)
+4GAP(abc) →PEP(abc)
+5PEP(abc) →Pyr(abc)
+6Pyr(abc) ↔Lac(abc)
+7EPyr(abc) →Pyr(abc)
+8Lac(abc) ↔ELac(abc)
+PPP
+9G6P(abcdef) →Ru5P(bcdef)+CO2(a)
+10Ru5P(abcde)+Ru5P(fghij)+Ru5P(klmno) →F6P(fgahij) +F6P(klbcde)+ GAP(mno)
+TCA
+11Pyr(abc) →AcCoA(bc)+CO2(a)
+12AcCoA(ab)+OAA(cdef) →Cit(fedbac)
+13Cit(abcdef) ↔AKG(abcde) +CO2(f)
+14AKG(abcde) →Suc(bcde)+ CO2(a)
+15Suc(abcd) →Fum(abcd)
+16Fum(abcd) ↔Mal(abcd)
+17Mal(abcd) ↔OAA(abcd)
+Anaplerosis and Amino Acid
+18Mal(abcd) →Pyr(abc)+CO2(d)
+19Pyr(abc) +CO2(d)→OAA(abcd)
+20Gln(abcde) ↔Glu(abcde)+NH4
+21Glu(abcde) ↔AKG(abcde)+NH4
+22Glu(abcde)+Pyr(fgh) ↔AKG(abcde)+Ala(fgh)
+23Ala(abc) →EAla(abc)
+24Glu(abcde) →EGlu(abcde)
+25EGln(abcde) →Gln(abcde)
+26Ser(abc) →Pyr(abc)+ NH4
+27Asp(fghi)+AKG(abcde) ↔Glu(abcde)+OAA(fghi)+NH4
+28EAsp(abcd) →Asp(abcd)
+29Cit(abcdef) →Mal(fcba) + Lipids
+Biomass
+300.19 Ala + 0.11 Asp + 0.1 Gln + 0.12 Glu + 0.17 Gly + 0.14 Ser + 0.16 Glc →BiomassWangET AL 17
+TABLE A2 Biokinetic equations of the metabolites fluxes (1-30) of the model
+No. Pathway
+Glycolysis
+1𝑣(𝐻𝐾)=𝑣𝑚𝑎𝑥,𝐻𝐾×𝐺𝑙𝑐
+𝐾𝑚,𝐺𝑙𝑐+𝐺𝑙𝑐×𝐾𝑖,𝐺6𝑃
+𝐾𝑖,𝐺6𝑃+𝐺6𝑃×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐻𝐾+𝐿𝑎𝑐
+2𝑣(𝑃𝐺𝐼)=𝑣𝑚𝑎𝑥,𝑃𝐺𝐼×𝐺6𝑃
+𝐾𝑚,𝐺6𝑃+𝐺6𝑃
+3𝑣(𝑃𝐹𝐾∕𝐴𝐿𝐷)=𝑣𝑚𝑎𝑥,𝑃𝐹𝐾∕𝐴𝐿𝐷×𝐹6𝑃
+𝐾𝑚,𝐹6𝑃+𝐹6𝑃
+4𝑣(𝑃𝐺𝐾)=𝑣𝑚𝑎𝑥,𝑃𝐺𝐾×𝐺𝐴𝑃
+𝐾𝑚,𝐺𝐴𝑃+𝐺𝐴𝑃
+5𝑣(𝑃𝐾)=𝑣𝑚𝑎𝑥,𝑃𝐾×𝑃𝐸𝑃
+𝐾𝑚,𝑃𝐸𝑃×(1+𝐾𝑎,𝐹6𝑃
+𝐹6𝑃)+𝑃𝐸𝑃
+6f𝑣𝐿𝐷𝐻𝑓=𝑣𝑚𝑎𝑥,𝑓𝐿𝐷𝐻×𝑃𝑦𝑟
+𝐾𝑚,𝑃𝑦𝑟+𝑃𝑦𝑟
+6r𝑣(𝐿𝐷𝐻𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐿𝐷𝐻×𝐿𝑎𝑐
+𝐾𝑚,𝐿𝑎𝑐+𝐿𝑎𝑐×𝐾𝑖,𝑃𝑦𝑟
+𝐾𝑖,𝑃𝑦𝑟+𝑃𝑦𝑟
+7𝑣(𝑃𝑦𝑟𝑇)=𝑣𝑚𝑎𝑥,𝑃𝑦𝑟𝑇×𝐸𝑃𝑦𝑟
+𝐾𝑚,𝐸𝑃𝑦𝑟+𝐸𝑃𝑦𝑟×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝑃𝑦𝑟
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝑃𝑦𝑟+𝐿𝑎𝑐
+8f𝑣(𝐿𝑎𝑐𝑇𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐿𝑎𝑐𝑇×𝐿𝑎𝑐
+𝐾𝑚,𝐿𝑎𝑐+𝐿𝑎𝑐
+8r𝑣(𝐿𝑎𝑐𝑇𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐿𝑎𝑐𝑇×𝐸𝐿𝑎𝑐
+𝐾𝑚,𝐸𝐿𝑎𝑐+𝐸𝐿𝑎𝑐
+PPP
+9𝑣(𝑂𝑃)=𝑣𝑚𝑎𝑥,𝑂𝑃×𝐺6𝑃
+𝐾𝑚,𝐺6𝑃+𝐺6𝑃
+10𝑣(𝑁𝑂𝑃)=𝑣𝑚𝑎𝑥,𝑁𝑂𝑃×𝑅𝑢5𝑃
+𝐾𝑚,𝑅𝑢5𝑃+𝑅𝑢5𝑃
+TCA
+11𝑣(𝑃𝐷𝐻)=𝑣𝑚𝑎𝑥,𝑃𝐷𝐻×𝑃𝑦𝑟
+𝐾𝑚,𝑃𝑦𝑟+𝑃𝑦𝑟
+12𝑣(𝐶𝑆)=𝑣𝑚𝑎𝑥,𝐶𝑆×𝐴𝑐𝐶𝑜𝐴
+𝐾𝑚,𝐴𝑐𝐶𝑜𝐴+𝐴𝑐𝐶𝑜𝐴×𝑂𝐴𝐴
+𝐾𝑚,𝑂𝐴𝐴+𝑂𝐴𝐴
+13f𝑣(𝐶𝐼𝑇𝑆∕𝐼𝑆𝑂𝐷𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐶𝐼𝑇𝑆 ∕𝐼𝑆𝑂𝐷×𝐶𝑖𝑡
+𝐾𝑚,𝐶𝑖𝑡+𝐶𝑖𝑡
+13r𝑣(𝐶𝐼𝑇𝑆∕𝐼𝑆𝑂𝐷𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐶𝐼𝑇𝑆∕𝐼𝑆𝑂𝐷×𝐴𝐾𝐺
+𝐾𝑚,𝐴𝐾𝐺+𝐴𝐾𝐺
+14𝑣(𝐴𝐾𝐺𝐷𝐻)=𝑣𝑚𝑎𝑥,𝐴𝐾𝐺𝐷𝐻×𝐴𝐾𝐺
+𝐾𝑚,𝐴𝐾𝐺+𝐴𝐾𝐺
+15𝑣(𝑆𝐷𝐻)=𝑣𝑚𝑎𝑥,𝑆𝐷𝐻×𝑆𝑢𝑐
+𝐾𝑚,𝑆𝑈𝐶+𝑆𝑢𝑐
+16f𝑣(𝐹𝑈𝑀𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐹𝑈𝑀×𝐹𝑢𝑚
+𝐾𝑚,𝐹𝑢𝑚+𝐹𝑢𝑚
+16r𝑣(𝐹𝑈𝑀𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐹𝑈𝑀×𝑀𝑎𝑙
+𝐾𝑚,𝑀𝑎𝑙+𝑀𝑎𝑙
+17f𝑣(𝑀𝐷𝐻𝑓)=𝑣𝑚𝑎𝑥,𝑓𝑀𝐷𝐻×𝑀𝑎𝑙
+𝐾𝑚,𝑀𝑎𝑙+𝑀𝑎𝑙
+17r𝑣(𝑀𝐷𝐻𝑟)=𝑣𝑚𝑎𝑥,𝑟𝑀𝐷𝐻×𝑂𝐴𝐴
+𝐾𝑚,𝑂𝐴𝐴+𝑂𝐴𝐴18 WangET AL
+Anaplerosis and Amino Acid
+18𝑣(𝑀𝐸)=𝑣𝑚𝑎𝑥,𝑀𝐸×𝑀𝑎𝑙
+𝐾𝑚,𝑀𝑎𝑙+𝑀𝑎𝑙
+19𝑣(𝑃𝐶)=𝑣𝑚𝑎𝑥,𝑃𝐶×𝑃𝑦𝑟
+𝐾𝑚,𝑃𝑦𝑟+𝑃𝑦𝑟
+20f𝑣(𝐺𝐿𝑁𝑆𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐺𝐿𝑁𝑆×𝐺𝑙𝑛
+𝐾𝑚,𝐺𝑙𝑛+𝐺𝑙𝑛×𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐺𝐿𝑁𝑆
+𝐾𝑖,𝐿𝑎𝑐𝑡𝑜𝐺𝐿𝑁𝑆+𝐿𝑎𝑐
+20r𝑣(𝐺𝐿𝑁𝑆𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐺𝐿𝑁𝑆×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝑙𝑢+𝐺𝑙𝑢×𝑁𝐻4
+𝐾𝑚,𝑁𝐻4+𝑁𝐻4
+21f𝑣(𝐺𝐿𝐷𝐻𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐺𝐿𝐷𝐻×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝑙𝑢+𝐺𝑙𝑢
+21r𝑣(𝐺𝐿𝐷𝐻𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐺𝐿𝐷𝐻×𝐴𝐾𝐺
+𝐾𝑚,𝐴𝐾𝐺+𝐴𝐾𝐺×𝑁𝐻4
+𝐾𝑚,𝑁𝐻4+𝑁𝐻4
+22f𝑣(𝐴𝑙𝑎𝑇𝐴𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐴𝑙𝑎𝑇𝐴×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝐿𝑈+𝐺𝑙𝑢×𝑃𝑦𝑟
+𝐾𝑚,𝑃𝑦𝑟+𝑃𝑦𝑟
+22r𝑣(𝐴𝑙𝑎𝑇𝐴𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐴𝑙𝑎𝑇𝐴×𝐴𝑙𝑎
+𝐾𝑚,𝐴𝑙𝑎+𝐴𝑙𝑎×𝐴𝐾𝐺
+𝐾𝑚,𝐴𝐾𝐺+𝐴𝐾𝐺×(1+𝐾𝑎,𝐺𝑙𝑛
+𝐺𝑙𝑛)
+23𝑣(𝐴𝑙𝑎𝑇)=𝑣𝑚𝑎𝑥,𝐴𝑙𝑎𝑇×𝐴𝑙𝑎
+𝐾𝑚,𝐴𝑙𝑎+𝐴𝑙𝑎
+24𝑣(𝐺𝑙𝑢𝑇)=𝑣𝑚𝑎𝑥,𝐺𝑙𝑢𝑇×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝑙𝑢+𝐺𝑙𝑢
+25𝑣(𝐺𝑙𝑛𝑇)=𝑣𝑚𝑎𝑥,𝐺𝑙𝑛𝑇×𝐸𝐺𝑙𝑛
+𝐾𝑚,𝐸𝐺𝑙𝑛+𝐸𝐺𝑙𝑛×𝐾𝑖,𝐺𝐿𝑁
+𝐾𝑖,𝐺𝐿𝑁+𝐺𝐿𝑁
+26𝑣(𝑆𝐴𝐿)=𝑣𝑚𝑎𝑥,𝑆𝐴𝐿×𝑆𝑒𝑟
+𝐾𝑚,𝑆𝑒𝑟+𝑆𝑒𝑟
+27f𝑣(𝐴𝑆𝑇𝐴𝑓)=𝑣𝑚𝑎𝑥,𝑓𝐴𝑆𝑇𝐴×𝐴𝑠𝑝
+𝐾𝑚,𝐴𝑆𝑃+𝐴𝑠𝑝×𝐴𝐾𝐺
+𝐾𝑚,𝐴𝐾𝐺+𝐴𝐾𝐺
+27r𝑣(𝐴𝑆𝑇𝐴𝑟)=𝑣𝑚𝑎𝑥,𝑟𝐴𝑆𝑇𝐴×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝑙𝑢+𝐺𝑙𝑢×𝑂𝐴𝐴
+𝐾𝑚,𝑂𝐴𝐴+𝑂𝐴𝐴×𝑁𝐻4
+𝐾𝑚,𝑁𝐻4+𝑁𝐻4
+28𝑣(𝐴𝑠𝑝𝑇)=𝑣𝑚𝑎𝑥,𝐴𝑠𝑝𝑇×𝐸𝐴𝑠𝑝
+𝐾𝑚,𝐸𝐴𝑠𝑝+𝐸𝐴𝑠𝑝
+29𝑣(𝐴𝐶𝐿)=𝑣𝑚𝑎𝑥,𝐴𝐶𝐿×𝐶𝑖𝑡
+𝐾𝑚,𝐶𝑖𝑡+𝐶𝑖𝑡
+Biomass
+30𝑣(𝑔𝑟𝑜𝑤𝑡ℎ)=𝑣𝑚𝑎𝑥,𝑔𝑟𝑜𝑤𝑡ℎ×𝐺𝑙𝑛
+𝐾𝑚,𝐺𝑙𝑛+𝐺𝑙𝑛×𝐺𝑙𝑐
+𝐾𝑚,𝐺𝑙𝑐+𝐺𝑙𝑐×𝐺𝑙𝑢
+𝐾𝑚,𝐺𝑙𝑢+𝐺𝑙𝑢×𝐴𝑙𝑎
+𝐾𝑚,𝐴𝑙𝑎+𝐴𝑙𝑎×𝐴𝑠𝑝
+𝐾𝑚,𝐴𝑠𝑝+𝐴𝑠𝑝×𝑆𝑒𝑟
+𝐾𝑚,𝑆𝑒𝑟+𝑆𝑒𝑟×
+𝐺𝑙𝑦
+𝐾𝑚,𝐺𝑙𝑦+𝐺𝑙𝑦WangET AL 19
+TABLE A3 Description of the Metabolite
+Component Description Component Description
+ACCoA Acetyl-CoezymeA ALA Alanine
+AKG 𝛼-Ketoglutarate ASP Aspartate
+CIT Citrate LAC Lactate
+CO2 Intracellular Carbonoxygen GLN Glutamine
+F6P Fructose 6-Phosphate EGLY Extracellular Glycine
+G6P Glucose 6-Phosphate SER Extracellular Serine
+GAP Glyceraldehyde 3-Phosphate GLC Extracellular Glucose
+GLU Glutamate EGLN Extracellular Glutamine
+GLY Glycine EGLU Extracellular Glutamate
+MAL Malate EPYR Extracellular Pyruvate
+OAA Oxaloacetate EASP Extracellular Aspartate
+PEP Phosphoenolpyruvate EALA Extracellular Alanine
+FUM Fumarate ELAC Extracellular Lactate
+Ru5P Ribulose 5-Phosphate NH4 Extracellular Ammonia
+SUC Succinate LIPID Lipid
+PYR Pyruvate Bio Biomass20 WangET AL
+TABLE A4 Description of the Enzyme
+Abbreviation Description EC-No.
+HK Hexokinase 2.7.1.1
+PGI Phosphoglucose Isomerase 5.3.1.9
+PFK/ALD Phosphofructokinase/Aldolase 2.7.1.11/4.1.2.13
+PGK Phosphoglycerate Kinase 2.7.2.3
+PK Pyruvate Kinase 2.7.1.40
+OP Oxidative Phase of PPP
+NOP Non-oxidative Phase of PPP
+PyrT Membrane Transport of Pyruvate
+SAL Membrane Transport of Serine
+LDH Lactate Dehydrogenase 1.1.1.27
+AlaTA Alanine Transaminase 2.6.1.2
+PC Pyruvate Carboxylase 6.4.1.1
+PDH Pyruvate Dehydrogenase 1.2.4.1
+CS Citrate (Si)-Synthase 2.3.3.1
+CITS/ISOD Aconitase/Isocitrate Dehydrogenase 4.2.1.3/1.1.1.41
+GLDH Glutamate Dehydrogenase 1.4.1.2
+GluT Membrane Transport of Glutamate
+GLNS Glutamine Synthetase 6.3.1.2
+AKGDH 𝛼-ketoglutarate Dehydrogenase 1.2.1.105
+SDH Succinate Dehydrogenase 1.3.5.1
+MDH Malate Dehydrigenase 1.1.1.37
+ME Malic Enzyme 1.1.1.40
+ASTA Aspartate Aminotransferase 2.6.1.1
+ACL ATP citrate synthase 2.3.3.8
+FUM Fumarase 4.2.1.2WangET AL 21
+B APPENDIX: CELL CHARACTERISTIC PREDICTIONS
+FiguresB1 toB3 depictthemodel’spredictionsforiPSCculturesinthreescenarios:highglucoseandhighlactate(HGHL),
+low glucose and low lactate (LGLL), and low glucose and high lactate cultures (LGHL). Predictions are based on training the
+model using data collected over various time intervals.
+FIGURE B1 Dynamic model trained with different time intervals - Cell characteristic predictions for high glucose and high
+lactatecultures.(A)Celldensity,(B)Glucose,(C)Lactate,(D)Glutamine,(E)Glutamate,and(F)Pyruvate.Times0-hto12-h
+(greendottedline);Times0-hto24-h(browndashedline);andTimes0-hto36-h(purplesolidline).Thedetectionlimitofthe
+Cedex Bioanalyzer is shown as the red dash-dot line.22 WangET AL
+FIGURE B2 Dynamic model trained with different time intervals - Cell characteristic predictions for low glucose and low
+lactatecultures.(A)Celldensity,(B)Glucose,(C)Lactate,(D)Glutamine,(E)Glutamate,and(F)Pyruvate.Times0-hto12-h
+(greendottedline);Times0-hto24-h(browndashedline);andTimes0-hto36-h(purplesolidline).Thedetectionlimitofthe
+Cedex Bioanalyzer is shown as the red dash-dot line.
+FIGURE B3 Dynamic model trained with different time intervals - Cell characteristic predictions for low glucose and high
+lactatecultures.(A)Celldensity,(B)Glucose,(C)Lactate,(D)Glutamine,(E)Glutamate,and(F)Pyruvate.Times0-hto12-h
+(greendottedline);Times0-hto24-h(browndashedline);andTimes0-hto36-h(purplesolidline).Thedetectionlimitofthe
+Cedex Bioanalyzer is shown as the red dash-dot line.WangET AL 23
+C APPENDIX: CELL CHARACTERISTIC ACROSS CULTURE CONDITION PREDICTIONS
+FiguresC4 toC6 depictpredictionresultsacrossvariousinitialconditions,includinghighglucoseandhighlactate(HGHL),
+low glucose and low lactate (LGLL), and low glucose and high lactate (LGHL). The model’s fitting is based on data from the
+remaining three cases.
+FIGURE C4 Dynamic model trained with three other datasets with varied initial glucose and lactate concentrations for cell
+characteristic predictions in high glucose and high lactate cultures. (A) Cell density, (B) Glucose, (C) Lactate, (D) Glutamine,
+(E) Glutamate, and (F) Pyruvate. The detection limit of the Cedex Bioanalyzer is shown as the red dash-dot line.24 WangET AL
+FIGURE C5 Dynamic model trained with three other datasets with varied initial glucose and lactate concentrations for cell
+characteristic predictions in low glucose and low lactate cultures. (A) Cell density, (B) Glucose, (C) Lactate, (D) Glutamine,
+(E) Glutamate, and (F) Pyruvate. The detection limit of the Cedex Bioanalyzer is shown as the red dash-dot line.
+FIGURE C6 Dynamic model trained with three other datasets with varied initial glucose and lactate concentrations for cell
+characteristic predictions in low glucose and high lactate cultures. (A) Cell density, (B) Glucose, (C) Lactate, (D) Glutamine,
+(E) Glutamate, and (F) Pyruvate. The detection limit of the Cedex Bioanalyzer is shown as the red dash-dot line.WangET AL 25
+D APPENDIX: METABOLIC FLUX MAPS
+Fig D7 to D9 depict the metabolic flux maps for iPSC culture at 24-h and 48-h respectively under the initial conditions,
+includinghighglucoseandhighlactate(HGHL),lowglucoseandlowlactate(LGLL),andlowglucoseandhighlactate(LGHL).
+FIGURED7 MetabolicfluxmapsforK3iPSCforthehighglucoseandhighlactateculturesat24-hand48-h.Predictedfluxes
+are given in nmol/106cells⋅h. The line thicknesses represent the relative fluxes.26 WangET AL
+FIGURED8 Metabolic fluxmapsfor K3iPSC forthe lowglucose andlow lactatecultures at24-hand 48-h.Predicted fluxes
+are given in nmol/106cells⋅h. The line thicknesses represent the relative fluxes.
+FIGURED9 MetabolicfluxmapsforK3iPSCforthelowglucoseandhighlactateculturesat24-hand48-h.Predictedfluxes
+are given in nmol/106cells⋅h. The line thicknesses represent the relative fluxes.

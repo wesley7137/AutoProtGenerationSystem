@@ -1,0 +1,932 @@
+Title: Roles of Diffusion Dynamics and Molecular Concentration Gradients in
+  Cellular Differentiation and Three-Dimensional Tissue Development
+Abstract:   Recent advancements in the ability to construct three-dimensional (3D)
+tissues and organoids from stem cells and biomaterials have not only opened
+abundant new research avenues in disease modeling and regenerative medicine but
+also have ignited investigation into important aspects of molecular diffusion
+in 3D cellular architectures. This paper describes fundamental mechanics of
+diffusion with equations for modeling these dynamic processes under a variety
+of scenarios in 3D cellular tissue constructs. The effects of these diffusion
+processes and resultant concentration gradients are described in the context of
+the major molecular signaling pathways in stem cells that both mediate and are
+influenced by gas and nutrient concentrations, including how diffusion
+phenomena can affect stem cell state, cell differentiation, and metabolic
+states of the cell. The application of these diffusion models and pathways is
+of vital importance for future studies of developmental processes, disease
+modeling, and tissue regeneration.
+
+Full Text: 1 
+ Roles of Diffusion Dynamics and Molecular Concentra tion Gradients in Cellular Differentiation and Thre e-
+Dimensional Tissue Development 
+ 
+Richard J. McMurtrey, MD, MSc 
+ 
+Institute of Neural Regeneration & Tissue Engineerin g, Highland, UT, United States 
+Email: richard.mcmurtrey@neuralregeneration.org  
+ 
+ 
+ABSTRACT 
+ 
+Recent advancements in the ability to construct thr ee-dimensional (3D) tissues and organoids from stem  cells and 
+biomaterials have not only opened abundant new rese arch avenues in disease modeling and regenerative m edicine 
+but also have ignited investigation into important aspects of molecular diffusion in 3D cellular archi tectures. This 
+paper describes fundamental mechanics of diffusion with equations for modeling these dynamic processes  under a 
+variety of scenarios in 3D cellular tissue construc ts. The effects of these diffusion processes and re sultant 
+concentration gradients are described in the contex t of the major molecular signaling pathways in stem  cells that both 
+mediate and are influenced by gas and nutrient conc entrations, including how diffusion phenomena can a ffect stem 
+cell state, cell differentiation, and metabolic sta tes of the cell. The application of these diffusion  models and pathways 
+is of vital importance for future studies of develo pmental processes, disease modeling, and tissue reg eneration. 
+ 
+Keywords: Tissue Engineering; Tissue Development; D iffusion Gradients; Mass Transport; Stem Cell Signa ling; Organoids; 3D Stem 
+Cell Culture; Neurodevelopment; Neural Regeneration.  
+ 
+ 
+Originally published as open access under the Creat ive Commons Attribution Non-Commercial (CC BY-NC) L icense. Any further distribution 
+of this work must maintain attribution to the autho r and the title of the work, journal citation, and DOI. This is an author-created version of an 
+open-access article published in Stem Cells and Dev elopment—the version of record is available online at 
+http://dx.doi.org/10.1089/scd.2017.0066  McMurtrey RJ.  Roles of Diffusion Dynamics and Molecular Concentra tion Gradients in Cellular 
+Differentiation and Three-Dimensional Tissue Develo pment. Stem Cells and Development . 2017. PMID: 28707964.   
+ 
+ 
+ 
+1. INTRODUCTION 
+ 
+Life exists at the interface of numerous molecular,  chemical, and physical processes, and as part of t his precarious 
+balance, life must both exploit and overcome variou s features of these phenomena. One of the most impo rtant 
+physical processes that both defines and limits cel lular functions in the human body is that of diffus ion. Evidence 
+suggests that diffusion of molecular factors may pl ay vital roles in the self-organization of tissue a rchitecture and 
+determination of cellular identity in development, including factors affecting potency, differentiatio n, metabolic state, 
+and functions of cells and tissues. Many of these d evelopmental and metabolic processes and signaling pathways 
+remain to be studied and elucidated, but the abilit y to mathematically model the role of diffusion pro cesses with 
+precise theoretical determinations opens a valuable  and expansive field of mathematical study in stem cell biology, 
+developmental biology, tissue engineering, and dise ase modeling.  
+ 
+Recent major advancements in biomaterials and stem cell culture have enabled the construction of compl ex three-
+dimensional (3D) multi-cellular organoid tissues. I n some cases, cells are able to self-organize withi n a homogenous 2 
+ biomaterial scaffold [1], in some cases the cellula r architecture may be guided by more complex config urations of 
+patterned topographical and biochemical cues within  the construct [2], while in other cases cells may be grown into 
+aggregate multi-cellular spheroids without the addi tion of biomaterials [3]. These organoid constructs  enable 
+incredible new capabilities for researching numerou s biological processes in a controlled in vitro  environment, 
+including the study of organ development, stem cell  growth and differentiation, and cell signaling fac tors involved in 
+the formation of cellular identity and spatial patt erning. Importantly, these organoid technologies al so open up a vast 
+number of clinical applications, including disease modeling, pharmacological and toxicological drug te sting, tumor 
+models that direct personalized chemotherapy, and t issue reconstruction for regenerative medicine. How ever, the 
+formation of 3D cellular cultures also gives rise t o new complexities in physical diffusion phenomena that are not 
+present in more traditional two-dimensional (2D) cu lture systems and which warrant detailed examinatio n.  
+ 
+2. INTERACTIONS OF DIFFUSION PHENOMENA WITH STEM CE LL FUNCTION AND TISSUE DEVELOPMENT 
+ 
+2.1 The Emergence of Diffusion Phenomena in 3D Tiss ue Constructs 
+ 
+With the formation of conglomerate cell cultures an d engineered tissues, new diffusion dynamics arise in the 3D 
+constructs. Delivery of nutrients like oxygen, gluc ose, fats, and amino acids to cells in such constru cts is effectively 
+more limited, which can critically affect in vitro  tissue development as well as integration of the c onstruct into the 
+body after implantation. Diffusion-limited growth a nd inadequate mass transport of nutrients or signal ing factors 
+into the deeper or more sequestered regions of the construct tends to decrease cell survival and tissu e size, and 
+metabolism of the diffusant further decreases its a vailability and alters its spatial concentration pr ofile through the 
+construct [4]. The shape of the concentration gradi ent through a tissue is affected by the local condi tions of the 
+system, which is important because the shape of thi s gradient may produce differential downstream cons equences on 
+the development of stem cells based on their positi oning within tissues. In addition, concentration gr adients are also 
+known to play important roles in axonal guidance, a lthough much remains to be explored on the mechanis ms of how 
+such gradients are established at the proper place and time in tissues and how multiple gradients inte ract with each 
+other to influence developing cells and tissue arch itecture. Thus modeling these mechanisms helps to u nderstand 
+both normal development and may also relate to prev iously unknown mechanisms of certain developmental 
+pathologies. 
+ 
+In general, there is a Gaussian-shaped curve throug h unbound space for limited and unmetabolized subst ances 
+diffusing through a homogenous medium of any dimens ionality, while an unmetabolized substance in const ant or 
+unlimited supply in tissue constructs will generall y produce the shape of a complementary error functi on (erfc) when 
+diffusing primarily in one dimension, the shape of a Bessel function of the first kind (order zero) wh en diffusing 
+primarily in two dimensions, and the shape of a hyp erbolic curve when diffusing in three dimensions [4 ]. The 3 
+ introduction of constant (zero order) metabolism of  the diffusant generally results in a parabolic con centration curve 
+in any dimensionality [4]. Multiple different molec ular factors can simultaneously overlap with entire ly different 
+concentration gradients depending on the conditions  and characteristics of both the cellular tissue an d each 
+molecular factor. The initial concentration of diff usant at the tissue interface ( /g182√/g3042) will proportionally influence the 
+concentration values throughout the tissue, while t he diffusion coefficient ( /g1830) has a more complex role, 
+proportionally relating the molar flux of diffusant  to the spatial concentration gradient, which, in e ssence, ultimately 
+describes how easily a particular diffusant moves t hrough a medium. Diffusion limitations can be parti ally overcome 
+through a variety of methods, which include the gen eral approaches of increasing nutrient concentratio ns in 
+surrounding fluid, decreasing the diffusion coeffic ient in the construct material (i.e., increasing pe rmeability to 
+nutrients), decreasing the diffusion range or depth  of the tissue construct, increasing convective flo w or perfusion of 
+nutrient, or decreasing nutrient consumption, and e ach of these approaches has consequences for the ti ssue construct.  
+ 
+Importantly, diffusion limitations can also be desi rable, producing concentration gradients into or ou t of the tissue 
+construct that mediate essential developmental proc esses and activate or inhibit vital cell signaling cues. It is known 
+that diffusion gradients of numerous morphogenic si gnaling factors play extensive roles in the differe ntiation and 
+architectural formation of neural tissue, including , for example, regional gradients of sonic hedgehog  (SHH), wnt 
+protein (WNT), bone morphogenic protein (BMP), fibr oblast growth factor (FGF), retinoic acid (RA), and  reelin 
+(RELN) [5]. The limited diffusion capacity of bioma terials not only causes decreased concentration of externally-
+supplied nutrients within the construct, but also r esults in increased internal concentrations of endo genous factors 
+secreted by cells. This property of biomaterials en ables endogenous signaling factors to form local re gions of 
+concentration gradients similar to what occurs in e ndogenous developing tissue, and this property like ly provides 
+essential self-organization capabilities of cells i n 3D organoid constructs over standard 2D cultures under the same 
+culture conditions. Thus, several analytic models a re presented herein, including equations for both i nward and 
+outward diffusion, to describe diffusant behaviors and consequences in various 3D tissue constructs, a s summarized 
+in Figure 1. 
+ 4 
+  
+Figure 1: Summary of Equations for Diffusion Modeli ng in 3D Tissue Constructs. Models of transient and  steady-state diffusion in a variety of 
+scenarios are provided, including for limited or un limited diffusants, diffusion into or out of the ti ssue, with or without metabolism of the 
+diffusant, and in constructs of slabs (1D – bottom row), cylinders (2D – middle row), or spheres (3D –  top row). 
+ 
+ 
+2.2 The Influence of Diffusing Factors on Cell Sign aling Pathways, Metabolism, and Potency State 
+ 
+Although much remains to be learned regarding the r ole of diffusing nutrients in tissue development, i t has recently 
+become apparent that metabolic dynamics and nutrien t supply can control epigenetic configurations of s tem cells, 
+and reciprocally, epigenetic networks control energ etic processes and metabolic preferences in the cel l. Moreover, 
+these effects can play a significant role in stem c ell potency, differentiation, and fundamental progr ammed processes 
+in tissue development. Evidence suggests that the m etabolic activity of a cell is actively modified by  many of the 
+same epigenetic reconfigurations that occur through  changing states of stem cell potency and different iation, and in 
+general, while mature cells tend to favor the effic iency of oxidative metabolism, pluripotent stem cel ls (PSCs) tend to 
+favor a glycolytic state [6]. Many other types of s tem cells, including neural stem cells (NSCs), also  favor anaerobic 
+glycolytic metabolism [7,8] while mature neurons fa vor oxidative metabolism [9,10]. The oxidative pref erence of 
+adult somatic cells is converted to a glycolytic pr eference early in reprogramming to a pluripotent st ate [11,12,13], 
+and this may be related to the observation that gly colysis is also favored by malignantly-transformed cells, which 
+resemble stem cells in their self-renewal and abili ty to endure hypoxic environments [14,15,16]. In ca ncer cells, this 
+shift in metabolism from aerobic to anaerobic appea rs to be actively instigated by mutated genes like tumor 
+suppressor protein p53 ( TP53)  and its downstream targets [17,18]. Similarly, in both embryonic and induced stem 
+cells, these metabolic preferences are not merely p assive consequences, but are in fact requisite in m aintaining the 
+5 
+ pluripotent state and in reprogramming mature cells  to a pluripotent state, and differentiation of plu ripotent cells can 
+be impeded unless these glycolytic processes switch  to an oxidative metabolism [19,20,21].  
+ 
+Expression of several glycolytic enzymes is upregul ated under conditions of hypoxia [16,22]. It is tho ught that the 
+preferred glycolytic state of stem cells or cancer cells may serve to protect them from reactive oxyge n species (ROS)—
+glycolysis enables the pentose phosphate pathway to  produce the reduced form of nicotinamide adenine 
+dinucleotide phosphate (NADPH), which keeps glutath ione in a reduced state (GSH) for antioxidant prote ction [17]. 
+Exposure of adult stem cells to ROS has been noted to prompt quiescent adult stem cells, including hem atopoietic 
+stem cells (HSCs), mesenchymal stem cells (MSCs), a nd neural stem cells (NSCs), out of quiescence and into 
+proliferation [8], and exposure to ROS can also aff ect cell fate decisions [23,24]. Antioxidants like vitamin C can help 
+reverse cell senescence and aid changes in epigenet ic expression during reprogramming of induced pluri potent stem 
+cells (iPSCs) [25]. The influence of a stem cell’s energy status and mitochondrial function on its pot ency state may 
+also explain why supplementation with electron-carr ier coenzymes like NAD + precursor nicotinamide riboside has 
+been found to rejuvenate neural and muscle stem cel ls [26]. In addition, despite less efficient energy  production than 
+oxidative phosphorylation, glycolysis and the pento se phosphate pathway also enable improved anabolic nutrient 
+production for cell proliferation, including the sy nthesis of nucleotides, amino acids, and lipids [27 ].    
+ 
+Several sensors of energy usage and nutrient availa bility exist in the cell, including adenosine monop hosphate-
+activated kinase (AMPK) and the mammalian target of  rapamycin complex (mTORC). As adenosine triphospha te 
+(ATP) energy is used, AMPK becomes activated by pho sphorylation in order to inhibit anabolic processes  that 
+consume ATP and to activate catabolic processes tha t replenish ATP. Similarly, a low supply of amino a cids will 
+attenuate mTORC activity, which lowers anabolic act ivity in the cell. Under normoxic conditions, the 1 4-3-3 protein 
+inhibits the tuberous sclerosis 2 protein (TSC-2), preventing expected inhibition of mTORC by the tube rous sclerosis 
+protein 1/2 (TSC-1/2) complex. Hypoxia, however, up regulates REDD1 protein, which inhibits binding of the 14-3-3 
+protein to the TSC-1/2 complex, thereby enabling in hibition of mTORC [8,28]. Activated AMPK (whether f rom low 
+glucose or oxygen supply or from high energy usage that exceeds energy supply) can inhibit mTORC activ ity, 
+thereby inhibiting protein production. Interestingl y, reprogramming to pluripotency decreases mTORC ac tivity, 
+likely due to the fact that Sox2 represses mTORC ex pression [29]. Moreover, activation of mTORC (e.g.,  by deletion of 
+TSC-2 ) inhibits reprogramming to pluripotency, while inh ibition of mTORC (e.g., with rapamycin) enhances 
+reprogramming to a pluripotent state, and the inhib ition of mTORC has also been shown to help maintain  the 
+population of stem cells and to suppress the produc tion of ROS [8,30]. It should also be noted, howeve r, that mTORC 
+inhibition and AMPK activation can disrupt expressi on of Oct4, Sox2, or Nanog and drive differentiatio n of certain 
+germ layer lineages [6,31,32]. Hypoxia can also lea d to changes in histone deacetylase (HDAC) activity  and histone 
+phosphorylation via AMPK [33,34], both of which alt er gene expression, as summarized in Figure 2.  
+ 6 
+  
+Figure 2: Diagram of Nutrient Diffusion and Stem Ce ll Signaling. The effects of various nutrient diffu sants involved in energy production and 
+metabolism are shown to also influence stem cell st ates and cellular differentiation.  
+ 
+The multipotency of neural stem/progenitor cells is  also generally preserved by a hypoxic environment,  including 
+both physiologic hypoxia (2-3%) and more severe hyp oxia that would likely otherwise threaten viability  of mature 
+neuronal cells [8,35,36]. Many types of endogenous stem cells are known to reside in a hypoxic niche, including 
+hematopoietic stem cells (HSCs), mesenchymal stem c ells (MSCs), and neural stem cells (NSCs), which pr eserves 
+tissue-specific endogenous stem cell populations [3 7]. Metabolic processes are also tightly coupled wi th the balance 
+of stem cell populations in many types of tissues, and forced over-activation of mTORC (e.g., by delet ion or 
+inhibition of mTORC-inhibitors or constitutive expr ession of mTORC-activators) is known to shorten and  accelerate 
+the cell cycle in NSCs and HSCs [8], which, dependi ng on the context and conditions, can diminish the repopulation 
+capacity of HSCs or expand the proliferative capaci ty of NSCs [30,38]. Also, Lin28, acting through the  PI3K-mTORC 
+pathway, has been shown to accelerate cell prolifer ation in mouse PSCs [39]. 
+ 
+In human PSCs, much evidence suggests that hypoxia tends to promote and preserve the pluripotent state , both 
+preventing differentiation and enhancing reprogramm ing efficiency [15,19,31,34,40]. In fact, hypoxia h as been shown 
+to induce expression of many of the same genes used  as reprogramming factors for pluripotency, includi ng OCT4 , 
+SOX2 , KLF4 , NANOG , MYC , and LIN28  [15,41]. Because the choice of reprogramming facto rs substantially influences 
+the quality and developmental potential of reprogra mmed stem cells [42], environmental conditions of g asses, 
+nutrients, and signaling factors will also influenc e these qualities, all of which are mediated by dif fusion processes.  
+ 
+7 
+ At greater distances from energy and nutrient sourc es where lower levels of nutrients will exist in th e tissue due to 
+diffusion limitations, cell pathways that favor plu ripotent states are thus more likely to be active. This has an 
+interesting correlate in cerebral organoids, where cortical neuron precursors migrate to and terminall y differentiate at 
+the external rim of the construct nearest the envir onmental oxygen supply, while deeper into the const ruct where 
+oxygen is much more limited, neural stem cells may be better preserved and expand to supply future neu ral 
+populations that fill the cortex. As organoid spher es expand, the hypoxic gradient can alter the posit ion, timing, and 
+fate of stem cells within the organoid and can also  threaten cell viability. Diffusion modeling using Eq. 9 for oxygen & 
+Eq. 12 for glucose has shown that central hypoxia in stem-cell-derived  organoids is the main factor in limiting their 
+maximal size and causing a central necrotic core if  they grow beyond the limits of oxygen diffusion an d metabolic 
+consumption, though glucose could also become a lim iting factor if feeding media is not replenished fr equently 
+enough [4].  
+ 
+Environmental availability of oxygen is known to re gulate sets of hypoxia inducible factors (HIFs), an d HIFs regulate 
+the expression of many genes involved in stem cell state, cellular development, and metabolic function s. At normal 
+atmospheric oxygen concentration and pressure, oxyg en induces hydroxylation and ubiquitinization of HI Fs by 
+prolyl-hydroxylases (PHDs) and the von-Hippel-Linda u protein (pVHL), respectively, which then targets α-subunits 
+of HIFs for proteosomal degradation; with exposure to hypoxia, however, the α-subunits of HIFs are sta bilized and 
+bind to their respective nuclear translocators (e.g ., HIF1β and HIF2β), where, in the nucleus, the HIF s then bind to 
+various hypoxia-response elements for transcription al regulation [43]. Similarly, enzymes like JmjC hi stone lysine 
+demethylase (KDMs) are sensitive to specific oxygen  concentrations and influence epigenetic regulation  of the cell 
+[44]. Both HIF1α and HIF2α are required for reprogr amming to pluripotency, and the activity of either one alone 
+activates the accompanying metabolic change to anae robic glycolysis, although HIF2α activity in the la te stages of 
+reprogramming can inhibit the reprogramming process  [12].  
+ 
+Although ESCs and iPSCs are both pluripotent stem c ells with equivalent functional potential and only minor 
+epigenetic differences between them [45], further s ub-states of pluripotency have emerged, including t he concept of 
+naïve versus primed pluripotent states. The naïve s tate tends to prefer oxidative metabolism (but util izes both 
+glycolytic and oxidative phosphorylation) and seems  to represent the earliest state of embryonic devel opment before 
+implantation into the womb, while the primed plurip otent state favors glycolytic energy production and  represents a 
+more mature post-implantation state where DNA methy lation patterns have already undergone significant changes 
+[46,47]. Pluripotent cells can be coaxed into eithe r state with various intrinsic and extrinsic factor s [48,49]. Among the 
+factors that promote a naïve state are the expressi on of Nanog and Klf4, both of which are promoted by  hypoxia 
+(Figure 2), again suggesting that a low oxygen envi ronment likely favors the naïve pluripotent state, although it is 
+not known if this alone can be sufficient to induce  or maintain such a state in certain cells.  
+ 8 
+ Hypoxia also activates other genes associated with stem cell states and cell development, including ex pression of 
+Notch, WNT, and SHH, all via HIF1α [50,51] (Figure 2). It is not yet clear whether the mechanism of mo dulation of 
+some hypoxia-responsive genes (like MYC , NANOG , or KLF4 ) is mediated directly by HIFs or other signaling 
+pathways, but evidence suggests that some of these genes are regulated at least in part by non-coding microRNAs 
+(miRNA). For example, MYC  can be regulated by miRNA-210, which itself is con trolled by both HIF1α and 2α [52], 
+and Lin28 RNA-binding proteins inhibit let-7 miRNAs  (which normally act as tumor suppressors), with th e result 
+that Lin28 and let-7 act as mutually antagonistic r egulators of several downstream processes including  glycolytic 
+metabolism and cell growth via an mTORC-dependent p athway [53]. 
+ 
+Several of the above factors are also involved in t he early development of regional identity of neural  tissue, including 
+SHH, which generally drives ventralization, and WNT , which generally drives caudalization and dorsaliz ation [5]. 
+WNT and SHH activities are both increased under hyp oxia via HIF1α, and both the WNT and SHH signaling 
+pathways act through the β-catenin transducer, whic h activates effectors like FGF and Noggin to inhibi t SMAD 
+signaling pathways, as shown in Figure 3. SMAD inhi bition is often used in directing differentiation o f stem cells to a 
+neuronal fate, which is typically done in culture w ith small molecule inhibitors of BMP and TGF-β that  result in 
+SMAD4-inhibition [54]. BMP and TGF-β can also activ ate Notch via SMAD1, as can hypoxia itself via HIF1 α-
+mediated signals [55], and TGF-β and SMAD4 can also  exhibit reciprocal inhibition with MYC [56].  
+ 
+ 
+Figure 3: Diagram of Diffusible Stem Cell Different iation Signals. An overview is shown for how severa l signaling pathways can be used to 
+guide differentiation from pluripotency to neurogli al lineage. Interestingly, many of the factors used  in directed differentiation modulate the same 
+molecular pathways used in oxygen signaling.  
+ 
+Further evidence also shows that specific oxygen le vels can have differential effects on germ layer sp ecification and 
+subsequent cell fate decisions, including whether n eural progenitors progress to neurons or glia, depe nding on 
+conditions and context that remain to be fully defi ned [41,57,58]. Exposure of spheroid cultures of hu man PSCs to 
+9 
+ transient hypoxia (2% vs 21% O 2), for example, was shown to drive a neural lineage  over that of cardiovascular or 
+musculoskeletal lineages and to change neuronal cel l fate to a glial cell fate by acting through HIF1α  to inhibit Lin28 
+expression [41]. Other work, however, has shown tha t inhibition of mTORC limits pluripotency and proli feration 
+while enhancing differentiation of human PSCs towar ds endodermal and mesodermal lineages [32]. Differe ntiation 
+of neural crest stem cells (NCSCs) under hypoxic co nditions (1-5% O 2) has been shown to greatly expand and alter 
+the possible array of mature neural subtypes, and a ctivation of Notch signaling can promote maintenanc e of the 
+neural precursor population and fate [55]. Physiolo gic hypoxia (2-3% O 2) has also been found to promote 
+neurogenesis while severe hypoxia (<1% O 2) impeded both neurogenesis and gliogenesis [59]. 
+ 
+Nitric oxide (NO) is another diffusible gas in tiss ues, which in the brain is produced by neural cells , glial cells, and 
+vascular endothelial cells, both by constitutive an d inducible mechanisms, particularly in response to  ischemia in 
+stroke, septic shock, or other poor perfusion event s via various NO-synthase (NOS) isoforms as well as  by other 
+NOS-independent mechanisms [60,61]. NO can inhibit mitochondrial respiration and upregulate glycolysis  and 
+shunting through the pentose phosphate pathway, whi ch may provide neuroprotection against free radical  toxicity, 
+mitochondrial damage, and apoptosis [61,62]. Howeve r, the production of NO in response to hypoxia or i schemia 
+appears to depend on the particular conditions and timing of oxygen deprivation and reperfusion, and N O may play 
+either protective or toxic roles depending on local  conditions and tissue cell types, with neuroglial- produced NO 
+playing a possible neurotoxic role while endothelia l-produced NO may play a protective role by enhanci ng vascular 
+perfusion. Consequently, both NO and NO-suppression  have been suggested as therapeutic interventions f or 
+ischemic conditions in tissues of the brain and hea rt. Similarly, another gas affecting stem cell surv ival and 
+differentiation is carbon dioxide (CO 2), with evidence that higher levels of CO 2 (10% versus the standard 5%) enabled 
+the formation of larger and higher-quality neurosph eres, induced significantly greater Nestin, Pax6, S ox2, and Foxg1 
+expression in neuroprogenitor populations, and faci litated the genesis of glutamatergic, cholinergic, dopaminergic, 
+and GABAergic neuronal subtypes [63]. Importantly, these data provide further evidence that cell popul ations in 3D 
+tissue cultures are influenced not just by inward d iffusion of outside nutrients, but also by factors diffusing 
+outwardly from inside the tissue construct. 
+ 
+Local variations in gas and nutrients within a tiss ue construct can therefore induce significant varia tions in cell and 
+tissue identity, although it remains unknown to wha t extent the microenvironment of diffusant substanc es can 
+regulate and guide essential developmental processe s and cell states in the many different tissues of the human body. 
+The effects of hypoxia on differentiation likely de pend substantially not just on the exact amount of ambient oxygen 
+or nutrient but also on genetic networks that are a ctive or inactive in the cell and the phase of diff erentiation and cell 
+maturity. A better understanding of oxygen concentr ations within 3D cell cultures along with careful a nalysis of 
+intermediate states of differentiation and developm ent will thus help delineate the interactions of co mplex signaling 
+cues and help resolve conflicting results.  10 
+ 2.3 The Influence of Nutrient Signaling and Metabol ism on Neurological Disease 
+ 
+Several factors involved in hypoxia signaling pathw ays are also known to play critical roles in neurol ogical 
+development and disease. For example, the tuberous sclerosis protein (TSC) complex, which acts as a tu mor 
+suppressor and, when mutated, causes the condition of tuberous sclerosis, acts to inhibit the mTOR com plex, but is 
+itself normally inhibited under normoxia. Subependy mal nodules and giant cell astrocytomas associated with 
+tuberous sclerosis are thought to be due to abnorma l proliferation and migration of neural stem/progen itor cells 
+(NSPCs) [64], and recent clinical trials show these  types of tumors, and potentially others like gliob lastoma and 
+medulloblastoma, may be treated with mTORC-inhibito rs like sirolimus, everolimus, dactolisib, XL765, o r INK128 
+[65,66]. Similarly, neurofibromatosis 1 is caused b y disruption of the Ras-effector pathway which in t urn can act 
+through the TSC complex to exert its effects on mTO RC, and the optic gliomas associated with this cond ition may 
+also benefit from mTORC-inhibitors [67]. Moreover, mutations in pVHL cause von Hippel Lindau syndrome,  with a 
+constellation of tumors, vascular malformations, an d cysts. Mutations or disruptions of SHH, or its do wnstream 
+effector Patched1, can result in holoprosencephaly and craniofacial abnormalities. Metabolic impairmen ts of 
+mitochondrial function and susceptibility to oxidat ive stress are also suspected to play a major role in the 
+pathogenesis of Parkinson’s diseases via mutant LRR K2, PARK2, PINK1, or Miro proteins [68]. 
+ 
+Hypoxia is also known to inhibit numerous other sig naling factors relevant to vascular development, ce ll migration, 
+and tumor growth, including VEGF, EPO, and matrix m etalloproteinase activity [51,69,70], and, as is se en in Figures 
+2 and 3, many of these pathways overlap and interse ct with each other. The mechanisms whereby the mito chondrial, 
+nuclear, and cytoplasmic signaling work together (in cluding causes and effects) to dictate metabolic pr eferences, 
+energy production, oxidative protection, potency pr eservation, and cell fates still remains to be eluc idated. Because 
+metabolic functions and mitochondrial activity play  essential roles in maintenance of and differentiat ion from stem 
+cell states [71] researchers are obliged to be awar e of difficulties that may arise in accurately mode ling or restoring 
+metabolic and mitochondrial diseases with patient-a ffected iPSCs compared with normal iPSCs.  
+ 
+Pathological hypoxia in development is linked to se veral intractable neurological conditions, includin g 
+encephalopathy, epilepsy, and cognitive impairments . Interestingly, however, exposure of many types of  adult cells, 
+including neurons and cardiomyocytes, to sub-lethal  intervals of hypoxia can also enable cells to surv ive subsequent 
+insults of more severe hypoxia, a phenomenon known as preconditioning, which may have implications for  
+protecting organs and tissue from hypoxic-ischemic events [72]. The proper contexts and molecular mech anisms of 
+this protective conditioning effect are still being  fully elucidated [73], but this phenomenon may be useful for helping 
+therapeutic cells and synthetic tissues survive aft er implantation into the body since the survival of  these implanted 
+tissues prior to vascularized integration is depend ent on diffusion of nutrients from surrounding tiss ues. The 11 
+ influence of gas and nutrient concentrations on gen e expression and cell signaling pathways will also have many 
+consequences for 3D tissue culture protocols and me dia formulations.  
+ 
+Altogether, the collection of evidence shows that di ffusant signaling is a crucial factor in all stem c ell function, 
+particularly for neural tissue development, and the refore an understanding of diffusion properties and  profiles in 
+tissue is essential to the study of tissue developm ent. The ability of specific levels of gas, nutrien ts, and signaling 
+factors to influence states of potency and differen tiation means that diffusion can have significant e ffects on the 
+composition, shape, and function of various tissues  throughout the body. The rate and timing of stem c ell self-
+renewal, quiescence, and differentiation will tight ly influence the size and capacity of the endogenou s stem cell 
+population in adult tissues and will also influence  the quantity, balance, structure, and function of more specific cell 
+identities in synthetic tissues. The mechanisms tha t regulate and carry out these functions, however, a re not yet well 
+understood despite the fact that they exert tremend ous influence over numerous developmental and physi ological 
+processes.  
+ 
+3. MODELS OF DIFFUSION IN TISSUE CONSTRUCTS 
+ 
+The represented constants and variables for the fol lowing models are listed in the nomenclature summar y (Table 1). 
+In order to enable exact mapping of physical nutrie nt gradients through a 3D tissue construct at any g iven point in 
+time, diffusion models were derived from the diffus ion equation given by Fick’s laws, as applied to ti ssue constructs 
+in the shape of a rectangular slab (s=1), a cylinde r (s=2), or a sphere (s=3), and with a homogenous m etabolic 
+consumption rate of /g2030: 
+/g2034/g182√ 
+/g2034/g1872 −/g2030 =1
+/g1870/g304,/g287√/g28,√/g2034
+/g2034/g1870 /g343,/g1870/g304,/g287√/g28,√/g1830/g2034/g182√ 
+/g2034/g1870 /g3440 
+Analytic solutions describing diffusion of substanc es into 3D tissue constructs were recently describe d by the author, 
+including novel models for diffusant substances tha t are metabolized by cells in the tissue construct (e.g., nutrients 
+like glucose and oxygen) and for diffusants that ar e not metabolized by cells (e.g., certain cell sign aling factors) as 
+well as for both limited and unlimited diffusants ( like glucose and oxygen, respectively), as summariz ed in Table 2. 
+Approaches for finding various solutions to the dif fusion equation and creating applicable models have  been 
+described by many authors [74,75,76,77], which is d iscussed in more detail in reference [4]. Equations  describing 
+outward diffusion from a tissue construct (e.g., fo r diffusing factors that are produced by or embedde d in the tissue 
+construct) can be derived in a similar manner with altered boundary conditions, the solutions of which  are also 
+presented in Table 2 as Eqs. 1-3. Typical values fo r diffusion parameters can be found in Table 3, and  complete 
+descriptions of boundary conditions and parameters for operating these models can be found in Table 5 and in 
+reference [4]. 
+ 12 
+ Because of difficulty in measuring gas or nutrient gradients through small, metabolically-active spher es, 
+mathematical models provide a means for estimating diffusion gradients based on known diffusion mechan ics and a 
+few basic assumptions. The models are valid under t he assumptions that cells are homogenously distribu ted and 
+diffusivity is isotropic in the tissue construct, t hat diffusion occurs primarily along a single axis through a slab (1D 
+case) or along the radial axis of a cylinder or sph ere (2D or 3D cases), and, for the metabolic cases,  that consumption 
+rates of the diffusant (represented by /g2030) are constant in the construct during each modeled  time interval. In the case 
+of slab constructs, the surface of the construct is  at /g187, = 0  and the thickness of the construct is represented by /g187, = /g184, , 
+whereas the surface of the radial constructs is at /g1870 = /g1844  and the center at /g1870 = 0 , and solutions to the models are valid 
+within the domain of 0 < /g187, <	/g184, /g3040/g3028/g3051  or 0 < /g1870 < /g1844 /g3040/g3028/g3051 . In models of outward diffusion, /g182√/g3042 is the concentration of 
+substance that diffuses from the center of the tiss ue construct, and in models of inward diffusion, /g182√/g3042 is the initial 
+concentration of substance at the outer edge of the  tissue construct.  
+ 
+In most cases, the initial concentration in a tissu e construct ( /g182√/g303,) is zero, such as when newly-formed organoids are 
+introduced into a media environment of glucose, oxy gen, or other molecular factors, but in cases where  the diffusant 
+substance of interest is already present in the bio material, its initial concentration ( /g182√/g303,) is subtracted from the driving 
+concentration of /g182√/g3042 and also subtracted from the total concentration /g182√. In other words, “ /g182√/g3042” is replaced with “ (/g182√/g3042−
+/g182√/g303,)”) and “ /g182√” is replaced with “( /g182√ − /g182√/g303,)”. In the cases of diffusion out of a tissue const ruct, it is assumed for simplicity 
+that the diffusant is diluted to negligible levels once it leaves the tissue construct (e.g., as when the tissue construct 
+volume is small relative to the surrounding media).  If this assumption is not made, the diffusion into  the media must 
+also be accounted for and the total initial amount of diffusant must be spread over the total volume o f the construct 
+and the media at steady state, and the release of d iffusant from the construct will influence its medi a concentration 
+and by extension also influence the diffusive drivi ng force over time. 
+ 
+These analytic models thus allow mapping of concent ration gradients through space and time for a varie ty of 
+molecular signaling factors and nutrients into or o ut of 3D tissues in the shape of slabs, cylinders, or spheres. Of 
+course, many more complex conditions and systems wi ll require more complicated mathematical models tha t 
+necessitate numerical approximations with computati onal software rather than complete analytic solutio ns, but this 
+serves as an important foundation for mathematical descriptions of diffusion in most general cases of developing 
+tissues. Finally, it is also important to note that  actual gradient concentrations could deviate from predicted values 
+with varying rates of metabolism, with varying inho mogeneities in the materials or cell densities, or with other 
+pertinent forces on the tissue construct or diffusa nt molecules. 
+ 
+Nomenclature Summary  
+/g182√ Concentration /g2024 3.14159…. 
+/g182√/g3042 Initial concentration of diffusant at interface of   
+source and tissue construct /g2030 Metabolic consumption rate for tissue construct             
+                    (in units of mol/Ls, i.e., /g2030=/g18,5/g2025) 
+/g182√̅  Average concentration in tissue construct /g1844 Outer radius of a radial tissue construct 
+/g182√/g303, Initial baseline concentration in tissue construct  /g1844/g3040/g3028/g3051  Maximal radius of a radial tissue construct 13 
+ /g182√/g3030/g3045/g303,/g3047/g303,/g3030/g3028/g303√  Critical concentration /g1844/g3040/g3028/g3051 /g32√5 Maximal radius as a function of time  
+/g182√/g3040/g3032/g3031/g303,/g3028  Media concentration /g1870 Radial distance or spatial position 
+/g1830 Diffusion coefficient /g2025 Density of cells in tissue construct 
+/g185,  Ordinary Derivative s  Spatial dimension of syste m 
+/g2034  Partial Derivative Σ  Summation series in sigma n otation 
+erf   Error function /g1872 Time  
+erfc   Complementary error function /g184, Thickness of linear tissue construct 
+/g1857 2.71828…. /g1848/g3030 Volume of tissue construct  
+/g183,/g3044(	) Bessel function of the first kind and order /g18,√ /g1848/g3040 Volume of media around tissue construct 
+/g201√/g3041 Eigenvalues /g187, Spatial position or linear depth into construct 
+/g18,5 Metabolic rate per cell /g1877 Spatial position in Cartesian coordinates 
+/g18,, Index term in sigma summation series /g1878 Spatial position in Cartesian coordinates 
+ 
+Table 1: Nomenclature Summary of Variables, Functio ns, & Constant Parameters.  
+ 
+ 
+Diffusion of limited diffusant out from tissue cons truct (no metabolism of diffusant)  
+ 1D       (Eq. 1) 
+/g182√(/g187,,/g1872)= /g182√/g3042/g4,74erf/g4,72/g3051
+√/g2872/g3005/g3047 /g4,73+∑/g4,7,erf/g4,72(/g2870/g3041)/g3021/g287√/g3051
+√/g2872/g3005/g3047 /g4,73−erf/g4,72(/g2870/g3041)/g3021/g2878/g3051
+√/g2872/g3005/g3047 /g4,73/g4,77/g2√√8
+/g3041/g2880/g28,√ /g4,75  
+ 
+ 2D       (Eq. 2) 
+  /g182√(/g1870,/g1872)=/g2870/g3004/g32√0
+/g301√∑/g1857/g287√(/g30√0/g328√)/g3118/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√/g3011/g32√0(/g3045/g30√0/g328√)
+/g30√0/g328√/g3011/g3117(/g301√/g30√0/g328√)  where /g201√/g3041 are found from Table 4.  
+  
+ 3D       (Eq. 3) 
+  /g182√(/g1870,/g1872)=/g2870/g301√/g3004/g32√0
+/g30√5/g3045 /g3428∑/g287√/g28,√(/g328√/g312,/g3117)
+/g3041/g1857/g287√/g4,72/g328√/g3343 
+/g32,7/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ sin/g4,72/g3041/g30√5/g3045 
+/g301√/g4,73/g3432 
+ 
+Diffusion of unlimited diffusant into tissue constr uct (no metabolism of diffusant) 
+ 1D       (Eq. 4) 
+  /g182√(/g187,,/g1872)= /g182√/g3042/g4,74erfc/g4,72/g3051
+√/g2872/g3005/g3047 /g4,73+∑ (−1)/g3041/g2878/g28,√/g4,7,erf/g4,72(/g2870/g3041)/g3021/g287√/g3051
+√/g2872/g3005/g3047 /g4,73−erf/g4,72(/g2870/g3041)/g3021/g2878/g3051
+√/g2872/g3005/g3047 /g4,73/g4,77/g2√√8
+/g3041/g2880/g28,√ /g4,75  
+  
+2D       (Eq. 5) 
+/g182√(/g1870,/g1872)= /g182√/g3042/g4,741−/g2870
+/g301√∑/g1857/g287√(/g30√0/g328√)/g3118/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√/g3011/g32√0(/g3045/g30√0/g328√)
+/g30√0/g328√/g3011/g3117(/g301√/g30√0/g328√)/g4,75 where /g201√/g3041 are found from Table 4.  
+  
+3D       (Eq. 6) 
+  /g182√(/g1870,/g1872)= /g182√/g3042+/g2870/g301√/g3004/g32√0
+/g30√5/g3045 /g3428∑/g287√/g28,√/g328√
+/g3041/g1857/g287√/g4,72/g328√/g3343 
+/g32,7/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ sin/g4,72/g3041/g30√5/g3045 
+/g301√/g4,73/g3432 
+ 
+Diffusion of unlimited diffusant into tissue constr uct (with zero-order metabolism)  
+ 1D       (Eq. 7) 
+  /g182√(/g187,,/g1872)= /g182√/g3042+/g2030/g187,2
+2/g1830−/g2030/g184,/g187, 
+/g1830−/g2870/g3004/g32√0
+/g30√5∑/g28,√
+/g3041/g1857/g287√/g4,72/g328√/g3343 
+/g32,√/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ sin/g4,72/g18,,/g2024 /g2030/g187, 2/g184,−/g187,
+2/g3004/g32√0/g1830/g4,73 
+  
+2D       (Eq. 8) 
+  /g182√(/g1870,/g1872)=/g3004/g32√0/g3045/g3118
+/g301√/g3118+/g2870/g3004/g32√0
+/g30√5/g3428∑/g287√/g28,√/g328√
+/g3041/g1857/g287√/g4,72/g328√/g3343 
+/g32,7/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ sin/g4,72/g18,,/g2024 /g3045/g3118
+/g301√/g3118/g4,73/g3432 where /g1844/g3040/g3028/g3051 =/g3101/g3045/g3118
+/g2872/g3005 
+  
+3D       (Eq. 9) 
+  /g182√(/g1870,/g1872)=/g3004/g32√0/g3045/g3118
+/g301√/g3118+/g2870/g3004/g32√0
+/g30√5/g3428∑/g287√/g28,√/g328√
+/g3041/g1857/g287√/g4,72/g328√/g3343 
+/g32,7/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ sin/g4,72/g18,,/g2024 /g3045/g3118
+/g301√/g3118/g4,73/g3432 where /g1844/g3040/g3028/g3051 =/g3101/g3045/g3118
+/g2874/g3005 
+ 
+Diffusion of limited diffusant into tissue construc t (with zero-order metabolism) 
+ 1D       (Eq. 10) 
+   /g182√(/g187,,/g1872)= 14 
+ /g343,/g182√/g3042−/g2030/g1872 /g1848/g3030
+/g1848/g3040−/g182√̅/g1848/g3030
+(/g1848/g3040+ /g1848/g3030)/g3440+/g2030/g187,/g2870
+2/g1830−/g187,/g34√72/g2030/g343,/g182√/g3042−/g2030/g1872 /g1848/g3030
+/g1848/g3040−/g182√̅/g1848/g3030
+(/g1848/g3040+/g1848/g3030)/g3440
+/g1830
+−	2/g343,/g182√/g3042− /g2030/g1872 /g1848/g3030
+/g1848/g3040− /g182√̅/g1848/g3030
+(/g1848/g3040+/g1848/g3030)/g3440
+/g2024/g35331
+/g18,,/g1857/g287√/g4,72/g3041/g30√5 
+/g3021/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√sin 
+/g1737/g1735/g18,,/g2024/g187, /g34√58/g1830/g2030/g343,/g182√ /g3042−/g2030/g1872 /g1848/g3030
+/g1848/g3040−/g182√̅/g1848/g3030
+(/g1848/g3040+/g1848/g3030)/g3440−/g2030/g187,
+2/g1830/g343,/g182√/g3042− /g2030/g1872 /g1848/g3030
+/g1848/g3040− /g182√̅/g1848/g3030
+(/g1848/g3040+ /g1848/g3030)/g3440
+/g1740/g1738 
+where /g182√̅= /g182√/g3042/g34281−/g287,
+/g30√5/g3118∑/g28,√
+(/g2870/g3041/g287√/g28,√)/g3118/g1857/g287√/g4,72(/g3118/g328√/g3127/g3117)/g3343
+/g3118/g32,√/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ /g3432 and /g184,/g18,5/g1853/g187, /g1872=/g34√,2/g1871/g1830 /g4,72/g182√/g18,7−/g2030/g1872 /g1848/g1855
+/g1848/g18,5−/g182√/g33,4/g1848/g1855
+(/g1848/g18,5+/g1848/g1855)/g4,73
+/g2030 
+ 
+ 2D       (Eq. 11) 
+/g182√(/g1870,/g1872)= 
+/g2030(/g1870 −/g1844/g3040/g3028/g3051 + /g1844/g3040/g3028/g3051 /g32√5)/g2870
+4/g1830
++2/g343,/g182√/g3042−/g2030/g1872 /g1848/g3030
+/g1848/g3040−/g182√̅/g1848/g3030
+(/g1848/g3040+/g1848/g3030)/g3440
+/g2024
+/g1743/g1742/g1742/g1742/g1741
+/g3533−1/g3041
+/g18,,/g1857/g3438/g287√/g3101/g3047 (/g3041/g30√5 )/g3118
+/g343,/g2872/g3004/g32√0/g287√/g2872/g3101/g3047 /g3023/g3278
+/g3023/g3288/g287√/g3004̅/g2872/g3023/g3278
+(/g3023/g3288/g2878/g3023/g3278)/g3440/g3442 /g2√√8
+/g3041/g2880/g28,√sin/g3438/g2030/g18,,/g2024(/g1870 −/g1844/g3040/g3028/g3051 +/g1844/g3040/g3028/g3051 /g32√5)/g2870
+4/g1830/g343,/g182√/g3042− /g2030/g1872 /g1848/g3030
+/g1848/g3040− /g182√̅/g1848/g3030
+(/g1848/g3040+/g1848/g3030)/g3440/g3442
+/g174,/g1745/g1745/g1745/g1744
+ 
+  where /g182√̅= /g182√/g3042/g4,741−∑/g2872
+(/g30√0/g328√/g301√)/g3118/g1857/g287√/g30√0/g328√/g3118/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ /g4,75 and /g1844/g18,5/g1853/g187, /g1872=/g34√,4/g1830/g4,72/g182√/g18,7−/g2030/g1872 /g1848/g1855
+/g1848/g18,5−/g182√/g33,4/g1848/g1855
+(/g1848/g18,5+/g1848/g1855)/g4,73
+/g2030 
+ 
+3D       (Eq. 12) 
+/g182√(/g1870,/g1872)= 
+/g3101(/g3045/g287√/g301√ /g3288/g327,/g32√√ /g2878/g301√/g3288/g327,/g32√√ /g32√5)/g3118
+/g2874/g3005+/g2870/g4,72/g3004/g32√0/g287√/g3101/g3047 /g3271/g3278
+/g3271/g3288/g287√/g3004̅/g3271/g3278
+(/g3271/g3288/g312,/g3271/g3278)/g4,73
+/g30√5
+/g1743/g1742/g1742/g1741
+∑/g287√/g28,√/g328√
+/g3041/g1857/g4,84/g3127/g334√/g32√5 (/g328√/g3343 )/g3118
+/g343,/g3122/g3252/g32√0/g3127/g3122/g334√/g32√5 /g3271/g3278
+/g3271/g3288/g3127/g3252/g33,5/g3122/g3271/g3278
+(/g3271/g3288/g312,/g3271/g3278)/g3440/g4,85
+/g2√√8
+/g3041/g2880/g28,√ sin/g4,78/g3101/g3041/g30√5(/g3045/g287√/g301√ /g3288/g327,/g32√√ /g2878/g301√/g3288/g327,/g32√√ /g32√5)/g3118
+/g2874/g3005/g4,72/g3004/g32√0/g287√/g3101/g3047 /g3271/g3278
+/g3271/g3288/g287√/g3004̅/g3271/g3278
+(/g3271/g3288/g312,/g3271/g3278)/g4,73/g4,7√
+/g174,/g1745/g1745/g1744
+   
+  where /g182√̅= /g182√/g3042/g34281−/g2874
+/g30√5/g3118∑/g28,√
+/g3041/g3118/g1857/g287√/g4,72/g328√/g3343 
+/g32,7/g4,73/g3118
+/g3005/g3047 /g2√√8
+/g3041/g2880/g28,√ /g3432 and /g1844/g18,5/g1853/g187, /g1872=/g34√,6/g1830/g4,72/g182√/g18,7−/g2030/g1872 /g1848/g1855
+/g1848/g18,5−/g182√̅/g1848/g1855
+(/g1848/g18,5+/g1848/g1855)/g4,73
+/g2030 
+ 
+Table 2: Analytic Models of Diffusion. Twelve diffe rent equations are given for modeling several diffe rent scenarios of diffusion of nutrients and 
+signaling factors in 3D tissue constructs. 
+ 
+ 
+Typical Ranges of Diffusant Parameters in Tissue Sy stems  
+Diffusion Coefficient ( D) 10 -8  to  10 -11   m2/s  
+Initial Concentration ( C) 0.01  to  100  mM  
+Metabolic Rate of Cell ( m) 10 -15   to  10 -18   mol/s  
+ 
+Table 3: Parameter Ranges for Diffusing Molecules i n Tissue Systems. Typical ranges of important param eters in tissue diffusion systems are 
+provided [4]. These parameters can be used to predi ct the maximal viable size of a tissue construct ba sed on limitations of diffusing nutrients, 
+where the maximal depth of a tissue construct is /g34√5/g2870/g304,/g3004 /g32√0/g3005
+/g3101 and where the metabolic rate of a tissue construct  ( /g2030) can be determined from the average 
+density of cells ( /g2025) multiplied by the average metabolic rate of the c ells ( /g18,5).  
+ 
+ 
+Bessel Function Roots  
+ /g183,/g3042(/g187,) (n th  roots)  /g201√/g3041 for /g183,/g3042(/g201√/g3041R) 
+n=1  2.4048  2.4048/R  
+n=2  5.5201  5.5201/R  
+n=3  8.6537  8.6537/R  
+n=4  11.7915  11.7915/R  15 
+ n=5  14.9309  14.9309/R  
+n=6  18.0711  18.0711/R  
+n=7  21.2116  21.2116/R  
+n=8  24.3525  24.3525/R  
+n=9  27.4935  27.4935/R  
+n=10  30.6346  30.6346/R  
+Table 4: Bessel Function Roots. The first ten roots  of the first kind of Bessel function of order zero , used for cylindrical diffusion solutions.  
+ 
+ 
+Eq. 1 
+/g182√(/g187,,0)= /g182√/g3042 for 0 ≤ /g187, ≤ /g184,   
+ /g182√(0,/g1872)= 0 for /g1872 > 0  
+/g2034/g182√(∞,/g1872)//g2034/g187,	 = 0  
+ 
+Eq. 2 
+/g182√(/g1870,0)= /g182√/g3042 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= 0 for /g1872 > 0   
+/g2034/g182√(0,/g1872)//g2034/g1870	 = 0  
+ 
+Eq. 3 
+/g182√(/g1870,0)= /g182√/g3042 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= 0 for /g1872 > 0   
+/g2034/g182√(0,/g1872)//g2034/g1870	 = 0  
+lim 
+/g3045→/g28,8/g182√(/g1870,/g1872) = /g1854/g18,7/g1873/g18,,/g185,/g1857/g185,  
+ 
+Eq. 4 
+/g182√(/g187,,0)= 0 for 0 ≤ /g187, ≤ /g184,   
+ /g182√(0,/g1872)= /g182√/g3042 for /g1872 > 0  
+/g2034/g182√(∞,/g1872)//g2034/g187,	 = 0  
+  
+Eq. 5 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= /g182√/g3042 for /g1872 > 0   
+/g2034/g182√(0,/g1872)//g2034/g1870	 = 0  
+  
+Eq. 6 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= /g182√/g3042 for /g1872 > 0   
+/g2034/g182√(0,/g1872)//g2034/g1870	 = 0  
+lim 
+/g3045→/g28,8/g182√(/g1870,/g1872) = /g1854/g18,7/g1873/g18,,/g185,/g1857/g185,  
+ 
+Eq. 7 
+/g182√(/g187,,0)= 0 for 0 ≤ /g187, ≤ /g184,   
+ /g182√(/g184,,/g1872)= 0   
+ /g182√(0,/g1872)= /g182√/g3042  
+  
+Eq. 8 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= /g182√/g3042  
+/g182√(0,/g1872)= 0 
+ 
+Eq. 9 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  16 
+ /g182√(/g1844,/g1872)= /g182√/g3042  
+/g182√(0,/g1872)= 0 
+ 
+Eq. 10 
+/g182√(/g187,,0)= 0 for 0 ≤ /g187, ≤ /g184,   
+ /g182√(/g184,,/g1872)= 0  
+ /g182√(0,/g1872)= /g182√/g3042−/g2030/g1872 /g3023/g3278
+/g3023/g3288−/g182√̅/g3023/g3278
+(/g3023/g3288/g2878/g3023/g3278) 
+ 
+Eq. 11 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= /g182√/g3042−/g2030/g1872 /g3023/g3278
+/g3023/g3288−/g182√̅/g3023/g3278
+(/g3023/g3288/g2878/g3023/g3278)  
+/g182√(0,/g1872)= 0  
+ 
+Eq. 12 
+/g182√(/g1870,0)= 0 for 0 ≤ /g1870 ≤ /g1844  
+/g182√(/g1844,/g1872)= /g182√/g3042−/g2030/g1872 /g3023/g3278
+/g3023/g3288−/g182√̅/g3023/g3278
+(/g3023/g3288/g2878/g3023/g3278)  
+/g182√(0,/g1872)= 0  
+ 
+Table 5: Diffusion Model Boundary Conditions. The i nitial and boundary conditions of each respective e quation are provided.  
+ 
+ 
+4. CONCLUSIONS 
+ 
+With advancing abilities to create tissue and organ oid structures from stem cells and biomaterials, an d with new and 
+ongoing discoveries of how gas, nutrient, and signa ling factor concentrations produce differential eff ects on stem cell 
+state and function, a novel role of diffusion model ing has emerged for study of stem cell functions an d 
+developmental processes in three-dimensional (3D) t issues. Ideal compositions for formation of targete d tissue 
+structures, cellular identities, and functional neu ral networks remain to be explored, and in the cour se of these 
+endeavors it is important to recognize that the abi lity to properly guide differentiation of stem cell s and development 
+of tissues for therapeutic use is strongly dependen t on how gasses, nutrients, and signaling factors d iffuse in cultured 
+tissue constructs. In fact, growth and development of cellular tissues both are influenced by and infl uence the 
+internal diffusion dynamics as a reciprocal interac tion. This work describes many complex interactions  of diffusant 
+substances in stem cell biology and presents severa l unique analytic models for understanding diffusio n phenomena 
+in tissue constructs, thereby enabling modeling of oxygen and nutrient delivery to cells and study of mass transport 
+and spatial gradients that form in 3D tissue constr ucts under a variety of conditions. The use of engi neered 
+combinations of cells, biomaterials, and biochemica l diffusing factors is likely to one day enable gui ded 
+differentiation and detailed control of cellular or ganization in synthetic tissue constructs. These co ncepts and 
+investigations will therefore have significant impa ct on regenerative approaches for many otherwise di sparate 
+diseases and injuries, particularly those of the ne rvous system, including stroke, spinal cord injury,  cancer, 
+neurodegenerative diseases, and many other neurogen etic syndromes and developmental abnormalities. 
+ 17 
+ SUPPLEMENTAL INFORMATION 
+ 
+A Matlab script with a simple graphical user interf ace is provided as supplementary material at 
+http://dx.doi.org/10.1089/scd.2017.0066 which can solve the diffusion models in tissue cons tructs by simply inputting 
+appropriate parameters of the system. Instructions for operating the files are also provided.  
+ 
+AUTHOR DISCLOSURE STATEMENT  
+ 
+The author declares no potential conflicts of inter est with respect to the research, authorship, or pu blication of this 
+article. No grant funding was provided for this wor k. 
+ 
+REFERENCES 
+ 
+1. Lancaster MA, Renner M, Martin CA, Wenzel D, Bic knell LS, Hurles ME, Homfray T, Penninger JM, Jacks on AP, 
+Knoblich JA. (2013) Cerebral organoids model human brain development and microcephaly. Nature 501(7467 ), 373–
+379. 
+2. McMurtrey RJ. (2014) Patterned and functionalize d nanofiber scaffolds in 3-dimensional hydrogel con structs 
+enhance neurite outgrowth and directional control. J. Neural Eng. 11, 066009. 
+3. Paşca AM, Sloan SA, Clarke LE, Tian Y, Makinson CD, Huber N, Kim CH, Park JY, O'Rourke NA, Nguyen K D, 
+Smith SJ, Huguenard JR, Geschwind DH, Barres BA, Pa şca SP. (2015) Functional cortical neurons and astr ocytes from 
+human pluripotent stem cells in 3D culture. Nat Met hods. May 25 
+4. McMurtrey RJ. (2016) Analytic models of oxygen a nd nutrient diffusion, metabolism dynamics, and arc hitecture 
+optimization in three-dimensional tissue constructs  with applications and insights in cerebral organoi ds. Tissue Eng. 
+Part C Methods 22(3), 221–249. 
+5. McMurtrey RJ. (2016) Multi-Compartmental Biomate rial Scaffolds for Patterning Neural Tissue Organoi ds in 
+Models of Neurodevelopment and Tissue Regeneration.  J. Tissue Engineering 7:1-8. 
+6. Teslaa T, Teitell MA. (2015) Pluripotent stem ce ll energy metabolism: an update. EMBO J. Jan 13;34( 2):138-53. 
+7. Choi HW, Kim JH, Chung MK, Hong YJ, Jang HS, Seo  BJ, Jung TH, Kim JS, Chung HM, Byun SJ, Han SG, Se o HG, 
+Do JT. (2015) Mitochondrial and metabolic remodelin g during reprogramming and differentiation of the 
+reprogrammed cells. Stem Cells Dev. Jun 1;24(11):13 66-73.  
+8. Ito K, Suda T. (2014) Metabolic requirements for  the maintenance of self-renewing stem cells. Nat R ev Mol Cell 
+Biol. Apr;15(4):243-56. 
+9. Hall CN, Klein-Flügge MC, Howarth C, Attwell D. (2012) Oxidative phosphorylation, not glycolysis, p owers 
+presynaptic and postsynaptic mechanisms underlying brain information processing. J Neurosci. Jun 27;32 (26):8940-
+51. 
+10. Ivanov AI, Malkov AE, Waseem T, Mukhtarov M, Bu ldakova S, Gubkina O, Zilberter M, Zilberter Y. (20 14) 
+Glycolysis and oxidative phosphorylation in neurons  and astrocytes during network activity in hippocam pal slices. J 
+Cereb Blood Flow Metab. Mar;34(3):397-407. 
+11. Folmes CD, Nelson TJ, Martinez-Fernandez A, Arr ell DK, Lindor JZ, Dzeja PP, Ikeda Y, Perez-Terzic C, Terzic A. 
+(2011) Somatic oxidative bioenergetics transitions into pluripotency-dependent glycolysis to facilitat e nuclear 
+reprogramming. Cell Metab. Aug 3;14(2):264-71.  
+12. Mathieu J, Zhou W, Xing Y, Sperber H, Ferreccio A, Agoston Z, Kuppusamy KT, Moon RT, Ruohola-Baker H. 
+(2014) Hypoxia-inducible factors have distinct and stage-specific roles during reprogramming of human cells to 
+pluripotency. Cell Stem Cell. May 1;14(5):592-605.  18 
+ 13. Prigione A, Rohwer N, Hoffmann S, Mlody B, Drew s K, Bukowiecki R, Blümlein K, Wanker EE, Ralser M,  Cramer 
+T, Adjaye J. (2014) HIF1α modulates cell fate repro gramming through early glycolytic shift and upregul ation of 
+PDK1-3 and PKM2. Stem Cells. Feb;32(2):364-76.  
+14. Covello KL, Kehler J, Yu H, Gordan JD, Arsham A M, Hu CJ, Labosky PA, Simon MC, Keith B. (2006) HIF -2alpha 
+regulates Oct-4: effects of hypoxia on stem cell fu nction, embryonic development, and tumor growth. Ge nes Dev. 
+Mar 1;20(5):557-70. 
+15. Mathieu J, Zhang Z, Zhou W, Wang AJ, Heddleston  JM, Pinna CM, Hubaud A, Stadler B, Choi M, Bar M, Tewari 
+M, Liu A, Vessella R, Rostomily R, Born D, Horwitz M, Ware C, Blau CA, Cleary MA, Rich JN, Ruohola-Bak er H. 
+(2011) HIF induces human embryonic stem cell marker s in cancer cells. Cancer Res. Jul 1;71(13):4640-52 .  
+16. Zhou W, Choi M, Margineantu D, Margaretha L, He sson J, Cavanaugh C, Blau CA, Horwitz MS, Hockenber y D, 
+Ware C, Ruohola-Baker H. (2012) HIF1α induced switc h from bivalent to exclusively glycolytic metabolis m during 
+ESC-to-EpiSC/hESC transition. EMBO J. May 2;31(9):2 103-16. 
+17. Kondoh H, Lleonart ME, Bernard D, Gil J. (2007)  Protection from oxidative stress by enhanced glyco lysis; a 
+possible mechanism of cellular immortalization. His tol Histopathol. Jan;22(1):85-90. 
+18. Matoba S, Kang JG, Patino WD, Wragg A, Boehm M,  Gavrilova O, Hurley PJ, Bunz F, Hwang PM. (2006) p 53 
+regulates mitochondrial respiration. Science. Jun 1 6;312(5780):1650-3. 
+19. Ezashi T, Das P, Roberts RM. (2005) Low O2 tens ions and the prevention of differentiation of hES c ells. Proc Natl 
+Acad Sci U S A. Mar 29;102(13):4783-8. 
+20. Varum S, Rodrigues AS, Moura MB, Momcilovic O, Easley CA 4th, Ramalho-Santos J, Van Houten B, Scha tten G. 
+(2011) Energy metabolism in human pluripotent stem cells and their differentiated counterparts. PLoS 
+One.6(6):e20914. 
+21. Zhang J, Khvorostov I, Hong JS, Oktay Y, Vergne s L, Nuebel E, Wahjudi PN, Setoguchi K, Wang G, Do A, Jung 
+HJ, McCaffery JM, Kurland IJ, Reue K, Lee WN, Koehl er CM, Teitell MA. (2011) UCP2 regulates energy met abolism 
+and differentiation potential of human pluripotent stem cells. EMBO J. Nov 15;30(24):4860-73. 
+22. Greer SN, Metcalf JL, Wang Y, Ohh M. (2012) The  updated biology of hypoxia-inducible factor. EMBO J. May 
+30;31(11):2448-60. 
+23. Maryanovich M, Gross A. (2013) A ROS rheostat f or cell fate regulation. Trends Cell Biol. Mar;23(3 ):129-34. 
+24. Paik JH, Ding Z, Narurkar R, Ramkissoon S, Mull er F, Kamoun WS, Chae SS, Zheng H, Ying H, Mahoney J, Hiller 
+D, Jiang S, Protopopov A, Wong WH, Chin L, Ligon KL , DePinho RA. (2009) FoxOs cooperatively regulate d iverse 
+pathways governing neural stem cell homeostasis. Ce ll Stem Cell. Nov 6;5(5):540-53. 
+25. Esteban MA, Wang T, Qin B, Yang J, Qin D, Cai J , Li W, Weng Z, Chen J, Ni S, Chen K, Li Y, Liu X, Xu J, Zhang S, 
+Li F, He W, Labuda K, Song Y, Peterbauer A, Wolbank S, Redl H, Zhong M, Cai D, Zeng L, Pei D. (2010) Vi tamin C 
+enhances the generation of mouse and human induced pluripotent stem cells. Cell Stem Cell. Jan 8;6(1): 71-9.  
+26. Zhang H, Ryu D, Wu Y, Gariani K, Wang X, Luan P , D'Amico D, Ropelle ER, Lutolf MP, Aebersold R, Sc hoonjans 
+K, Menzies KJ, Auwerx J. (2016) NAD⁺ repletion impr oves mitochondrial and stem cell function and enhan ces life 
+span in mice. Science. Jun 17;352(6292):1436-43. 
+27. Vander Heiden MG, Cantley LC, Thompson CB. (200 9) Understanding the W arburg effect: the metabolic 
+requirements of cell proliferation. Science. May 22 ;324(5930):1029-33.  
+28. Vadysirisack DD, Ellisen LW. (2012) mTOR activi ty under hypoxia. Methods Mol Biol. 821:45-58. 
+29. Wang S, Xia P, Ye B, Huang G, Liu J, Fan Z. (20 13) Transient activation of autophagy via Sox2-medi ated 
+suppression of mTOR is an important early step in r eprogramming to pluripotency. Cell Stem Cell. Nov 7 ;13(5):617-
+25.  
+30. Chen C, Liu Y, Liu R, Ikenoue T, Guan KL, Liu Y , Zheng P. (2008) TSC-mTOR maintains quiescence and  function 
+of hematopoietic stem cells by repressing mitochond rial biogenesis and reactive oxygen species. J Exp Med. Sep 
+29;205(10):2397-408. 
+31. Vazquez-Martin A, Vellon L, Quirós PM, Cufí S, Ruiz de Galarreta E, Oliveras-Ferraros C, Martin AG , Martin-
+Castillo B, López-Otín C, Menendez JA. (2012) Activ ation of AMP-activated protein kinase (AMPK) provid es a 
+metabolic barrier to reprogramming somatic cells in to stem cells. Cell Cycle. Mar 1;11(5):974-89. 
+32. Zhou J, Su P, Wang L, Chen J, Zimmermann M, Gen bacev O, Afonja O, Horne MC, Tanaka T, Duan E, Fish er SJ, 
+Liao J, Chen J, Wang F. (2009) mTOR supports long-t erm self-renewal and suppresses mesoderm and endode rm 
+activities of human embryonic stem cells. Proc Natl  Acad Sci U S A. May 12;106(19):7840-5.  19 
+ 33. Bungard D, Fuerth BJ, Zeng PY, Faubert B, Maas NL, Viollet B, Carling D, Thompson CB, Jones RG, Be rger SL. 
+(2010) Signaling kinase AMPK activates stress-promo ted transcription via histone H2B phosphorylation. Science. Sep 
+3;329(5996):1201-5. 
+34. Mathieu J, Zhang Z, Nelson A, Lamba DA, Reh TA,  Ware C, Ruohola-Baker H. (2013) Hypoxia induces re -entry of 
+committed cells into pluripotency. Stem Cells. Sep; 31(9):1737-48. 
+35. Candelario KM, Shuttleworth CW, Cunningham LA. (2013) Neural stem/progenitor cells display a low 
+requirement for oxidative metabolism independent of  hypoxia inducible factor-1α expression. J Neuroche m. 
+May;125(3):420-9. 
+36. Ghourichaee SS, Powell EM, Leach JB. Enhancemen t of human neural stem cell self-renewal in 3D hypo xic 
+culture. Biotechnol Bioeng. 2017 May;114(5):1096-11 06. 
+37. Clarke L, van der Kooy D. (2009) Low oxygen enh ances primitive and definitive neural stem cell col ony formation 
+by inhibiting distinct cell death pathways. Stem Ce lls. Aug;27(8):1879-86.  
+38. Groszer M, Erickson R, Scripture-Adams DD, Lesc he R, Trumpp A, Zack JA, Kornblum HI, Liu X, Wu H. (2001) 
+Negative regulation of neural stem/progenitor cell proliferation by the Pten tumor suppressor gene in vivo. Science. 
+Dec 7;294(5549):2186-9. 
+39. Xu B, Zhang K, Huang Y. (2009) Lin28 modulates cell growth and associates with a subset of cell cy cle regulator 
+mRNAs in mouse embryonic stem cells. RNA. Mar;15(3) :357-61. 
+40. Yoshida Y, Takahashi K, Okita K, Ichisaka T, Ya manaka S. (2009) Hypoxia enhances the generation of  induced 
+pluripotent stem cells. Cell Stem Cell. Sep 4;5(3): 237-41. 
+41. Xie Y, Zhang J, Lin Y, Gaeta X, Meng X, Wisidag ama DR, Cinkornpumin J, Koehler CM, Malone CS, Teit ell MA, 
+Lowry WE. (2014) Defining the role of oxygen tensio n in human neural progenitor fate. Stem Cell Report s. Nov 
+11;3(5):743-57.  
+42. Buganim Y, Jaenisch R, et al. (2014) The develo pmental potential of iPSCs is greatly influenced by  reprogramming 
+factor selection. Cell Stem Cell. Sep 4;15(3):295-3 09. 
+43. Wilkins SE, Abboud MI, Hancock RL, Schofield CJ . (2016) Targeting Protein-Protein Interactions in the HIF 
+System. ChemMedChem. Mar 21;11(8):773-86. 
+44. Hancock RL, Masson N, Dunne K, Flashman E, Kawa mura A. The activity of JmjC histone lysine demethy lase 
+KDM4A is highly sensitive to oxygen concentrations.  ACS Chem Biol. 2017 Jan 4.  
+45. Choi J, Lee S, Mallard W, Clement K, Tagliazucc hi GM, Lim H, Choi IY, Ferrari F, Tsankov AM, Pop R , Lee G, 
+Rinn JL, Meissner A, Park PJ, Hochedlinger K. (2015 ) A comparison of genetically matched cell lines re veals the 
+equivalence of human iPSCs and ESCs. Nat Biotechnol . Nov;33(11):1173-81. 
+46. Pastor WA, Chen D, Liu W, Kim R, Sahakyan A, Lu kianchikov A, Plath K, Jacobsen SE, Clark AT. (2016 ) Naive 
+Human Pluripotent Cells Feature a Methylation Lands cape Devoid of Blastocyst or Germline Memory. Cell Stem 
+Cell. Feb 2. pii: S1934-5909(16)00020-5. 
+47. Theunissen TW, Friedli M, He Y, Planet E, O'Nei l RC, Markoulaki S, Pontis J, Wang H, Iouranova A, Imbeault M, 
+Duc J, Cohen MA, Wert KJ, Castanon R, Zhang Z, Huan g Y, Nery JR, Drotar J, Lungjangwa T, Trono D, Ecke r JR, 
+Jaenisch R. (2016) Molecular Criteria for Defining the Naive Human Pluripotent State. Cell Stem Cell. Oct 6;19(4):502-
+515. 
+48. Theunissen TW, Powell BE, Wang H, Mitalipova M,  Faddah DA, Reddy J, Fan ZP, Maetzel D, Ganz K, Shi  L, 
+Lungjangwa T, Imsoonthornruksa S, Stelzer Y, Rangar ajan S, D'Alessio A, Zhang J, Gao Q, Dawlaty MM, Yo ung RA, 
+Gray NS, Jaenisch R. (2014) Systematic identificati on of culture conditions for induction and maintena nce of naive 
+human pluripotency. Cell Stem Cell. Oct 2;15(4):471 -87. Erratum in: Cell Stem Cell. 2014 Oct 2;15(4):5 24-6.  
+49. Takashima Y, Guo G, Loos R, Nichols J, Ficz G, Krueger F, Oxley D, Santos F, Clarke J, Mansfield W , Reik W, 
+Bertone P, Smith A. (2015) Resetting transcription factor control circuitry toward ground-state plurip otency in 
+human. Cell. 2014 Sep 11;158(6):1254-69. Erratum in : Cell. Jul 16;162(2):152-3.  
+50. Chen S, Zhang M, Xing L, Wang Y, Xiao Y, Wu Y. (2015) HIF-1α contributes to proliferation and inva siveness of 
+neuroblastoma cells via SHH signaling. PLoS One. Ma r 26;10(3):e0121115. 
+51. Mori H, Yao Y, Learman BS, Kurozumi K, Ishida J , Ramakrishnan SK, Overmyer KA, Xue X, Cawthorn WP,  Reid 
+MA, Taylor M, Ning X, Shah YM, MacDougald OA. (2016 ) Induction of WNT11 by hypoxia and hypoxia-inducib le 
+factor-1α regulates cell proliferation, migration a nd invasion. Sci Rep. Feb 10;6:21520. 
+52. Zhang Z, Sun H, Dai H, Walsh RM, Imakura M, Sch elter J, Burchard J, Dai X, Chang AN, Diaz RL, Mars zalek JR, 
+Bartz SR, Carleton M, Cleary MA, Linsley PS, Grando ri C. (2009) MicroRNA miR-210 modulates cellular re sponse to 
+hypoxia through the MYC antagonist MNT. Cell Cycle.  Sep 1;8(17):2756-68.] 20 
+ 53. Zhu H, Shyh-Chang N, Segrè AV, Shinoda G, Shah SP, Einhorn WS, Takeuchi A, Engreitz JM, Hagan JP, Kharas 
+MG, Urbach A, Thornton JE, Triboulet R, Gregory RI; DIAGRAM Consortium; MAGIC Investigators, Altshuler D, 
+Daley GQ. (2011) The Lin28/let-7 axis regulates glu cose metabolism. Cell. Sep 30;147(1):81-94. 
+54. Shi Y, Kirwan P, Smith J, Robinson HP, Livesey FJ. (2012) Human cerebral cortex development from p luripotent 
+stem cells to functional excitatory synapses. Nat N eurosci. Feb 5;15(3):477-86, S1.  
+55. Gustafsson MV, Zheng X, Pereira T, Gradin K, Ji n S, Lundkvist J, Ruas JL, Poellinger L, Lendahl U,  Bondesson M. 
+(2005) Hypoxia requires notch signaling to maintain  the undifferentiated cell state. Dev Cell. Nov;9(5 ):617-28. 
+56. Butz H, Rácz K, Hunyady L, Patócs A. (2012) Cro sstalk between TGF-β signaling and the microRNA mac hinery. 
+Trends Pharmacol Sci. Jul;33(7):382-93. 
+57. Patterson M, Gaeta X, Loo K, Edwards M, Smale S , Cinkornpumin J, Xie Y, Listgarten J, Azghadi S, D ouglass SM, 
+Pellegrini M, Lowry WE. (2014) Let-7 miRNAs can act  through notch to regulate human gliogenesis. Stem Cell 
+Reports. Nov 11;3(5):758-73.  
+58. Wang Q, Yang L, Wang Y. (2015) Enhanced differe ntiation of neural stem cells to neurons and promot ion of 
+neurite outgrowth by oxygen-glucose deprivation. In t J Dev Neurosci. Jun;43:50-7. 
+59. Ortega JA, Sirois CL, Memi F, Glidden N, Zecevi c N. (2016) Oxygen Levels Regulate the Development of Human 
+Cortical Radial Glia Cells. Cereb Cortex. 2016:1-17 . 
+60. Molina F, Rus A, Pedrosa JÁ, del Moral ML. (201 3) Acute hypoxia-induced depletion of striatal nitr ic oxide 
+synthase pathway. J Chem Neuroanat. Jan;47:42-9. 
+61. Bolaños JP, Delgado-Esteban M, Herrero-Mendez A , Fernandez-Fernandez S, Almeida A. (2008) Regulati on of 
+glycolysis and pentose-phosphate pathway by nitric oxide: impact on neuronal survival. Biochim Biophys  Acta. Jul-
+Aug;1777(7-8):789-93.  
+62. Colell A, Ricci JE, Tait S, Milasta S, Maurer U , Bouchier-Hayes L, Fitzgerald P, Guio-Carrion A, W aterhouse NJ, Li 
+CW, Mari B, Barbry P, Newmeyer DD, Beere HM, Green DR. (2007) GAPDH and autophagy preserve survival af ter 
+apoptotic cytochrome c release in the absence of ca spase activation. Cell. Jun 1;129(5):983-97. Erratu m in: Cell. 2007 
+Jul 27;130(2):385. 
+63. Begum AN, Guoynes C, Cho J, Hao J, Lutfy K, Hon g Y. (2015) Rapid generation of sub-type, region-sp ecific 
+neurons and neural networks from human pluripotent stem cell-derived neurospheres. Stem Cell Res. Nov; 15(3):731-
+41. 
+64. Zhou J, Shrikhande G, Xu J, McKay RM, Burns DK,  Johnson JE, Parada LF. (2011) Tsc1 mutant neural 
+stem/progenitor cells exhibit migration deficits an d give rise to subependymal lesions in the lateral ventricle. Genes 
+Dev. Aug 1;25(15):1595-600. 
+65. Curatolo P, Bjørnvold M, Dill PE, Ferreira JC, Feucht M, Hertzberg C, Jansen A, Jóźwiak S, Kingswo od JC, 
+Kotulska K, Macaya A, Moavero R, Nabbout R, Zonnenb erg BA. (2016) The Role of mTOR Inhibitors in the 
+Treatment of Patients with Tuberous Sclerosis Compl ex: Evidence-based and Expert Opinions. Drugs. Apr; 76(5):551-
+65. 
+66. Xie J, Wang X, Proud CG. mTOR inhibitors in can cer therapy. F1000Res. 2016 Aug 25;5. pii: F1000 Fa culty Rev-
+2078.  
+67. Kaul A, Toonen JA, Cimino PJ, Gianino SM, Gutma nn DH. (2015) Akt- or MEK-mediated mTOR inhibition 
+suppresses Nf1 optic glioma growth. Neuro Oncol. Ju n;17(6):843-53. 
+68. Hsieh CH, Shaltouki A, Gonzalez AE, Bettencourt  da Cruz A, Burbulla LF, St Lawrence E, Schüle B, Kr ainc D, 
+Palmer TD, Wang X. (2016) Functional Impairment in Miro Degradation and Mitophagy Is a Shared Feature in 
+Familial and Sporadic Parkinson's Disease. Cell Ste m Cell. Aug 25. pii: S1934-5909(16)30249-1. 
+69. Kaur B, Khwaja FW, Severson EA, Matheny SL, Bra t DJ, Van Meir EG. (2005) Hypoxia and the hypoxia-i nducible-
+factor pathway in glioma growth and angiogenesis. N euro Oncol. Apr;7(2):134-53. 
+70. Shackelford DB, Shaw RJ. (2009) The LKB1-AMPK p athway: metabolism and growth control in tumour 
+suppression. Nat Rev Cancer. Aug;9(8):563-75. 
+71. Lopes C, Rego AC. (2016) Revisiting Mitochondri al Function and Metabolism in Pluripotent Stem Cell s: Where 
+Do We Stand in Neurological Diseases? Mol Neurobiol . Feb 18. 
+72. Yu SP, Wei Z, Wei L. Preconditioning strategy i n stem cell transplantation therapy. (2013) Transl Stroke Res. 
+Feb;4(1):76-88. 
+73. McMurtrey RJ, Zuo Z. (2010) Isoflurane precondi tioning and postconditioning in rat hippocampal neu rons. Brain 
+Res. Oct 28;1358:184-90. 
+74. Cussler EL. Diffusion, Mass Transfer in Fluid S ystems. New York: Cambridge University Press, 1984.  21 
+ 75. Jost W. Diffusion in Solids, Liquids, Gases. Ne w York: Academic Press, 1960. 
+76. Skelland AHP. Diffusional mass transfer. New Yo rk: John Wiley & Sons, Inc., 1974. 
+77. Crank J. The Mathematics of Diffusion, 2 nd  Edition. Oxford: Oxford University Press, 1975. 

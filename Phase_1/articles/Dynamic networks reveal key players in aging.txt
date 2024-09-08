@@ -1,0 +1,926 @@
+Title: Dynamic networks reveal key players in aging
+Abstract:   Motivation: Since susceptibility to diseases increases with age, studying
+aging gains importance. Analyses of gene expression or sequence data, which
+have been indispensable for investigating aging, have been limited to studying
+genes and their protein products in isolation, ignoring their connectivities.
+However, proteins function by interacting with other proteins, and this is
+exactly what biological networks (BNs) model. Thus, analyzing the proteins' BN
+topologies could contribute to understanding of aging. Current methods for
+analyzing systems-level BNs deal with their static representations, even though
+cells are dynamic. For this reason, and because different data types can give
+complementary biological insights, we integrate current static BNs with
+aging-related gene expression data to construct dynamic, age-specific BNs.
+Then, we apply sensitive measures of topology to the dynamic BNs to study
+cellular changes with age.
+  Results: While global BN topologies do not significantly change with age,
+local topologies of a number of genes do. We predict such genes as
+aging-related. We demonstrate credibility of our predictions by: 1) observing
+significant overlap between our predicted aging-related genes and "ground
+truth" aging-related genes; 2) showing that our aging-related predictions group
+by functions and diseases that are different than functions and diseases of
+genes that are not predicted as aging-related; 3) observing significant overlap
+between functions and diseases that are enriched in our aging-related
+predictions and those that are enriched in "ground truth" aging-related data;
+4) providing evidence that diseases which are enriched in our aging-related
+predictions are linked to human aging; and 5) validating all of our
+high-scoring novel predictions via manual literature search.
+
+Full Text: arXiv:1307.3388v1  [cs.CE]  12 Jul 2013Pages 1–8
+Dynamicnetworks revealkey playersinaging
+Faisal,F.E.andMilenkovi ´c,T.∗
+Computer Scienceand Engineering, University ofNotreDame , NotreDame,IN46556, USA
+ABSTRACT
+Motivation: Since susceptibility to diseases increases with age,
+studying aging gains importance. Analyses of gene expressi on or
+sequence data, which have been indispensable for investiga ting
+aging,havebeenlimitedtostudyinggenesandtheirprotein products
+in isolation, ignoring their connectivities. However, pro teins function
+by interacting with other proteins, and this is exactly what biological
+networks (BNs) model. Thus, analyzing the proteins’ BN topo logies
+could contribute to understanding of aging. Current method s for
+analyzing systems-level BNs deal with their static represe ntations,
+even though cells are dynamic. For this reason, and because
+different data types can give complementary biological ins ights, we
+integrate current static BNs with aging-related gene expre ssion data
+to construct dynamic, age-speciﬁc BNs. Then, we apply sensi tive
+measures of topology to the dynamic BNs to study cellular cha nges
+withage.
+Results: WhileglobalBN topologiesdo not signiﬁcantly change with
+age,localtopologiesofanumberofgenesdo.Wepredictsuch genes
+as aging-related. We demonstrate credibility of our predic tions by:
+1) observing signiﬁcant overlap between our predicted agin g-related
+genes and “ground truth” aging-related genes; 2) showing th at our
+aging-related predictions group by functions and diseases that are
+different than functions and diseases of genes that are not p redicted
+as aging-related; 3) observing signiﬁcant overlap between functions
+and diseases that are enriched in our aging-related predict ions and
+those that are enriched in “ground truth” aging-related dat a; 4)
+providing evidence that diseases which are enriched in our a ging-
+related predictions are linked to human aging; and 5) valida ting all of
+ourhigh-scoringnovel predictionsvia manualliterature s earch.
+Contact: tmilenko@nd.edu
+1 INTRODUCTION
+1.1 Motivationand background
+Since the US is on average growing older because of ∼78 million
+of baby boomers who have began turning 65 in 2011, and since
+susceptibility to diseases increases withage, studying hu man aging
+gains importance. Analysis of gene expression data has been
+indispensable for investigating aging (Wieser et al., 2011; Fortney
+et al., 2010). However, it has mostly been limited to studying
+differential expression of individual genes, without cons idering
+their connectivities (Fortney et al., 2010). But, it is the proteins
+(gene products) that carry out cellular processes and they d o
+so by interacting with other proteins instead of acting alon e.
+And this is exactly what biological networks and protein-protein
+interaction (PPI) networks in particular model; in PPI networks,
+nodes are proteins and edges correspond to physical interac tions
+between the proteins. Thus, analyzing topologies of protei ns in
+∗Towhomcorrespondence should be addressedPPI networks could contribute to understanding of the proce sses of
+aging. Although as a proof of concept this study focuses on PP I
+networks, it is applicable to other types of biological netw orks.
+High-throughput screens for PPI detection have yielded sys tems-
+level (though incomplete) PPInetworks for manyorganisms, which
+are publicly available (Breitkreutz etal.,2008).
+The majority of current methods for analyzing systems-leve l PPI
+networks deal with their staticrepresentations, due to limitations
+of biotechnologies for PPI data collection, even though cel ls are
+dynamic (Przytycka and Kim, 2010). For this reason, and beca use
+different data types can give complementary biological ins ights
+(Memiˇ sevi´ c et al., 2010; Przytycka and Kim, 2010), we integrate
+current static PPI network data (Peri et al., 2004; Breitkreutz et al.,
+2008) with age-speciﬁc gene expression data (Lu et al., 2004) to
+computationally construct dynamic, age-speciﬁc PPI networks , in
+order tostudycellular changes withage from such networks.
+Furthermore, topological positions of aging-related gene s in the
+staticnetworks have been studied (Kriete et al., 2011; Ferrarini
+et al., 2005; Reja et al., 2009; Promislow, 2004; de Magalh˜ aes,
+2009), but mostly with crudemeasures of topology that can
+not cope with the complexity of PPI networks (Prˇ zulj, 2011) .
+For example, node degrees have been used to argue the central
+role or aging-related proteins in the yeast network compare d to
+proteins that are not associated with aging, or to study the r ole
+of chaperones (heat stock proteins) in aging (Promislow, 20 04;
+S˝ oti and Csermely, 2007). In addition to aging, many approa ches
+have aimed to link node degrees with, for example, essential ity
+(Jeonget al., 2001), disease (Sharan and Ideker, 2008; Vanunu
+et al., 2010), cancer (Jonsson and Bates, 2006; Aragues et al.,
+2008), or pathogenicity (Dyer et al., 2008). However, it is possible
+that the high-degree proteins have been more studied simply
+because of their known relevance to human health (Prˇ zulj, 2 011;
+Ratmann et al., 2009). Hence, more constraining measures of
+topology might be needed that go beyond capturing only the di rect
+network neighborhood of a node (Milenkovi´ c and Prˇ zulj, 20 08;
+Milenkovi´ c etal.,2010a). Whilesuchmeasuresexistandhavebeen
+used to link proteins’ network positions with their involve ment in
+some biological processes (Sharan et al., 2007; Milenkovi´ c et al.,
+2011), to our knowledge, they have not been linked to protein s’
+involvement in aging even in static and especially in dynami c
+PPI networks. Here, we apply a seriesof measures of topology,
+including some highly sensitive measures (Milenkovi´ c and Prˇ zulj,
+2008; Milenkovi´ c et al., 2011), to the dynamic PPI networks to
+identify keyplayers inaging.
+1.2 Our study
+We aim to study human aging via integration of aging-related
+gene expression data with static PPI network data (Fig. 1). W e
+obtain dynamic, age-speciﬁc PPInetworks by selectinginth e static
+network: 1) all proteins that correspond to actively expres sed genes
+1FaisalandMilenkovi ´c
+Fig. 1.Summary of our study. We
+integrate a static PPI network with
+aging-related gene expression data
+to obtain age-speciﬁc networks. We
+analyze changes in global and local
+network topologies with age. While
+global network analysis indicates no
+age-speciﬁc change, local topologies
+(as captured by seven nodecentrality
+measures) of some proteins do
+signiﬁcantly change with age. We
+predict such proteins as aging-
+related and validate our predictions
+in several ways.
+at different ages and 2) all PPIs involving these “active” pr oteins.
+Hence, each age-speciﬁc network is the network that is “acti ve”
+at a given age. We hypothesize that the dynamic and integrati ve
+network analysis provides a valuable model of cellular func tioning
+that can reveal aging-related information and that can reve al more
+of the informationthan staticanalysis of individual data t ypes.
+Given the dynamic network data, we ﬁrst aim to answer whether
+the overall network topologies change with age (Fig. 1). Sin ce this
+isnotthe case, and since the gene expression data alone revealed
+onlyasmallportionofallgenesasaging-related(Lu etal.,2004), it
+couldbethat localtopologiesaroundonlya subsetofproteinsinthe
+network do change with age. Hence, we study positions of prot eins
+in each age-speciﬁc PPI network with respect to measures of l ocal
+topology, called node centralities , with the goal of identifying
+proteins whose centralities signiﬁcantly change with age. We ﬁnd
+515suchproteins(8.1%ofallproteinsinthestaticnetwork ), which
+is quantitatively consistent to the result by Lu et al.(2004). We
+predictthese proteins as aging-relatedandvalidate them a sfollows.
+1)The predictions are statisticallysigniﬁcant, i.e.,non-r andom.
+2)The overlap of our predicted aging-related genes and “groun d
+truth” aging-related genes is signiﬁcant. All of our ﬁve highest-
+scoringpredictions, namely GORASP2, MAP2K4, TIAM1,
+MAP1B, and S100B, are present in multipleaging-related “ground
+truth”datasets.Nonetheless,manyofourpredictionsare novel,i.e.,
+absent from the “ground truth” data. This conﬁrms that dynam ic
+network analysis of integrated data types can reveal additi onal
+biologicalknowledgecomparedtostaticanalysisofindivi dualdata.
+3)Our predictions group by biological functions and diseases that
+are different than functions and diseases of genes that we do not
+predictasaging-related.Theoverlapbetweenfunctionsan ddiseases
+thatareenrichedinourpredictionsandthosethatareenric hedinthe
+“ground truth” aging-related data is signiﬁcant. Diseases that are
+enriched inour predictions arelinked tohuman aging.
+4)Wemanually search in the literature for our top 10% highest-
+scoring predictions that are not present inthe “ground trut h” aging-
+relateddata, andwe successfully validate all of them.
+2 MATERIALSANDMETHODS
+2.1 Data
+2.1.1 Aging-relatedgeneexpressiondata Weusehumanbraingene
+expression data consisting of 30 samples obtained from 30 in dividuals
+between 26 and 106 years of age. In an individual, Lu et al.(2004) deﬁneda gene as being expressed (or active) at a given age if its detection p-value,
+which indicates the signiﬁcance level of its mRNA abundance atthat age, is
+lessthan0.04.Weadopt thesameprocedure (Supplementary Section S1.1).
+2.1.2 Static PPI network data We obtain human static PPIs from
+HPRD (Peri et al., 2004) and BioGRID (Breitkreutz et al., 2008). HPRD
+data consists of 9,322 unique proteins and 36,030 unique PPI s between the
+proteins. BioGRID data consists of 10,078 unique proteins ( with respect to
+their gene IDs) and 50,954 unique PPIsbetween the proteins.
+2.1.3 Integrating static PPI network with gene expression d ata
+to form age-speciﬁc PPI networks We form dynamic, age-speciﬁc
+networks as follows. To form the network speciﬁc to a given ag e, we
+select in the static network those proteins that are express ed at that age
+(Section 2.1.1) and all PPIs that exist between the expresse d proteins (see
+SupplementarySectionS1.2foraformaldescription). Sinc egeneexpression
+data is collected for 30 ages, 30 age-speciﬁc networks can be formed from
+the given static network. Since we study two static networks (HPRD and
+BioGRID), we obtain two sets of dynamic networks. We run subs equent
+analyses on each of the network sets. Since we ﬁnd that result s are similar
+across the two sets, for simplicity, here wereport results o nly for the HPRD
+network. Results for the BioGRID network are reported in the Supplement.
+2.1.4 “Ground truth” aging-related data We denote the set of
+genes present in both the static PPI network (Section 2.1.2) and brain gene
+expression data (Section 2.1.1)as StatNetExpression .
+By studying brain gene expression data from Section 2.1.1, L u
+et al.(2004) predicted 442 genes as aging-related, as their expre ssion
+signiﬁcantly correlated with age. Of these, 341 genes are pr esent in
+StatNetExpression. Henceforth, wedenote this “ground tru th” aging-related
+set of 341 genes predicted from brain gene expression data alone as
+BrainExpression2004Age .
+By studying another brain gene expression data with 174 samp les
+from 55 individuals, with multiple sample per individual, B erchtold
+et al.(2008) identiﬁed 8,277 genes (via 12,514 probes) whose expr ession
+signiﬁcantly changed with age. Of these, 3,228 are present i n
+StatNetExpression. Henceforth, wedenote this “ground tru th” aging-related
+set of 3,228 genes predicted from brain gene expression data alone as
+BrainExpression2008Age .
+Clearly,BrainExpression2004Age andBrainExpression200 8Age arevery
+similar in the sense that their aging-related genes have bee n inferred from
+brain gene expression data. (And as such, among all “ground t ruth” data
+sets (see below), these two sets are expected to be the most si milar to
+our aging-related predictions, since our predictions are a lso partly based
+on brain human gene expression data.) However, it is importa nt to note
+thatBrainExpression2004Age andBrainExpression2008Age werepredicted
+fromtwo independent data sets,andcompared toBrainExpres sion2004Age,
+BrainExpression2008Age is a result of a newer microarray st udy, it covers
+2Dynamicnetworksreveal keyplayersinaging
+more samples and more individuals, and it covers more sample s per
+individual.
+By studying brain gene expression data set related to differ ent stages
+of Alzheimer’s disease (AD), Simpson et al.(2011) identiﬁed 2,911 genes
+(linked to 3,404 probes) that have signiﬁcantly different e xpression levels
+at different stages of AD. Of these, 1,117 are present in Stat NetExpression.
+Henceforth, we denote this “ground truth” AD-related set of 1,117 genes
+predicted from brain gene expression data asADExpressionAge .
+By studying gene expression data related to Hutchinson-Gil fold progeria
+syndrome (HGPS), a human premature aging-related disease, Liuet al.
+(2011) identiﬁed 1,731 genes that have a differentially met hylated region
+between wild-type and HGPS-affected ﬁbroblasts of vascula r muscles cells.
+Of these, 708 are present in StatNetExpression. Henceforth , we denote
+this “ground truth” HGPS-related set of 708 genes predicted fromvascular
+muscles-related gene expression data asHGPSExpressionAge .
+In July 2012, GenAge contained 261 human genes that have been linked
+toagingassequence-basedorthologsofaging-related gene sinmodelspecies
+(deMagalh˜ aes etal., 2009). Of these, 230 arepresent in StatNetExpression.
+Henceforth, we denote this “ground truth” aging-related se t of 230 genes
+predicted from sequence data bySequenceAge .
+2.1.5 Complementsofthe“groundtruth”aging-related data We
+deﬁne a set of genes as the complement of a “ground truth” aging-related
+data set if the genes are present in StatNetExpression butno t in the “ground
+truth” data set. We denote the complements of BrainExpressi on2004Age,
+BrainExpression2008Age, ADExpressionAge, HGPSExpressi onAge, and
+SequenceAgeas BrainExpression2004Complement ,BrainExpression2008Complement ,
+ADExpressionComplement ,HGPSExpressionComplement , andSequenceComplement ,
+respectively.
+All above data sets are deﬁned with respect to HPRD PPI data. F or
+BioGRID data, see Supplementary Section S1.3.
+2.2 Do globalnetworktopologieschangewith age?
+Given the dynamic, age-speciﬁc PPI networks, we test whethe r the overall
+(global)topologies ofthenetworkschangewithage.Wedoso bycomparing
+thedifferentnetworkswithrespecttoseveralcommonlyuse dglobalnetwork
+properties (Section 2.2.1), by evaluating the ﬁt of each of t he age-speciﬁc
+networks to a series of well-known graph families, i.e., net work models
+(Section 2.2.2) (Milenkovi´ c et al., 2008; Kuchaiev et al., 2011), and by
+measuring the overlap of the age-speciﬁc networks (Section 2.2.3).
+2.2.1 Comparing global properties of age-speciﬁc networks We
+analyzethreeproperties:theaverageclusteringcoefﬁcie nt, averagediameter,
+and graphlet frequency distribution (Memisevi´ c etal.,2010). Theproperties
+aredeﬁned in Supplementary Section S1.4.
+2.2.2 Evaluatingthe ﬁt ofage-speciﬁc networks todifferen t graph
+families or network models We compare the ﬁt of the dynamic PPI
+networkstodifferent graphfamilies, i.e.,networkmodels (Milenkovi´ c etal.,
+2009), to test whether the best ﬁtting model changes with age . Various
+network models have been proposed. We use: (1) Erd¨ os-R´ eny i random
+graphs (ER), (2) generalized Erd¨ os-R´ enyi random graphs w ith same degree
+distribution as the data (ERDD), (3) geometric random graph s (GEO), (4)
+geometric gene duplication and mutation model (GEOGD), (5) scale-free
+networks (SF), and (6) scale-free gene duplication and muta tion model
+(SFGD) (Milenkovi´ c et al., 2008; Kuchaiev et al., 2011). To evaluate the
+ﬁt of the data network to a given model, we compare the topolog y of the
+data network to the topology of a random network instance dra wn from the
+model with respect to a highly constraining measure of netwo rk topological
+similarity called graphlet degree distribution agreement (GDD-agreement)
+(Prˇ zulj, 2007). For details, see Supplementary Section S1 .5.
+2.2.3 Computing the overlap between age-speciﬁc networks We
+measure the overlap between each pair of age-speciﬁc networ ks as the
+percentage of nodes (or edges) in the smaller of the two netwo rks that are
+common to the two networks. For details, seeSupplementary S ection S1.6.2.3 Dolocaltopologiesofproteinschangewithage?
+Westudytopological positions ofproteins ineach age-spec iﬁc network with
+respect to seven node centrality measures (Section 2.3.1). We predict as
+aging-related thoseproteins whosecentralities signiﬁca ntly change with age
+(Section 2.3.2). Wevalidate our predictions in several way s (Section 2.3.3).
+2.3.1 Local measures of topology or node centralities Various
+centrality measures havebeen used to link topological impo rtance of anode
+in the network to its functional importance. Below, we deﬁne each of the
+seven measures thatweuseand provide biological justiﬁcat ion fortheir use.
+Degree centrality (DEGC) measures the degree of a node in the network,
+i.e., the number of the node’s neighbors. The higher the degr ee of a node,
+the more central the node according to DEGC. Since current PP I networks
+have“power-law”degreedistributions, withmanylow-degr eenodesandfew
+high-degreenodes,andsinceremovalofthehigh-degreenod eswouldimpact
+thenetworkstructure(bydisconnecting it),DEGCofageneh asbeenrelated
+to the gene’s essentiality as well as its involvement in dise ase (Barab´ asi and
+Oltvai, 2004; Sharan and Ideker, 2008).
+Clustering coefﬁcient centrality (CLUSC) measures, for a given node,
+how many pairs of neighbors of the node are connected by an edg e, out
+of all pairs of the node’s neighbors. Intuitively, the more i nterconnected the
+neighborhood ofthenode,themorecentralthenodeisaccord ingtoCLUSC.
+In a PPI network, a node with high clustering coefﬁcient, tog ether with the
+node’s neighbors, forms a highly interconnected network re gion, which is
+likely to correspond to afunctional module (Barab´ asi and O ltvai, 2004).
+K-coreof a network is a maximal subset of nodes in the network such
+that each node is connected to at least kothers in the subset. K-coreness
+centrality (KC)ofanodeis kifthenodeisin k-core.NodeswithhighKCin
+thehumanPPInetworkhavebeenfoundtocorrespondto“cored iseaseome,”
+a subnetwork that is signiﬁcantly enriched in disease genes and drug targets
+(Janji´ c and Prˇ zulj, 2012),aswellasto inﬂuential “sprea ders” ofinformation
+throughout thenetwork (Kitsak et al.,2010).
+Graphlet degree centrality (GDC) measures how many graphlets a
+node participates in, for all 2-5-node graphlets (Milenkov i´ cet al., 2011).
+Intuitively, the more graphlets a node touches, the more cen tral the node
+is according to GDC. Since it captures the extended network neighborhood
+of a node, GDC is a highly sensitive measure of network topolo gy. Thus,
+in a PPI network, proteins with high GDCs represent potentia l candidates
+for therapeutic intervention, since targeting such protei ns with drugs would
+havemoresigniﬁcantimpactonthenetworkstructurethanta rgeting proteins
+that reside in sparse and non-complex network regions (Mile nkovi´ cet al.,
+2011). Indeed, GDC has been found to capture well disease and pathogen-
+interacting proteins and drug targets (Milenkovi´ c et al.,2011).
+Betweenness centrality (BETWC) measures the involvement of a node
+in the shortest paths in the network. Intuitively, nodes tha t occur in many
+shortestpathshavehighcentrality according toBETWC.BET WCofnode v,
+Cbetwc(v), is:Cbetwc(v) =/summationdisplay
+s/ne}ationslash=v/ne}ationslash=t∈Vσst(v)
+σst, whereVis the set of nodes
+in the network, σstis the number of shortest paths between nodes sandt,
+andσst(v)is the number of shortest paths between sandtthat go through
+v. In a PPI network, BETWC of a protein indicates the “likeliho od” of the
+protein to participate in pathways connecting all other pro teins (Kosch¨ utzki
+and Schreiber, 2008). Removal of a protein that is on critica l pathways
+between many other proteins could cause loss of communicati on between
+the proteins. Also, targeting such a node with a drug could ca use the drug
+effects tospreadfasttoallthenodes(Milenkovi´ c etal.,2011).Thisproperty
+has been used to identify gene-disease associations by enco ding each gene
+in the network based on the distribution of shortest path len gths to all genes
+associated with disease (Radivojac et al., 2008). Also, see Kitsak et al.
+(2010).
+Closeness centrality (CLOSEC) measures the “closeness” of a node to
+all other nodes in the network. Intuitively, nodes with smal l shortest path
+distances to all other nodes have high centrality according to CLOSEC.
+CLOSEC of node v,Cclosec(v), is:Cclosec(v) =1/summationtext
+u∈Vσ(u,v), where
+3FaisalandMilenkovi ´c
+σ(u,v)is the shortest path distance between nodes uandv. In a PPI
+network, CLOSEC of a protein indicates the “likelihood” of t he protein to
+reach or be reachable from all other proteins (Scardoni et al., 2009). And it
+has been a widely accepted assumption that proteins that are closer to each
+other are morelikely to perform thesame function (Sharan etal., 2007).
+Eccentricity centrality (ECC) is very related to CLOSEC, except that it
+measures the “closeness” of a node onlyto thefarthestnode in the network
+(Wuchty and Stadler, 2003). Intuitively, nodes with small s hortest path
+distances to the furthest node in the network have high centr ality according
+to ECC.ECC of node v,Cecc(v), is:Cecc(v) =1
+maxu∈V{σ(u,v)}.
+2.3.2 Prediction of aging-related genes For each measure, we
+computecentrality values foranodeineachofthe30age-spe ciﬁc networks.
+Then, we calculate Pearson or Spearman correlation between the 30 ages
+and the node’s 30 centrality values (Supplementary Section S1.7). We do
+this for all genes that are expressed in at least ﬁve ages in Lu et al.(2004)’s
+brain gene expression data (Section 2.1.1). If such a gene is unexpressed
+at a given age, we assign it a centrality value of zero at that a ge. Since
+results are consistent for both correlation measures, here we report results
+only for Pearson correlation. Results for Spearman correla tion are shown in
+the Supplement.
+We quantify the statistical signiﬁcance of the given correl ation value by
+measuring the probability (i.e., p-value) of observing by chance a better
+value (i.e., the same or higher value when the original value is positive, or
+the same or lower value when the original value is negative). We do this
+by randomly reshufﬂing the 30 node centrality values at the 3 0 ages and by
+computing the resulting “random correlation”. Werepeat th is 1,000times to
+get 1,000 random correlations. We compute the p-value as the percentage
+of the 1,000 runs in which the random correlation is better th an the original
+one. Wepredict a gene asaging-related if its p-value is below 0.01.
+Since we study multiple node centralities, each of which can predict
+the given gene as aging-related, we score our predictions so that the more
+centrality measures support a prediction and the higher the signiﬁcance of
+the change of its centrality values with age, the higher the s core and the
+morecredible the prediction. For details, see Supplementa ry Section S1.7.
+2.3.3 Validationof predicted aging-related genes
+Statistical signiﬁcance of our predictions. To test whether our approach
+of combining static network data with aging-related expres sion data into
+the dynamic network data actually gives meaningful predict ions, we study
+whether the number of aging-related genes that we predict fr om the actual
+data is statistically signiﬁcantly larger than the number o f aging-related
+genes that we predict from “randomized data”. By “randomize d data”,
+we mean that we randomize the expression data before integra ting it with
+the static network data (Supplementary Section S1.8). Then , we integrate
+the randomized expression data with the static PPI network, construct
+randomizedage-speciﬁc networksjustasinSection 2.1.3,a ndpredictaging-
+related genes from the randomized networks just as in Sectio n 2.3.2. We
+repeattheaboveprocedure multiple times,inordertoassig nap-valuetothe
+number of predictions that we make from the actual data (Supp lementary
+Section S1.8).
+Overlap between genes of different data sets. We measure the statistical
+signiﬁcance oftheoverlap ofgenes in onedatasetandgenes i n another data
+set by using the hypergeometric test, which computes probab ilityp(i.e.,p-
+value) of observing the same or larger overlap by chance as fo llows. Let E
+denote the set ofgenes that are present in StatNetExpressio n.|E|= 6,397.
+LetAdenote the subset of genes in Ethat are in any one of the two data
+sets. LetGdenote thesubset ofgenes in Ethat are in the other data set. Let
+Odenote the set of genes that are in the overlap between AandG. Then,p
+is:p= 1−|O|−1/summationdisplay
+i=0/parenleftbig|E|
+i/parenrightbig/parenleftbig|E|−|A|
+|G|−i/parenrightbig
+/parenleftbig|E|
+|G|/parenrightbig.Weusethe p-value threshold of 0.05.
+Gene Ontology (GO) enrichment. We study the enrichment of a data set
+in biological process GO terms (Ashburner et al., 2000). We use: 1) all4,913 GO terms that annotate (independent on the evidence co de) at least
+two genes from StatNetExpression and 2) 2,088 GO terms that a nnotate
+(withrespecttoanexperimental evidence codeonly)atleas ttwogenesfrom
+StatNetExpression. ForaGOterm g,wecompute thestatistical signiﬁcance
+ofitsenrichmentviatheabovehypergeometric testformula ,wherenow Eis
+theset ofgenes from StatNetExpression that areannotated b y any GO term,
+Ais the gene set in which we are measuring GO term enrichment, Gis the
+subset of genes from Ethat are annotated by GO term g, andOis the set
+of genes in the overlap between AandG. We use the p-value threshold of
+0.05.
+GO term overlap. We measure the statistical signiﬁcance of the overlap of
+GOtermsenriched inonedatasetandGOtermsenriched inanot her dataset
+via the above hypergeometric test formula, where now Eis the set of GO
+terms that annotate at least two genes from StatNetExpressi on,Ais the set
+of GO terms enriched in any one of the two data sets, Gis the set of GO
+terms enriched in the other data set, and Ois the set of GO terms that are in
+theoverlap between AandG.Weusethe p-value threshold of 0.05.
+Disease Ontology (DO) enrichment. Westudy the enrichment of a data set
+inall517DOtermsthat annotate atleasttwo genes fromStatN etExpression
+(Duetal., 2009) in the sameway as when westudy GOterm enrichments.
+DOtermoverlap. WestudytheoverlapofDOtermsfromdifferent datasets
+in the sameway as when westudy GO term overlaps.
+Literature validation. Weautomatically search for a gene in PubMed
+(http://www.pubmed.gov) and consider the gene to be valida ted in the
+context of aging if its name is mentioned (according to NCBI’ s E-utilities
+– http://www.ncbi.nlm.nih.gov/books/NBK25500/) with “a ge”, “aging”, or
+“ageing” in the title or abstract of at least one article. Als o, wemanually
+search for agene by reading relevant PubMed articles moreclosely .
+3 RESULTSANDDISCUSSIONS
+We study globaltopologies of the age-speciﬁc networks in Section
+3.1. We study localtopologies of proteins in each network and
+predict aging-related genes in Sections 3.2.1 and 3.2.2. We validate
+our predictions inSection3.2.3.
+3.1 Globalnetworktopologiesdo notchangewith age
+3.1.1 Global properties of age-speciﬁc networks are simila r
+Average clustering coefﬁcients, average diameters, and gr aphlet
+frequency distributions (Section 2.2.1) of the age-speciﬁ c networks
+do not signiﬁcantly change with age (Supplementary Fig. S1 a nd
+S2).
+3.1.2 Networks at different ages belong to the same graph fam ily
+We compare the ﬁt of the age-speciﬁc networks to six network
+models(Section2.2.2).Thebest-ﬁttingmodeldoes notchan ge with
+age (Supplementary Fig. S1 and S2). Note that our primary goa l
+is not to identify the best-ﬁtting model for dynamic PPI netw orks.
+Nonetheless, consistent to results for static PPI networks (Prˇ zulj
+et al., 2010; Kuchaiev et al.,2011; Ratmann et al., 2009), it is gene
+duplication models that ﬁtthe age-speciﬁc networks the bes t.
+3.1.3 Overlap of age-speciﬁc networks islarge The age-speciﬁc
+networks share on average 93% ofthe nodes and90% ofthe edges,
+depending on age, while every pair of the networks shares at least
+86% of the nodes and 79% of the edges (Supplementary Fig. S3).
+Hence, the network overlaps are quite large.
+3.2 Local topologiesofproteinsdo changewith age
+3.2.1 Prediction of aging-related genes Gene expression data
+alone revealed only 442 out of thousands of genes as aging-re lated
+(Luet al., 2004). Thus, while global network analysis failed to
+4Dynamicnetworksreveal keyplayersinaging
+(a)
+ (b)
+ (c)
+Fig.2.Thenumberofourpredicted aging-related genes. Panel (a)showsthenumberofpredictions foreach ofseven nodecentra lities individually (BETWC,
+CLOSEC, CLUSC, DEGC, ECC, GDC and KC) or by at least one of them (UNION). Panel (b)shows the number of genes predicted by exactly k
+node centralities ( k= 1,2,...,7). In the panels, blue and red bars show the number of genes tha t are positively and negatively correlated with age,
+respectively. Green bars denote the number of genes for whic h one centrality measure identiﬁes the given gene as positiv ely correlated with age, while
+another measure identiﬁes the same gene as negatively corre lated with age. Panel (c)shows the overlaps of our predictions with aging-related ge nes from
+BrainExpression2008Age “ground truth”data, foreach cent rality individually orforallcentralities combined. Inth epanel, blueandredbarsshowthenumber
+of predicted genes that are absent from and present in the “gr ound truth” data, respectively. The p-values for the overlaps are noted at the top of the bars. The
+results are consistent when we use Spearman correlation to p redict aging-related genes instead of Pearson correlation (Section 2.3.2 and Supplementary Fig.
+S4).Also, theresults are consistent when weuseBioGRID dat a as the static PPInetwork instead of HPRDdata (Section 2.1. 3and Supplementary Fig. S5).
+uncover anyaging-related information, itcould be that the dynamic
+network data encodes aging-related information only local ly and
+around only a subset of nodes. So, we use node centrality meas ures
+(Section 2.3.1) to quantify local positions of nodes in the a ge-
+speciﬁc networks and ﬁnd nodes whose centralities correlat e well
+withage, as such proteins could be key players inaging.
+We predict a gene as aging-related if its centrality values a re
+statistically signiﬁcantly correlated with age (Section 2 .3.2) for at
+least one centrality measure. This results in 515 (8.1%) pre dictions
+out of all 6,397 genes. Fig. 2(a) shows the number of aging-re lated
+predictions for each centrality individually and all centr alities
+combined.Nocentralitypredictsdrasticallymoregenesth anothers.
+Agene’scentralitycanbepositivelycorrelatedwithage(t hegene
+becomes more network-central with age) or it can be negative ly
+correlated with age (the gene becomes less central with age) . The
+majority of our predictions are negatively correlated with age (Fig.
+2).Thisﬁndingisencouraging, sinceithasalreadybeenarg uedthat
+aging is associated with failure of “hubs” – highly intercon nected
+andthus network-central proteins (Soltow et al.,2010).
+3.2.2 Relationships and potential redundancies of differe nt node
+centralities We predict a gene as aging-related if its centrality
+valuescorrelate wellwithagewithrespectto atleastone centrality.
+So, we study whether any genes are predicted by more than one o r
+even all of the centralities. We ﬁnd that almost half (43%) of the
+515aging-relatedpredictions aresupported bymultiplece ntralities,
+while the remaining predictions are supported bya single ce ntrality
+(Fig.2(b)).Asexpected,thenumber ofpredictionsdecreas esasthe
+number of centralities supporting the predictions increas es.
+We study the redundancy of the different centralities by
+computing, for each pair of centralities, the correlation b etween
+their centrality values over all nodes in the given network, and
+by averaging correlations over the 30 age-speciﬁc networks . We
+observe high correlations between some measures, such as DE GC,
+KC,andGDC,orCLOSECandECC(Fig.3(a)andSupplementary
+Section S2.1). Thus, some centralities appear to be redunda nt to
+others.However, when we study pairwise overlaps of aging-related
+predictions produced by the different centralities, the ov erlaps
+are not very large for any pair of centralities (Fig. 3 (b)). T his
+result, together with the result from Fig. 2 (b), which shows that
+the majority ( ∼57%) of the predictions are identiﬁed by a single
+centrality, suggests that the centralities are not redunda nt to each
+other. When we focus on our aging-related genes predicted by
+exactly one centrality measure, in most cases, these predic tions
+are not even marginally signiﬁcant with respect to other cen trality
+measures (Fig. 3(c) and Supplementary Fig. S6), indicating again
+that the different centralities are in general not redundan t to each
+other.Thus,wekeepall515predictions,independentonthe number
+of centralities supporting the given prediction. Hencefor th, we
+denote this set of 515 aging-related genes predicted via dyn amic
+network analysis as DyNetAge . We denote the complement of this
+set,i.e.,thesetofgenesthatarepresentinStatNetExpres sionbutnot
+inDyNetAge,as DyNetComplement .Clearly,DyNetComplementis
+thesetofgeneswhosecentralitiesdonotsigniﬁcantlycorr elatewith
+age, and as such, we donot predict them as aging-related.
+Next, we study the effect of the number of centralities
+supporting a prediction on the quality of the prediction. It is not
+necessarily the case that predictions supported by many cen tralities
+are more enriched in “ground truth” aging-related genes (se e
+below) compared to predictions supported by only few centra lities
+(Supplementary Fig. S7). Nonetheless, it isthe case that the
+more centralities support a prediction, the more signiﬁcan t the
+correlation of its centrality values with age (as indicated by lower
+p-values in Fig. 3(d)). Hence, to account for the number of
+centralities supporting a prediction, we rank the predicti on so that
+the more centralities support it and the more signiﬁcant the change
+of its centrality values with age, the more credible the pred iction
+(Section 2.3.2). (Supplementary Tables S1 and S2 contain th e
+ranked lists of all predictions.) We validate our scoring sc heme
+by demonstrating that our 10% highest-scoring predictions are
+statistically signiﬁcantly enriched in genes that are pres ent in more
+5FaisalandMilenkovi ´c
+than one “ground truth” data set ( p-value of 0.003), whereas this is
+not the case for the lower-scoringpredictions.
+(a)
+ (b)
+(c)
+ (d)
+Fig. 3.Relationships between different centralities (BETWC, CLO SEC,
+CLUSC, DEGC, ECC, GDC and KC): (a)Spearman correlation between
+each pair of centralities averaged over the 30 age-speciﬁc n etworks;
+(b)pairwise overlap of aging-related genes predicted by the di fferent
+centralities; (c)percentage of genes predicted as aging-related ( p-value
+≤0.01) by exactly one centrality (listed in a given row), whic h have a
+“marginal” p-value between 0.01 and 0.05 with respect to one of the six
+remaining centralities (listed in a given column), and (d)distributions of p-
+values of our predicted aging-related genes. Panel (c) can b e interpreted as
+follows. For example, many of the predictions identiﬁed onl y by CLOSEC
+(the second last row) are marginally signiﬁcant with respec t to DEGC,
+ECC, GDC, and KC (intensive color), while almost none of the p redictions
+identiﬁed only by BETWC (the last row) are marginally signiﬁ cant with
+respect to any other centrality (light color). Hence, the pr edictions made by
+CLOSEConly may bemore credible than the predictions made by BETWC
+only, as the former are marginally supported by additional c entralities, but
+the latter arenot.
+3.2.3 Validationof predicted aging-related genes
+Dynamic network analysis gives meaningful and statistical ly
+signiﬁcant aging-related predictions. The number of aging-
+related genes in DyNetAge is statistically signiﬁcantly la rger than
+the number of aging-related genes that we can predict from
+the “randomized” data ( Z-score= 7.42,p-value<10−10;
+Section2.3.3).
+Overlap of our predictions with “ground truth” aging-relat ed
+genes is statistically signiﬁcant. Human aging is hard to study
+experimentallyduetolonglifespanandethicalconstraint s.Instead,
+human aging-related “ground truth” knowledge has been predicted
+more or less computationally , by studying gene expression data
+or by transferring aging-related knowledge from model spec ies to
+human via sequence comparison. (We intentionally use quote s,
+as we are notdealing with true, experimentally obtained ground
+truth data.) Similarly, here, we aim to computationally pre dict
+new “ground truth” aging-related data from an additional da ta type– PPIs. (But by no means do we claim to identify allaging-
+related genes.) Hence, since “ground truth” data sets are pr edicted
+computationally, they could be noisy. Also, different “gro und
+truth” sets could be biased towards different data types fro m which
+the predictions have been made, be it expression, sequence, or
+PPI data. Since different data types could be capturing diff erent
+functional slices of the cell (Memiˇ sevi´ c et al., 2010; Przytycka
+and Kim, 2010), it might not be alarming if the intersections
+between the different “ground truth” sets are not very large .
+However,sinceallthesetsareaimingtocapturethesamebio logical
+phenomenon (aging), some overlap would be encouraging. Ide ally,
+we would like to see a statistically signiﬁcant overlap. How ever,
+the existence of some overlap would be encouraging even if th e
+overlap was not signiﬁcant, since: (1) the overlap could be l ow
+due to the noisiness of each of the “ground truth” sets, and (2 )
+statistically non-signiﬁcant results may be biologically important,
+whereasstatisticallysigniﬁcantresultsmaynotbe(Motul sky,1995;
+Milenkovi´ c et al.,2010a; Ho etal., 2010).
+We measure the overlap of DyNetAge with ﬁve “ground truth”
+data sets: BrainExpression2004Age, BrainExpression2008 Age,
+ADExpressionAge, HGPSExpressionAge, and SequenceAge
+(Section 2.1.4). Of the ﬁve, BrainExpression2004Age and
+BrainExpression2008Age are the most likely to be similar to
+DyNetAge (as all three are based on brain-related data, brain-
+relatedgene expression data, and brain aging-related gene
+expression data; Supplementary Section S2.2), followed by
+ADExpressionAge (as our predictions as well as this data are
+both based on brain-related data and brain-related gene expression
+data), followed by HGPSExpressionAge (as our predictions a s
+well as this data are both based on gene expression data),
+followed by SequenceAge (as our predictions and this data
+both capture aging-related information but from different data
+types) (Section 2.1.4). Therefore, a high overlap of DyNetA ge
+with BrainExpression2004Age or BrainExpression2008Age w ould
+validate our method. A highoverlap withADExpressionAge wo uld
+suggest that our method could capture not only brain aging-r elated
+genes but also brain aging-related diseasegenes. A high overlap
+with HGPSExpressionAge would suggest that our method could
+capture genes related to a tissue different from the brain ti ssue.
+A high overlap with SequenceAge would suggest that our metho d
+could capture genes identiﬁed from a different data type, na mely
+sequence data.
+As hypothesized, DyNetAge overlaps the most (as indicated
+by the lowest p-values) with BrainExpression2004Age and
+BrainExpression2008Age,followedbyADExpressionAge,HG PSExpressionAge,
+and SequenceAge, respectively (Supplementary Fig. S8 and
+Supplementary Table S3). The overlap is statistically sign iﬁcant
+for BrainExpression2004Age, BrainExpression2008Age, an d
+ADExpressionAge,marginallysigniﬁcantforHGPSExpressi onAge,
+and non-signiﬁcant for SequenceAge (Table 1). The (margina lly)
+signiﬁcant overlap between DyNetAge and four out of the
+ﬁve “ground truth” data sets is encouraging. Importantly, e ven
+though most of the overlaps are statistically signiﬁcant, 8 7%,
+31%, 74%, 87%, and 96% of our DyNetAge predictions
+are not in BrainExpression2004Age, BrainExpression2008A ge,
+ADExpressionAge, HGPSExpressionAge, and SequenceAge,
+respectively, and 19% of our predictions are not in anyof the
+ﬁve data sets (Supplementary Table S4). This conﬁrms that da ta
+6Dynamicnetworksreveal keyplayersinaging
+integrationcanreveal additional biological knowledge compared to
+studying individual data types.
+Some overlap between DyNetAge and SequenceAge is also
+encouraging, even though the overlap is non-signiﬁcant (as argued
+above). Further, the overlap is stronger between DyNetAge and
+the other four “ground truth” data sets (BrainExpression20 04Age,
+BrainExpression2008Age,ADExpressionAge,andHGPSExpre ssionAge)
+than between SequenceAge and these four “ground truth” data
+sets. In particular, whereas DyNetAge overlaps signiﬁcant ly with
+three of the four data sets and marginally signiﬁcantly with
+respect to the fourth data set (see above), SequenceAge over laps
+signiﬁcantlywithjustoneofthefourdatasets(ADExpressi onAge),
+almost marginally signiﬁcantly with respect to two of the fo ur
+data sets (HGPSExpressionAge and BrainExpression2004Age ),
+and non-signiﬁcantly with respect to the remaining data set
+(BrainExpression2008Age) (Supplementary Table S3). Ther efore,
+our DyNetAge appears to be more relevant than SequenceAge wi th
+respect to the other “ground truth” data sets. The non-signi ﬁcant
+overlaps could be due to potential complementarity of the di fferent
+types of biological data, noisiness of the “ground truth” da ta,
+or some of the “ground truth” data sets being biased towards
+brain-relatedgenes.
+Recall that the complement of each “ground truth” data set
+(including DyNetAge) is the set of genes not predicted as agi ng-
+related by the given study (Section 2.1.5). Hence, it would b e
+encouraging to see: 1)low (non-signiﬁcant) overlaps between
+DyNetAge and complements of the “ground truth” data sets, 2)
+low (non-signiﬁcant) overlaps between DyNetComplement an d
+“ground truth” sets, and 3)high (signiﬁcant) overlaps between
+DyNetComplement and complements of “ground truth” sets.
+Indeed, this is what we typically observe in all three cases
+(Supplementary TableS3).
+Table 1. Overlap and its statistical signiﬁcance (i.e. p-value) between
+aging-related genes (ARG), GO terms (GO), and DO terms (DO)
+in DyNetAge and those in the ﬁve “ground truth” aging-relate d
+data sets (BrainExpression2004Age (BE4A), BrainExpressi on2008Age
+(BE8A), ADExpressionAge (ADEA), HGPSExpressionAge (HEA) , and
+SequenceAge (SA)).
+BE4A BE8A ADEA HEASA
+ARGOverlap 20% 69% 26%13%9%
+p-value5.5E-13 <1E-154.3E-7 0.060.39
+GOOverlap 20% 21% 12% 6%17%
+p-value1.2E-10 2.5E-14 2.8E-6 0.280.33
+DOOverlap 25% 25% 0%0%25%
+p-value 0.03 7.2E-3 N/AN/A0.70
+GO enrichment. When analyzing all gene-GO term associations,
+146 GO terms are signiﬁcantly enriched in DyNetAge ( p-values
+between 0.047and1.5×10−5), while only 14 GO terms are
+enriched inDyNetComplement ( p-values between 0.043and5.1×
+10−5) (Section 2.3.3). Importantly, there is no overlap between
+the GO terms from DyNetAge and those from DyNetComplement.
+Hence, our aging-related predictions group by functions th at are
+different than functions of genes that we do not predict as ag ing-
+related.
+Whenwefocuson aging-related GOtermsonly,itisencouraging
+that DyNetAge contains genes annotated with aging,cell aging ,
+andcellular senescence GO terms, as well as that DyNetAge’sperformance is typically comparable to that of the “ground t ruth”
+data, especially when using only gene-GO term associations
+obtained by experimental evidence codes (Supplementary Section
+S2.3).
+GO overlap. Our predictions are further validated by: 1)high
+overlaps between GO terms from DyNetAge and GO terms
+from the “ground truth” data sets, 2)low overlaps between
+GO terms from DyNetAge and GO terms from complements
+of the “ground truth” sets, 3)low overlaps between GO
+terms from DyNetComplement and GO terms from the “ground
+truth” sets, and 4)high overlaps between GO terms from
+DyNetComplement and GO terms from complements of the
+“ground truth” sets (Table 1 and Supplementary Table S5).
+For example, when considering gene-GO term associations of
+any evidence code, GO terms from DyNetAge signiﬁcantly
+overlap with GO terms from three of the ﬁve “ground truth”
+datasets(BrainExpression2004Age, BrainExpression2008 Age, and
+ADExpressionAge), and some (though non-signiﬁcant) overl ap
+with GO terms from HGPSExpressionAge and SequenceAge is
+also encouraging (Table 1). Equivalent results when consid ering
+gene-GO term associations of experimental evidence codes only
+are shown in Supplementary Table S6. Importantly, in this ca se,
+SequenceAge fails to signiﬁcantly overlap with any other “g round
+truth” set, whereas DyNetAge still signiﬁcantly overlaps w ith
+BrainExpression2008Age. For details, see Supplementary S ection
+S2.4.
+DO enrichment. Eight diseases are signiﬁcantly enriched in
+DyNetAge ( p-values between 0.041and6×10−3), while 14
+diseases are enriched in DyNetComplement ( p-values between
+0.049and2.9×10−3) (Section 2.3.3). Importantly, there is
+no overlap between diseases from DyNetAge and those from
+DyNetComplement.
+The eight diseases in DyNetAge are: brain disease, brain
+tumor, bipolar disorder, connective tissue disease, renal tubular
+acidosis, leukodystrophy, neuroblastoma, and demyelinat ing
+disease. Brain disease andrenal tubular acidosis are enriched
+in SequenceAge as well, brain disease andbipolar disorder are
+enriched in BrainExpression2004Age as well, and brain tumor
+andneuroblastoma are enriched in BrainExpression2008Age as
+well. All of these overlaps are encouraging. (We quantify th e
+signiﬁcance of the overlaps in the following section.) In pa rticular,
+renal tubular acidosis , whose aging-related evidence is supported
+by SequenceAge, is kidney-related, whereas DyNetAge has be en
+predicted from the brain-related data. Capturing this non- brain-
+related disease in DyNetAge is encouraging, especially bec ause
+BrainExpression2004Age and BrainExpression2008Age fail to do
+so. Further aging-related evidence for these ﬁve diseases c an
+be found in the following references denoted by their PubMed
+IDs (PMIDs): 11256685, 8040891, 21197651, and 21031036.
+Supplementary Table S7 maps PMIDs to full paper references.
+Importantly, even three diseases from DyNetAge that are mis sed
+byall“ground truth” sets can allbe linked toaging in the literature
+as well (Supplementary SectionS2.5).
+DO overlap. We further validate our predictions by demonstrating:
+1)high overlaps between DO terms from DyNetAge and DO
+terms from the “ground truth” data sets, 2)low overlaps between
+DO terms from DyNetAge and DO terms from complements of
+the “ground truth” sets, 3)low overlaps between DO terms from
+7FaisalandMilenkovi ´c
+DyNetComplement and DO terms from the “groung truth” sets,
+and4)high overlaps between DO terms from DyNetComplement
+and DO terms from complements of the “ground truth” sets
+(SupplementaryTableS8).Forexample,DOtermsfromDyNetA ge
+statistically signiﬁcantly overlap with DO terms from two o f
+the ﬁve “ground truth” data sets (BrainExpression2004Age a nd
+BrainExpression2008Age) (Table 1). It is not alarming that
+DyNetAge does not signiﬁcantly overlap with ADExpressionA ge,
+HGPSExpressionAge, or SequenceAge, since none of the three
+overlaps signiﬁcantly withmore than one of the ﬁve “ground t ruth”
+data sets (Supplementary Table S8). Hence, DyNetAge is bett er
+supported by the “ground truth” data than any of these three d ata
+sets.For details,see Supplementary Sections S2.6andS2.7 .
+Literature validation. Automatic literature validation (Section
+2.3.3) is prone to errors: we “validate” inthis manner equal portion
+ofboththe“groundtruth”aging-relatedsets andtheircomplements.
+Therefore, we aim to validate our predictions manually (Sec tion
+2.3.3). Since manual validation is laborious, we focus on ou r
+10% highest-scoring predictions (Section 2.3.2). Of these , we
+study predictions that are absent from all “ground truth” se ts,
+namely DVL1, ACACA, HOMER3, GJB1, FKBP8, and H1F0.
+We successfully validate allof these genes. DVL1 has been
+linked to Alzheimer’s disease (PMID: 11803455), which has b een
+linked to aging itself (PMID: 21197651, 21031036). Express ion
+level of ACACA in rat changes with age (PMID: 11044254), and
+so its human ortholog is an aging-related candidate. HOMER-
+1A, a member of the same family as HOMER3, affects the
+level of cognitive performance during aging (PMID: 2305482 6).
+The expression of GJB1 is down-regulated with aging (PMID:
+22337502). DrugtargetingofFKBP38mightsuccessfullyint ervene
+with FKBP38-dependent processes such as programmed cell de ath
+in cancer or neurodegenerative diseases (PMID: 21514222), which
+have beenlinkedtoaging(PMID:21197651, 21031036). H1F0h as
+beenlinkedtoage-relatedmaculardegeneration(PMID:165 18403),
+and its rat ortholog causes aging-related alterations in li ver (PMID:
+8114518).
+4 CONCLUSION
+Together, our results conﬁrm that dynamic PPI network analy sis
+via integration of static PPI network data with aging-relat ed gene
+expression data canreveal meaningful keyplayers inaging.
+Funding: NSFEAGERCCF-1243295 grant.
+REFERENCES
+Aragues, R., Sander, C. and Oliva, B. (2008) Predicting canc er involvement of genes
+from heterogeneousdata. BMCBioinformatics ,9,172.
+Ashburner, M. et al.(2000) Gene ontology: tool for the uniﬁcation of biology. Nature
+Genetics,25,25–29.
+Barab´ asi, A. L. and Oltvai, Z. (2004) Network biology: Unde rstanding the cell’s
+functional organization. NatureReviews ,5,101–113.
+Berchtold, N. C. et al.(2008) Gene expression changes in the course of normal brain
+agingare sexuallydimorphic. PNAS,105,15605–10.
+Breitkreutz, B. J. et al.(2008) The BioGRID Interaction Database: 2008 update.
+NucleicAcidsResearch ,36,D637–D640.
+de Magalh˜ aes, J. (2009) Aging research in the post-genome e ra: New technologies
+for an old problem. In Foyer, C., Faragher, R. and Thornalley , P. (eds.), Redox
+MetabolismandLongevityRelationshipsinAnimalsandPlan ts,pp.99–115.Taylor
+andFrancis,NewYork.
+de Magalh˜ aes, J. et al.(2009) The Human Ageing Genomic Resources: online
+databasesandtools for biogerontologists. Aging Cell ,8, 65–72.
+Du, P.et al.(2009) From diseaseontology to disease-ontology lite: sta tistical methods
+to adapt a general-purpose ontology for the test of gene-ont ology associations.Bioinformatics ,25,i63–68.
+Dyer,M.,Murali,T.andSobral,B.(2008)Thelandscapeofhu manproteinsinteracting
+with virusesand other pathogens. PLoSPathog ,4,e32+.
+Ferrarini,L.,Bertelli,L.,Feala,J.,McCulloch,A.D.and Paternostro,G.(2005)Amore
+efﬁcient search strategy for aging genes based on connectiv ity.Bioinformatics ,21,
+338–348.
+Fortney, K., Kotlyar, M. and Jurisica, I. (2010) Inferring t he functions of longevity
+genes with modular subnetwork biomarkers of Caenorhabditi s elegans aging.
+Genome Biology ,11,R13+.
+Goh,K.etal.(2007) Thehuman diseasenetwork. PNAS,104,8685–8690.
+Ho, H.et al.(2010) Protein interaction network uncovers melanogenesi s regulatory
+network components within functional genomics datasets. BMC Systems Biology ,
+4.
+Janji´ c,V.andPrˇ zulj,N.(2012)Thecorediseasome. MolecularbioSystems ,8,2614–25.
+Jeong,H.,Mason,S.P.,Barab´ asi,A.L.andOltvai,Z.N.(20 01)Lethalityandcentrality
+in protein networks. Nature,411,41–2.
+Jonsson, P. F. and Bates, P. A. (2006) Lobal topological feat ures of cancer proteins in
+the human interactome. Bioinformatics ,22,2291–2297.
+Kitsak, M. et al.(2010) Identiﬁcation of inﬂuential spreaders in complex ne tworks.
+NaturePhysics ,6,888–893.
+Kosch¨ utzki, D. and Schreiber, F. (2008) Centrality analys is methods for biological
+networks and their application to gene regulatory networks .Gene Regulation and
+SystemsBiology ,2,193–201.
+Kriete,A.,Lechner,M.,Clearﬁeld,D.andBohmann,D.(2011 )Computationalsystems
+biology of aging. Wiley InterdiscipRevSystBiol Med ,3,414–28.
+Kuchaiev, O., Stevanovi´ c, A., Hayes, W. and Prˇ zulj, N. (20 11) GraphCrunch 2:
+Softwaretoolfornetworkmodeling,alignmentandclusteri ng.BMCBioinformatics ,
+12.
+Liu, G.-H. et al.(2011) Recapitulation of premature ageing with ipscs from
+hutchinsongilford progeria syndrome. Nature,472, 221–5.
+Lu, T.et al.(2004) Gene regulation and DNA damage in the ageing human bra in.
+Nature,429,883–891.
+Memisevi´ c, V., Milenkovi´ c, T. and Prˇ zulj, N. (2010) An in tegrative approach to
+modeling biological networks. Journalof IntegrativeBioinformatics ,7,120.
+Memiˇ sevi´ c, V., Milenkovi´ c, T. and Prˇ zulj, N. (2010) Com plementarity of network
+and sequence information in homologous proteins. Journal of Integrative
+Bioinformatics ,7,135.
+Milenkovi´ c, T., Filippis, I., Lappe, M. and Prˇ zulj, N. (20 09) Optimized null model for
+protein structurenetworks. PLoS ONE ,4,e5967.
+Milenkovi´ c, T., Lai, J. and Prˇ zulj, N. (2008) GraphCrunch : a tool for large network
+analyses. BMCBioinformatics ,9.
+Milenkovi´ c, T., Memisevi´ c, V., Ganesan, A. K. and Prˇ zulj , N. (2010a) Systems-level
+cancer gene identiﬁcation from protein interaction networ k topology applied to
+melanogenesis-related interaction networks. Journalof theRoyalSociety Interface ,
+7, 423–437.
+Milenkovi´ c,T.,Memiˇ sevi´ c,V.,Bonato,A.andPrˇ zulj,N .(2011)Dominatingbiological
+networks. PLoS ONE ,6,e23016.
+Milenkovi´ c, T., Ng, W., Hayes, W. and Prˇ zulj, N. (2010b) Op timal network alignment
+with graphlet degree vectors. CancerInformatics ,9,121–137.
+Milenkovi´ c, T. and Prˇ zulj, N. (2008) Uncovering biologic al network function via
+graphlet degree signatures. CancerInformatics ,6,257–273.
+Motulsky,H.(1995) Intuitive Biostatistics . Oxford UniversityPress,1edition.
+Pastor-Satorras, R., Smith, E. and Sole, R. V. (2003) Evolvi ng protein interaction
+networks through geneduplication. Journalof TheoreticalBiology ,222,199–210.
+Peri, S.et al.(2004) Human protein reference database as a discovery reso urce for
+proteomics. Nucleic Acids Res ,32 Database issue , D497–501. 1362-4962Journal
+Article.
+Promislow, D. (2004) Protein networks, pleiotropy and the e volution of senescence.
+Proceedingsof theRoyalSociety B:Biological Sciences ,1545, 1225–1234.
+Prˇ zulj, N. (2007) Biological network comparison using gra phlet degree distribution.
+Bioinformatics ,23,e177–e183.
+Prˇ zulj, N. (2011) Protein-protein interactions: Making s ense of networks via graph-
+theoretic modeling. Bioessays ,33,115–123.
+Prˇ zulj, N.,Kuchaiev, O.,Stevanovi´ c,A. and Hayes,W.(20 10) Geometric evolutionary
+dynamics of protein interaction networks. Paciﬁc SymposiumonBiocomputing ,pp.
+178–89.
+Przytycka, T.and Kim, Y. (2010) Network integration meets n etwork dynamics. BMC
+Biology,8,48+.
+Radivojac,P. etal.(2008)Anintegratedapproachtoinferringgene-diseaseas sociations
+in humans. Proteins,72,1030–1037.
+8Dynamicnetworksreveal keyplayersinaging
+Ratmann, O., Wiuf, C. and Pinney, J. W. (2009) From evidence t o inference: probing
+the evolutionof protein interaction networks. HFSPJournal ,3, 290–306.
+Reja, R. et al.(2009) MitoInteractome: mitochondrial protein interacto me database,
+and itsapplication in ’aging network’ analysis. BMCgenomics ,10 Suppl 3 ,S20+.
+Scardoni, G., Petterlini, M. and Laudanna, C. (2009) Analyz ing biological network
+parameters with centiscape. Bioinformatics ,25,2857–2859.
+Sharan, R. and Ideker, T. (2008) Protein networks in disease .Genome Research ,18,
+644–652.
+Sharan, R., Ulitsky, I. and Shamir, R. (2007) Network-based prediction of protein
+function. Molecular SystemsBiology ,3,1–13.
+S˝ oti, C. and Csermely, P. (2007) Aging cellular networks: C haperones as major
+participants. ExperimentalGerontology ,42,113–119.
+Simpson, J. E. et al.(2011) Microarray analysis of the astrocyte transcriptome in the
+agingbrain:relationshiptoalzheimer’spathologyandapo egenotype. Neurobiologyof Aging,32,1795–807.
+Soltow, Q.,Jones,D.andPromislow, D.(2010) ANetwork Pers pectiveonMetabolism
+and Aging. Integrative andcomparative biology ,50, 844–854.
+Vanunu, O., Magger, O., Ruppin, E., Shlomi, T. and Sharan, R. (2010) Associating
+genes and protein complexes with disease via network propag ation.PLoS
+Computational Biology ,6,e1000641.
+Wieser, D., Papatheodorou, I., Ziehm, M. and Thornton, J. (2 011) Computational
+biology for ageing. Philosophical Transactions of the Royal Society B: Biologi cal
+Sciences,366, 51–63.
+Wuchty, S. and Stadler, P. F. (2003) Centers of complex netwo rks.Journal of
+Theoretical Biology ,223,45–53.
+9

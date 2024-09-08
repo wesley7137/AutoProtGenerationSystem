@@ -1,0 +1,663 @@
+Title: High-throughput design of cultured tissue moulds using a biophysical
+  model
+Abstract:   The technique presented here identifies tethered mould designs, optimised for
+growing cultured tissue with very highly-aligned cells. It is based on a
+microscopic biophysical model for polarised cellular hydrogels. There is an
+unmet need for tools to assist mould and scaffold designs for the growth of
+cultured tissues with bespoke cell organisations, that can be used in
+applications such as regenerative medicine, drug screening and cultured meat.
+High-throughput biophysical calculations were made for a wide variety of
+computer-generated moulds, with cell-matrix interactions and tissue-scale
+forces simulated using a contractile-network dipole-orientation model.
+Elongated moulds with central broadening and one of the following tethering
+strategies are found to lead to highly-aligned cells: (1) tethers placed within
+the bilateral protrusions resulting from an indentation on the short edge, to
+guide alignment (2) tethers placed within a single vertex to shrink the
+available space for misalignment. As such, proof-of-concept has been shown for
+mould and tethered scaffold design based on a recently developed biophysical
+model. The approach is applicable to a broad range of cell types that align in
+tissues and is extensible for 3D scaffolds.
+
+Full Text: High-throughput design of cultured tissue moulds using a biophysical model
+James P. Hague, Allison E. Andrews, and Hugh Dickinson
+School of Physical Sciences, The Open University, Milton Keynes, MK7 6AA
+(Dated: June 26, 2023)
+The technique presented here identifies tethered mould designs, optimised for growing cultured
+tissue with very highly-aligned cells. It is based on a microscopic biophysical model for polarised
+cellular hydrogels. There is an unmet need for tools to assist mould and scaffold designs for the
+growth of cultured tissues with bespoke cell organisations, that can be used in applications such as
+regenerative medicine, drug screening and cultured meat. High-throughput biophysical calculations
+were made for a wide variety of computer-generated moulds, with cell-matrix interactions and tissue-
+scale forces simulated using a contractile-network dipole-orientation model. Elongated moulds with
+central broadening and one of the following tethering strategies are found to lead to highly-aligned
+cells: (1) tethers placed within the bilateral protrusions resulting from an indentation on the short
+edge, to guide alignment (2) tethers placed within a single vertex to shrink the available space for
+misalignment. As such, proof-of-concept has been shown for mould and tethered scaffold design
+based on a recently developed biophysical model. The approach is applicable to a broad range of
+cell types that align in tissues and is extensible for 3D scaffolds.
+Keywords: Biophysical simulation, cell-matrix interaction, self-organisation of cells, cultured tissue, tethered
+moulds and scaffolds, high-throughput design
+I. INTRODUCTION
+It is both difficult and time consuming to design
+moulds and scaffolds to make artificial tissue with re-
+alistic characteristics, and new tools to speed up this
+design process are needed. Cultured tissues mimic the
+3D structures in real tissues and have applications as
+regenerative medicine [1], pharmacological assays [2, 3],
+cultured meats [4], and for the study of fundamental bi-
+ology. Several growth strategies for 3D engineered tissue
+are available [1]. Tethered, cell-laden hydrogels can be a
+convenient way to make such tissues and have potential
+for applications in high-throughput screening (e.g. mus-
+cle [5, 6]), drug testing (e.g. tendons [7]) and growing
+small volumes of tissue for regenerative medicine (e.g.
+neural tissue [8] and cornea [9]).
+Depending on the application, there may be several
+different objectives for a mould or scaffold design. It
+may be desired to maximise the overall alignment of the
+tissue and minimise the tension in the sample (as tension
+can cause challenges such as breakage if it is necessary
+to remove the hydrogel from the mould). When growing
+highly aligned or polarised tissues using tethering, there
+is often a misaligned region shaped like a Greek ∆ close
+to the tethers (see e.g. Ref. [10]). Depending on the
+application, minimising the size of this ∆-region can be
+important. There may also be constraints on size and
+shape of the mould related to materials or growth media.
+This can make the design process challenging. In this
+paper, we carry out a proof-of-concept study to show
+how the use of biophysical simulations can help to guide
+design considerations.
+In this paper, we use biophysical simulations of cell-
+matrix interactions as a way to test large numbers of
+mould designs in parallel and receive immediate infor-
+mation regarding cell organisation, tension, tissue den-
+sity and other properties [11, 12]. The extracellularmatrix (ECM) provides structure to tissue and is im-
+portant for tissue development, maintenance and re-
+pair [13]. The biophysical contractile-network-dipole-
+orientation (CONDOR) model used here is a microscopic
+approach that simulates cell-matrix interactions in tis-
+sues (a key feature of cell behaviour in tissues [13] that
+leads to self-organisation). Using this method, the self-
+organisation of cells in tissue sizes of up to a few mm can
+be simulated relatively quickly. When combined with
+high-performance computing, hundreds of mould designs
+can be tested and analysed automatically within a few
+days. This allows for the pre-screening of designs before
+the lengthy process of growth and microscopy in the lab.
+CONDOR has been shown to accurately predict how cell-
+matrix interactions drive shaping and self-organisation of
+tethered cellular hydrogels of glial cells [11], and similar
+self-organisation is found in hydrogels of skeletal muscle
+[6], tendons [7], fibroblasts [10] and corneal tissue [9].
+The goal of this paper is to show proof-of-concept for
+the use of the CONDOR approach to identify the best
+mould shapes and arrangements of tethers for cultured
+tissue growth with specific characteristics (such as high
+levels of cellular alignment and low tension). In Section
+II, we introduce methods for the automated design of
+moulds and tethers for tissue growth and briefly review
+the CONDOR model. In Section III we identify moulds
+for growing cultured tissues with very high levels of cel-
+lular alignment. A discussion is found in Section IV.
+Conclusions and summary can be found in Section V.
+II. METHODOLOGY
+A. Mould generation
+We have developed a procedure to automatically gen-
+erate plausible tethered mould designs for highly alignedarXiv:2306.13435v1  [physics.bio-ph]  23 Jun 20232
+tissues [12]. In this paper, we use a subset of these
+moulds. We begin by randomly generating a set of 3
+to 6 points on a 2D canvas with xandycoordinates in
+the range [0 ,1]. These points are then used to define a
+simple polygon or convex hull. We reject any shapes with
+a total area of less than half the canvas area. We generate
+3 circular tethers at random positions within this poly-
+gon, each with a radius between 0 .02 and 0 .065. A single
+random position within this polygon is set as the origin
+for axes of symmetry. A shape mirrored along both axes
+is produced by firstly duplicating the initial polygon and
+mirroring along one axis, then duplicating both the ini-
+tial and new polygon and mirroring on the perpendicular
+axis. These are combined into a single polygon that is
+symmetric on both xandyaxes. Tethers are duplicated
+and mirrored in the same fashion.
+After duplication, tethers are pruned. This modifies
+the distribution and reduces the total number of tethers
+present within the final mould. Several types of exclusion
+area for tethers are defined: (a) For 45% of cases, a cir-
+cular exclusion area is placed in the centre of the mould
+with a diameter that is selected randomly to be between
+0.2 and 0.8 times the maximum mould width. (b) For
+45% of cases, exclusion areas are defined as bars centred
+on one or both of the axes of symmetry with width be-
+tween 0.1 and 0.4 of the maximum mould width. (c)
+For 5% of moulds we use a variation of the bar removal
+regime in which the perpendicular bars are rotated about
+the symmetry origin by a random angle; the final regime
+has the potential of producing moulds with rotationally
+symmetric tether arrangements rather than the mirror
+symmetry of the mould. (d) For 5% of moulds we omit
+tether removal. Examples of the exclusion area defined
+in removal regimes (a), (b) and (c) are shown in Figure 1.
+If, after this process, any mould has less than 4 tethers
+remaining, it is discarded.
+The Python Shapely package (version 2.0.1) is used to
+refine the design [14]. The Shapely function ‘simplify’ is
+applied to the object with tolerance 0.05 to remove very
+intricate vertices with higher resolution than the simula-
+tions, with the caveat of minor deviations from symmetry
+occurring for some generated moulds; this is due to the
+function not always selecting corresponding mirrored ver-
+tices for removal and the biophysical simulations reflect
+this deviation.
+We use the ‘buffer’ method from Shapely to create
+curved edges of both concave and convex type in the
+mould design. Applying a negative buffer value followed
+by a positive value (i.e. an antibuffer followed by a buffer)
+creates a convex curved structure where outer corners ex-
+ist. Likewise the opposite process with a positive buffer
+value followed by a negative value generates a concave
+structure with inner corners. Both of these processes can
+be applied independently without affecting the structures
+already generated by the other. Our mould generation
+has a 25% probability of applying the convex rounding,
+and separately a 75% probability of applying concave
+rounding regardless of whether the convex rounding is ap-plied; this subsequently results in approximately 18 .75%
+of cases having both types of rounding applied, as well
+as another 18 .75% having neither. Examples of moulds
+generated in this way can be seen throughout the paper.
+B. CONDOR simulation
+We simulate the self-organisation of tissues grown
+within these mould shapes using the contractile net-
+work dipole orientation (CONDOR) model [11], which
+we briefly review here. The model comprises a contractile
+network of bonds following Hooke’s law, with cells sitting
+at the end of bonds. Cell-matrix interactions are incor-
+porated by modifying each bond’s equilibrium length ac-
+cording to the relative bond-to-cell orientation. The form
+of the model is,
+E=X
+i<jκ0¯κij
+2 
+|lij| −l′
+ij2(1)
+where the adjustment to the bond length due to cell-
+matrix interactions is,
+l′
+ij=l0
+1−∆CM
+2
+2− |ˆlij·si|2− |ˆlij·sj|2
+.(2)
+Here, Erepresents the total energy of the system of
+cells and force dipoles. ∆ CM(= 0.3) represents the cell-
+matrix interaction strength (note that the model param-
+eter ∆ CMshould not be confused with the ∆ region). l0
+is the equilibrium distance of the bonds between cells in
+the absence of cell-matrix interactions. We nominally set
+l0= 40µm, although we note the model is scale indepen-
+dent and results are given in terms of dimensionless quan-
+tities. lijis the displacement between cells iandj. The
+unitary vector si≡(sx, sy, sz) represents the orientation
+of cell i.κ0(= 1) is the nearest-neighbour spring con-
+stant, and only sets the energy scale (i.e. results are in-
+dependent of κ0). We run simulations with cells arranged
+on a face-centre-cubic (FCC) lattice to ensure shear mod-
+ulus in the network. To prevent the whole lattice from
+folding about a plane, we include more distant bonds in
+the contractile network so that folds cost a high energy
+due to compression in the longer range bonds. The di-
+mensionless spring constant, ¯ κij, has the specific values
+¯κNN= 1, ¯ κNNN = 0.4, ¯κNNNN = 0.2 and ¯ κNNNNN = 0.2
+where NNN, NNNN and NNNNN represent next-nearest
+through next-next-next nearest neighbours respectively.
+The mould is scaled so its area is exactly 40% of the to-
+tal simulation area of 62 .5l0×62.5l0and is given a depth,
+4l0. The lowest energy state of this model is found using
+simulated annealing [11]. Change in position or orien-
+tation of a single cell up to a maximum distance or dif-
+ference in angle is attempted with equal probability on
+each iteration. The initial temperature of the anneal is
+fixed at Tinit/κ0l2
+0= 0.0625, a fixed number of iterations
+is used ( Ncells×106, where Ncellsis the total number of
+cells in the simulation) and the ratio between initial and3
+FIG. 1. Examples of the different types of exclusion areas used for tether removal, including circular removal (a), symmetric
+bar removal (b), and rotated bar removal (d).
+final anneal temperatures Tinit/Tfinal= 107(note that
+the anneal temperature is defined for simulated anneal-
+ing only and is not the temperature of the tissue). For the
+mould sizes selected, Ncells≈10000. A penalty of 109is
+applied to the energy for each cell that is situated outside
+the mould or inside a tether. The CONDOR simulation
+of each individual tethered mould in this set takes ap-
+proximately 24-36 core hours. We run the simulations in
+parallel on a large multi-core machine allowing for rapid
+throughput. Further details can be found in Ref. [11].
+After the anneal is complete, we determine physical
+properties of the simulated tissue within the moulds. Cell
+orientation is read directly from the model. Average cell
+orientation in the x-direction is calculated as,
+s2
+x,av=1
+NcellsX
+is2
+x (3)
+with similar measures in the yandzdirections. Two
+measures of the tension are determined. The total of
+the magnitude of the tension each bond connected to an
+individual cell i:
+τi=X
+j|Tij| (4)
+and the average tension per bond
+|T|av=1
+NbondsX
+i<j|Tij| (5)
+where
+Tij=κ0¯κij 
+|lij| −l′
+ij
+. (6)
+andNbonds is the total number of bonds.III. RESULTS
+After simulation of the self-organisation of cells within
+moulds, results were ranked according to their total align-
+ment, showing that alignments can exceed 80% of the
+maximum possible alignment, and that the best aligned
+moulds have low tension. Specifically, we rank accord-
+ing to the largest s2
+x,av. In the event that s2
+y,avis larger
+than s2
+x,av(which typically happens if the mould is elon-
+gated on the yinstead of the xdirection) the mould (and
+its contents) is rotated by 90 degrees to facilitate com-
+parison. Fig. 2(a) shows average alignments by rank
+order. Tension for each mould is shown as a scatter
+and the average tension and its standard deviation for
+bins of 50 closely ranked moulds is displayed with error
+bars to show the trend. The largest alignments in the
+moulds considered exceed s2
+x,av∼0.8 and the lowest are
+around s2
+x,av∼0.4 (note that for random alignments in
+3D,sx,av= 1/3). Moulds containing simulated tissue
+with the highest alignments have low tension. Moulds
+with high tension tend to have poor alignment. Overall,
+tension and alignment do not show a strong correlation.
+The trend is that the maximum possible average tension
+decreases with alignment. We note that it is possible to
+find poorly aligned moulds with low tension. There are
+no highly aligned moulds with high tension.
+Tension is not a strong predictor of alignment, as
+shown by ranking by average tension (Fig. 2(b)). Align-
+ment for each mould is also shown as a scatter for com-
+parison. The average and standard deviations of ten-
+sion are shown as errorbars for bins of 50 closely ranked
+moulds. Again, there is no overall correlation between
+tension and alignment. The moulds with the highest4
+ 0 0.2 0.4 0.6 0.8 1
+ 0 50 100  150  200  250  300  350  400  450  500 0 0.01 0.02 0.03 0.04 0.05 (a)
+sx,av2
+|T|av/κ0l0
+ranksx,av2
+|T|av/κ0l0
+〈|T|av/κ0l0〉
+ 0 0.2 0.4 0.6 0.8 1
+ 0 50 100  150  200  250  300  350  400  450  500 0 0.01 0.02 0.03 0.04 0.05 (b)
+sx,av2
+|T|av/κ0l0
+ranksx2
+|T|av/κ0l0
+〈sx2〉
+FIG. 2. (a) Ranked alignments show that moulds contain-
+ing tissue with the highest alignments have low tension and
+a maximum average alignment s2
+x,av∼0.8. Moulds with high
+tension tend to have poor alignment. Ranked alignments are
+shown as blue points. The scatter of tension for each mould
+is also shown in light grey, with the mean and standard de-
+viation calculated from blocks of 50 moulds to highlight the
+trend in tension with alignment rank (black line with error
+bars). (b) Tensions sorted by rank order (red points). The
+scatter of alignment for each case is also shown in light gray.
+The moulds with the highest alignments tend to be associ-
+ated with low tensions, but it is also possible for low tension
+moulds to have poor alignment. Moulds with the highest ten-
+sions have poor alignment.
+alignments are associated with low tensions, but it is
+also possible for low tension moulds to have poor align-
+ment. Moulds with the highest tensions tend to have
+poor alignment. The maximum possible alignment tends
+to descrease as tension increases. We note that the corre-
+lation between maximum possible alignment and tension
+is weaker than the correlation between maximum pos-
+sible tension and alignment. Since the goal here is to
+find highly aligned moulds with low tension then rank-
+ing according to alignment is sufficient to ensure that the
+simulated tissue is under low tension.
+Figure 3 shows the best 9 moulds with regard to orien-
+tation, highlighting two strategies for maximising align-
+ment of cells. Moulds leading to highly aligned (simu-
+lated) tissue are elongated and contain tethers located
+close to the short edge of the mould. The alignment is
+optimised by minimising the ∆ region via one of two ap-proaches: The first strategy is an indentation or concave
+region on the short edge of the mould, with tethers then
+placed within the protrusions on either side of the inden-
+tation Fig. 3(b,d,e,f,g). The second strategy is that mul-
+tiple columns of tethers are found within a single convex
+vertex at the end of the short edge, Fig. 3(a,h). In two of
+the cases shown, a hybrid strategy leads to a very short
+edge with a small indentation Fig. 3(c,i). In all cases the
+moulds are narrowed towards the short edge and are typ-
+ically much broader in the central region of the mould.
+This is likely to increase the proportion of aligned tissue
+since the smaller short edge decreases the potential area
+of the misaligned region. The long edge is more compli-
+cated with fewer commonalities. Several examples have
+an indentation towards the centre of the long edge, but
+protrusions to almost diamond shaped moulds also oc-
+cur. Moulds with a broader centre may lead to squarer
+regions of polarised tissue centrally e.g. Fig. 3(f), but
+highly aligned rounded regions are also possible Fig. 3(i).
+Square or circular regions of aligned tissue may have dif-
+ferent applications (for e.g. repair or representation of a
+region of cornea). Differences in total alignment between
+the best examples shown here are approximately 5%.
+Fig. 4 shows that the absolute value of the tension on
+a cell, τi, is relatively small in all the highly aligned cases
+identified in Fig. 3. We define the absolute value of the
+tension to be the sum of the magnitudes of the tensions in
+all bonds associated with a single cell. Relative to tissue
+simulated in other moulds, the tension is smallest for
+highly aligned simulated tissues. Tension is highest close
+to tethers where there are regions of rapidly changing
+alignment. For moulds with multiple columns of tethers,
+shown in Fig. 4(a,h), tension can be high between the
+tethers, which may cause challenges if it is necessary to
+remove the tissue from the mould. Note that the average
+tension per bond as defined in Eq. 5 is shown above the
+plots, whereas the total tension on a cell as defined in
+Eq. 4 is shown within the plots.
+To understand why some strategies work well, it can
+be helpful to examine cases where alignment is predicted
+to be far from optimal, which occurs in e.g. moulds
+with excessive numbers of (or conflicting) tethers. Ex-
+amples of simulated tissue ranked according to alignment
+in steps of 50 are shown in Fig. 5, where the lowest
+ranked moulds have the worst alignment. The presence
+of excessive numbers of tethering points leads to regions
+of poorly aligned cells between the tethers. The worst
+aligned example in Fig. 5(a), which is rank number 51,
+has tethers distributed broadly across the mould area. As
+alignment increases, tethers move towards the short edge
+of the mould. For the highest aligned example shown in
+this figure (Fig. 5(i), which is rank 451) the tethers are
+situated directly beside the short edge of the mould and
+the mould is elongated along the xaxis.
+High tension is typically associated with regions of
+frustration, where orientations change rapidly, which of-
+ten occurs around tethers, and also in the bulk of the
+tissue when there are large numbers of conflicting teth-5
+FIG. 3. Top 9 moulds (rank 492-500) with regard to orientation indicate two strategies for maximising alignment. Cells in the
+simulated tissue are highly aligned. The two strategies are: (1) indentations in the short axis act to reduce the size of the ∆
+region, (2) double columns of tethers placed within a single vertex reduce the ∆ region. Tensions tend to be slightly higher for
+strategy (2) as seen in Fig. 4. In the figures, blue indicates alignment along the yaxis and orange along the xaxis. Tethers
+are shown in cyan and the mould area in light grey. For convenience average alignment and tension per bond for each mould
+are shown above the plots.6
+FIG. 4. Tensions within the top 9 moulds (ranks 492-500) ranked with regard to orientation are generally low. For strategies
+where two columns of tethers have reduced the ∆ region, tension is high between the two columns. In the figures, black and
+red indicate regions of low tension, yellow and white indicate regions of high tension. Tethers are shown in cyan and the outline
+of the mould in grey.7
+FIG. 5. Figure showing how alignment improves by ranking in a range of designs. Ranks 51 to 451 are shown in steps of 50.
+For lower ranked cases, tethers are spread across the mould and moulds do not have a long axis. Higher ranked moulds have a
+long axis with tethers situated closest to the short axis. Small indentations along the short axis help to reduce the size of the
+∆ region.
+ers. Analysis of tension for the ranked moulds shown in
+Fig. 6 highlights the causes of misaligned regions (all
+cases correspond to the moulds in Fig. 5). In many
+moulds which are predicted to have poorly aligned cells,the tissue is typically under high tension. High tension
+may also occur away from tethering points if other teth-
+ers promote alignment in conflicting directions causing
+frustration towards the centre of the tissue. Tension is8
+low for the best aligned cases shown in Fig. 6(g,h,i). In
+the remaining figures, we consider the effect of specific
+changes to mould shapes and the positioning of tethers
+on the alignment.
+Elongation is important to reduce the relative size of
+the ∆-region compared to the overall mould, but other-
+wise does not decrease the area of the ∆ region. In Fig.
+7 we show examples where the ratio of short to long axes
+varies. For the elongated mould in Fig. 7(a), the ∆ re-
+gions are of similar size but the region of aligned tissue is
+larger due to the anisotropy in the mould. For the almost
+square mould in Fig. 7(c), the ∆ regions from the two
+axes overlap.
+Indenting the short edge leads to a reduced ∆-region
+size. In Fig. 8 we show two similar examples, one with
+a significant indent on the short axis and the other with
+a straight short edge. The indent guides the cells in the
+right direction, and supplants the misaligned ∆ region.
+The tension (not shown) is low in both cases.
+Poorly positioned tethers that are not close to the short
+axis vertices lead to larger ∆ regions, as can be seen
+in Fig. 9. In Fig. 9(a) the tethers are closer to the
+short edge and the ∆ region is relatively smaller than in
+Fig. 9(b), where the tethers are far from the short edge,
+but otherwise close to the boundary of the mould. This
+highlights how the positioning of tethers, as well as the
+shape of the mould, can be very important for creating
+polarised tissues.
+For strategies involving moulds with a single end ver-
+tex, a single column of tethers may also be effective and
+reduce tension. In Fig. 10, we examine tethering strate-
+gies where there is a single vertex at the end of the mould,
+rather than a short edge. In those cases the best moulds
+had two columns of tethers close to the point of the ver-
+tex (see Fig. 3). There are no major differences if a single
+tethering column is used (compare Fig. 10(b) and Fig.
+10(c)). On the other hand, if the two columns of tethers
+become widely separated, misalignments occur (compare
+Fig. 10(a) and Fig. 10(b)). The corresponding tension
+per cell is shown in Fig. 10(d,e,f), and is high between
+columns of tethers, increasing with the distance between
+the columns. In contrast, the tension is relatively low in
+the case where there is a single row of tethers.
+IV. DISCUSSION
+Currently, a limited number of tethered scaffold mould
+designs are used for lab-grown tissues with a few common
+designs which all suffer from misaligned cells (∆ regions).
+Tendons and muscle have been grown in moulds with two
+tethering points (one at each end), which leads to a sin-
+gle aligned fibre between the tethers and a region of mis-
+alignment around the tether [5–7]. The second grouping
+includes hydrogels containing astrocytes which have been
+grown in moulds with four tethering points [15], astro-
+cytes and corneal tissues that have been grown within
+an I shaped clamp where multiple tethering points arefound in a line towards the end of the mould [9, 16],
+and moulds with attachment bars that have been used
+to grow fibroblast containing hydrogels [10]. In those
+cases, a ∆ region containing unwanted misaligned tissue
+can be found. Highly aligned astrocytes grown in such
+moulds have been considered as a potential guide for neu-
+rons during nerve regeneration, and for such applications
+the misaligned region is a hindrance to neuron growth
+[17].
+We have shown how it is possible to use a compu-
+tational model to predict which mould designs can re-
+duce the ∆ region. We have concentrated on nearly flat
+moulds suitable for growth of elongated cells with a pref-
+erence to align e.g. fibroblasts, tendonocytes, astrocytes
+and cornea, although we expect the principles to work for
+fully three dimensional scaffolds and any kind of cells that
+become highly aligned within tissues. The best mould
+designs proposed here have potential to improve guides
+for neuronal growth and for use in the development of
+engineered tissue for assays and other applications where
+high alignment is required. The significance of the use
+of a biophysical model for mould design is twofold. De-
+signing moulds and scaffolds that lead to specific pat-
+terns of self-organisation in artificial tissues is a slow and
+painstaking effort, so tools such as biophysical models of-
+fer the potential to design moulds quickly to grow specific
+tissue structures for e.g. pharmaceutical assays, drug
+screening and regenerative medicine. Also, biophysical
+models are applicable to the self-organisation in three-
+dimensional scaffolds where it is much harder to assess
+the organisation of lab-grown tissue. The key advantage
+of the biophysical model is the rate of throughput, since
+high performance computing can be used to make cal-
+culations for high numbers of mould designs in parallel
+and also the organisation and other properties of cells in
+those tissues, such as tension, can be immediately com-
+puted by the model without the need to make complex
+experimental measurements to determine those proper-
+ties. Ultimately, biological experiments will be needed
+to confirm the predictions, but only the best candidates
+need to be explored, making the experimental effort tar-
+geted and as efficient as possible.
+V. CONCLUSIONS
+In summary, we have applied a microscopic biophys-
+ical model for self-organisation due to cell-matrix inter-
+actions in lab-grown polarised tissues, to the design of
+moulds for highly aligned cultured tissue growth. We pre-
+dict such moulds would be suitable for growth of highly
+aligned neural tissue, muscle, tendons, cornea and fibrob-
+lasts. We demonstrated proof-of-concept for using the
+model for high-throughput rational design of artificial
+tissues. We used our biophysical model to make high-
+throughput calculations for a wide range of computer-
+generated moulds. We used alignment and tension to
+identify, computationally, the relative merit of moulds9
+FIG. 6. Analysis corresponding to the designs shown in Fig. 5 demonstrates how tension is affected by tether number and
+positioning. Areas of high tension are associated with misaligned regions and tend to decrease with rank. Large numbers of
+tethers away from the short axis typically lead to high tension.
+for growing artificial neural tissue. Using this process,
+we have identified candidate mould designs for growth of
+artificial neural and other tissue with favourable prop-
+erties. To the best of our knowledge, this is the first
+time a biophysical model has been used for the design oftethered scaffolds or moulds.
+In conclusion, two strategies were identified to increase
+alignment and minimise regions of misalignment: (1) in-
+dentation on the short edge of the mould, with tethers
+then placed within the protrusions on either side of the10
+FIG. 7. Change in ∆ region due to decrease in ratio of short to long axis. Overall the shape of the ∆ region is not strongly
+affected by the length of the mould, but misaligned regions can dominate if the mould is too short.
+FIG. 8. Significant decreases in the ∆ region can be made by
+inserting a concave region on the short axis.
+FIG. 9. Changes in the size of the ∆ region due to positioning
+of tethers. Poorly positioned tethers that are not tight to the
+short axis vertices lead to larger ∆ regions.11
+FIG. 10. Strategies with tethers in a single vertex instead of a short edge (diamond tethers). In Panel (a) two columns of well
+separated tethers lead to a region of poor alignment between the columns and as shown in Panel (d) high tension can be seen
+between the columns. Panel (b): This region of misalignment is minimised by moving the tethers closer. Panel (c) A single
+column of tethers also leads to high alignment, although the region of misalignment is larger in this case. Panels (e) and (f)
+show the tension corresponding to the cases in Panels (b) and (c) respectively.
+indentation (2) tethers inside a single vertex at the end
+of the mould. Precise positioning of tethers was found
+to be critical to optimise alignment, and small changes
+in tether positions can lead to enlargements in the ∆-
+region, a decrease in alignment and an increase in tension
+within the tissue. The moulds are elongated with tethers
+located at the short edge of the tether. In the best cases
+the moulds widen away from the short edge.
+We briefly discuss several aspects related to the future
+outlook of the approach. Our goal here has been to find
+moulds to create tethered hydrogels (artificial or cultured
+tissues) with high levels of alignment and low internal
+tension. As such, we have shown proof-of-principle for
+high-throughput calculations suitable for applications re-
+quiring such high alignment. A next step will be to grow
+and analyse engineered tissue within these designs to con-
+firm the predictions. For other applications it may be
+necessary to optimise mould designs to grow tissues with
+different cellular arrangements. The same design princi-ples can be applied to other applications: quasi-random
+moulds with or without symmetries can be created in
+large numbers and then high-throughput simulation of
+these moulds using high-performance computing can be
+used to rank the solutions. Further work will include
+model extensions that will lead to further tools for ratio-
+nal design of moulds, scaffolds, and other approaches for
+growing artificial tissue. Designs could have multiple ap-
+plications, including pharmaceutical assays, regenerative
+medicine and to obtain appropriate texturing within cul-
+tured meat. We will also work on extensions for the de-
+sign of 3D scaffolds. Finally, we are exploring the applica-
+tion of deep learning to the prediction of self-organisation
+in tissues, and have recently developed a machine learn-
+ing approach based on CONDOR for rapid prediction of
+the arrangements of cells and the tensions between them
+in tissues [12].12
+ACKNOWLEDGEMENTS
+We acknowledge funding from the STFC Impact Ac-
+celeration Account 2021-2022. We thank James Philipsfor useful discussions. We have registered moulds based
+on the cases shown in Fig. 3, Panels (a) through (i) and
+Fig. 6(i) as designs with UK registered design numbers:
+6275900, 6275896, 6275894, 6275883, 6275867, 6275866,
+6275865, 6275862, 6275860 and 6275851.
+[1] P. Bajaj, R. M. Schweller, A. Khademhosseini, J. L.
+West, and R. Bashir, 3D biofabrication strategies for tis-
+sue engineering and regenerative medicine, Annu. Rev.
+Biomed. Eng. 16, 247 (2014).
+[2] M. Weinhart, A. Hocke, S. Hippenstiel, J. Kurreck, and
+S. Hedtrich, 3D organ models - revolution in pharmaco-
+logical research?, Pharmacol. Res. 139, 446 (2019).
+[3] G. Jensen, C. Morrill, and Y. Huang, 3D tissue engineer-
+ing, an emerging technique for pharmaceutical research,
+Acta Pharm. Sin. B. 8, 756 (2018).
+[4] T. Ben-Arye and S. Levenberg, Tissue engineering for
+clean meat production, Front. Sustain. Food Syst. 3,
+00046 (2019).
+[5] A. J. Capel, R. P. Rimington, J. W. Fleming, D. J.
+Player, L. A. Baker, M. C. Turner, J. M. Jones, N. R. W.
+Martin, R. A. Ferguson, V. C. Mudera, and M. P.
+Lewis, Scalable 3D printed molds for human tissue en-
+gineered skeletal muscle, Front. Bioeng. Biotechnol. 7,
+00020 (2019).
+[6] N. M. Wragg, D. J. Player, N. R. W. Martin, Y. Liu,
+and M. P. Lewis, Development of tissue-engineered skele-
+tal muscle manufacturing variables, Biotechnol. Bioeng.
+116, 2364 (2019).
+[7] J. Garvin, J. Qi, M. Maloney, and A. J. Banes, Novel sys-
+tem for engineering bioartificial tendons and application
+of mechanical load, Tissue Eng. Part A 9, 967 (2003).
+[8] M. Georgiou, S. C. Bunting, H. A. Davies, A. J. Loughlin,
+J. P. Golding, and J. B. Phillips, Engineered neural tissue
+for peripheral nerve repair, Biomater. 34, 7335 (2013).
+[9] D. Mukhey, J. Phillips, J. Daniels, and A. Kureshi, Con-
+trolling human corneal stromal stem cell contraction to
+mediate rapid cell and matrix organization of real archi-
+tecture for 3-dimensional tissue equivalents, Acta Bio-
+mater. 67, 229 (2018).
+[10] M. Eastwood, V. Mudera, D. McGrouther, and
+R. Brown, Effect of precise mechanical loading on fibrob-last populated collagen lattices: Morphological changes,
+Cell Motil. Cytoskeleton 40, 13–21 (1998).
+[11] J. P. Hague, P. W. Mieczkowski, C. O’Rourke, A. J.
+Loughlin, and J. B. Phillips, Microscopic biophysical
+model of self-organization in tissue due to feedback be-
+tween cell- and macroscopic-scale forces, Phys. Rev. Res.
+2, 043217 (2020).
+[12] A. Andrews, H.Dickinson, and J. Hague, arXiv: ,
+2303.18017 (2023).
+[13] J. K. Kular, S. Basu, and R. I. Sharma, The extracellular
+matrix: Structure, composition, age-related differences,
+tools for analysis and applications for tissue engineering,
+J. Tissue Eng. 5, 2041731414557112 (2014).
+[14] S. Gillies, C. van der Wel, J. van den Bossche,
+M. Taves, J. Arnott, and B. Ward, Shapely, version
+2.0.1 (Jan 30th 2023), doi:10.5281/zenodo.5597138,
+https://pypi.org/project/Shapely and
+https://github.com/shapely/shapely.
+[15] C. O’Rourke, C. Lee-Reeves, R. A. L. Drake, G. W. W.
+Cameron, A. J. Loughlin, and J. B. Phillips, Adapting
+tissue-engineered in vitro cns models for high-throughput
+study of neurodegeneration, J. Tissue Eng. 8, 1 (2017).
+[16] C. O’Rourke, R. A. Drake, G. W. Cameron, J. A. Lough-
+lin, and J. B. Phillips, Optimising contraction and align-
+ment of cellular collagen hydrogels to achieve reliable and
+consistent engineered anisotropic tissue., J. Biomater.
+Appl. 30, 599 (2015).
+[17] E. East, D. B. De Oliviera, J. P. Golding, and J. B.
+Phillips, Alignment of astrocytes increases neuronal
+growth in three-dimensional collagen gels and is main-
+tained following plastic compression to form a spinal cord
+repair conduit, Tissue Eng. Part A 16, 3173 (2010).

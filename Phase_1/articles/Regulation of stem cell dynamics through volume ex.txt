@@ -1,0 +1,1463 @@
+Title: Regulation of stem cell dynamics through volume exclusion
+Abstract:   Maintenance and regeneration of adult tissues rely on the self-renewal of
+stem cells. Regeneration without over-proliferation requires precise regulation
+of the stem cell proliferation and differentiation rates. The nature of such
+regulatory mechanisms in different tissues, and how to incorporate them in
+models of stem cell population dynamics, is incompletely understood. The
+critical birth-death (CBD) process is widely used to model stem cell
+populations, capturing key phenomena, such as scaling laws in clone size
+distributions. However, the CBD process neglects regulatory mechanisms. Here,
+we propose the birth-death process with volume exclusion (vBD), a variation of
+the birth-death process that considers crowding effects, such as may arise due
+to limited space in a stem cell niche. While the deterministic rate equations
+predict a single non-trivial attracting steady state, the master equation
+predicts extinction and transient distributions of stem cell numbers with three
+possible behaviours: long-lived quasi-steady state, and short-lived bimodal or
+unimodal distributions. In all cases, we approximate solutions to the vBD
+master equation using a renormalised system-size expansion, quasi-steady state
+approximation and the WKB method. Our study suggests that the size distribution
+of a stem cell population bears signatures that are useful to detect negative
+feedback mediated via volume exclusion.
+
+Full Text: rspa.royalsocietypublishing.org
+Research
+Article submitted to journal
+Subject Areas:
+mathematical physics, statistical
+physics
+Cite this article: García-Tejera R,
+Schumacher L, Grima R. 2022
+Regulation of stem cell dynamics
+through volume exclusion. Proc. R.
+Soc. A 478: 20220376.
+https://doi.org/10.1098/rspa.2022.0376
+Received: 1 June 2022
+Accepted: 27 September 2022
+Keywords:
+stem cells, volume exclusion, master
+equation, renormalized system-size
+expansion, transient bimodality,
+competition for space
+Author for correspondence:
+Rodrigo García-Tejera,
+e-mail: rodrigo.garcia@ed.ac.uk
+https://orcid.org/0000-0003-3427-
+3587Regulation of stem cell
+dynamics through volume
+exclusion
+Rodrigo García-Tejera1;2, Linus
+Schumacher1;2and Ramon Grima2
+1Centre for Regenerative Medicine, University of
+Edinburgh, 5 Little France Dr, Edinburgh EH16 4UU,
+U.K.
+2School of Biological Sciences, Kings Buildings,
+Mayﬁeld Road,
+University of Edinburgh, EH9 3JF , U.K.
+Maintenance and regeneration of adult tissues rely on
+the self-renewal of stem cells. Regeneration without
+over-proliferation requires precise regulation of the
+stem cell proliferation and differentiation rates. The
+nature of such regulatory mechanisms in different
+tissues, and how to incorporate them in models
+of stem cell population dynamics, is incompletely
+understood. The critical birth-death (CBD) process
+is widely used to model stem cell populations,
+capturing key phenomena, such as scaling laws in
+clone size distributions. However, the CBD process
+neglects regulatory mechanisms. Here, we propose
+the birth-death process with volume exclusion (vBD),
+a variation of the birth-death process that considers
+crowding effects, such as may arise due to limited
+space in a stem cell niche. While the deterministic rate
+equations predict a single non-trivial attracting steady
+state, the master equation predicts extinction and
+transient distributions of stem cell numbers with three
+possible behaviours: long-lived quasi-steady state,
+and short-lived bimodal or unimodal distributions.
+In all cases, we approximate solutions to the vBD
+master equation using a renormalized system-size
+expansion, quasi-steady state approximation and the
+WKB method. Our study suggests that the size
+distribution of a stem cell population bears signatures
+that are useful to detect negative feedback mediated
+via volume exclusion.
+© The Authors. Published by the Royal Society under the terms of the
+Creative Commons Attribution License http://creativecommons.org/licenses/
+by/4.0/, which permits unrestricted use, provided the original author and
+source are credited.arXiv:2204.09004v2  [q-bio.PE]  16 Dec 20222rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1. Introduction
+Stem cells (SCs) are a population of cells capable of self-renewing and differentiating into all the
+cells in a particular lineage. In adult tissue homeostasis, SCs slowly self-renew and differentiate
+to compensate for the death of other cells while maintaining a constant average population size
+[1–4]. Upon injury, however, the SC proliferation and differentiation rates increase dramatically to
+repair the tissue, only settling back into homeostasis when regeneration is completed [5–7]. Such
+tight control over the SC proliferation and differentiation rates requires regulatory mechanisms
+providing feedback to the SCs.
+Against the backdrop of recent advances in experimental techniques in stem cell biology, a
+broad range of SC regulatory mechanisms have been reported, such as negative feedback exerted
+by the more differentiated cells [6–8], competition between SCs for fate determinants [9,10], or
+mechanical feedback [11–13]. An additional plausible mechanism stems from the conﬁnement of
+SCs to a particular microenvironment, the stem cell niche [9,14–16]. This microenvironment plays
+a key role in maintaining cell stemness and promoting SC quiescence [17–19], self-renewal, or
+differentiation, according to tissue requirements; however, it also triggers a competition between
+SCs for niche access [10,20,21].
+Crowding effects are often associated with volume exclusion [22–26]. The non-negligible
+volume of particles restricts their movement, thus obstructing their access to available free space
+[22]. As a consequence, the accessible phase space can be greatly reduced. If cells are dividing
+without reducing their size, crowding effects can have an impact on the SC proliferation and
+death (or differentiation) rates. For example, a proliferation event reduces the available space,
+which in turn reduces the proliferation rate, thus creating a negative feedback loop. Volume
+exclusion has been also suggested to play a role in the regulation of cancer stem cells and tumour
+growth [27]. However, it is not yet clear how to distinguish between crowding effects and other
+regulatory mechanisms from observations of the population evolution (e.g. from snapshots of the
+SC population at different times).
+Stem cell division and differentiation has been previously modelled stochastically by the
+simple chemical reaction network S!2S,S!; [1,28], where differentiation is equivalent to
+death if differentiated progeny do not self-renew. To prevent the population from diverging or
+vanishing, the birth and death rates must be equal, thus obtaining a critical birth-death process
+(CBD). For stem cell population dynamics, the CBD process has been frequently treated under
+well-mixed and dilute gas conditions, which facilitate its computational implementation, e.g.,
+Gillespie algorithm, [29,30] and mathematical analysis through the master equation formalism
+[31,32]. This approach has been successfully employed to illustrate key features of SC populations,
+such as population asymmetry (the maintenance of a constant average population via symmetric
+divisions that are balanced at the population level, instead of asymmetric divisions), neutral
+competition [1,28,33], and scaling properties of clone size distributions [28,33–35]. However, the
+CBD ignores the ﬁnite-size nature of cells and thus disregards the role of available space in cell
+division.
+Here, we present a modiﬁcation of the birth-death process that includes competition for niche
+access, the birth-death process with volume exclusion (vBD). We subdivide the space within a
+niche intoNvoxels (small volumes of space); each voxel is either occupied by a stem cell or else
+is empty. Assuming well-mixed conditions, the effective chemical reaction network describing
+this process is S+E!2S,S!E, whereSandEdescribe stem cells and empty voxels in the
+niche, respectively. The ﬁrst reaction reﬂects the need for a stem cell to ﬁnd an empty voxel to
+divide, while the second one represents the birth of an empty voxel after stem cell death or
+differentiation (assuming differentiated progeny leave the niche space). Naturally the system
+obeys the conservation law nS+nE=N, whereNis the niche carrying capacity, and nS,nEare
+the number of stem cells and empty voxels, respectively. Note that the vBD resembles a stochastic
+SIS model, with the number of infectious given by the species S, and susceptible by E. However,
+while the SIS model is usually treated for N!1 , we are interested in the low Nbehaviour.3rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .In terms of the vBD model parameters, the basic reproduction number for the equivalent SIS
+model is given by R0=Nk1=k2, wherek1andk2are the rates of proliferation and differentiation,
+respectively. The deterministic rate equations for the vBD process predict a logistic convergence
+to a non-trivial attracting steady state. From a microscopic perspective (i.e. the master equation’s
+solutions), however, this prediction is not realised, and the vBD process relaxes to extinction,
+irrespective of the parameter values and initial conditions.
+Our analysis reveals the three different behaviours of the stochastic vBD process that are
+absent in its deterministic counterpart. When the birth rate is much larger than the death rate,
+the system quickly takes the form of a long-lived, quasi-steady state, and very slowly relaxes
+to extinction through a transient bimodal distribution. Conversely, for death rates much larger
+than the birth rates, the system quickly converges to extinction through a unimodal transient.
+Lastly, when the birth and death rates are comparable, the transient distribution is bimodal but
+the convergence to extinction is fast. For these three different parameter regimes, we approximate
+the solution of the vBD master equation using a quasi-stationary approximation, a renormalized
+system-size expansion (including ﬁnite size corrections to the linear-noise approximation), and
+the WKB method. In particular, the renormalized system-size expansion is a recent modiﬁcation
+of the original van Kampen’s SSE that has not been widely used yet, but proves useful for
+tackling master equations of non-linear birth-death processes. Finally, we derive an expression
+for the expected extinction time, based on Kolmogorov’s backward equation and ﬁrst-passage
+time theory. Our analytical solutions provide insights into the rich behaviours of the vBD model.
+2.vBD model
+The birth-death process with volume exclusion is deﬁned by the chemical reaction network
+S+Ek1  !2S;Sk2  !E; (2.1)
+whereSandErepresent stem cells and empty voxels, respectively (See Fig. 1 Afor an illustration).
+For the deterministic system to have a non-trivial steady state, we require that k1>k2. Note
+that the two species are coupled by the conservation law nS+nE=N. Assuming mass-action
+kinetics and deﬁning the dimensionless time =k2t, the rate equation for the average stem cell
+concentration =nS=Nadopts the logistic form
+@
+@=( )
+1 ; (2.2)
+where= 1 k2=k1is the non-trivial steady state. The deterministic evolution of the stem
+cell concentration has the form () = (0)=[( 0)e =(1 )+0], where(0) =0
+is the initial condition, and we can appreciate that !1    !when06= 0 (Fig. 1 B). In this
+deterministic system, the extinction state = 0is never reached unless (0) = 0 .
+The stochastic behaviour of the vBD differs from the deterministic predictions. Trajectories of
+the vBD generated using the stochastic simulation algorithm (SSA [29]) ﬂuctuate in the vicinity of
+the deterministic steady state for some ﬁnite period of time (Fig. 1 B), but ﬂuctuations eventually
+drive the stem cell number to extinction. The ensemble average of stochastic trajectories thus
+converges to zero (see blue line in Fig. 1 B), disagreeing with the deterministic model’s prediction.
+A stochastic treatment of the vBD process is provided by its chemical master equation,
+i.e., Kolmogorov’s forward equation. The chemical master equation (CME) describes the time-
+evolution of the probability that the system is in one of its states [31,36–38]. To construct the CME,
+we ﬁrst note that the vBD model only involves reactions that increase or reduce the number
+of stem cells by one unit. Hence the stochastic process underlying the reaction network (2.1)
+takes the form of the Markov chain depicted in Fig. 2 A, where the states 0;1;:::;N represent
+the number of stem cells. Note that the vBD process features a reﬂecting boundary at n=Nand
+an absorbing boundary at n= 0. The propensities are determined by the law of mass-action and4rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+!"#!"$#%∗	AStem cellEmpty space𝑛B
+Figure 1. The vBD model and its deterministic approximation. AStem cells (solid circles) move randomly in the niche
+(grid) by switching position with empty voxels (dashed, empty circles). At any time a stem cell can “react” with a
+neighbouring empty voxel to create two stem cells (cell division), and a single stem cell can differentiate or die, leaving a
+new empty voxel in return. The propensities follow mass-action kinetics. BUnder well-mixed conditions, the deterministic
+approximation predicts the evolution of the mean stem cell concentration satisfying the logistic equation (2.2) , thus
+portraying a logistic convergence to the average stem cell number N(black line). Stochastic trajectories (green and
+orange lines) obtained by the SSA, however, are driven to the extinction state by ﬂuctuations. The ensemble average
+(blue line) of 2104stochastic trajectories reveals the eventual distinction–in contrast to the deterministic prediction of
+a non-zero steady state.
+in dimensionless units read:
+(
+an= (n 1)(N n+ 1)=[N(1 )]; n1
+bn=n+ 1; n0:(2.3)
+LetP(n;jP(0) =P0)be the probability of ﬁnding the system in a state of ncells at time ,
+given that it was P0at time0, which we will abbreviate as P(n;). Deﬁning the probability
+vector P() = (P(0;);P(1;);:::;P (N;))T, where Tdenotes the vector transpose, the CME
+can be expressed as dP=d=MP, whereMis the operator deﬁned by
+M=2
+66666640b0 0 0 :::
+0 a2 b0b1 0:::
+0a2 a3 b1b2:::
+0 0 a3 a4 b2:::
+...............3
+7777775: (2.4)
+Thenthrow of the master equation reads
+dP
+d=anP(n 1;) +bnP(n+ 1;) (an+1+bn 1)P(n;); (2.5)
+witha0=b 1= 0. Note that the only parameters present are the carrying capacity, N, and the
+steady state from the deterministic equations, , as per (2.3).
+The solution of the master equation, for an initial probability distribution P(0), is given by
+P() =eMP(0). The main properties of the solution are captured by the eigenvectors and
+eigenvalues ofM. It is easy to prove that 0= 0 is always an eigenvalue associated with
+the eigenvector [1;0;:::; 0]T(the extinction state), while the other eigenvalues are real and
+negative [39]. Therefore, the extinction state is always reached, irrespective of the parameter
+values and initial conditions. Moreover, the expected extinction time is the inverse of the spectral
+gap,j1 0j 1, where1is the smallest (in absolute value) non-zero eigenvalue. The third5rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .eigenvalue, 2, has a considerably higher absolute value than 1, as we can appreciate from the
+spectral gap of the reduced system obtained by eliminating the extinction state (orange line in
+Fig. 2 B) – we observe that the smallest gap is 22:61which is achieved in the limit of small
+. Hence, after an initial transient the PDF is dominated by the eigenvectors associated with 0
+and1, leading to
+P(n;)e0+e 1e1; (2.6)
+where e0= [1;0;:::; 0]Tis the extinction state, and e1= [ 1;f(1);f(2);:::;f (N)]Tis the leading
+eigenvector. The ﬁrst element of e1comes from the lower boundary of the state space. The ﬁrst
+row in the CME reads dP(0;)=d=b0P(1;) =b0f(1)e 1, which leads to (i) 1=b0f(1), and
+(ii)P(0;) = 1 e 1. Note that f(n)is the PDF of stem cell numbers conditioned on non-
+extinction. It follows that the expected extinction time is
+T= [b0f(1)] 1: (2.7)
+The distribution of the surviving trajectories is deﬁned as
+~P() = [ ~P1();:::; ~PN()]T=P’()
+PN
+k=1Pk()=P’()
+1 P0(); (2.8)
+where P’() = [P(1;);:::;P (N;)]T. Hence, the master equation for the PDF conditioned on
+non-extinction reads
+@~P
+@=@P’
+@1
+1 P0+P’
+(1 P0)2@P0
+@=~M~P+b0~P1~P; (2.9)
+where the operator ~Mresults from eliminating the ﬁrst row and column of M. Note that, even
+though the steady state in the original CME is the extinction state, the CME for the surviving
+trajectories presents a non-trivial steady state (Fig. 2 C-E). In effect, the steady state of Eq. (2.9)
+yields the entries f(k)ofe1.
+Numerical experiments reveal the presence of three different behaviours in the solution given
+by Eq. (2.6). For high values the system relaxes to a long-lived quasi-steady state, f(n), before
+slowly relaxing again to extinction through a transient bimodal distribution (Fig. 2 C). The two
+modes given by the eigenstates e0ande1in Eq. (2.6) are located at the extinction state and near
+(but not necessarily at) N, respectively. The leading eigenvalue vanishes for high (blue line
+in Fig. 2 B), indicating the presence of a quasi-steady state (QSS). For intermediate values,
+the transient bimodality is still present, but the relaxation to extinction is faster than the time to
+reach the QSS (Fig. 2 D). For lowvalues the system rapidly goes extinct, and the mode around
+Nis absent (Fig 2 E). The phase diagram in Fig. 2 Fsummarises the three types of behaviour
+of the vBD model as a function of and the carrying capacity N. To determine the parameter
+regimes for these three behaviours, we compute numerically the solution to the master equation,
+P() =eMP(0), choosingP(n;0) =nk, whereijis the Kronecker delta and k=dNe. We
+then extract the PDF conditioned on non-extinction after the initial transient. The black region in
+Fig. 2 Fcorresponds to the case in which such distribution does not present maximum for n>1. To
+distinguish between the bimodal extinction and QSS regions, we compute numerically the second
+eigenvalue ofM,1, and set a tolerance = 110 2. The grey region in Fig. 2 Fcorresponds to
+1>, and the white region to 1. In the next two sections we derive approximate solutions
+forf(n)andTin the three different regimes.
+3. Approximate solutions
+Here, we present approximate solutions for the vBD master equation. From Eq. (2.6), it follows
+that the solution adopts the form P(n;) =f(n)e 1,8n1, andP(0;) = 1 e 1. Hence,
+the asymptotic solution is determined by the PDF conditioned on non-extinction, f(n), and the
+inverse of the expected extinction time, 1. In this section we tackle the problem of approximating6rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Unimodal extinctionABC
+⋯𝑏!𝑏"𝑏#$"𝑎%𝑎#012N-1NState space
+Unimodal extinctionBimodal extinction (fast)Bimodal extinction (QSS)D
+EFBimodal extinction (fast)Bimodal extinction (QSS)
+Figure 2. Stochastic properties of the vBD model. AThe vBD system jumps between states of 1;2;:::;N stem cells
+in a Markov process, with propensities anandbn.BThe leading eigenvalue of the operator M,1, vanishes as the
+deterministic equation’s steady state solution, , increases (blue line, inset for logarithmic scale). Correspondingly, the
+expected extinction time, j1j 1, is large for high , indicating the presence of a quasi-steady state. The relative
+spectral gap of the system conditioned on non-extinction, i.e. j(2 1)=2j, increases with (orange line). In general,
+j2jis at least 2:6times higher thanj1j, supporting a solution of the form of Eq. (2.6) for the vBD master equation.
+C-E Probability distributions of the vBD model for different values and times. All time-dependent PDFs are found
+by numerically solving the master equation dP=d =MPusing direct matrix exponentiation. For high a quasi-
+steady state is achieved before relaxation into extinction through transient bimodality (panel C). For intermediate 
+transient bimodality is present but a long-lived quasi-steady state is absent (panel D). For lowextinction is fast via
+unimodal transient (panel E). In all parameter regimes, the probability distributions of the surviving trajectories reach
+steady states (insets in C-E).FBehaviours of the vBD model for different values and carrying capacities; see main
+text for explanation of how the phase boundary lines are numerically determined. Note that the discrete jumps of the
+transition lines reveal the ﬁnite-size nature of the niche since the concentrations can only be of the form n=N , withn
+integer, and the carrying capacity Ncan only adopt integer values.7rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .f(n), assuming 1is known, while in the next section we derive an accurate expression for the
+expected extinction time and correspondingly for 1.
+Substituting Eq. (2.6) into the master equation we obtain
+anf(n 1) +bnf(n+ 1) + (1 an+1 bn 1)f(n) = 0; (3.1)
+where 1n<N . Deﬁningun=f(n)=f(n 1)leads to the recurrence relations
+uk=ak
+bk 1+ak+1 1 bkuk+1; k2; (3.2)
+with the boundary conditions u2= (a2+b0 1)=b1anduN=aN=(bN 1 1). Eq. (3.2) can be
+solved iteratively, leading to a solution in terms of the continued fraction
+uk=ak
+ck bkak+1
+ck+1 bN 2aN 1
+cN 1 bN 1aN
+bN 1 1; (3.3)
+where we have deﬁned ck=1 bk 1 ak+1. To obtain an expression for f(n), we apply the
+boundary condition f(1) =1=b0, thus leading to
+f(n) =1
+b0nY
+k=2uk: (3.4)
+Eqs. (3.3) and (3.4) are exact solutions for the post-transient dynamics given by Eq. (2.6). However,
+the slow convergence of the continued fraction and the difﬁculty in applying truncation methods
+render Eqs. (3.3) and (3.4) unsuitable for the analysis of the system’s dynamics. On the other hand,
+the continued fraction solution offers a fast computational estimation for the master equation’s
+time-dependent solution, often less demanding than direct matrix exponentiation to estimate
+P(n;) =eMP(0). In what follows, we derive three different approximate solutions to the
+master equation of the vBD process, one for each region of the phase diagram shown in Fig. 2 F.
+(a) QSS approximation
+For highvalues,11and correspondingly the mean extinction time is very large (see
+Fig. 1 B). Since1=b0f(1), we can impose a quasi-steady state condition by disregarding the
+second term in the r.h.s. of Eq. (2.9), leading to @~P=@~M~P. The steady state of the CME
+conditioned on non-extinction can be obtained by solving ~M~P= 0; theNthrow yielding f(N 
+1) = (bN 1=aN)f(N). This relationship can be iterated to obtain
+f(k) =N 1Y
+i=kbi
+^ai+1f(N); 1k<N (3.5)
+where ^ai=ai+i2b0, andi2is the Kronecker delta. Finally to ﬁnd f(N)we make use of the
+normalisation condition which leads us to a closed form solution for the quasi-steady-state PDF
+f(N) ="
+1 +N 1X
+k=1N 1Y
+i=kbi
+^ai+1# 1
+: (3.6)
+Substituting the propensities anandbnfrom Eq. (2.3) yields the approximate QSS solution
+f(k) =(2)N kh
+1 +k1(N 1)
+N 1+2i
+=(N k)!
+1 +PN 1
+i=1(2)N i
+(N i)!h
+1 +i1(N 1))
+N 1+2i; (3.7)
+for1kN, where we deﬁned 2=N(1 ). The QSS approximation accurately describes
+the PDF conditioned on non-extinction for high values (Figs. 3 Aand 4 A).
+From the QSS approximation we can calculate the position for the non-zero mode. To do so,
+it is convenient to study the discrete ﬁrst derivative@f(n)
+@n=f(n+ 1) f(n). For a maximum or8rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .minimum to take place, it is necessary that f(n+ 1)=f(n) = 1 . According to Eq. (3.7), we have
+f(n+ 1)
+f(n)=n(N n)
+N(1 )(n+ 1)8n2: (3.8)
+Solving for nwe have
+n=1
+2
+Nq
+(N)2 4N(1 )
+: (3.9)
+The sign of the discrete second derivative, @2f=@n2=f(n+ 1) +f(n 1) 2f(n)reveals that,
+when both solutions exist, n+corresponds to a maximum and n to a minimum. Note that, for
+nto adopt real values, (N)24N(1 ), which is the case for all parameter sets in the QSS
+region. Hence, in general the position of the non-zero mode differs from the deterministic model’s
+prediction, i.e., n+6=N. As an example, for a carrying capacity of N= 100 and= 0:4, then
+n+38. Note that, when !1orN!1 ,n+!Nandn !0. Thus in these limits, the
+distribution has a single mode sitting at the deterministic model’s prediction of the mean stem
+cell number.
+(b) Renormalized system size expansion
+For parameter sets (;N)in the bimodal and unimodal extinction regions (grey and black areas
+in Fig. 2 F), the QSS approximation is unable to capture the PDF conditioned on non-extinction
+(as it can be seen in Figs. 3 B, C and 4 A). In such cases, the condition 11does not hold, and
+hence the second term in the r.h.s. of Eq. (2.9) can no longer be considered negligible (which is
+needed to ﬁnd the steady state of the CME conditioned on non-extinction iteratively, as we did
+in the QSS case). Hence a different approximation is needed. In what follows we derive a new
+approximate PDF conditioned on non-extinction based on a high-order renormalized system size
+expansion of the vBD’s master equation. In section i we provide a general analytical recipe to
+obtain an expression for the PDF conditioned on non-extinction, Eqs. (3.20) and (3.21) being the
+main results. While self-contained, this derivation is mathematically lengthy, and the reader can
+skip it should they be solely interested in its application to the vBD process. We point the reader
+to [40] for a detailed derivation of the method. In section ii we apply the renormalized SSE results
+to the vBD system, and obtain an analytical expression for the PDF conditioned on non-extinction.
+(i) Derivation of the renormalized SSE formula
+The van Kampen system size expansion (SSE) approximates a master equation by splitting the
+random variable that describes the stem cell number, n, into deterministic and non-deterministic
+components, to then obtain a master equation for the non-deterministic components (usually
+taken as a continuous random variable). The resultant CME can be expanded in powers of N 1=2,
+truncated to a desired order and solved, leading to a hierarchy of approximate solutions [41].
+Whilst the bulk of applications are centred in truncating the CME after the order N0to obtain
+the linear noise approximation (LNA), which considers the particle concentration equal to its
+deterministic value, other works have used higher order truncation schemes to obtain corrections
+to the mean concentration [42,43]. The deterministic component is commonly assumed to be given
+by the solution of the rate equations. However, the disagreement between the deterministic and
+stochastic predictions (see Fig. 1 B) makes it sensible to introduce a correction term to the mean
+stem cell concentration in the original ansatz. To do so, we follow the procedure from [40], that
+starts by considering the ansatz
+n
+N=+N 1=2hi+N 1=2^; (3.10)
+where the ﬁrst term in the r.h.s. is the zero-order mean stem cell concentration obtained from
+the deterministic rate equations, the second term is a correction to the mean concentration due
+to ﬂuctuations, and the third term in the r.h.s. represents ﬂuctuations about the corrected mean
+concentration. This renormalization of the mean concentration leads to a different system-size9rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .expansion than the conventional one by van Kampen, which we refer to as the renormalized
+system-size expansion.
+Next, we brieﬂy describe how to compute the corrections to the mean concentration as a series
+in powers of N 1=2:
+hi=1X
+j=0N j=2a(j)
+1: (3.11)
+The expansion coefﬁcients for the correction term to the mean concentration are calculated
+iteratively as follows:
+a(j)
+n= 1
+nJjX
+k=1dk=2eX
+s=0k 2(s 1)X
+p=1Dk p 2(s 1)
+p;s3(j k)X
+m=0a(j k)
+mIp;k p 2(s 1)
+mn ; (3.12)
+whereJis the Jacobian of the deterministic rate equations, and we assume a(0)
+m= 0. To deﬁne
+the operatorsDq
+p;s, we assume that the propensity functions for a birth or death event when the
+system is in a state of nstem cells (an+1andbn 1), expressed in terms of the concentrations, can
+be expanded in power series of the inverse carrying capacity ( N 1) as
+a(N;N ) =N1X
+s=0N sg(s)
+1(); (3.13)
+b(N;N ) =N1X
+s=0N sg(s)
+2(): (3.14)
+whereg(s)
+r()are the expansion coefﬁcients. For example, g(s)
+1()can be obtained by deﬁning z=
+N 1, transforming a(N;N )=N!za(=z;1=z), and Taylor-expanding around z= 0. Following
+we deﬁne
+Dq
+p;s=2X
+r=1(Sr)p@qg(s)
+r()
+@q; (3.15)
+whereSris the net change in the number of stem cells when the rthreaction occurs, namely S1= 1
+andS2= 1. The functionsI
+mnin Eq. (3.12) are deﬁned as
+I
+mn= +n m
+!min(n ;m)X
+s=0 
+m
+s!
+[++ 2s (m+n) 1]!!
+[++ 2s (m+n)]!(n  s)!; (3.16)
+for(+) (m+n)even, and zero otherwise. We have introduced the notation (2k 1)!! =
+(2k)!=(2kk!)for the double factorial, and is the standard deviation of the concentration
+according to the standard linear noise approximation [41]
+@2
+@= 2J2+D2
+0;0: (3.17)
+The variance of the ﬂuctuations can also be computed as a series in powers of N 1=2
+^2=2+1X
+j=1N j=2^2
+j; (3.18)
+where the expansion coefﬁcients are given by
+^2
+j= 2
+a(j)
+2 Bj;2n
+!a()
+1oj 1
+=1
+=j!
+; (3.19)
+withBj;kbeing the partial Bell polynomials, where fgdenotes the set of arguments [44]. For
+example,B4;2n
+!a()
+1o
+has as arguments 1!a(1)
+1,2!a(2)
+1, and 3!a(3)
+1.
+To summarise, the system size expansion procedure involves expanding the master
+equation for the ﬂuctuations about the mean concentration (assuming the ﬂuctuations are a10rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .continuous random variable) in powers of N 1=2, and truncating after O(N0)to obtain a
+Fokker-Planck equation that yields the LNA, thus describing Gaussian ﬂuctuations around
+the mean concentration. The higher order approximate solutions can then be expressed in
+terms of the ﬁrst-order approximation. However, this approach often leads to non-physically
+meaningful distributions for truncations of the system-size expansion beyond the LNA level of
+approximation, e.g., yielding negative probabilities or oscillatory behaviour. Such effects can be
+greatly reduced by introducing a discrete formulation of the SSE’s approximate solutions [40].
+The discrete formulation replaces the continuous-variable LNA approximate solution, by the
+discrete approximation
+P0(n;) =1
+2e x2
+22
+p
+2
+erfix+2
+p
+2
+ erfix 2
+p
+2
+; (3.20)
+where erf is the error function, x=n N N1=2hiis the stem cell number centred about its
+(corrected) deterministic value, and 2=N^2its variance. Note that the time dependence is
+implicit in the temporal change of the mean concentration and the variance of concentration
+ﬂuctuations, ()and(), respectively. Equation (3.20) is the discrete version of a Gaussian
+in the sense that every moment of the distribution coincides with their corresponding of a
+continuous-variable Gaussian. Next, the expansion of the SSE approximate solution up to any
+order can be expressed in terms of P0(n;)and its derivatives
+P(n;) =P0(n;) +1X
+j=1N j
+23jX
+m=1^a(j)
+m( N1
+2@n)mP0(n;) (3.21)
+where the new expansion coefﬁcients ^a(j)
+mare related to the coefﬁcients found earlier ( a(j)
+min
+Eq. (3.12)) by the relation
+^a(j)
+m=jX
+k=03kX
+n=0a(k)
+nk(j k)
+m n; (3.22)
+with
+k(n)
+j=1
+n!bj=2cX
+m=0( 1)j+mn mX
+k=j 2m 
+n
+k!
+Bk;j 2mn
+!a()
+1ok j+2m+1
+=1
+Bn k;m !
+2^2
+()n k m+1
+=1!
+:(3.23)
+To calculate the derivatives of P0(n;), it is possible to prove by induction the following formula
+@mP0
+@ym= (m 1)
+2@m 2P0
+@ym 2 y
+2@m 1P0
+@ym 1+ ( 1)dm=2e+1F(y;m)m 2e 22
+2
+2; (3.24)
+wherededenotes the ceiling function, and F(y;m)issin(y)formodd and cos(y)formeven.
+Calculation of the correction terms to the mean concentration and the variance of ﬂuctuations,
+hiand^2respectively, by truncation of Eqs. (3.11) and (3.18) to any desired order, followed by
+substitution into Eq. (3.21) and truncation, provides a means to systematically obtain approximate
+solutions to the CME. Note that the order of the approximate solution is determined by the order
+of truncation ofhiand ^2. For example, to obtain an approximation of order (s+ 1)=2with
+s= 0;1;:::, bothhiand ^2are expanded up to that order (assuming that at least one of the
+coefﬁcients is non-zero) using Eqs. (3.11) and (3.18), and then the approximate distribution is
+obtained by truncating Eq. (3.21) after the order (s+ 1)=2.11rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .(ii) The expansion of the vBD master equation
+We now employ the renormalized discrete-formulation of the system size expansion to
+approximate the probability distributions conditioned on non-extinction in the bimodal extinction
+region, i.e., the grey zone in Fig. 2 F. To do so, we observe that the absorbing boundary, which is
+the factor that renders the deterministic rate equations inaccurate for calculating the evolution
+of the mean stem cell number, is absent when conditioning on non-extinction. In effect, the rate
+equations capture meaningful information about the mean stem cell number of the surviving
+stochastic trajectories. Thus, to approximate the steady states of Eq. (2.9) we can apply the
+renormalized system size expansion described in the previous subsection, under stationary
+conditions, to the non-conditional master equation (2.5), which includes the extinction state.
+We then recover the PDF conditioned on non-extinction by removing the extinction state and
+multiplying the resulting distribution by a normalization constant 1=(1 P(0)), whereP(0)is
+the probability of being in the extinction state obtained by the SSE. In particular, to capture
+non-Gaussian ﬂuctuations, we truncate the renormalized SSE after terms of O(N 1).
+The expansion coefﬁcients for the vBD propensities ( g(s)
+rin Eq. (3.14)) are given by
+g(0)
+1() =(1 )=(1 );g(0)
+2() =; (3.25)
+andg(s)
+r() = 08s1, which allows us to calculate the values of Dq
+p;s.
+From the standard LNA we obtain the order N0approximation for the ﬁrst two moments of
+the distributions
+@
+@=( )
+1 ; (3.26)
+@2
+@=1
+1 [2( 2)2+(2  )]; (3.27)
+where the ﬁrst line is the rate equation and the second one is Eq. (3.17) in the vBD case. These
+equations predict the ﬁrst two moments to be =and2= 1 under stationary conditions.
+The Jacobian in stationary conditions reads J= =(1 ). We can now calculate the ﬁrst few
+expansion coefﬁcients a(j)
+nfrom Eq. (3.12):
+a(1)
+1= 1;
+a(1)
+3=(1 )2
+6
+(2 3)(1 ) 2
+;
+a(2)
+2=1
+4h
+a(1)
+1(3 4) 12a(1)
+3 (1 )i
+;
+a(2)
+4=(1 )
+8
+a(1)
+3(5 8)
+1  a(1)
+1 =6 1
+;
+a(2)
+6=1
+2
+a(1)
+32
+;(3.28)
+whilsta(j)
+n= 0 forn+jodd. Next, we expand the corrections to the mean concentration
+and ﬂuctuation’s variance ( hiand ^2in Eqs. (3.11) and (3.18)) up to order N 1:hi
+N 1=2a(1)
+1+N 1a(2)
+1, and ^22+N 1=2^2
+1+N 1^2
+2. Eq. (3.19) yields ^2
+1= 0 and ^2
+2=
+2
+a(2)
+2 
+a(1)
+12
+. Thus, we arrive at
+hiN 1=2a(1)
+1;
+^22N 1
+a(2)
+2 
+a(1)
+12
+;(3.29)12rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .which, upon substitution on Eq. (3.20) leads to our order N0(LNA) approximation:
+f0(n) =P0(n)
+1 P0(0): (3.30)
+Note that, since we have imposed the stationary conditions =and= 1 , there is no
+longer a time dependence in P0. To calculate the higher order approximate solutions we make
+use of Eq. (3.21). The expansion coefﬁcients, corrected by renormalization, are given by Eq. (3.22).
+The ﬁrst few coefﬁcients are
+^a(1)
+1= ^a(1)
+2= ^a(2)
+1= ^a(2)
+2= ^a(2)
+3= ^a(2)
+5= 0;
+^a(1)
+3=(1 )2
+6
+(2 3)(1 ) 2
+;
+^a(2)
+4=(1 )2
+2
+3 5
+4
+ 1 
+48 
++(2 )(8 5)
+48(1 );
+^a(2)
+6=1
+72(1 )2:(3.31)
+Remarkably, there are fewer non-zero renormalized coefﬁcients than regular ones; hence, the
+analytical expressions for the SSE distributions corrected by renormalization adopt a simpler
+form.
+Next, Eq.( 3.21) yields the following expression for the order N 1=2approximate solution
+P1(n) =P0(n) N 1=2
+^a(1)
+1N1=2@P0
+@n+ ^a(1)
+3N3=2@3P0
+@n3
+;
+f1(n) =P1(n)
+1 P1(0):(3.32)
+Finally the order N 1approximate solution is
+P2(n) =P1(n) +N 1
+^a2
+4N2@4P0
+@n4+ ^a2
+6N3@6P0
+@n6
+;
+f2(n) =P2(n)
+1 P2(0):(3.33)
+The renormalized SSE accurately describes the probability conditioned on non-extinction for
+in the QSS region (Figure 3 A), as well as in the fast bimodal extinction region (Fig. 3 B),
+where the QSS approximation breaks down, and accurately captures the distribution skewness.
+Moreover, this result is robust to changes in the carrying capacity (Fig. 4 B). However, the accuracy
+of the renormalized SSE decreases dramatically for very low values, as it can be seen in Fig. 3 C.
+For non-linear birth-death processes featuring non-Gaussian ﬂuctuations, the renormalized SSE
+consistently performs better than the LNA, which is unable to capture the distribution skewness
+under stationary conditions.
+(iii) Approximation for low values
+The phases with extinction through a bimodal and unimodal transient are separated by a critical
+curve, which also accurately demarcates the regions of parameter space where the renormalized
+SSE expansion is accurate and where it is not (see Fig. 4 B). We attribute the inaccuracy of the SSE
+in the lowregion to the fact that the PDF conditioned on non-extinction no longer features a
+mode around N, which is the basis of the SSE approximations.
+In the unimodal extinction region – black region in Fig. 2 F– the time-dependent probability
+distribution features a mode at n= 0 as extinction is approached. This suggests that we can
+approximate the cell number concentration by the steady-state of the deterministic equations, ,13rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+AB
+CDUnimodal extinctionBimodal extinction (fast)Bimodal extinction (QSS)
+Figure 3. Approximate solutions of the vBD master equation. The SSE, QSS, WKB, LNA, and HG lines correspond to the
+renormalized system-size expansion (up to order N 1), quasi-steady state approximation, WKB approximation, linear-
+noise, and half Gaussian approximations, respectively. AFor(N;)within the bimodal extinction region the QSS, SSE,
+and WKB provide good approximations of the probability distribution conditioned on non-extinction, f(n), although the
+QSS is the most accurate one (see inset in panel D).BIn the bimodal extinction region, the renormalized SSE is the only
+accurate approximation. CIn the unimodal extinction region, the HG provides the best approximation. DThe Hellinger
+distance between the various distribution approximations and the exact distribution conﬁrms that the QSS, SSE, and HG
+are the best approximations for the quasi-steady state, bimodal extinction, and unimodal extinction regions, respectively.
+and the cell number concentration ﬂuctuations (conditioned on non-extinction) by means of the
+LNA, Eq. (3.27), yielding 2= 1 under stationary conditions. Note that the latter conditions
+naturally arise from the conditioning of the distribution on non-extinction. Given the mode at
+zero, a Gaussian is clearly not a good approximation and hence instead we try a half-Gaussian
+approximation with the aforementioned ﬁrst two moments
+f(n) =s
+2
+N(1 )e n2=[2N(1 )]: (3.34)
+The half-Gaussian provides an excellent approximation to the PDF conditioned on non-extinction
+in the lowunimodal region (Figure 3 C). However, as expected, this approximation breaks
+down for higher values, where the non-trivial mode is present (Fig. 3 BandD).
+(c) WKB approximation
+An alternative way to obtain a quasi-steady state approximation is the popular Wentzel–Kramers–Brillouin
+(WKB) approximation [45–47]. The WKB approximation often leads to simpler expressions for14rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+AB
+CD
+Figure 4. Hellinger distance between the exact and approximate probability distributions conditioned on non-extinction,
+as a function of the carrying capacity, N, and the deterministic rate equation’s steady state, . Red lines represent
+the interfaces between the QSS and the non-QSS regions, while the black lines are the interfaces between the transient
+unimodal and bimodal extinction regions; note these lines demarcate the three different phases shown in Fig. 2 F. For high
+carrying capacities, the QSS approximation performs well at capturing the PDF conditioned on non-extinction (bimodal
+extinction region; see panel A). The renormalized SSE is accurate in both fast and QSS bimodal extinction regions (see
+panel B). The WKB has a similar range of validity as the QSS approximation (see panel C). The LNA is noticeably less
+accurate than the other three approximations except for low (unimodal extinction region; see panel D).
+a QSS than Eq. (3.5). A detailed derivation of the WKB approach to solve master equations in
+quasi-steady state conditions can be found in [45], although we repeat the main ideas in what
+follows.
+The WKB approximation starts by transforming the vBD’s PDF of observing ncells,P(n)to
+a continuous PDF for the cell concentration, =n=N , assuming Nsufﬁciently large. The vBD
+master equation reads
+@P
+@=anP(n 1;) +bnP(n+ 1;) (an+1+bn 1)P(n;): (3.35)
+Deﬁning=n=N , we can transform the propensities to 
++() =an+1=Nand
+ () =bn 1=N,
+arriving at
+
++() =(1 )
+1 ;
+ () =: (3.36)
+We can now write the master equation for the PDF of the continuous variable ,(;) =
+P(N; ). It follows that P(n1;) =P(N(1=N);) =(1=N; ). Mutiplying the CME15rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .by1=Nand applying the quasi-stationary condition @P=@ = 0yields
+
++
+ 1
+N
+
+ 1
+N
++
+ 
++1
+N
+
++1
+N
+ (
+ () +
++())() = 0:
+(3.37)
+Next, the WKB approximation amounts to assuming a solution of the form,
+() =K()e NS()
+1 +O1
+N
+; (3.38)
+whereS()andK()are of the order of unity. Substituting in the quasi-stationary master
+equation, expanding with respect to N 1, and collecting the leading order terms yields
+
++()eS0() 1+
+ ()e S0() 1= 0; (3.39)
+whereS0() =dS()=d. From here, we note that the above equation corresponds to a stationary
+Hamilton-Jacobi equation ( H(;S0()) = 0 ), for an action Swith Hamiltonian
+H(;p) =
++()ep 1+
+ ()e p 1; (3.40)
+withp=S0(). The corresponding Hamilton equations are
+(_=@H
+@p=
++()ep+
+ ()e p;
+_p= @H
+@= (1 ep)@
++()
+@+ (1 e p)@
+ ()
+@:(3.41)
+Since we are interested in the zero-energy solution ( H= 0), with initial conditions (t0) =, the
+action along a ﬂuctuation trajectory will be given by
+S=Zt
+t0p_dt0: (3.42)
+Hence, we can ﬁnd Sby solving Hamilton’s equations and integrating p_. From Hamilton’s
+equations (3.41), we note that there is a trivial solution with p= 0. This solution leads to the
+deterministic rate equations and hence is of no interest to us. The other solution comes from
+settingH= 0in the Hamiltonian expression (3.40), solving for p, and substituting in Hamilton’s
+equations, to yield
+p= log
+ ()
+
++()
+; _=
+ () 
++(): (3.43)
+We are now ready to calculate the action S(). Substituting in Eq. (3.42) and integrating, we obtain
+S() S() = (1 ) log1 
+1 
++ : (3.44)
+It is possible to prove, using the next order contributions to the WKB expansion, that the prefactor
+K()is
+K() =A(
++()
+ ()) 1=2; (3.45)
+whereAis later determined by the normalisation condition [45]. Finally, the WKB expansion for
+the vBD system yields the probability distribution
+() =s
+N
+2(1 )
+eN( )1 
+1 N( 1)
+: (3.46)
+While the WKB is a good approximation for large values of (Figure 3 A), it fails for small and
+intermediate values of (3B-C). In general, the range of validity of the WKB approximation
+coincides with that of the QSS approximation (compare Figs. 4 Aand C). An advantage of the
+WKB approximation stems from its simple analytical form. However the QSS approximation is
+generally more accurate than the WKB approximation (see Fig. 3 D).16rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4. Calculation of the extinction time
+In the previous section we have shown different approximations for the leading eigenvector of the
+vBD model’s master equation solution, Eq. (2.6). The time-dependent component of the solution
+is determined by the leading eigenvalue, 1, which is the inverse of the expected extinction
+time. The most direct method for estimating this eigenvalue would be to calculate the probability
+conditioned on non-extinction, f(n), and making use of Eq. (2.7) to yield 1=b0f(1). However,
+the absorbing boundary at n= 0leads to an inaccurate estimation of the probability of having
+n= 1 stem cells (using all approximation methods considered) and thus we cannot use this
+method to estimate the extinction time (see Fig. 5 A). Hence, we present an alternative calculation
+for the expected extinction time that is based on averaging the mean extinction time starting
+from any state, and makes use of the Kolmogorov’s backward equation. This approach has been
+effectively used for other similar problems (see for example [48,49]). Instead of relying solely
+on the estimation of f(1), this method involves averaging among all the f(n)values, which
+signiﬁcantly improves the accuracy with respect to direct application of 1=b0f(1).
+Given an estimate for the probability distribution of the surviving trajectories, f(n), the
+expected extinction time Tis simply the average among initial conditions of the mean ﬁrst passage
+times to hit the extinction state
+T=NX
+n=1
+nf(n); (4.1)
+wherenis the mean ﬁrst passage time to hit the extinction state, starting from the state with n
+cells. Hence, to estimate Twe need to ﬁnd the mean ﬁrst passage times n. To do so, we make use
+of the discrete-time Kolmogorov’s backward equation
+Q0;n(+) =an+1Q 0;n+1() +b0;n 1Q 0;n 1() + (1 an+1 bn 1)Q0;n();
+(4.2)
+whereQ0;n()is the probability of being extinct at time , given that initially there were n
+cells. The backward equation just states that the total probability of becoming extinct from
+statenat time+equals the probability of jumping to the state with n+ 1 cells and then
+going extinct, plus the probability of jumping to state with n 1cells and then going extinct,
+plus the probability of staying in the same state and going extinct. The probability density of
+becoming extinct at time +isQ0;n(+) Q0;n(). Hence, the mean ﬁrst passage time
+to extinction, starting from a state of ncells, reads
+
+n=1X
+k=0k[Q0;n(k) Q0;n((k 1))]: (4.3)
+Here, we assume Q0;n( ) = 0 . To simplify the notation, let us denote with Qn()the
+cumulative probability of becoming extinct at time given that the system started in state
+withncells. Substituting +!in Eq. (4.2), we have Qn() =an+1Qn+1( ) +
+bn 1Qn 1( ) + (1 (an+1+bn 1))Qn( ). Subtracting both expressions,
+multiplying by =k and integrating over time (which in this case amounts to sum over all
+k), leads to
+1X
+k=0k[Qn((k+ 1)) Qn(k)] =1X
+k=0an+1k()2[Qn+1() Qn+1( )]+
+bn 1k()2[Qn 1() Qn 1( )] +k()(1 (an+1+bn 1))[Qn() Qn( )]:
+(4.4)
+We can rewrite the l.h.s. asP1
+k=0(k 1)[Qn(k) Qn((k 1))] =n , where we
+have used that Qn(t) = 08<0, and the normalization condition of the probability density. The
+r.h.s. of the expression is an+1
+n+1+bn 1
+n 1+ (1 (an+1+bn 1))n. Thus, we17rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .obtain
+an+1
+n+1+bn 1
+n 1 (an+1+bn 1)
+n+ 1 = 0: (4.5)
+The ﬁrst boundary condition for this recurrence relation is 
+0= 0, i.e., the mean ﬁrst passage time
+to extinction starting from extinction is zero. The second condition is 
+N=
+N 1+ 1=bN 1, i.e.,
+the mean ﬁrst passage time to extinction from Ncells is the corresponding one from N 1cells
+plus the mean time in which the system hops from Ncells toN 1cells.
+To solve for nwe deﬁnevn=n 
+n 1. Thus, the recurrence relation becomes
+an+1vn+1 bn 1vn+ 1 = 0;
+vN=1
+bN 1;(4.6)
+which can be solved iteratively (applying the corresponding boundary condition), to yield
+vn k=k+1X
+j=11
+bN jkX
+i=jaN i+1
+bN i 1: (4.7)
+Finally, solving for nyields
+
+n=N 1X
+k=N nk+1X
+j=11
+bN jkY
+i=jaN i+1
+bN i 1: (4.8)
+Naturally, the accuracy of the expected extinction time T(and its inverse, 1), is sensitive to the
+accuracy of the approximate PDF conditioned on non-extinction, f(n). When calculating 1from
+Eq. (4.1) and Eq. (4.8) (with f(n)estimated numerically), the result is in very good agreement
+with1numerically calculated from the master operator’s eigenvalues (compare the orange and
+black dashed lines in Figure 5 B). The approximate 1calculated using Eq. (4.8), where f(n)is
+obtained using one of the approximations for the probability distribution conditioned on non-
+extinction (Fig. 5 B), is much closer to its real value than 1calculated via Eq. (4.1) (Fig. 5 A).
+For high, allf(n)approximations lead to accurate 1estimations, with the exception of the
+half-Gaussian. On the other hand, the half-Gaussian approximation performs well for very low
+, when every other approximation of f(n)yields inaccurate 1estimations. In the intermediate
+region, the renormalized-system size expansion turns out to be the best choice.
+Extinction times vary signiﬁcantly between parameter regimes, which we can think of as
+corresponding to different stem cell niches. Assuming that the system is in quasi-steady state, the
+average number of stem cells is roughly given by hniN. Hence, given the average number of
+stem cells in a niche, we can estimate the effective carrying capacity for different values from
+the quasi-steady state parameter regime. For example, for adult human crypt stem cell niches
+harbouring 4 6cells with division period of 24 30h[50,51], the extinction times fall between
+13days and 50years when comparing the results for different values spanning all the quasi-
+steady state region. A predicted extinction time on this scale could point to the need of additional
+regulatory mechanisms preventing extinction of a tissue’s stem cell population within the lifetime
+of an organism. For slow-cycling stem cells such as haematopoietic stem cells, the lowest estimates
+yield the presence of 104cells dividing once every 40weeks [52]. More recent estimates point to
+the number of hematopoietic stem cells in the human body falling within 5104 2105[53].
+It is unclear how these stem cells are distributed in individual niches, but even for niches hosting
+100 stem cells the extinction times fall within 1011 1013years, much higher than the human
+lifetime. For niches hosting a larger number of stem cells the extinction time is even higher.
+5. Discussion and Conclusion
+We have introduced the birth-death process with volume exclusion, a variation of the birth-
+death process that incorporates crowding effects due to the ﬁnite size of stem cell niches. For18rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+AB
+Figure 5. Inverse of the expected extinction time, 1, as a function of for a ﬁxed carrying capacity of N= 100 .A
+1estimated as b0f(1), following Eq. (2.7), with f(1)extracted from the PDF approximations shown in Fig. 3. B1
+calculated from Eq. (4.1) and Eq. (4.8), using different approximations of the probability distribution conditioned on non-
+extinction. The black dashed line represents the exact 1value, numerically obtained from the leading eigenvalue of the
+master operator. The 1estimation via Eq. (4.1) with f(n)calculated numerically (labelled “Theo”, orange line) is in good
+agreement with the exact 1. For very low , Eq. (4.1) with the half Gaussian approximation is the best ﬁt, while for
+higherthe SSE performs better. For high all approximations except the half Gaussian lead to good estimates of
+1. The application of Eq. (4.1) outperforms the direct approximation of 1using Eq. (2.7) (contrast panels AandB).
+cell division to occur there needs to be free space in the niche to accommodate the new born cell –
+hence the effective proliferation rate is higher (lower) when the niche is less (more) populated. In
+effect, the expected stem cell number in the vBD model is independent of the initial condition,
+in contrast to the CBD case, in which the expected number of stem cells is constant in time.
+Regulation through volume exclusion could also affect clone size distributions and their scaling
+with average clone size. In contrast to the CBD process, in which the size evolution of different
+clones is independent, in the vBD all clones are coupled through the empty space species. When
+one clone grows in size, the probability of other clones growing is decreased, thus affecting
+the clone-size distribution. Hence, it might be possible to detect evidence of volume exclusion
+effects from snapshots of clone size distributions, which are commonly measured experimentally
+[54–57]. We will explore this in follow-up research.
+At the stochastic level, the predictions of the vBD master equation differ signiﬁcantly from
+those of its deterministic counterpart. While the deterministic rate equations feature a stable
+steady state, , to which the system converges logistically, the master equation’s solution predicts
+the vBD model converging to extinction for all parameter sets. However, for sufﬁciently large,
+a long-lived quasi-steady state appears, and convergence to extinction is very slow. Hence, for
+high, a single stochastic trajectory representing a real system, might ﬂuctuate around the
+quasi-steady state’s non-trivial mode for all its lifetime.
+We have shown the vBD model to have three phases with different behaviours that, to the best
+of our knowledge, have not been analysed before: fast extinction dynamics through a unimodal
+transient, fast extinction dynamics through a bimodal transient, and slow extinction dynamics
+with a quasi-steady state. Transient bimodality rarely occurs in chemical reaction networks, but
+has been reported in recent works [58,59]. For the quasi-steady state region, we have shown two
+independent approximate solutions to the master equation, the QSS and WKB approximations.
+The QSS provides a more accurate approximation, whilst the WKB adopts a simpler mathematical
+expression. Moreover, the QSS approximation allowed us to prove that the position of the non-
+trivial mode generally differs from the deterministic prediction. For the bimodal extinction region,
+we have derived an approximate time-dependent solution to the master equation by making19rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .use of a renormalized system-size expansion, which is particularly useful for solving master
+equations of non-linear birth-death processes, but has not been widely applied. Remarkably, the
+expression obtained by the renormalized SSE is simpler than the one from the regular SSE.
+The vBD model is mathematically similar to susceptible-infected-susceptible (SIS) models in
+epidemiology [60–63]. Most of the stochastic SIS models studies consider a very large carrying
+capacity, or let it tend to inﬁnity. Here we have instead focused on solving the master equation
+for low carrying capacities, motivated by the application to stem cell population dynamics in
+niches that can have a carrying capacity as low as few tens of cells. The approximate solutions to
+the master equations we present here, thus, can shed light into the behaviour of SIS-like systems
+when the effect of having a ﬁnite carrying capacity becomes evident. In particular, the solutions
+of the vBD master equation can be interpreted as the time-dependent PDF of the number of
+infected individuals, and our approximation of the expected extinction time as the population’s
+expected time to recovery. Another similar model can be found when studying the role of positive
+feedback in cluster formation of signalling molecules [64]. In this case, the transition from quasi-
+steady to extinction states are interpreted as a switch from clustered to non-clustered states. A
+difference between such model and the vBD is that transitions to non-clustered to clustered states
+are allowed, whilst in the vBD model it is not possible to exit the extinction state.
+Our study proposes and describes a minimal model for stem cell dynamics with regulation
+through competition for space. In this context, the system parameters should be taken as effective
+parameters encompassing many different features. Let us conclude by discussing aspects of
+biological realism that could be represented explicitly in future extensions of our model. The
+vBD model assumes Markovian dynamics, which implies exponentially distributed waiting
+times between consecutive cell divisions. There is increasing evidence showing that the cell-
+cycle times are not exponentially distributed [65–69]. The inclusion of realistic cell-cycle time
+distributions in the vBD model will require further research. Spatially, our model considers cells
+distributed on a grid, assuming that the cell shapes remain unaltered. This hypothesis ignores the
+mechanical plasticity of cells, their mechanical response to pressure in different environments,
+and the irregular geometry of the stem cell niches [16,70]. Moreover, here we have modelled cell
+populations as well-mixed systems. This well-mixing assumption may be inappropriate when a
+niche is highly occupied. Since our aim is to study the hallmarks of regulation through volume
+exclusion, we have also neglected other plausible regulatory mechanisms that might be acting in
+parallel, such as competition for other resources [10,71,72] or cell-cell communication pathways
+between more differentiated (for example, transit amplifying) cells and stem cells [6,73]. In open
+niches these more differentiated cells might also compete with stem cells for space [10,72,74,75].
+The role of multiple cell types in competition for space and the interaction between different
+plausible regulatory mechanisms are interesting avenues for future research.20rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .References
+1. James E Till, Ernest A McCulloch, and Louis
+Siminovitch.
+A stochastic model of stem cell
+proliferation, based on the growth of
+spleen colony-forming cells.
+Proceedings of the National Academy of
+Sciences of the United States of America ,
+51(1):29, 1964.
+2. Zuzana Tothova and D Gary Gilliland.
+Foxo transcription factors and stem
+cell homeostasis: insights from the
+hematopoietic system.
+Cell stem cell , 1(2):140–152, 2007.
+3. Sean J Morrison and David T Scadden.
+The bone marrow niche for haematopoietic
+stem cells.
+Nature , 505(7483):327–334, 2014.
+4. Trista E North, Wolfram Goessling, Carl R
+Walkley, Claudia Lengerke, Kamden R
+Kopani, Allegra M Lord, Gerhard J Weber,
+Teresa V Bowman, Il-Ho Jang, Tilo Grosser,
+et al.
+Prostaglandin e2 regulates vertebrate
+haematopoietic stem cell homeostasis.
+Nature , 447(7147):1007–1011, 2007.
+5. Nils B Becker, Matthias Günther, Congxin
+Li, Adrien Jolly, and Thomas Höfer.
+Stem cell homeostasis by integral feedback
+through the niche.
+Journal of theoretical biology , 481:100–109,
+2019.
+6. Arthur D Lander, Kimberly K Gokoffski,
+Frederic Y M Wan, Qing Nie, and Anne L
+Calof.
+Cell lineages and the logic of proliferative
+control.
+PLoS biology , 7(1):e1000015, 2009.
+7. Marissa Renardy, Alexandra Jilkine, Leili
+Shahriyari, and Ching-Shan Chou.
+Control of cell fraction and population
+recovery during tissue regeneration in stem
+cell lineages.
+Journal of theoretical biology , 445:33–50, 2018.
+8. Ignacio A Rodriguez-Brenes, Dominik
+Wodarz, and Natalia L Komarova.
+Stem cell control, oscillations, and tissue
+regeneration in spatial and non-spatial
+models.
+Frontiers in oncology , 3:82, 2013.
+9. Shosei Yoshida.
+Open niche regulation of mouse
+spermatogenic stem cells.
+Development, growth & differentiation ,
+60(9):542–552, 2018.
+10. Yu Kitadate, David J Jörg, Moe Tokue,
+Ayumi Maruyama, Rie Ichikawa, SokenTsuchiya, Eri Segi-Nishida, Toshinori
+Nakagawa, Aya Uchida, Chiharu
+Kimura-Yoshida, et al.
+Competition for mitogens regulates
+spermatogenic stem cell homeostasis in an
+open niche.
+Cell Stem Cell , 24(1):79–92, 2019.
+11. Edouard Hannezo, Alice Coucke, and Jean-
+François Joanny.
+Interplay of migratory and division forces
+as a generic mechanism for stem cell
+patterns.
+Physical Review E , 93(2):022405, 2016.
+12. Kyle H Vining and David J Mooney.
+Mechanical forces direct stem cell
+behaviour in development and
+regeneration.
+Nature reviews Molecular cell biology ,
+18(12):728–742, 2017.
+13. Yiqing Zhang, Heyang Wei, and Wenyu
+Wen.
+Phase separation and mechanical forces
+in regulating asymmetric cell division of
+neural stem cells.
+International Journal of Molecular Sciences ,
+22(19):10267, 2021.
+14. Tudorita Tumbar, Geraldine Guasch,
+Valentina Greco, Cedric Blanpain,
+William E Lowry, Michael Rendl, and
+Elaine Fuchs.
+Deﬁning the epithelial stem cell niche in
+skin.
+Science , 303(5656):359–363, 2004.
+15. Jiwang Zhang, Chao Niu, Ling Ye, Haiyang
+Huang, Xi He, Wei-Gang Tong, Jason Ross,
+Jeff Haug, Teri Johnson, Jian Q Feng, et al.
+Identiﬁcation of the haematopoietic stem
+cell niche and control of the niche size.
+Nature , 425(6960):836–841, 2003.
+16. Linheng Li and Ting Xie.
+Stem cell niche: structure and function.
+Annu. Rev. Cell Dev. Biol. , 21:605–631, 2005.
+17. Wai-Kin So and Tom H Cheung.
+Molecular regulation of cellular quiescence:
+a perspective from adult stem cells and its
+niches.
+Cellular Quiescence , pages 1–25, 2018.
+18. Srinath C Sampath, Srihari C Sampath,
+Andrew TV Ho, Stéphane Y Corbel,
+Joshua D Millstone, John Lamb, John
+Walker, Bernd Kinzel, Christian Schmedt,
+and Helen M Blau.
+Induction of muscle stem cell quiescence by
+the secreted niche factor oncostatin m.
+Nature communications , 9(1):1–9, 2018.
+19. Fumio Arai and Toshio Suda.
+Quiescent stem cells in the niche.
+StemBook [Internet] , 2008.21rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .20. Rachel R Stine and Erika L Matunis.
+Stem cell competition: ﬁnding balance in
+the niche.
+Trends in cell biology , 23(8):357–364, 2013.
+21. Bernat Corominas-Murtra, Colinda LGJ
+Scheele, Kasumi Kishi, Saskia IJ Ellenbroek,
+Benjamin D Simons, Jacco Van Rheenen,
+and Edouard Hannezo.
+Stem cell lineage survival as a noisy
+competition for niche access.
+Proceedings of the National Academy of
+Sciences , 117(29):16969–16975, 2020.
+22. Stephen Smith, Claudia Cianci, and Ramon
+Grima.
+Macromolecular crowding directs the
+motion of small molecules inside cells.
+Journal of the Royal Society Interface ,
+14(131):20170047, 2017.
+23. Daniel Wilson, Helen Byrne, and Maria
+Bruna.
+Reactions, diffusion and volume exclusion
+in a heterogeneous system of interacting
+particles.
+arXiv preprint arXiv:1705.00004 , 2017.
+24. Louise Dyson and Ruth E Baker.
+The importance of volume exclusion in
+modelling cellular migration.
+Journal of mathematical biology , 71(3):691–
+711, 2015.
+25. Paul J Flory and Stephen Fisk.
+Effect of volume exclusion on the
+dimensions of polymer chains.
+The Journal of Chemical Physics , 44(6):2243–
+2248, 1966.
+26. Darren E Segall, Philip C Nelson, and Rob
+Phillips.
+Volume-exclusion effects in tethered-
+particle experiments: bead size
+matters.
+Physical review letters , 96(8):088306, 2006.
+27. Thomas Hillen, Heiko Enderling, and
+Philip Hahnfeldt.
+The tumor growth paradox and immune
+system-mediated selection for cancer stem
+cells.
+Bulletin of mathematical biology , 75(1):161–
+184, 2013.
+28. Allon M Klein and Benjamin D Simons.
+Universal patterns of stem cell fate in
+cycling adult tissues.
+Development , 138(15):3103–3111, 2011.
+29. Daniel T Gillespie.
+A general method for numerically
+simulating the stochastic time evolution of
+coupled chemical reactions.
+Journal of computational physics , 22(4):403–
+434, 1976.
+30. David Schnoerr, Guido Sanguinetti, andRamon Grima.
+Comparison of different moment-closure
+approximations for stochastic chemical
+kinetics.
+The Journal of Chemical Physics ,
+143(18):11B610_1, 2015.
+31. Theodore Edward Harris et al.
+The theory of branching processes , volume 6.
+Springer Berlin, 1963.
+32. Ramon Grima.
+Linear-noise approximation and the
+chemical master equation agree up to
+second-order moments for a class of
+chemical systems.
+Physical Review E , 92(4):042124, 2015.
+33. Benjamin D Simons and Hans Clevers.
+Strategies for homeostatic stem cell self-
+renewal in adult tissues.
+Cell, 145(6):851–862, 2011.
+34. Hiroki Yamaguchi, Kyogo Kawaguchi, and
+Takahiro Sagawa.
+Dynamical crossover in a stochastic model
+of cell fate decision.
+Physical review E , 96(1):012401, 2017.
+35. Neil A Robertson, Eric Latorre-Crespo,
+Maria Terrada-Terradas, Alison C Purcell,
+Benjamin J Livesey, Joseph A Marsh,
+Lee Murphy, Angie Fawkes, Louise
+MacGillvray, Mhairi Copland, et al.
+Longitudinal dynamics of clonal
+hematopoiesis identiﬁes gene-speciﬁc
+ﬁtness effects.
+bioRxiv , 2021.
+36. C Gardiner.
+Stochastic methods: a handbook for the
+natural and social sciences 4th ed., 2009.
+37. David Schnoerr, Guido Sanguinetti, and
+Ramon Grima.
+Approximation and inference methods for
+stochastic biochemical kinetics—a tutorial
+review.
+Journal of Physics A: Mathematical and
+Theoretical , 50(9):093001, 2017.
+38. Nicolaas Godfried Van Kampen.
+Stochastic processes in physics and chemistry ,
+volume 1.
+Elsevier, 1992.
+39. Stephen Smith and Vahid Shahrezaei.
+General transient solution of the one-step
+master equation in one dimension.
+Physical Review E , 91(6):062119, 2015.
+40. Philipp Thomas and Ramon Grima.
+Approximate probability distributions of
+the master equation.
+Physical Review E , 92(1):012120, 2015.
+41. NG Van Kampen.
+The expansion of the master equation.
+Advances in Chemical PhyT-its , 34:245–311,22rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1976.
+42. R Grima.
+Noise-induced breakdown of the michaelis-
+menten equation in steady-state conditions.
+Physical review letters , 102(21):218103, 2009.
+43. Ramon Grima.
+An effective rate equation approach to
+reaction kinetics in small volumes: Theory
+and application to biochemical reactions in
+nonequilibrium steady-state conditions.
+The Journal of chemical physics ,
+133(3):07B604, 2010.
+44. George E Andrews.
+The theory of partitions .
+Number 2. Cambridge university press,
+1998.
+45. Claudia Cianci, Duccio Fanelli, and Alan J
+McKane.
+Wkb versus generalized van kampen
+system-size expansion: The stochastic
+logistic equation.
+arXiv preprint arXiv:1508.00490 , 2015.
+46. Michael Assaf and Baruch Meerson.
+Spectral formulation and wkb
+approximation for rare-event statistics
+in reaction systems.
+Physical Review E , 74(4):041115, 2006.
+47. Michael Assaf and Baruch Meerson.
+Wkb theory of large deviations in stochastic
+populations.
+Journal of Physics A: Mathematical and
+Theoretical , 50(26):263001, 2017.
+48. Peter Ashcroft.
+The statistical physics of ﬁxation and
+equilibration in individual-based models .
+The University of Manchester (United
+Kingdom), 2015.
+49. James Holehouse and Hector Pollitt.
+Non-equilibrium time-dependent solution
+to discrete choice with social interactions.
+arXiv preprint arXiv:2109.09633 , 2021.
+50. Nick Barker, Rachel A Ridgway, Johan H
+Van Es, Marc Van De Wetering, Harry
+Begthel, Maaike Van Den Born, Esther
+Danenberg, Alan R Clarke, Owen J Sansom,
+and Hans Clevers.
+Crypt stem cells as the cells-of-origin of
+intestinal cancer.
+Nature , 457(7229):608–611, 2009.
+51. Shahid Umar.
+Intestinal stem cells.
+Current gastroenterology reports , 12(5):340–
+348, 2010.
+52. Sandra N Catlin, Lambert Busque,
+Rosemary E Gale, Peter Guttorp, and
+Janis L Abkowitz.
+The replication rate of human
+hematopoietic stem cells in vivo.Blood, The Journal of the American Society of
+Hematology , 117(17):4460–4466, 2011.
+53. Henry Lee-Six, Nina Friesgaard Øbro,
+Mairi S Shepherd, Sebastian Grossmann,
+Kevin Dawson, Miriam Belmonte,
+Robert J Osborne, Brian JP Huntly, Inigo
+Martincorena, Elizabeth Anderson, et al.
+Population dynamics of normal human
+blood inferred from somatic mutations.
+Nature , 561(7724):473–478, 2018.
+54. Margaret E Buckingham and Sigolène M
+Meilhac.
+Tracing cells for tracking cell lineage and
+clonal behavior.
+Developmental cell , 21(3):394–409, 2011.
+55. Kai Kretzschmar and Fiona M Watt.
+Lineage tracing.
+Cell, 148(1-2):33–45, 2012.
+56. Lennart Kester and Alexander van
+Oudenaarden.
+Single-cell transcriptomics meets lineage
+tracing.
+Cell stem cell , 23(2):166–179, 2018.
+57. Cédric Blanpain and Benjamin D Simons.
+Unravelling stem cell dynamics by lineage
+tracing.
+Nature reviews Molecular cell biology ,
+14(8):489–502, 2013.
+58. Chen Jia and Ramon Grima.
+Dynamical phase diagram of an auto-
+regulating gene in fast switching
+conditions.
+The Journal of chemical physics ,
+152(17):174110, 2020.
+59. James Holehouse, Augustinas Sukys, and
+Ramon Grima.
+Stochastic time-dependent enzyme
+kinetics: Closed-form solution and
+transient bimodality.
+The Journal of Chemical Physics ,
+153(16):164113, 2020.
+60. Richard J Kryscio and Claude Lefévre.
+On the extinction of the s–i–s stochastic
+logistic epidemic.
+Journal of Applied Probability , 26(4):685–694,
+1989.
+61. John A Jacquez and Carl P Simon.
+The stochastic si model with recruitment
+and deaths i. comparison with the closed sis
+model.
+Mathematical biosciences , 117(1-2):77–125,
+1993.
+62. Boqiang Cao, Meijing Shan, Qimin Zhang,
+and Weiming Wang.
+A stochastic sis epidemic model with
+vaccination.
+Physica A: Statistical Mechanics and Its
+Applications , 486:127–143, 2017.23rspa.royalsocietypublishing.org Proc R Soc A 0000000. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .63. Ingemar Nåsell.
+Extinction and quasi-stationarity in the
+stochastic logistic SIS model .
+Springer, 2011.
+64. Alexandra Jilkine, Sigurd B Angenent,
+Lani F Wu, and Steven J Altschuler.
+A density-dependent switch drives
+stochastic clustering and polarization
+of signaling molecules.
+PLoS computational biology , 7(11):e1002271,
+2011.
+65. Ruben Perez-Carrasco, Casper Beentjes,
+and Ramon Grima.
+Effects of cell cycle variability on
+lineage and population measurements
+of messenger rna abundance.
+Journal of the Royal Society Interface ,
+17(168):20200360, 2020.
+66. Tom Serge Weber, Irene Jaehnert, Christian
+Schichor, Michal Or-Guil, and Jorge
+Carneiro.
+Quantifying the length and variance of the
+eukaryotic cell cycle phases by a stochastic
+model and dual nucleoside pulse labelling.
+PLoS computational biology , 10(7):e1003616,
+2014.
+67. Patrick S Stumpf, Rosanna CG Smith,
+Michael Lenz, Andreas Schuppert, Franz-
+Josef Müller, Ann Babtie, Thalia E Chan,
+Michael PH Stumpf, Colin P Please, Sam D
+Howison, et al.
+Stem cell differentiation as a non-markov
+stochastic process.
+Cell Systems , 5(3):268–282, 2017.
+68. Enrico Gavagnin, Matthew J Ford,
+Richard L Mort, Tim Rogers, and
+Christian A Yates.
+The invasion speed of cell migration
+models with realistic cell cycle time
+distributions.
+Journal of Theoretical Biology , 481:91–99,
+2019.
+69. Hui Xiao Chao, Randy I Fakhreddin,
+Hristo K Shimerov, Katarzyna M Kedziora,
+Rashmi J Kumar, Joanna Perez, Juanita C
+Limas, Gavin D Grant, Jeanette Gowen
+Cook, Gaorav P Gupta, et al.
+Evidence that the human cell cycle is a
+series of uncoupled, memoryless phases.
+Molecular systems biology , 15(3):e8604, 2019.
+70. Navid Bonakdar, Richard Gerum, Michael
+Kuhn, Marina Spörrer, Anna Lippert,
+Werner Schneider, Katerina E Aifantis, and
+Ben Fabry.
+Mechanical plasticity of cells.
+Nature materials , 15(10):1090–1094, 2016.
+71. David J Jörg, Yu Kitadate, Shosei Yoshida,
+and Benjamin D Simons.Stem cell populations as self-renewing
+many-particle systems.
+Annual Review of Condensed Matter Physics ,
+12:135–153, 2021.
+72. Yu Kitadate and Shosei Yoshida.
+Regulation of spermatogenic stem cell
+homeostasis by mitogen competition in an
+open niche microenvironment.
+Genes & Genetic Systems , pages 21–00062,
+2022.
+73. Wing-Cheong Lo, Ching-Shan Chou,
+Kimberly K Gokoffski, Frederic Y-M Wan,
+Arthur D Lander, Anne L Calof, and Qing
+Nie.
+Feedback regulation in multistage cell
+lineages.
+Mathematical biosciences and engineering:
+MBE , 6(1):59, 2009.
+74. Genevieve M Crane, Elise Jeffery, and Sean J
+Morrison.
+Adult haematopoietic stem cell niches.
+Nature Reviews Immunology , 17(9):573–590,
+2017.
+75. Konstantinos D Kokkaliaris, Leo Kunz,
+Nina Cabezas-Wallscheid, Constantina
+Christodoulou, Simon Renders, Fernando
+Camargo, Andreas Trumpp, David T
+Scadden, and Timm Schroeder.
+Adult blood stem cell localization reﬂects
+the abundance of reported bone marrow
+niche cell types and their combinations.
+Blood , 136(20):2296–2307, 2020.
+Funding. LS was supported by Chancellor’s Fellowship
+from the University of Edinburgh. RG was supported
+by Chancellor’s Fellow PhD Studentship and Edinburgh
+Global Scholarship from the University of Edinburgh.

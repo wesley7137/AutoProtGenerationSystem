@@ -1,0 +1,9 @@
+fair-esm
+esm
+biopython
+transformers
+torch
+
+moleculekit
+rdkit
+scikit-learn

@@ -1,0 +1,480 @@
+Title: Multi-Compartmental Biomaterial Scaffolds for Patterning Neural Tissue
+  Organoids in Models of Neurodevelopment and Tissue Regeneration
+Abstract:   Biomaterials are becoming an essential tool in the study and application of
+stem cell research. Various types of biomaterials enable three-dimensional (3D)
+culture of stem cells, and, more recently, also enable high-resolution
+patterning and organization of multicellular architectures. Biomaterials also
+hold potential to provide many additional advantages over cell transplants
+alone in regenerative medicine. This paper describes novel designs for
+functionalized biomaterial constructs that guide tissue development to targeted
+regional identities and structures. Such designs comprise compartmentalized
+regions in the biomaterial structure that are functionalized with molecular
+factors that form concentration gradients through the construct and guide stem
+cell development, axis patterning, and tissue architecture, including
+rostral/caudal, ventral/dorsal, or medial/lateral identities of the central
+nervous system. The ability to recapitulate innate developmental processes in a
+3D environment and under specific controlled conditions has vital application
+to advanced models of neurodevelopment and for repair of specific sites of
+damaged or diseased neural tissue.
+
+Full Text: 1 
+ Multi-Compartmental Biomaterial Scaffolds for Patte rning Neural Tissue Organoids in Models of 
+Neurodevelopment and Tissue Regeneration 
+ 
+Richard J. McMurtrey 
+ 
+Institute of Neural Regeneration & Tissue Engineeri ng, Highland, UT, United States 
+Email: richard.mcmurtrey@neuralregeneration.org  
+ 
+ 
+Abstract 
+ 
+Biomaterials are becoming an essential tool in the study and application of stem cell research.  Vario us types of 
+biomaterials enable three-dimensional (3D) culture of stem cells, and, more recently, also enable high -resolution 
+patterning and organization of multicellular archit ectures. Biomaterials also hold potential to provid e many 
+additional advantages over cell transplants alone i n regenerative medicine. This paper describes novel  designs for 
+functionalized biomaterial constructs that guide ti ssue development to targeted regional identities an d structures. 
+Such designs comprise compartmentalized regions in the biomaterial structure that are functionalized w ith 
+molecular factors that form concentration gradients  through the construct and guide stem cell developm ent, axis 
+patterning, and tissue architecture, including rost ral/caudal, ventral/dorsal, or medial/lateral ident ities of the central 
+nervous system. The ability to recapitulate innate developmental processes in a 3D environment and und er specific 
+controlled conditions has vital application to adva nced models of neurodevelopment and for repair of s pecific sites of 
+damaged or diseased neural tissue. 
+ 
+Keywords: Tissue Engineering, Neural Regeneration, Cerebral Organoids, 3D Stem Cell Culture, Neurodeve lopment, Mass 
+Transport, Diffusion Gradients 
+ 
+ 
+Open Access: Creative Commons Attribution Non-Comme rcial (CC BY-NC) License. Any further distribution of this work must maintain 
+attribution to the author and the title of the work , journal citation, and DOI. This is an author-crea ted version of an open-access article published 
+in the Journal of Tissue Engineering—the version of  record is available online at http://dx.doi.org/10.1177/2041731416671926  Reference: 
+McMurtrey RJ. Multi-Compartmental Biomaterial Scaff olds for Patterning Neural Tissue Organoids in Mode ls of Neurodevelopment and 
+Tissue Regeneration. Journal of Tissue Engineering.  2016; 7:1-8.  
+ 
+ 
+ 
+Introduction 
+ 
+It has long been recognized that stem cells hold tr emendous therapeutic potential for a variety of dis eases and 
+injuries, particularly for numerous ailments that h ave no effective treatments, but restoring tissue a nd organ 
+functions with stem cells has also posed several ch allenges that remain to be overcome, including suff icient cell 
+survival, development, and functional integration i n native tissues. One approach for surmounting many  of these 
+limitations and significantly advancing capabilitie s of stem cells in therapeutic applications is the use of stem cells 
+cultured in biomaterial architecture. Biomaterials offer numerous advantages and expand capabilities t hat generally 
+cannot be achieved with stem cells alone, particula rly in the case of implanting cells and reconstruct ing damaged 
+tissue.  
+ 
+Biomaterials generally include natural or synthetic  matrix molecules (or a modified combination of the  two) that 
+replicate aspects of innate extracellular matrix in  various tissues. This biomaterial scaffolding can serve many 
+functions, such as supporting structural organizati on and patterning of cells, providing molecular and  mechanical 
+differentiation cues, arranging attachment points f or cells and aiding anchorage-dependent survival, a s well as 
+preventing cells from being washed away from implan tation sites in the body [1]. Many types of biomate rials have 
+been shown to influence the survival and function o f developing stem cells, and biomaterial designs ca n help 
+replicate cellular interactions, matrix characteris tics, biochemical gradients, and signaling events t hat occur in 
+development, in addition to supporting cell surviva l, differentiation, and integration into innate tis sue.  2 
+ The suspension of stem cells in biomaterial polymer s and aqueous media thus enables the formation of u nique 
+structures and functions found in many types of org an tissues. One example of this is cerebral organoi ds, where 
+clusters of pluripotent stem cells are cultured in spheres of proteinaceous Matrigel to create numerou s types of neural 
+structures and cell types [2]. 3D hydrogel cultures  of stem cells have been shown to enable the format ion of other 
+advanced anatomical structures, including various g astrointestinal, hepatic, pancreatic, renal, retina l, and neural 
+tissues. The cells themselves appear to possess inn ately-programmed capabilities to self-assemble at l east some 
+aspects of important anatomical structures even in unpatterned hydrogel constructs. For example, neura l tissue 
+organoids have demonstrated various aspects of vent ricular, hippocampal, retinal, spinal, and cortical  regions, and 
+such organoid constructs are being used to identify  previously unknown mechanisms of neurological dise ases like 
+microcephaly, autism, neurodegenerative diseases, z ika virus infection, and others [2-6] as well as to  investigate 
+normal tissue development [7-9].  
+ 
+Importantly, the use of biomaterials in clinically- relevant testing has also shown promise in enhancin g cell survival 
+and cell migration at the implantation site [10-12] , promoting a favorable regenerative environment [1 3], and 
+extending neural connectivity through neural lesion s [14]. The presence of hydrogel materials loaded w ith 
+neurotrophic factors and implanted in ischemic brai n tissue can enhance cell survival, axonal sproutin g, and 
+migration of immature neuronal cells around the str oke area [12]. Thus engineered tissues hold great p otential in 
+regenerative medicine, but one of the weaknesses of  stem-cell-derived tissues is the lack of comprehen sive control 
+over specific regional identities, architectures, a nd cellular sub-specializations in the biomaterials . Accurate 
+replication of complex structures like cortex, hipp ocampus, retina, tracts, or other neuroanatomy cann ot yet be 
+entirely controlled or achieved and each organoid m ay vary significantly in the resulting composition of cell types, 
+structures, and self-organization patterns.  
+ 
+Synthesis of Form and Function 
+ 
+Because a simple homogenous biomaterial sphere is l ikely not sufficient to consistently guide all type s of cellular self-
+organization and tissue patterning in organoids, ad vancing technologies seek to enable composite bioma terials to 
+provide more detailed guidance of cellular architec ture and identity. This may be accomplished through  a variety of 
+means. The architecture of a biomaterial construct,  for example, can be formed with committed or restr icted neural 
+stem cells capable of forming diverse neuroglial su btypes and the inclusion of patterned fiber scaffol ds suspended in 
+the biomaterial can guide and enhance cell attachme nt and neurite outgrowth along the fibers [11, 15].  Hydrogels 
+functionalized with axonal guidance molecules may e nhance cellular attachment, migration, differentiat ion, and 
+axonal extension, and hydrogels seeded with disease d cells can replicate innate pathological features of diseases like 
+Alzheimer’s and Parkinson’s disease [2-4, 16]. Char acteristics like biomaterial stiffness, density, an d cross-linking 
+capability can influence cell differentiation and f unction [17], and a wide array of tissue types and cell states may be 
+achieved with the choice of biomaterial, either by means of intrinsic cell signals or by means of vari ous growth 
+factors and differentiation factors that can be sup plied within the biomaterials.  
+ 
+In addition, biomaterials may be designed to enhanc e the biocompatibility of tissue implants. Certain types of matrix 
+molecules may inhibit inflammatory and scarring rea ctions that arise from disrupting tissue or introdu cing a foreign 
+body into the tissue, either by interacting with ce llular receptors or by absorbing and diffusing reac tive cell signaling 
+factors. If the biomaterial takes too long to degra de or has too great of stiffness compared with the innate tissue, it 
+may trigger foreign body reactions that prevent fun ctional integration of the implanted cells, and con versely, if the 
+biomaterial degrades too quickly or is too soft or friable, it may not adequately support functional i ntegration of 
+implanted cells into the tissue. Thus biomaterial p olymers must be optimized to facilitate integration  into host tissue, 
+minimize foreign-body reactions, and enhance the pe rmissive environment of the tissue.  
+ 
+The Role of Diffusion 
+ 
+Recent research has suggested that the inherent diff usion limitations of gasses, nutrients, and signali ng molecules 
+through 3D tissue cultures can specifically affect cellular organization, differentiation state, and m etabolic 
+characteristics of cells [18]. While this phenomeno n can impede important oxygen and nutrient delivery  to cells in a 
+3D environment, it can also be advantageously used to replicate molecular concentration gradients in s ynthetic 3D 3 
+ tissue constructs. In other words, the biomaterial can serve to enclose and contain local regions with  concentration 
+gradients of certain factors in the construct that may be endogenously secreted by cells or that may b e introduced 
+artificially. Such a capability is vital for replic ating innate gradients and cues that occur in early  tissue development 
+or that may play a role in certain pathological con ditions, and by forming compartments of diffusing f actors in the 
+biomaterial construct, concentration gradients can be formed to drive stem cell differentiation and gu ide tissue 
+development. These concentration gradients may be f ormed of trophic factors, migratory cues, neurite g uidance 
+signals, hormones, nutrients, or other factors that  affect tissue patterning and cell identity at dist inct regions of a 
+tissue construct. Understanding these diffusion sig nals and processes will better help deliver specifi c controllable 
+concentrations of ions, nutrients, and other factor s to specific regions of the cellular tissue constr ucts, which in turn 
+will enable tight control of cell state and differe ntiation processes. Evidence also suggests that ste m cells implanted 
+into the body may have better survival if they are cultured and prepared under certain conditions of h ypoxic stress 
+or ischemic exposure, a form of “preconditioning” t he cells [19], and culturing cells in 3D conditions  with limited 
+diffusion is one way of achieving the preconditioni ng effect for regenerative cell therapy application s. 
+ 
+3D Biomaterial Scaffolding Designs 
+ 
+Several examples of 3D biomaterial designs are give n herein that comprise distinct nanoarchitecture, f unctionalized 
+compartments, and microgradients in the tissue cons truct [Fig. 1]. These designs provide detailed cont rol of cell 
+differentiation and tissue structure, and several e xamples are described demonstrating how certain inn ate 
+neurodevelopmental cues can be mimicked in a 3D tis sue construct [Fig. 2] and how regional patterning of cortical 
+tissue can be influenced with applied gradients of signaling factors [Fig. 3].  
+ 
+ 
+Figure 1: Examples of various organoid scaffolding designs created with biomaterial hydrogels and poly mer 
+fibers. (A) represents the standard organoid matrix  droplet in which cellular spheroids are placed for  
+organoid differentiation. (B-G) represent more comp lex designs with two or more distinct regions or 
+4 
+ polarized compartments in the biomaterial, such as where an external hydrogel layer is loaded with sig naling 
+molecules, growth factors, or functionalized fibers  and then coated around the inner hydrogel sphere. Each 
+compartment is used to create certain effects—for e xample, in (B) the upper compartment may be 
+biochemically functionalized with rostral-inducing factors while the lower compartment may be 
+functionalized with caudal-inducing factors. As ano ther example, in (C) the lower and upper compartmen ts 
+may be functionalized with ventral-dorsal direction al gradients  and the remaining central and outer 
+compartments may be functionalized in a lateral-med ial-lateral manner, as described in the text. The 
+compartments of the hydrogel may be directly loaded  with corresponding signaling factors to create 
+concentration gradients, or the fibers or hydrogel polymers themselves may be functionalized with the desired 
+signaling factor. Fibers are about a micron in diam eter while the tissue constructs are a few millimet ers in 
+diameter, and thus the figures are not to scale.  
+ 
+Though appearing complicated, these designs may be constructed through relatively simple means. Bioche mical 
+signaling factors (which may include differentiatio n cues, patterning factors, axonal guidance molecul es, growth 
+factors, or others) are loaded or mixed into specif ic compartments of biomaterial hydrogel at desired initial 
+concentrations, and these then diffuse and form spe cific concentration gradients through the biomateri al construct. 
+These concentration gradient profiles of the signal ing factors through the spatial coordinates of the construct over 
+time were recently derived and published, including  for scenarios of a limited supply of diffusant mol ecules (like 
+certain signaling factors or glucose in media) or f or an unlimited diffusant supply (like oxygen in cu lture), and with 
+or without metabolism of the diffusant by cells in the 3D tissue construct [18].  
+ 
+Functionalized nanofibers themselves may also be su spended within or through the 3D hydrogel (as in Fi gures 1D-
+G), the method of which has been described previous ly [15]. Functionalized fibers may also be rolled i nto the 
+hydrogel (as in Figure 1E), and the biomaterial lay ers of the construct may be assembled in stages rat her than all at 
+once, in order, for example, to add external signal ing gradients at later time points in the culture. The nanofibers are 
+functionalized by coating biochemical factors direc tly onto the polymer fibers. If coating by adsorpti ve methods, the 
+factors may then diffuse from the fibers into the h ydrogel compartments, or if coating by more permane nt chemical 
+coupling methods, guidance molecules or attachment domains remain bound to the polymer fibers. By expl oring a 
+variety of factors and arrangements, such construct s enable detailed study of what signals and structu res are 
+necessary and sufficient (and what signals are infl uential but non-essential) for neurodevelopmental p rocesses like 
+cell sub-specialization, axis patterning, regionali zation, and architecture formation.  
+ 
+Biochemically-active molecules that serve as differ entiation and patterning factors can guide tissue c onstruct 
+polarization and axis patterning by being incorpora ted into specific regions of the hydrogel. Diffusiv e gradients of 
+these factors can then be established in a similar orientation to innate biochemical gradients that ar e known to 
+influence developmental processes in central neural  tissue. For example, in the brain and spinal cord,  ventralization 
+effects and the corresponding neural and astroglial  identities may be achieved by incorporating ventra lization factors 
+like sonic hedgehog protein (SHH), smoothened agoni st (SAG), or purmorphamine into a hydrogel compartm ent [20-
+23]. Fibroblast growth factor 8 (FGF-8) can be adde d to induce midbrain dopaminergic identity [24-26].  Dorsalization 
+effects in the tissue construct may likewise be ach ieved with “wnt” protein (WNT), bone morphogenetic protein 4 
+(BMP-4), cyclopamine, or others. WNT actually plays  a complex role and may help to induce certain dors alization, 
+caudalization, or ventralization effects depending on context [22, 27-32]. Similarly, the family of fi broblast growth 
+factors (FGFs) can play varied roles in caudalizati on, rostralization, ventralization, and dorsalizati on [33-35]. Other 
+small molecule inhibitors of the above-mentioned pa thways can also be used to divert commitment toward s opposite 
+fates—for example, while WNT, BMP, and nodal can in duce caudal fates, WNT inhibitors, BMP inhibitors, and nodal 
+inhibitors may be implemented to drive a rostral fa te. Thus signaling molecule gradients in synthetic forms can be 
+used to recapitulate the natural directional gradie nts of SHH, WNT, BMP, and FGFs that are essential i n proper 
+neural tissue development.  
+ 
+ 5 
+  
+Figure 2: Functionalized nanofibers enable a greate r variety of architectural formations in cerebral o rganoids 
+grown from induced pluripotent stem cells (iPSCs). (A) Sphere of neurally-induced iPSCs beginning to 
+migrate along functionalized nanofibers in a hydrog el. (B) Hydrogel rolled with functionalized nanofib ers 
+resembling a folded cortex similar to the folding o f the hippocampal formation. 
+ 
+ 
+ 
+Figure 3: The choice of biomaterial composition and  molecular signaling factors produces different eff ects on 
+spheroids of differentiating iPSCs. (A) Dual phase spherical hydrogel with neural differentiation and prolific 
+neurite outgrowth. (B) Regionalized neuroepithelial  development (seen as the more translucent layer ar ound 
+the tissue) in a biomaterial construct.  
+ 
+Most regionalization factors, however, cannot simpl y be partitioned into clear categorical effects sin ce they have 
+interacting effects and depend substantially on tim ing, concentration, and cell state. For example, ov er decades of 
+research work on neurodevelopment, it was found tha t endogenous inhibition of the BMP molecule was req uired for 
+the formation of neural cells from the early ectode rmal layer in many developing species from amphibia ns to 
+mammals [36-37]. Through the 1990s and early 2000s it was found that inhibitors of BMP signaling (such  as 
+dorsomophin, noggin, chordin, and follistatin) as w ell as inhibitors of TGF-β (such as SB-431542) coul d be used in the 
+culture of stem cells to promote neural differentia tion. Further research suggested that these signali ng pathways, 
+while necessary for neural induction, were not enti rely sufficient. More complex roles were found for FGF signaling, 
+WNT signaling, and retinoic acid (RA) signaling, eac h of which could influence neural differentiation b ased on the 
+timing and concentration of signaling factors [2, 3 8-40],. FGF signaling has some downstream effects on inhi biting 
+BMP and SMAD family member proteins, but FGF also p roduces a neural fate independently of BMP or SMAD 
+modulation [38]. FGF appears to have numerous effec ts, including promoting neural induction, promoting  
+proliferation of neural stem cells, promoting a cau dal fate, and, if the cells have already committed to a cerebral fate, 
+promoting a ventral forebrain identity [41].  
+6 
+ Retinoic acid can also induce neuroglial lineage in the brain [42], with high concentrations tending to  produce 
+neurons that are representative of the caudal porti on of the brain and spinal cord [41, 43-44] (simila r to the 
+caudalizing effects of FGF-2), although again its e ffects depend on concentration, timing, and current  state of the 
+cells. Early exposure of neural progenitor cells to  high levels of RA tends to promote posteriorization , while 
+activation of SHH signaling promotes ventralization . It has been found that RA can promote SHH activity , and 
+gradients of both RA and SHH are important for the i nduction of the ‘floor plate,’ a tissue structure a t the front of the 
+neural tube that helps signal ventral-dorsal patter ning of the cells within the cord. In the spinal co rd, these factors are 
+influential in driving ventral motor neuron identit y and central interneuron identity [7]. RA also inte racts with WNT 
+by altering gene promoter assembly and activating a lternate, non-canonical WNT pathways (such as diffe rentiation 
+signals) rather than canonical WNT pathways (such a s maintenance of stemness) [45].  
+ 
+During development the meningeal layers that surrou nd the brain play a significant role in neurodevelo pment by 
+providing retinoic acid signaling and chemoattracta nt signals that aid outer attachment of radial glia l fibers and by 
+promoting the migration of neural cells to the cort ex [2, 46-47]. The dura, which is the most outer la yer of the 
+meninges, also secretes FGF-2 and TGF-β related mol ecules that aid in the initiation of bone plates th at become the 
+skull. As neural stem cells migrate from central pr ogenitor regions along spoke-like radial glia to po pulate the outer 
+rims that will become cortex, network connections b oth near and far also begin to form.  
+ 
+Also early in development of the brain, reelin is e xpressed and secreted from Cajal-Retzius neurons, wh ich are the 
+primary cells found in the outer layer I of the ear ly-developing cortex. It is thought that reelin hel ps guide radial glia 
+fibers to extend outwardly towards the edges of the  brain where cortex and hippocampus will eventually  be formed 
+[48-53], and reelin enables neurons and neural prog enitors to release from radial glia fibers and migr ate throughout 
+the cortex [51, 54-55]. It has also been shown that  reelin is essential for neuronal positioning in co rtex and spinal cord 
+[51, 56], where cortical and hippocampal fibers ori ent along the reelin gradient [48, 53]. A lack of r eelin causes 
+lissencephaly or agyria, likely due to the fact tha t radial glia scaffolding that neurons rely on for migration to the 
+cortex is deformed and cannot provide the proper gu ide for neural precursors [49-50, 52].  
+ 
+Reelin has also been implicated in diseases like Alz heimer’s, epilepsy, schizophrenia, and other disord ers [57-61]. The 
+mechanisms involved are varied, but appear to invol ve interactions among reelin-responsive domains in 
+apolipoprotein E receptors and very low-density lip oprotein receptors, which have been shown to be inv olved in 
+radial migration of neuronal precursors and detachm ent of such precursors from migratory chains [62]. Reelin also 
+can promote dendritic growth and strengthen long-te rm potentiation by influencing N-methyl-D-aspartate  (NMDA) 
+receptors [63-68], and it is thought that reelin in creases the mobilization of the NMDA receptors such  that they 
+“float” among the lipid molecules of the membrane r ather than being anchored to the architecture of th e cell. The 
+ability to influence membrane mobility allows reeli n to control subunit expression within NMDA recepto rs after 
+early development [69], and this may allow the NMDA  receptor to mature more quickly, since the maturat ion of the 
+NMDA receptor involves replacing the NR2B subunit w ith the NR2A subunit [70].  
+ 
+As brain development proceeds, signals that control  area specification continue in complexity, and the  cells of the 
+brain not only possess the machinery for all the ex traordinary functions of thought and memory, but al so the 
+incredible capability to self-organize and assemble  its complex pathways and networks. Numerous transc ription 
+factors determine finely detailed patterns of brain  development and spatial identity. One of the more simple 
+examples from this complexity is found in the dueli ng roles of Emx2 and Pax6. In the 3D environment of  the brain, 
+Emx2 directs the development of the caudal-medial r egion while Pax6 directs the rostral-lateral region  of the cortex. 
+Each of these factors inhibits the other, thereby m aking a strong gradient of Pax6 in one region and a  strong gradient 
+of Emx2 in the opposite region. If either one of th ese factors is inactive or mutated, the cortical re gion it is responsible 
+for will be underdeveloped and the opposing region will overgrow [71-73]. Expression of both Pax6 and Emx2 is 
+strongly influenced by concentrations of previously  mentioned factors like SHH (which represses Pax6) and FGFs 
+(like FGF-8 which represses Emx2) [33, 74-75], mean ing that although simple regional gradients can be generated in 
+organoid constructs, additional downstream gradient s of signaling factors may complicate or interweave  with 
+intended results.  
+ 7 
+ As can be seen, investigating the function of just a single type of diffusing signaling factor in the brain can be quite 
+complex, meaning that assembling the roles of thous ands of possible variations is a daunting task, but  the advent of 
+these 3D tissue designs enables a platform for cont rolled study of individual factors in neural develo pment and 
+disease. Recent work suggests that the cortex has at  least 180 distinct and conserved areas [76], the i dentities and 
+structures of which must be shaped from a variety o f signaling cues. The ability to replicate these in nate 
+neurodevelopmental processes and three-dimensional compositions in the lab with known gradients and lo calized 
+concentrations of molecular signaling factors is es sential for directed specification and accurate stu dy of stem cell 
+development and thus vital to the targeted regenera tion of functional neural tissue.  
+ 
+Conclusions 
+ 
+When attempting to design ideal cellular constructs  for implantation, numerous aspects must be careful ly considered 
+in the context of the specific tissue type and the desired functional effects. Restoring function in ti ssues and organs—
+whether brain, heart, lung, liver, kidney, nerve, m uscle, or other tissues—is likely to require integr ating and 
+reconstructing functional architecture of the tissu e rather than simply implanting isolated cells. Rece nt stem cell 
+research has therefore focused on the application o f biomaterials along with stem cells to enable desi red patterning 
+and organization of more accurate and complete tiss ue structures. The tissue construct designs present ed herein 
+enable an array of important investigations in tiss ue development, disease mechanisms, environmental t oxicologies, 
+and regenerative medicine applications.   
+ 
+Nevertheless, much research remains to be done on t he optimal combinations of biomaterials, signaling factors, and 
+scaffolding architectures needed to optimally prepa re cells for transplantation and integration into s pecific tissues of 
+the body. This work describes novel biomaterial des igns for controlling critical processes of neurodev elopment, 
+within which molecular signaling gradients may be e stablished according to physical diffusion models. It is not yet 
+known to what extent neural networks can be functio nally established in 3D tissue constructs, or wheth er 3D 
+architecture can be integrated into the prohibitive  in vivo  central nervous system environment, but the abilit y to 
+accurately replicate neuroanatomical structures and  guide neural network formation in three dimensions , both in 
+vitro  and in vivo , will produce major advances in the field of neura l regeneration.  
+ 
+Disclosure Statement 
+ 
+The author declares no potential conflicts of inter est with respect to the research, authorship, and/o r publication of 
+this article and was not granted financial support for this work.  
+ 
+References 
+ 
+1. McMurtrey RJ. Novel advancements in three-dimens ional neural tissue engineering and regenerative me dicine. Neural Regen. 
+Res. 10(3), 352–354 (2015). 
+2. Lancaster MA, Renner M, Martin CA et al. Cerebra l organoids model human brain development and micro cephaly. Nature 
+501(7467), 373–379 (2013). 
+3. Mariani J, Coppola G, Zhang P et al. FOXG1-depen dent dysregulation of GABA/glutamate neuron differe ntiation in autism 
+spectrum disorders. Cell 162(2), 375–390 (2015). 
+4. Choi SH, Kim YH, Hebisch M, Sliwinski C, Lee S, D'Avanzo C, Chen H, Hooli B, Asselin C, Muffat J, K lee JB, Zhang C, Wainger 
+BJ, Peitz M, Kovacs DM, Woolf CJ, Wagner SL, Tanzi RE, Kim DY. A three-dimensional human neural cell c ulture model of 
+Alzheimer's disease. Nature. 2014 Nov 13;515(7526): 274-8. 
+5. Dang J, Tiwari SK, Lichinchi G, Qin Y, Patil VS,  Eroshkin AM, Rana TM. Zika Virus Depletes Neural P rogenitors in Human 
+Cerebral Organoids through Activation of the Innate  Immune Receptor TLR3. Cell Stem Cell. 2016 May 6. pii: S1934-5909(16)30057-
+1.  
+6. Mullard A. Nat Rev Drug Discov. Stem-cell discov ery platforms yield first clinical candidates. 2015  Sep 1;14(9):589-91. 
+7. Meinhardt A, Eberle D, Tazaki A et al. 3D recons titution of the patterned neural tube from embryoni c stem cells. Stem Cell Rep. 
+2014 Dec 3(6), 987–999. 
+8. Kelava I, Lancaster MA. Stem Cell Models of Huma n Brain Development. Cell Stem Cell. 2016 Jun 2;18( 6):736-48. 
+9. Wang L, Hou S, Han YG. Hedgehog signaling promot es basal progenitor expansion and the growth and fo lding of the neocortex. 
+Nat Neurosci. 2016 Jul;19(7):888-96. 8 
+ 10. Moshayedi P, Carmichael ST. Hyaluronan, neural stem cells and tissue reconstruction after acute is chemic stroke. Biomatter. 
+3(1), e23863 (2013). 
+11. Carlson AL, Bennett NK, Francis NL, Halikere A,  Clarke S, Moore JC, Hart RP, Paradiso K, Wernig M,  Kohn J, Pang ZP, Moghe 
+PV. Generation and transplantation of reprogrammed human neurons in the brain using 3D microtopographi c scaffolds. Nat 
+Commun. 2016 Mar 17;7:10862. 
+12. Cook DJ, Nguyen C, Chun HN, L Llorente I, Chiu AS, Machnicki M, Zarembinski TI, Carmichael ST. Hyd rogel-delivered brain-
+derived neurotrophic factor promotes tissue repair and recovery after stroke. J Cereb Blood Flow Metab . 2016 May 12. 
+13. Hakim JS, Esmaeili Rad M, Grahn PJ et al. Posit ively charged oligo[poly(ethylene glycol) fumarate]  scaffold implantation results 
+in a permissive lesion environment after spinal cor d injury in rat. Tissue Eng. Part A 21(13–14), 2099 –2114 (2015). 
+14. Lu P, Wang Y, Graham L et al. Long-distance gro wth and connectivity of neural stem cells after sev ere spinal cord injury. Cell 
+150(6), 1264–1273 (2012). 
+15. McMurtrey RJ. Patterned and functionalized nano fiber scaffolds in 3-dimensional hydrogel construct s enhance neurite 
+outgrowth and directional control. J. Neural Eng. 1 1, 066009 (2014). 
+16. Carballo-Molina OA, Sánchez-Navarro A, López-Or nelas A, Lara-Rodarte R, Salazar P, Campos-Romo A, Ramos-Mejía V, 
+Velasco I. Semaphorin 3C Released from a Biocompati ble Hydrogel Guides and Promotes Axonal Growth of R odent and Human 
+Dopaminergic Neurons. Tissue Eng Part A. 2016 Jun;2 2(11-12):850-61. 
+17. Aurand ER, Lampe KJ, Bjugstad KB. Defining and designing polymers and hydrogels for neural tissue engineering. Neurosci. 
+Res. 72, 199–213 (2012). 
+18. McMurtrey RJ. Analytic models of oxygen and nut rient diffusion, metabolism dynamics, and architect ure optimization in three-
+dimensional tissue constructs with applications and  insights in cerebral organoids. Tissue Eng. Part C  Methods 22(3), 221–249 
+(2016). 
+19. Sart S, Ma T, Yan Li Y. Preconditioning stem ce lls for in vivo delivery. Bioresearch Open Access 3 , 137–149.  (2014). 
+20. Komada M, Saitsu H, Kinboshi M, Miura T, Shiota  K, Ishibashi M. Hedgehog signaling is involved in development of the 
+neocortex. Development. 2008 Aug;135(16):2717-27. 
+21. Chi L, Fan B, Feng D, Chen Z, Liu Z, Hui Y, Xu X, Ma L, Fang Y, Zhang Q, Jin G, Liu L, Guan F, Zha ng X. The Dorsoventral 
+Patterning of Human Forebrain Follows an Activation /Transformation Model. Cereb Cortex. 2016 May 25. p ii: bhw152. 
+22. Le Dréau G, Martí E. Dorsal-ventral patterning of the neural tube: a tale of three signals. Dev Ne urobiol. 2012 Dec;72(12):1471-81.  
+23. Dessaud E, McMahon AP, Briscoe J. Pattern forma tion in the vertebrate neural tube: a sonic hedgeho g morphogen-regulated 
+transcriptional network. Development. 2008 Aug;135( 15):2489-503.  
+24. Crossley PH, Martinez S, Martin GR. Midbrain de velopment induced by FGF8 in the chick embryo. Natu re. 1996 Mar 
+7;380(6569):66-8. 
+25. Ye W, Shimamura K, Rubenstein JL, Hynes MA, Rosenth al A. FGF and Shh signals control dopaminergic and serotonergic cell 
+fate in the anterior neural plate. Cell. 1998 May 2 9;93(5):755-66. 
+26. Tieng V, Stoppini L, Villy S, Fathi M, Dubois-D auphin M, Krause KH. Engineering of midbrain organo ids containing long-lived 
+dopaminergic neurons. Stem Cells Dev. 2014 Jul 1;23 (13):1535-47. 
+27. Nordström U, Jessell TM, Edlund T. Progressive induction of caudal neural character by graded Wnt signaling. Nat Neurosci. 
+2002 Jun;5(6):525-32. Erratum in: Nat Neurosci 2002  Jul;5(7):704.  
+28. Lagutin OV, Zhu CC, Kobayashi D, Topczewski J, Shimamura K, Puelles L, Russell HR, McKinnon PJ, So lnica-Krezel L, Oliver 
+G. Six3 repression of Wnt signaling in the anterior  neuroectoderm is essential for vertebrate forebrai n development. Genes Dev. 
+2003 Feb 1;17(3):368-79. 
+29. Irioka T, Watanabe K, Mizusawa H, Mizuseki K, S asai Y. Distinct effects of caudalizing factors on regional specification of 
+embryonic stem cell-derived neural precursors. Brai n Res Dev Brain Res. 2005 Jan 1;154(1):63-70. 
+30. Andoniadou CL, Martinez-Barbera JP. Development al mechanisms directing early anterior forebrain sp ecification in vertebrates. 
+Cell Mol Life Sci. 2013 Oct;70(20):3739-52.  
+31. Azim K, Fischer B, Hurtado-Chong A, Draganova K , Cantù C, Zemke M, Sommer L, Butt A, Raineteau O. Persistent Wnt/β-
+catenin signaling determines dorsalization of the p ostnatal subventricular zone and neural stem cell s pecification into 
+oligodendrocytes and glutamatergic neurons. Stem Ce lls. 2014 May;32(5):1301-12. 
+32. Kiecker C, Niehrs C. A morphogen gradient of Wn t/beta-catenin signalling regulates anteroposterior  neural patterning in 
+Xenopus. Development. 2001 Nov;128(21):4189-201. 
+33. Cholfin JA, Rubenstein JL. Frontal cortex subdi vision patterning is coordinately regulated by Fgf8 , Fgf17, and Emx2. J Comp 
+Neurol. 2008 Jul 10;509(2):144-55. 
+34. Liu DX, Greene LA. Regulation of neuronal survi val and death by E2F-dependent gene repression and derepression. Neuron. 
+2001 Nov 8;32(3):425-38. 
+35. Kengaku M, Okamoto H. bFGF as a possible morpho gen for the anteroposterior axis of the central ner vous system in Xenopus. 
+Development. 1995 Sep;121(9):3121-30. 
+36. Linker C, Stern CD. Neural induction requires B MP inhibition only as a late step, and involves sig nals other than FGF and W nt 
+antagonists. Development. 2004 Nov;131(22):5671-81.   
+37. Levine AJ, Brivanlou AH. Proposal of a model of  mammalian neural induction. Dev Biol. 2007 Aug 15; 308(2):247-256.  
+38. Stern CD. Neural induction: old problem, new fi ndings, yet more questions. Development. 2005 May;1 32(9):2007-2021.  9 
+ 39. Shi Y, Kirwan P, Smith J, Robinson HP, Livesey FJ. Human cerebral cortex development from pluripot ent stem cells to functional 
+excitatory synapses. Nat Neurosci. 2012 Feb 5;15(3) :477-86, S1.  
+40. Al Oustah A, Danesin C, Khouri-Farah N, Farreny  MA, Escalas N, Cochard P, Glise B, Soula C. Dynami cs of sonic hedgehog 
+signaling in the ventral spinal cord are controlled  by intrinsic changes in source cells requiring sul fatase 1. Development. 2014 
+Mar;141(6):1392-403. 
+41. Hansen DV, Rubenstein JL, Kriegstein AR. Derivi ng excitatory neurons of the neocortex from pluripo tent stem cells. Neuron. 
+2011 May 26;70(4):645-60.  
+42. Maden M. Role and distribution of retinoic acid  during CNS development. Int Rev Cytol. 2001;209:1- 77.  
+43. Barth KA, Kishimoto Y, Rohr KB, Seydler C, Schu lte-Merker S, Wilson SW. Bmp activity establishes a  gradient of positional 
+information throughout the entire neural plate. Dev elopment. 1999 Nov;126(22):4977-87.  
+44. Kudoh T, Wilson SW, Dawid IB. Distinct roles fo r Fgf, Wnt and retinoic acid in posteriorizing the neural ectoderm. 
+Development. 2002 Sep;129(18):4335-46.  
+45. Osei-Sarfo K, Gudas LJ. Retinoic acid suppresse s the canonical Wnt signaling pathway in embryonic stem cells and activates the 
+noncanonical Wnt signaling pathway. Stem Cells. 201 4 Aug;32(8):2061-71. 
+46. Radakovits R, Barros CS, Belvindrah R, Patton B , Müller U. Regulation of radial glial survival by signals from the meninges. J 
+Neurosci. 2009 Jun 17;29(24):7694-705.  
+47. Siegenthaler JA, Ashique AM, Zarbalis K, Patter son KP, Hecht JH, Kane MA, Folias AE, Choe Y, May S R, Kume T, Napoli JL, 
+Peterson AS, Pleasure SJ. Retinoic acid from the me ninges regulates cortical neuron generation. Cell. 2009 Oct 30;139(3):597-609. 
+Erratum in: Cell. 2011 Aug 5;146(3):486.  
+48. Nomura T, Takahashi M, Hara Y, Osumi N. Pattern s of neurogenesis and amplitude of Reelin expressio n are essential for 
+making a mammalian-type cortex. PLoS One. 2008 Jan 16;3(1):e1454.  
+49. Förster E, Tielsch A, Saum B, Weiss KH, Johanss en C, Graus-Porta D, Müller U, Frotscher M. Reelin,  Disabled 1, and beta 1 
+integrins are required for the formation of the rad ial glial scaffold in the hippocampus. Proc Natl Ac ad Sci U S A. 2002 Oct 
+1;99(20):13178-83.  
+50. Frotscher M, Haas CA, Förster E. Reelin control s granule cell migration in the dentate gyrus by ac ting on the radial glial scaffold. 
+Cereb Cortex. 2003 Jun;13(6):634-40.  
+51. Hartfuss E, Förster E, Bock HH, Hack MA, Leprin ce P, Luque JM, Herz J, Frotscher M, Götz M. Reelin  signaling directly affects 
+radial glia morphology and biochemical maturation. Development. 2003 Oct;130(19):4597-609. Erratum in:  Development. 2003 
+Nov;130(21):5291.  
+52. Zhao S, Chai X, Förster E, Frotscher M. Reelin is a positional signal for the lamination of dentat e granule cells. Development. 
+2004 Oct;131(20):5117-25.  
+53. Del Río JA, Heimrich B, Borrell V, Förster E, D rakew A, Alcántara S, Nakajima K, Miyata T, Ogawa M , Mikoshiba K, Derer P, 
+Frotscher M, Soriano E. A role for Cajal-Retzius ce lls and reelin in the development of hippocampal co nnections. Nature. 1997 Jan 
+2;385(6611):70-4.  
+54. Hack I, Bancila M, Loulier K, Carroll P, Cremer  H. Reelin is a detachment signal in tangential cha in-migration during postnatal 
+neurogenesis. Nat Neurosci. 2002 Oct;5(10):939-45.  
+55. Kim HM, Qu T, Kriho V, Lacor P, Smalheiser N, P appas GD, Guidotti A, Costa E, Sugaya K. Reelin fun ction in neural stem cell 
+biology. Proc Natl Acad Sci U S A. 2002 Mar 19;99(6 ):4020-5.  
+56. Yip YP, Mehta N, Magdaleno S, Curran T, Yip JW.  Ectopic expression of reelin alters migration of s ympathetic preganglionic 
+neurons in the spinal cord. J Comp Neurol. 2009 Jul  10;515(2):260-8.  
+57. Durakoglugil MS, Chen Y, White CL, Kavalali ET,  Herz J. Reelin signaling antagonizes beta-amyloid at the synapse. Proc Natl 
+Acad Sci U S A. 2009 Sep 15;106(37):15938-43.  
+58. Crino P. New RELN Mutation Associated with Liss encephaly and Epilepsy. Epilepsy Curr. 2001 Nov;1(2 ):72.  
+59. Impagnatiello F, Guidotti AR, Pesold C, Dwivedi  Y, Caruncho H, Pisu MG, Uzunov DP, Smalheiser NR, Davis JM, Pandey GN, 
+Pappas GD, Tueting P, Sharma RP, Costa E. A decreas e of reelin expression as a putative vulnerability factor in schizophrenia. Proc 
+Natl Acad Sci U S A. 1998 Dec 22;95(26):15718-23.  
+60. Guidotti A, Auta J, Davis JM, Di-Giorgi-Gerevin i V, Dwivedi Y, Grayson DR, Impagnatiello F, Pandey  G, Pesold C, Sharma R, 
+Uzunov D, Costa E. Decrease in reelin and glutamic acid decarboxylase67 (GAD67) expression in schizoph renia and bipolar 
+disorder: a postmortem brain study. Arch Gen Psychi atry. 2000 Nov;57(11):1061-9. Erratum in: Arch Gen Psychiatry 2002 
+Jan;59(1):12.   
+61. Grayson DR, Jia X, Chen Y, Sharma RP, Mitchell CP, Guidotti A, Costa E. Reelin promoter hypermethy lation in schizophrenia. 
+Proc Natl Acad Sci U S A. 2005 Jun 28;102(26):9341- 6.  
+62. Blake SM, Strasser V, Andrade N, Duit S, Hofbau er R, Schneider WJ, Nimpf J. Thrombospondin-1 binds  to ApoER2 and VLDL 
+receptor and functions in postnatal neuronal migrat ion. EMBO J. 2008 Nov 19;27(22):3069-80. Erratum in : EMBO J. 2008 Dec 
+17;27(24):3332.  
+63. Groc L, Choquet D, Stephenson FA, Verrier D, Ma nzoni OJ, Chavis P. NMDA receptor surface trafficki ng and synaptic subunit 
+composition are developmentally regulated by the ex tracellular matrix protein Reelin. J Neurosci. 2007  Sep 19;27(38):10165-75.  
+64. Niu S, Renfro A, Quattrocchi CC, Sheldon M, D'A rcangelo G. Reelin promotes hippocampal dendrite de velopment through the 
+VLDLR/ApoER2-Dab1 pathway. Neuron. 2004 Jan 8;41(1) :71-84.  10 
+ 65. Niu S, Yabut O, D'Arcangelo G. The Reelin signa ling pathway promotes dendritic spine development i n hippocampal neurons. J 
+Neurosci. 2008 Oct 8;28(41):10339-48.  
+66. Sinagra M, Verrier D, Frankova D, Korwek KM, Bl ahos J, Weeber EJ, Manzoni OJ, Chavis P. Reelin, ve ry-low-density lipoprotein 
+receptor, and apolipoprotein E receptor 2 control s omatic NMDA receptor composition during hippocampal  maturation in vitro. J 
+Neurosci. 2005 Jun 29;25(26):6127-36.  
+67. Weeber EJ, Beffert U, Jones C, Christian JM, Fo rster E, Sweatt JD, Herz J. Reelin and ApoE recepto rs cooperate to enhance 
+hippocampal synaptic plasticity and learning. J Bio l Chem. 2002 Oct 18;277(42):39944-52.  
+68. D'Arcangelo G. Apoer2: a reelin receptor to rem ember. Neuron. 2005 Aug 18;47(4):471-3.  
+69. Campo CG, Sinagra M, Verrier D, Manzoni OJ, Cha vis P. Reelin secreted by GABAergic neurons regulat es glutamate receptor 
+homeostasis. PLoS One. 2009;4(5):e5505.  
+70. Lopez de Armentia M, Sah P. Development and sub unit composition of synaptic NMDA receptors in the amygdala: NR2B 
+synapses in the adult central amygdala. J Neurosci.  2003 Jul 30;23(17):6876-83.  
+71. Bishop KM, Rubenstein JL, O'Leary DD. Distinct actions of Emx1, Emx2, and Pax6 in regulating the s pecification of areas in the 
+developing neocortex. J Neurosci. 2002 Sep 1;22(17) :7627-38.  
+72. Muzio L, Mallamaci A. Emx1, emx2 and pax6 in sp ecification, regionalization and arealization of th e cerebral cortex. Cereb 
+Cortex. 2003 Jun;13(6):641-7.  
+73. Cecchi C. Emx2: a gene responsible for cortical  development, regionalization and area specificatio n. Gene. 2002 May 29;291(1-
+2):1-9.  
+74. Shimamura K, Rubenstein JL. Inductive interacti ons direct early regionalization of the mouse foreb rain. Development. 1997 
+Jul;124(14):2709-18. 
+75. Grove EA, Fukuchi-Shimogori T. Generating the c erebral cortical area map. Annu Rev Neurosci. 2003; 26:355-80. 
+76. Glasser MF, Coalson TS, Robinson EC, Hacker CD,  Harwell J, Yacoub E, Ugurbil K, Andersson J, Beckm ann CF, Jenkinson M, 
+Smith SM, Van Essen DC. A multi-modal parcellation of human cerebral cortex. Nature. 2016 Jul 20.  
+ 

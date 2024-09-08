@@ -1,0 +1,1219 @@
+Title: Pluripotency, differentiation, and reprogramming: A gene expression
+  dynamics model with epigenetic feedback regulation
+Abstract:   Characterization of pluripotent states, in which cells can both self-renew
+and differentiate, and the irreversible loss of pluripotency are important
+research areas in developmental biology. In particular, an understanding of
+these processes is essential to the reprogramming of cells for biomedical
+applications, i.e., the experimental recovery of pluripotency in differentiated
+cells. Based on recent advances in dynamical-systems theory for gene
+expression, we propose a gene-regulatory-network model consisting of several
+pluripotent and differentiation genes. Our results show that cellular-state
+transition to differentiated cell types occurs as the number of cells
+increases, beginning with the pluripotent state and oscillatory expression of
+pluripotent genes. Cell-cell signaling mediates the differentiation process
+with robustness to noise, while epigenetic modifications affecting gene
+expression dynamics fix the cellular state. These modifications ensure the
+cellular state to be protected against external perturbation, but they also
+work as an epigenetic barrier to recovery of pluripotency. We show that
+overexpression of several genes leads to the reprogramming of cells, consistent
+with the methods for establishing induced pluripotent stem cells. Our model,
+which involves the inter-relationship between gene expression dynamics and
+epigenetic modifications, improves our basic understanding of cell
+differentiation and reprogramming.
+
+Full Text: Pluripotency, differentiation, and reprogramming: A gene
+expression dynamics model with epigenetic feedback
+regulation
+Tadashi Miyamoto1, Chikara Furusawa2, Kunihiko Kaneko1, *
+1 Department of Basic Science, The University of Tokyo, Meguro-ku,
+Tokyo, Japan
+2 Laboratory for Multiscale Biosystem Dynamics, Quantitative Biology
+Center, RIKEN, Suita, Osaka, Japan
+* kaneko@complex.c.u-tokyo.ac.jp
+Abstract
+Embryonic stem cells exhibit pluripotency: they can differentiate into all types of
+somatic cells. Pluripotent genes such as Oct4 andNanog are activated in the
+pluripotent state, and their expression decreases during cell differentiation. Inversely,
+expression of differentiation genes such as Gata6 andGata4 is promoted during
+differentiation. The gene regulatory network controlling the expression of these genes
+has been described, and slower-scale epigenetic modifications have been uncovered.
+Although the differentiation of pluripotent stem cells is normally irreversible,
+reprogramming of cells can be experimentally manipulated to regain pluripotency via
+overexpression of certain genes. Despite these experimental advances, the dynamics and
+mechanisms of differentiation and reprogramming are not yet fully understood. Based
+on recent experimental findings, we constructed a simple gene regulatory network
+including pluripotent and differentiation genes, and we demonstrated the existence of
+pluripotent and differentiated states from the resultant dynamical-systems model. Two
+differentiation mechanisms, interaction-induced switching from an expression oscillatory
+state and noise-assisted transition between bistable stationary states, were tested in the
+model. The former was found to be relevant to the differentiation process. We also
+introduced variables representing epigenetic modifications, which controlled the
+threshold for gene expression. By assuming positive feedback between expression levels
+and the epigenetic variables, we observed differentiation in expression dynamics.
+Additionally, with numerical reprogramming experiments for differentiated cells, we
+showed that pluripotency was recovered in cells by imposing overexpression of two
+pluripotent genes and external factors to control expression of differentiation genes.
+Interestingly, these factors were consistent with the four Yamanaka factors, Oct4, Sox2,
+Klf4, and Myc, which were necessary for the establishment of induced pluripotent cells.
+These results, based on a gene regulatory network and expression dynamics, contribute
+to our wider understanding of pluripotency, differentiation, and reprogramming of cells,
+and they provide a fresh viewpoint on robustness and control during development.
+Author Summary
+Characterization of pluripotent states, in which cells can both self-renew and
+differentiate, and the irreversible loss of pluripotency are important research areas in
+1/29arXiv:1508.00686v1  [q-bio.MN]  4 Aug 2015developmental biology. In particular, an understanding of these processes is essential to
+the reprogramming of cells for biomedical applications, i.e., the experimental recovery of
+pluripotency in differentiated cells. Based on recent advances in dynamical-systems
+theory for gene expression, we propose a gene-regulatory-network model consisting of
+several pluripotent and differentiation genes. Our results show that cellular-state
+transition to differentiated cell types occurs as the number of cells increases, beginning
+with the pluripotent state and oscillatory expression of pluripotent genes. Cell-cell
+signaling mediates the differentiation process with robustness to noise, while epigenetic
+modifications affecting gene expression dynamics fix the cellular state. These
+modifications ensure the cellular state to be protected against external perturbation,
+but they also work as an epigenetic barrier to recovery of pluripotency. We show that
+overexpression of several genes leads to the reprogramming of cells, consistent with the
+methods for establishing induced pluripotent stem cells. Our model, which involves the
+inter-relationship between gene expression dynamics and epigenetic modifications,
+improves our basic understanding of cell differentiation and reprogramming.
+Introduction
+In multicellular organisms, cells that exhibit stemness during development can both
+self-renew and differentiate into other cell types. In contrast, differentiated cells lose the
+ability to further differentiate into other cell types and terminally differentiated cells
+can only self-renew. Currently, how stemness and the irreversible loss of differentiation
+potential are characterized by gene expression patterns and dynamics are key questions
+in developmental biology.
+Cells with stemness include embryonic stem cells (ESCs), which are derived from the
+inner cell mass of a mammalian blastocyst and are pluripotent, i.e., they can
+differentiate into all the types of somatic cells [1,2]. To maintain pluripotency,
+pluripotent genes such as Pou5f1 (also known as Oct4 ) [3,4] and Nanog [5,6] are
+activated in ESCs. Expression of these genes gradually decreases during cell
+differentiation, whereas expression of differentiation marker genes increases.
+Understanding these changes in gene expression patterns over the course of cell
+differentiation is important for characterizing the loss of pluripotency.
+During normal development, the loss of pluripotency is irreversible. However, the
+recovery of pluripotency in differentiated cells was first achieved by experimental
+manipulation in plants, and then in Xenopus laevis via cloning by Gurdon [7]. More
+recently, the overexpression of four genes that are highly expressed in ECSs, Oct4, Sox2,
+Klf4, and Myc (now termed Yamanaka factors), has been used to reprogram
+differentiated cells. Overexpression of these genes leads to cellular-state transition and
+changes in gene expression patterns, and the transition generates cells known as induced
+pluripotent stem cells (iPSCs) [8]. Previous studies have also uncovered the gene
+regulatory network (GRN) related to the differentiation and reprogramming of
+cells [9,10].
+To understand the differentiation process theoretically, Waddington proposed a
+landscape scenario in which each stable cell-type is represented as a valley and the
+differentiation process is represented as a ball rolling from the top of a hill down into
+the valley [11]. In this scenario, the reprogramming process works inversely to push the
+ball to the top of the hill [12{14].
+As a theoretical representation of Waddington's landscape, the dynamical-systems
+approach has been developed over several decades, pioneered by Kauffman [15] and
+Goodwin [16]. In this approach, the cellular state is represented by a set of protein
+expression levels with temporal changes that are given by GRNs. According to gene
+expression dynamics, the cellular state is attracted to one of the stable states, which is
+2/29termed an attractor. Each attractor is assumed to correspond to each cell type.
+Indeed, this attractor view has become important for understanding the
+diversification of cellular states and their robustness. Both theoretical and experimental
+approaches have been developed to assign each cell-type to one of the multi-stable
+states [17{19]. In these approaches, a pluripotent state is regarded as a stationary
+attractor with relatively weak stability, and the loss of pluripotency is the transition by
+noise to attractors with stronger stability.
+An alternative approach investigated how the interplay between intra-cellular
+dynamics and interaction leads to differentiation and the loss of pluripotency [20{23].
+Specifically, the pluripotent state is represented by oscillatory states following the
+expression dynamics of more genes, whereas the loss of pluripotency is represented by
+the decrease in the degree of expressed genes necessary for oscillatory dynamics. Here,
+differentiation is triggered by cell-cell interactions, which lead to robustness in
+developmental paths and the final distribution of cell types [20,24,25]. By using several
+GRNs, cells with oscillatory intracellular gene expression dynamics are found to
+differentiate into other cell types by cell-cell interactions [21,26{28]. Indeed, the
+recovery of pluripotency by gene overexpression is a process predicted to facilitate
+recovery of lost degrees of freedom and oscillation [20]. However, of the question of
+whether this theory applies to realistic GRNs has yet to be explored. Despite these
+earlier studies, pluripotency has not yet been confirmed in a realistic GRN observed in
+experiments, and the mechanism of reprogramming remains elusive.
+Epigenetic modifications such as DNA methylation and histone modification are now
+also recognized as important in cell differentiation. Epigenetic change solidifies
+differentiated-cellular states by altering chromatin structure to generate
+transcriptionally active and inactive regions [29,30]. With epigenetic change, the
+activity of gene expression is preserved in a process known as epigenetic memory [31].
+Indeed, epigenetic modification is suggested as a barrier to reprogramming [32].
+However, the theoretical inter-relationship between expression dynamics and epigenetic
+modification has yet to be fully explored.
+The aim of the present study was three-fold. First, by using GRNs obtained from a
+previous experimental study, we examined the validity of two differentiation scenarios: 1)
+oscillation + cell-cell interaction and 2) multistability + noise. Second, to demonstrate
+that differentiation by gene expression dynamics is solidified by epigenetic modification,
+we introduced a mathematical model for epigenetic feedback regulation. Third, we
+investigated how overexpression of some genes leads to reprogramming, i.e., regaining
+pluripotency from differentiated states (scenario 1) by initializing epigenetic changes.
+Below, we have first introduced a simple model extracted from an experimentally
+observed GRN. This model consists of several genes, including pluripotent and
+differentiation genes, with mutual activation and inhibition. We then examined the
+oscillatory dynamics and multistable states scenarios to show that differentiation with
+the loss of pluripotency progresses from a stem cell state with oscillatory expression
+through cell-cell interactions. Additionally, the two scenarios were compared with
+regard to their robustness to noise and the regulation of the ratio of differentiated cells.
+We also investigated the epigenetic process by introducing variables that give the
+threshold for the expression of genes to demonstrate that the cellular state derived from
+gene expression dynamics is fixed by epigenetic feedback regulation. Differentiation by
+gene expression is fixed according to these threshold variables; thus, the pluripotent and
+differentiated states are fixed.
+Finally, we investigated reprogramming by temporally imposing overexpression of
+genes and examining whether the differentiated state is reversed to the pluripotent state.
+Via overexpression of several genes, epigenetic fixation was relaxed and the expression
+levels and dynamics of the pluripotent state were recovered. This reprogramming was
+3/29shown to require the overexpression of several genes, including pluripotent genes, over a
+sufficient period beyond the time scale of epigenetic fixation. Indeed, by using a model
+with five relevant genes, we found that four genes corresponding to the Yamanaka
+factors must be overexpressed for reprogramming to occur. It was also demonstrated
+that insufficient overexpression of genes, i.e., overexpression of pluripotent genes only,
+results in partially reprogrammed cells (which, experimentally, are known as pre-iPSCs).
+Construction of GRN model
+In the pluripotent state, cells can proliferate and retain their potentiality for
+differentiation. The expression of pluripotent genes is necessary for pluripotency, but it
+is not always sufficient. In the differentiation process, expression of pluripotent genes
+gradually decreases, while expression of differentiation marker genes increases. These
+temporal changes are a result of gene-gene regulation, which can be integrated as a
+GRN consisting of pluripotent and differentiation genes.
+Here, we adopted the GRN reported by Dunn et al. [33] (Fig. 1) and produced
+simplified models by compressing some paths and genes while maintaining the structure
+of the GRN (see Models).
+Results
+Single cell dynamics
+Using the four-gene model (Fig. 1C), we first present the behavior of single-cell
+dynamics. Depending on the parameter Kij, which gives the strength of activation or
+inhibition from gene jto genei, there are three possible behaviors: (i) fixed-point
+attractor with high expression of pluripotent genes (FP), given by a fixed-point x11;
+(ii) fixed-point attractor with high expression of differentiation genes (FD), given by a
+fixed-point x10; and (iii) the oscillatory state (O), in which all expression levels show
+temporal cycles (Fig. 2). These three states appear as attractors depending on the
+parameter values Kij.
+Because the expression level of pluripotent gene x1is most important for determining
+the three states, the regulation of gene x1, which is controlled by the parameter K1j, is
+crucial for determining cellular behavior. In particular, threshold K11andK13were
+found to be critical parameters. Where the value of K11was low, expression of gene x1
+was promoted; where the value of K13was low, gene x1was suppressed. First of all, we
+set all parameters Kijrandomly, and examined the dynamics. If the parameter value of
+K11(K13) was set to a much lower (larger) value (say 0 :1 (1:0), respectively), the
+expression of x1is fixed to a high value, and the differentiation process would be more
+difficult. On the other hand, if this parameter value was high (low), x1was not easily
+expressed or always expressed, respectively, so that the stem cell state is difficult to be
+obtained unless other parameter values are finely tuned. With the neighborhood of the
+above parameters values, the expression level of x1changes flexibly to other parameters.
+We then observed that the expression dynamics changed between fixed-point and
+oscillation easily by changing other parameter values. Indeed, as will be shown,
+differentiation behavior was observed for a broader range of other parameters. As the
+parameter space is so huge, we here fixed K11andK13at these values and drew the
+phase diagram against other parameters. For the parameters K11andK13, for example
+K11= 0:35;K13= 0:78, gene expression levels showed oscillation.
+To study FP, FD, and O, i.e., the three states described above, we fixed the
+parameters K11andK1j(for specific values, see Models), and assessed dependence on
+the other three parameters K34,K42, andK43(Fig. 3). In most parameter regions, two
+4/29Figure 1. Gene regulatory network. A: The GRN is inferred as a core
+pluripotency network by Dunn et al. [33]. It includes pluripotent transcription factors
+such as Oct4 andNanog . In this paper, we first picked up only the eleven genes depicted
+by cyan nodes, which are considered to be relevant to pluripotency and reprogramming,
+and include those concerned with Yamanaka four factors, while experimentally
+confirmed interactions among them as depicted by blue edges are adopted [9]. We then
+reduced them to four or five nodes, by compressing a linear chain part A !B!C to
+A!C, or A!BaC to AaC, where!represents activation and ainhibition. B:
+The five-gene simplified model. The regulator from Oct4 toKlf2 is compressed into
+that fromx2tox4, while the regulator from Rex1 toKlf2 is compressed into that from
+x3tox4, wherex1,x2,x3,x4, andx5correspond to Nanog, Oct4, Gata6, Gata4 , and
+Klf4, respectively. C: The four-gene model, consisting of two pluripotent (red; x1;x2)
+and differentiation (green; x3;x4) marker genes, in which the positive feedback from x5
+tox1is replaced by auto-regulation. In all diagrams, arrow-headed and T-headed lines
+represent positive and negative regulation, respectively.
+attractors (stable states) existed, either FP+FD or FD+O depending on the initial
+conditions. Where the initial condition involved high expression of pluripotent genes,
+FP or O was reached depending on the parameters; where the initial condition involved
+high expression of differentiation genes, FD was reached.
+For higher values of K34andK43, gene-expression oscillation, i.e., the oscillatory
+state, did not appear, and FP and FD coexisted. Conversely, for lower values of K34
+andK43, the oscillatory state appeared for 0 :1<K 42<0:5 if pluripotent genes were
+initially highly expressed. However, where differentiation genes were initially highly
+expressed, cells fell into FD; thus, FD and O coexisted. As an example of the oscillatory
+pluripotent state, we fixed the parameters at K34= 0:45,K42= 0:30, andK43= 0:45
+for most of the simulations described below.
+For oscillatory gene expression, negative feedback is generally required. In our
+model, negative feedback of gene x1exists through genes x2,x3, andx4. For the
+parameter values that generated oscillatory expression, O, auto-promotion and negative
+feedback of gene x1(as the key factor in pluripotency) were balanced. Where either of
+the two regulations was dominant, oscillation ceased and the cellular state fell into
+5/29Figure 2. Time series of single-cell dynamics. Time series of gene expression for
+x1,x2,x3, andx4. Each colored line represents expression levels of a single gene. Three
+different behaviors appeared in single-cell dynamics depending on the parameter Kij.
+We set the parameter K13at (A) 0:98, (B) 0:58, and (C) 0 :78. The other parameters
+were fixed at K34= 0:45;K31= 0:94;K11= 0:35;K21= 0:80,K42= 0:30, and
+K43= 0:45. A: The pluripotent genes x1andx2were highly expressed, and the
+differentiation genes x3andx4were suppressed. This state corresponds to FP. B:
+Pluripotent genes were suppressed, and differentiation genes were expressed. This state
+corresponds to FD. C: Oscillation of gene expression occurred, and this state
+corresponds to O.
+either of FP or FD.
+Differentiation with cell-cell interaction and noise
+To understand developmental processes, we must investigate the switch from pluripotent
+to differentiated states. This differentiation event can be mediated either by cell-cell
+interactions (i.e., by chemicals from other cells) or by noise. Here we explored these two
+possibilities.
+Cell-cell interactions: Cell-cell interactions play an important role in cellular
+differentiation. In the simplified GRN we adopted, gene x4corresponds to Gata4 .
+According to Gene ontology database, only Gata4 among the four genes in the present
+model concerns with the cell-cell signaling. Hence, we assumed the cell-cell interaction
+viax4. Indeed, even if other factors xi(i6= 4) were assumed to diffuse, differentiation
+by cell-cell interaction to be presented did not appear.
+With an increase in the number of cells, differentiation began to occur with specific
+timing. Following earlier studies [21,26], we used a model including the cell division
+process and cell-cell interactions among divided cells. Here, cells divided according to a
+certain division interval, t= 25, with the two resultant cells having the same gene
+expression pattern xiwith the addition of some noise. Starting from a single cell
+initially in the pluripotent state, i.e., x1;x2= 0:8 andx3;x4= 0:2, we investigated
+whether the composition of cells changes. We studied two cases: (A) differentiation
+from either of FP or FD, and (B) differentiation from the oscillatory state, O.
+6/29Figure 3. The parameter set and emerging attractors. The horizontal and
+vertical axes represent the values of parameters K34,K42, andK43(A:K42andK34, B:
+K43andK34, C:K42andK43). Other parameters were set as in Fig. 2C. Each color
+represents the type of attractors reached from the initial conditions at pluripotent
+(x1;x2= 0:8,x3;x4= 0) and differentiated ( x1;x2= 0,x3;x4= 0:8) states. Brown,
+green, and blue represent coexistence of FP and FD, coexistence of O and FD, and
+existence of FD alone, respectively. For the coexistent cases, the cellular state fell into
+FP or O by starting from the pluripotent condition, and fell into FD by starting from
+the differentiated condition.
+In (A), where the single-cell state was a fixed point with either expression of
+pluripotent or differentiated genes, differentiation did not occur by cell-cell interaction,
+irrespective of the diffusion coefficient D. The cellular state remained at the original
+fixed point.
+In (B), where differentiation began from the oscillatory gene expression state, with
+an increase in cell numbers the oscillations of each cell were desynchronized given
+sufficient strength of cell-cell interactions ( D> 2:0) (Fig. 4). With a further increase in
+the number of cells, some cells lost the oscillation of pluripotent genes, which suppressed
+the expression of pluripotent genes x1andx2and activated expression of differentiation
+genesx3andx4. Hence, differentiation and a loss of pluripotency occurred. This process
+of interaction-induced differentiation from the oscillatory state was first reported by
+Furusawa and Kaneko [20], and then by Suzuki et al. in simpler gene expression network
+models with fewer genes [26]. The mechanism of the process can be understood through
+bifurcation theory [21]. After the number of cells reached a given value (e.g., 32), the
+differentiated and pluripotent cells with oscillatory gene expression coexisted. The ratio
+of differentiated cells to the total number of cells was almost independent in each run
+beginning from the oscillatory state, even where noise was included in the division
+process; thus, proportional regulation of differentiated cell types was achieved. The
+ratio of differentiated cells increased with the diffusion coefficient of cell-cell interactions
+D, and the time required for differentiation increased with this ratio (S1 Fig).
+Stationary cellular states were stable given the inclusion of noise, as long as the noise
+level was not too high. We also studied the influence of stochastic gene expression by
+including a Gaussian white noise term with the amplitude in our model by using
+Langevin equations (see Models). Here, as long as the strength of noise was not too
+large (= 0:1), the oscillatory expression dynamics and differentiation ratio were not
+altered. Even though gene expression dynamics were strongly perturbed and oscillation
+was not clearly visible, the differentiation process still functioned (Fig. 5); hence,
+differentiation from the pluripotent state (with the oscillatory state) was robust to noise.
+Transition by noise: As an alternative scenario, we considered differentiation as
+state transition by noise. Here, however, as long as the noise level was not too high
+7/29Figure 4. Time series of gene expression with the occurrence of cell-cell
+interactions. Time series of gene expression levels for x1,x2,x3, andx4for all cells,
+where cells divided per period = 25 until time = 125 to generate 32 cells. Expression
+levels of cells are plotted according to color, but most colors are overlaid and, therefore,
+difficult to discern. The diffusion coefficient Dwas set atD= 2, and the other
+parameter values are the same as those given in Fig. 2C. The oscillatory state has
+pluripotency to allow for both self-renewal and differentiation. The oscillation of gene
+expression was initially desynchronized, and then a few cells switched to the
+differentiated state.
+(<0:1), the pluripotent state was stable, and the transition to differentiated state did
+not occur. For a much higher noise level ( 0:3), the pluripotent state was not stable.
+In this case, the transition to the differentiated state occurred by noise, and this
+occurred even without cell-cell interactions. However, all cells finally fell into the
+differentiated state. Thus, pluripotent cells did not remain, and the ratio of pluripotent
+to differentiated cells was not regulated. In addition, this level of noise might be too
+high to be considered realistic as a model of gene expression dynamics.
+By changing some parameter values in the model, a bifurcation occurred from a
+fixed point with expression of pluripotent genes to the differentiated state. Therefore,
+by changing the external condition it is possible to transition from the pluripotent to
+the differentiated state. However, changing the external condition caused all cells to
+simultaneously switch to the differentiated state, so that no cells with pluripotency
+remained. In contrast, given oscillatory gene expression and cell-cell interactions, only
+some of the cells differentiated from the oscillatory state, while others remained in the
+pluripotent state. Hence, the coexistence of pluripotent and differentiated cells, with
+irreversible loss of pluripotency, is possible by starting from the oscillatory state.
+Compatibility of oscillatory and stochastic dynamics: Even if the strength of
+noise is set at a large value (say, = 1:0), the differentiation by cell-cell interaction in
+our model works well. Besides the noise during the expression dynamics, we have also
+added noise in the division process. Indeed, even though the strength of noise in cell
+division is large (say d= 1:0), the differentiation mechanism in our model still works
+8/29Figure 5. Cellular state transition under noise. Time series of gene expression
+levels forx1. Similar conditions to those described in Fig. 4 were adopted, except that a
+Gaussian noise term with the amplitude = 0:1 was included. Expression levels of cells
+are plotted according to color. Gene expression oscillation was irregular because of the
+noise. Irreversible transition from the oscillatory pluripotent to the differentiated state
+(x10) occurred for = 0:1.
+well (S2 Fig).
+Differentiation from the pluripotent state with epigenetic
+modification
+Cellular differentiation in multi-cellular organisms also involves epigenetic changes, such
+as histone modification and DNA methylation, which stabilize differentiated states:
+once differentiated, cells do not regain pluripotency even if the expression level is
+perturbed. Hence, we introduced epigenetic modification into our model to strengthen
+the stability of the differentiated state.
+Currently, there is no definitive method for introducing the epigenetic process
+because the precise molecular process of histone modification is difficult to implement in
+a model with gene expression dynamics. However, it is possible to model the influence
+of the epigenetic process on expression dynamics phenomenologically [34{38]. The
+epigenetic process tends to fix the expression state; for example, when a given gene is
+expressed for a given period, its expression tends to become fixed, and when it is not
+expressed for a given period, it remains silenced. In other words, the threshold for
+expression decreases or increases when the gene is expressed or suppressed over a given
+time span, respectively.
+Thus, we introduced epigenetic feedback regulation as a change in the threshold for
+expression, which was previously given by the expression threshold parameter Kijin
+our GRN model. Here, we replaced the parameter Kijwith an epigenetic variable ij(t),
+which changes over time depending on expression levels. Consequently, the expression
+level of the regulator xjaffects that of the regulatee xithrough this epigenetic variable.
+This is given as dynamics as
+_ij(t) =1
+epi(ij ij(t) xj(t)): (1)
+The threshold ij(t) is elevated to  ij, when the gene xjis not expressed (i.e.,
+xj(t)0), whereas the threshold decreases to  ij xj(t) when the gene is fully
+expressed, i.e., xj(t)1. Hence, the term  xj(t) represents epigenetic feedback, i.e.,
+if genexjis expressed, it is more likely to be expressed; if it is not expressed, it is less
+likely to be expressed. The term  ijthus represents the epigenetic barrier for genes
+that are not expressed.
+The strength of epigenetic fixation given by  ijgenerally depends on each
+regulation. Since the expression of pluripotent genes in our model is highly variable, a
+9/29higher value of  ijis required to fix their expression. Hence, we chose higher  ijvalues
+for regulations associated with pluripotent genes. Specifically, epigenetic fixation
+threshold values were set to 1 :0 for the pluripotent genes  31, 21, and  42, while they
+were lowered to 0 :78 for the differentiation regulators  13;34;43.
+For auto-regulation  11, the threshold value was set lower, e.g., at 0 :50, since
+self-activation tightly fixes the expression with small  ij. This is because the genes to
+regulate and to be regulated are identical. This was due to the simplification, which
+included the self-activation (we examine the five-gene model without self-activation
+below, in which all  ijfor pluripotent genes are set to 1 :0).
+Given these parameters, we simulated our model with epigenetic feedback regulation
+and studied dependence on the epigenetic variables epiand. Initially, we focused on
+the epigenetic variable ij(0) =Kij, which was set with values for cases with (A)
+fixed-point states and (B) the oscillatory state.
+(A) Starting from a state with fixed-points: In this case, the epigenetic process
+fixed its state, and no more changes were induced. Thus, in the case of bistable
+fixed-points, the behavior was almost the same as in the non-epigenetic model. However,
+by starting from a fixed point with expression of pluripotent genes, the expression
+began to oscillate via the epigenetic feedback when the time scale epiwas small. This
+did not cause cell differentiation, however, and the oscillation soon ceased before the cell
+differentiated. Hence, the effect of epigenetic variables is minor in the bistable
+fixed-point case.
+(B) Starting from the oscillatory state: If the time scale of epiwas not too high
+(the range is discussed below), the differentiation process initially progressed in the
+same manner as observed without the epigenetic process. Later, however, the cellular
+state was fixed at an undifferentiated or differentiated state by the change in the
+epigenetic variable ij(t). After sufficient time, the oscillation of pluripotent genes was
+lost, and the ability to differentiate was lost after division (Fig. 6). Whether or not
+differentiation and fixation progressed depended on the time scale epiand the coupling
+constant(Fig. 7, S3 Fig).
+Even with weak cell-cell interactions (e.g., D= 1:5), where differentiation did not
+occur without epigenetic feedback regulation, differentiation was sometimes mediated by
+epigenetic regulation. For example, for D= 1:5, oscillation occurred over a period
+sufficient to produce differentiated cells for 103<epi<104, but oscillation
+disappeared, and the capacity for differentiation was lost (Fig. 7). If the time scale of
+the epigenetic variable epidecreased ( epi<103) or increased ( epi>104),
+differentiation did not occur.
+As the interaction strength (D) increased, the range of epithat allowed for
+differentiation also increased (Fig. 7). For D> 2:0, if the epigenetic fixation process was
+slow (epi>103), cellular differentiation was fixed to both gene expression xiand to
+epigenetic change ij(Fig. 7). However, if the time scale of the epigenetic variable
+decreased ( epi<103), the cellular state was quickly fixed by epigenetic change, and
+differentiation never occurred.
+Furthermore, even without cell-cell interactions ( D= 0), cells switched from
+pluripotent to differentiated states via the epigenetic process. However, in this case,
+oscillation was later lost for all cells. Thus, all cells fell into the FD state together (with
+a differentiation ratio of 1 :0), and coexistence of pluripotent and differentiated states
+was not possible.
+The addition of noise did not substantially change epigenetic modification. The time
+scale of the epigenetic variable epiwas typically much larger than that of the noise
+variablenoise. Thus, the stochastic variation was averaged out through the epigenetic
+10/29Figure 6. Cell differentiation with the epigenetic variable. Time series of gene
+expression levels for x1,x2,x3,x4, and the epigenetic threshold variables 11(t) and
+13(t). Expression levels of cells are plotted according to color, but most colors are
+overlaid and, therefore, difficult to discern. We set the parameters of the epigenetic
+variable as follows: epi= 2:0103;= 0:1;ij= 1:0. The initial value of the
+epigenetic variable ij(0) was set as Kijin the non-epigenetic model. The other
+parameters are the same as those used in Fig. 4. First, gene expression oscillated, and
+then the epigenetic variables in each cell changed gradually. 11(t) differentiated into
+two groups, and in one of these x1approached 0.
+fixation process, and once the epigenetic change had occurred, expression levels
+stabilized to reduce the effect of noise. Therefore, the epigenetic process was robust to
+noise (or further increased the robustness of the model to noise).
+In summary, we added the epigenetic variable ij(t), to replace the expression
+thresholdKij. The cellular state was fixed by these variables, and its stabilization was
+enforced. Even if a large amount of noise was added, the cellular state was not
+destabilized. Upon external perturbation of gene expression patterns, the cell quickly
+returned to its original state after the change in the epigenetic threshold. Thus, the
+epigenetic variable produced stabilization of the cellular state and irreversibility of cell
+differentiation.
+Reprogramming to the pluripotent state
+Mature cells can be dedifferentiated into iPSCs by inducing Yamanaka factors [8].
+Indeed, in dynamical-systems theory, such recovery of pluripotency was predicted as
+cellular-state transition from a differentiated fixed-point to the pluripotent oscillatory
+attractor induced by forced-expression of several genes [20]. Here we discuss the
+conditions for reprogramming, i.e., switching cellular states by experimental
+manipulation to regain pluripotency, in our model, also by taking the reversal of
+epigenetic fixation into account.
+First, we investigated reprogramming in the model without the epigenetic process.
+In this case, differentiated cells were reprogrammed by externally increasing the
+11/29Figure 7. Effect of the time scale of the epigenetic variable epi.Here, the
+differentiation ratio is plotted against epi. We conducted a differentiation simulation by
+running the epigenetic model 1000 times for each time scale, and then counted the
+number of differentiated cells ( x10). The average differentiation ratio (i.e., the
+vertical axis) represents the percentage of differentiated cells per simulation. To run the
+simulations, we used identical values to those used in Fig. 6. A: Given strong cell-cell
+interaction ( D= 2:0), our model showed differentiation without the epigenetic variable.
+Thus, a large time scale did not negatively affect differentiation. However, given a
+smaller time scale, cellular differentiation did not occur because the cellular state was
+quickly fixed. B: Given weak cell-cell interaction ( D= 1:5), there was a peak around
+the time scale of the epigenetic variable epi5:0103. If the time scale of epiwas
+small (epi<103), the cellular state was quickly fixed and differentiation did not occur.
+Conversely, if the time scale epiwas large (epi>104), oscillation remained in place.
+expression of the pluripotent genes instantaneously, i.e., increasing the value of x1.
+Instantaneous increase in the expression was sufficient here, since the cellular state is
+represented only by the expression levels of xi. In order to stabilize the differentiated
+states against perturbations and sustain irreversibility of cell differentiation, the classic
+model including only gene expression dynamics is insufficient (see also [39] ). By
+introducing epigenetic feedback regulation with a different time scale, we succeeded in
+obtaining the result consistent with reprogramming experiments.
+In the model with the epigenetic process, however, differentiated cells were not
+reprogrammed by an instantaneous increase in xi. Following overexpression, cells
+quickly returned to the differentiated fixed-point. This is because the epigenetic
+variable, which cannot be altered over a short period, was already increased so that
+expression of pluripotent genes could not be recovered by instantaneous, or short-term,
+overexpression. Indeed, we examined the instantaneous overexpression of each gene, as
+well as a combination of several genes, but reprogramming never occurred.
+We then introduced the overexpression of pluripotent genes into a differentiated cell
+over a sufficiently long time span Te. For example, pluripotent genes were
+overexpressed from t= 1 toTe= 100 to the level of xi= 15. Additionally, we added
+external activation of gene x4to inhibit the expression of gene x3(Fig. 8). In this case,
+cells were reprogrammed, and gene expression levels regained oscillation and recovered
+pluripotency. The expression threshold was also reduced (Fig. 9), so that epigenetic
+fixation was relaxed. By starting with this reprogrammed cell, some of the divided cells
+differentiated given a sufficient level of cell-cell interaction.
+After overexpression of xito the value xefor time span Te, the epigenetic variable
+ij(t) was estimated to decrease to xeTe
+epi. Hence, epigenetic fixation is relaxed if
+this value reaches ij(0), whereij(0) is the value after epigenetic fixation. Where
+epi= 5:010 4and= 0:1, for example, xeTemust be larger than 3 :0105for
+11(t) to return to the initial value 0 :35. For example, if the overexpression value is
+12/29Figure 8. The gene regulatory network in the reprogramming simulation.
+We overexpressed the pluripotent genes x1andx2, and added an external stimulus ex1
+to activate gene x4in the four-gene network model (see Fig. 1C). This induction
+triggered reprogramming, and cells started to oscillate once again. These reprogramming
+factors correspond with, for example, x1=Oct4,x2=Sox2, andex1=Myc.
+changed from 15 to 3, overexpression time required about 5 times. The product of
+overexpression value and time determines the reprogramming. The reprogramming ratio
+increases (in a threshold-like manner) as the product increases beyond a critical value
+103(Fig. 10). Indeed, this is natural, as the relaxation process of epigenetic fixation is
+determined by the product.
+The epigenetic fixation is introduced so that the genes that are not expressed are
+harder to be expressed, following observations in cell-biology. Accordingly, the strength
+of epigenetic fixation  ijhas to be larger than the value of ijchosen initially.
+Therefore, epigenetic fixation threshold values  ijfor pluripotent genes were set to 1 :0
+because the maximum value of initial threshold values ij(0) was 0:94. If it is set to a
+lower value, the gene is not remained silenced due to the epigenetic change, even when
+it is not expressed. On the other hand, if the epigenetic fixation threshold values  ijfor
+differentiation regulators were also set to 1 :0, the reprogramming by overexpressing the
+corresponding genes as well as external factors was not possible. In fact, we carried out
+both differentiation and reprogramming simulations by choosing a variety of values of
+ij, and confirmed that epigenetic fixation threshold values for pluripotent genes have
+to be larger than that for differentiation regulators, to be consistent with experimental
+observations.
+In addition to overexpression levels and time span, the number of overexpressed
+genes is important. Reprogramming did not occur by overexpression of a single gene,
+even though its level and time span were sufficient to decrease the epigenetic variable:
+two or more appropriate genes had to be overexpressed. If a single gene x1was
+overexpressed over a sufficient period, the transition to a different fixed-point state
+occurred, but gene expression did not regain oscillation. By starting from this cell with
+this new fixed-point state, differentiation did not occur again even when the number of
+cells was increased. These cells showed increased expression of pluripotent genes up to
+the level of the original pluripotent cell, but they did not regain the capacity for
+differentiation. Thus, decreasing the epigenetic threshold variable of pluripotent genes
+was not sufficient for reprogramming.
+We then conducted a reprogramming simulation by changing the initial values for
+the epigenetic variable ij(0), that is,  ij. In general, as  ijbecame smaller, epigenetic
+fixation became weaker, and the number of genes that had to be overexpressed
+decreased. For example, if  34= 0:5 and  43= 0:3, the overexpression of just two
+factors,x1andx2, without the external overexpression of any other genes could lead to
+reprogramming (S4 Fig).
+13/29Figure 9. Time series of gene expression in the reprogramming simulation,
+with induction of pluripotent genes and external activation. Plotted here are
+the time series of gene expression levels for x1,x2,x3,x4, and the epigenetic threshold
+variables11(t) and13(t). Initially, all cells (e.g., 32 cells) were set at the differentiated
+state (x1;2= 0;x3;4= 0:8), with the epigenetic fixation threshold values set at 1 :0 for
+the pluripotent genes  31,  21, and  42, and at 0:78 for the differentiation regulators
+13;34;43. The auto-regulator  11was set at 0 :50. We overexpressed genes x1and
+x2for a long period ( Te100). The epigenetic variables in each cell changed gradually
+because of the overexpression of these genes. In addition, the gene x4was promoted by
+an external stimulus. After overexpression, gene expression began to oscillate again and
+a few cells showed differentiation. Thus, cells were reprogrammed.
+According to our results, pluripotent stem cells had an oscillatory gene expression
+component; thus, the recovery of oscillation was necessary for recovery of pluripotency.
+However, oscillation alone was not always sufficient for pluripotency. If the decrease in
+the epigenetic threshold value was insufficient, the oscillation was weak and the
+bifurcation to a differentiation fixed point could not occur by cell-cell interactions. In
+this case, pluripotent genes were expressed. A cellular state such as this, with
+expression of pluripotent genes but without differentiation potential, corresponds to the
+pre-iPS state previously reported in reprogramming experiments [32,40].
+The five-gene model
+To promote expression of pluripotent genes, there is an auto-expression loop. This
+auto-expression is mediated via positive feedback by mutual regulation of genes. In the
+four-gene model, which has been described and studied thus far, this positive feedback
+loop was introduced as the self-expression of x1. Auto-expression such as this may be
+over-simplified, especially considering epigenetic modification as already mentioned. In
+reality, the auto-expression feedback loop consists of a number of genes. Hence, we
+replaced auto-regulation of x1in the four-gene model with a loop structure via a new
+genex5(as shown in Fig. 1B), and attempted to validate our previous results and
+examine the conditions necessary for reprogramming in comparison with experiments.
+14/29Figure 10. Reprogramming efficiency against overexpression condition.
+Plotted here are Reprogramming efficiency against the product of overexpression value
+xe
+1for the gene x1and its duration time Tesemi-log plot. We counted the number of
+reprogrammed cells (that are differentiated after oscillation). The average
+reprogramming ratio represents the percentage of reprogrammed cells per simulation.
+There was a peak around the product xe
+1Te103:1. If the product xe
+1Tewas small
+(xe
+1Te<103), cells quickly returned to the differentiated fixed-point. Inversely, if it was
+large (xe
+1Te>103:3), cells fell into the pluripotent fixed-point, and did not show
+differentiation.
+First, we confirmed that the two fixed-points, FP and FD, and the oscillatory state,
+O, existed in the five-gene model (see SI, S1 Text). Once confirmed, we also included
+epigenetic threshold variables, as in the four-gene model. For example, we used two
+epigenetic fixation parameters depending on the regulator type, i.e., the epigenetic
+fixation value for the pluripotent regulators ( 15;31;21;51;42) was 1:0, and for
+the differentiation regulators ( 13;34;43) it was 0:65. Additionally, we confirmed
+that the switching from oscillatory state to FD progressed via cell-cell interactions (S6
+Fig).
+To regain pluripotency from the differentiated state, in our reprogramming
+experiment with the five-gene model, overexpression of the genes x1,x2, andx5, as well
+as one external factor (to inhibit gene x4), was necessary. These four genes correspond
+to the Yamanaka factors ( Oct4, Sox2, Klf4 , and Myc) used for reprogramming (Fig. 11,
+S7 Fig). As long as we started the reprogramming simulation after the threshold value
+ij(t) for differentiated cells reached the pre-set level  ij, these four genes were
+necessary for reprogramming.
+The number of genes that had to be overexpressed depended on the level of
+epigenetic fixation. In general, overexpression of the four aforementioned genes over a
+sufficient period was required for reprogramming to reset the value of epigenetic
+variables for the differentiated cells (epigenetic fixation was complete to have
+ij(t)ij). In contrast, reprogramming was easier if epigenetic fixation was
+insufficient, and fewer genes, including x5, were sufficient for reprogramming.
+15/29Figure 11. Time series of gene expression in reprogramming via
+overexpression of three genes and one external factor. Plotted here are time
+series of gene expression for x1,x2,x3,x4,x5, and the epigenetic threshold variables
+15. In this case, we used the following parameter set: 13(0) =34(0) =43(0) = 0:65,
+15(0) =31(0) =21(0) =51(0) =42(0) = 1:0. In the differentiated state, we
+overexpressed genes x1;x2, andx5over a long period and added one external regulator.
+Induction of these factors changed the epigenetic threshold variables; gene expression
+then began to oscillate again and, later, differentiation occurred in a few cells.
+Discussion
+In this study, we assessed a simplified model that was a part of an inferred GRN
+previously reported by Dunn et al. [33]. Some regulations were simplified by deleting
+mediator genes, but the core network that is believed to be important for pluripotency,
+in particular the network motif for a toggle switch, was included. In accordance with
+the reported GRN, the genes in the model corresponded to Nanog, Oct4, Gata6 , and
+Gata4 , while the additional gene in our five-gene model corresponded to Klf4.
+We showed that oscillation and switching between high and low levels of gene
+expression causes some cells to fall into differentiated states via cell-cell interactions.
+This interaction-induced differentiation from the oscillatory state was robust to noise.
+Indeed, expression levels of the pluripotency-related gene Hes1 are reported to oscillate
+in stem cells, but oscillation is apparently lost after differentiation [41]. This
+observation is consistent with our oscillation-based mechanism.
+Alternative proposals for the differentiation mechanism are based solely on
+multistability and stochasticity. According to these views, both the differentiated and
+pluripotent states are given by one of the multi-stable fixed-points, and cellular-state
+transition is caused by noise. For example, a GRN with auto-promotion and mutual
+inhibition between two genes [17] can produce such bistability. The noise level is critical
+to this differentiation process. Unless noise level is optimally tuned, the transition
+between the pluripotent and differentiated states continued to occur via noise, and
+irreversible differentiation did not occur. Additionally, because switching is stochastic,
+this model could not control the ratio of pluripotent to differentiated cells, and once a
+16/29cell was in one of the bistable states, the epigenetic process fixed this state.
+In contrast, differentiation from oscillatory dynamics and cell-cell interactions is
+robust to noise. This provides an explanation for pluripotency as oscillatory dynamics,
+and characterizes the irreversible differentiation as a transition from oscillatory to
+fixed-point dynamics, which, later, is consolidated by epigenetic feedback.
+In contrast to our findings, however, a recent study suggested that gene expression
+in stem cells shows stochastic switching between high and low levels, rather than
+oscillation dynamics [42]. We note that our mechanism works even with strong
+stochasticity. Even though the strength of noise is set at a large value (say, = 1:0),
+the differentiation by cell-cell interaction in our model works well. Besides the noise
+during the expression dynamics, we have also studied the noise in the division process.
+Indeed, even though the strength of noise in cell division is large (say d= 1:0), the
+differentiation mechanism in our model still works well. Where this is the case, the
+oscillatory component underlies gene expression that shows noisy dynamics. Hence, the
+experimental observation did not contradict our oscillation scenario. Under such noise
+level, the differentiation ratio from sibling is not necessarily correlated as in the
+experimental results. Under these high noise levels for andd, and by setting the
+parameter values say at div= 12:5 andD= 1:5, about 4 switching occurred per 100
+cell division, as is consistent with the experimental data, while preserving the stochastic
+oscillatory dynamics.
+To check the possibility of stochastic oscillation experimentally, one would need to
+examine whether an oscillatory component exists among noisy dynamics. This would be
+possible by measuring the transition probability among three states (A, B, C) and
+examining if the probability P(A!B) has a circulation component, as characterized
+by the deviation between P(A!B)P(B!C)P(C!A) and
+P(B!A)P(A!C)P(C!B). We also suggest that by measuring expression of
+pluripotent genes for a number of iPS cells by single-cell-PCR, one could uncover the
+loci of oscillatory attractor, as the phase of oscillation is expected to be scattered by
+cells.
+Second, in the experiment of [42] switching between Nanog-high to Nanog-low is less
+frequent than the result presented here. However, this switching frequency can be easily
+changed in our model by changing the parameter values div, the strength of cell-cell
+interaction Dand noise.
+Here, we also introduced epigenetic threshold variables to fix differentiated cellular
+states via epigenetic changes. The epigenetic variables in our study promoted gene
+expression if the regulator gene was highly expressed. Conversely, they inhibited gene
+expression if the expression of the regulator was low. Indeed, epigenetic modification
+represented by histone modification is known to reinforce gene function by
+reconstruction of chromatin [43]. For example, the maintenance of pluripotency is
+promoted and suppressed by open and closed chromatin states in cell differentiation,
+respectively. The epigenetic feedback process in our model was a mathematical
+representation of such reinforcement.
+In our model, the time scale of epigenetic change epiwas much slower than the time
+scale of gene expression dynamics, by a factor of 102 103. Therefore, because the time
+scale for transcription is seconds to minutes, epigenetic modification appears to occur
+over days. If the time scale for cell division is hours, the time scales for gene regulation
+gene, cell division div, and epigenetic variable episatisfygene<div<epi. Indeed,
+in our model, epigenetic fixation of cell differentiation works effectively given these
+conditions.
+If differentiation occurs, and the differentiation ratio depends on the time scale of
+epigenetic modification, the rate of epigenetic change can control the distribution of cell
+types. Hence, epigenetic fixation controls cell distribution and is, therefore, essential to
+17/29the stabilization of cellular states.
+However, epigenetic fixation also provides a barrier in reprogramming. In contrast to
+the scenario without epigenetic fixation, simply resetting gene expression patterns is not
+sufficient to reprogram differentiated cells. Even if the gene expression pattern of a
+differentiated cell is reset to the pluripotent state, the cellular state quickly returns to a
+differentiated state because of the change in the epigenetic threshold variables.
+Reprogramming also requires overexpression of pluripotent genes over a time span of
+epi. Even with overexpression of the correct genes, an insufficient amount of time
+cannot relax the epigenetic threshold, and cells quickly return to the differentiated state.
+Indeed, in reprogramming experiments, Yamanaka factors are overexpressed for days by
+using retroviruses, during which time, it is suggested that chromatin is reconstructed.
+In our model, the overexpression of multiple transcription factors, including
+pluripotent genes, was generally necessary for reprogramming to occur. Indeed, in the
+five-gene model, the four factors required for reprogramming were the Yamanaka
+factors, Oct4, Sox2, Klf4 , and Myc, which are adopted in iPS construction. Even
+though the GRN in our model contained only five genes, reprogramming required these
+four factors. In particular, Klf4 was a prerequisite for reprogramming. In iPS
+construction, Klf4 also plays an important role in promotion of reprogramming by
+interacting with Oct4 andSox2 [44].
+Note that the reprogramming efficiency in experiments is rather low. This might be
+related with a limited range in the overexpression level in Fig. 10. However, at the
+moment, it is uncertain if this low efficiency is due to difficulty in adjusting such range
+of overexpression levels, or due to underlying noisy dynamics, or due to some other
+experimental constraint.
+Experimentally, reprogramming is reportedly easier if the epigenetic fixation of some
+genes is weaker. Indeed, epigenetic fixation levels depend on the derived cell type or
+chromatin structure [29,30]. Furthermore, highly efficient reprogramming, such as
+deterministic (or non-stochastic) reprogramming from the privileged somatic cell
+state [45,46], includes a chromatin remodeling factor or specific types of derived cell.
+This scheme is expected to relax the level of epigenetic fixation for some genes. Thus, it
+is consistent with the ease of reprogramming caused by reducing epigenetic fixation
+parameters  ijfor some genes ( j) in our model.
+Our study also demonstrates that cells fall into a fixed state with the expression of
+pluripotent genes when there is insufficient overexpression to suppress differentiation
+genes. Gene expression levels in such cells do not show oscillation, nor do cells show
+differentiation again. Even though pluripotent genes are expressed, the potential for
+differentiation is not regained. These cells are regarded as being in a pre-iPS state,
+which was previously reported in reprogramming experiments [32,40]. In these
+experiments, following overexpression of the Yamanaka factors, the cell did not regain
+pluripotency even though ES cells-markers ( SSEA-1 andOct4 ) were expressed.
+The GRNs we studied here are based on several experimental reports. In reality, the
+GRNs responsible for pluripotency and differentiation involve many more components,
+and other candidate GRNs have also been proposed for pluripotency [9]. Our
+conclusions with regard to oscillation-based differentiation, epigenetic fixation, and
+reprogramming, however, remain valid as long as the present core network is preserved.
+Additionally, in a differentiation process including the core network structure consisting
+ofNanog, Oct4, Gata6 , and Gata4 , as discussed here, the four factors are required for
+reprogramming, independently of the parameter values, as is consistent with
+experimental observations.
+In summary, in our study, oscillatory gene expression produced the pluripotency of
+cells, and differentiation occurred via a state transition to a fixed-point with the
+suppression of pluripotent genes. These expression patterns were then fixed
+18/29epigenetically. In our model, differentiation and reprogramming were interpreted as
+creation (deletion) of gene expression oscillation and the enhancement or relaxation of
+epigenetic fixation, respectively. Pluripotent states involved the oscillation of expression
+of several (here, four to five) genes, while differentiated states suppressed the expression
+of these genes to reduce oscillation. Thus, our results showed that reprogramming to
+recover pluripotency involves recovery of gene expression, achieved by overexpression of
+several genes, and relaxation of epigenetic fixation.
+Models
+Construction of GRN model
+The simplified models consisted of either four or five genes with seven or eight
+regulations, respectively. In simplification of GRN, we decreased nodes and edges as
+long as the differentiation is possible. As a result, we extracted a four-factor model, as a
+minimal structure showing differentiation. Furthermore, the reprogramming simulation
+from this network, as presented in the present paper, is also consisted with experiments.
+The existence of these regulations in the constructed GRN is supported by earlier
+studies [9,47{50]. In the four-gene model, the self-activating gene (promotion-loop
+structure) and its cofactor were regarded as pluripotent genes, and the genes inhibited
+by these pluripotent genes were regarded as differentiation genes. For example, genes
+x1,x2,x3, andx4corresponded with Nanog, Oct4, Gata6 , and Gata4 , respectively. In
+the five-gene model, the additional gene was Klf4. Among these genes, only Gata4
+functions in cell-cell signaling (interaction) according to Gene Ontology. Hence, we
+considered cell-cell interactions through diffusive coupling by the gene product of x4.
+We introduced epigenetic feedback regulation into the model as a change in the
+threshold for gene expression. This depends on the expression levels of a regulator gene.
+If the regulator gene is highly expressed, expression of the regulated gene is promoted;
+however, where expression of the regulator gene is low, expression of the regulated gene
+is inhibited. Epigenetic change occurs via the change in threshold for expression
+dynamics and, with feedback, the cellular state is fixed.
+Four-gene model
+Here, we describe our gene expression dynamics model. Cellular states are represented
+by the gene expression pattern of four genes, x1,x2,x3, andx4. These genes regulate
+the expression levels of themselves and other genes. Additionally, we consider the
+expression dynamics of gene iof thekth cell at time t, denoted as xk
+i(t). Only gene x4
+is involved in a cell-cell interaction, which is the diffusion of the gene expression level of
+19/29x4. Hence, our differential equation model is as follows:
+8
+>>>>>>>>>>>>>>>>>>>><
+>>>>>>>>>>>>>>>>>>>>:_xk
+1(t) =(xk
+1(t)
+K11)n
+1+(xk
+1(t)
+K11)n1
+1+(xk
+3(t)
+K13)n xk
+1(t)
++k
+1p
+xk
+1(t)
+_xk
+2(t) =(xk
+1(t)
+K21)n
+1+(xk
+1(t)
+K21)n xk
+2(t)
++k
+2p
+xk
+2(t)
+_xk
+3(t) =1
+1+(xk
+1(t)
+K31)n1
+1+(xk
+4(t)
+K34)n xk
+3(t)
++k
+3p
+xk
+3(t)
+_xk
+4(t) =1
+1+(xk
+2(t)
+K42)n(xk
+3(t)
+K43)n
+1+(xk
+3(t)
+K43)n xk
+4(t) +D
+N(t)P
+j(xj
+4(t) xk
+4(t))
++k
+4p
+xk
+4(t)
+whereDis the diffusion coefficient, k
+iis an uncorrelated Gaussian white noise term
+when the stochastic experiment is considered, and N(t) is the total number of cells at
+timet. Depending on the parameter Kij, which gives the strength of activation or
+inhibition from gene jtoi, the behavior of our model changes.
+In cell division, two new cells are produced that have the same gene expression
+pattern as the original cell. Additionally, gene expression is slightly perturbed by
+adding a Gaussian white noise ( d= 1:010 3) after cell division, as ixior (1 i)xi
+(withas a random number in [0 ;d] after each cell division.
+Five-gene model
+In the four-gene model, the positive feedback loop of the pluripotent gene x1is
+introduced for self-activation. Auto-regulation such as this may be over-simplified; in
+reality, this should be replaced by a feedback regulation loop including a number of
+genes. Therefore, we change the auto-expression of gene x1in the four-gene model to a
+loop structure via the gene x5, and the five-gene model is described as follows:
+8
+>>>>>>>>>>>>>>>>>>>>>>>>><
+>>>>>>>>>>>>>>>>>>>>>>>>>:_xk
+1(t) =(xk
+5(t)
+K15)n
+1+(xk
+5(t)
+K15)n1
+1+(xk
+3(t)
+K13)n xk
+1(t)
++k
+1p
+xk
+1(t)
+_xk
+2(t) =(xk
+1(t)
+K21)n
+1+(xk
+1(t)
+K21)n xk
+2(t)
++k
+2p
+xk
+2(t)
+_xk
+3(t) =1
+1+(xk
+1(t)
+K31)n1
+1+(xk
+4(t)
+K34)n xk
+3(t)
++k
+3p
+xk
+3(t)
+_xk
+4(t) =1
+1+(xk
+2(t)
+K42)n(xk
+3(t)
+K43)n
+1+(xk
+3(t)
+K43)n xk
+4(t) +D
+N(t)P
+j(xj
+4(t) xk
+4(t))
++k
+4p
+xk
+4(t)
+_xk
+5(t) =(xk
+1(t)
+K51)n
+1+(xk
+1(t)
+K51)n xk
+5(t)
++k
+5p
+xk
+5(t)
+Epigenetic feedback regulation
+In the equation for xk
+i(t), each parameter Kijis replaced by the epigenetic variable
+ij(t), which changes over time depending on gene expression levels by introducing
+20/29epigenetic feedback regulation as a change in the threshold for gene expression as
+follows:
+_ij(t) =1
+epi(ij ij(t) xj(t));
+where ijis the threshold value after epigenetic fixation and epiis the time scale of the
+epigenetic variable. The value of the epigenetic variable ij(t) changes depending on the
+expression levels of the regulator gene xj; if the regulator gene xjis highly expressed,
+expression of the regulatee gene xiis promoted, but if expression of the regulator xjis
+low, the regulatee xiis inhibited.
+Model parameters
+To numerically investigate our model, we set the Hill coefficient as n= 6 andn= 4 in
+the in four-gene and five-gene models, respectively. The time of cell division tdivwas
+chosen to be 25. The results of the model do not depend on these parameters, as long as
+the former is sufficiently large (e.g., n6) and latter not too large (e.g., tdiv<1000).
+The maximum number of cell divisions is 5; hence, the maximum number of cells is 32.
+For most simulations, we used the parameters Kijas follows:
+K13= 0:78;K34= 0:45;K31= 0:94;K11= 0:35;K21= 0:80;K42= 0:30, and
+K43= 0:45. In the five-gene model, the additional regulations were K15= 0:14 and
+K51= 0:80. The parameters for epigenetic feedback regulation andwere set to
+2:0103and 0:1, respectively.
+Model simulation
+By using the code written by C/Python simulations were carried out by using standard
+Runge-Kutta algorithm.
+Acknowledgments
+The authors would like to thank Tetsuhiro Hatakeyama, Benjamin Pfeuty, and Nen
+Saito for useful discussions.
+References
+1. Evans MJ, Kaufman MH. Establishment in culture of pluripotential cells from
+mouse embryos [Journal Article]. Nature. 1981;292(5819):154{6. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/7242681 .
+2.Martin GR. Isolation of a pluripotent cell line from early mouse embryos cultured
+in medium conditioned by teratocarcinoma stem cells [Journal Article]. Proc Natl
+Acad Sci U S A. 1981;78(12):7634{8. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/6950406 .
+3. Nichols J, Zevnik B, Anastassiadis K, Niwa H, Klewe-Nebenius D, Chambers I,
+et al. Formation of pluripotent stem cells in the mammalian embryo depends on
+the POU transcription factor Oct4 [Journal Article]. Cell. 1998;95(3):379{91.
+Available from: http://www.ncbi.nlm.nih.gov/pubmed/9814708 .
+4. Niwa H, Miyazaki J, Smith AG. Quantitative expression of Oct-3/4 defines
+differentiation, dedifferentiation or self-renewal of ES cells [Journal Article]. Nat
+Genet. 2000;24(4):372{6. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/10742100 .
+21/295. Chambers I, Colby D, Robertson M, Nichols J, Lee S, Tweedie S, et al.
+Functional expression cloning of Nanog, a pluripotency sustaining factor in
+embryonic stem cells [Journal Article]. Cell. 2003;113(5):643{55. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/12787505 .
+6.Mitsui K, Tokuzawa Y, Itoh H, Segawa K, Murakami M, Takahashi K, et al. The
+homeoprotein Nanog is required for maintenance of pluripotency in mouse
+epiblast and ES cells [Journal Article]. Cell. 2003;113(5):631{42. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/12787504 .
+7. GURDON JB. The developmental capacity of nuclei taken from intestinal
+epithelium cells of feeding tadpoles [Journal Article]. J Embryol Exp Morphol.
+1962;10:622{40. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/13951335 .
+8. Takahashi K, Yamanaka S. Induction of pluripotent stem cells from mouse
+embryonic and adult fibroblast cultures by defined factors [Journal Article]. Cell.
+2006;126(4):663{76. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/16904174 .
+9. Boyer LA, Lee TI, Cole MF, Johnstone SE, Levine SS, Zucker JP, et al. Core
+transcriptional regulatory circuitry in human embryonic stem cells [Journal
+Article]. Cell. 2005;122(6):947{56. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/16153702 .
+10. Han JW, Yoon YS. Induced pluripotent stem cells: emerging techniques for
+nuclear reprogramming [Journal Article]. Antioxid Redox Signal.
+2011;15(7):1799{820. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/21194386 .
+11. Waddington CH. The Strategy of the Genes. London: George Allen & Unwin;
+1957.
+12. Mohammad HP, Baylin SB. Linking cell signaling and the epigenetic machinery
+[Journal Article]. Nat Biotechnol. 2010;28(10):1033{8. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/20944593 .
+13. Yamanaka S. Elite and stochastic models for induced pluripotent stem cell
+generation [Journal Article]. Nature. 2009;460(7251):49{52. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/19571877 .
+14. Graf T, Enver T. Forcing cells to change lineages [Journal Article]. Nature.
+2009;462(7273):587{94. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/19956253 .
+15.Kauffman SA. Metabolic stability and epigenesis in randomly constructed genetic
+nets [Journal Article]. J Theor Biol. 1969;22(3):437{67. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/5803332 .
+16. Goodwin BC. Temporal Organizations in Cells. San Diego, USA: Academic
+Press; 1963.
+17. Andrecut M, Halley JD, Winkler DA, Huang S. A general model for binary cell
+fate decision gene circuits with degeneracy: indeterminacy and switch behavior in
+the absence of cooperativity [Journal Article]. PLoS One. 2011;6(5):e19358.
+Available from: http://www.ncbi.nlm.nih.gov/pubmed/21625586 .
+22/2918. Shu J, Wu C, Wu Y, Li Z, Shao S, Zhao W, et al. Induction of pluripotency in
+mouse somatic cells with lineage specifiers [Journal Article]. Cell.
+2013;153(5):963{75. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/23706735 .
+19. Wang J, Zhang K, Xu L, Wang E. Quantifying the Waddington landscape and
+biological paths for development and differentiation [Journal Article]. Proc Natl
+Acad Sci U S A. 2011;108(20):8257{62. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/21536909 .
+20.Furusawa C, Kaneko K. Theory of Robustness of Irreversible Differentiation in a
+Stem Cell System: Chaos Hypothesis [Journal Article]. J theor Biol.
+2001;209:395{416.
+21.Goto Y, Kaneko K. Minimal model for stem-cell differentiation [Journal Article].
+Phys Rev E Stat Nonlin Soft Matter Phys. 2013;88(3):032718. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24125305 .
+22. Zou W, Senthilkumar DV, Duan J, Kurths J. Emergence of amplitude and
+oscillation death in identical coupled oscillators [Journal Article]. Phys Rev E
+Stat Nonlin Soft Matter Phys. 2014;90(3):032906. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/25314503 .
+23.Zou W, Senthilkumar DV, Koseska A, Kurths J. Generalizing the transition from
+amplitude to oscillation death in coupled oscillators [Journal Article]. Phys Rev E
+Stat Nonlin Soft Matter Phys. 2013;88(5):050901. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24329205 .
+24. Kaneko K, Yomo T. Cell Division, Differentiation, and Dynamic Clustering
+[Journal Article]. Physica D. 1994;75:89{102.
+25. Kaneko K, Yomo T. Isologous diversification: a theory of cell differentiation
+[Journal Article]. Bull Math Biol. 1997;59(1):139{96. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/8980305 .
+26. Suzuki N, Furusawa C, Kaneko K. Oscillatory protein expression dynamics
+endows stem cells with robust differentiation potential [Journal Article]. PLoS
+One. 2011;6(11):e27232. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/22073296 .
+27. Koseska A, Ullner E, Volkov E, Kurths J, Garciaa-Ojalvo J. Cooperative
+differentiation through clustering in multicellular populations [Journal Article]. J
+Theor Biol. 2010;263(2):189{202. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/19932703 .
+28.Ullner E, Zaikin A, Volkov EI, Garciaa-Ojalvo J. Multistability and clustering in
+a population of synthetic genetic oscillators via phase-repulsive cell-to-cell
+communication [Journal Article]. Physical Review Letters. 2007;99(14). Times
+Cited: 82 Garcia-Ojalvo, Jordi/A-4574-2009; Ullner, Ekkehard/C-9331-2011
+Garcia-Ojalvo, Jordi/0000-0002-3716-7520; 83. Available from:
+<GotoISI>://WOS:000249974000079 .
+29. Ernst J, Kheradpour P, Mikkelsen TS, Shoresh N, Ward LD, Epstein CB, et al.
+Mapping and analysis of chromatin state dynamics in nine human cell types
+[Journal Article]. Nature. 2011;473(7345):43{9. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/21441907 .
+23/2930.Marstrand TT, Storey JD. Identifying and mapping cell-type-specific chromatin
+programming of gene expression [Journal Article]. Proc Natl Acad Sci U S A.
+2014;111(6):E645{54. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24469817 .
+31. Kim K, Doi A, Wen B, Ng K, Zhao R, Cahan P, et al. Epigenetic memory in
+induced pluripotent stem cells [Journal Article]. Nature. 2010;467(7313):285{90.
+Available from: http://www.ncbi.nlm.nih.gov/pubmed/20644535 .
+32. Chen J, Liu H, Liu J, Qi J, Wei B, Yang J, et al. H3K9 methylation is a barrier
+during somatic cell reprogramming into iPSCs [Journal Article]. Nat Genet.
+2013;45(1):34{42. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/23202127 .
+33. Dunn SJ, Martello G, Yordanov B, Emmott S, Smith AG. Defining an essential
+transcription factor program for na ve pluripotency [Journal Article]. Science.
+2014;344(6188):1156{60. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24904165 .
+34. Furusawa C, Kaneko K. Epigenetic feedback regulation accelerates adaptation
+and evolution [Journal Article]. PLoS One. 2013;8(5):e61251. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/23667436 .
+35. Gombar S, MacCarthy T, Bergman A. Epigenetics decouples mutational from
+environmental robustness. Did it also facilitate multicellularity? [Journal Article].
+PLoS Comput Biol. 2014;10(3):e1003450. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24604070 .
+36. Sasai M, Kawabata Y, Makishi K, Itoh K, Terada TP. Time scales in epigenetic
+dynamics and phenotypic heterogeneity of embryonic stem cells [Journal Article].
+PLoS Comput Biol. 2013;9(12):e1003380. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24348228 .
+37.Sneppen K, Micheelsen MA, Dodd IB. Ultrasensitive gene regulation by positive
+feedback loops in nucleosome modification [Journal Article]. Mol Syst Biol.
+2008;4:182. Available from: http://www.ncbi.nlm.nih.gov/pubmed/18414483 .
+38.Dodd IB, Micheelsen MA, Sneppen K, Thon G. Theoretical analysis of epigenetic
+cell memory by nucleosome modification [Journal Article]. Cell.
+2007;129(4):813{22. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/17512413 .
+39. Niklas KJ, Bondos SE, Dunker AK, Newman SA. Rethinking gene regulatory
+networks in light of alternative splicing, intrinsically disordered protein domains,
+and post-translational modifications [Journal Article]. Front Cell Dev Biol.
+2015;3:8. Available from: http://www.ncbi.nlm.nih.gov/pubmed/25767796 .
+40. Mattout A, Biran A, Meshorer E. Global epigenetic changes during somatic cell
+reprogramming to iPS cells [Journal Article]. J Mol Cell Biol. 2011;3(6):341{50.
+Available from: http://www.ncbi.nlm.nih.gov/pubmed/22044880 .
+41. Imayoshi I, Isomura A, Harima Y, Kawaguchi K, Kori H, Miyachi H, et al.
+Oscillatory control of factors determining multipotency and fate in mouse neural
+progenitors [Journal Article]. Science. 2013;342(6163):1203{8. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24179156 .
+24/2942.Singer ZS, Yong J, Tischler J, Hackett JA, Altinok A, Surani MA, et al. Dynamic
+heterogeneity and DNA methylation in embryonic stem cells [Journal Article].
+Mol Cell. 2014;55(2):319{31. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/25038413 .
+43.Gaspar-Maia A, Alajem A, Meshorer E, Ramalho-Santos M. Open chromatin in
+pluripotency and reprogramming [Journal Article]. Nat Rev Mol Cell Biol.
+2011;12(1):36{47. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/21179060 .
+44. Wei Z, Yang Y, Zhang P, Andrianakos R, Hasegawa K, Lyu J, et al. Klf4
+interacts directly with Oct4 and Sox2 to promote reprogramming [Journal
+Article]. Stem Cells. 2009;27(12):2969{78. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/19816951 .
+45.Rais Y, Zviran A, Geula S, Gafni O, Chomsky E, Viukov S, et al. Deterministic
+direct reprogramming of somatic cells to pluripotency [Journal Article]. Nature.
+2013;502(7469):65{70. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24048479 .
+46. Guo S, Zi X, Schulz VP, Cheng J, Zhong M, Koochaki SH, et al. Nonstochastic
+reprogramming from a privileged somatic cell state [Journal Article]. Cell.
+2014;156(4):649{62. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24486105 .
+47.Charron F, Paradis P, Bronchain O, Nemer G, Nemer M. Cooperative interaction
+between GATA-4 and GATA-6 regulates myocardial gene expression [Journal
+Article]. Mol Cell Biol. 1999;19(6):4355{65. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/10330176 .
+48. Chazaud C, Yamanaka Y, Pawson T, Rossant J. Early lineage segregation
+between epiblast and primitive endoderm in mouse blastocysts through the
+Grb2-MAPK pathway [Journal Article]. Dev Cell. 2006;10(5):615{24. Available
+from: http://www.ncbi.nlm.nih.gov/pubmed/16678776 .
+49.Pikkarainen S, Tokola H, Kerkel a R, Ruskoaho H. GATA transcription factors in
+the developing and adult heart [Journal Article]. Cardiovasc Res.
+2004;63(2):196{207. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/15249177 .
+50. Li C, Wang J. Quantifying Waddington landscapes and paths of non-adiabatic
+cell fate decisions for differentiation, reprogramming and transdifferentiation
+[Journal Article]. J R Soc Interface. 2013;10(89):20130787. Available from:
+http://www.ncbi.nlm.nih.gov/pubmed/24132204 .
+Supporting Information
+S1 Text
+Supplementary information about the five-gene model.
+Similar to the four-gene model, depending on the dominance between the positive
+and negative feedback of gene x1, the five-gene model showed three behaviors: (i)
+fixed-point attractor with high expression of pluripotent genes (FP), (ii) fixed-point
+attractor with high expression of differentiation genes (FD), and (iii) the oscillatory
+state (O). The five-gene model also showed differentiation from the oscillatory state
+25/29(Fig. S4). The attractor depended on the parameters Kijfor each edge, while most
+effective regulations to determine the type of attractors were related to gene x1, as in
+the four-gene model. In the five-gene model, the expression level of gene x5was
+important because the key gene x1is promoted via x5.
+Where oscillatory gene expression was observed, the gene expression levels in each
+cell were desynchronized with cell division, and the epigenetic threshold variables took
+different values according to cells. With the change in epigenetic variables, oscillation
+was attenuated or terminated for some cells, leading to differentiation.
+S1 Fig
+S1 Fig. Effects of the value of the diffusion coefficient D.The
+differentiation ratio and time is plotted against the diffusion coefficient D. The
+simulation in the four-gene model was conducted with cell-cell interactions, and with an
+increase in cell numbers. From 1000 samples, we counted the number of differentiated
+cells (x10) for each diffusion coefficient D. A: The average of the differentiation ratio
+(vertical axis) was computed as the percentage of differentiated cells per simulation.
+Starting from a pluripotent state, the number of cells that went to a fixed point x10
+increased with the diffusion coefficient D. B: The average time needed for cells to
+differentiate was computed and plotted as a function of D. The time to differentiation
+increased with the diffusion coefficient D.
+S2 Fig
+S2 Fig. Cellular state transition under highly noise. Time series of gene
+expression levels for x1(as in Fig. 5). Similar conditions to those described in Fig. 4
+were adopted, except that a Gaussian noise term with the amplitude = 1:0 was
+included. Expression levels of cells are plotted according to color. Gene expression
+oscillation was irregular because of the noise. Irreversible transition from the oscillatory
+pluripotent to the differentiated state ( x10) occurred for = 0:1.
+26/29S3 Fig
+S3 Fig. Phase diagram of differentiation behavior plotted against time
+scaleepi(vertical axis) and (horizontal axis). Parameters were set as in Fig.
+6. Brown, orange, green, and blue indicate fixed points at x1= 0 without
+differentiation, differentiation and loss of oscillation, preservation of oscillation, and the
+fixed-point of the differentiated state ( x10) (FD), respectively. For low values of epi,
+the epigenetic fixation progressed quickly, and then cells reached the fixed-point with
+expressed pluripotent genes (FP). Differentiation from the oscillatory state appeared at
+a high value of epi.
+S4 Fig
+S4 Fig. Time series of gene expression in the reprogramming simulation
+27/29by inducing two factors. Specifically, time series of gene expression for x1;x2;x3;x4,
+and the epigenetic variables 11and13are shown. The initial condition was as follows:
+all cells were in the differentiated state, where the epigenetic threshold values were set
+at 1:0 for the pluripotent genes  31;21, and  42, and lowered for the differentiation
+regulators to  13= 0:78,  34= 0:5,  43= 0:3. The value of the auto-regulator  11was
+set at 0:50. In differentiated cells, genes x1andx2were overexpressed for a long period.
+The epigenetic threshold ijdecreased with the overexpression of these genes, and the
+gene expression restarted oscillation. Later, a few cells differentiated again; thus, cells
+were reprogrammed.
+S5 Fig
+S5 Fig. Time series of gene expression in the five-gene model. Time series
+of gene expression levels for x1,x2,x3,x4, andx5. Expression levels of cells are plotted
+according to color, but most colors are overlaid and, therefore, difficult to discern. Here,
+the following parameter set was used:
+K13= 0:80;K34= 0:45;K43= 0:45;K15= 0:14K31= 0:94;K21= 0:81;K51= 0:81, and
+K42= 0:30. Gene expression levels initially showed oscillation, and then they were
+desynchronized. Ultimately, this model showed differentiation, as observed in the
+four-gene model.
+28/29S6 Fig
+S6 Fig. Time series of gene expression in the five-gene model with the
+epigenetic parameter. Time series of gene expression levels for x1,x2,x3,x4,x5,
+and the epigenetic threshold variables 15(t). Here, we used parameters of  ijas
+follows:  13=  34=  43= 0:65;15=  31=  21=  51=  42= 1:0. Initially, gene
+expression oscillated and gradually desynchronized with cell division. Ultimately, cells
+fell into a fixed point x11 orx10 because of epigenetic fixation.
+S7 Fig
+S7 Fig. The gene regulatory network in the reprogramming simulation
+with the five-gene model. The GRN for reprogramming in the five-gene model and
+an external factor for reprogramming. Arrow headed and T-headed lines represent
+positive and negative regulation, respectively. The pluripotent genes x1,x2, andx5
+were overexpressed, and the external stimulus ex1 was added to inhibit x3. Cells were
+reprogrammed by the induction of these factors, by which cells restarted oscillation.
+These inducing factors corresponded to the Yamanaka factors ( Oct4, Sox2, Klf4 , and
+Myc).
+29/29

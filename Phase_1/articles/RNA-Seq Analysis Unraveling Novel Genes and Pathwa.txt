@@ -1,0 +1,3 @@
+Title: RNA-Seq Analysis Unraveling Novel Genes and Pathways Influencing Corneal Wound Healing.
+Abstract: Transdifferentiation of corneal fibroblasts to myofibroblasts in the stroma is a central mechanistic event in corneal wound healing. This study sought to characterize genes and pathways influencing transdifferentiation of human corneal fibroblasts (hCSFs) to human corneal myofibroblasts (hCMFs) using RNA sequencing (RNA-seq) to develop comprehensive mechanistic information and identify newer targets for corneal fibrosis management.
+Full Text: Full text not available

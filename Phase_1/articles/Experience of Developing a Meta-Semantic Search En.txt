@@ -1,0 +1,346 @@
+Title: Experience of Developing a Meta-Semantic Search Engine
+Abstract:   Thinking of todays web search scenario which is mainly keyword based, leads
+to the need of effective and meaningful search provided by Semantic Web.
+Existing search engines are vulnerable to provide relevant answers to users
+query due to their dependency on simple data available in web pages. On other
+hand, semantic search engines provide efficient and relevant results as the
+semantic web manages information with well defined meaning using ontology. A
+Meta-Search engine is a search tool that forwards users query to several
+existing search engines and provides combined results by using their own page
+ranking algorithm. SemanTelli is a meta semantic search engine that fetches
+results from different semantic search engines such as Hakia, DuckDuckGo,
+SenseBot through intelligent agents. This paper proposes enhancement of
+SemanTelli with improved snippet analysis based page ranking algorithm and
+support for image and news search.
+
+Full Text: Experience of Developing a Meta -Semantic Search 
+Engine  
+Debajyoti Mukhopadhyay1, Manoj Sharma1, Gajanan Joshi1, Trupti Pagare1, Adarsha Palwe1 
+Department of Information Technnology1 
+Maharashtra Institute of Technology  
+Pune 411038, India  
+{debajyoti.mukhopadh yay, manojsharma2708, joshi.gajanan09,  
+ pagaretrupti2, adarsha125 }@gmail.com  
+ 
+ 
+ 
+Abstract — Thinking of today’s web search scenario which is 
+mainly keyword based, leads to the need of effective and 
+meaningful search provided by Semantic Web. Existing searc h 
+engines are vulnerable to provide relevant answers to users query 
+due to their dependency on simple data available in web pages. 
+On other hand, semantic search engines provide efficient and 
+relevant results as the semantic web manages information with 
+well defined meaning using ontology. A Meta -Search engine is a 
+search tool that forwards users query to several existing search 
+engines and provides combined results by using their own page 
+ranking algorithm. SemanTelli is a meta -semantic search engine 
+that fetches results from different semantic search engines such 
+as Hakia, DuckDuckGo, SenseBot through intelligent agents. 
+This paper proposes enhancement of SemanTelli with improved 
+snippet analysis based page ranking algorithm and support for 
+image and news search.  
+Index  Terms — SemanTelli, Semantic search, Semantic Web, 
+Meta -Semantic search engine.  
+I. INTRODUCTION  
+       Search Engines has become one of the most important and 
+used tool over the World Wide Web. Search Engines normally 
+search web pages for the req uired information and then 
+display the results by using ranking algorithms. These 
+commercially available search engines do not completely 
+serve the needs and demands of the users. Most of the times 
+the relevancy of the provided results is not accurate. The se 
+types of problem occur because of the structure of the current 
+Web.  
+ 
+Intelligent Agent   
+Intelligent Agents are an emerging technology that is 
+making computer systems easier to use by allowing people to 
+delegate work back to the computer. They help to do  things 
+like finding and filtering information, customize views of 
+information and automate work. An intelligent agent is 
+software that assists people and acts on their behalf. Agents 
+can intelligently summarize data, learn from us and even can 
+make recomm endations to us.  
+ Delegation aspect of intelligent agents, which is 
+certainly one thing that sets agents apart, since agents 
+are built to help people, just like human assistants.  
+ All agents are autonomous that is an agent has 
+control over its own actions.  
+ All agents are goal driven. Agents have a purpose 
+and act in accordance with that purpose . 
+ 
+Semantic Search Engines  
+       Semantic Search Engines makes use of Semantic Web in 
+order to search relevant results. These SE’s manage the 
+information over web usi ng ontology, developed with the help 
+of OWL  (Web Ontology Language). Ontology arranges the 
+pieces of information in a hierarchical tree like structure, 
+where information sharing some properties is grouped 
+together. Searching is carried out by traversing th e tree with 
+efficient algorithms. These techniques make semantic search 
+faster and relevant.  Here, details of the semantic search 
+engines used in SemanTelli are provided.  
+ 
+ DuckDuckGo  
+ 
+Fig. 1. DuckDuckGo semantic search engine  
+ 
+       The main sources of information for DuckDuckGo are 
+Crowd -sourced websites that makes it capable to enhance 
+traditional results and improve their relevance. It provides 
+policy that values privacy and does not record user 
+information as users are not profiled.  
+ 
+ Hakia  
+ 
+Fig. 2.  Hakia semantic search engine  
+         Hakia uses enhanced semantic technology for ranking 
+algorithm that uses QDEX(Query Detection and Extraction). It 
+perceives quality results from all segments like news, blogs, 
+credible, hakia galleries, images and vide os. For long queries, 
+it highlights relevant phrases, keywords or sentences that 
+relates to users query.  
+ 
+ Sensebot  
+ 
+Fig. 3. Sensebot semantic search engine  
+ 
+      Sensebot prepares the text summary according to the user’s 
+search query. It identifies key s emantic concepts by using text 
+mining algorithms that parse the Web Pages. The retrieved 
+multiple documents are then used to perform a coherent 
+summary. This coherent summary becomes the final result for 
+user’s query. The main sources for these results are  usually the 
+news agencies . 
+II. SEMAN TELLI ARCHITECTURE  
+SemanTelli is a simple meta -semantic -search engine which 
+extends the concept of meta -search engines to enhance 
+searching of specific data semantically.  Figure 4  shows the 
+whole architecture of SemanTelli with its major functioning 
+blocks.  
+ 
+Fig. 4 . Architecture of SemanTelli  
+ 
+Abbreviations used:   
+ QCG   :    Query Combination Generator  
+ SEPA  :    Search Engine Priority Assigner  
+ SEI      :   Search Engine Interactor  
+ TWPS :   Temporary Web Page Storage  
+ SEID   :   Search Engine Information Database        Our proposed architecture is comprised of two blocks, as 
+given below  
+ 
+SemanTelli  
+      SemanTelli comprises of user interface and other modules 
+to find out search engines (SE) priorities and to filter the 
+obtained search results from search engines. Query 
+Combination Generator (QCG) accepts the query from user 
+and generates its possible and meaningful combinations  
+considering proper sequences of query keywords . These 
+combinations are sent to SEPA (Search Engi ne Priority 
+Assigner) which finds the priority for different SE’s to 
+monitor search results. SEPA uses Search Engines 
+Information Database (SEID) which contains information 
+about importance of each search engine for particular keyword 
+or its domain. This i nformation helps SEPA to give specific 
+priorities to each SE. Here, for now, we have assigned 
+priorities to different search engines on basis of a survey with 
+sample set of queries and expected results. SEPA sends these 
+priorities and QC’s to SE interface (SEI). The search results 
+consisting of Semantic Web Documents (SWD) and Web 
+Pages (WP) are returned by backend to Temporary Web Page 
+Storage (TWPS), which stores the results temporary. TEMPS 
+uses the properties from SEPA to filter out the SWD/WP’s 
+and sen ds the required results for further refinements.  
+       Here, many selected SWD/WP’s have to go through our 
+algorithm in order to reduce redundancy and provide actual 
+needed output to the user. Our approach focuses on analysis of 
+snippets obtained in resul ts returned by search engines. This 
+snippet analysis consists of extraction of keywords from 
+snippet, comparing their count and sequence with query 
+keywords. Finally, results are arranged in decreasing order of 
+relevance considering their keyword count, ke yword sequence 
+and initial weight (W i). 
+  
+Back End  
+      This block gets the QC and SE priorities from SEPA and 
+searches the SWD’s and WP’s using search engines index 
+over the World Wide Web through our different semantic 
+search engines. Here, sp iders are located over the web  and 
+make searching of web pages on web easier.  Spiders also send 
+these web pages to TWPS for further processing and 
+refinement.  
+ 
+III. CURRENT STATUS OF SE MANTELLI  
+      SemanTelli is in developing phase. It fetches the result 
+from semantic search engines, analyzes snippet of each result  
+and arranges these results. We have assigned initial weight to 
+each fetched result as mentioned in Table. 1.  
+ 
+ 
+Table 1.   Initial Weight        Considering relevancy of results, we have assigned more 
+initial weight to DuckDuckGo results as compared to Hakia 
+and SenseBot results.  
+ 
+      Figure 5  highlights the implementation details of 
+SemanTelli. It shows that fetched results are temporarily stored 
+in respective buffers. These results are traversed in order t o 
+analyze snippets which indicate  their relevance . The relevance 
+of results is found out on basis of keyword count within 
+snippet, keyword sequence with respect to query keywords and 
+assigned initial weight (W i). After post processing, results are 
+arranged  with respect to their relevance . 
+ 
+ 
+Fig. 5 . Implementation details  
+ 
+Following algorithm is  used to find out relevance of results . 
+ 
+Algorithm:  Ranking Algorithm  using         
+Snippet Analysis  
+Input:     Obtained results  
+Output:    Ranked results  
+ 
+Step1: Apply Conflation algorithm on 
+query. 
+a)  Removal of stop words ( most 
+common occurring words).  
+b)  Suffix Stripping (remove the 
+suffixes of words and retrieve 
+stems (keyword). E.g. moving -> 
+move). 
+c)  Retrieve the keywords.  
+ 
+Step2: Apply similar conflation algorithm 
+as in step 1 to all obtained 
+result snippets.  Step3: Count the number of keywords from 
+snippet and query.  
+ Consider,  
+  NKs = no of keywords in snippet.  
+  NKQ = no of keywords in query.  
+Step4:  For each keyword K S in snippet  
+ count (KS) = 0 
+For each keyword  KQ in query  
+        If KS and KQ are same  
+    count (KS) ++ 
+Step5:  Arrange results on the basis of 
+decreasing order of keyword count.  
+Step6: If keyword count ( count (KS)) of 
+more than one snippets is 
+identical, then  
+a) Check the sequence of 
+keywords in snippe t with 
+sequence in query.  
+b) Specific snippet having 
+similar sequence as in 
+query will get more 
+priority.  
+Step7: If sequence of keywords among more 
+than one snippet is  identical, 
+then 
+  Arrange the selected results 
+considering their ranking from 
+respective se arch engine  and 
+considered initial weight (W i). 
+Step8: Return the ranked results.  
+ 
+      Using snippet analysis we are getting only relevant results 
+and those results are presented to the user  in decreasing order 
+of relevance . 
+ 
+ 
+Fig. 6. Home page of Seman Telli.  
+ 
+ 
+Fig 6  shows the homepage of SemanTelli.  In this figure 
+user has submitted Barack Obama as a query. This is query is 
+sent to the semantic search engines and results are fetched. 
+After fetching results the algorithm is applied and results are 
+prese nted to the user.  
+  
+ 
+Fig. 7. Web results of SemanTelli  
+ 
+Fig 7  shows web results of SemanTelli. The query is Barack 
+Obama for Web results. The results are fetched from semantic 
+search engines, combined and presented to the user.  
+ 
+ 
+ 
+ 
+Fig. 8.  Image results of SemanTelli.  
+ 
+Fig 8  shows image results of SemanTelli. The query is same 
+as Barack Obama and SemanTell i provides only relevant 
+images . 
+ 
+Fig. 9.  News results of SemanTelli.  
+ 
+Fig 9  shows news results of SemanTelli. The news results are 
+sorted in descendi ng order of time i.e. the most recent news is 
+shown first.  
+IV. PERFORMANCE ANALYSIS  
+Current development of SemanTelli is based on Snippet 
+Analysis of obtained results. Considering many sample queries, 
+the ranking of results is well improved and arranges the r esults in more relevant fashion. Snippet Analysis provided an 
+efficient way to dig out relevance of results as per query 
+keywords. Hence, this ranking approach is unique  as compared 
+to other approaches which considers hit counts, last 
+modification date, et c. However, our approach is still in 
+development phase for further refinement of ranking algorithm 
+to get relevant results.  Still, there are some aspects  considering 
+response time and fast post -processing of results that can be  
+improved.  
+ 
+V. CONCLUSION  
+We ha ve developed a meta -semantic -search engine 
+“SemanTelli” which highlights the novel concept of 
+integrating search results from existing semantic search 
+engines such as DuckDuckGo, Hakia, SenseBot  and rank them 
+with unique snippet analysis based approach . Th is will 
+provide users with an efficient way to search for  required 
+results from different semantic search engines  by single 
+interface . SemanTelli mines deeply through the combinations 
+of user query using semantic search engines and brings out 
+only relevant  results  with help of snippet analysis . 
+REFERENCES  
+[1] Debajyoti Mukhopadhyay, Aritra Banik, Sreemoyee Mukherjee, Jhilik 
+Bhattacharya, Young -Chon Kim; “ A Domain Specific Ontology Based 
+Semantic Web Search Engine ;” The 7th International Workshop MSPT 
+2007 Proc eedings, Youngil Publication; Republic of Korea; February 
+5,2007;pp.81 -89;ISSN 1975 -5635, ISBN 89 -8801 -90-0. 
+[2] Faizan Shaikh, Usman A. Siddiqui, Iram Shahzadi, Syed I. Jami, Zubair 
+A. sheikh, “ SWISE: Semantic Web based Intelligent Search Engine ,” 978 -
+1-4244 -8003 -6/10 2010 IEEE.  
+[3] Vishwas Raval and Padam Kumar, “ SEReleC (Search Engine Result 
+Refinement and Classification) – A Meta Search Engine based on 
+Combinatorial Search and Search Keyword based Link Classification, ” 
+IEEE -International Conference On Advances In Engineering, Science 
+And Mangement (ICAESM - 2012) March 30, 31, 2012.  
+[4] Debajyoti Mukhopadhyay, Manoj Sharma, Gajanan Joshi, Trupti Pagare, 
+Adarsha Palwe, “ Intellligent Agent Based Semantic Web in Cloud 
+Computing Environment ”, arXiv:1305.0939, arxiv.org/ abs/1305.0939  
+[5] Abdelkrim Bouramoul, Mohamed -Khireddine Kholladi, Bich -Lien Doan, 
+"An ontology -based approach for semantics ranking of the web search 
+engines results, " 978 -1-4673 -1520 -3/12 2012 IEEE . 
+[6] Debajyoti Mukhopadhyay, Aritra Banik, Sreemoyee Mukherjee,  Jhilik 
+Bhattacharya, " A Technique for Automatic Construction of Ontology from 
+Existing Database to Facilitate Semantic Web, " 10th International 
+Conference on Information Technology, ICT 2007 Proceedings; 
+Rourkela, India; IEEE Computer Society Press, Calif ornia, USA; 
+December 17 -20; pp.246 -251. 
+[7] G. Madhu and Dr. A. Govardhan, Dr.T.V.Rajinikanth, " Intelligent 
+Semantic Web Search Engines: A Brief Survey, " International journal of 
+Web Semantic Technology (IJWesT) Vol.2, No.1, January 2011 . 
+[8] Li Ding, , Tim Finin,  Anupam Joshi, Yun Peng, Pavan Reddivari, 
+"Search on the Semantic Web, ” Published by the IEEE Computer Society, 
+0018 -9162/05 2005 IEEE . 
+[9] Li Ding, Tim Finin, Anupam Joshi, Rong Pan, R.Scott Cost, Yun Peng, 
+Pavan Reddivari, Vishal Doshi, Joel Sachs, " Swoogle:  A Semantic Web 
+Search and Metadata Engine ". 
+[10] Rui G. Pereira and Mario M. Freire, " SWedt: A Semantic Web Editor 
+Integrating Ontologies and Semantic Annotations with Resource 
+Description Framework ", Proceedings of the Advanced International 
+Conference on Tel ecommunications and International Conference on 
+Internet and  Web Applications and Services, 0 -7695 -2522 -9/06 2006 
+IEEE . 

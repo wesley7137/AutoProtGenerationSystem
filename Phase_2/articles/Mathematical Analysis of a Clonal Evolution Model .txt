@@ -1,0 +1,1404 @@
+Title: Mathematical Analysis of a Clonal Evolution Model of Tumour Cell
+  Proliferation
+Abstract:   We investigate a partial differential equation model of a cancer cell
+population, which is structured with respect to age and telomere length of
+cells. We assume a continuous telomere length structure, which is applicable to
+the clonal evolution model of cancer cell growth. This model has a non-standard
+non-local boundary condition. We establish global existence of solutions and
+study their qualitative behaviour. We study the effect of telomere restoration
+on cancer cell dynamics. Our results indicate that without telomere
+restoration, the cell population extinguishes. With telomere restoration,
+exponential growth occurs in the linear model. We further characterise the
+specific growth behaviour of the cell population for special cases. We also
+study the effects of crowding induced mortality on the qualitative behaviour,
+and the existence and stability of steady states of a nonlinear model
+incorporating crowding effect. We present examples and extensive numerical
+simulations, which illustrate the rich dynamic behaviour of the linear and
+nonlinear models.
+
+Full Text: MATHEMATICAL ANALYSIS OF A CLONAL EVOLUTION MODEL
+OF TUMOUR CELL PROLIFERATION
+JOZSEF Z. FARKAS AND GLENN F. WEBB
+Dedicated to Professor Jan Pr u on the occasion of his 65th birthday.
+Abstract. We investigate a partial dierential equation model of a cancer cell pop-
+ulation, which is structured with respect to age and telomere length of cells. We
+assume a continuous telomere length structure, which is applicable to the clonal evo-
+lution model of cancer cell growth. This model has a non-standard non-local bound-
+ary condition. We establish global existence of solutions and study their qualitative
+behaviour. We study the eect of telomere restoration on cancer cell dynamics. Our
+results indicate that without telomere restoration, the cell population extinguishes.
+With telomere restoration, exponential growth occurs in the linear model. We fur-
+ther characterise the specic growth behaviour of the cell population for special cases.
+We also study the eects of crowding induced mortality on the qualitative behaviour,
+and the existence and stability of steady states of a nonlinear model incorporating
+crowding eect. We present examples and extensive numerical simulations, which
+illustrate the rich dynamic behaviour of the linear and nonlinear models.
+1.Introduction
+Mathematical models of tumour growth provide insight into the dynamic charac-
+teristics of tumour cell populations. Important issues are cell proliferation, cell hetero-
+geneity, and cell dierentiation. These issues are currently examined in two hypothesized
+models of tumour evolution: the cancer stem cell (CSC) model and the clonal evolution
+(CE) model[27, 40]. Both models have scientic support, as well as therapeutic implica-
+tions, and in fact, both models may be involved in the development of a tumour. The
+essential distinction of the two models is the role of self-renewal in specic cells, and
+the fraction of the total cell populations that these cells comprise. Here self-renewal
+means the ability of a cell to inherit a specic function through an unlimited number of
+successive cell generations.
+Date : August 26, 2021.
+1991 Mathematics Subject Classication. 35Q92, 35B35, 92C37.
+Key words and phrases. Cancer modelling, structured populations, semigroups of operators, asymp-
+totic behaviour, telomere self-renewal.
+This work was completed with the support of the Royal Society.
+1arXiv:1511.05046v1  [math.AP]  16 Nov 20152 J. Z. FARKAS AND G. F. WEBB
+The CSC model hypothesizes that a very small sub-population of tumour stem cells
+generate the entire tumour cell population [43, 49]. In mathematical treatments, these
+stem cells have the ability to self-renew indenitely, and through sequential mutations
+generate all the heterogeneous and dierentiated cell types comprising the tumour [1, 6,
+13, 18, 23, 24, 34, 37, 38, 39, 41, 44, 47, 50, 51, 54]. This stem cell population lies at the
+apex of a hierarchical structure of cell types, and tumour evolution is dependent on their
+unconstrained self-renewing ability [30].
+The CE model hypothesizes that a tumour population is composed of multiple genet-
+ically identical clones, which have the possibility of mutation, selection, and expansion
+[8, 43, 48]. In the CE model all undierentiated cells have a self-renewing capacity for
+contributing to the tumour evolution. These cells, however, are not at the apex of a
+hierarchal tree, but rather dispersed widely throughout the tumour cell population as a
+large fraction of the total tumour cell count.
+A central element of cell self-renewal is the Hayick limit, which constrains dier-
+entiated cell lines to a nite number of divisions [28]. As dierentiated cells divide,
+telomeres (nucleotide sequences at the ends of chromosomes) shorten until a critical
+limit is reached, and further divisions are prohibited [33, 46]. The existence of a mech-
+anism which reverses telomere shortening was predicted several decades ago. The CSC
+model hypothesizes that cancer stem cells circumvent telomere shortening by using the
+enzyme telomerase to replace their telomeres, and thus obtain the ability to divide indef-
+initely [43]. Recently, it has been shown that around 90% of all types of human cancer
+exhibit a form of telomerase activation [27]. In the CSC model this property resides in
+an extremely small sub-population, from which all the dierentiated tumour cells de-
+rive. In contrast, the CE model hypothesizes that a large number of undierentiated
+cells, in clonal sub-populations, possess the ability to restore telomeres, and thus sustain
+the tumour evolution. These two models dier greatly in their fraction of self-renewing
+cells within the total population. Mathematical models provide a way to compare these
+self-renewal properties in proliferating cell populations.
+In order to model the dynamics of self-renewing cells lineages, which correspond phys-
+iologically to chromosomal telomere lengths, is it necessary to track all cells through
+successive generations. Many mathematical treatments of telomere structure in cell pop-
+ulation dynamics have been developed [4, 5, 7, 16, 31]. The CSC model has been treated
+for example in [31], where telomere shortening is investigated in continuum dierential
+equation models. The key focus of these treatments is that mother stem cells produce
+two daughter cells, one of which is a stem cell, and the other, a dierentiated cell, with
+a limited number of future divisions. These models describe a nite number of sub-
+populations, each with an idealised precise telomere length. The self-renewal property
+of a stem cell is captured by one daughter cell remaining in the highest telomere class
+and the other daughter cell transiting to a lower telomere class. A descent of telomere
+length shortening continues in each class, with one daughter cell retaining the length ofANALYSIS OF A CLONAL EVOLUTION MODEL 3
+the mother and the other a lower length. This model yields a minute fraction of stem
+cells at the apex of the total population, consistent with the CSC literature [43].
+The objective of this paper is to develop a mathematical analysis for the alternative CE
+model and to quantify its dynamic properties. Our model here incorporates continuum,
+rather than discrete, telomere lengths in cells. This idealised continuum telomere length
+is assumed for convenience, to avoid unwieldy compartmentalisation with each telomere
+length subclass. In our CE model of telomere shortening there is an unbalanced division
+of a mother cell to two daughter cells in terms of telomere length. The telomere length
+of a daughter cell may be less (corresponding to a dierentiated cell), or may be equal
+or greater (corresponding to a self-renewing cell) than the mother cell. In this way the
+restoration of telomeres and the self-renewal property of cells is distributed through a
+large proportion of the tumour cell population, consistent with the CE literature[43]. The
+distribution of daughter cell telomere lengths is governed by a mathematically formulated
+rule that assigns the telomere restoration property to cells which may be viewed as those
+capable of indenite divisions in each of the diverse clonal sub-populations.
+Our CE model belongs to the class of continuum structured population models, with
+age and time as dynamic variables, and telomere length as a population structure vari-
+able. In the past three decades physiologically structured population models have been
+increasingly utilised to shed light on some important phenomena of cell populations
+[4, 5, 15, 16, 29, 31, 36]. The power of structuring a population with respect to phys-
+iological variables is of great value in understanding the evolution of biological popula-
+tions. There is an increasing literature of physiologically structured population models
+with more than one (physiological) structuring variable. The development of a unied
+mathematical framework, where structuring variables play substantially dierent roles,
+promises to be extremely challenging from the theoretical point of view.
+We rst consider the following linear model for an age and telomere length structured
+proliferating cancer cell population.
+@p
+@t(a;l;t ) +@p
+@a(a;l;t ) = ((a;l) +(a;l))p(a;l;t ); a2(0;am); l2(0;lm);(1.1)
+p(0;l;t) = 2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t) dad^l; l2(0;lm); (1.2)
+p(a;l;0) =p0(a;l); a2(0;am); l2(0;lm): (1.3)
+Abovep(a;l;t ) stands for the density of cells of age a, having telomere length lat timet.
+We assume a maximum cell age denoted by amand a maximum telomere length denoted
+bylm. The population count at time tof cells with age between a1anda2and telomere
+length between l1andl2is
+Za2
+a1Zl2
+l1p(a;l;t ) dlda;4 J. Z. FARKAS AND G. F. WEBB
+and the total population of all cells at time tis
+P(t) =Zam
+0Zlm
+0p(a;l;t ) dlda:
+(a;l) quanties the natural mortality of cells of age aand telomere length l. A mother
+cell of ageaand telomere length ldivides into two daughter cells of age 0 having (possibly)
+dierent telomere lengths, at a rate determined by the function (a;l). The function
+r(l;^l) describes the distribution of daughter telomere lengths lfrom a mother cell of
+telomere length ^l. The boundary condition (1.2) accounts for cell division of a mother
+cell into two daughter cells and requires that
+Zlm
+0Zlm
+0r(l;^l) d^ldl= 1: (1.4)
+From a probabilistic interpretation of r(l;^l) it would be natural to normalise the maximal
+telomere length lmto 1. Throughout we retain lmas a general parameter. We will impose
+further regularity assumptions on the model ingredients later on. Note that our model
+(1.1)-(1.3) can be considered as a continuous telomere length structured counterpart of
+the model recently introduced in [31].
+2.Existence of the governing linear semigroup
+Our starting model (1.1)-(1.3) is a linear one, moreover the telomere length lonly
+plays an important role in the somewhat unusual boundary condition (1.2). Hence to
+establish the existence of the governing linear semigroup (and therefore the existence
+of mild solutions of the PDE (1.1)-(1.3)) we use a boundary perturbation result due to
+Greiner, see Theorem 2.3 in [26]; see also [25] and [14] for similar general results. It is
+very natural to apply the boundary perturbation result of Greiner, since the unperturbed
+generator (arising from equation (1.1) with zero ux boundary condition) is readily shown
+to generate a translation semigroup. Moreover, it has the added advantage that the
+spectrally determined growth behaviour of the semigroup follows almost instantaneously,
+see Proposition 3.1 in [26]. For basic denitions and results not introduced in the section
+we refer the reader to [3, 19].
+To apply the perturbation result of Greiner we set the framework as follows. Assume
+that2C1
++([0;am][0;lm]) and;r2L1
++((0;am)(0;lm)), and that all of the model
+parameters are non-negative. In particular, it is natural to assume that does not
+vanish (ina) identically for any l>0. We also impose the natural assumption that cells
+reaching the maximal age do not reproduce anymore, i.e. (am;)0. This assumption
+is completely natural from the biological point of view. If cells would still divide upon
+reaching the maximum age then it would be natural to extend the age-interval beyond am.
+In other words, we have set the maximal age amsuch that cells of this age do not divide
+for any more. On the other hand, we will see later when we introduce nonlinearities in
+model (1.1)-(1.3), that non-reproducing cells still play a role in the population dynamics,ANALYSIS OF A CLONAL EVOLUTION MODEL 5
+in particular they may aect competition induced mortality. Also note that alternatively,
+we could have assumed that the mortality is locally integrable with respect to age, butRam
+0(a;) da=1holds, i.e. no individuals survive the maximal age am.
+For the linear problem (1.1)-(1.3), since we are dealing with density functions, the
+natural choice of state space is the following Lebesgue space.
+X=L1((0;am)(0;lm))=L1 
+(0;am);L1(0;lm)
+:
+Elements ofXabove can be understood as equivalence classes of measurable functions
+f()() on the square (0 ;am)(0;lm) such thatRam
+0jf(a)()jda2L1(0;lm). We further
+setY=L1(0;lm). We dene the operators AandBas follows
+Ap= @p
+@a;Bp= (+)p; (2.5)
+with
+D(A) =
+p2W1;1 
+(0;am);L1(0;lm)	
+; D (B) =X: (2.6)
+We further introduce the norm
+jjvjjA=Zlm
+0Zam
+0jv(a;l)j+jva(a;l)jdadl: (2.7)
+With thejjjjAnormD(A) is complete, and the maximal operator A: (D(A);jjjjA)!X
+is continuous and linear. Furthermore, we dene
+L: (D(A);jjjjA)!Y;Lv=v(0;):
+ThenLis also continuous and linear, and we have Im( L) =Y. We denote byA0the
+restriction ofAto Ker(L). It is then clear that A0generates the strongly continuous
+and nilpotent shift semigroup S, explicitly given as
+(S(t)u)(a;l) =u(a t;l); at
+0; a<t
+: (2.8)
+In particular note that for t>amwe have (S(t)u0)0 for any initial condition u02X+.
+We now dene the bounded linear perturbing operator  : X!Y as follows
+(u) = 2Zlm
+0r(;^l)Zam
+0(a;^l)u(a;^l) dad^l: (2.9)
+We also dene the corresponding perturbed generator Aas
+Av=Av; D (A) =fv2D(A)jLv= vg: (2.10)
+We recall the main result from [26] for the reader's convenience.
+Theorem 2.1 (Greiner) .If(Y)D(A
+0), thenAis the generator of a strongly
+continuous semigroup TonX.6 J. Z. FARKAS AND G. F. WEBB
+We now apply Theorem 2.1 to establish the existence of the governing linear semigroup.
+In our setting we have X=L1((0;am)(0;lm)), andY=L1(0;lm). Furthermore,
+to compute the adjoint :D()Y!X, we note that
+hx;yi= 2Zlm
+0y(l)Zlm
+0r(l;^l)Zam
+0(a;^l)x(a;^l) dad^ldl
+=Zlm
+0Zlm
+0Zam
+02y(l)r(l;^l)(a;^l)x(a;^l) dadld^l
+=Zlm
+0Zam
+0x(a;^l)Zlm
+02y(l)r(l;^l)(a;^l) dldad^l
+=hx;yi;
+if we let
+(y) = 2(;)Zlm
+0y(l)r(l;) dl2X; D () =Y: (2.11)
+Next we note that (see [32, Sect.III.5]) g2D(A
+0) if there exists an f2Xsuch that
+hg;A0ui=hf;ui;8u2D(A0): (2.12)
+For anyu2D(A0) integration by parts yields
+Zlm
+0Zam
+0g(a;l)
+ @u
+@a(a;l)
+dadl=Zlm
+0Zam
+0@g
+@a(a;l)u(a;l) dadl
+=Zlm
+0Zam
+0f(a;l)u(a;l) dadl; (2.13)
+forg2
+W1;1 
+(0;am);L1(0;lm)
+jg(am;)0	
+, and if we let f=@g
+@a. Hence it follows
+from the regularity assumptions on andrthat we have
+(Y)
+g2W1;1 
+(0;am);L1(0;lm)
+jg(am;)0	
+D(A
+0):
+Hence Theorem 2.1 implies that Agenerates a strongly continuous semigroup.
+Next we note that for 2(A0), the operatorLjKer( A)is a continuous bijection
+from (ker( A);jjjjA) ontoY, hence its inverse
+L:= 
+LjKer( A) 1:Y!X;
+is continuous, for 2(A0). In particular, a straightforward calculation shows that in
+our setting we have L:y()!e y(), and therefore for large enough (I L)
+is invertible and positive. Hence by Lemma 1.4 in [26] we have that R(;A) is positive
+forlarge enough. Since Bis a bounded multiplication operator, we draw the following
+conclusion.
+Corollary 2.2.A+Bgenerates a positive strongly continuous semigroup of bounded
+linear operators on X.ANALYSIS OF A CLONAL EVOLUTION MODEL 7
+3.Asymptotic behaviour
+In this section we study the asymptotic behaviour of solutions of the linear model
+(1.1)-(1.3). In particular, as we will see, we are going to characterise the spectral bound
+of the linear semigroup generator A+Bimplicitly via the spectral radius of an associated
+(bounded) integral operator. We will then obtain estimates for the spectral radius of this
+integral operator.
+As we have pointed out earlier one of the advantages of the perturbation theorem of
+Greiner (Theorem 2.1) is that it allows us to establish a desirable regularity property
+of the semigroup in a straightforward fashion. To this end, for the rest of the paper we
+further assume that rsatises the following regularity condition.
+sup
+l;^lr(l+t;^l) r(l;^l)k(t);such that lim
+t!0(t) = 0; k2R: (3.14)
+Note that, for example if ris continuous on the square [0 ;lm][0;lm], then condition
+(3.14) clearly holds. We recall now from [26] the result we are going to apply, for the
+readers convenience. In particular, Proposition 3.1 in [26] reads as follows.
+Proposition 3.3. IfAgenerates a semigroup and is compact then ess(A0) =
+ess(A). In particular, +(A0)\(A)contains only poles of nite algebraic multi-
+plicity of the resolvent R(;A).
+In the proposition above +(A0) stands for the component of the resolvent set of
+A0, which is unbounded to the right. We apply now Proposition 3.3 in our setting. In
+what follows, with a slight abuse of notation, we will denote the semigroup generated by
+A+BbyT.
+Proposition 3.4. Assume that (3.14) holds. Then the spectrum of the governing linear
+semigroupTmay contain only elements of the form et, whereis an eigenvalue of its
+generatorA+B.
+Proof. We note thatBis bounded andA0generates a nilpotent semigroup. Hence,
+utilising Proposition 3.3, it is only left to show that  is compact. Let SXdenote the
+unit sphere ofX. We have to show that ( SX) is relatively compact in Y=L1(0;lm).
+Using the Fr echet-Kolmogorov criterion of compactness of sets in L1[55, Ch.X.1], it is
+enough to show that on the one hand we have
+jjSXjjY=Zlm
+0j(x)(l)jdlCr: (3.15)8 J. Z. FARKAS AND G. F. WEBB
+On the other hand we have
+Zlm
+0j(x)(l+t) (x)(l)jdl
+Zlm
+0Zlm
+02Zam
+0(a;^l)x(a;^l) dar(l+t;^l) r(l;^l)d^ldl
+2lmk(t);
+therefore we have
+lim
+t!0Zlm
+0j(x)(l+t) (x)(l)jdl= 0;
+uniformly in  x. 
+We shall point out that we really needed to utilise Proposition 3.3 by Greiner, to
+obtain that the asymptotic behaviour of the semigroup is determined by the leading
+eigenvalue of its generator (if it exists). This is due to the distributed structuring with
+respect to the telomere length of cells, which implies that the governing semigroup is
+not necessarily eventually dierentiable; hence we could not conclude, as for example in
+[22] for a classic size-structured models, that the semigroup is eventually compact, and
+henceforth the spectral mapping theorem holds true.
+As we have seen earlier the semigroup Tgenerated byA+Bis clearly positive, but
+it may not necessarily be irreducible. To see this, recall from [19], that the semigroup
+generated byA+Bis irreducible if and only if for every f, 06f2X+, we have that
+R(;A+B)f0, i.e. the resolvent is strictly positive, for some >s (A+B).
+Letf2X+, and note that the solution of the resolvent equation
+R(;A+B)f=uis
+u(a;) = exp
+ Za
+0((^a;) +(^a;) +) d^a
+
+u(0;) +Za
+0expZs
+0((^a;) +(^a;) +) d^a
+f(s;) ds
+: (3.16)
+Applying the boundary operator  on both sides of equation (3.16), it is easily shown
+thatu(0;) satises the inhomogeneous integral equation
+u(0;) =2Zlm
+0u(0;^l)r(;^l)Zam
+0(a;^l)(a;^l;) dad^l
++ 2Zlm
+0r(;^l)Zam
+0(a;^l)(a;^l;)Za
+0f(s;^l)
+(s;^l;)dsdad^l: (3.17)
+Above in (3.17) we introduced the notation
+(a;l; ) = exp
+ Za
+0((^a;l) +(^a;l) +) d^a
+:ANALYSIS OF A CLONAL EVOLUTION MODEL 9
+Note that since telomere length is preserved during the lifetime of an individual, it is
+intuitively clear that the semigroup is irreducible if ospring of all telomere length is
+produced by some individuals. In other words, if there were individuals of particular
+telomere lengths who would not produce individuals of any other lengths, then the semi-
+group would be reducible. We formulate now a rigorous condition for the irreducibility
+of the semigroup, as this will play an important role later in the qualitative analysis of
+model (1.1)-(1.3).
+Proposition 3.5. The semigroupTgenerated byA+Bis irreducible if and only if
+for any set I[0;lm]of positive Lebesgue measure, such that its complement set Iis
+also a set of positive Lebesgue measure, we have
+Z
+IZ
+Ir(l;^l) d^ldl6= 0: (3.18)
+Proof. Note that by virtue of the positivity of the semigroup generated by A+B, the
+resolvent operator R(;A+B) is positive, for large enough. Hence the solution u(0;)
+of equation (3.17) is necessarily non-negative almost everywhere. Assume now that (3.18)
+does not hold, i.e.R
+IR
+Ir(l;^l) d^ldl= 0 for some sets I;Iof positive measure. Then it
+is clear that for any fvanishing on I, equation (3.17) would admit a solution u(0;)
+vanishing on I, too; and therefore ugiven by (3.16) would also vanish on I. On the other
+hand, if there was a function u60 vanishing on a set J[0;lm] of positive measure for
+almost every a2(0;am), then equation (3.16) would imply that the solution u(0;) of
+(3.17) would also vanish on J, but then this would clearly implyR
+JR
+Jr(l;^l) d^ldl= 0, a
+contradiction. 
+Proposition 3.4 implies that the asymptotic behaviour of solutions of model (1.1)-(1.3)
+is determined by the eigenvalues of the generator (if there are any), hence we study this
+eigenvalue problem now. In particular, the solution of the eigenvalue problem
+(A+B) = ;  (0) =  ; (3.19)
+is given by
+ (a;l) = (0;l) exp
+ Za
+0((^a;l) +(^a;l) +) d^a
+: (3.20)
+Applying the boundary operator  on both sides of the equation above we have
+ (0;l) = 2Zlm
+0r(l;^l) (0;^l)K(^l;) d^l; (3.21)
+where we dened
+K(;) =Zam
+0(a;) exp
+ Za
+0((^a;) +(^a;) +) d^a
+da: (3.22)
+Hence2Cis an eigenvalue of A+Bif and only if, for the given , the integral
+equation (3.21) has a non-trivial solution  (0;). Then, the eigenvector corresponding10 J. Z. FARKAS AND G. F. WEBB
+tois given by (3.20). We are in particular interested in the leading eigenvalue (if it
+exists), which is the spectral bound of the generator, since the semigroup Tis positive.
+This dominant real eigenvalue, together with the corresponding eigenspace, determines
+the asymptotic behaviour of solutions. Also note that equation (3.21) gives naturally
+rise to dene a parametrised family of (positive and bounded) integral operators Oas
+Ox= 2Zlm
+0r(;^l)K(^l;)x(^l) d^l; D (O) =L1(0;lm); 2R: (3.23)
+With this, the characteristic equation (3.21), which is notably a functional equation, in
+contrast to a scalar equation in case of a model with age-structure only; can be viewed
+as an eigenvalue problem for a bounded linear integral operator. More precisely, is an
+eigenvalue of the generator A+B, if and only the integral operator Ohas eigenvalue
+1. Note that, since Kdened in (3.22) is strictly positive, the integral operator O
+(for every2R) is irreducible if and only if condition (3.18) holds [45, Ch.V]. Hence,
+rightly so, the irreducibility conditions of the semigroup Tand the integral operator O
+coincide.
+Also note that the function [0 ;1)3!r(O) is continuous and strictly monotone
+decreasing. These properties can be established by using perturbation results from [2]
+and [32], respectively; see also [9, 11] for similar developments. Also note that if r
+satises condition (3.14) then O0is shown to be compact exactly in the same way as the
+operator  was shown to be compact earlier. Hence the spectrum of O0may contain
+only eigenvalues and 0.
+Therefore, in the case when the spectrum of A+Bis not empty, we have the following
+complete characterisation of the asymptotic behaviour of solutions of model (1.1)-(1.3).
+(1) Ifr(O0)<1, then solutions of model (1.1)-(1.3) decay exponentially.
+(2) Ifr(O0)>1, then solutions of model (1.1)-(1.3) grow exponentially. Moreover,
+ifrsatises condition (3.18), then solutions exhibit asynchronous exponential
+growth.
+(3) Ifr(O0) = 1, then for any eigenvector  (0;) corresponding to the spectral radius
+1 ofO0, the function  in (3.20) determines a one-parameter family of positive
+steady states of model (1.1)-(1.3). If rsatises (3.18), then there is only one such
+family of steady states, moreover they are strictly positive, too.
+After the previous general analysis of the asymptotic behaviour of our model next
+we intend to study the eect of the well-known capacity of telomere restoring of cancer
+cells on the dynamics. In particular we are going to show, that at least for some general
+classes of the model ingredients, the telomere length restoring capacity of cancer cells
+may have a drastic eect on the asymptotic behaviour of solutions already in the linear
+model (1.1)-(1.3). First we note that in the absence of telomere restoring capacity of cells,
+the function rnecessarily vanishes on the half square ^ll. That is, when a mother cell
+divides, it only gives birth to daughter cells with shorter telomeres. This is a well-known
+mechanism observed in healthy cell populations. In particular this telomere shorteningANALYSIS OF A CLONAL EVOLUTION MODEL 11
+of healthy cells results in apoptosis (when reaching the celebrated Hayick limit) and
+prevent the possibility of drastic mutations caused by a very large number of iterations
+of faulty DNA replication. In this case the boundary condition (1.2) can be rewritten as
+p(0;l;t) = 2Zlm
+lr(l;^l)Zam
+0(a;^l)p(a;^l) dad^l;0<llm; t> 0: (3.24)
+This in particular implies that the eigenvalue problem (3.21) now reads
+	(l) = 2Zlm
+lr(l;^l)	(^l)K(^l;) d^l; (3.25)
+where we also introduced the notation 	( l) := (0;l), for simplicity. Let us assume now
+that the the function ris separable, i.e. r(l;^l) =r1(l)r2(^l) holds for some functions r1;r2.
+For example we may assume that r1is continuously dierentiable and r2is bounded, and
+thatr1is positive while r2is non-negative. Then assumption (3.14) clearly holds. In
+this case dierentiating equation (3.25) (assuming that an eigenvector  with a smooth
+	 component exists) yields the dierential equation
+	0(l) = 	(l)r0
+1(l)
+r1(l) 2r1(l)r2(l)K(l;)
+; (3.26)
+together with the initial condition
+	(0) = 2r1(0)Zlm
+0r2(^l)K(^l;)	(^l) d^l: (3.27)
+The solution of (3.26) is
+	(l) = 	(0)r1(l)
+r1(0)exp(
+ Zl
+02r1(^l)r2(^l)K(^l;) d^l)
+; (3.28)
+which, utilising (3.27), leads to the following characteristic equation
+1 = 2Zlm
+0r1(l)r2(l)K(l;) exp(
+ 2Zl
+0r1(^l)r2(^l)K(^l;) d^l)
+dl
+= 1 exp(
+ 2Zlm
+0r1(l)r2(l)K(^l;) d^l)
+: (3.29)
+It is clear that equation (3.29) does not admit any solution 2R, which, together with
+the positivity of the semigroup, implies that the spectrum of A+Bdoes not contain any
+eigenvalue with a corresponding eigenvector  with a continuously dierentiable  (0;l).
+On the other hand it is clear from equation (3.25) that any eigenvector is continuous
+with respect to its second variable. From the biological point of view this phenomenon
+is associated with the constant loss of telomere length of newborn cells. Indeed, in the
+absence of telomere restoring capacity we may expect that the cell population accumu-
+lates at the minimal length. From the mathematical point of view, the non-existence12 J. Z. FARKAS AND G. F. WEBB
+of dierentiable eigenvectors is associated with the fact that the governing semigroup
+cannot shown to be eventually dierentiable due to the telomere length structuring.
+Next we consider what happens if we account for the telomere restoring capacity of
+cancer cells. In particular we are going to show that in this case even exponential growth
+of the cancer cell population is possible. As before, we start with the case of a separable
+r, i.e. we assume that r(l;^l) =r1(l)r2(^l) for some functions r1;r2. In this case the
+integral operator O0is of rank one, and it is rather straightforward to exactly determine
+the spectral radius of O0, which, as we have seen earlier, determines the asymptotic
+behaviour of the semigroup T. In particular, we have
+r(O0) =2Zlm
+0r1(l)r2(l)K(l;0) dl
+=2Zlm
+0r1(l)r2(l)Zam
+0(a;l) exp
+ Za
+0((^a;l) +(^a;l)) d^a
+dadl:(3.30)
+From (3.30) we can see that depending on the functions r1;r2;and, the spectral
+radiusr(O0) may be greater than 1. For example in the case of constant functions
+r1;r2;; , and setting lm=am= 1 (note that we can always normalise the maximal
+age and telomere length), we have
+r(O0) = 2r1r21 e (+)
++:
+To obtain estimates for the spectral radius of O0in the more general and dicult
+non-separable case, note that the Krein-Rutman theorem asserts that if O0is compact
+and positive, and its spectral radius is positive, then it has a positive (not necessarily
+strictly positive) eigenvector corresponding to its spectral radius. On the other hand de
+Pagter proved in [12] that if the operator is also irreducible then its spectral radius is
+strictly positive. As we noted earlier if rsatises condition (3.14) then O0is shown to be
+compact in the same way as the operator . Assuming now that the spectral radius is
+positive, let u2L1
++(0;lm) denote the positive eigenvector corresponding to the spectral
+radius. Then we have
+2Zlm
+0r(;^l)K(^l;0)u(^l) d^l=r(O0)u(); (3.31)
+which yields
+2Zlm
+0u(^l)K(^l;0)Zlm
+0r(l;^l) dld^l=r(O0)Zlm
+0u(l) dl: (3.32)
+This observation allows us to obtain immediately the following estimates for the spectral
+radius
+2 min
+^lK(^l;0)Zlm
+0r(l;^l) dlr(O0)2 max
+^lK(^l;0)Zlm
+0r(l;^l) dl: (3.33)ANALYSIS OF A CLONAL EVOLUTION MODEL 13
+To obtain dierent estimates, in particular when O0may not be irreducible we are going
+to utilise some minimax principles established in [35]. Recall that if Xis a Banach lattice
+with positive cone K, and with dual space Xand dual cone K, respectively; then a
+setH0Kis calledK-total if and only if from hx;x0i0;8x02H0it follows that
+x2K. Then for any positive linear endomorphism Oon a Banach lattice Xand for any
+x2Kone denes
+rx(O) = sup
+f2Rj(Ox x)2Kg:
+Recall that by Lemma 3.1 in [35] for any K-total setH0Kwe have
+rx(O) = sup
+f2RjhOx;x0ihx;x0i; x02H0g: (3.34)
+Moreover, Lemma 3.3 in [35] asserts that for any 0 6x2Kwe haverx(O)r(O). If
+we letx1, then we have for any x02K
+hO01;x0i2 min
+lZlm
+0r(l;^l)K(^l;0) d^lZlm
+0x0(l) dl
+= 2 min
+lZlm
+0r(l;^l)K(^l;0) d^lh1;x0i: (3.35)
+Similarly, recall from [35] that if we dene
+rx(O) = inf
+f2Rjhx;x0ihOx;x0i; x02H0g; (3.36)
+then for every x2Kwe haver(O)rx(O). Again, choosing x1, we have for any
+x02K
+hO01;x0i2 max
+lZlm
+0r(l;^l)K(^l;0) d^lZlm
+0x0(l) dl
+= 2 max
+lZlm
+0r(l;^l)K(^l;0) d^lh1;x0i: (3.37)
+Hence we obtain the following estimates for the spectral radius of O0
+2 min
+lZlm
+0r(l;^l)K(^l;0) d^lr(O0)2 max
+lZlm
+0r(l;^l)K(^l;0) d^l: (3.38)
+Note that the estimates (3.33) and (3.38) are quite dierent, in general.
+We next provide hypotheses on r(l;^l) that yield specic growth behavior of the solu-
+tions in the presence or absence of highest telomere class renewal. It is known that in the
+discrete telomere length case, the cell population can have polynomial growth or decay
+with cells with shortest telomere length having the highest power growth over time (see
+e.g. [4],[5],[16]). Similar results hold in the continuum telomere length case if we divide
+the population into telomere length classes. We rst consider the case of no self-renewal
+within any class, that is, all cell divisions result in daughter cells in a shorter telomere
+length class.14 J. Z. FARKAS AND G. F. WEBB
+Proposition 3.6. Assume there exists 2(0;lm)such that for ^l2[0;lm],r(l;^l) = 0
+for0^l l^llm. Assume that min(a;l)max,min(a;l), for all
+a2[0;am],l2[0;lm], andr(l;^l)rmax, for alll;^l2[0;lm]. Let
+=min+min; ! = 2rmaxmax:
+Letp(a;l;t )be the solution of (1.1)-(1.3), such that p02D(A);p00, and let
+Pj(t) =Zlm j
+lm (j+1)Zam
+0p(a;l;t )da
+dl; j = 0;1;:::;N; 0<lm (N+ 1):
+Then
+P0(t)e tP0(0); t0; (3.39)
+P1(t)e t
+P1(0) +!tP 0(0)
+; t0; (3.40)
+P2(t)e t
+P2(0) +!t(P0(0) +P1(0)) +!2t2
+2P0(0)
+; t0; (3.41)
+and in general
+Pj(t)e t
+Pj(0) +jX
+k=1!ktk
+k!j kX
+i=0j 1 i
+k 1
+Pj(0)
+; t0; jN: (3.42)
+Proof. From (1.1) and (1.2), for p(a;l;0)2D(A),
+P0
+0(t) =Zlm
+lm Zam
+0@p
+@t(a;l;t )dadl (3.43)
+=Zlm
+lm Zam
+0
+ @p
+@a(a;l;t ) ((a;l) +(a;l))p(a;l;t )
+dadl
+=Zlm
+lm 
+p(0;l;t) p(am;l;t) Zam
+0((a;l) +(a;l))p(a;l;t )da
+dl
+Zlm
+lm 
+2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl P0(t)
+= P0(t);
+(sincer(l;^l)0 forlm llm, 0^llm- see Figure 1(a)). Thus, P0(t)
+e tP0(0).ANALYSIS OF A CLONAL EVOLUTION MODEL 15
+A similar calculation to (3.43) yields
+P0
+1(t)Zlm 
+lm 2
+2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl P1(t) (3.44)
+=Zlm 
+lm 2
+2Zlm
+l+r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl P1(t)
+=Zlm
+lm 
+2Z^l 
+lm 2r(l;^l)dlZam
+0(a;^l)p(a;^l;t)da
+d^l P1(t)
+2rmaxmaxZlm
+lm Zam
+0p(a;^l;t)da
+d^l P1(t)
+=!P0(t) P1(t)
+(sincer(l;^l)0 forlm 2llm , 0^ll+- see Figure 1(b)). Thus, P1(t)
+satises (3.40).
+A similar calculation to (3.44) yields
+P0
+2(t)Zlm 2
+lm 3
+2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl P2(t) (3.45)
+=Zlm 2
+lm 3
+2Zlm
+l+r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl P2(t)
+=Zlm 
+lm 2
+2Z^l 
+lm 3r(l;^l)dlZam
+0(a;^l)p(a;^l;t)da
+d^l
++Zlm
+lm 
+2Zlm 2
+lm 3r(l;^l)dlZam
+0(a;^l)p(a;^l;t)da
+d^l P2(t)
+2rmaxmax
+P1(t) +P0(t)
+ P2(t)
+!e t
+P1(0) +!tP 0(0) +P0(0)
+ P2(t);
+sincer(l;^l)0 forlm 3llm 2, 0^ll+- see Figure 1(c). Thus, P2(t)
+satises (3.41). The general case (3.42) is proved by induction following similar steps as
+above. 
+We next provide sucient conditions for a class of cells of longest telomeres to have
+sucient self-renewal capacity for them to attain proliferative immortality. We assume
+that the division rate (a;l) and mortality rate (a;l) are constant in this class, and the
+fraction of dividing cells in this class with self-renewal is suciently large to overcome
+the loss of cells due to division and mortality.16 J. Z. FARKAS AND G. F. WEBB
+0 lm-δlmlδlml(a)
+l=l+δ
+0 lm-2δlm-δlmlδlm-δlml(b)
+l=l+δ
+0 lm-3δlm-2δlm-δlmlδlm-2δlm-δlml(c)
+l=l+δ
+Figure 1. The hypotheses on r(l;^l) in Proposition 3.6 allow no self-
+renewal of any telomere length class. r(l;^l)0 in the blue regions
+below the graph ^l=l+.r(l;^l)0 in the red regions corresponding to
+classes (a)P0(t), (b)P1(t), (c)P2(t). The green regions correspond to
+divisions from longer to shorter classes.
+.
+Proposition 3.7. Let2(0;lm), such that (a;l)1>0and(a;l)1>0, for
+lm llmand0aam. Letlm<2, and letr1be such thatRlm
+lm r(l;^l)dl>r 1
+forlm ^llm, and assume that
+(2r1 1)11: (3.46)
+Letp(a;l;t )be the solution of (1.1)-(1.3), such that p02D(A),p00. There exists a
+constantC > 0(depending on p0) such that
+Zam
+0Zlm
+lm p(a;l;t )dldaCe(2r11 1 1)t; t0: (3.47)
+(Note that (1.4) and (3.46) imply that 1 =2<r11=lm, which automatically holds if lm
+is normalised to 1. The hypothesis on rmeans that the fraction of daughter cells with
+telomere length between lm andlmproduced by mother cells in this class is greater
+than 1=2.)
+Proof. LetP0(a;t) =Rlm
+lm p(a;l;t ) dl;0aam; t0. From (1.1)-(1.3)
+@P0
+@t(a;t) +@P0
+@a(a;t) = (1+1)P0(a;t); (3.48)ANALYSIS OF A CLONAL EVOLUTION MODEL 17
+P0(0;t) =Zlm
+lm 
+2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t)dad^l
+dl
+Zlm
+lm 
+2Zlm
+lm r(l;^l) dlZam
+01p(a;^l;t)da
+d^l
+2r11Zam
+0P0(a;t) da: (3.49)
+From the method of characteristics (see e.g. [53])
+P0(a;t) =(
+P0(a t;0)e t(1+1); at
+P0(0;t a)e a(1+1); a<t: (3.50)
+Let^P(a;t) satisfy
+@^P
+@t(a;t) +@^P
+@a(a;t) = (1+1)^P(a;t); (3.51)
+^P(0;t) = 2r11Zam
+0^P(a;t)da;
+^P(a;0) =P0(a;0):
+Again from the method of characteristics, ^P(a;t) satises
+^P(a;t) =(^P(a t;0)e t(1+1); at
+^P(0;t a)e a(1+1); a<t: (3.52)
+From (3.51), for t0,
+^P(0;t) = 2r11Zam
+0^P(a;t)da
+= 2r11Zt
+0^P(0;t a)e a(1+1)da
++Zam
+t^P(a t;0)e t(1+1)da
+2r11Zt
+0^P(0;t a)e a(1+1)da
+= 2r11Zt
+0^P(0;b)e (t b)(1+1)db; (3.53)
+where the last equality is obtained by a change of the variable of integration. Let w(t) =
+e(1+1)t^P(0;t). Then (3.53) implies
+w(t)2r11Zt
+0w(a)da;18 J. Z. FARKAS AND G. F. WEBB
+which implies
+d
+dt
+e 2r11tZt
+0w(a)da
+0:
+Integrating from amtotto obtain
+e 2r11tZt
+0w(a)dae 2r11amZam
+0w(a)da;
+which implies
+w(t)2r11e2r11(t am)Zam
+0w(a)da:
+Then
+^P(0;t)2r11e(2r11 1 1)te 2r11amZam
+0e(1+1)a^P(0;a)da: (3.54)
+LetQ(a;t) =P0(a;t) ^P(a;t);0aam; t0. Then for t0, from (3.49) and
+(3.53)
+Q(0;t) =P0(0;t) ^P(0;t)2r11Zam
+0(P0(a;t) ^P(a;t))da
+= 2r11Zt
+0(P0(0;t a) ^P(0;t a))e a(1+1)da
++Zam
+t(P0(a t;0) ^P(a t;0))e t(1+1)da
+= 2r11Zt
+0(P0(0;a) ^P(0;a))e (t a)(1+1)da
+= 2r11Zt
+0Q(0;a)e (t a)(1+1)da: (3.55)
+Then (3.55) implies
+d
+dt
+e 2r11tZt
+0Q(0;a)da
+0;
+which integrating from 0 to timpliesQ(0;t)0()P0(0;t)^P(0;t). Then (3.47)
+follows from (3.54) and (3.50). 
+Remark 3.8 We note that a similar result can be established for other classes of
+cells with self-renewal capability, of telomere length in a specic -interval. Such cell
+populations can arise from a single mutant cell, which generates more daughter cells
+with this mutation than competitor cells, and thus expand in a clone within the tumor
+cell population.ANALYSIS OF A CLONAL EVOLUTION MODEL 19
+4.Incorporating crowding effect
+Next we introduce a nonlinearity in model (1.1)-(1.3) by incorporating crowding/competition
+eects via imposing extra mortality pressure on cells. We follow the same approach as
+employed previously in [5, 16, 17, 52] for similar cell population models. Our equations
+now read
+@p
+@t(a;l;t )+@p
+@a(a;l;t ) = ((a;l) +(a;l))p(a;l;t ) F(P(t))p(a;l;t ); (4.56)
+p(0;l;t) = 2Zlm
+0r(l;^l)Zam
+0(a;^l)p(a;^l;t) dad^l; (4.57)
+p(a;l;0) =p0(a;l); P (t) =Zlm
+0Zam
+0p(a;l;t ) dadl: (4.58)
+In equation (4.56) Fis a non-negative function, and it also satises some smoothness
+assumptions. For example it suces to assume that Fis continuously dierentiable.
+Equation (4.56) is still semilinear, hence global existence of solutions can be established
+at least ifFis Lipschitz continuous via integrating along characteristics and using a
+contraction mapping principle, see for example [11, 53], where this approach was in fact
+applied to establish global existence of solutions of a similar model. In the simplest
+case, when Fis a linear function, our model (4.56)-(4.58) ts into the exact framework
+studied in [17], if some additional hypotheses are fullled. In particular, if we assume
+that there exists a 02Rand a bounded linear operator P0(a projection onto the
+nite-dimensional eigenspace corresponding to the spectral bound of A+B), such that
+lim
+t!1e 0tT(t)x=P0xandF(F0(P0(x)))>0 holds; then the nonlinear semigroup
+governing (4.56)-(4.58) is given explicitly as
+S(t)x=T(t)x
+1 +Rt
+0F(F0(T(s)x)) ds: (4.59)
+In the formulas above we introduced the notation F0for the bounded linear integral
+operatorF0u=Rlm
+0Ram
+0u(a;l) dadl, with domain D(F0) =X.
+Note that some asymptotic results for more general classes of nonlinearities were al-
+ready obtained in the earlier paper [52]. In particular for a continuous, non-negative and
+monotone increasing function Fit was proven, under the same assumptions as above, that
+0<0 implies that solutions corresponding to initial conditions x02X+\D(A+B),
+such thatP0x02X+n0 holds, tend to 0. On the other hand, if 00, then solutions
+corresponding to initial conditions as above, tend toF 1(0)P0x0
+F0(P0x0).
+Here we are mainly interested how the asymptotic behaviour of the nonlinear model
+changes compared to the linear model (1.1)-(1.3), for a general nonlinear function F. In
+particular, we are interested if the linear model with exponential growth (accounting for
+the telomere restoring capacity of cancer cells) can be stabilised by adding competition
+eects, i.e. by incorporating competition induced nonlinearity. Here, under stabilisation,20 J. Z. FARKAS AND G. F. WEBB
+we mean that the addition of the nonlinear mortality term into a linear model whose
+solutions grow exponentially, leads to a model with a (unique) asymptotically stable
+positive steady state.
+The existence and uniqueness of the positive steady state of the nonlinear model
+(4.56)-(4.58) is established using the techniques we developed in the previous section to
+study the asymptotic behaviour of the linear model. In particular solving equation (4.56)
+for a positive steady state we obtain
+p(a;l) =p(0;l) exp
+ Za
+0((r;l) +(r;l)) dr
+e aF(P):
+Next we substitute this solution into the boundary condition (4.57) to arrive at an integral
+equation of the form
+p(0;l) = 2Zlm
+0r(l;^l)p(0;^l)
+Zam
+0(a;^l) exp
+ Za
+0((r;^l) +(r;^l)) dr
+e aF(P)dad^l:
+Hence, we dene a parametrised family of bounded positive integral operators QPfor
+P2[0;1) as follows
+QPx= 2Zlm
+0r(l;^l)x(^l)Zam
+0(a;^l) exp
+ Za
+0((r;^l) +(r;^l)) dr
+e aF(P)dad^l;
+(4.60)
+with domain D(QP) =L1(0;lm). Note that for any xed P2[0;1) we haveQP=
+OF(P). Hence if there exists a Psuch that the integral operator QPhas eigenvalue 1
+with a corresponding normalised positive eigenvector x, then
+p(a;l) =cx(l) exp
+ Za
+0((r;l) +(r;l)) dr
+e aF(P); (4.61)
+determines a positive steady state of the nonlinear model (4.56)-(4.58), where the con-
+stantcis chosen such thatRlm
+0Ram
+0p(a;l) dadl=Pholds. Making use of the results
+we established in the previous section about the spectral radius of the operator O, we
+summarize our nding in the following proposition.
+Proposition 4.9. Assume that rsatises condition (3.18) . Then, ifFis a monotone
+increasing function, and either of the following conditions holds
+2 min
+^lK(^l;F(0))Zlm
+0r(l;^l) dl>1;2 min
+lZlm
+0r(l;^l)K(^l;F(0)) d ^l>1; (4.62)
+the nonlinear model (4.56) -(4.58) has a unique strictly positive steady state. On the other
+hand, ifFis a monotone decreasing function, then either of the following conditions
+2 max
+^lK(^l;F(0))Zlm
+0r(l;^l) dl<1;2 max
+lZlm
+0r(l;^l)K(^l;F(0)) d ^l<1; (4.63)ANALYSIS OF A CLONAL EVOLUTION MODEL 21
+implies that the nonlinear model (4.56) -(4.58) has a unique strictly positive steady state.
+Note that if Fis not monotone, for example if the competition induced mortality
+exhibits an All ee-type eect, then we can still establish the existence of the positive
+steady state by using the estimates (3.33)-(3.38) for the spectral radius, but we may
+loose uniqueness in general, and the dynamic behaviour will certainly be more complex.
+Next we investigate the stability of the steady states of the nonlinear model (4.56)-
+(4.58). Note that our model is a semilinear one (moreover the nonlinear operator is
+dierentiable), hence stability can be studied indeed via linearisation, see e.g. [42, 53].
+To this end note that the linearisation of equation (4.56) around a steady state preads
+@u
+@t(a;l;t )+@u
+@a(a;l;t ) = ((a;l)+(a;l)+F(P))u(a;l;t ) F0(P)p(a;l)U(t);(4.64)
+where we set U(t) =Rlm
+0Ram
+0u(a;l;t ) dadl. The linearised model (4.64)-(4.57)-(4.58) is
+also governed by a strongly continuous semigroup, since equation (4.64) is just a bounded
+perturbation (at least when FisC1) of the linear equation (1.1). Moreover, the growth
+bound of the semigroup is also determined by the spectral bound of its generator. Also
+note that if F0(P)<0, for example if Fis monotone decreasing, then the semigroup
+governing the linearised problem (4.64)-(4.57)-(4.58) is positive, too. On the other hand,
+ifF0(P)>0, then the governing semigroup cannot shown to be positive, and stability
+might be lost via Hopf-bifurcation. The linearised equation (4.64) leads the following
+eigenvalue problem
+ u0 (++F(P))u F0(P)pU=u; u (0) = (u); (4.65)
+where we set U=Rlm
+0Ram
+0u(a;l) dadl. The solution of the rst equation above is
+u(a;l) = exp
+ Za
+0((r;l) +(r;l) +F(P) +) dr
+ 
+u(0;l) UZa
+0p(r;l)F0(P)
+exp
+ Rr
+0((s;l) +(s;l) +F(P) +) ds	dr!
+:(4.66)
+Imposing the second equation of (4.65) leads to the following inhomogeneous integral
+equation
+u(0;l) =2Zlm
+0r(l;^l)u(0;^l)Zam
+0(a;^l)(a;^l;) dad^l
+ 2UZlm
+0r(l;^l)Zam
+0(a;^l)(a;^l;)Za
+0p(r;^l)F0(P)
+(r;^l;)drdad^l; (4.67)
+where we introduced the notation
+(a;l; ) = exp
+ Za
+0((r;l) +(r;l) +F(P) +) dr
+:22 J. Z. FARKAS AND G. F. WEBB
+Hence2Cis an eigenvalue of the linearised operator, if and only if the inhomogeneous
+integral equation (4.67) has a non-trivial solution u(0;). As we can see the information
+pertainingis rather implicit. However, in case of the extinction steady state p0,
+equation (4.67) reduces to an integral equation of the form of (3.21), and therefore the
+stability of the extinction steady state is established using the techniques we developed
+in the previous section. Also note that in this case the governing linear semigroup is
+positive. In particular, we have the following result.
+Proposition 4.10. Either of the conditions in (4.63) imply that the extinction steady
+statep0is asymptotically stable. On the other hand, either of the conditions in
+(4.62) imply that the steady state p0is unstable.
+Remark 4.11 Note the connection between the existence of a non-trivial steady state
+and the stability of the trivial one. In particular, for a monotone increasing F, either
+of conditions in (4.62) implies that a unique strictly positive steady state exists and
+the trivial one is unstable. On the other hand, if Fis monotone decreasing, either
+of conditions in (4.63) implies that a unique strictly positive steady state exists and
+the trivial steady state is locally asymptotically stable. Moreover, in this case, since the
+governing linear semigroup is positive, we may anticipate that the unique strictly positive
+steady state is unstable. In fact we are going to prove this later on.
+Next we study the stability of the positive steady state. First we note that in the
+special but interesting case, when F0(P) = 0, the eigenvalue problem (4.67) (now a
+homogeneous integral equation) simply reads
+u(0;l) =2Zlm
+0r(l;^l)u(0;^l)Zam
+0(a;^l)(a;^l;) dad^l: (4.68)
+That is, the eigenvalue problem (4.68) above can be written as
+O(+F(P))x= 1x; 2C; x60;
+whereOis dened earlier in (3.23). Note that, since the semigroup governing the lin-
+earised equation is positive, the spectral bound belongs to its spectrum, i.e. it is a
+dominant real eigenvalue, which determines the asymptotic behaviour. Also note that,
+the existence of the positive steady state p, with total population size P, requires that
+OF(P)x= 1x, with a corresponding positive eigenvector x. In the case when rsatises
+(3.18), i.e. the governing linearised semigroup is irreducible, the spectral radius of OF(P)
+is the only eigenvalue with a corresponding positive (and strictly positive) eigenvector.
+It is also shown, utilising Proposition A.2 from [2] that the function !r(O(+F(P)))
+is strictly monotone decreasing, for 2[0;1). Hence we conclude that r(OF(P)) = 1,
+and therefore 0 is the dominant eigenvalue of the linearised operator. In this case the
+governing linear semigroup is strongly stable, but not uniformly exponentially stable, see
+e.g. [19, Ch.V].
+Next we consider the general case. We already noted that the information about
+the spectral values contained in (4.67) is rather implicit. Moreover, we note that aANALYSIS OF A CLONAL EVOLUTION MODEL 23
+biologically relevant and meaningful function Fwould be of a logistic type, i.e. F(0) = 0
+andF(strictly) monotone increasing. In this case, as we noted before, the governing
+linear semigroup is not positive, hence we cannot guarantee the existence of a dominant
+real eigenvalue of the generator, i.e. a dominant real solution of (4.67). Hence we
+use a direct approach to establish stability. This approach was employed previously
+for some simpler structured population models in [20, 21]. The main advantage of this
+approach is that it does not rely on the positivity of the governing linear semigroup.
+We now introduce a notation for the generator of the semigroup governing the linearised
+problem. Let
+Cu= @u
+@a (++F(P))u F0(P)pU;
+D(C) =
+u2W1;1 
+(0;am);L1(0;lm)
+ju(0;) = (u)	
+=D(A):
+Proposition 4.12. The stationary solution pof model (4.56) -(4.58) is asymptotically
+stable if
+(;) +(;) +F(P)>jF0(P)jP+ 2(;)Zlm
+0r(^l;) d^l (4.69)
+holds.
+Proof. Our goal is to show that there exists a  > 0 such that the operator C+I
+is dissipative (Istands for the identity). That is, we need to show that there exists a
+>0, such that we have
+jj(I (C+))wjjjjwjj;8>0; w2D(C):
+Then, invoking the Lumer-Phillips Theorem [19, II.3], we obtain that the semigroup
+generated byCsatisesjjSjje t, fort0, i.e. it is exponentially stable. To this
+end, assume that for a given f2X and2R;x2D(C) satises the equation
+(I (C+))x=f: (4.70)
+Then we are going to show that if condition (4.69) holds, then in fact there exists a >0
+small enough, such that jjxjjjjfjjholds, for all >0. The main idea, as in [20, 21], is
+to divide the interval (0 ;am) into a countable union of subintervals, now for any xed l;
+on each of which the function x(;l) is either positive or negative. That is we write
+(0;am) =[
+i(ai;bi) =8
+<
+:[
+^i(a^i;b^i)9
+=
+;[([
+i(ai;bi))
+;
+such thatx(;l) is positive almost everywhere on each subinterval ( a^i;b^i), and negative
+almost everywhere on ( ai;bi), respectively; and vanishes at each end point except when
+ai= 0 andbi=am. Over each of the subintervals we multiply equation (4.70) by sgn ax,24 J. Z. FARKAS AND G. F. WEBB
+we integrate, and we sum up the integrals. Then for any xed lwe obtain the estimateZam
+0jx(a;l)jdaZam
+0jf(a;l)jda+jx(0;l)j F0(P)XZam
+0sgna(x)p(a;l) da
++Zam
+0( ((a;l) +(a;l) +F(P))jx(a;l)jda: (4.71)
+This, together with
+Zlm
+0jx(0;l)jdl=Zlm
+02Zlm
+0r(l;^l)Zam
+0(a;^lx(a;^l) d d^ldl
+Zlm
+0Zam
+0jx(a;^l)j2(a;^l)Zlm
+0r(l;^l) dldad^l;
+yields
+jjxjjjjfjj+Zlm
+0Zam
+0jx(a;l)j
+ 
+ ((a;l) +(a;l) +F(P)) +PjF0(P)j+ 2(a;l)Zlm
+0r(^l;l) d^l!
+dadl:(4.72)
+Hence if condition (4.69) holds we can indeed choose a >0 such that the solution xof
+(4.70) satisesjjxjjjjfjj, for all>0.
+To verify that the range condition holds true (see [19, II.3]), note that for any f2X,
+the solution of the equation  Au=f uis
+u(a;l) =e a
+(u) +Za
+0erf(r;l) dr
+; (4.73)
+where
+(u) = 2Zlm
+0r(l;^l)(u)Zam
+0(a;^l)e adad^l+ Z
+0e ( r)f(r;) dr
+:(4.74)
+Since  is bounded, it follows from the smoothness assumptions we imposed on andr
+(in particular their boundedness), that for any f2X and>0 large enough, the right
+hand side of (4.74) belongs to L1(0;lm). Therefore, ugiven by (4.73) clearly satises
+u2D(A), and sinceCis a bounded perturbation of A, the range condition holds
+true, and the proof is completed. 
+Remark 4.13 Note that at the extinction steady state the stability condition (4.69)
+reads
+(a;l) +(a;l) +F(0)2(a;l)Zlm
+0r(^l;l) d^l; a2[0;am]; l2[0:lm]; (4.75)
+This is a biologically relevant and natural condition, as it simply says that if mortality
+and cell division together is higher than recruitment of new cells into the population,ANALYSIS OF A CLONAL EVOLUTION MODEL 25
+then the population dies out. Note the connection between (4.75) and (3.46), which
+demonstrates the dichotomy between the stability of the trivial steady state and the
+exponential growth of a class of cells with longest telomere length.
+Finally, we establish an instability result, for the case when the semigroup governing
+the linearised equation is positive and irreducible.
+Proposition 4.14. Assume that condition (3.18) holds. Then F0(P)<0implies that
+the positive steady state pis unstable.
+Proof. We dene the operators C0
+andGas follows
+C0
+u= @u
+@a (++F(P))u;Gu= F0(P)pZlm
+0Zlm
+0u(a;l) dadl;
+D(C0
+) =D(C); D (G) =X:
+Note that if (3.18) holds, then C0
+generates a positive irreducible semigroup; moreover,
+its spectrum is determined by the eigenvalues of its generator C0
+, which are of nite
+algebraic multiplicity. Also note that the existence of a (strictly) positive steady state
+pis characterised by r(QP) = 1, which is equivalent to s(C0
+) = 0. SinceGis positive
+and bounded, applying Proposition A.2 from [2], we obtain that
+0 =s(C0
+)<s(C0
++G); (4.76)
+hence the steady state pis unstable. 
+5.Examples and simulation results
+We present three examples to illustrate the asymptotic behaviour of solutions of the
+CE model. The rst example, which is linear, assumes no self-renewal (i.e. telomere
+restoring capacity) of any cell, and shows an extinction of the cell population. The
+second example, also linear, allows self-renewal of a large fraction of cells, and shows
+exponential growth of the cell population. The third example is a nonlinear version of
+the second example, and shows population growth with stabilization of the total cell
+count and the age and telomere length structure. In all of the three examples the age
+and telomere variables are scaled with am= 6 andlm= 1. In all three examples the
+initial population density is
+p(a;l;0) = 1000lmaxfa(1 a);0g;
+(Figure 2). In all three examples the division modulus 2C1(0;am) is
+(a;l) =(
+max
+0(a 1)e 6(a 1);0	
+arctan (100(l 0:5)+
+2)
+;ifa1
+0;if 0a<1)
+;
+where0= 13 in Example 1, and 0= 180 in Examples 2 and 3. (Figure 2). Cells
+which have telomere length below the critical value 0 :5 have greatly reduced capacity to
+divide. Note that (a;l)>0 fora > 1, so(a;l) does not vanish in aidentically for26 J. Z. FARKAS AND G. F. WEBB
+anyl>0. In the examples the mortality modulus is the constant function (a;l)0,
+where0= 0:05 in Example 1, and 0= 0:3 in Examples 2 and 3.
+Example 1. No restoration of telomeres occurs in Example 1. The rule governing
+the telomere length of a daughter cell of length lfrom a mother cell with length ^lis
+r(l;^l) =G(l;^l 0:2;0:05)
+0:8;
+whereGis a Gaussian distribution in lwith mean ^l 0:2 and standard deviation 0 :05,
+and 0:8 is a normalization factor (Figure 3). Note that r(l;^l) satises (3.18). The
+interpretation of this rule is that all daughter cells have telomere length strictly less than
+their mother cells. The estimates for the spectral radius r(O0) in (3.33) and (3.38) are
+graphed in Figure 4. The upper estimates are less than 1 in both, which means the
+total population of cells extinguishes. The simulation of the linear model (1.1)-(1.3) for
+Example 1 is given in Figure 5 and Figure 6.
+Figure 2. In the left panel the initial age and telomere length distribu-
+tionp(a;l;0) of the cell population in all three examples is plotted. In
+the right panel the age and telomere length dependent division modulus
+(a;l) for Example 1 is plotted. No cell divides with a1. Cells with
+l<0:5 have greatly reduced capacity to divide.ANALYSIS OF A CLONAL EVOLUTION MODEL 27
+Figure 3. In the left panel the blue surface is the graph of r(l;^l) in
+Example 1. The orange surface is the graph of 10 max f^l l;0g. In the
+right panel slices of the graph of r(l;^l) at the values ^l= 0:9;0:8;0:7 and
+0:6 are plotted. The telomere lengths of daughter cells are all less than
+the mother cell.
+0.0 0.2 0.4 0.6 0.8 1.0l0.20.40.60.81.00.0 0.2 0.4 0.6 0.8 1.0l0.20.40.60.81.0
+Figure 4. The graphs of 2 K(^l;0)Rlm
+0r(l;^l)dl (red) and
+2Rlm
+0r(l;^l)K(^l;0)d^l(blue) for Example 1. Since the maximum of
+each is less than 1, (3.33) and (3.38) imply that the spectral radius
+r(O0)<1. Thus, the total population of cells converges to 0.28 J. Z. FARKAS AND G. F. WEBB
+Figure 5. The cell population densities p(a;l;t ) for Example 1 for time
+valuest= 0;1;3;6;8, and 14 are plotted.
+0 2 4 6 8 10 12t0.050.100.150.20
+Figure 6. The time plot shows for Example 1 the subpopulations of
+cells as follows: black - total population; magenta - telomere lengths
+between 0.8 and 1.0; orange - between 0.6 and 0.8; blue - between 0.4
+and 0.6; green - between 0.2 and 0.4; red - between 0.0 and 0.2; all
+converging to 0 as time advances.ANALYSIS OF A CLONAL EVOLUTION MODEL 29
+Example 2. In this example restoration of telomeres occurs in cells with larger
+telomere lengths. The rule governing the telomere length of a daughter cell of length l
+from a mother cell with length ^lis
+r(l;^l) =G(l;m(^l);0:05)
+0:5;
+whereGis a Gaussian distribution in lwith mean m(^l) = 1 + 2( ^l 0:9) and standard
+deviation 0 :05; and 0:5 is a normalization factor (Figure 7 and Figure 8). Note that
+r(l;^l) satises (3.18). The interpretation of this rule is that some daughter cells have
+telomere length equal or greater than their mother cells, when the mother cells have longer
+lengths. The simulation of this telomere restoration rule for the linear model (1.1)-(1.3)
+in Example 2 is given in Figure 9. The total population P2(t) of cells stabilizes in the age
+and telomere variables, but the total population size grows exponentially (Figure 10). A
+large fraction of cells have longer telomere lengths as the age-telomere length distribution
+stabilizes.
+Example 3. Example 3 is the nonlinear version (4.56)-(4.58) of Example 2, with the
+same parameters. Additionally, the crowding term Fin Example 3 is dened as
+F(P) =P;
+with= 0:00001. The population stabilizes both in structuring variables aandl(see
+Figure 11), as well as in time (Figure 12). The self-renewal properties of the longest
+telomere length cells in Example 3, combined with the nonlinear crowding eect, result
+in convergence to equilibrium . As in Example 2, a large fraction of total cells have longer
+telomere lengths at the stable steady state.
+0.2 0.4 0.6 0.81.0l
+-0.50.51.0m(l)
+Figure 7. The graphs for the means of the Gaussian distributions in
+the distribution of telomere rules r(l;^l) are plotted. In Example 1 m(^l) =
+^l 0:2 (blue). In Examples 2 and 3 m(^l) = 1 + 2( ^l 0:9) (green). The
+orange line is m(^l) =^l.30 J. Z. FARKAS AND G. F. WEBB
+Figure 8. On the left panel the graph of r(l;^l) in Example 2 is plotted
+in green. The orange surface is the graph of 10 max f^l l;0g. On the
+right panel the slices of the graph of r(l;^l) for Example 2 at the values
+^l= 0:9;0:8;0:7;0:6 are plotted. The telomere lengths of daughter cells
+from longer length mother cells may be greater than the mother cells.
+The telomere lengths of daughter cell from shorter length mother cells
+are all shorter than the mother cells telomere lengths.ANALYSIS OF A CLONAL EVOLUTION MODEL 31
+Figure 9. The cell population densities p(a;l;t ) for Example 2 for the
+valuest= 0;0:2;0:5;1;1:5;2;10;20 are plotted. The population stabi-
+lizes with respect to age and telomere length even as the total population
+size grows exponentially.
+0 1 2 3 4 5t50100150
+Figure 10. The time plot shows for Example 2 the subpopulations of
+cells as follows: red - telomere lengths between 0.75 and 1.0; green -
+between 0.5 and 0.75; blue - between 0.25 and 0.5; orange - between
+0.0 and 0.25; all growing exponentially as time advances. The total
+population of cells (not plotted here) is the sum of these four subpopu-
+lations.32 J. Z. FARKAS AND G. F. WEBB
+Figure 11. The cell population densities p(a;l;t ) for Example 3 for the
+time values t= 0;0:5;1;5;40;50 are plotted. The population stabilizes
+with respect to age and telomere length as the total population size
+stabilizes.
+0 10 20 30 40200040006000800010 00012 00014 000
+Figure 12. The time plot shows for Example 3 the subpopulations of
+cells as follows: orange - telomere lengths between 0.75 and 1.0; blue -
+between 0.5 and 0.75; green - between 0.25 and 0.5; red - between 0.0
+and 0.25; all converging to a steady state value. The total population of
+cells (not plotted here) is the sum of these four subpopulations.ANALYSIS OF A CLONAL EVOLUTION MODEL 33
+6.Discussion
+In this work we have developed a mathematical formulation of cancer cell self-renewal
+for the clonal evolution model of tumour growth based on telomere restoration. The
+model allows for a continuum of telomere lengths, and thus contrasts to mathemati-
+cal treatments of the cancer stem cell model, which incorporate many discrete telomere
+length classes [31]. The cancer stem cell model formulates a hierarchal array of length
+classes with self-renewing cells in one longest telomere class. The clonal evolution model
+allows multiple classes of telomere length cells to have self-renewal capacity, correspond-
+ing to clonal structuring.
+Our model is thus more tractable for analysis and simulations, which we have provided
+here. In particular, in this work we focused on the eect of telomere restoring capacity
+of cancer cells. In particular we showed that the asymptotic behaviour of the linear
+model is determined by the spectral radius of an integral operator. We then obtained
+estimates for the spectral radius of this integral operator. In Section 4 we extended our
+model by incorporating a competition induced nonlinearity in the mortality of cells. We
+treated the existence and stability of steady states of the the nonlinear model by using
+some well-known results from the theory of positive operators. Finally, in Section 5,
+we presented a number of examples and the results of numerical simulations, both for
+the linear and nonlinear model. The simulations highlight the dynamic behaviour of the
+model and underpin the analytical results obtained.
+Naturally, many issues remain in the mathematical investigation of the clonal evolution
+model of tumour growth. Important questions which can be addressed in the framework
+of a mathematical model include the following.
+How do sequential mutations enter into the model formulation?
+How can quiescent cells be incorporated into the model?
+How can spatial heterogeneity be formulated in the equations?
+How can more complex nonlinearities be incorporated?
+How can the model be implemented with actual experimental data?
+These issues and the development of a general mathematical framework for analysing
+physiologically structured models with additional distributed structuring variables re-
+main important subjects forf further research.
+References
+[1] T. Alarc on, P. Getto, A. Marciniak-Czochra, and M. dm Vivanco, A model for stem cell population
+dynamics with regulated maturation delay, Dis. Cont. Dyn. Sys. B. , Supp. (2011), 32-43.
+[2] W. Arendt and C. J. K. Batty, Principal eigenvalues and perturbation, Oper. Theory Adv. Appl. ,75
+(1995), 39-55.
+[3] W. Arendt, A. Grabosch, G. Greiner, U. Groh, H. P. Lotz, U. Moustakas, R. Nagel, F. Neubrander,
+and U. Schlotterbeck, One-Parameter Semigroups of Positive Operators , Springer-Verlag, Berlin,
+(1986).
+[4] O. Arino, M. Kimmel, and G. F. Webb, Mathematical modeling of the loss of telomere sequences, J.
+Theoret. Biol. ,177(1995), 45-57.34 J. Z. FARKAS AND G. F. WEBB
+[5] O. Arino, E. S anchez, and G. F. Webb, Polynomial growth dynamics of telomere loss in a heteroge-
+neous cell population, Dynam. Contin. Discrete Impuls. Systems ,3(1997), 263-282.
+[6] R. Ashkenazi, S. Heusel, and T. Jackson, Pathways to tumorigenesis: Mathematical modeling of
+cancer stem cell hypothesis, Neoplasia ,10(11) (2008), 1170-1182.
+[7] T. Bourgeron, Z. Xu, M. Doumic, M.T. Teixerira The asymmetry of telomere replication contributes
+to replication senescence heterogeneity, Nature Sci. Rep. ,5:15326 (2015), 1-11.
+[8] J-E. Busse, P. Gwiazda, and A. Marciniak-Czochra, Mass concentration in a nonlocal model of clonal
+selection, arXiv.org 1401.6043 , (2015).
+[9]A. Calsina and J. Z. Farkas, Steady states in a structured epidemic model with Wentzell boundary
+condition, J. Evol. Equ. ,12(2012), 495-512.
+[10] A. Calsina and J. Z. Farkas, Postive steady states of nonlinear evolution equations with nite
+dimensional nonlinearities, SIAM J. Math. Anal. ,46(2014), 1406-1426.
+[11] A. Calsina and J. M. Palmada, Steady states of a selection-mutation model for an age structured
+population, J. Math. Anal. Appl. ,400(2013), 386-395.
+[12] B. de Pagter, Irreducible compact operators, Math. Z. ,192(1986), 149-153.
+[13] B. M. Deeasy, R. J. Jankowski, T. R. Payne, B. Cao, J. P. Go, J. S. Greenberger, and J. Huard,
+Modelling stem cell population growth: incorporating terms for proliferative heterogeneity, Stem
+Cells ,21(2003), 536-545.
+[14] W. Desch and W. Schappacher, On relatively bounded perturbations of linear C0-semigroups, Ann.
+Scuola Norm. Sup. Pisa Cl. Sci. ,11(1984), 327-341.
+[15] M. Doumic, A. Marciniak-Czochra, B. Perthame, and J. Zubelli, Structured population model of
+stem cell dierentiation, SIAM J. Appl. Math. ,71(2011), 1918-1940.
+[16] J. Dyson, E. S anchez, R. Villella-Bressan, and G. F. Webb, Stabilization of telomeres in nonlinear
+models of proliferating cell lines, J. Theoret. Biol. ,244(2007), 400-408.
+[17] J. Dyson, R. Villella-Bressan, and G. F. Webb, Asymptotic behaviour of solutions to abstract
+logistic equations, Math. Biosci. ,206(2007), 216-232.
+[18] H. Enderling, D. Park, L. Hlatky, and P. Hahnfeldt, The importance of spatial distribution of
+stemness and proliferation state in determining tumour radioresponse, Math. Model. Nat. Phenom. ,
+4(2009), 117-133.
+[19] K.-J. Engel and R. Nagel, One-Parameter Semigroups for Linear Evolution Equations , Springer-
+Verlag, New York (2000).
+[20] J. Z. Farkas and T. Hagen, Hierarchical size-structured populations: The linearized semigroup
+approach, Dyn. Contin. Discrete Impuls. Syst. Ser. A Math. Anal. ,17(2010), 639-657.
+[21] J. Z. Farkas and T. Hagen, Asymptotic analysis of a size-structured cannibalism model with innite
+dimensional environmental feedback, Commun. Pure Appl. Anal. ,8(2009), 1825-1839.
+[22] J. Z. Farkas and T. Hagen, Stability and regularity results for a size-structured population model,
+J. Math. Anal. Appl. ,328(2007), 119{136.
+[23] R. Ganguly and I. K. Puri, Mathematical model for the cancer stem cell hypothesis, Cell Prolif. ,
+39(2006), 3-14.
+[24] S. N. Gentry and T. Jackson, A mathematical model of cancer stem cell driven tumor initiation:
+Implications of niche size and loss of homeostatic regulatory mechanisms, PLoS One ,8(2013).
+[25] A. Grabosch, Translation semigroups and their linearizations on spaces of integrable functions,
+Trans. Amer. Math. Soc. ,311(1989), 357-390.
+[26] G. Greiner, Perturbing the boundary conditions of a generator, Houston J. Math. ,13(1987), 213-
+229.
+[27] P. B. Gupta1, C. L. Chaer, and R. A. Weinberg, Cancer stem cells: mirage or reality?, Nature
+Medicine ,15(2009), 1010-1012.
+[28] L. Hayick, The limited in vitro lifetime of human diploid cell strains, Experimental Cell Research ,
+37, (1965), 614-636.ANALYSIS OF A CLONAL EVOLUTION MODEL 35
+[29] M. Iannelli, Mathematical theory of age-structured population dynamics , Giardini Editori, Pisa,
+(1994).
+[30] M. D. Johnston, P. K. Maini, S. J. Chapman, C. M. Edwards, and W. F. Bodmer, On the proportion
+of cancer stem cells in a tumour, J. Theoret. Biol. ,266(2010), 708-711.
+[31] G. Kapitanov, A mathematical model of cancer stem cell lineage population dynamics with mutation
+accumulation and telomere length hierarchies, Math. Model. Nat. Phenom. ,7(2012), 136-165.
+[32] T. Kato, Perturbation Theory for Linear Operators , Springer, New York, (1966).
+[33] M. Z. Levy, R. C. Allsopp, A. B. Futcher, C. W. Greider, and C. B. Harley, Telomere end-replication
+problem and cell aging, Journal of Molecular Biology ,225(1992), 951-960.
+[34] A. Marciniak-Czochra, T. Stiehl, W. J ager, A. Ho, and W. Wagner, Modelling asymmetric cell
+division in haematopoietic stem cells - regulation of self-renewal is essential for ecient re-population,
+Stem Cells Dev. ,17(2008), 1-10.
+[35] I. Marek, Frobenius theory for positive operators: Comparison theorems and applications, SIAM J.
+Appl. Math. ,19(1970), 607-628.
+[36] J. A. J. Metz and O. Diekmann, The Dynamics of Physiologically Structured Populations , Springer-
+Verlag, Berlin, (1986).
+[37] F. Michor, Mathematical models of cancer stem cells, J. Clin. Oncol. ,26(2008), 2854-2861.
+[38] R. Molina-P~ ena and M. Alvarez, A simple mathematical model based on the cancer stem cell
+hypothesis suggests kinetic commonalities in solid tumor growth, PLoS One ,7(2012).
+[39] Y. Nakata, P. Getto, A. Marciniak-Czochra, and T. Alarc on, Stability analysis of multi-compartment
+models for cell production systems, J. Biol. Dyn. ,6(2012), 2-18.
+[40] P. C. Nowell, The clonal evolution of tumor cell populations, Science ,194(1976), 23-28.
+[41] M. J. Piotrowska, H. Enderling, U. an der Heiden, and M. Mackey, Mathematical modeling of stem
+cells related to cancer, in Cancer and Stem Cells , Nova Science Publishers, Hauppauge NY, (2008).
+[42] J. Pr u, Equilibrium solutions of age-specic population dynamics of several species, J. Math. Biol. ,
+11(1981), 65-84.
+[43] T. Reya, S. J. Morrison, M. F. Clarke, and I. L. Weissman, Stem cells, cancer, and cancer stem
+cells, Nature ,414(2001), 105-111.
+[44] I. Rodriguez-Brenes, N. Komarova, and D. Wodarz, Evolutionary dynamics of feedback escape and
+the development of stem-cell driven cancers, PNAS ,18(47) (2011), 18983-18988.
+[45] H. H. Sch afer, Banach lattices and positive operators , Springer-Verlag, Berlin, (1974).
+[46] J. W. Shay and S. Bacchetti, A survey of telomerase activity in human cancer, European Journal
+of Cancer ,33(1997), 787-791.
+[47] T. Stiehl and A. Marciniak-Czochra, Characterization of stem cells using mathematical models of
+multi-stage cell lineages, Math. Comp. Modelling ,53(2011), 1505-1517.
+[48] T. Stiehl, N. Baran, A. D. Ho, and A. Marciniak-Czochra, Clonal selection and therapy in acute
+leukemias: Mathematical modelling explains dierent proliferation patterns at diagnosis and relapse,
+J. Roy. Soc. Interface ,11(2014).
+[49] B. T. Tan, C. Y. Park, L. E. Ailles, and I. L. Weissman, The cancer stem cell hypothesis: a work
+in progress, Lab. Invest. ,86(2006), 1203-1207.
+[50] J. Tello, On a mathematical model of tumor growth based on cancer stem cells, Math. Biosci. Eng. ,
+10(1) (2013), 262-278.
+[51] V. Vainstein, O. Kirnasovsky, Y. Kogan, and Z. Agur, Strategies for cancer stem cell elimination:
+Insights from mathematical modeling, J. Theoret. Biol. ,298(2012), 32-41.
+[52] G. F. Webb, Logistic models of structured population growth, Comput. Math. Appl. Part A ,12
+(1986), 527-539.
+[53] G. F. Webb, Theory of Nonlinear Age-Dependent Population Dynamics , Marcel Dekker, New York,
+(1985).36 J. Z. FARKAS AND G. F. WEBB
+[54] D. Wodarz, Eect of stem cell turnover rates on protection against cancer and aging, J. Theoret.
+Biol. ,245(2007), 449-458.
+[55] K. Yosida, Functional analysis , Springer, Berlin, (1995).
+Acknowledgment. We thank the Royal Society for nancial support.
+Division of Computing Science and Mathematics, University of Stirling, Stirling, FK9 4LA,
+United Kingdom
+E-mail address :jozsef.farkas@stir.ac.uk
+Department of Mathematics, Vanderbilt University, 1326 Stevenson Center, Nashville,
+TN 37240-0001, USA
+E-mail address :glenn.f.webb@vanderbilt.edu

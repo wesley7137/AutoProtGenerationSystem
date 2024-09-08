@@ -1,0 +1,543 @@
+Title: Theoretical modelling discriminates the stochastic and deterministic
+  hypothesis of cell reprogramming
+Abstract:   How to induce differentiated cells into pluripotent cells has elicited
+researchers' interests for a long time since pluripotent stem cells are able to
+offer remarkable potential in numerous subfields of biological research.
+However, the nature of cell reprogramming, especially the mechanisms still
+remain elusive for the sake of most protocols of inducing pluripotent stem
+cells were discovered by screening but not from the knowledge of gene
+regulation networks. Generally there are two hypotheses to elucidate the
+mechanism termed as elite model and stochastic model which regard reprogramming
+process a deterministic process or a stochastic process, respectively. However,
+the difference between these two models cannot yet be discriminated
+experimentally. Here we used a general mathematical model to elucidate the
+nature of cell reprogramming which can fit both hypotheses. We investigated
+this process from a novel perspective, the timing. We calculated the time of
+reprogramming in a general way and find that noise would play a significant
+role if the stochastic hypothesis holds. Thus the two hypotheses may be
+discriminated experimentally by counting the time of reprogramming in different
+magnitudes of noise. Because our approach is general, our results should
+facilitate broad studies of rational design of cell reprogramming protocols.
+
+Full Text: arXiv:1409.2205v2  [q-bio.MN]  8 Dec 2014Theoretical modelling discriminates the stochastic and de terministic hypothesis of cell
+reprogramming
+Jiawei Yan,∗Pu Zheng,†and Xingjie Pan‡
+How to induce diﬀerentiated cells into pluripotent cells ha s elicited researchers’ interests for a
+long time since pluripotent stem cells are able to oﬀer remar kable potential in numerous subﬁelds
+of biological research. However, the nature of cell reprogr amming, especially the mechanisms still
+remain elusive for the sake of most protocols of inducing plu ripotent stem cells were discovered
+by screening but not from the knowledge of gene regulation ne tworks. Generally there are two
+hypotheses to elucidate the mechanism termed as elite model and stochastic model which regard
+reprogramming process a deterministic process or a stochas tic process, respectively. However, the
+diﬀerence between these two models cannot yet be discrimina ted experimentally. Here we use
+a general mathematical model to elucidate the nature of cell reprogramming which can ﬁt both
+hypotheses. We investigate this process from a novel perspe ctive, the timing. We calculate the time
+of reprogramming in a general way and ﬁnd that noise would pla y a signiﬁcant role if the stochastic
+hypothesis holds. Thus the two hypotheses may be discrimina ted experimentally by counting the
+time of reprogramming in diﬀerent magnitudes of noise. Beca use our approach is general, our results
+should facilitate broad studies of rational design of cell r eprogramming protocols.
+I. INTRODUCTION
+Embryonic stem cell, which is able to divide indef-
+initely while maintaining pluripotency, is expected to
+be useful in numerous subﬁelds of life sciences, includ-
+ing toxicology, disease mechanism research[ 1] and re-
+generation medicine[ 2][3]. In 2006, Yamanaka and his
+colleagues achieved artiﬁcially induced pluripotent stem
+(iPS)cellsfrommouseﬁbroblasts[ 4], andlaterfromadult
+human ﬁbroblasts[ 5].
+Induction of iPS cell is in a very low eﬃciency ( ∼
+0.05%) at ﬁrst[ 4][5], and there are several models to ex-
+plain the low eﬃciency[ 6]. One of these models, the
+stochastic hypothesis, suggests that most or all the cells
+arecompetent for reprogrammingbut limited of random-
+ness, only a part of cells are able to be reprogrammed in
+one experiment. On the other hand, elite model presup-
+poses that only a few cells in a culture are competent for
+reprogramming and the process is deterministic. Gen-
+erally the process of cell reprogramming was regarded
+as a stochastic process[ 7][8] at ﬁrst. There are numer-
+ous experiments indicated that the process of cell repro-
+gramming consists of an earlystochastic phase and a late
+hierarchic phase. The low eﬃciency also implies there
+is stochasticity. From the point of control theory, this
+model may be elucidated as a core control part, which
+is multistable and transits from one steady state to an-
+other one stochastically, and a downstream signal trans-
+duction cascade[ 8]. However, these two models are soon
+challenged by other research which shows that cell re-
+programming is a deterministic process[ 9] and especially
+almost all the cells are able to be reprogrammed into iPS
+∗yann.jiawei@gmail.com ; School of Life Sciences, Peking Univer-
+sity, Beijing 100871, China
+†School of Life Sciences, Peking University, Beijing 100871 , China
+‡School of Physics, Peking University, Beijing 100871, Chin acells, which conﬂicts with the elite model. The debate
+of whether the nature of cell reprogramming process is
+stochastic or deterministic hasn’t ended yet, since the
+gene regulation networks of cell diﬀerentiation are still
+poorly understood[ 10], thus it’s hard to predict how to
+induceiPScellseﬃciently. Althoughthebiologicalexper-
+iments have yet reveal the nature of cell reprogramming,
+there are other approaches to investigate this question.
+Because the elite model supposes only a fraction of cells
+canbereprogrammed,andthispaperonlyfocusonsingle
+cell dynamics, we use the term ’deterministic hypothesis’
+instead of ’elite model’ to represent the hypothesis that
+cell reprogramming is a deterministic process.
+Our aim is to discriminate these two hypotheses, the
+stochastic hypothesis and deterministic hypothesis, es-
+pecially in the way that the experiments can apply to.
+These two hypotheses, apparently, are diﬀerent since one
+modelsupposethatnotallthecellscanbereprogrammed
+statistically while the other one does. However, this dif-
+ference isn’t able to be tested so far by experiments, be-
+cause the eﬃciency of reprogramming may not only de-
+termined by the nature of reprogrammingbut also by the
+other factors including the environment and the method
+itself. Therefore, we turned to the dynamics of repro-
+gramming. From a perspective of nonlinear dynamics,
+diﬀerent cell fates are able to be regarded as a steady
+state of a dynamical system, which is the core gene reg-
+ulation network for cell fate decision. This concept was
+noted by C. Waddington in the 1940s, which by now
+is called Waddington’s epigenetic landscape [ 11]. In the
+Waddington’smetaphor, thecellfateislikeaballandthe
+landscape epitomizes the constraints of dynamical sys-
+tem, thusthecellfatecantransitbystochastically’jump’
+from one valley to another and the probability of transi-
+tion depends on the magnitude of noise and the height of
+the hill between two valleys (the energy barrier)[ 10][12].
+Under this scenario, the stochastic hypothesis rep-
+resents that the cell fate decision network is a tradi-
+tional Waddington’s landscape, consisting numerous val-2
+leysandhills. Theball(cell fate), isabletostochastically
+transit from one valley to another. Here each valley rep-
+resents a cell fate and reprogramming process is to trig-
+ger cell from one fate to another. On the other hand, in
+the deterministic hypothesis stochasticity plays a trivial
+role, there is no transition between two steady state and
+the cell fate transition is determined by the continuous
+alternation of the landscape (ﬁg. 1).
+Therefore,aonekeydiﬀerencebetweenthesetwomod-
+els is the reprogramming time in stochastic hypothesis
+depends not only on the ’energy barrier’ between two
+steady state but also on the magnitude of noise while the
+reprogrammingtime in deterministic hypothesis depends
+only on the dynamics shifting the landscape. This idea is
+intuitively obvious. However,the quantitative analysisof
+the timescale required for reprogramming still lacks, es-
+pecially the contribution of noise to the reprogramming
+time. If the noise works trivially for the total time for re-
+programming, alternating noise magnitude may not lead
+to any signiﬁcant change of reprogramming time.
+To calculate the time required for reprogramming of
+twohypotheses,wewanttouseoneuniﬁedmodeltocom-
+pare the two hypotheses. According to previous studies
+on lineage speciﬁcation, mutual inhibition paradigm is
+shown to be the most signiﬁcant concept.[ 13][14] For ex-
+ample, two opposing transcription factors, GATA1 and
+PU.1 plays dominant role in erythroid/megakaryocyte
+and myelomonocytic lineage determination respectively.
+GATA1 and PU.1 mutual inhibited each other, and also
+control their own expression, forming an self-activation
+loop(ﬁg. 2a)[15]. Wewillshowthatthissimplemodelﬁts
+both stochastic hypothesis and deterministic hypothesis
+thus it provides a uniﬁed framework for us to compare
+the two distinct hypotheses.
+II. METHODS AND MODEL
+As previous shown, the core network which in respon-
+sible for the cell fate decision is able to be generally re-
+garded as mutual inhibition [ 12][17]: two opposing tran-
+scription factors xandyinhibited each other while ac-
+tivated themselves respectively. This topology is able to
+be described by the following ordinary diﬀerential equa-
+tions:
+dx
+dt=α1xm
+Kmxx+xm+β1
+Kmyx+ym−k1x (1)
+dy
+dt=α2yn
+Knyy+yn+β2
+Knxy+xn−k2y (2)
+These equations are based on Hill functions which
+are generally used in describing gene expression
+regulation.[ 16] The ﬁrst item represents the self-
+activation of each transcription factor; the second item
+represents the mutual inhibition; and the third item de-
+scribes the unregulated degradation. One of the bene-
+ﬁt to use this simple model is that it exists two typesStochastic Hypothesis Deterministic Hypothesis 
+Time 
+FIG. 1: Two hypotheses about cell reprogramming mecha-
+nism and the basic topology. The essential diﬀerence of thes e
+two hypotheses is whether the landscape itself changes duri ng
+reprogramming. In the stochastic hypothesis, the landscap e
+does not change but the state of cell stochastically transit s
+from one steady state to another. In the deterministic hy-
+pothesis, the landscape itself change and the state of cell p as-
+sively moves from one steady state to another.
+of bifurcations (ﬁg. 2). In the type I bifurcation, as the
+parameter grows the steady state divides into two and
+the system becomes bistable (supercritical bifurcation).
+In the type II bifurcation, as the parameter grows, one
+steady state disappears and the other two change contin-
+uously (subcritical bifurcation).
+In the deterministic hypothesis, the stochastic transi-
+tion contributes trivially, which means the steady state
+has a deterministic trajectory during bifurcation. In the
+stochastic hypothesis, both the stem cell and the diﬀer-
+entiated cell steady states are intrinsically existed. The
+cell is able to ’jump’ from one steady state to another
+stochastically. To calculate the reprogramming time, it’s
+necessary to calculate the height of the ’energy barrier’
+between two steady states. For example, consider a non-
+linear dynamic system which has more than one steady
+states
+dx
+dt=F(x) (3)
+which the driving force Fexhibits in a nonlinear
+manner. If the dynamic system is of one dimension,
+there is always a potential function Usatisﬁed UAB=/integraltextxB
+xAF(x)dx, which means Uis the primitive of F(x).
+In this situation, the transition probability between two
+diﬀerent steady states xAandxBis:
+PxA→xB=e−UAS
+ε2 (4)
+whereUASis the ∆Ubetween xAand the highest en-
+ergy point between xAandxB(the energy barrier). εis
+the magnitude of noise.3
+ȦSteady states of variable y 
+Steady states of variable y 
+ky x
+0 0.2 0.4 0.6 0.8 100.20.40.60.81.0
+0.8 1.0 1.2 1.4 1.6 1.800.511.522.53(a)
+(b) (c)
+FIG. 2: (a): The illustration of mutual inhibition. Two gene s inhibit each other while activate themselves respectivel y. (b):
+Type I bifurcation ( α=α1=α2= 0.01,K= 0.5,S= 0.5,n= 4,k=k1=k2= 1). Cell diﬀerentiation is similar to the process
+of bifurcation. A control parameter (which in this case is th e inhibition coeﬃcient β) alteration leads to the steady states
+change and the cell reprogramming process is in reverse. In t his scenario, the cell reprogramming is a deterministic pro cess
+which controlled by a certain parameter. The red line is a typ ical trajectory of steady state transition led by bifurcati on with
+speedr= 0.7 (See eq. 10) and the arrow represents the direction. (c): Type II bifurc ation (α=α1=α2= 1,β=β1=β2=
+1.1,K= 0.5,S= 0.5,n= 4). A control parameter turn the system with 3 steady states to that with 2 steady states, which may
+be elucidated as the cell diﬀerentiation process. However, in this scenario, cell reprogramming requires not only the p arameter
+alteration but the stochastic transition as well since all t he three steady states have no point of intersection. The red line is a
+typical trajectory of steady state transition led by bifurc ation with speed r= 1.2.
+However, when the dimension of the system is greater
+than 1, the upper theory may not be able to be applied
+since the high-dimensional, non-equilibrium systemsgen-
+erallyarenot gradientsystem, which meansthe following
+equation may not be held:
+dx
+dt=F(x) =−∇U (5)
+Because only the gradient part of the driving force
+F(x) determines the transition rate between two steady
+states, it’s ideal to decompose the driving force into two
+parts: a gradient of potential −∇Uand the remanent as
+following:
+dx
+dt=F(x) =−D∇U+Fr (6)
+whereDis the diﬀusion coeﬃcient tensor and here ac-
+countingforthemagnitudeofnoise.[ 19]Therearenumer-
+ous methods to decompose the driving force[ 18], here we
+use the decomposition based on the ﬂux of the probabil-
+ity which the probability can be described as a diﬀusion
+equation:
+∂P
+∂t+∇·J(x,t) = 0 (7)The diﬀusion equation describes a conservation of
+probability (local change is due to net ﬂux). Flux vec-
+torJis deﬁned as J=FP−D·∂P
+∂x.[20] representing
+the speed of the ﬂow of the probability in concentration
+spacex.
+In the steady state∂P
+∂t= 0, then ∇·J(x,t) = 0. If the
+system is an equilibrium system, ∇ ·J(x,t) = 0 always
+leads to J= 0. However, for a nonequilibrium system,
+this condition does not mean that Jhave to vanish be-
+cause the detailed balance condition is satisﬁed. There-
+fore, deviating from the deﬁnition of J, the ﬂux in the
+steady state is deﬁned as: Jss=FPss−D·∂Pss
+∂x, so:
+F=D·∂Pss
+∂x/Pss+Jss/Pss=D·∂U
+∂x+Jss/Pss(8)
+whereU=−lnPss. SoUreﬂects the potential and
+Fr=Jss/Pss.
+The quasi-potential Uis able to be calculated by U=
+−lnPsswhichPssis calculated through a Fokker-Planck
+equation:
+∂P
+∂t=−∇·(FP)+D∇2P (9)
+This equation was solved numerically by ﬁnite diﬀer-
+ence method with the second boundary condition.(ﬁg. 4)4
+III. RESULTS
+As previous discussed, there are two types of bifurca-
+tion generally in the model (see Methods). The ﬁrst type
+is illustrated in ﬁg. 2b, which the bifurcation is controlled
+by the inhibition coeﬃcients β. This bifurcation could be
+elucidated from a biological perspective as a determinis-
+tic transition from one state ( e.g.ESC state) to another
+state (e.g.stomatic cell state). The second type of bifur-
+cation is illustrated in ﬁg. 2c, which the degradation rate
+kcontrols the systems with 3 steady states to 2 steady
+states. This type may be elucidated as the ESC state
+goes to the diﬀerentiated state like stomatic cell through
+bifurcation or stochastic transition from one steady state
+to another and reprogramming required stochastic state
+transition but not only bifurcation.
+Our aim is to discriminate the two hypotheses by their
+characteristic time for reprogramming. To simulate the
+experiments approach of reprogramming, we used a sim-
+ple exponential equation to represent the eﬀect of trans-
+formation of genes into somatic cell to reprogramme[ 4] or
+add chemical small molecules to reprogramme[ 21], which
+trigger the control parameter’s change.
+θ(t) =θb+(θ0−θb)e−rt(10)
+Hereθis the control parameter which in the type I bi-
+furcation is β, and in the type II bifurcation, k.θbis
+the basal level of θ, which means the ﬁnal θvalue;θ0is
+the original level of θ, representing the θvalue of diﬀer-
+entiated cell state; and rrepresents how fast θdeclines.
+When the system with θ0reaches its steady state, θbe-
+gins to changeas in Equation 10, then the time for reach-
+ing the new steady state is calculated.
+A. Deterministic Hypothesis
+The time for reprogramming in the type I bifurcation
+is calculated through the method above. In this scenario,
+the time to reaching the new steady state is exactly the
+time for reprogrammingsince there is no stochastic tran-
+sition. Atypical trajectoryofreprogrammingis shownin
+ﬁg.2b (red line, the arrow indicates the direction). The
+results (ﬁg. 3a) shows that in a wide range of declining
+raterand the ﬁnal θvalue, the timescale for reprogram-
+ming is 101.
+B. Stochastic Hypothesis
+The time for reprogramming in the type II bifurca-
+tion consists of two parts: the deterministic transition
+and stochastic transition. The ﬁrst part is calculated as
+the above-mentioned approach. The results is shown in
+ﬁg.3b, which indicated that the characteristic timescale
+isabout100to101. Atypicaltrajectoryisshowninﬁg. 2c
+(red line), it demonstrates that without the stochasticity,the diﬀerentiated states can never return to the stem cell
+state. For the second part, the Fokker-Planck equation
+(see Methods, eq. 9) is solved (ﬁg. 4).
+The large deviation theory predicts when a rare event
+occurs, it will follow the optimal transition path with
+high probability.[ 22] So the energy barrier is the quasi-
+potential diﬀerence between the steady state and the
+saddle point between two steady state (ﬁg. 4). Accord-
+ing to [23][24], the noise magnitude Dof Fokker-Plank
+equation is approximately equal to1
+2Ω−1
+2, which Ω is
+the system’s size, that here is chosen as the average
+number of molecules. If so, since most proteins in a
+mammalian cell have average numbers about 104∼109
+magnitude,[ 25][26] the noise magnitude Dhere would be
+about 10−3∼10−2. We calculated the energy barrier
+with control parameter kvalue of 1.0 1.2 and diﬀerent
+noise magnitudes Dranging from 0.005 to 0.1. The re-
+sults are shown in ﬁg. 5.
+Then the time for stochastic transition is able to esti-
+mate according to [ 27]. The Mean Switch Time (MST)
+τof transition from diﬀerentiated state to stem cell state
+is:
+τ≈TeK∆S(11)
+HereTis a prefactor, Kis the system size which is
+usually chosen as the typical number of proteins, and
+∆Sis the energy barrier. However, there are no available
+methods to obtain Tanalytically in high dimensions for
+the geometry problem and non-gradient nature.[ 28] For-
+tunately, Tvaries slowly in many cases [ 29], therefore it
+can be ﬁtted from the numerical results. We apply the
+stochastic simulation by a Langevin approach and the
+MST is estimated by Mean First-PassageTime (MFPT).
+The results are shown in Fig. 5, it indicates that noise
+in a reasonable magnitude plays an strikingly signiﬁ-
+cant role. The average time for stochastic transition is
+in the timescale about 102, which is much longer than
+the time of steady steady state transition led by bifurca-
+tion (Fig. 3). However, if the noise can be tuned at least
+10 times lower than natural level, the time of stochastic
+transition is negligible.
+Surprisingly, the relationship between MST (or energy
+barrier ∆ S) andkis depended on the noise magnitude
+D. When the noise is in a medium strength ( D= 0.01),
+MST is increasing exponentially with k. However, when
+the noise decreases ( D= 0.005), MST has a minimum
+value when k= 1.1 (ﬁg.5). The results indicate that the
+noise inﬂuence not only the Mean Switch Time, but also
+the optimum value of the control parameter k.
+IV. DISCUSSION AND CONCLUSION
+A. Biological Signiﬁcance
+In this paper, we have presented a general framework
+of cell reprogramming and proposed a new methodology5
+ 
+ 04812 16 20 
+00.10.20.30.4
+θb
+0.5 1 1.5
+r0.5 1 1.5
+r0.80.91.01.11.2
+θb 
+ (a) (b)
+FIG. 3: Timescales required for steady states transition du ring bifurcation. a: Type I bifurcation. The time is the tota l time
+for cell reprogramming. b: Type II bifurcation. The time is o nly the ﬁrst part of the total time for reprogramming. It show s
+that in a wide range of declining rate randθb, the time scale is 101. The parameter used in this paper is normalized by the
+dimension unit of protein degradation rate, which in mammal ian cell is usually about 10−1h−1, so the time calculated here
+would be 10 times greater than the actual time. In the rest of t he paper, we used this non-dimensional-normalized time uni t.
+0.5 1 1.5 22
+1.5
+1
+0.513 
+11 
+9
+7
+5D=0.005 D=0.01
+D=0.05 D=0.1
+0.5 1 1.5 22
+1.5
+1
+0.5
+2
+1.5
+1
+0.52
+1.5
+1
+0.5
+0.5 1 1.5 2 0.5 1 1.5 2
+FIG. 4: The Quasi-potential landscapes with diﬀerent noise magnitudes. α=α1=α2= 1,β=β1=β2= 1.1,K= 0.5,S=
+0.5,n= 4,k=k1=k2= 1.2.U=−lnPssis the quasi-potential as described ahead (See Methods). Th e quasi-potential was
+obtained by the ﬁnite diﬀerence method[ 18],Pk+1=Pk+τ·δ. After the iteration, the sum of δis less than 10−6. It indicates
+that when noise is larger than 0.05, there is only one attract or, which means cells will not stay in the diﬀerentiated stat es
+anymore in a very noisy environment. However, if the noise ma gnitude is 10−3∼10−2as analyzed in the paper, there will
+remain three steady states and the stochastic transition is necessary.6
+0 100 200 300 400 50000.511.522.53
+Time Value of variable y MFPT	B
+ 	C
+ 
+2345Mean Switch Time 
+0.8 0.9 1 1.1 1.2
+k110 
+10 
+10 
+10 
+10 
+FIG. 5: (a): The Mean Switch Time under diﬀerent noise magnit udes. Blue dots are the MST with D= 0.01, and blue line
+is the ﬁtting results from the Langevin equation. Purple dot s are MST with D= 0.005. It shows that a slight diminishment
+of noise leads to a tremendous change of MST. Nevertheless, t ime of stochastic transition cannot be neglected in the in vivo
+biological noise magnitude. (b): Using stochastic simulat ion to estimate MST and the prefactor T, here the MST is estimated
+by the Mean First-Passage Time (MFPT). The simulation begin s in the steady state, and the MFPT is the time when the
+variable ﬁrst pass the other steady state determined by ODE. HereTis ﬁtted as 0.1386.
+to test the nature of reprogrammingprocess. Our results
+indicate that if reprogramming is a stochastic process,
+the magnitude of noise inﬂuences signiﬁcantly the total
+time required for reprogramming. However, so far there
+is few experiments focus on the role of noise in the cell
+reprogramming.
+Biological noise has been studied intensely in recent
+years, we know for a constitutive gene, the noise strength
+is:[30]
+σ2
+p
+< p >∼=1+b (12)
+Herebis the average number of proteins translated
+by per mRNA transcript. Therefore it’s possible to tune
+the noise magnitude without altering the average gene
+expression level. This idea is able to test experimentally.
+For example, in [ 5], the cells are reprogrammedby exoge-
+nous gene expressions. If the stochastic hypothesis holds,
+the time for reprogramming would be signiﬁcantly diﬀer-
+ent in diﬀerent magnitudes of noise of those exogenous
+gene expressions. Our dataindicates ifthe noise strength
+was tuned to 10 times greater than the current magni-
+tude, the cell for reprogrammingwould reduce morethan
+10 times. If the deterministic hypothesis holds, the time
+would not change. Tuning the noise will not change the
+time for reprogramming but the percentage of iPS cell
+because the ﬂuctuation of protein level.
+Another role that noise may facilitate research of cell
+reprogramming is ﬂuctuation correlation. In the type I
+bifurcation, the reprogrammingprocess experiences a su-
+percritical bifurcation, which the noise may show a ﬂuc-
+tuation correlations [ 31], a critical phenomenon in sta-
+tistical physics. However, in the type II bifurcation, the
+transition of steady state does not pass trough the bi-
+furcation point so the ﬂuctuation correlation would notoccur. So far there is no experiments applied focusing on
+this prediction and it would be interesting to investigate
+both theoretically and experimentally.
+B. Limitations
+Ourresults, basedondynamicalsystemsandperturba-
+tion theory, provide a theoretical framework which may
+facilitatetherationaldesignofcellreprogrammingproto-
+cols in the future. We focus on the temporal character,
+the timescale, but not the properties of steady states.
+However, our results are based on a minimum mathe-
+matical model with artiﬁcial parameters. The real bio-
+logical network for cell-fate decision may be much more
+complex, and in diﬀerent systems, the network may be
+also diﬀerent. For example, in erythroid/megakaryocyte
+and myelomonocytic lineage determination mentioned in
+this paper, mutual inhibition with self-activation is the
+core network, while the embryonic stem cell-fate decision
+depend on a ”Seesaw” Model [ 32]. Besides, the param-
+eters used in the model is regarded as symmetrical ( e.g.
+β1=β2,k1=k2), when parameters are altered unsym-
+metrically, the bifurcation diagram will be slightly diﬀer-
+ent. Our model is a kind of ”toy model” captured only
+the essential features, the application to a real biological
+network deserves future work.
+In summary, our model provides a novel perspective to
+test the hypotheses of cell reprogramming. We studied
+a general model which is able to ﬁt both deterministic
+and stochastic hypothesis and quantitatively calculated
+the time to re-reaching the steady state during bifurca-
+tion and mean switch time of stochastic transition. We
+hope our results may facilitate the future research on cell
+reprogramming.7
+[1] J.A. Thomson, J. Itskovitz-Eldor, et al., Science 282,
+1145 (1998).
+[2] M. Mimeault, R. Hauke,S.K. Batra, Clin. Pharmacol.
+Ther.82, 252 (2007).
+[3] S.M. Wu, K. Hochedlinger, Nat. cell biol. 13, 497 (2011).
+[4] K. Takahashi, S. Yamanaka, Cell 126, 663 (2006).
+[5] K. Takahashi,K. Tanabe, et al., Cell131, 861 (2007).
+[6] S. Yamanaka, Nature 460, 49 (2009).
+[7] J. Hanna, et al., Nature 462, 595 (2009).
+[8] Y. Buganim, et al., Cell150, 1209 (2012).
+[9] Y. Rais, et al., Nature 502, 65 (2013).
+[10] B.D. MacArthur, A. Maayan, I.R. Lemischka, Nat. Rev.
+Mol. Cell Biol. 10, 672-681 (2009).
+[11] C.H. Waddington, The Strategy of the Genes; a Discus-
+sion of Some Aspects of Theoretical Biology , (London:
+Allen & Unwin, 1957).
+[12] T. Enver, et al., Cell Stem Cell 4, 387 (2009).
+[13] S.H. Orkin, L.I. Zon, Cell 132, 631 (2008).
+[14] S. Huang, Trends Genet. 27, 55 (2011).
+[15] T. Graf, T. Enver, Nature 462, 587 (2009).
+[16] U. Alon, An introduction to systems biology: design prin-
+ciples of biological circuits , (CRC press, 2006).
+[17] S. Huang, et al., Dev. Biol. 305, 695 (2007).
+[18] J.X. Zhou, M.D.S. Aliyu, E. Aurell, S. Huang, J. R. Soc.Interface 9, 3539 (2012).
+[19] J. Wang, L. Xu, E. Wang, S. Huang, Biophys. J. 99, 29
+(2010).
+[20] J. Wang, L. Xu, E. Wang, Proc. Natl. Acad. Sci. USA
+105, 12271 (2008).
+[21] P. Hou, et al., Science 341, 651 (2013).
+[22] S.S. Varadhan, Large deviations and applications ,
+(SIAM, Philadelphia, 1984).
+[23] N.G. van Kampen, Stochastic processes in physics and
+chemistry , (Elsevier, 1992).
+[24] J. Keizer, Statistical thermodynamics of nonequilibrium
+processes , (Springer, 1987).
+[25] B. Schwanh¨ ausser, et al., Nature 473, 337 (2011).
+[26] N. Nagaraj, et al., Mol. Syst. Biol. 7, (2011).
+[27] M.I. Freidlin, A.D. Wentzell, Random perturbations of
+dynamical systems , 2nd edition. (Springer, New York,
+1998).
+[28] R.S. Maier,D.L. Stein, SIAM J. Appl. Math 50, 752
+(1997).
+[29] C. Lv, et al., PLoS ONE 9(2): e88167 (2014).
+[30] E.M. Ozbudak, et al., Nat. Genet. 31, 69 (2002).
+[31] M. Scheﬀer, et al., Nature 461, 53 (2009).
+[32] J. Shu, et al., Cell153, 963 (2013).

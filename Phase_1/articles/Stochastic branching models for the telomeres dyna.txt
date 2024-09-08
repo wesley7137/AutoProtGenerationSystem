@@ -1,0 +1,1434 @@
+Title: Stochastic branching models for the telomeres dynamics in a model
+  including telomerase activity
+Abstract:   Telomeres are repetitive sequences of nucleotides at the end of chromosomes,
+whose evolution over time is intrinsically related to biological ageing. In
+most cells, with each cell division, telomeres shorten due to the so-called end
+replication problem, which can lead to replicative senescence and a variety of
+age-related diseases. On the other hand, in certain cells, the presence of the
+enzyme telomerase can lead to the lengthening of telomeres, which may delay or
+prevent the onset of such diseases but can also increase the risk of cancer.In
+this article, we propose a stochastic representation of this biological model,
+which takes into account multiple chromosomes per cell, the effect of
+telomerase, different cell types and the dependence of the distribution of
+telomere length on the dynamics of the process. We study theoretical properties
+of this model, including its long-term behaviour. In addition, we investigate
+numerically the impact of the model parameters on biologically relevant
+quantities, such as the Hayflick limit and the Malthusian parameter of the
+population of cells.
+
+Full Text: Stochastic branching models for the telomeres dynamics
+in a model including telomerase activity
+A. Benetos1,2, C. Fritsch3, E. Horton4, L. Lenotre5,6,7,
+S. Toupance1and D. Villemonais3,8
+17th July 2024
+Abstract
+Telomeres are repetitive sequences of nucleotides at the end of chromosomes, whose
+evolution over time is intrinsically related to biological ageing. In most cells, with each
+cell division, telomeres shorten due to the so-called end replication problem, which can
+lead to replicative senescence and a variety of age-related diseases. On the other hand,
+in certain cells, the presence of the enzyme telomerase can lead to the lengthening of
+telomeres, which may delay or prevent the onset of such diseases but can also increase
+the risk of cancer.
+In this article, we propose a stochastic representation of this biological model, which
+takes into account multiple chromosomes per cell, the effect of telomerase, different cell
+types and the dependence of the distribution of telomere length on the dynamics of
+the process. We study theoretical properties of this model, including its long-term
+behaviour. In addition, we investigate numerically the impact of the model paramet-
+ers on biologically relevant quantities, such as the Hayflick limit and the Malthusian
+parameter of the population of cells.
+Keywords: branching processes, non-conservative semi-groups, many-to-one formula,
+quasi-stationary distribution, Hayflick limit, telomerase.
+MSC:60J80, 60J85, 60K40
+1 Introduction
+Telomeres are repetitive sequences of nucleotides located at the ends of linear chromosomes
+that act as protective caps to ensure the genomic stability. As cells divide, telomeres gradu-
+1Université de Lorraine, Inserm, DCAC, F-54000 Nancy, France
+2Université de Lorraine, CHRU-Nancy, Service de Gériatrie, F-54000 Nancy, France
+3Université de Lorraine, CNRS, Inria, IECL, F-54000 Nancy, France
+4Department of Statistics, University of Warwick, Coventry, CV4 7AL, UK
+5Université de Haute-Alsace, IRIMAS UR 7499, F-68200 Mulhouse, France
+6Université de Haute-Alsace, UMR 7044 Archimède, F-67000 Strasbourg, France
+7Inria, PASTA, F-54000, Nancy, France
+8Institut universitaire de France (IUF)
+1arXiv:2407.11453v1  [q-bio.CB]  16 Jul 2024ally shorten, ultimately reaching a critical length triggering cellular senescence or apop-
+tosis [42, 21, 63], processes implicated in a number of age-related diseases such as cardiovas-
+cular, metabolic and neurodegenerative diseases [19, 28, 52]. In addition, research has shown
+that factors such as lifestyle, genetics and oxidative stress can also impact telomere length
+dynamics [50, 47, 38].
+On the other hand, some cell types can express an enzyme called telomerase. This
+DNA polymerase has the ability to add telomeric repeats to the end of telomeres during
+DNA replication, which can compensate the effects of telomere shortening but also plays an
+important role in the development and evolution of cancer [34, 6].
+In the past 30 years, mathematical modelling has played an important role in understand-
+ing the long-term behaviour of the distribution of telomere length in cells and the associated
+health implications. One of the earliest (deterministic) models for the evolution of telomere
+lengths was given in [37], which mirrored the results seen in in vitroexperiments. Shortly
+after, Arinoetal. [1]andOlofssonandKimmel[41]reframedthismodelintermsofabranch-
+ing process to obtain both exact and asymptotic results for the behaviour of telomeres. Since
+then, there have been a wide range of stochastic models for telomere lengths, both with and
+without the presence of telomerase, for the purpose of understanding the role of the shortest
+telomere in senescence [7, 14], calculating the time until senescence [22], parameter inference
+[36] and calculating the stationary distribution [36]. We also refer the reader to [43, 61, 44]
+for computational analysis of both deterministic and stochastic models.
+In this paper, our aim is to propose a mathematical model that describes the evolution
+in continuous time of the whole population of cells, whose dynamics depend explicitly on the
+lengths of their telomeres. This is in accordance with recent empirical evidence [7, 14, 62],
+which suggests a strong link between the length of the shortest telomere and the cell’s
+behaviour. In addition, we also allow for different cell types, multiple chromosomes per cell
+andtake into account the effect of telomerase. To the best of our knowledge, this is the first
+mathematical model that takes all these components into account simultaneously.
+Among the models in the aforementioned literature, some of them describe the whole cell
+population, while others describe a single cell lineage. While both approaches are relevant,
+we emphasize that the latter approach does not appropriately describe the distribution of
+the whole population when reproduction and/or senescence rates of a cell depend on its
+telomere lengths. This is due to an imbalance of mass compared to the whole population of
+cells. To counteract this issue, one needs to appropriately weight the single linear process, as
+in themany-to-one formula . In the setting of telomere dynamics, this is given in Lemma 3.3,
+which allows one to represent the first moment of the entire cell population by the average
+behaviour of a typical trajectory in the population, appropriately weighted. This result
+allows one to more easily analyse the behaviour of the branching process, and provides a
+useful tool for numerical simulations.
+One of the main mathematical contributions of this paper, Theorem 4.5, is related to
+the asymptotic behaviour of the first moment of the particle system. In the case that
+telomerase is present and compensates the attrition of telomeres, so that the population
+grows indefinitely, we show two things. Firstly, the distribution of an average cell and its
+telomere lengths converges with time, and secondly, the first moment of the population size
+grows asymptotically exponentially fast. This analysis is related to the theory of quasi-
+2stationary distributions (see e.g. [12, 56, 39]).
+We also present numerical simulations of the model, both with and without telomerase.
+In the case where it has very little impact or is not present at all, the population eventually
+stabilizes due to the fact that cells can no longer divide when their telomeres are too short.
+In this case, the number of times the population doubles, also called the Hayflick limit
+[29, 48, 54], is finite. Thus, we investigate the influence of the model parameters on the
+Hayflick limit. On the other hand, when telomerase is present, we study its influence on
+the asymptotic growth rate of the population and the stabilization of the distribution of an
+average cell and its telomere lengths, illustrating Theorem 4.5 in practice.
+The rest of the paper is set out as follows. In Section 2, we present the specific model
+that we will work with throughout the paper, presenting first the biological mechanism for
+DNA replication at the level of chromosomes, followed by the stochastic process describing
+the population of cells. This model takes into account the telomere length distribution of
+chromosomes, as well as the cell’s ability to divide or not. In addition, we allow for the
+possibility that the dynamics depend on the absence/presence of telomerase. Section 3
+is devoted to the mathematical analysis of the first moment of the mathematical model,
+leading to the many-to-one formula (see Lemma 3.3). In Section 4, we establish and prove
+our main mathematical result, which characterises the long-term behaviour of our process
+(see Theorem 4.5). In particular, we describe the growth rate of the average number of
+particles in the system and the corresponding stationary distribution. Section 5 contains
+the numerical simulations, which illustrate the impact of the model parameters on 1) the
+Hayflicklimit(the number oftimes thepopulationdoubles), 2) theasymptoticgrowthrate of
+the population, and 3) the asymptotic distribution of telomere lengths in the cell population.
+Finally, in Section 6, we discuss our model, results and possible future work and extensions.
+In addition, we alert the reader to the table of notation in Appendix B, which collects the
+main parameters used for the simulations in Section 5.
+2 The model
+2.1 The biological model
+In this section, we describe the biological DNA replication mechanism we adhere to through-
+out the article. For concreteness, we will describe the replication mechanism that occurs
+in human cells, however, the mathematical model we consider in the next section is robust
+enough to apply to other organisms. We will also only describe the relevant aspects of the
+DNA replication process, and we refer the reader to [25, 3] and references therein for further
+details.
+Human cells contain 23 pairs of chromosomes, each composed of a DNA strand whose
+extremities are called telomeres. Each strand of the DNA double helix has a 3’ and a 5’ end.
+Due to the antiparallel structure of the double helix, the 3’ end of one strand opposes the 5’
+end of the other strand. Moreover, the 3’ end overhangs the opposing 5’ end (see Figure 1a).
+Starting from the centre of the chromosome (referred to as the origin of replication), the
+DNA helix is ‘unzipped’ in the direction of the telomeres, creating two ‘Y’ shapes, each called
+a replication fork (see Figure 1b). The two separated strands will then act as templates for
+3an enzyme (DNA polymerase) to make new complementary DNA strands, resulting in two
+copies of the original chromosome.
+The orientation of the DNA helix means that when it is unzipped, in one direction it
+unzips from the 3’ to the 5’ end, which will form the leadingstrand, while in the other
+direction the helix is unzipped in the 5’ to 3’ direction, and will form the laggingstrand.
+Due to the way DNA polymerase replicates DNA and the antiparallel nature of a DNA
+helix, the mechanism is slightly different for each of the two strands. Indeed, as the DNA
+polymerase synthesises the leading strand, DNA fragments are added continuously to form
+the new complementary (antiparallel) strand from the origin to the end of the 5’ end of the
+template. Note that the new complementary strand will be shorter than the original one
+since DNA polymerase can only use the 3’ to 5’ strand as a template, resulting in the loss
+of the original overhang. In order to re-establish the overhang, an enzyme called nuclease
+removes the end of the template 5’ end so that the new 3’ is longer. On the other hand,
+whenDNApolymerasesynthesisesthelaggingstrand, itdoessoinseparatedsegments, called
+Okazaki fragments, using a ‘back-stitch’ type method. Due to the discontinuous nature of
+the replication along the lagging strand, DNA cannot be replicated all the way to the end of
+the template strand, hence also resulting in an overhang of the 3’ end. We refer the reader
+to Figures 1a, 1b and 1c for a diagram of these steps, as well as [25] for further details and
+references.
+Thus, as a result of the mechanism described above, telomeres become shorter with each
+cell division. This is known as the end replication problem . When the shortest telomere in
+a cell becomes too short, the cell is unable to divide any further (see [7, 30]), since another
+division would risk damaging the DNA. When this occurs, the cell becomes senescent, which
+we refer to as deactivation in the rest of the paper. Thus, if the shortest telomere in each
+cell falls below a certain threshold, the number of cells in the population ceases to increase.
+This leads to a concept called the Hayflick limit, which is defined as the number of times a
+population of cells can double (before cell division is no longer possible).
+In certain cells, such as stem cells, the majority of cancer cells and some somatic cells,
+an enzyme called telomerase is present, which provides a mechanism by which telomeres can
+lengthen. In these cells, after DNA replication has occurred, telomerase has the ability to
+add new nucleotides to the 3’ end. After a certain number of nucleotides have been added,
+the complementary sequence of nucleotides is then added to the corresponding 5’ end (see
+Figure 1d, and [5, 46] for further details).
+As discussed in [51], the number of nucleotides added varies between a few to more than
+100 nucleotides, and the number added is independent of the length of the strand. However,
+when telomerase is present, it does not lengthen every telomere in the cell (as illustrated in
+Figure 1d); it is more likely to elongate a telomere if the telomere is shorter (we also refer
+the reader to the telomere length regulation model proposed in [26]).
+At the end of the replication process (including the possible elongation of telomeres), the
+resulting object is a pair of chromosomes, with one being given to each of the daughter cells.
+4m
+n3′3′5′
+5′
+n−ω
+m−ω
+a.
+b.
+m
+3′
+5′
+m−ω
+ n3′5′
+n−ω
+c.
+lagging strandlagging strand
+leading strandleading strand
+m
+3′5′
+n−ω
+n3′5′
+m−ω
+RNA primers
+d.
+n−ω
+m+ Λm
+3′5′
+n−2ω+ Λ′
+n−ω
+n3′5′
+m−2ω+ Λ′′
+m−ω
+n−ω+ Λ′
+n−ω
+3′
+5′
+5′
+3′m−ω+ Λm
+m−ω+ Λ′′
+m−ω
+1(a) Chromosome before cell division.
+ℓg
+ℓd3′3′5′
+5′
+ℓd−ω
+ℓg−ω
+a.
+b.
+ℓg
+3′
+5′
+ℓg−ω
+ ℓd3′5′
+ℓd−ω
+c.
+lagging strandlagging strand
+leading strandleading strand
+ℓg
+3′5′
+ℓd−ω
+ℓd3′5′
+ℓg−ω
+Okazaki fragments
+d.
+ℓd−ω
+ℓg+ Λℓg
+3′5′
+ℓd−2ω+ Λ′
+ℓd−ω
+ℓd3′5′
+ℓg−2ω+ Λ′′
+ℓg−ω
+ℓd−ω+ Λ′
+ℓd−ω
+3′
+5′
+5′
+3′ℓg−ω+ Λℓg
+ℓg−ω+ Λ′′
+ℓg−ω
+1
+(b) Transcription bubble and replication forks
+m
+n3′3′5′
+5′
+n−ω
+m−ω
+a.
+b.
+m
+3′
+5′
+m−ω
+ n3′5′
+n−ω
+c.
+lagging strandlagging strand
+leading strandleading strand
+m
+3′5′
+n−ω
+n3′5′
+m−ω
+RNA primers
+d.
+n−ω
+m+ Λm
+3′5′
+n−2ω+ Λ′
+n−ω
+n3′5′
+m−2ω+ Λ′′
+m−ω
+n−ω+ Λ′
+n−ω
+3′
+5′
+5′
+3′m−ω+ Λm
+m−ω+ Λ′′
+m−ω
+1
+(c) The two daughter chromosomes before lengthen by telomerase
+m
+n3′3′5′
+5′
+n−ω
+m−ω
+a.
+b.
+m
+3′
+5′
+m−ω
+ n3′5′
+n−ω
+c.
+lagging strandlagging strand
+leading strandleading strand
+m
+3′5′
+n−ω
+n3′5′
+m−ω
+RNA primers
+d.
+n−ω
+m+ Λm
+3′5′
+n−2ω+ Λ′
+n−ω
+n3′5′
+m−2ω+ Λ′′
+m−ω
+n−ω+ Λ′
+n−ω
+3′
+5′
+5′
+3′m−ω+ Λm
+m−ω+ Λ′′
+m−ω
+1
+(d) The two daughter chromosomes after lengthen by telomerase
+Figure 1: Complete reproduction of a chromosome with the new overhangs at each end.
+52.2 Branching model
+We now propose a stochastic model for the evolution of a population of cells and their chro-
+mosomes based on the biological mechanism presented in the previous section. In particular,
+we will define a branching process that mimics the behaviour of a population of dividing
+cells as a function of their telomeres.
+We first introduce some notation in order to keep track of the telomere lengths in each
+chromosome. Recall that the 3’ end overhangs the opposing 5’ end of a DNA strand. We
+denote byωthe length of this overhang and assume that it is the same for all telomeres. We
+will also write (m,n)to denote a chromosome whose 3’ ends are of length mandn. Using
+this notation, it follows that at one end of the chromosome the 3’ end and its opposing 5’
+end are of length mandm−ω, respectively, while at the other end of the chromosome, they
+are of length nandn−ω, see Figure 1a.
+If telomerase is not expressed then, after replication, the chromosome (m,n)gives rise
+to two daughter chromosomes (m,n−ω)and(m−ω,n)(see Figure 1c). However, when
+telomerase is present, each of the four new telomeres can be elongated. Recall that if the
+3’ end of one strand is elongated then the complementary 5’ end will also be elongated,
+keeping an overhang of size ω. We will assume that the four telomeres (two per daughter
+chromosome) are elongated independently of the other telomeres, and with a probability that
+depends on its length. Moreover, the size of the elongation is assumed to be independent of
+the length of the telomere.
+To represent this mathematically, let q(ℓ)denote the probability that a telomere with
+lengthℓwill be elongated, and let χℓdenote a Bernoulli random variable with parameter
+q(ℓ). Then, given χℓ= 1, we letLdenote the (random) quantity added to the telomere,
+whose law is given by a probability distribution µfonN={0,1,2,...}. Writing Λℓ=χℓL,
+the two resulting daughter chromosomes are thus given by (m+ Λm,n−ω+ Λ′
+n−ω)and
+(m−ω+ Λ′′
+m−ω,n+ Λ′′′
+n)(see Figure 1d), where (Λℓ)ℓ∈N,(Λ′
+ℓ)ℓ∈N,(Λ′′
+ℓ)ℓ∈Nand(Λ′′′
+ℓ)ℓ∈Nare
+mutually independent and identically distributed. In the example of Figure 1d, Λ′′′
+n= 0.
+Remark2.1.Accordingtotheempiricalevidencepresentedin[51], wechoosethedistribution
+µfto be independent of the length of the telomere ℓ. However, the mathematical results
+and proofs developed in the next section can be easily adapted to the more general setting
+where the distribution does depend on ℓ.
+Apart from their telomere lengths, cells are also represented by their state: the cell
+can be in an active or a non-active state. In an active state, it can undergo replication,
+deactivation (i.e. senescence1) , or be removed from the system. In a non-active state (i.e.
+after senescence), the cell cannot replicate, and can thus only be removed from the system.
+With this in mind, we now define our model at the level of the cells. Let Ntbe the
+number of cells in the system at time t≥0. The collection of cells will be denoted by
+{(ci(t),xi(t)) :i= 1,...,Nt}, whereci(t)represents the lengths of the telomeres in the i-th
+cell at time tandxi(t)represents its state (active or non-active). More precisely, letting K
+denote the number of chromosomes in a cell, we write ci(t) = (mi,j(t),ni,j(t))K
+j=1∈(N×N)K,
+where (mi,j(t),ni,j(t))represents the jthchromosome in cell iat timet≥0. Moreover, if
+1Cellular senescence is defined as an irreversible arrest of cell proliferation [27].
+6theithcell is active we set xi(t) =a, and otherwise xi(t) =na. Note that Ntalso counts
+the number of non-active cells. We assume that if the minimum telomere length of a cell is
+smaller than a given value Lmin≥ω, then it is inactive.
+For a given element c= (mj,nj)K
+j=1∈(N×N)K, we let minc:= min{mj,nj,1≤j≤K}
+denote the minimum telomere length in the cell and maxc:= max{mj,nj,1≤j≤K}the
+maximum telomere length in the cell. We thus denote by E=Ea∪Enathe set of possible
+‘values’ a cell can take, with EaandEnadenoting the set of values of the active cells and
+non-active cells, respectively, i.e.
+Ea:=/braceleftig
+c∈(N×N)K: minc≥Lmin/bracerightig
+×{a}andEna:= (N×N)K×{na}.
+Hence, a cell is represented by an element of the form (c,x)∈E.
+Let
+Xt:=Nt/summationdisplay
+i=1δ(ci(t),xi(t)), t≥0,
+denote the population of cells at time t, which is an element of M(E), the set of non-negative
+discrete measures on E. The system evolves as a branching process so that, given their point
+of creation, cells evolve independently of each other according to the following dynamics.
+An active cell (c,a) =/parenleftig
+(mj,nj)K
+j=1,a/parenrightig
+∈Eawill remain in the same state until one of
+the following events occurs:
+•at rateda(t,c), at timet≥0, the cell is removed from the system:
+Xt=Xt−−δ(c,a);
+•at ratesa(t,c), at timet≥0, the cell becomes non-active, which means that xswitches
+from atona:
+Xt=Xt−−δ(c,a)+δ(c,na);
+•at rateba(t,c), at timet≥0, the cell divides into two daughter cells given by,
+c1:=c1(c) ={(mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)K
+j=1}
+and
+c2:=c2(c) ={(mj−ω(1−Bj) + Λ′′
+mj−ω(1−Bj),j,nj−ωBj+ Λ′′′
+nj−ωBj,j)K
+j=1},
+whereBj,j= 1,...,Kare a collection of independent Bernoulli random variables with
+parameter 1/2, describing the allocation of daughter chromosomes in both daughter
+cells, and the Λℓ,j,Λ′
+ℓ,j,Λ′′
+ℓ,jandΛ′′′
+ℓ,jare independent (of each other and the Bj), with
+law described in the previous subsection. If minci<L min, fori∈{1,2}, then the cell
+becomes non-active immediately, and if minci≥Lmin, we assume that the cell is, as
+its mother cell, active. Hence, the term δ(c,a)ofXt−is replaced by
+1minc1≥Lmin×δ(c1,a)+ 1minc1<Lmin×δ(c1,na)+ 1minc2≥Lmin×δ(c2,a)+ 1minc2<Lmin×δ(c2,na).
+A non-active cell (c,na)∈Enaremains in the same state until it is removed from the
+system, at rate dna(t,c), at timet≥0:
+Xt=Xt−−δ(c,na).
+73 Mean semigroup of the branching process
+3.1 Evolution equation of the mean semigroup
+In this section, we consider the dynamics of the expectation of the branching process Xt.
+We thus define the expectation semigroup associated to this process. For (c,x)∈Eand a
+bounded measurable function g:E→R, set
+ψu,t[g](c,x):=Eu,(c,x)[⟨g,Xt⟩]:=Eu,(c,x)/bracketleftiggNt/summationdisplay
+i=1g(ci(t),xi(t))/bracketrightigg
+, t≥u≥0,(1)
+where Eu,(c,x)is the expectation operator associated to the law Pu,(c,x)(·) :=P(·|Xu=δ(c,x)),
+i.e. the law of the process whose initial population is composed of a single cell, (c,x)∈Eat
+timeu.
+In order to understand the evolution of the mean semigroup (ψu,t)0≤u≤t, we introduce
+the following assumption that ensures only a finite number of events can occur in finite time
+intervals.
+Assumption 3.1. The birth, deactivation and removal rates, ba,sa,daanddna, are bounded.
+Based on the dynamics described in the previous section, we have the following pro-
+position, which gives the evolution equation for (ψu,t)0≤u≤t. In what follows, we say that
+the semigroup ψisbounded in time if∥ψu,t[g]∥∞<∞for all positive bounded measurable
+functionsgand for all 0≤u≤t.
+Proposition 3.2. Letg:E→Rbe a bounded measurable function, 0≤u≤t,(c,x) =/parenleftig
+(mj,nj)K
+j=1,x/parenrightig
+∈E. Under Assumption 3.1, the expectation semigroup (ψu,t)0≤u≤tis the
+unique solution, that is bounded in time, to
+ψu,t[g](c,x) =g(c,x) +1{x=a}/integraldisplayt
+uba(v,c) [F[ψv,t[g]](c,a)−ψv,t[g](c,a)] dv
++1{x=a}/integraldisplayt
+usa(v,c) [ψv,t[g](c,na)−ψv,t[g](c,a)]−/integraldisplayt
+udx(v,c)ψv,t[g](c,x)dv,(2)
+where the operator Fis defined by
+F[g](c,a) =E/bracketleftbigg
+1minc1≥Lming(c1,a) +1minc1<Lming(c1,na)
++1minc2≥Lming(c2,a) +1minc2<Lming(c2,na)/bracketrightbigg
+, (3)
+with
+c1= (mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)K
+j=1,
+c2= (mj−ω(1−Bj) + Λ′′
+mj−ω(1−Bj),j,nj−ωBj+ Λ′′′
+nj−ωBj,j)K
+j=1,
+and where the expectation Eis taken with respect to the law of the Bj,Λℓ,j,Λ′
+ℓ,j,Λ′′
+ℓ,jand
+Λ′′′
+ℓ,j.
+8Proof.The proof is similar to [13, §6]. Let us recall the main arguments. By Assumption 3.1,
+ψis bounded in time. By conditioning ψu,t+t′at timetand applying the Markov property, it
+is a straightforward exercise to show that (ψu,t)t≥u≥0is a semigroup. To show that it satisfies
+(2) first consider the case when x=a. Splitting the expectation semigroup on the first event
+(branching, deactivation or removal), we have
+ψu,t[g](c,a) =g(c,a)e−/integraltextt
+uba(v,c)+da(v,c)+sa(v,c)dv
++/integraldisplayt
+uba(v,c)e−/integraltextv
+uba(w,c)+da(w,c)+sa(w,c)dwF[ψv,t[g]](c,a)dv
++/integraldisplayt
+usa(v,c)e−/integraltextv
+uba(w,c)+da(w,c)+sa(w,c)dwψv,t[g](c,na)dv, (4)
+where the second term follows from an application of the branching property and the strong
+Markov property. Applying Theorem 2.1 in [32], we obtain equation (2) for the case x=a.
+For the case where x=na, the cell can only remain non-active or be removed from the
+system. Thus splitting ψu,t[g](c,na)on the first time the cell is removed from the system
+and again, applying [32, Theorem 2.1], we obtain
+ψu,t[g](c,na) =g(c,na)−/integraldisplayt
+udna(v,c)ψv,t[g](c,na)dv, (5)
+that is equation (2) for the case x=na.
+We now show that (2) admits a unique solution. Suppose that we have two solutions
+bounded in time, ψ(1)andψ(2), to (2). Then, denoting χu,t[g] =ψ(1)
+u,t[g]−ψ(2)
+u,t[g]and¯χu,t[g] =
+sup(c,x)|χu,t[g](c,x)|, due to Assumption 3.1, we have
+/vextendsingle/vextendsingle/vextendsingleχu,t[g](c,x)/vextendsingle/vextendsingle/vextendsingle=/vextendsingle/vextendsingle/vextendsingle/vextendsingle1{x=a}/integraldisplayt
+uba(v,c) [F[χv,t[g]](c,a)−χv,t[g](c,a)] dv
++1{x=a}/integraldisplayt
+usa(v,c) [χv,t[g](c,na)−χv,t[g](c,a)]−/integraldisplayt
+udx(v,c)χv,t[g](c,x)dv/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+≤(3∥ba∥∞+ 2∥sa∥∞+∥da∥∞+∥dna∥∞)/integraldisplayt
+u¯χv,t[g] dv.
+Fixingtand setting f(r) = ¯χt−r,t[g], we obtain, for all r∈[0,t]
+f(r)≤(3∥ba∥∞+ 2∥sa∥∞+∥da∥∞+∥dna∥∞)/integraldisplayt
+t−r¯χv,t[g] dv
+= (3∥ba∥∞+ 2∥sa∥∞+∥da∥∞+∥dna∥∞)/integraldisplayr
+0¯χt−w,t[g] dw
+= (3∥ba∥∞+ 2∥sa∥∞+∥da∥∞+∥dna∥∞)/integraldisplayr
+0f(w) dw.
+Uniqueness now follows easily from Grönwall’s inequality and from f(0) = ¯χt,t[g] = 0.
+3.2 Many-to-one
+We now consider a many-to-one representation for the semigroup (ψu,t)t≥u≥0. The many-to-
+one formula offers another representation for the first moment of the system of cells via a
+9weighted jump process. The motivation for considering this second representation is two-
+fold. Firstly, as we shall see in the next section, it more easily allows us to characterise the
+long-term behaviour of the branching process: indeed, considering the long-term behaviour
+of a single (weighted) trajectory is much more tractable than that of the entire system of
+cells. Secondly, we will later simulate our model using interacting particle systems that are
+based on multiple copies of single trajectories.
+Without further ado, consider the process (Ct,Xt)t≥0that evolves as a pure jump process
+inE∪{∂}, where (Ct,Xt) =∂means that the cell is removed from the system and does not
+evolve further (in particular, the point ∂is absorbing). The dynamics of this process are as
+follows.
+•When in configuration (c,a) = ((mj,nj)K
+j=1,a)∈Ea, the process
+–jumps with rate 2ba(t,c), at timet, to(c′,x′)with
+c′= (mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)K
+j=1,
+x′=
+
+aifminc′≥Lmin,
+naifminc′<L min;
+–switches with rate sa(t,c)from (c,a)to(c,na);
+–switches with rate da(t,c)from (c,a)to∂.
+•The process in a configuration (c,na)switches to ∂with ratedna(t,c).
+Note that for active cells, when a jump occurs at rate 2ba, the cell jumps from Ct−to the cell
+c1defined as in (3). Note that as the law of c1andc2are the same, it is equivalent to choose
+the cellc1with probability 1/2and the cell c2with probability 1/2. Then, if minc′≥Lmin,
+the cell remains active ( Xt=a), and otherwise the cell becomes inactive ( Xt=na).
+LetPu,(c,x)denotethelawofthisprocesswhenstartedfromasinglecellwithconfiguration
+(c,x)at timeu, with corresponding expectation operator Eu,(c,x). Similarly to the proof of
+Proposition 3.2, it follows that the linear semigroup (φu,t)t≥u≥0associated to (Ct,Xt)t≥0
+satisfies
+φu,t[g](c,x):=Eu,(c,x)[g(Ct,Xt)1t<τ]
+=g(c,x) +1x=a/integraldisplayt
+u2ba(v,c)/bracketleftbigg1
+2F[φv,t[g]](c,a)−φv,t[g](c,a)/bracketrightbigg
+dv
++1x=a/integraldisplayt
+usa(v,c) [φv,t[g](c,na)−φv,t[g](c,a)] dv
+−/integraldisplayt
+udx(v,c)φv,t[g](c,x)dv, (6)
+where (c,x)∈E,g:E→Ris a measurable, bounded function, 0≤u≤tandτdenotes
+the hitting time of ∂by the process (C,X).
+Theabovesemigroupdescribestheaveragebehaviourofatypicalparticleinthebranching
+process,X. However, this semigroup does not take into account mass creation and loss, as
+10in the branching process. The following many-to-one formula shows one how to deal with
+this.
+Lemma 3.3. Under the assumptions of Proposition 3.2, the semigroup, defined for all
+bounded measurable functions g:E→R, initial times u, initial cell configurations (c,x)∈E
+and timest≥uby
+ϕu,t[g](c,x):=Eu,(c,x)/bracketleftbigg
+exp/parenleftbigg/integraldisplayt
+u1{Xv=a}ba(v,Cv)dv/parenrightbigg
+g(Ct,Xt)1t<τ/bracketrightbigg
+, (7)
+also solves equation (2), and hence ψu,t=ϕu,tfor eacht≥u≥0.
+The proof follows by either using similar methods to those used in Proposition 3.2 or by
+applying [32, Theorem 2.1] to (6) and so we leave it as an exercise for the reader.
+4 Long-term behaviour
+This section is devoted to studying the asymptotic stability of the telomere length profile,
+as stated in Theorem 4.5 below. For simplicity, we only consider the time homogeneous
+dynamics (hence replacing ba(t,c)byba(c),da(t,c)byda(c),ψs,tbyψt−sand so on). This
+will allow us to make a connection to the theory of quasi-stationary distributions. We refer
+the reader to [18, 16, 17, 4, 9, 57] for time inhomogeneous versions of this theory.
+In order to state our main result, we need some additional assumptions. We first make
+a technical assumption (Assumption 4.1) on the telomere lengthening caused by telomerase,
+which will ensure that the process is irreducible in Ea(see Lemma 4.6 below). The second as-
+sumption (Assumption 4.2) then imposes that the process is supercritical (in the usual sense,
+made precise below). Finally we make assumptions which guarantee quasi-compactness (As-
+sumptions 4.3 and 4.4).
+Assumption 4.1. We assume that
+1. there exists btel>ωinNsuch andµf{btel}>0andµf{btel−1}>0,
+2.ba(c)>0for all (c,a)∈Ea,
+3.0<q(i)<1for alli≥Lmin.
+We will soon see that under Assumptions 3.1 and 4.1, the process is irreducible on Ea
+(see Lemma 4.6) and, by construction, its complement is absorbing. Hence we can define
+λ0= inf/braceleftbigg
+λ∈R,such that lim inf
+t→∞e−λtψt[1F](c,a)<+∞/bracerightbigg
+, (8)
+which does not depend on (c,a)∈Eanor on the (arbitrary) non-empty finite set F⊂Ea.
+The informal interpretation of λ0is that it measures the asymptotic exponential growth of
+the expected number of active cells in the population. We say that the process is supercritical
+whenλ0>0,subcritical whenλ0<0andcriticalwhenλ0= 0. The value λ0is sometimes
+referred to as the Malthusian parameter.
+11In the rest of this section, we focus on the supercritical case, which corresponds to expo-
+nential growth of the average number of active cells (such as expanding cancerous tumour
+[6] or germinal cells [31, Fig. 1]).
+Assumption 4.2. We haveλ0>0.
+Next, we introduce an assumption on the moments of µf, the law of the length added to
+telomeres when telomerase acts.
+Assumption 4.3. We assume that there exists α0>1
+ωln∥ba∥∞
+λ0such thatµfadmits an
+exponential moment of order α0>0, i.e.
+/summationdisplay
+n≥0µf{n}exp(α0n)<+∞.
+We conclude with an assumption on the probability that telomerase acts on a telomere,
+depending on its length.
+Assumption 4.4. We assume that the probability of telomerase activity, q(i), decreases to
+0wheni→+∞.
+Note that Assumption 4.4 is satisfied, in particular, when q(i)decreases geometrically
+fast ini, as suggested in the telomere length regulation model [26].
+We are now ready to state our main result.
+Theorem 4.5. Suppose Assumptions 3.1, 4.1, 4.2, 4.3 and 4.4 hold. Then there exists a
+functionη:E→R, positive on Eaand vanishing on Ena, a probability measure νonE, and
+a functionV:E→[1,∞)such that, for all g:E→Rsatisfying|g|≤V, we have
+/vextendsingle/vextendsingle/vextendsinglee−λ0tψt[g](c,x)−η(c,x)ν[g]/vextendsingle/vextendsingle/vextendsingle≤Ce−γtV(c,x), t≥0,(c,x)∈E,
+whereC,γare positive constants. In addition, one can choose Vsuch that, for some k≥
+1,α> 0,
+V(c,na) = 1andV(c,a) = exp
+αK/summationdisplay
+j=1/parenleftig
+(mj−k+ω)++ (nj−k+ω)+/parenrightig
+.
+We prove this Theorem in three steps. The first takes the form of a Lemma that shows
+that the process is irreducible on Ea. The second gives the asymptotic behavior for the
+process restricted to the active particles (Proposition 4.7). Finally the proof of Theorem 4.5
+follows from Theorem 3.1 of [10].
+Lemma 4.6. Under Assumptions 3.1 and 4.1, the set Eais irreducible for the process
+(Ct,Xt)t≥0defined in Section 3.2.
+12Proof.Let(c,x) = ((mj,nj)K
+j=1,a)∈Ea. Let us denote by τ1<τ 2the two first jump times
+of the process (where τ2= +∞if(Cτ1,Xτ1) =∂). Then, for any fixed t0>0and any
+(A1×···×AK)×{a}∈Ea, we have
+P(c,x)((Ct0,Xt0)∈(A1×···×AK)×{a})
+≥P(c,x)(τ1<t0<τ2,(Ct0,Xt0)∈(A1×···×AK)×{a})
+≥(1−e−t0inf(2ba+sa+da))e−t0sup(2ba+sa+da) inf 2ba
+sup(2ba+sa+da)
+×µ(m1,n1)(A1)×···×µ(mK,nK)(AK), (9)
+where
+µ(mj,nj)(Aj) =P/parenleftig
+(mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)∈Aj/parenrightig
+.
+Note that due to the second part of Assumption 4.1, inf 2ba>0.
+We observe that, restricting to the events {Bj= 1,Λ′
+nj,j= 0}(i.e., we have attrition −ω
+on the left-hand side of the chromosome and telomerase does not act on the right-hand side)
+and{Bj= 0,Λmj,j= 0}, we obtain
+µ(mj,nj)(·)≥P(Bj= 1,Λ′
+nj,j= 0)P/parenleftig
+(mj−ω+ Λmj,j,nj)∈·/parenrightig
++P(Bj= 0,Λmj,j= 0)P/parenleftig
+(mj,nj−ω+ Λ′
+nj,j)∈·/parenrightig
+≥C/parenleftig
+δ(mj+btel−ω,nj)+δ(mj+btel−ω−1,nj)+δ(mj−ω,nj)/parenrightig
++C/parenleftig
+δ(mj,nj+btel−ω)+δ(mj,nj+btel−ω−1)+δ(mj,nj−ω)/parenrightig
+,
+where Assumption 4.1 ensures that Ccan be chosen to be positive.
+Now consider the discrete time Markov process Zjevolving in N2and with transition
+kernel
+1
+6/parenleftig
+δ(mj+btel−ω,nj)+δ(mj+btel−ω−1,nj)+δ(mj−ω,nj)+δ(mj,nj+btel−ω)+δ(mj,nj+btel−ω−1)+δ(mj,nj−ω)/parenrightig
+.
+This process can jump with positive probability from (mj,nj)to(mj+ω(btel−ω),nj)inω
+steps and from (mj+ω(btel−ω),nj)to(mj,nj)inbtel−ωsteps, so that there is path of
+lengthbtellinking (mj,nj)to itself. Similarly, there exists a path of length btel−1linking
+(mj,nj)to itself. This implies that the process is aperiodic. Moreover, the process can jump
+from (mj,nj)to(mj+ω(btel−ω−1) + 1,nj)inωsteps, and then come back to (mj+ 1,nj)
+inbtel−ω−1steps. This shows that the process can reach (mj+ 1,nj)from (mj,nj).
+Similarly, one shows that the process can reach (mj−1,nj),(mj,nj+ 1),(mj,nj−1)from
+(mj,nj)in less than btelsteps. In particular, we deduce that, for all (m1,n1),..., (mK,nK)
+and(m′
+1,n′
+1),..., (m′
+K,n′
+K), there exists n0such that
+P(Z1
+n0= (m′
+1,n′
+1),...,ZK
+n0= (m′
+K,n′
+K)|Z1
+0= (m1,n1),...,ZK
+0= (mK,nK))>0,
+where theZiare chosen independent. Using the definition of µ(mj,nj)and the inequality (9),
+we deduce that, for all (c′,a)∈Ea,
+P(c,x)(Cn0t0=c′,Xn0t0=a)>0.
+13In the next proposition, we use the notation
+G:=/braceleftig
+c∈(N×N)K,minc>Lmin/bracerightig
+to denote the set of possible values of active cells.
+Proposition 4.7. Suppose Assumptions 3.1, 4.1, 4.2, 4.3 and 4.4 hold. Then there exists a
+positive function ηa:G→R, a probability measure νaonG, and a function Va:G→[1,∞)
+such that, for all g:G→Rsatisfying|g|≤Va,
+/vextendsingle/vextendsingle/vextendsinglee−λ0tψt[g0](c,a)−ηa(c)νa[g]/vextendsingle/vextendsingle/vextendsingle≤Ce−γtVa(c),∀t≥0,∀c∈G,
+whereg0(c,x) :=g(c)1c∈G,x=a, and where C,γare positive constants. In addition, one can
+chooseVasuch that, for some k≥1,α> 0,
+Va(c) = exp
+αK/summationdisplay
+j=1/parenleftig
+(mj−k+ω)++ (nj−k+ω)+/parenrightig
+.
+Remark 4.8.The above proposition is stated for λ0>0which corresponds to exponentially
+growing populations, which is our main focus. However, a straightforward adaptation of
+the proof shows that the result also holds if inf(da+sa+λ0)>0. In addition, numerical
+simulations suggest that this result may hold in a more general context, at least for some
+choices of the model parameters and without restriction on λ0(see Remark A.1).
+Proof.In order to prove the proposition, we consider the semigroup on L∞(G)(the space
+of bounded measurable functions on G), defined, for all c∈Gand all bounded measurable
+functiong:G→R, by
+/tildewideφt[g](c) :=e−∥ba∥∞tϕt[g0](c,a)
+=E(c,a)/bracketleftbigg
+exp/parenleftbigg
+−/integraldisplayt
+0(∥ba∥∞−ba(Cv))dv/parenrightbigg
+g0(Ct,a)1t<τ/bracketrightbigg
+=: Ec/bracketleftig
+g(/tildewideCt)1t</tildewideτ/bracketrightig
+, (10)
+where (/tildewideCt)t≥0is a pure jump sub-Markov process on Gevolving asCunder Ec,abut sent to
+a cemetery point †/∈Gat time
+/tildewideτ:= inf{t>0 :Ct∈(Ea)c}∧inf/braceleftbigg
+t>0 :/integraldisplayt
+0∥ba∥∞−ba(Cv)dv>e/bracerightbigg
+,
+where eis an independent rate 1exponential random variable ( i.e.(/tildewideCt)t≥0is sent to†from
+when it reaches (Ea)c=Ena∪{∂}and at an additional rate ∥ba∥∞−ba). More formally, its
+infinitesimal generator for bounded measurable functions g:G→Ris given by
+Lg(c) = 2ba(c)/parenleftbigg1
+2F[g0](c,a)−g(c)/parenrightbigg
+−(da(c) +sa(c) +∥ba∥∞−ba(c))g(c)
+=ba(c)F[g0](c,a)−(da(c) +sa(c) +∥ba∥∞+ba(c))g(c), (11)
+14whereF, defined in (3), satisfies
+F[g0](c,a) = 2E/bracketleftig
+1minc1≥Lming/parenleftig
+(mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)K
+j=1/parenrightig/bracketrightig
+.
+The irreducibility of/tildewideCis a direct consequence of the irreducibility of Cproved in Lemma 4.6.
+In particular, we can define
+/tildewideλ0= inf/braceleftbigg
+λ∈R,such that lim inf
+t→∞e−λt/tildewideφt[1H](c)<+∞/bracerightbigg
+,
+independently of c∈Gand of the finite set H⊂G. We observe, by Lemma 3.3, (8) and
+(10), that
+/tildewideλ0=λ0−∥ba∥∞. (12)
+Our aim is to apply Theorem 5.1 in [8]. In order to do so, it is sufficient to find a
+Lyapunov type function, Va:G→[1,+∞), such that
+LVa≤(/tildewideλ0−ε)Va+C1H, (13)
+for someε >0and finiteH⊂G. Beware that the convention for the sign of λ0is not the
+same in the reference. Indeed, the constant λ0therein is a decreasing parameter , while in our
+case it refers to a growth parameter . Hence, one need to replace λ0by−λ0in Theorem 5.1
+in [8] to reconcile with our setting.
+In order to find Va, we setα∈/parenleftig
+1
+ωln∥ba∥∞
+λ0,α0/parenrightig
+, whereα0is given by Assumption 4.3. We
+look at functionals of the type
+Vk(c) := exp
+αK/summationdisplay
+j=1/parenleftig
+(mj−k+ω)++ (nj−k+ω)+/parenrightig
+, k≥0,
+withc= (mj,nj)K
+j=1∈G. We introduce the event
+Ak(c) =/braceleftig
+Λmj−ωBj,j= 0,∀js.t.mj>k/2/bracerightig
+∩/braceleftig
+Λ′
+nj−ω(1−Bj),j= 0,∀js.t.nj>k/2/bracerightig
+∩/braceleftig
+Λmj−ωBj,j∨Λ′
+nj−ω(1−Bj),j<k/2−ω,∀j/bracerightig
+,
+and its probability
+pk(c) =P(Ak(c)).
+It follows from Assumption 4.4 that
+inf
+c∈Epk(c)−−−−→
+k→+∞1.
+Denoting by c′= (mj−ωBj+ Λmj−ωBj,j,nj−ω(1−Bj) + Λ′
+nj−ω(1−Bj),j)K
+j=1the configuration
+of the process after a jump that doesn’t lead to the removal of the particle from the system,
+we easily check that
+Vk(c′)≤exp
+α/summationdisplay
+j(Λmj−ωBj,j+ Λ′
+nj−ω(1−Bj),j)
+Vk(c). (14)
+15On the one hand, by Hölder’s inequality, for any fixed 1<p<α0
+α, we have
+E/parenleftbigg
+1Ak(c)cexp(α/summationdisplay
+j(Λmj−ωBj,j+ Λ′
+nj−ω(1−Bj),j)/parenrightbigg
+≤(1−pk(c))1−1/p
+E
+exp(pα/summationdisplay
+j(Λmj−ωBj,j+ Λ′
+nj−ω(1−Bj),j)
+
+1/p
+≤(1−pk(c))1−1/p(θpα)2K/p, (15)
+whereθpα:=E(exp(pαL)) =/summationtext
+n≥0µf{n}exp(pαn)<+∞by Assumption 4.3. On the
+other hand, conditioning on the event Ak(c), the left-hand telomere length m′
+jof thej-th
+chromosome of c′satisfies
+m′
+j−k+ω=mj−ωBj+ Λmj−ωBj,j−k+ω≤
+
+mj−k+ω−ωBjifmj>k/2
+0 ifmj≤k/2
+and similarly for the right-hand side. Then Vk(c′)≤Vk(c), and ifcis such that maxc≥k,
+then with probability at least 1/2(for at least one chromosome side which leads to maxc≥
+k),Vk(c′)≤e−αωVk(c). We then deduce from (11) that, for all c∈Gsuch that maxc≥k,
+LVk(c)≤2ba(c)/parenleftiggpk(c)
+2+pk(c)
+2e−αω+ (1−pk(c))1−1/p(θpα)2K/p/parenrightigg
+Vk(c)
+−(da(c) +sa(c) +∥ba∥∞+ba(c))Vk(c)
+≤/parenleftig
+ba(c)e−αω+ 2ba(c)(1−pk(c))1−1/p(θpα)2K/p−da(c)−sa(c)−∥ba∥∞/parenrightig
+Vk(c)
+≤/parenleftig
+ba(c)e−αω+ 2ba(c)(1−pk(c))1−1/p(θpα)2K/p−∥ba∥∞/parenrightig
+Vk(c).
+Asαhas been chosen such that α>1
+ωln∥ba∥∞
+λ0then
+ε:=1
+2(∥ba∥∞+/tildewideλ0−∥ba∥∞e−αω) =1
+2(λ0−∥ba∥∞e−αω)>0,
+where we used (12), so that ∥ba∥∞−ba(c)e−αω≥2ε−/tildewideλ0. Moreover, as θpα<∞, then
+choosingklarge enough such that 2ba(c)(1−pk(c))1−1/p(θpα)2K/p≤εfor allc∈G, we deduce
+that, for all c∈Gsuch that maxc≥k,
+LVk(c)≤(/tildewideλ0−ε)Vk(c).
+Now, choosing the finite set H:={c∈G,maxc≤k}, from (14) and (11), LVk≤Vk
+which is bounded in the compact set H. We deduce that there exists a constant C > 0such
+that (13) holds true for Va=Vk, which concludes the proof.
+Proof of Theorem 4.5. In a similar manner to (10), consider the pure jump sub-Markov
+process (¯Ct,¯Xt)t≥0onEevolving as (C,X)under E(c,x), but is removed from the system at an
+additional rate∥ba∥∞−1x=aba(c,x). Denote by E(c,x)the expectation operator associated to
+16this process, and by ¯φtthe semigroup on L∞(E)(the space of bounded measurable functions
+onE), defined, for all (c,x)∈Eand all bounded measurable functions g:E→R, by
+¯φt[g](c,x) :=e−∥bat∥∞ϕt[g](c,x) = E (c,x)/bracketleftig
+g(¯Ct,¯Xt)1t<¯τ/bracketrightig
+,
+where ¯τdenotes the time at which the particle is removed from the system (¯Ct,¯Xt)t≥0.
+Note that, before time Tna:= inf{t≥0,¯Xt=na}, the process ¯Ctevolves as the process
+/tildewideCtintroduced in the proof of Proposition 4.7. Combining this fact with (10), (12) and
+Proposition 4.7, we have
+/vextendsingle/vextendsingle/vextendsingle/vextendsinglee−/tildewideλ0tE(c,x)/bracketleftig
+g(¯Ct,¯Xt)1t<¯τ∧Tna/bracketrightig
+−ηa(c)νa[g(·,a)]/vextendsingle/vextendsingle/vextendsingle/vextendsingle≤Ce−γtVa(c),∀t≥0,∀(c,x)∈Ea.
+Next, we make use of Theorem 3.1 in [10] for the discrete time process (¯Cn,¯Xn)n∈N, in the
+situation corresponding to Assumption A1 therein. In order to do so, we set D1=Ea,D2=
+Ena,j0,P= 0,θ0,P=e−/tildewideλ0,γ=e−∥ba∥∞<θ 0,P,c1= 1,WR≡1(c,x)∈D2andWP=Va1(c,x)∈D1.
+We deduce that for g:E→Rsuch that|g|≤V:=WP+WR,
+/vextendsingle/vextendsingle/vextendsingle/vextendsinglee−/tildewideλ0nE(c,x)/bracketleftig
+g(¯Cn,¯Xn)1n<¯τ/bracketrightig
+−η(c,x)ν[g]/vextendsingle/vextendsingle/vextendsingle/vextendsingle≤CβnV(c,x),∀(c,x)∈E,∀n∈N,(16)
+for someβ∈(0,1). Now fixh≥0and consider
+gh: (c,x)∝⇕⊣√∫⊔≀→E(c,x)/bracketleftig
+g(¯Ch,¯Xh)1h<¯τ/bracketrightig
+.
+Applying (16) to ghand using the Markov property at time h, we obtain
+/vextendsingle/vextendsingle/vextendsingle/vextendsinglee−/tildewideλ0nE(c,x)/bracketleftig
+g(¯Cn+h,¯Xn+h)1n+h<¯τ/bracketrightig
+−η(c,x)ν[gh]/vextendsingle/vextendsingle/vextendsingle/vextendsingle≤CβnV(c,x)−−−−→
+n→+∞0.
+Taking (c,x)∈Ea, we thus observe that νis a quasi-limiting distribution and hence a
+quasi-stationary distribution for the process (this is a classical result from the theory of
+quasi-stationary distributions, see for instance [39, 12, 56]). In particular, there exists λ≤0
+such that Pν/parenleftig
+(¯Ct,¯Xt)∈·, t< ¯τ/parenrightig
+=eλtν(·), for allt≥0. The above convergence shows that
+λ=/tildewideλ0and we deduce that ν[gh] =e/tildewideλ0hν[g]. Finally, we proved that
+/vextendsingle/vextendsingle/vextendsingle/vextendsinglee−/tildewideλ0nE(c,x)/bracketleftig
+g(¯Cn+h,¯Xn+h)1n+h<¯τ/bracketrightig
+−η(c,x)e/tildewideλ0hν[g]/vextendsingle/vextendsingle/vextendsingle/vextendsingle≤CβnV(c,x).
+Up to a change in the constant Cand setting γ= ln1/β, this concludes the proof of the
+theorem.
+5 Numerical simulations
+Thissectionisdedicatedtothenumericalexplorationofthetheoreticalresultsoftheprevious
+section. In Section 5.1, we consider the model without telomerase (i.e. with q≡0) and
+study its limiting population size, through the so-called Hayflick limit, as a function of
+17the parameters of the model. In Section 5.2, we consider the model with telomerase and
+study, first the values of the Malthusian parameter λ0, defined by (8), as a function of the
+parameters of the model, and second the convergence of the process as stated by Theorem 4.5
+whenλ0>0.
+Note that under Assumption 4.2, the expected number of particles grows exponentially
+and thus a naïve numerical simulation of the process is not appropriate. Instead, we use
+an interacting particle approximation scheme based on genetic algorithms, described in Al-
+gorithm 1 in appendix, which allows us to replace the mean semigroup by the average
+behaviour of a fixed size population. We refer the reader to [16, 17] for detailed results and
+methods on this type of algorithms.
+For simulations presented in Sections 5.1 and 5.2, we compute the expectation of 100
+runs of Algorithm 1 with N= 10000 particles. Where possible, we have chosen parameter
+values that are consistent with empirical data or existing literature. In particular, the exper-
+iments described in [11] suggest that ωshould be chosen in the range [12b,300b]. However,
+when information on possible parameter values is not available, we have chosen the values
+arbitrarily.
+We remind the reader that we have included a table of notation in Appendix B containing
+a description of the model parameters and a reference to where they were first introduced
+in this article.
+5.1 Without telomerase
+In this section, we consider the model without telomerase. As such, this model describes the
+dynamics of a population of cells whose telomere lengths can only decrease with time. More
+precisely, we choose q≡0and by default
+Lmin= 2kb, ω= 0.2kb, K= 46, c0=K/productdisplay
+i=1(8kb,8kb), (17)
+so that all the telomeres in the population have initial length28kb, and
+sa(c) =e−(minc−Lmin)/rswithrs= 100, ba(c) = 1, dna(c) =da(c) = 0.(18)
+In particular, when all the cells have (at least) one telomere shorter than Lmin, they are all
+in a non-active state, and the population can no longer evolve.
+One quantity of interest is the final size of the population, which we denote by N∞. The
+Hayflick limit [29, 48] of a cell population describes the total number of doubling of the
+population. Mathematically, we define this limit as
+H= log2E(c0,a)[N∞], (19)
+wherec0describes the telomere lengths of an initial cell. In what follows, we will investigate
+(numerically) the dependence of the Hayflick limit on certain model parameters, namely the
+number of chromosomes K, the minimal telomere length for active cells Lmin, the overhang
+lengthω, and the parameter rsof the “deactivation” rate sa.
+2The unit kb refers to 1kilobase, sometimes written as kbp for kilobase pair.
+18Remark 5.1.In biological experiments, the Hayflick limit is better described by log2N∞
+N0.
+However, under mild assumptions,N∞
+N0can be approximated by E/parenleftig
+N∞
+N0/parenrightig
+when the initial
+size of the population N0is large (this is a consequence of the law of large numbers and
+the branching property in our model). In addition, if all the initial cells are in state (c0,a),
+E/parenleftig
+N∞
+N0/parenrightig
+=E(c0,a)[N∞]. This justifies our mathematical definition of the Hayflick limit H.
+We first present the evolution of the expected population size for the above choice of
+parameters, see Figure 2. In the initial population, all telomere lengths are sufficiently large
+so that the non-active population is negligible. From (18), the expected population size
+grows exponentially with rate ba(c) = 1(see the second figure in Figure 2 where the total
+expected population size follows the red dotted line until t≈19). Then the growth slows
+down until the population stabilises at E(c0,a)(N∞)(see figure on the left), which corresponds
+to the time when the population of active cells vanishes (see figure on the right).
+0 10 20 30 40 50 60 70 80
+time t0123456Expected number of cells1e13
+(c0,ns)(N∞)
+active cells
+non active cells 
+0 5 10 15 20 25
+time t0.00.20.40.60.81.0Expected number of cells1e9
+active cells
+non active cells 
+0 10 20 30 40 50 60 70 80
+time t012345Expected number of active cells1e12
+Figure 2: Expected population size as a function of time t≥0, for the model without telomerase ( q≡0)
+with parameters as in (17) and (18). Left: the expected total population dynamics E(c0,a)(Nt), with the
+proportion of active cells E(c0,a)(Xt(Ea))(red) and non active cells E(c0,a)(Xt(Ena))(blue). Centre: zoom
+of the start of the dynamics in the left figure. Right: the dynamics of the expected number of active cells
+E(c0,a)(Xt(Ea)). In each of the three graphs, the dotted red line is the curve of the function t∝⇕⊣√∫⊔≀→et.
+In Figure 3, we represent the Hayflick limit as a function of the number of chromosomes
+K; the minimal length, Lmin, of telomeres in active cells; the overhang ω, and the parameter
+rsassociated with the “deactivation” rate sa. We make the following observations.
+•InFigure3a, weobservethattheHayflicklimitisdecreasingwithrespecttothenumber
+of chromosomes K. This is not surprising since one expects that the larger the number
+of chromosomes, the smaller (in law) the minimal telomere length in the cell. Therefore
+increasing the number of chromosomes increases the probability of deactivation (with
+our choice of sagiven by (18)), as well as the probability that a cell is ‘non-active’ after
+a division.
+With our choice for Lmin,ωandc0given in (17), the minimal theoretical value of
+the Hayflick limit (when K→∞) is(8000−2000)/200 = 30 , however we observe
+that it remains around 45for a large but realistic number of chromosomes. For the
+case with 46 chromosomes, which corresponds to the setting of Figure 2, we observe
+a Hayflick limit of 45.9, which is comparable to the experimentally measured interval
+[40,60](see [29] and [58]).
+19•In Figure 3b, we observe that the Hayflick limit decreases linearly with respect to
+the minimal length Lminof active cells. This is due to the fact that increasing the
+minimal telomere length of active cells increases the number of non-active cells and
+hence decreases the number of times the population doubles.
+•Similarly, the Hayflick limit is also decreasing with respect to the overhang ω(see
+Figure 3c) as well as the parameter rsof the deactivation rate, sa(see Figure 3d).
+0 10 20 30 40 50 60
+number of chromosomes K44464850525456Hayflick's limit H
+(a) Hayflick limit as a function of K.
+0 1000 2000 3000 4000 5000 6000 7000 8000
+minimal lenght Lmin of active cells010203040506070Hayflick's limit H (b) Hayflick limit as a function of Lmin.
+140 160 180 200 220 240 260 280 300
+overhang ω01020304050607080Hayflick's limit H
+(c) Hayflick limit as a function of ω.
+0 500 1000 1500 2000 2500 3000
+parameter rs of the deactivation rate202530354045Hayflick's limit H (d) Hayflick limit as a function of rs.
+Figure 3: Hayflick limit (19) for different values of K,Lmin,ωandrs, all other parameters being as in (17)
+and (18). Note that, the numerical approximation method used in Algorithm 1 implies some uncertainties
+in the computation of the Hayflick limit, which are slightly visible, mainly in Figures 3a and 3d.
+5.2 With telomerase
+We consider now the model withtelomerase and we choose default parameters satisfying
+Assumptions 4.1, 4.3 and 4.4. Our values of q(ℓ)are derived from the empirical measures
+20described in [51] and the mechanism described in [26]. We choose the following geomet-
+ric distribution for the probability that telomerase lengthens a telomere, and the following
+uniform distribution for the distribution of the size of the increase:
+q(ℓ) =q02−(ℓ−Lmin)/Lminandµf=U([0,M]), (20)
+whereq0∈[0,1]andM > 0. By default, we choose q0= 0.7,M= 600and the other
+parameters remain as in (17) and (18).
+Ifλ0>0then the expected population size goes to infinity at rate λ0and hence the
+Hayflick limit is equal to infinity. On the other hand, if λ0<0, then the asymptotic
+expected population size of active cells decreases exponentially fast and eventually goes
+extinct. Finally, if λ0= 0, then the population of active cells is critical and does not
+asymptotically increase nor decrease exponentially fast.
+In order to understand the effect of the biological parameters on the behaviour of the
+population (survival, growth rate, Hayflick limit), we compute λ0for different values of sa,
+qandµf(equivalently, rs,q0andM, respectively). When λ0<0, we compute the Hayflick
+limit and, when λ0>0, we illustrate the convergence of the telomere length distribution in
+the population of cells to the limiting distribution ν, as stated in Theorem 4.5.
+In Figure 4, we plot λ0as a function of the parameters q0,Mandrs. We make the
+following observations.
+•As expected, the eigenvalue λ0increases when the parameter q0increases, since this
+increases then the probability of telomerase lengthening a telomere.
+•Similarly, when Mincreases, so does λ0since this increases the upper bound on the
+amount a telomere can be lengthened by.
+•In the left-hand figure, we see that λ0decreases monotonically with rs, the parameter
+that appears in the deactivation rate sa. The reasoning is the same as for the Hayflick
+limit. In fact, as we see in Figure 3d for the model without telomerase, increasing the
+parameters rsis not beneficial for the growth of the population (seen in terms of the
+number of times the population doubles). Similarly, in this case, it is not beneficial
+when the telomerase is active (seen here in terms of the population size growth rate
+λ0).
+As previously mentioned, we also consider parameter values which yield λ0<0, i.e. a
+subcritical population. In particular, in Figure 4, we see that certain values of q0andM
+yieldasubcriticalpopulation, despitethepresenceoftelomerase. Inthiscase, theasymptotic
+average population size of active cells decays exponentially until extinction, so that the total
+population size eventually plateaus out, and thus the Hayflick limit is finite.
+To study this in more detail, in Figure 5, we represent the Hayflick limit as a function
+of the parameters q0andMfor these values. As expected, the monotonic behaviour is the
+same as in Figure 4.
+210.0 0.2 0.4 0.6 0.8 1.0
+lengthen probability parameter q01.0
+0.5
+0.00.51.0λ0
+0 200 400 600 800 1000
+maximal size M of the telomere lenghten1.0
+0.5
+0.00.51.0λ0
+0 500 1000 1500 2000 2500 3000
+parameter rs of the deactivation rate0.050.100.150.200.250.300.350.400.450.50λ0Figure 4: Malthusian parameter λ0(8) for different values of q0(left),M(center) and rs(right), for the
+model with the telomerase mechanism given by (20) with the default values q0= 0.7,M= 600and all other
+parameters being as in (17) and (18).
+0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45
+lengthen probability parameter q0455055606570758085Hayflick's limit H
+0 50 100 150 200 250 300 350
+maximal lengthen size M455055606570758085Hayflick's limit H
+Figure 5: Hayflick limits (19) for different values of q0(left) andM(right) leading to λ0<0, for the model
+with the telomerase mechanism given by (20) with the default values M= 600(left picture) and q0= 0.7
+(right picture) and all other parameters being as in (17) and (18).
+On the other hand, when λ0is positive, the Hayflick limit is infinite. This is the case,
+for example, for the default set of parameters given at the start of the subsection. Figure 6
+represents the evolution of certain functions of the distribution of telomere lengths in cells
+for this default set of parameters. For convenience, we have plotted the distribution of
+the minimum, maximum and mean (in each cell) of the telomere lengths. We observe the
+convergence of the distribution toward the distribution ν, as stated in Theorem 4.5.
+Finally, in Figure 7, we have plotted these distributions at the final time of the simulation
+for different values of K. We see that, the higher the number of chromosomes K, the higher
+the variance of the telomere length distribution. In particular, this figure shows that as the
+number of chromosomes increases, the average of the distribution of the minimum telomere
+length decreases. Since in addition, the deactivation and removal of cells from the system are
+determined by the length of the shortest telomeres in the cells, this entails that λ0decreases
+withK, as demonstrated by Table 1.
+22time (h)
+0
+20
+40
+60
+80telomere length
+ 0200040006000800010000density
+0.00.20.40.60.81.0
+min
+max
+meanFigure 6: Dynamics of certain characteristics of the (normalized) population density for the model with the
+telomerase mechanism given by (20) with the default values q0= 0.7andM= 600and all other parameters
+being as in (17) and (18) (in particular with K= 46). More precisely, we plot the normalization of the
+distributions E(c0,a)(/summationtextNt
+i=11g(ci(t),xi(t))∈·), withg(c,x) = 1x=aminc,g(c,x) = 1x=amaxcandg(c,x) =
+1x=ameanc, where mean cdenotes the average telomere length in c.
+230 1 2 3 4 5 6 7 8
+telomere length (kb)0.00.10.20.30.40.50.60.7densitymin
+max
+mean(a)K= 1.
+0 1 2 3 4 5 6 7 8
+telomere length (kb)0.00.10.20.30.40.50.60.7densitymin
+max
+mean (b)K= 2.
+0 1 2 3 4 5 6 7 8
+telomere length (kb)0.00.10.20.30.40.50.60.7densitymin
+max
+mean (c)K= 20.
+0 1 2 3 4 5 6 7 8
+telomere length (kb)0.00.10.20.30.40.50.60.7densitymin
+max
+mean (d)K= 46.
+0 1 2 3 4 5 6 7 8
+telomere length (kb)0.00.10.20.30.40.50.60.7densitymin
+max
+mean (e)K= 90.
+Figure 7: Distribution of the minimal (blue), mean (green) and maximal (red) lengths of telomere for the
+limit distribution νgiven by Theorem 4.5, for different values of the number of chromosomes Kin cells for
+the model with the telomerase mechanism given by (20) with the default values q0= 0.7andM= 600and
+all other parameters being as in (17) and (18).
+Chromosomes number KMalthusian parameter λ0
+1 0.9992918
+2 0.9986076
+20 0.9863393
+46 0.9692310
+90 0.9416240
+Table 1: Malthusian parameter λ0defined in (8) for the different values of Kused in Figure 7.
+6 Discussion
+We built a probabilistic individual based model for the telomere dynamics in a population
+of cells. We studied theoretically and numerically the dynamics of this model, with and
+without telomerase. In particular, we estimated numerically the effect of several parameters
+on the Hayflick limit and the growth of the size of the cell population.
+Although the probabilistic model was built to mimic the biological mechanisms involved
+in telomere length dynamics, we made several assumptions in order to make the model more
+tractable for theoretical and numerical analysis, and in particular, to keep the number of
+parameters in the model sufficiently small. However, in some situations, one may wish to
+consider the following mechanisms: abrupt telomere shortening [49], single strand breaks
+[60] and oxidative stress [59, 2]. This would require one to modify our model to allow ωto
+be random and to include rare abrupt events.
+Additional mechanisms may also be studied mathematically and numerically. Namely,
+one may take into account the reactivation of telomerase in inactive cells (e.g. Telomerase
+reverse transcriptase in cancer cells [20]), fluctuation of the telomerase intensity through
+time or the population (depending on the environment or on the state of the population,
+leadingtoprobabilisticmodelsinrandomenvironmentsorwithdensitydependence)oron/off
+commutator mechanisms, typically modelled by a Piecewise Deterministic Markov Process
+24representing the density of a commutator enzyme (see [55] for a biological description of
+commutators). To model logistic constraints, one may also wish to consider a spatial model
+(see e.g. [15]) or include the dynamics of a shared limited resource in the model (as e.g. for
+chemostat models, see [23]). Finally, one may study the influence of the dependence of the
+overhangωon the length of the telomere, empirically observed in [33, 45].
+We finally mention the possibility of modelling an age-dependent process. At the expense
+of additional technicalities and an increase in model complexity, one may choose to study
+an age-dependent model, where the different rates described in our model depend on the
+age of the cell, see e.g. [40]. From a probabilistic perspective, this lies in the setting of
+Crump-Mode-Jagers branching processes [35].
+In our numerical simulations, we used parameter values inspired by empirical measures
+from the biological literature. Another natural approach, which will be the subject of further
+research, is to estimate the parameters from empirical data. Since most experimental data
+concerning human cells are available for differentiated cells, such as leukocytes (see e.g. [53]
+where the distribution of telomere length in humans is studied), in future work, we will
+study population processes to model multi-tissue organisms where stem cells differentiate
+into specialized cells.
+Acknowledgements
+The authors would like to thank Anne Gégout-Petit for her support and useful discussions
+throughout the project. This work was supported partly by the french PIA project “Lorraine
+Université d’Excellence”, ANR-15-IDEX-04-LUE. Simulations are run on the babycluster of
+the Institut Élie Cartan de Lorraine.
+A Algorithm
+Here we present the interacting particle approximation scheme used to produce the simula-
+tions in Section 5. The following algorithm allows one to simulate a population with fixed
+size,Nsay. Initially, eachparticleevolvesaccordingtoanindependentcopyofa(sub)Markov
+process. When a particle is killed, it is resampled from the surviving population and the
+particles then continue to evolve independently. In this case, the process evolves according
+to(¯Ct,¯Xt)t≥0defined in the proof of Theorem 4.5. We refer the reader to [16, 17] for further
+details of algorithms of this type.
+Remark A.1.The estimation of λ0from Algorithm 1 by the methods of [16, 17] is valid
+under the convergence stated in Theorem 4.5. Despite the fact that Theorem 4.5 was proved
+under restrictive assumptions (including λ0>0), numerical simulations suggest that the
+convergence also holds true for all the parameters choices of Section 5. Based on these con-
+siderations, we allow ourselves to use the same numerical methods to estimate the parameter
+λ0across Section 5. In particular, we consider certain parameter regimes where λ0≤0, in
+order to illustrate that our result should hold under less restrictive assumptions, and to
+provide the reader with a more complete picture. We leave the question of the possible
+generalization of Theorem 4.5 to these parameters open.
+25B Notation
+Here we provide the reader with a table of notation for the parameters that are used in the
+numerical simulations in Section 5. We give the notation used, a description and the page
+number where it was first introduced.
+Notation Description Reference
+(m,n) Chromosome indexed by its telomeres p.6
+ω Overhang p.6
+K Number of chromosomes per cell p.6
+Lmin Minimal telomere length of active cells p.7
+(c,a) =/parenleftig
+(mj,nj)K
+j=1,a/parenrightig
+Active cell p.7
+(c,na) =/parenleftig
+(mj,nj)K
+j=1,na/parenrightig
+Non active cell p.7
+c0 Telomere lengths of each initial cell p.18
+q(ℓ) Probability that telomerase acts p.6
+q0 Parameter of q(ℓ) p.21
+µf Telomere lengthen law p.6
+M Maximal telomere lengthen p.21
+ba Division rate p.7
+sa Deactivation rate p.7
+rs Parameter of sa p.18
+dx Removal rate p.7
+Nt Cell number in the population p.6
+N∞ Final population size p.18
+H Hayflick limit p.18
+λ0 Malthusian parameter p.11
+References
+[1] O. Arino, M. Kimmel, and G. F. Webb. Mathematical modeling of the loss of telomere
+sequences. JTheorBiol., 177(1):45–57, 1995.
+[2] Natalie Arkus. A mathematical model of cellular apoptosis and senescence through the
+dynamics of telomere loss. Journaloftheoretical biology, 235(1):13–32, 2005.
+[3] Geraldine Aubert. Chapter four - telomere dynamics and aging. In Rodrigo T. Calado,
+editor,Telomeres inHealthandDisease, volume 125 of Progress inMolecular Biology
+andTranslational Science, pages 89–111. Academic Press, 2014.
+[4] Vincent Bansaye, Bertrand Cloez, and Pierre Gabriel. Ergodic behavior of non-
+conservative semigroups via generalized doeblin’s conditions. ActaApplicandae
+Mathematicae, pages 1–44, 2019.
+26sample (ci(0),xi(0))i∈J1,NK= (c0,a)i∈J1,NK{initialization}
+t←0
+whilet≤Tdo
+τ←/summationtextN
+i=11xi(t)=a(2ba(ci(t)) +sa(ci(t)) +da(ci(t)) + 1xi(t)=nadna(ci(t))
+∆t∼Exp(τ)
+i∼/summationtext
+i1xi(t)=a(2ba(ci(t))+sa(ci(t))+da(ci(t))+1 xi(t)=nadna(ci(t))
+τδi
+(cj(t+ ∆t),xj(t+ ∆t))j∈J1,NK,j̸=i= (cj(t),xj(t))j∈J1,NK,j̸=i
+u∼U[0,1]
+ifxi(t) =aandu≤2ba(ci(t))
+2ba(ci(t))+sa(ci(t))+da(ci(t))then
+{cell division}
+(mj,nj)j∈J1,KK=ci(t)
+Bj∼Ber(1/2),j= 1,...,K
+Lj∼µf,L′
+j∼µf,j= 1,...,K
+χj∼Ber(q(mj−ωBj)),j= 1,...,K
+χ′
+j∼Ber(q(nj−ω(1−Bj))),j= 1,...,K
+mj←mj−ωBj+Ljχj,j= 1,...,K
+nj←nj−ω(1−Bj) +L′
+jχ′
+j,j= 1,...,K
+ifmin 1≤j≤K{mj,nj}≤Lminthen
+{non-viable cell}
+(ci(t+ ∆t),xi(t+ ∆t))←((mj,nj)j∈J1,KK,na)
+else
+{viable cell}
+(ci(t+ ∆t),xi(t+ ∆t))←((mj,nj)j∈J1,KK,a)
+end if
+else ifxi(t) =aandu≤2ba(ci(t))+sa(ci(t))
+2ba(ci(t))+sa(ci(t))+da(ci(t))then
+{cell deactivation}
+(ci(t+ ∆t),xi(t+ ∆t))←(ci(t),na)
+else
+{cell removal: the cell is uniformly sampled on existing cells}
+(ci(t+ ∆t),xi(t+ ∆t))∼U((cj(t+ ∆t),xj(t+ ∆t))j∈J1,KK,j̸=i)
+end if
+t←t+ ∆t
+end while
+Algorithm 1: Fleming-Viot type scheme: simulation of Nprocesses (Ct,Xt)t≥0defined in Section 3.2. Each
+process is simulated by a Gillespie Algorithm [24]. When one process goes extinct, it is replaced by one alive
+cell, drawn uniformly among the alive processes.
+27[5] Elizabeth H Blackburn and Kathleen Collins. Telomerase: an rnp enzyme synthesizes
+dna.ColdSpringHarborperspectives inbiology, 3(5):a003558, 2011.
+[6] Maria A Blasco. Telomeres and human disease: ageing, cancer and beyond. Nature
+Reviews Genetics, 6(8):611–622, 2005.
+[7] Thibault Bourgeron, Zhou Xu, Marie Doumic, and Maria Teresa Teixeira. The
+asymmetry of telomere replication contributes to replicative senescence heterogeneity.
+Scientific reports, 5(1):1–11, 2015.
+[8] Nicolas Champagnat and Denis Villemonais. General criteria for the study of quasi-
+stationarity. arXive-prints, page arXiv:1712.08092, Dec 2017.
+[9] Nicolas Champagnat and Denis Villemonais. Uniform convergence of penalized time-
+inhomogeneous markov processes. ESAIMProbab. Stat., 22:129–162, 2018.
+[10] Nicolas Champagnat and Denis Villemonais. Quasi-stationary distributions in reducible
+state spaces. arXivpreprint arXiv:2201.10151, 2022.
+[11] Tracy T. Chow, Yong Zhao, Sabrina S. Mak, Jerry W. Shay, and Woodring E. Wright.
+Earlyandlatestepsintelomereoverhangprocessinginnormalhumancells: theposition
+of the final RNA primer drives telomere shortening. Genes&Development, 26:1167–
+1178, 2012.
+[12] Pierre Collet, Servet Martínez, and Jaime San Martín. Quasi-stationary distributions.
+ProbabilityanditsApplications(NewYork).Springer, Heidelberg, 2013. Markovchains,
+diffusions and dynamical systems.
+[13] Alexander MG Cox, Simon C Harris, Emma L Horton, and Andreas E Kyprianou.
+Multi-species neutron transport equation. JournalofStatistical Physics, 176(2):425–
+455, 2019.
+[14] K. Dao Duc and D. Holcman. Computing the length of the shortest telomere in the
+nucleus. Phys.Rev.Lett., 111:228104, Nov 2013.
+[15] Noemi David and Benoît Perthame. Free boundary limit of a tumor growth model with
+nutrient. JournaldeMathématiques PuresetAppliquées, 155:62–82, 2021.
+[16] Pierre Del Moral. Feynman-Kac formulae. Probability and its Applications (New York).
+Springer-Verlag, New York, 2004. Genealogical and interacting particle systems with
+applications.
+[17] Pierre Del Moral. Meanfieldsimulation forMonteCarlointegration, volume 126 of
+Monographs onStatistics andAppliedProbability. CRC Press, Boca Raton, FL, 2013.
+[18] Pierre Del Moral and Laurent Miclo. On the stability of nonlinear Feynman-Kac semig-
+roups.Ann.Fac.Sci.Toulouse Math.(6), 11(2):135–175, 2002.
+28[19] M. J. D’Mello, S. A. Ross, M. Briel, S. S. Anand, H. Gerstein, and G. Paré. Association
+between shortened leukocyte telomere length and cardiometabolic outcomes: systematic
+review and meta-analysis. Circulation: Cardiovascular genetics, 8(1):82–90, 2015.
+[20] Marta Dratwa, Barbara Wysoczańska, Piotr Łacina, Tomasz Kubik, and Katar-
+zyna Bogunia-Kubik. Tert—regulation and roles in cancer formation. Frontiers in
+Immunology, 11, 2020.
+[21] Sonja Entringer, Karin de Punder, Claudia Buss, and Pathik D Wadhwa. The fetal
+programming of telomere biology hypothesis: an update. Philosophical Transactions of
+theRoyalSocietyB:Biological Sciences, 373(1741):20170151, 2018.
+[22] S. Eugène, T. Bourgeron, and Z. Xu. Effects of initial telomere length distribution on
+senescence onset and heterogeneity. Journaloftheoretical biology, 413:58–65, 2017.
+[23] Coralie Fritsch, Jérôme Harmand, and Fabien Campillo. A modeling approach of the
+chemostat. Ecological Modelling, 299:1–13, 2015.
+[24] Daniel T. Gillespie. Exact stochastic simulation of coupled chemical reactions. Journal
+ofPhysical Chemistry, 81(25):2340–2361, 1977.
+[25] Andrey Grach. Telomere shortening mechanisms. TheMechanisms ofDNAReplication,
+10:55244, 2013.
+[26] Carol W Greider. Regulating telomere length from the inside out: the replication fork
+model.Genes&development, 30(13):1483–1491, 2016.
+[27] M.A. Hayat. Chapter 1 - overview of autophagy. In M.A. Hayat, editor, Autophagy:
+Cancer,OtherPathologies, Inflammation, Immunity, Infection, andAging, pages 3–90.
+Academic Press, 2017.
+[28] Philip C Haycock, Stephen Burgess, Aayah Nounu, Jie Zheng, George N Okoli, Jack
+Bowden, Kaitlin Hazel Wade, Nicholas J Timpson, David M Evans, Peter Willeit, et al.
+Association between telomere length and risk of cancer and non-neoplastic diseases: a
+mendelian randomization study. JAMAoncology, 3(5):636–651, 2017.
+[29] Leonard Hayflick and Paul S Moorhead. The serial cultivation of human diploid cell
+strains.Experimental cellresearch, 25(3):585–621, 1961.
+[30] Michael T. Hemann, Margaret A. Strong, Ling-Yang Hao, and Carol W. Greider. The
+shortest telomere, not average telomere length, is critical for cell viability and chromo-
+some stability. Cell, 107(1):67–77, 2001.
+[31] Eiso Hiyama and Keiko Hiyama. Telomere and telomerase in stem cells. Britishjournal
+ofcancer, 96(7):1020–1024, 2007.
+[32] EmmaHortonandAndreasEKyprianou. Stochastic Neutron Transport: AndNon-local
+Branching MarkovProcesses. Springer Nature, 2023.
+29[33] Kenneth E Huffman, Stephen D Levene, Valerie M Tesmer, Jerry W Shay, and
+Woodring E Wright. Telomere shortening is proportional to the size of the g-rich telo-
+meric 3’-overhang. JournalofBiological Chemistry, 275(26):19719–19722, 2000.
+[34] Mohammad A Jafri, Shakeel A Ansari, Mohammed H Alqahtani, and Jerry W Shay.
+Roles of telomeres and telomerase in cancer, and advances in telomerase-targeted ther-
+apies.Genome medicine, 8:1–18, 2016.
+[35] Peter Jagers. Branching processes withbiological applications. Wiley-Interscience [John
+Wiley & Sons], London, 1975.
+[36] Kyung Hyun Lee and Marek Kimmel. Stationary distribution of telomere lengths
+in cells with telomere length maintenance and its parametric inference. Bulletin of
+Mathematical Biology, 82(12):1–16, 2020.
+[37] M. Z. Levy, R. C. Allsopp, A. B. Futcher, C. W. Greider, and C. B. Harley. Telomere
+end-replication problem and cell aging. Journalofmolecular biology, 225(4):951–960,
+1992.
+[38] Maxime Louzon, Michael Coeurdassier, Frédéric Gimbert, Benjamin Pauget, and An-
+nette de Vaufleury. Telomere dynamic in humans and animals: Review and perspectives
+in environmental toxicology. Environment International, 131, 2019.
+[39] Sylvie Méléard and Denis Villemonais. Quasi-stationary distributions and population
+processes. Probab. Surv., 9:340–410, 2012.
+[40] Jules Olayé and Milica Tomasevic. Long-time behaviour of a multidimensional age-
+dependent branching process with a singular jump kernel: A model for telomere short-
+ening with a continuous state space. working paper, 2024.
+[41] P. Olofsson and M. Kimmel. Stochastic models of telomere shortening. Mathematical
+biosciences, 158(1):75–92, 1995.
+[42] Alexey M. Olovnikov. Telomeres, telomerase, and aging: Origin of the theory.
+Experimental Gerontology, 31(4):443–448, 1996.
+[43] R.D. Portugal, M.G.P. Land, and B.F. Svaiter. A computational model for telomere-
+dependent cell-replicative aging. Biosystems, 91(1):262–267, 2008.
+[44] Qi Qi, J. A. Wattis, and H. M. Byrne. Stochastic simulations of normal aging and
+werner’s syndrome. BullMathBiol., 76(6):1241–1269, 2014.
+[45] Ruman Rahman, Nicholas R Forsyth, and Wei Cui. Telomeric 3’-overhang length is
+associated with the size of telomeres. Experimental gerontology, 43(4):258–265, 2008.
+[46] M S. Rhyu. Telomeres, telomerase, and immortality. JournaloftheNational Cancer
+Institute, 87(12):884–894., 1995.
+30[47] Masood A Shammas. Telomeres, lifestyle, cancer, and aging. Currentopinioninclinical
+nutrition andmetabolic care, 14(1):28, 2011.
+[48] Jerry W Shay and Woodring E Wright. Hayflick, his limit, and cellular ageing. Nature
+reviewsMolecular cellbiology, 1(1):72–76, 2000.
+[49] Ana Martinčić Špoljarić, Ivica Rubelj, and Miljenko Huzak. Mathematical model and
+computer simulations of telomere loss. JournalofTheoretical Biology, 465:78–89, 2019.
+[50] Angela R Starkweather, Areej A Alhaeeri, Alison Montpetit, Jenni Brumelle, Kristin
+Filler, Marty Montpetit, Lathika Mohanraj, Debra E Lyon, and Colleen K Jackson-
+Cook. An integrative review of factors associated with telomere length and implications
+for biobehavioral research. Nursing research, 63(1):36, 2014.
+[51] M Teresa Teixeira, Milica Arneric, Peter Sperisen, and Joachim Lingner. Te-
+lomere length homeostasis is achieved via a switch between telomerase-extendible and-
+nonextendible states. Cell, 117(3):323–335, 2004.
+[52] Simon Toupance and Athanase Benetos. Telomere Dynamics andAgingRelated
+Diseases, page 66–90. Cambridge Handbooks in Psychology. Cambridge University
+Press, 2019.
+[53] Simon Toupance, Denis Villemonais, Daphné Germain, Anne Gegout-Petit, Eliane Al-
+buisson, and Athanase Benetos. The individual’s signature of telomere length distribu-
+tion.Scientific reports, 9(1):685, 2019.
+[54] C Trentesaux and J-F Riou. Sénescence et immortalité cellulaire. Bulletin ducancer,
+97(11):1275–1283, 2010.
+[55] Timothy M Tucey and Victoria Lundblad. Regulated assembly and disassembly of the
+yeast telomerase quaternary complex. Genes&development, 28(19):2077–2089, 2014.
+[56] Erik A. van Doorn and Philip K. Pollett. Quasi-stationary distributions for discrete-
+state models. European J.Oper.Res., 230(1):1–14, 2013.
+[57] Aurélien Velleret. Exponential quasi-ergodicity for processes with discontinuous traject-
+ories.arXivpreprint arXiv:1902.01441, 2019.
+[58] Anju Verma, Megha Verma, and Anchal Singh. Animal tissue culture principles and
+applications. In AnimalBiotechnology, pages 269–293. Elsevier, 2020.
+[59] Thomas Von Zglinicki. Oxidative stress shortens telomeres. Trendsinbiochemical
+sciences, 27(7):339–344, 2002.
+[60] Thomas von Zglinicki, Rita Pilger, and Nicolle Sitte. Accumulation of single-strand
+breaks is the major cause of telomere shortening in human fibroblasts. FreeRadical
+BiologyandMedicine, 28(1):64–74, 2000.
+31[61] Jonathan AD Wattis, Qi Qi, and Helen M Byrne. Mathematical modelling of telomere
+length dynamics. JournalofMathematical Biology, 80(4):1039–1076, 2020.
+[62] Zhou Xu, Khanh Dao Duc, David Holcman, and Maria Teresa Teixeira. The length of
+the shortest telomere as the major determinant of the onset of replicative senescence.
+Genetics, 194(4):847–857, 2013.
+[63] Zhou Xu and Maria Teresa Teixeira. The many types of heterogeneity in replicative
+senescence. Yeast, 36(11):637–648, 2019.
+32

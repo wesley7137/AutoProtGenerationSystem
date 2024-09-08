@@ -1,0 +1,685 @@
+Title: Graphene for Controlled and Accelerated Osteogenic Differentiation of
+  Human Mesenchymal Stem Cells
+Abstract:   Modern tissue engineering strategies combine living cells and scaffold
+materials to develop biological substitutes that can restore tissue functions.
+Both natural and synthetic materials have been fabricated for transplantation
+of stem cells and their specific differentiation into muscles, bones and
+cartilages. One of the key objectives for bone regeneration therapy to be
+successful is to direct stem cells' proliferation and to accelerate their
+differentiation in a controlled manner through the use of growth factors and
+osteogenic inducers. Here we show that graphene provides a promising
+biocompatible scaffold that does not hamper the proliferation of human
+mesenchymal stem cells (hMSCs) and accelerates their specific differentiation
+into bone cells. The differentiation rate is comparable to the one achieved
+with common growth factors, demonstrating graphene's potential for stem cell
+research.
+
+Full Text:  1Graphene for Controlled and Accelerated Osteogenic 
+Differentiation of Human Mesenchymal Stem Cells 
+Tapas R. Nayak1†, Henrik Andersen2†, Venkata S. Makam1, Clement Khaw3, Sukang Bae4, Xiangfan Xu2, 
+Pui-Lai R. Ee1, Jong-Hyun Ahn4,5, Byung Hee Hong4,6, Giorgia Pastorin1,7,8,*, Barbaros Özyilmaz2,7,8,* 
+1Department of Pharmacy, National University of Singapore, 3 Science Drive 2, Singapore 117543; 
+2Department of Physics, National University of Singapore, 2 Science Drive 3, Singapore 117542; 
+3Nikon Imaging Centre, No. 11 Biopolis Way, Helios Building, Singapore 138677; 4SKKU Advanced 
+Institute of Nanotechnology (SAINT) and Center for Human Interface Nano Technology (HINT), 
+Sungkyunkwan University, Suwon 440-746, Korea; 5School of Advanced Materials Science and 
+Engineering, Sungkyunkwan University, Suwon 440-746, Korea; 6Department of Chemistry, 
+Sungkyunkwan University, Suwon 440-746, Korea; 7NUS Graduate School for Integrative Sciences and 
+Engineering, Centre For Life Sciences (C eLS), 28 Medical Drive, #05-01, Singapore 117456; 
+8NanoCore, Engineering Block A, EA, Level 4, Room No. 27, Faculty of Engineering, National 
+University of Singapore, Singapore 117576. 
+†These authors contributed equally to this work. 
+*To whom correspondence should be addressed. Barbaros Özyilmaz:  barbaros@nus.edu.sg, Giorgia 
+Pastorin: phapg@nus.edu.sg.  2Abstract 
+Modern tissue engineering strategies combine living cells and scaffold materials to develop biological 
+substitutes that can restore tissue functions. Both natu ral and synthetic materials have been fabricated 
+for transplantation of stem cells and their specific differentiation into muscles, bones and cartilages. One 
+of the key objectives for bone regeneration therapy to be  successful is to direct stem cells’ proliferation 
+and to accelerate their differentiation in a contro lled manner through the use of growth factors and 
+osteogenic inducers. Here we show that graphene pr ovides a promising biocompatible scaffold that does 
+not hamper the proliferation of human mesenchymal stem cells (hMSCs) and accelerates their specific 
+differentiation into bone cells. The differentiation rate  is comparable to the one achieved with common 
+growth factors, demonstrating graphene’s potential for stem cell research. 
+Keywords:  Graphene; mesenchymal stem cells; cell differentiation; bone; osteogenesis. 
+Human mesenchymal stem cells (hMSCs) are critical for numerous groundbreaking therapies in the 
+field of regenerative medicine. A myriad of envi ronmental factors including their interaction with 
+soluble growth factors, extracellular matrices a nd neighboring cells are crucial for their survival, 
+proliferation and differentiation into specific lineages.1-3 One of the main goals of tissue engineering is 
+to control these factors by creating physical and ch emical microenvironments designed to guide the 
+ultimate fate of stem cells. Materials with different elasticity, rigidity and texture have been extensively 
+investigated for this purpose. Stem cell scaffolds, which can be both 2D and 3D in nature, have been 
+fabricated to mimic the intrinsic characteristics of natural substrates such as muscle, bone and 
+cartilage.4-6 Recently, both the lithographic patterning of su itable surfaces such as polydimethylsiloxane 
+(PDMS),7 polymethyl methacrylate (PMMA),8 self-assembled titanium dioxide (TiO 2)9 rod arrays and 
+functionalized carbon nanotubes10 have been explored. While there have been tremendous advances in 
+this field, many challenges still remain. In particular in the field of bone tissue engineering, almost all 
+artificial materials require the multiple administration of growth factors to promote hMSC differentiation. In addition, many approaches f ace challenges when it comes to scalability and  3compatibility with implants. For example, an allopl astic (non-biologic) material under mechanical stress 
+may not respond in a similar way as the surrounding host bone, resulting in structural failure of the 
+implant or inflammatory changes in the or iginal bone, as seen in stress shielding.11 Also, bioactive 
+implants still face limitations in terms of potential pa thogenic infections, low availability and high costs. 
+Graphene12 may provide an elegant solution to some of these challenges. Being only one atom thick, it 
+introduces the least amount of artificial material  possible and has a large number of remarkable 
+properties.13 In the context of tissue engineering, its mechan ical properties are likely to play a key role: 
+graphene has the highest Young’s modulus (0.5 – 1 TPa) among any known material, yet it is not 
+brittle.14,15 Graphene can be transferred onto any flat or  irregular shaped surface and graphene–coated, 
+flexible, supporting substrates can be easily bent into any shape required.16  
+ 
+ 
+Figure 1 . Graphene onto different subs trates. AFM of graphene on ( a) Si/SiO 2 (b) Glass slide ( c) PET-film and ( d) PDMS. 
+Scale bars are 200nm ( e) Optical image of 1cm x 1cm, partially graphene coated Si/SiO 2 chip, showing the graphene 
+boundary . 
+ 
+Stem cell research with graphene has become feas ible only with the recent availability of cheap, high-
+quality, continuous graphene sheets on a large scale.17 Here we show that graphene provides a new type 
+of biocompatible scaffold for stem cells. Remarkab ly, graphene accelerates cell differentiation even in 
+the absence of commonly used additional growth fact ors such as BMP-2. Taking into consideration both 
+the intrinsic mechanical properties of graphene a nd the striking results of this study, we envisage a 
+functional role of this new material as a versatile platform for future biomedical applications in general and stem cell therapies in particular.  4Large-scale graphene used in this study was s ynthesized by the chemical vapor deposition method on 
+copper foils. After growth, copper was etched and the same batch of graphene was transferred to four 
+distinct substrates used in this study according to methods discussed elsewhere.18 We studied the 
+influence of graphene on stem cell growth by investiga ting four substrates with widely varying stiffness 
+and surface roughness: (1) polydimethylsiloxane (PDM S), (2) polyethylene terephthalate (PET), (3) 
+glass slide and (4) silicon wafer with 300nm SiO 2 (Si/SiO 2) (Table S1 in Supporting Information).  
+Plain cover slips without graphene were used as a control or reference for normalization. Atomic Force 
+Microscopy (AFM) was used to analyze the surf ace roughness of the various substrates with and 
+without graphene coating. Transferre d to PET and PDMS, the graphene sheet exhibits nano-ripples with 
+high density (Fig. 1c,d) compared to graphene on Si/SiO 2 and glass slide (Fig. 1a,b). Despite being only 
+one atom thick, on Si/SiO 2 substrates with well-defined oxide thickness, graphene can be easily seen 
+with a simple conventional optical microscope (Fi g. 1e). Therefore, detailed studies such as the 
+evolution of cell differentiation with time we re done mainly on graphene coated Si/SiO 2 substrates. Two 
+distinct sets of experiments were performed. First cell viability was studied with cells cultured in normal stem cell medium. Next, stem cell differentiation was examined in cells cultured on conventional 
+osteogenic media.   5Results and Discussion 
+Cell viability and morphology 
+We first discuss cell morphology and viability by image an alysis on all four substrates with and without 
+graphene coverage when cells were cultured in nor mal stem cell media. From Fig. 2a we see that, 
+independent of the substrate, there is no signi ficant difference (p>0.05) in cell viability between 
+graphene-coated and uncoated substrates. We also perf ormed MTT assays (Fig. S2  in SI) to confirm the 
+cell viability data. Again, regardless of the subs trate, there was no difference (p>0.05) between 
+uncoated and graphene-coated substrates, demonstrati ng that cell growth was indeed not affected by the 
+presence of graphene. Note that cell viability is lower on PET and PDMS independent of the presence of graphene.  
+ 
+Figure 2. Cell viability and morphology of hMSC s grown on different substrates.  Cells are stained with DAPI (blue) and 
+Calcein AM (green). (a) Graph showing cell viability in percentage normalized to cover slips used as reference. (Inset)  
+Morphology of hMSCs grown on standard cover slips. (b-e)  hMSCs grown on glass slide, Si/SiO 2, PET and PDMS without 
+graphene. (f-i) hMSCs grown on graphene coated glass slide, Si/SiO 2, PET and PDMS.  Scale bars are 100µm. 
+A similar conclusion can be reached by just compar ing cell morphology with and without graphene. In 
+general, the presence of graphene (Fig. 2f-i) did not  influence the shape of th e cells in comparison to 
+uncoated substrates (Fig. 2b-e). Mesenchymal stem cells maintained their spindle-shape across glass  6slides and Si/SiO 2 after 15 days of incubation (Fig. 2b,c and 2f,g). Here stem cells presented the usual 
+elongated structure with noticeable filopodia extensi ons and cellular propagation fronts. In the case of 
+PET and PDMS, cells showed rounded or irregular morphology, most probably due to poor adhesion to 
+the substrate (Fig. 2d,e and 2h,i). This suggests that  graphene does not hamper the normal growth of 
+stem cells and that the incorporation of this material  in implants or injured ti ssues would not affect the 
+physiological conditions of the microenvironment.  In  fact, Raman measurements and visual inspection 
+of the samples after cell incubation and subsequent removal clearly showed that the graphene sheets 
+remained largely intact (Fig. S5 in SI). 
+ 
+hMSCs differentiation into osteogenic lineages 
+Next, specific markers were used to determine the conversion of hMSCs into specific cell types when 
+cultured in osteogenic media. Note that conventi onal osteogenic medium does contain dexamethasone, 
+which can lead to osteogenic differentiation by its elf. However, it is usually administered in 
+combination with other agents and growth factors such as BMP-2 to achieve differentiation through a 
+synergistic effect. In none of substrates studied here , the osteogenic medium alone was sufficient to lead 
+to osteogenic differentiation over the whol e duration of the experiment (15 days).  In the absence of 
+graphene, stem cells on cover slips, on glass slides (not shown) and on Si/SiO 2 (Fig. 3a,b) did not 
+differentiate: this was demonstrated by immunofluor escent staining of two typical protein markers, 
+namely CD-44 for hMSCs and osteocalcin (OCN) for osteoblasts. These three substrates showed a CD-
+44-positive staining and the absence of OCN. However,  once these stiff substrates were coated with 
+graphene, hMSCs lost their ability to bind the fluorescent antibody specific for CD-44 expression, 
+suggesting they underwent a different fate (Fig. 3c).  In fact, hMSCs immunostained for OCN (Fig. 3d), 
+indicating osteogenic differentiation. On uncoated PD MS, hMSCs did not stain CD-44 but they showed 
+a weak expression of MAP2 (typical neuronal marker , Fig. 3e). On the other hand, in the case of 
+uncoated PET, desmin (D33, a muscle cell marker) staining but not CD-44 was observed (Fig. 3i). 
+However, once coated with graphene, hMSCs growi ng also on these softer substrates bound specifically  7to OCN (Figs. 3h and 3l) only, demonstrating that gr aphene is the driving force of bone cell formation, 
+regardless of the underlying substrate. 
+ 
+Figure 3. Immunostaining of cells growing on Si/SiO 2, PDMS and PET without BMP-2 growth factor. Cells are stained 
+with DAPI (blue) and either CD-44, MAP2, Desm in or Osteocalcin (OCN) as indicated (green).  (a-d) Cells growing on 
+Si/SiO 2, without graphene showing presence of CD-44, and with graphene showing presence of OCN. (e-h)  Cells growing 
+on PDMS without graphene showing some MAP2 immunosta ining , and with graphene showing staining of OCN. (i-l) Cells 
+growing on PET without graphene showing some staining of desmin, and with graphene showing OCN immunostaining. 
+Scale bars are 100 µm. 
+This is most clearly seen in Fig. 4b, showing the immunofluorescent staining of cells on a Si/SiO 2 
+wafer, which are cultured in osteogenic medium but  only partially covered by graphene. Despite the 
+stiffness of the substrate, specific immunostaini ng for OCN was only observe d in the area covered by 
+graphene. The boundary separating the graphene coat ed region from the uncoated region is clearly 
+visible even from the immunofluorescent image. Th ese qualitative observations have been confirmed by 
+quantitative alizarin red staining (Fig. 4c,d), whic h indicates the presence or absence of calcium 
+deposits due to bone nodule formation. The results for all substrates are summarized in Fig. 4c, where 
+we compared the extent of calcium deposition on each substrate, with and without graphene coating, in 
+the absence of the typical growth factor BMP-2. A strong increase in calcium deposit with graphene 
+coating is observed for all substrates. While the eff ect is more pronounced with the stiffer substrates, 
+surprisingly graphene had a similar effect also on the softer substrates P ET and PDMS. It should be  8noted that in the absence of growth factors both PDMS and PET are known to be less favorable towards 
+osteoblasts.7 Yet the presence of graphene induced a drastic change of their natural behavior similar to 
+what has been observed with apatite coating on such polymers.20-22 We would like to emphasize that 
+also here the osteogenic medium alone was not suffi cient to induce differentiation: within the 15 day 
+time frame of the experiment, the control repr esented by cover slips in osteogenic medium without  
+graphene, i.e. hMSC cultured on ordinary tissue culture plate,  did not show any calcium deposition. The 
+evaluation of a separate set of samples by fluores cent-activated cell sorting (FACS) further supported 
+our findings that graphene does accelerate the osteogenic differentiation of stem cells (Fig. S3 in SI).  
+ 
+Figure 4. Graphene accelerates os teogenic differentiation.  (a) Optical image of 1cm x 1cm, partially graphene coated 
+Si/SiO 2 chip, showing the graphene boundary. ( b) Osteocalcin (OCN) marker showing bone cell formation on the same chip 
+only on the graphene coated area; the graphene boundary is also clearly visible here.  ( c-d) Alizarin Red quantification 
+deriving from hMSCs grown for 15 days on substrates with/without graphene. ( c) Cells grown in the absence of BMP-2. 
+Control with cover slips is shown as a reference. ( d) Cells grown in the presence of BMP-2. Conventional plain cover slips 
+were used as a positive control. ( e-h) PET substrate stained with alizarin red showing calcium deposits due to osteogenesis.  9(e) PET without BMP-2 and without graphene; ( f) PET without BMP-2 and with graphene; ( g) PET with BMP-2 and 
+without graphene; ( h) PET with both BMP-2 and graphene. Scale bars are 100µm. 
+ 
+The impact of graphene on softer substrates such as PET became even more evident in a parallel study, 
+in which we directly compared graphene’s influen ce to that of BMP-2 (Fi g. 4e-h) after 15 days of 
+incubation. In the absence of both graphene a nd BMP-2, no bone nodule formation was observed as 
+indicated by negative alizarin red staining (Fig. 4e). As expected we see positive staining with identical 
+samples after the addition of BMP-2 (Fig. 4g). On  the other hand graphene-coated PET showed a 
+positive staining even without BMP-2 (Fig. 4f). We also performed experiments where we combined 
+both graphene coating and BMP-2 treatment (Fig. 4h). In the case of PET and PDMS we observed a 
+significant enhancement of calcium deposits compared to the above-mentioned samples, which were either only coated with graphene or only treated with BMP-2. This enhancement was specific to soft 
+substrates, and much less evident on the stiffer glass slides and Si/SiO
+2. Finally, quantitative alizarin red 
+staining was used to study the role of graphene in the presence of BMP-2 (Fig. 4d) for all four 
+substrates. On the stiffer substrates ( i.e. glass slide and Si/SiO 2) the additional presence of graphene did 
+not further enhance the production of calcium deposits  (p>0.05).  In fact calcium deposits had almost 
+saturated purely from graphene, deeming the bioche mical growth factor unnecessary. On the other hand 
+a clear, statistically significant increase (p<0.005) is seen on the softer materials PET and PDMS. This 
+again suggests that graphene itself has a remarkable  role in the differentiation of hMSCs towards the 
+osteogenic lineage. 
+  10Time-dependent study of differentiation 
+ 
+Figure 5. Immunostaining of cells growing on Si/SiO 2 substrates either treated with  BMP-2 or coated with graphene . 
+Experiments were performed from 1 hour to 15 days. ( left) CD-44, marker for stem cells, decreased over time and 
+completely disappeared by Day 7. ( center ) 1-integrin, marker for cell-substrate a dhesion, increased over time, reaching its 
+peak by Day 15. ( right ) OCN, marker for bone cells, became visible at Da y 4 and very intense by DAY 7. Scale bars are 
+100m. 
+ 
+An important parameter for practical applications is  also the time a material takes to induce bone cell 
+differentiation. To that purpose we studied how fast cells on graphene-coated Si/SiO 2 substrates 
+differentiate over a time frame of 15 days in comparison to cells growing on uncoated Si/SiO 2, but  11treated with BMP-2. We studied these samples at specific time points of 1 hour  and 4, 7, 10 and 15 days 
+(Fig. 5). Interestingly, both BMP-2-treated and graphe ne coated substrates were able to induce cell 
+differentiation at the same rate. More precisel y, hMSCs on neither substrate showed any sign of 
+osteoblast formation until Day 4. This is demonstrated by the intensity of fluorescence due to CD-44 marker, which is characteristic for stem cells and clearly visible already after one hour of incubation (DAY 1). Conversely, fluorescence due to CD-44 d ecreased remarkably by DAY 4 and completely 
+disappeared by DAY 7. On the other hand, a progre ssive enhancement of fluorescence was observed 
+due to OCN (indication of terminal osteogenic differentiation) and β
+1-integrin, a protein indicating cell-
+substrate interaction. The results confirmed a successful differentiation into bone cells with a strong adhesion to the substrates by DAY 7 for both types of samples.  Si/SiO
+2 substrates treated with a) only 
+BMP-2 and b) only graphene were able to accelerate ce ll differentiation at the same rate over a period of 
+15 days of incubation (Fig. 5). Equally important, in contrast to graphene, BMP-2 needed to be 
+administered every three days during the course of th e experiment due to the very short half-lives of 
+BMP-223,24 again showing graphene as a worthy replacement of biochemical growth factors. 
+ 
+Control Experiments 
+To confirm that graphene is critical for the obser ved stem cell differentiation, we performed control 
+experiments with both amorphous carbon thin films a nd highly oriented pyrolytic graphite (HOPG) 
+samples. Following identical experimental protocols,  we observed that while both types of samples did 
+support cell proliferation, none of them led to cell diffe rentiation (Fig. 6d,f and Fig. S4 in SI). Here we 
+discuss the HOPG results in more detail. The resu lts on amorphous carbon thin films are summarized in 
+SI. 
+The AFM images of graphene and HOPG (Fig. 6a,b)  clearly show the difference in their topography. 
+Cells were cultured on graphene or HOPG in os teogenic medium. After 4 days the fluorescence 
+deriving from the antibody specific for CD-44 expression was significantly lower for cells grown on 
+graphene  (Fig 6c) than for cells on HOPG (Fig. 6d) . At the same time, specific immunostaining for  12OCN is already detectable with cells grown on graphene (Fig 6e), while only the DAPI stained nuclei 
+are visible for cells on HOPG (Fig. 6f). 
+ 
+Fig. 6 : Comparison of osteogenic differentiation of hMSCs after 4 days on graphene-coated Si/SiO 2 and HOPG on cover 
+slips. AFM images of ( a) graphene and ( b) HOPG. Scale bars are 5µm. ( c-d) Immunostating of CD-44 ( green ) on graphene 
+and HOPG, respectively. ( e-f) Immunostaining of OCN ( green ) on graphene and HOPG, respectively. Nucleus is stained 
+with DAPI ( blue). Scale bars are 100µm. 
+ 
+It is rather remarkable that a single continuous  sheet of carbon atoms can strongly accelerate bone cell 
+differentiation. The observed effect is almost certainly due to a complex interplay of mechanical, chemical and electrical properties of graphene and th e interactions between graphene and cells, as well 
+as graphene and supporting substrates.  This makes it difficult to identify the mi croscopic origin of the 
+effect. However, a comparison with related CNT-base d experiments does offer some clues (see SI). In  13addition, control experiments with amorphous carbon thin films and HOPG samples do provide some 
+insights. In particular, the disparities between th e results obtained with graphene and HOPG point 
+towards mechanical properties and surface morphology as the decisive factors. While locally (~100nm) 
+the two systems have comparable surface morphol ogy, on a larger scale they look very different. 
+Graphene consists of many ripples  and wrinkles on the micron scale (Fig. 6a). Such localized out-of 
+plane deformations are completely absent in HOPG graphite, the surface of which consists instead of a large number of micron size terraces (Fig. 6b). 
+The correlation of cell morphology and substrate morphology has been investigated by several 
+groups. Dulgar-Tulloch et al.
+25 cultured hMSCs on ceramics with va rying grain sizes between 24nm to 
+1500nm showing, that the 200nm grain size was most fa vorable for hMSC proliferation independent of 
+the surface chemistry, the surface r oughness, and the crystal phase. Oh et al.9 studied hMSCs on various 
+diameters of TiO 2 nanotubes and observed a decrease in a dhesion, but an increase in osteogenic 
+differentiation with increasing nanotube diameter . This is in good agreement with cell morphology 
+induced differentiation observed by McBeath et al.26 Even nanoscale patterning of poly(methyl 
+methacrylate) (PMMA) has been reported to i nduce bone cell differentiation. Surprisingly, cell 
+differentiation mainly took place when the nanopit arrays were disordered.8  While the microscopic 
+origin of these effects are not yet fully unders tood, it is worth noting that the topography of CVD 
+graphene with its many ripples and wrinkles doe s mimic the disordered nanopit array of Dalby et al.8 
+(Fig. 6b). Such ripples and wrinkles are intrinsic to  CVD graphene and originate from the difference in 
+the thermal expansion coefficient of Cu and graphene.18 Similarly to Dalby et al. ,8 the large scale 
+disorder in CVD graphene could play a role in  protein adsorption, cell adhesion, proliferation and 
+differentiation. The ripples themselves also provide lo cal curvature and hence, could further enhance the 
+reactivity of such graphene sheets. 
+Cell differentiation depends strongly also on substrate stiffness27  and strain, such that when applied 
+(cyclically) it increases the expression of oste ogenic markers for osteopontin (OPN) and BMP-2.28,29 
+Therefore, graphene’s exceptionally high Young’s modulus30 and its remarkable flexibility for out-of  14plane deformation could also contribute to stem ce ll differentiation. However, we expect a significant 
+influence of graphene’s Young’s modulus only with s ubstrates, which are much thinner and softer than 
+used in our studies. Even in the case of the PDMS substrates, the presence of graphene will only marginally increase its Young’s modulus. On the othe r hand, the ability of graphene to sustain lateral 
+stress could play a more important role in the context of providing just the right amount of local cytoskeletal tension. Together with the observati on that graphene allows for easy out-of-plane 
+deformation, this may lead to the formation of st rong anchor points of the cytoskeleton. Such tension 
+may allow for the unfolding of the mechanically sens itive protein of interest and change conformation.
+6 
+Such forces could potentially be even easier to realize on PET and PDMS substrates, since on these 
+materials graphene is already pre-strained.31 Cell induced out-of-plane deformations could further 
+enhance the reactivity of nanorippled graphene sheets. 
+The fact that (HOPG) graphite is made out of weakly bound graphene planes may be equally 
+important. In the presence of lateral forces such ma terials easily shear off and are therefore, commonly 
+used in lubricants. In the specific context of cell adhe sion and in view of the (lateral) contractual forces 
+cells exert on the surface, this effect may hamper st rong cell adhesion.  Note that cells can mechanically 
+“sense” lower lying layers down to several tens of mi crometers. In the case of graphene, the cells sense 
+the underlying (amorphous) substrate instead.   
+ 
+Conclusions 
+To summarize, the presence of graphene did not infl uence the shape and the gr owth of the cells in 
+normal stem cell media, demonstrating biocompatibility  and suggesting that the incorporation of this 
+material in implants or injured tissues woul d not affect the physiological conditions of the 
+microenvironment. In the presence of an osteogeni c medium, graphene-coating helped by remarkably 
+accelerating the differentiation of hMSCs at a rate co mparable to differentiation under the influence of 
+BMP-2. This represents a critical aspect to its succe ssful use for stem cell-based regenerative medicine 
+strategies. In contrast to other substrates, graphe ne is neither brittle nor does require further nanoscale  15patterning or functionalization. In addition it is scal able and provides a cost effective way to prepare 
+scaffolds for biological tissues. Currently graphene is  only available in form of sheets and we envision a 
+promising role of graphene located between im plants and the surrounding tissues. However, the 
+conditions under which graphene is grown are being constantly improved. There is for example a strong 
+effort in establishing graphene growth at much  lower temperatures. Thus, growth on alternative 
+biocompatible and biodegradable surfaces and 3D scaffold s, even without the need to resort to catalytic 
+metal films, have recently demonstrated to be feasible.32   16Methods 
+Substrate preparation 
+Graphene was grown on copper foils by chemical vapor deposition at 1000 C in a mixture of hydrogen 
+and methane as discussed elsewhere.18 The graphene film was mechani cally supported by a thin film of 
+PMMA (Microchem) and the copper foil was etched in a weak solution of ammonium persulfate 
+(Sigma). The graphene coated with PMMA was tran sferred to deionized water to remove residues and 
+the transfer was completed by gently contacting gra phene with the substrate and lifting it out of the 
+water. To avoid any residues from the transfer process the samples were left in warm acetone for 12 hours followed by 3 hours in isopropanol . In a final step the Si/SiO
+2 substrates were annealed in Ar/H 2 
+90/10 wt% for 7 hours at 300 C to further reduce impurities in the graphene layer. However, note that 
+Si/SiO 2 without the additional step of annealing show ed the same cell viability and induced stem cell 
+differentiation at the same rate (data not shown). 
+ 
+Cell lines and markers 
+Human mesenchymal stem cells (hMSCs) were pur chased from ATCC and cultured in low-glucose 
+Dulbecco’s modified eagle medium (Sigma) supplemented with 10% FBS (Invitrogen), 1% penicillin/streptomycin (Gibco), 1% Non-essentia l amino acids (Sigma) and 1% sodium pyruvate 
+(Sigma). hMSCs at passage 2 were used in this  study. Osteogenic medium consisting of DMEM basal 
+medium (Sigma) added with dexamethasone, L glut amine, ascorbic acida and Beta-glycerophosphate 
+was prepared according to a known procedure.
+33 FITC-Goat anti mouse antibody was purchased from 
+Biolegend, San Diego, California (USA). Markers (osteocalcin (OCN), CD44, Desmin (D33), MAP-2, 
+β1-integrin) were purchased from Acris Antibodies GmbH (Germany).  
+ 
+Cell Viability 
+hMSCs (20,000 cells/well (24 well plate)) were seeded  on uncoated (control) and  graphene coated 
+(test) chips and cultured in normal stem cell medium . Post confluence (2 weeks), cells growing on each  17chip were transferred to new well plate and washed 3 times with 2 ml of PBS. 1 ml of PBS was added to 
+each well followed by 5µl of 1mM Calcein acetoxymethyl  ester (Calcein AM) and incubated at room 
+temperature for 15 minutes. After removing the unbound stains, the chips were inverted on to glass 
+slides mounted with vectashield with DAPI (H 1200, Vector labs) and visualized under fluorescence microscope (Nikon AZ-100 multipurpose microscope). Pi ctures were taken at 40 different positions of 
+the chips and processed by image J software to c ount the number of viable cells to the number of 
+nucleus as determined by staining with DAPI. Cell viability was measured by comparing the cell 
+numbers for each substrate with the cells counted on cover slips. In addition, (3-(4,5-Dimethylthiazol-2-
+yl)-2,5-diphenyltetrazolium bromide (MTT) assays were  carried out, in which cytotoxicity evaluation 
+was based on the activity of enzymes to reduce MTT to formazan dyes, giving a purple colour.
+34 
+Experiments were carried out in triplicates, follo wing the procedure reported in supporting document. 
+The morphology of the hMSCs on different substrates were compared according to the image as seen in the form of calcein AM staining. 
+ 
+Alizarin red staining and quantification 
+hMSCs (20,000 cells/ well (24 well plate)) were seeded in  to the control and the test well plate. After 24 
+hours, osteogenesis was induced by replacing the orig inal medium with osteogenic medium, which was 
+changed every 3 days up to confluence (2 weeks). 
+Alizarin red staining was perfor med using the protocol adapted from Chemicon Mesenchymal Stem 
+cell Osteogeneis kit Cat. No. SCR028. Briefly, the me dium was aspirated out from each well and cells 
+were fixed with ice cold 70% ethanol for 1 hour at r oom temperature. Then the cells were rinsed twice 
+with milliQ water followed by addition of 2 ml of  alizarin red (Sigma) solution for each well and 
+incubated for 30 minutes. Finally the unstained alizar in red was washed with milliQ water and the chips 
+were visualized under microscope (Nikon eclipse TE 2000-U, Japan). Cells with calcium deposits due to 
+bone nodule formation were stained red. Alizarin red quantification was done using a previously 
+reported procedure.
+35  18 
+Immunofluorescence of hMSCs and time-dependent differentiation study 
+hMSCs at 20,000 cells/well (24 well plate) were seed ed, osteoinduced and incubated up to confluence 
+(2 weeks) as reported above. The cells on all the chips were fixed by treating them with ice cold 50%/50% methanol/acetone. After 5 minutes, methano l/acetone was removed and the chips were left 
+open inside the laminar hood to be air dried. After the chips were completely dried, the fixed cells were treated with 10% FBS (blocking agent) in PBS for 20 minutes. The blocking agent was aspirated out and 5 µl of different antibodies to cellular marker s (CD-44 for hMSCs, OCN for osteoblasts, Desmin for 
+muscle cells and MAP2 for neuronal cells) were adde d on to separate chips (previously marked). After 
+1 hour the cells on the chips were extensively washed in milliQ water for 5 minutes and then rinsed in PBS 1X for 5 minutes. After that, 100 µl of dilu ted (1/100) FITC-goat antimouse antibody were added 
+on to each chip and incubated at room temperature. After 30 minutes the cells were washed with milliQ 
+water for 5 minutes and then rinsed in PBS 1X for 5 minutes. The chips were inverted on to glass slides 
+mounted with vectashield with DAPI (H 1200, V ector labs) and visualized under fluorescence 
+microscope (Nikon AZ-100 multipurpose microscope). 
+For time-dependent differentiation experiment, oste ogenic differentiation was further evaluated over a 
+time frame of two weeks. Uncoated substrates we re subjected to BMP-2 (75 ng/mL, added every 3 
+days) and compared to graphene coated substrates  at 1 hour and at Day 1, 4, 7, 10 and 15 in terms of 
+binding to CD-44 (which stains hMSCs), β
+1-integrin (which indicates ce ll-substrate adhesion) and OCN 
+(which indicates bone cells). The above mentioned procedure was followed for the immunofluorescence and imaging purposes. 
+B. Ö. acknowledges support by the Singapore Nationa l Research Foundation under NRF RF Award No. 
+NRFRF2008- 07, and A*STAR SERC TSRP - Integrat ed Nano-Photo-Bio Interface Award and by NUS 
+NanoCore. G. P. acknowledges the Singapore Bioi maging Consortium, Nikon Imaging Centre, for 
+providing technical assistance and microscope facilities.   19 
+1. Spradling, A.; Drummond-Barbosa, D.; Kai, T. Stem cells ﬁnd their niche. Nature  2001 , 414, 
+98–104. 
+2. Lutolf, M. P.; Hubbell, J. A. Synthetic Bi omaterials as Instructive Extracellular 
+Microenvironments for Morphogenesis in Tissue Engineering. Nature Biotechnol . 2005 , 23, 
+47–55.  
+3. Discher, D. E.; Mooney, D. J.; Zandstra, P. W. Growth Factors, Matrices, and Forces Combine 
+and Control Stem Cells. Science  2009 , 324, 1673–1677. 
+4. Jaiswal, N.; Haynesworth, S. E. ; Caplan, A. I.; Bruder, S. P.  Osteogenic Differentiation of 
+Purified, Culture-Expanded Human Mesenchymal Stem Cells in Vitro. J. Cell Biochem.  1997 , 
+64, 295–312. 
+5. Engler, A. J.; Sen, S.; Sweeney, H. L.; Discher,  D. E. Matrix Elasticity Directs Stem Cell 
+Lineage Specification. Cell 2006 , 126, 677–689. 
+6. Reilly, G. C.; Engler, A. J. Intrinsic Extr acellular Matrix Properties Regulate Stem Cell 
+Differentiation. J. Biomech.  2010 , 43, 55–62.  
+7. Kim, S. J.; Lee, J. K.; Kim, J. W.; Jung, J. W.; Seo, K.; Park, S. B.; Roh, K. H.; Lee, S. R.; 
+Hong, Y. H.; Kim, S. J. et al.  Surface Modi ﬁcation of Polydimethylsiloxane (PDMS) Induced 
+Proliferation and Neural-Like Cells Differe ntiation of Umbilical Cord Blood-Derived 
+Mesenchymal Stem Cells. J. Mater. Sci: Mater. Med.  2008 , 19, 2953–2962. 
+8. Dalby, M. J.; Gadegaard, N.; Tare, R.; Andar, A.; Riehle, M. O.; Herzyk, P.; Wilkinson, C. D. 
+W.; Oreffo, R. O. C. The Control of Hu man Mesenchymal Cell Differentiation Using 
+Nanoscale Symmetry and Disorder. Nat. Mater. 2007 , 6, 997–1003.  
+9. Oh, S.; Brammer, K. S.; Li, Y. S. J.; Teng, D.; Engler, A. J.; Chien, S.; Jin, S. Stem Cell Fate 
+Dictated Solely by Altered Nanotube Dimension.  Proc. Natl. Acad. Sci. USA 2009 , 106, 2130–
+2135.  2010. Nayak, T. R.; Jian, L.; Phua, L. C.; H o, H. K.; Ren, Y.; Pastorin, G. Thin Films of 
+Functionalized Multiwalled Carbon Nanotubes as Su itable Scaffold Materials for Stem Cells 
+Proliferation and Bone Formation. ACS Nano , 2010 , 4, 7717–7725. 
+11. Konttinen, Y. T.; Zhao, D.; Beklen, A.; Ma , G.; Takagi, M.; Kivelä-Rajamäki, M.; 
+Ashammakhi, N.; Santavirta, S. The Microenvironment around Total Hip Replacement 
+Prostheses. Clin. Orthop. Relat. Res.  2005 , 430, 28–38. 
+12. Novoselov, K. S.; Geim, A. K.; Morozov, S.  V.; Jiang, D.; Zhang, Y.; Dubonos, S. V.; 
+Grigorieva, I. V.; Firsov, A. A. Electric Fiel d Effect in Atomically Thin Carbon Films. Science  
+2004 , 306, 666–669. 
+13. A. K. Geim, Graphene: Status and Prospects. Science  2009 , 324, 1530–1534. 
+14. Frank, I. W.; Tanenbaum, D. M.; van der Zande, A. M.; McEuen, P. L. Mechanical Properties 
+of Suspended Graphene Sheets. J. Vac. Sci. Technol. B  2007 , 25, 2558–2561. 
+15. Lee, C.; Wei, X.; Kysar, J. W.; Hone, J. Meas urement of the Elastic Properties and Intrinsic 
+Strength of Monolayer Graphene. Science  2008 , 321, 385–388. 
+16. Lee, Y.; Bae, S.; Jang, H.; Jang, S.; Zhu, S.-E.; Sim, S. H.; Song, Y. I.; Hong, B. H.; Ahn, J.-
+H. Wafer-Scale Synthesis and Transfer of Graphene Films. Nano Lett.  2010 , 10, 490–493. 
+17. Bae, S.; Kim, H.; Lee, Y.; Xu, X.; Park, J. S.; Zheng, Y.; Balakrishnan, J.; Lei, T.; Kim, H. R.; 
+Song, Y. I. et al . Roll-to-Roll Production of 30-Inch Graphene Films for Transparent 
+Electrodes.  Nat. Nano,  2010 , 5, 574–578.  
+18. Li, X.; Cai, W.; An, J.; Kim, S.; Nah, J.; Yang, D.; Piner, R.; Velamakanni, A.; Jung, I.; Tutuc, 
+E. et al. Large-Area Synthesis of High-Quality a nd Uniform Graphene Films on Copper Foils. 
+Science  2009 , 324, 1312–1314.  2119. Khang, D.; Kim, S.Y.; Liu-Snyder, P.; Palmore, G.T.R.; Durbin, S.M.; Webster, T.J. Enhanced 
+fibrinonectin adsorption on carbon nanotubes/poly( carbonate) urethane: Independent role of 
+surface nano-roughness and associated surface energy. Biomat. , 2007 , 28, 4756-4768.  
+20. Kawai, T.; Ohtsuki, C.; Kamitakahara, M.; Miyazaki, T.; Tanihara, M.; Sakaguchi, Y.; 
+Konagaya, S. Coating of an Apatite Layer on Polyamide Films Containing Sulfonic Groups by 
+a Biomimetic Process. Biomat .  2004 , 25, 4529–4534. 
+21. Kim, H.-M.; Kishimoto, K.; Miyaji, F.; K okubo, T.; Yao, T.; Suetsugu, Y. Composition and 
+Structure of Apatite Formed on Organic Po lymer in Simulated Body Fluid with a High 
+Content of Carbonate Ion. J . Mat. Sci. Mater. Med . 2000 , 11, 421–426 
+22. Kim, H.-M.; Kishimoto, K.; Miyaji, F.; Kokubo, T.; Yao, T.; Suetsugu, Y.; Tanaka, J.; 
+Nakamura, T. Composition and Structure of th e Apatite Formed on PET Substrates in SBF 
+Modified with Various Ionic Activity Products.  J. Biomed. Mater. Res . 1999 , 46, 228–235. 
+23. Balmayor, E. R.; Feichtinger, G. A.; Azevedo, H. S.; van Griensven, M.; Reis, R. L. Starch-
+Poly-N"-Caprolactone Microparticles Reduce the Needed Amount of BMP-2. Clin. Orthop. 
+Relat. Res.  2009 , 467, 3138–3148 .  
+24. Dragoo, J. L.; Choi, J. Y.; Lieberman, J. R.; Hu ang, J.; Zuk, P. A.; Zhang, J.; Hedrick, M. H.; 
+Benhaim, P. Bone Induction by BMP-2 Transdu ced Stem Cells Derived from Human Fat. J. 
+Orthop. Res.  2003 , 21, 622–629. 
+25. Dulgar-Tulloch, A. J.; Bizios, R.; Siegel, R.  W. Human mesenchymal stem cell adhesion and 
+proliferation in response to ceramic chemistry and nanoscale topography. J. Biomed. Mat. Res. 
+A, 2008 , 90A, 586-594. 
+26. McBeath, R .; Pirone, D. M .; Nelson, C. M .; Bhadriraju, K .; Chen, C. S . Cell shape, 
+cytoskeletal tension, and RhoA regulate stem cell lineage commitment . Dev Cell.  2004 , 6, 483-
+495.  2227. Discher, D. E.; Janmey, P.; Wang, Y.-L. Tissue Cells Feel and Respond to the Stiffness of 
+Their Substrate. Science  2005 , 310, 1139-1143. 
+28. Jang, J.-Y.; Lee, S. W.; Park, S. H.; Shin, J. W. ; Mun, J. W.; Kim, S.-H.; Kim, D. H.; Shin, J.-
+W. Combined Effects of Surface Morphology a nd Mechanical Straining Magnitudes on the 
+Differentiation of Mesenchymal Stem Cells  without Using Biochemical Reagents.  J. Biomed. 
+Biotechnol.  adv. online ( 2011 ) doi:10.1155/2011/860652. 
+29. Rui, Y. F.; Lui, P. P. Y.; Ni, M.; Chan, L. S. ; Lee, Y. W.; Chan, K. M. Mechanical loading 
+increased BMP-2 expression which promoted osteogenic differentiation of tendon-derived 
+stem cells. J. Orthop. Res.  2011 , 29, 390-396. 
+30. Lee, C.; Wei, X.; Kysar,J. W.;  Hone, J. Meas urement of the Elastic  Properties and Intrinsic 
+Strength of Monolayer Graphene. Science, 2008, 321, 385-388. 
+31. Ni, Z. H.; Yu, T.; Lu, Y. H.; Wang, Y. Y.; Fe ng, Y. P.; Shen, Z. X. Uniaxial Strain on 
+Graphene: Raman Spectroscopy Study and Band-Gap Opening. ACS Nano  2008 , 2, 2301-
+2305. 
+32. Chen, Z.; Ren, W.;Gao, L.; Liu, B.; Pei, S.; Ch eng, H-M.  Three-dimensional flexible and 
+conductive interconnected graphene networ ks grown by chemical vapour deposition. Nat. 
+Mater ., 2011 , doi:10.1038/nmat3001.  
+33. Fahmi, H.; Pelletier, J.-P.; Minea u, F.; Martel-Pelletier, J. 15d-PGJ 2 is Acting as a ‘Dual 
+Agent’ on the Regulation of COX-2 Expre ssion in Human Osteoarthritic Chondrocytes. 
+Osteoarthritis and Cartilage 2002 , 10, 845–848. 
+34. Mosmann, T. Rapid Colorimetric Assay for Ce llular Growth and Survival: Application to 
+Proliferation and Cytotoxicity Assays. J.  Immun. Met.  1983 , 65, 55–63. 
+35. Tataria, M.; Quarto, N.; Longaker, M. T.; Sylvester, K. G. Absence of the p53 Tumor 
+Suppressor Gene Promotes Osteogene sis in Mesenchymal Stem Cells. J. Pediatr. Surg.  2006 , 
+41, 624–632. 
+  23 
+                  
+ 
+  S1 
+ Supporting Info  
+Graphene for Controlled and Accelerated Osteogenic 
+Differentiation of Human Mesenchymal Stem Cells  
+Tapas R. Nayak1†, Henrik Andersen2†, Venkata S. Makam1, Clement Khaw3, Sukang Bae4, 
+Xiangfan Xu2, Pui -Lai R. Ee1, Jong-Hyun  Ahn4,5, Byung H ee Hong4,6, Giorgia Pastorin1,7,8,*, 
+Barbaros Özyilmaz2,7,8,*  S2 
+ 
+Substrates  
+Figure S1 shows AFM images of graphene on Si/ SiO 2. The graphene surface topography consists 
+of flat areas (<1nm RMS) separated by ~8  nm high ripples , which are caused by the difference in  
+thermal expansion of the Cu foil (on which graphene is grown ) and the graphene sheet itself  (Li 
+et al. , Science , 2009 , 324, 1312 ). 
+ 
+Figure S1.  (a) Large scale AFM 
+image of graphene coated Si/SiO 2. 
+The graphene surface shows small 
+ripples and  few protrusions but is 
+uniformly only one atom thick. 
+Scale bar is 10 m.  (b) AFM image 
+of a partially graphene covered 
+Si/SiO 2 substrate. A step like 
+increase in thickness of ~1nm is due 
+to the presence of graphene.  
+ 
+ 
+The s urface roughness and Young’s m odulus of the various substrates used for these studies are 
+summarized in Table S1.  
+ 
+ 
+Table S 1. Substrate s overview.  Roughness 
+was measured by AFM and evaluated by 
+three parameters: Average deviation from 
+mean (R a), Root Mean Square deviation 
+(Rq) and the peak -to-peak distance (R z). 
+Young’s Modulus E corresponds to  typical 
+literature values.  
+ 
+ Substrate  Ra 
+(nm)  Rq 
+(nm)  Rz 
+(nm)  E (MPa) (typical 
+literature values)  
+Si/SiO 2 0.21 0.27 4.27 70x103 
+PET 0.47 0.66 7.66 1-15x103 
+PDMS  0.49 0.66 6.52 0.2-1 
+PDMS with graphene  0.63 0.87 14.3 3 
+CVD Graphene on 
+Si/SiO 2 (Bi-layer)  0.41 0.78 7.56 1x106 
+Carbon coated glass 
+slide  0.79 1.28 13.4 70x103 
+Glass slide  1.01 1.46 11.9 70x103 S3 
+ Cell viability study  
+ 
+Four graphene -coated Si/SiO 2 chips, four uncoated Si/SiO 2 chips and eight cover slips (four as  
+negative control and four as positive control) were put into 24 well plate s. Trypan blue assay was 
+used to count the number of viable hMSCs. By using the  information obtained fro m the t rypan 
+blue assay, hMSCs were seeded at a density of 20,000 cells/m l into the above mentioned wells 
+and incubated for 3 days in a humidified jacketed incubator (Binder), with a temperature of 
+37°C, 5% CO 2. On 2nd day 50µl of 1% sodium dodecyl sulphat e (SDS) was added to positive 
+control wells to induce cell death and continued with incubation.  
+ 
+Figure S2.  Graph showing the percentage of 
+cell viability of hMSCs after 24 hours exposure 
+to graphene -coated SiO 2 chips (right) in 
+comparison to hMSCs grown on cover slips 
+(left) and uncoated SiO 2 chips (center) as 
+determined by MTT assay.  
+ 
+ 
+Assessment of cell viability was also determined using meta bolic activity assays, 3 -(4, 5 -
+dimethylthiazol -2-yl)-2, 5-diphenylt etrazolium bromide (MTT) (Duchefa Biochemie). In this 
+case, the test principle is based on the reduction of the tetrazolium salt from yellow color to 
+purple color by the mitoc hondria present in viable cells ( Mosmann, J.  Immun. Met.  1983 , 65, 
+55). After 3 days the 24 well plate was taken out from the incubator and all samples having cells 
+growing on them were  transferred to wells of another 24 well plate. 500 µl of tetrazolium salt 
+(0.1 mg/ml) were added to each well including wells having no cells as blank  and allowed to 
+incubate for 4 hours in the jacketed incubator.  After 4 hours, the contents in each well were 
+pipetted out and 500 l of DMSO were added to lyse the cells and to solubilize the insoluble 
+S4 
+ formazan dye. The plate was shaken for 3 minutes to ensure homogeneity of color and aid 
+solubilization of the dye prior to measure absorbance. The absorbance was recorded using the 
+Benchmark plus Micro plate Spectrophotometer (Bio -Rad Laboratories) at 590 nm. The 
+absorbance recorded is directly proportional  to the number of viable cells present. All the 
+experiments were repeated in triplicates and the results were expressed as the mean value.  The 
+cell viability was calculated in the following way:  
+  ll   a  l        so  an   o    s      so  an   o   lan       
+  so  an   o   on  ol     so  an   o   lan        
+Student t -test was used to calculate p -value. If the p-value  was found to be less than the 
+threshold (0.05) chosen for statistical significance, then the null hypothesis (which states that the 
+two groups do not differ) was rejected in favor of an alternative hypothesis, which states that the 
+groups do differ signif icantly.  As seen from Fig . S2, there was no significant difference (p>0.05) 
+in the percentage of cell viability of hMSCs growing on graphene -coated SiO 2 chips in 
+comparison to hMSCs growing on uncoated SiO 2 substrates and cover slips. This result suggests 
+that graphene is non -cytotoxic. The percentage of cell viability data as found from the above 
+MTT assay was comparable to the percentage of cell viability as determined by cell viability by 
+image analysis ( as shown in the main text Fig. 2a).  
+ 
+Experiment o n flow cytometry  
+The evaluation by fluorescence -activated cell sorting (FACS)  further support s the reported data 
+by providing  a quantitative evaluation of cell populations presenting specific characteristics. This 
+represents,  in our case , the ability of hM SCs to differentiate into osteogenic lineage once 
+adequately stimulated. The hMSCs grown on different substrates (i.e. cover slips, uncoated -
+Si/SiO 2 and g raphene -coated Si/SiO 2) were subjected to differentiation with osteogenic medium S5 
+ (in the presence or a bsence of  BMP -2) and analyzed after 14 days by FACS. The harvested cells 
+were fixed with 4% paraformaldehyde by incubating for 20 minutes. After centrifugation at 1500 
+RPM for 5 minutes and washing with PBS, the cell pellets were suspended in 100 mM glycin e 
+for 10 minutes to quench.   The cells were then again centrifuged and washed with PBS and 
+permeabilized by incubating in 50 µl of 0.1% Triton X for 30 minutes.   Subsequently , the cells 
+were washed with PBS and were incubated with mouse antihuman osteocalc in antibody for 30 
+minutes at room temperature. The cells were further washed with PBS and incubated with FITC 
+conjugated goat anti mouse IgG for another 30 minutes. Finally the cells were washed 2 -3 times 
+with PBS and were analyzed using BD LSR II flow cy tometer (Becton Dickinson).  
+ 
+The obtained curves are summarized in Fig. S3  and confirm the results obtained  with Alizarin 
+Red quantification  (see main text Fig. 4) . The FACS histogram reported below displays a  single 
+measurement p arameter (relative  fluores cence  intensity due to FITC) on the x -axis and the 
+number of events (cell count) on the y -axis. While the osteocalcin positive cell population 
+representing osteogenically differentiated hMSCs can be found in form of single distinct shifts  
+beyond relative f luorescence intensity of  103,  the un differentiated hMSCs can be found in form 
+of single histogram  below such value.   
+ 
+As expected, negligible osteocalcin positive cells were found in case of hMSCs on substrates 
+incubated in normal medium  (histogram a) . The expression of osteocalcin was maximal for all the 
+substrates in osteogenic media with both graphene and BMP -2. This is similar to the results 
+obtained with the alizarin red quantification and confirms the synergistic effect when both 
+graphene and BMP -2 were concurrently present . Interestingly, osteogenic medium with graphene, S6 
+ but in the absence of BMP -2, reached almost the same levels of cell differentiation (83%) as those 
+in osteogenic medium with both graphene and BMP -2 (100%). Taken together, both Ali zarin Red 
+Quantification and FACS analysis provid e a quantitative proof on the ability of graphene to 
+accelerate stem cell differentiation even in the absence of additional growth factor.  
+ 
+ 
+ 
+Figure S3: FACS analysis after 14 days of incubation of hMSCs. Curve a (red) : Cover slips without osteogenic 
+media (OM) and without BMP -2 (negative control, 0% of differentiation); Curve b (dark blue) : Cover slips with 
+both OM and BMP -2 (96% of cell differentiation);  Curve c (green) : Si/SiO 2 with both OM and BMP -2 (89% of cell 
+differentiation); Curve d (light blue) : Graphene with both OM and BMP -2 (synergistic effect, 100% of cell 
+differentiation); Curve e (magenta) : Graphene with only OM, without BMP -2 (83% of cell differentiation).  
+S7 
+ 
+Control experiments with amorphous c arbon  
+ 
+ 
+Figure S 4. Immunostaining of cells 
+growing on amorphous carbon -
+coated substrates. CD -44 (left) was 
+still fully visible, while osteocalcin 
+(right ) was not visible. Scale bars 
+a   100μm.  
+ 
+ 
+ 
+The osteogenic effect could in principle also take place in the presence of  continuous  thin carbon 
+films. To verify the significance of graphene , substrates were coated with a thin layer of carbon 
+using a JEE-420 vacuum evaporator . The thickness of the carbon coating was determined by 
+AFM to be approximately 10 nm. These samples were then subjected to immunostainng of CD -
+44 and osteocalcin, similar to previous experiments. The carbon coated samples  did not show a 
+decrease in CD -44-fluorescence  (Fig. S4 left), indicating no sign of differentiation. Equally 
+import ant, no osteocalcin was stained (Fig. S 4 right ), confirming that no cell differentiation 
+towards osteoblasts occured . Thus, a thin layer of carbon is insufficient to render stem cells 
+osteogenic .  
+ 
+ 
+ 
+ S8 
+ Additional material parameters potentially responsible for  
+accelerated stem cell differentiation in graphene coated substrates.  
+a) Influence of surface chemistry  
+The role of defects and surface functionalization in CNTs has been heavily studied, but still 
+remains not fully elucidated . The situation may in fact be more complex and may in part be also 
+due to an increase in wettability of the CNT surfaces after plasma treatment. An increase of 
+hydrophylicity is well correlated with an improved adhesion of hMSCs o nto the substrates (Baik  
+et al. , Small,  2011 , 7, 741; Martins et al. , Small , 2009 , 5, 1195).  
+Pristine g raphene is known to be hydrophobic, however we see no degradation in adhesion 
+compared to samples without graphene and observe an increase in differentiation instead. On the 
+other hand, the chemicals and solvents involved in the preparation of graphene coa ted substrates 
+could create either functionalized groups physisorbed on the graphene surface or change the 
+hydrophobicity.  Furthermore, water molecules and hydroxyl radicals trapped between graphene 
+and substrate during the coating process can also affect the surface energy. The situation 
+becomes even more complex , once we introduce the various media for cell culturing.  
+  
+b) Influence of surface polarization  
+Bodhak et al.  (Acta Biomaterialia , 2009 , 5, 2178 ) observed that polarized hydroxyapatite  
+substrates have lower contact angle and better wettability. Negatively polarized substrates 
+immersed in simulated body fluid showed enhanced bone like apatite formation compared to 
+unpoled substrates, while positively poled substrates determined direct in hibition of apatite layer. 
+Similarly, human fetal osteoblasts reported good adhesion and proliferation on negatively poled 
+substrates where the positively poled substrate inhibited cell growth. Graphene is generally S9 
+ observed to be positively charged due to  environmental doping. However,  the doping level of 
+graphene is on the level of +0.2µC/cm2 and hence, much smaller than the doping levels at which 
+a negative result was observed (+4.3 µC/cm2). This may explain why we do not see any issues 
+with cell growth or adhesion on graphene. This hypothesis could be checked in future 
+experiments by , e.g. depositing graphene on ferroelectric PVDF films of different polarization 
+corresponding to a range o f charge density ranging from -3 µC/cm2 to +3 µC/cm2 . 
+ 
+c) Influence o f thermal conductivity  
+Thermal properties of graphene could in principle play a role in stem cell differentiation. 
+However, the absence of differentiation on (HOPG) graphite demonstrates that this property can 
+only provide a minor contribution. While graph ene does have the highest thermal conductivity 
+among the carbon allotropes, what really matters is the thermal conductance, which is orders of 
+magnitude higher in graphite. The thermal conductance of bulk graphite is much higher than what 
+the surface can p rovide.  
+ 
+d) Influence of electrical conductivity  
+It has been shown that the electrical conductivity of CNTs does promote nerve cells’ growth (Hu 
+et al. Nano Lett. , 2004 , 4, 507; Hu et al.  J. Phys. Chem. B , 2005 , 109, 4285; Malarkey et al.  Nano 
+Lett. 2009 , 9, 264). Based on these results, it has been speculated that higher electrical 
+conductivity could also lead to better differentiation ( Voge et al.  J. Neural Eng.  2011 , 8, 011001 ; 
+Chao et al.  Biochem. Biophys. Res. Commun. , 2009 , 384, 426). However, to the bes t of our 
+knowledge so far no experimental evidence has been provided showing that electrical 
+conductivity itself can lead to accelerated stem cell differentiation. This would also be consiste nt S10 
+ with our observation that HOPG graphite does not lead to bone cell differentiation. Here it is 
+important to note , that while the electrical conductivity of graphene exceeds the electrical 
+conductivity of graphite, what really matters is the electrical conductance. Similar to the thermal 
+conductance, also here the electrical conductance of bulk graphite is  higher than  that of graphene.  
+ 
+Graphene quality after cell removal  
+It is important  to know whether the graphene sheet remains intact during the cell differentiation 
+process over 14 days.  In Fig. S5 we show a series of Raman spectra and corresponding optical 
+images a ddressing this question. Fig. S5b shows the Raman spectra of graphene on Si/SiO 2 after 
+cell removal. The residual material provid es a strong background signal. Super imposed on this 
+are small but discernable Raman peaks. As a reference, we show a sample wi thout graphene, 
+which underwent the same process. The corresponding small Raman specific peaks  are clearly 
+absent. We can almost fully remove the background after leaving the samples (shown in Fig. S5a) 
+for 24 h in Acetone. The Raman spectra of the resulti ng sample clearly show the G and 2D peaks , 
+which represent  the Raman “fingerprints of graphene”. Note also , that the absence of the D-peak 
+at 1350cm-1 indicates the lack of defects to the graphene crystal lattice (Ferrari et al.  PRL, 2006 , 
+97, 187401) . The optical images also clearly show s that the graphene sheet remains largely intact.  S11 
+  
+  
+Fig. S5: Raman  spectrum  and optical images of ( a) graphene on Si/SiO 2 after removal of cells 
+and cleaning with acetone, ( b) graphene on Si/SiO 2 after removal of cells and ( c) Si/SiO 2 after 
+removal of cells. Scale bars are 10µm . 
+ 

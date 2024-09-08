@@ -1,0 +1,479 @@
+Title: Information -sharing, adaptive epigenetics and human longevity
+Abstract:   Emerging empirical and theoretical thinking about human aging places
+considerable value upon the role of the environment as a major factor which can
+promote prolonged healthy longevity. Our contemporary, information-rich
+environment is taken to mean not merely the actual physical surroundings of a
+person but it is also considered in a more abstract sense, to denote cultural,
+societal and technological influences. Our modern environment is far from being
+static or stable. In fact, it is continually changing in an exponential manner,
+necessitating constant adaptive responses on behalf of our developmental and
+evolutionary mechanisms. In this paper, I attempt to describe how a continual,
+balanced and meaningful exposure to a stimulating environment, including
+exposure to information-that-requires-action (but NOT trivial information), has
+direct or indirect repercussions on epigenetic mechanisms which may then act to
+prolong healthy longevity. Information gained from our environment acts as a
+hormetic stimulus which up-regulates biological responses and feedback loops,
+eventually leading to improved repair of age-related damage. The consequence of
+this biological information-processing mechanism may influence resource
+allocation and redress the imbalance between somatic cell versus germ-line cell
+repairs. This can eventually have evolutionary consequences resulting in the
+drastic reduction of age-related disease and degeneration.
+
+Full Text: Information -sharing, adaptive epigenetics and human l ongevity  
+Author:  
+Marios Kyriazis,  
+ELPIs Foundation for Indefinite Lifespans,  
+email:  drma rios@live.it  
+ 
+ 
+Abstract  
+Emerging empirical and theoretical thinking about human aging places  
+considerable value upon the role of the environment as a major factor which can 
+promote  prolonged healthy longevity.  Our contemporary, ‘information -rich’ 
+environment is taken to mean not merely the actual physical surroundings of a 
+person but it is also considered  in a more abstract sense, to denote cultural, 
+societal and technological influence s. Our modern environment  is far from 
+being  static  or stable. In fact, it is continually chang ing in an exponential 
+manner , necessitating constant adaptive  respons es on behalf of our 
+developmental and evolutionary mechanisms . In this paper, I attempt to 
+describe how a continual , balanced  and meaningful exposure to a stimulating 
+environment, including exposure to ‘information -that-requires -action ’ (but NOT 
+trivial information) , has direct or indirect repercussions o n epigenetic 
+mechanisms which may then act to  prolong healthy longevity.  Information 
+gained from our environment acts as a hormetic stimulus which up -regulates 
+biological responses and f eedback loops, eventually leading to improved repair 
+of age -related d amage . The consequence  of this biological information -
+processing mechanism may influence resource allocation and redress the 
+imbalance between somatic cell versus germ -line cell repairs. This can 
+eventually have evolutionary consequences resulting in the drastic reduction of 
+age-related disease and degeneration.  
+ 
+Key words: Hormesis, Longevity, Information, Adaptation, Techno -cultural 
+environment , Environmental enrichment  
+ 
+Introduction  Adaptive phenotypic plasticity is an important factor in human evolution. There 
+is considerable evidence suggesting that the environment influences the 
+plasticity of the phenotype  [1] and that there exist precise, if hitherto not very 
+well studied, mechanisms , which respond to stimulating changes in the 
+environment, in an attempt to adapt to the stimulus  [2]. This adaptation to a 
+stimulus is very relevant in the study of age -related pathology and in the 
+evolution of ag ing in general. Increasing ly, research shows that the environment 
+is crucial in determining prolonged healthy longevity  [3]. In human terms, the 
+‘environment ’ is an abstract notion of an amalgam of physical and virtual 
+surroundings, interactions  with modern society , and techno -cultura l elements.  It 
+is, in other words, a highly ‘information -rich’ milieu . It is worth noting at this 
+point that I  define information as ‘a meaningful set of data or patterns which 
+influence the formation or transformation of other data or patterns, in order t o 
+reduce uncertainty and help achieve a goal’  [4] (FIGURE 1 ).  
+ 
+FIGURE1  
+Information  
+           +                          Complexity                Functionality                Fitness                  Survival  
+Organisation                                                                                                                                                            
+                                                                                          
+ 
+Figure 1 . Information (plus organisation) increases complexity and this increases functionality. This 
+improves fitness and thus survival.  Any increase in internal fitness requires the formation of new 
+links and the strengthening of the interconnectedne ss between its nodes i.e. increased complexity, 
+thus increased fitness and increased survival.   
+ 
+However, as our environment is constantly changing, (and recently, changing at 
+an ever -accelerating manner  [5]) we need to quickly adapt to the se changes in 
+order to be able to survive.  This may depend on artificial selection (through 
+technology  and, for example, exposure to meaningful information) r ather the 
+slower Darwinian natural selection processes  [6]. Epigenetic factors mediate 
+between the g enome and the environment , and play a n important role in this 
+respect, allowing for rapid changes in protein expression which may be applied 
+almost immediately when needed.   
+There is an increasing body of research which highlights the role of epigenetic 
+changes in age -related degeneration  [7]. Epigenetic changes such as chromatin remodelling and DNA methylation can modify the phenotype and play a 
+modulating  role in senescence  and age-diseas e. One of the reasons for this , is 
+based on the fact that epigenet ic processes  can regulat e mechanisms necessary 
+for development  [8]. The process of aging has been explained by s everal  
+authors as a continual and excessive operation of basic developmental , which 
+eventually lead to time-related malfunction [9, 10 ], therefore a corrective 
+regulation of this defective  process could  lead to  the control  of at least some 
+aging  mechanisms . In addition, it is known that there could be ‘molecular 
+breaks’ which restrict the plasticity of adult cells, in particular neu rons [11]. The 
+use of epigenetic interventions may lead to stabilisation a nd delayed expression 
+of these break factors and thus allow for easier and quick plasticity of the cell. 
+The fact that several of these factors are found in the extracellular space makes 
+it more likely that epigenetic control would be more effective compared to 
+genetic intracellular mechanisms.  
+ 
+Hormesis and stress  
+Several e nvironmental factors are closely linked to the epigenetic regulation of 
+gene expression. This epigenetic regulation may lead to adaptive changes , 
+which increase the likelihood of successful survival within a particular niche. 
+The epigenetic changes can be predictable, can occur both during early and late 
+developmental stages, and can result in improvement of the functional ability of 
+the organism  [12]. It has been shown that environmental stress induces 
+epigenetic changes and result s in an adaptive respon se to the s tress in question 
+[13]. The question arises: “what is stress?” In this context stress is taken to 
+mean exposure to a stimulus which disrupts homeostasis and necessitates a 
+reaction in order for the organism to adapt to this stimulus . 
+Stress (or more colloquially  ‘positive stress’) can be of hormetic origin  i.e. a 
+dose-response phenomenon ( with low-dose stim ulation  and high-dose 
+inhibition)  [14-17]. Hormesis is considered as a process of continual novelty , 
+which affects basic biological parameters [18]. Vaiserman [19] conside rs that a 
+mild stress -induced ho rmetic response involves mechanisms similar to the 
+mechanisms that underlie developmental epigenetic adaptations , with resulting 
+life-span prolonging properties . Examples of positive hormetic stress include 
+calorie restriction, physical exercise, and certain chemical compounds including 
+free radicals and mild toxins.  In addition, there could be other types of hormetic 
+stimulation such as cultural, societal and psychological  factors , all of whi ch 
+interact at multiple levels. It can be argued that hormetic stress, as the type 
+encountered in our everyday highly technological, intensely information -sharing environment, may cause direct epigenetic changes , which facilitate our 
+adaptation to this env ironment. But, by scrut inising these epigenetic changes 
+more closely, one may find  that there are similarities with some of the  
+mechanisms that repair  age-related damage. This may be due to rapid up -
+regulation of genes responsible for  adaptive  response, wh ich can have an effect 
+on healthy life extension [20]. It has to be highlighted however that excessive 
+stress is a well-known  determinant  for disease.   
+Although  epigenetic adaptations to a changing environment can occur during 
+early stages of development, it is also possible to experience epigenetic 
+plasticity in later life stages [21]. This is a promising fact , which supports the 
+view that hormetic stressors can up-regulate healthy longevity mechanisms even 
+if applied later in life.  Although the search for an ideal type of mild positive 
+(hormetic) stress still continues, it makes sense to consider  stimuli  which are 
+directly rel evant to our current technological  and information -rich environment ; 
+stresses that must  lead to adaptation. For instance , exposure to  a relentless 
+information -sharing environment , such as meaningful online hyper -
+connectedness, which acts as a kind of hormetic stimulus would lead to an 
+adaptive response which may  up-regulate  several health parameters  [22] as 
+discussed below.  Once again it must be emphasized that the issue here concerns 
+meaningful stimulation containing information that requires action, and not 
+trivial or meaningless info rmation . 
+ 
+Resource allocation   
+How can an information -rich environment affect biological parameters and lead 
+to a reduced rate of senescence? It has been suggested that although efficient 
+repair mechanisms are present in somatic cells these are traded -off in germ -line 
+cells against optimal and successful survival (of the species). Heininger [23] 
+quotes:  
+Evolution through natural selection can be described as driven by a 
+perpetual conflict of individuals competin g for limited resources. Somatic 
+death is a germ cell -triggered event  (emphasis mine ) and has been 
+established as evolutionary -fixed default state following asymmetric 
+reproduction in a world of finite resources. Aging, on the other hand, is 
+the stress res istance -dependent phenotype of the somatic resilience that 
+counteracts the germ cell -inflicted death pathway. Thus, aging is a 
+survival response and, in contrast to current beliefs, is antagonistically 
+linked to death that is not imposed by group selection  but enforced upon the soma by the selfish genes of the “enemy within”  (i.e. the germ -line 
+cells, comment mine ). Environmental conditions shape the trade -off 
+solutions as compromise between the conflicting germ –soma interests. 
+Mechanistically, the neuroendocrine system, particularly those 
+components that control energy balance, reproduction and stress 
+responses, orc hestrate these events.  
+Therefore, the  concept of aging can be viewed , at least partly, as a conflict 
+between germ -line cells and soma tic cells, whereby immortalisation factors are 
+preferentially diverted towards germ -line cells , in order to assure the survival of 
+the species, instead of being used by the somatic cells  [24]. This results in a 
+continual effective repair of the germ cells , which exhibit robust anti -
+senescence traits, at the expense of the somatic cells which eventu ally become 
+overwhelmed by damage. This maintenance gap is a matter of both resources 
+required  and resources a llocated , that is to say that if resources are constantly 
+required, these will be allocated in order to assure long term survival, despite 
+the sho rt-term evolutionary cost  [25]. The main existing evolutionary reason for 
+this is the need to assure the survival of the species, which can currently be 
+achieved much more energy -efficiently through immortalisation of germ line 
+cells.  
+I have suggested that it may be possible to re -balance the germ -soma conflict 
+using continual exposure to insightful information, a mechanism which depends 
+on epigenetic modification and is in accordance with basic evolutionary 
+requirements  [26]. This is a  typical example of how environmental effects  (i.e. 
+hyper -connection and a continual exposure to digital technology for example)  
+can have a direct impact upon age -regulating mechanisms via epigenetic instead 
+of genetic  changes . It is possible to examine further the role of  epigenetic 
+mechanisms  in relation to the s hifting of resources from  germ -line to somatic 
+repair s. For instance , it is known that there exist n on-autonomous contribution s 
+of somatic cells to germ line cells, leading to germ -line immortal isation [27]. 
+These contributions aid germ -line survival and immortalisation . Such strategies 
+may also be present in somatic cells, but are significantly down -regulate d [28]. 
+The aim here is to examine how this rejuvenation process can be driven to 
+operate in somatic cells [29]. It is important to highlight that certain 
+mechanisms of germ line rejuvenation could be dependent upon epigenetic 
+modifications and factors  that regulate transcription [30]. Thus it  is also 
+plausible  that epigenetic co -ordination may have certain rejuvenating effects 
+upon somatic cells  although, clearly, more research is needed in this area . It is 
+also worth remembering that not all epigenetic regulation may lead to positive 
+results.  For example,  increasing methylation may down -regulate  a deleterious signa lling pathway but it may also down - regulate tumo ur suppressor genes  
+increasing the risk of cancer  [31, 32] . This also needs further research.  
+This conflict for survival between somatic and germ -line cells can be 
+conceivabl y reversed if the survival of somatic cells becomes a priority over th e 
+survival  of germ -line cells. The mechanism for this is likely to involve  hormetic 
+epigenetic influences of the environment upon the soma.  The effectiveness of 
+this process may be time -dependent , i.e. may depend on how early in life the 
+organism is subjected to the ‘stressor’. Some evidence exists that if hormetic, 
+epigenetic stressors are applied early in life, these will have a more pronounc ed 
+and lasting effect [33].  
+Flatt et al. [34] have shown that ch anges in the environment have a direct effect 
+upon the regulation of somatic maintenance  and t hey suggest that the same 
+genotype can express either of two alternative phenotypes, depending on  the 
+particular environment . The example supports in principle the suggestion that 
+suitable manipu lation of the environment (via exposure to relevant digital 
+information , for example) can have effects on the human epigenome and 
+modulate  aging.  Calvanese et  al. [35] suggest that the role of epigenetic 
+modifications during aging is defined by the need for these specific epigenetic 
+changes to exist, and, that these changes  must be functionally associated with 
+the aged phenotype .  
+ 
+The impact of information upon  the cell   
+As mentioned above, information is meaningful set s of data which influence the 
+formation or transformation of other data in order to reduce uncertainty (and 
+thus entropy) and achieve a goal.  In the practical sense, I assume that Shannon’s 
+information entropy [36] is similar to thermodynamical entropy, and the 
+discussion is based upon this general model  [37].  
+Most authorities agree t hat E nvironmental Enrichment (EE) (i.e. a stimulating 
+and cha nging ‘information -rich’ environment) and hormesis have  an effect o n 
+several parameters , such as an up -regulation of B rain Derived Neurotrophic 
+Factor . In this particular case, it was also shown that an enriched (information -
+rich) environment early in life  results in highly up -regulated  histone acetylation 
+at the BDNF gene at adulthood , which happens quite fast  after a stimulating 
+exposure [3 8]. With regards to BDNF, it is also known that its concentration is 
+raised by exercise  [39].  This has direct relevance here , and I quote  from my 
+own paper [26] :    The suggestion that a sustained exposure to actionable information 
+forcibly induces a change in basic hitherto stable evolutionary processes 
+is not an entirely speculative one. It has been proposed tha t increased 
+aerobic activity (thus in this case physical, instead of cognitive, effort) 
+had a direct evolutionary impact on the human brain [40]. The increased 
+and sustained aerobic activity of hunter -gatherers resulted in the up -
+regulation of peripheral B DNF and increased its concentration to such a 
+degree that it eventually crossed the blood -brain barrier and directly 
+influenced the function and survival of the neurons. The plasma 
+concentrations of other factors that are normally found in the periphery 
+(i.e. not in the brain) such as insulin -like growth factor 1 (IGF -1) and 
+vascular endothelial growth factor (VEGF) all of which increase during 
+physical activity, were elevated by the sustained physical effort and, 
+having crossed the blood -brain barrier, rea ched the brain resulting in 
+improved neurogenesis. Thus, it is hypothesized that other sustained 
+activities, in this case cognitive stimulation, may have phys ical effects 
+which cause a  transition from one evolutionary stage to another.  
+ 
+It is known that  several e pigenetic mechanisms, including methylation of DNA  
+and chromatin remodelling mediate gene regulation in neurons and thus have an 
+important effect in regulating the development of the nervous system. These 
+epigenetic modelling effects shape neural structure and function, and depend 
+upon external environmental clues. Epigenetic gene regulation is important in 
+regulating synaptic plasticity, neural behaviour and high order cognitive 
+functions such as memory, learning and problem -solving abilities [41].  
+In order to gain better insights into how information may affect epigenetic 
+regulation, it is useful to  explore in some detail the process of information 
+manipulation by the cell . In this case, a relevant example to consider is visual 
+information.  When  new information is captured by retinal cells there is photonic 
+recycling on the cell surface [ 42]. Ligand -receptor associations alter the 
+conformation of the extracellular portion of intramembranous proteins and this 
+change is transmitted to the cytoplasm  by the trans -membranous helical 
+segments by non -linear vibrations of proteins  [42]. In addition, photon -photon 
+interactions induce molecular vibrations responsible for bio -amplification of 
+weak signals described by:  
+   =BvLq    where m is the mass of th e molecule, c is the velocity of the electromagnetic 
+field, B is the magnetic flux density, v is the velocity of the carrier in which the 
+particle exists, L is its dimension, and q is a unit charge.  
+When the signal is transmitted to the appropriate neuronal areas (in his case in 
+the occipital cortex) it effects a neuronal response in terms of mainly epigenetic 
+modulation such as DNA acetylation . The steps leading from the acquisition to 
+the assimilation of the information require energy , and this energy needs to be 
+diverted away from other processes in order to be made available to the 
+information -manipulation  process. These adaptation mechanisms depend pa rtly 
+on genetic function but ma inly on epigenetic factors , which are able to act faster 
+than a ge netically -originated reaction, and provide more flexibility for 
+optimising performance.  It is known that epigenetically -dependent adaptation to 
+visual stimulation can be very rapid  [43]. Thus, the environment, through 
+epigenetic regulation affects brain function, and it follows that if environmental 
+stimulation is of a certain magnitude  and quality, this will have direct effects on 
+cognition. Cognition and higher mental functions are essen tial in our current 
+technological, high info rmation -dependant environment , and those who are able 
+to adapt to these challenges are more likely  to survive within this milieu.  
+Recent research has shed further  light in some of the mechanisms of the effects 
+of the environment upon epigenetic regulation. For instance, it is known that 
+genetic elements such as microRNAs (miRNAs) are effective epigenetic 
+regulators of a genomic response to environmental stimuli. Environmental 
+agents such as O3 exposure can disrupt  miRNA expression profiles and 
+interfere with inflammation regulation  [44]. MicroRNAs contribute to genome 
+plasticity and evolution, and are essential in controlling the expression of genes 
+which may interfere with the aging process. Howev er, further study is needed in 
+this respect, as many effects of miRNA regulation are still unknown  [45]. What 
+is known is that t he number and function of miRNAs  is significantly up -
+regulated in humans compared to other animals such as  chimpanzee, macaque, 
+mouse, rat  or dog  [46]. This  may indicate that humans may have developed  
+unique evolutionary genetic elements that can facilitate a better repair of 
+damage , exactly because of the need to adapt quickly to a n information -rich 
+technological environment  [47], an evolutionary situation  that is not relevant in 
+other non -human animals.  
+Finally, it is worth mentioning that  a chronically unpre dictable environment (i .e. 
+as our c onstantly changing society and techno -culture ) can induce ph enotypic 
+changes in the parents , which can be reflected in the unexposed offspring, 
+suggesting that at least some of the epigenetic changes can be her itable. This adds robustness to  the notion suggesting that epigeneti c changes  are important 
+in evolution, as these are more permanent and  can be subjected to evolutionary 
+selection . Also, repeated stress early in life can protect against more sustained 
+stress later in life  [48] and social factors can play a role in epigenetic regulation 
+the effects of which not only persist throughout life,  but can also be tr ansmitted 
+to the offspring via epigenetic inheritance  [49]. In addition, there are  specific 
+epigenetic profile s associated with longevity  [50] which can be transmitted to 
+the offspring.  Gentilini et al. [51] have shown that centenarians have certain 
+specific DNA methylation characteristics (such as those found in nucleodite 
+biosynthesis, and control of signal transmission) which are also found in their 
+offspring, suggesting that these characteristics are her itable.  
+ 
+Conclusion   
+Epigenetic regulation mediates adaptation to  the environment, and when this 
+environment is of a specific type (a n information -sharing,  fast changing techno -
+cultural  setting ) then fast adaptation to this may have an impact upon  life-
+extending biolog ical pro cesses . This epigenetic regulation, together with genetic 
+and cell -specific factors can influence  longevity and have been studied within  a 
+non-reductionist, integrative framework of ag ing [52]. The reductionist view 
+that aging can be manipulated by simple biomedical repairs is unlikely to lead 
+to any appreciable practical results that can be used in order to diminish the 
+impact of age -related degeneration. Instead, a wider approach more likely to 
+succeed would be to study the role of complexity, regulation and adaptation, 
+and harness the function of fundamental processes such as the role of 
+emergence and the ‘direction ’ of human evolution  [53]. This world -view has 
+been encapsulated in philosophical reflections which transcend time and place, 
+such as “Tempora  mutantur, nos et mutamur in illis ” ("Times change, and we 
+change with them") . As our environment, society and culture change, so must 
+we, in order to adapt to the change an d increase our fitness and chanc e of 
+survival  [54]. One way we can effect a positiv e change is to increase exposure 
+to meaningful technological information  that requires action  [55], and exploit 
+the nature of relati vely fast epigenetic mechanisms  which, bound by 
+evolutionary constraints , must result in suitable beneficial adaptations, an d thus 
+extended survival.  
+ 
+ 
+  
+The author declare no conflicts of interest in this paper . 
+ 
+ 
+REFERENCES  
+1. Price TD, Qvarnström A, Irwin DE. (2003) The  role of phenotypic plasticity 
+in driving genetic evolution. Proceedings of the Royal Society B: Biological 
+Sciences 270 (1523): 1433 –40 
+2. Kelly SA, Panhuis TM, Stoehr AM. (2012) Phenotypic Plasticity: Molecular 
+Mechanisms and Adaptive Significance. Compr  Physiol 2:1417 -1439  
+3. Takano T, Nakamura K, Watanabe M. (2002) Urban residential environments 
+and senior citizens' longevity in megacity areas: the importance of walkable 
+green spaces. J Epidemiol Community Health 56(12):913 -8 
+4. Frieden BR, Gatenby RA. (2011) Information Dynamics in Living Systems: 
+Prokaryotes, Eukaryotes, and Cancer PLoS ONE 6(7): e22085  
+5. Smart, J. (2005) Measuring Innovation in an Accelerating World, 
+Technological Forecasting & Social Change 72(8):988 -995 
+6. Heylighen F. (1994) Fitne ss as Default: the evolutionary basis for cognitive 
+complexity reduction, in: Cybernetics and Systems 1994, R. Trappl (ed.), World 
+Science, Singapore, p.1595 -1602  
+7. Gravina S, Vijg J. (2010) Epigenetic factors in aging and longevity. Pflugers 
+Arch 459(2): 247-58 
+8. Combes AN, Whitelaw E. (2010) Epigenetic reprogramming: enforcer or 
+enabler of developmental fate? Dev Growth Differ 52(6):483 -91 
+9. Carnes BA. (2011) What is lifespan regulation and why does it exist? 
+Biogerontology 12(4):367 -74 
+10. Walker RF. ( 2011) Developmental Theory of Aging Revisited: Focus on 
+Causal and Mechanistic Links between Development and Aging.  Rejuvenation 
+Res 14:429 -436 
+11. Takesian AE, Hensch TK. (2013) Balancing plasticity/stability across brain 
+development Prog Brain Res 207:3 -34 12. Vaiserman AM. (2011) Hormesis and epigenetics: Is there a link? Ageing 
+Res Rev 10(4):413 -21 
+13. Jablonka E, Lamb MJ. (1998) Epigenetic inheritance in evolution. J Evol 
+Biol 11(2)159 –183 
+14. Calabrese EJ, Mattson MP. (2011) Hormesis provides a gener alized 
+quantitative estimate of biological plasticity. J Cell Commun Signal. 5(1):25 -38 
+15. Rattan SI. (2014) Molecular gerontology: from homeodynamics to 
+hormesis. Curr Pharm Des. 20(18):3036 -9 
+16. Calabrese V, Cornelius C, Dinkova -Kostova AT, Calabrese E J, Mattson 
+MP. (2010). Cellular stress responses, the hormesis paradigm, and vitagenes: 
+novel targets for therapeutic intervention in neurodegenerative disorders. 
+Antioxid Redox Signal.13(11):1763 -811 
+17. Mattson MP. (2008) Awareness of hormesis will enhan ce future research in 
+basic and applied neuroscience. Crit Rev Toxicol. 38(7):633 -9 
+18. Agutter, PS. (2008) Elucidating the Mechanism(s) of Hormesis at the 
+Cellular Level: The Universal Cell Response. Am J Pharmacol Toxicol 
+3(1)100 -110 
+19. Vaiserman AM. (2 010). Hormesis, Adaptive Epigenetic Reorganization, and 
+Implications for Human Health and Longevity. Dose Response 8(1): 16 –21 
+20. Vaiserman AM. (2008) Epigenetic engineering and its possible role in anti -
+aging intervention. Rejuvenation Res 11(1):39 -42 
+21. Fraga MF, Ballestar E, Paz MF, et al. (2005) Epigenetic differences arise 
+during the lifetime of monozygotic twins. Proc Natl Acad Sci U S A 
+102(30):10604 -9 
+22.  Heylighen F (2014) Cybernetic Principles of Aging and Rejuvenation: the 
+Buffering -Challengin g Strategy for Life Extension. Curr Aging Sci May 20. 
+[Epub ahead of print]  
+23. Heininger K. (2002) Aging is a deprivation syndrome driven by a germ –
+soma conflict. Aging Res Rev 1(3); 481 -536 
+24. Cossetti C, Lugini L, Astrologo L, Saggio I, Fais S, Spadafo ra C. (2014) 
+Soma -to-Germline Transmission of RNA in Mice Xenografted with Human 
+Tumour Cells: Possible Transport by Exosomes. PLoS One. ;9(7):e101629  
+25.  Baudisch A, Vaupel JW. (2012) Getting to the root of aging. Science 338: 
+6107, 618 -619 26. Kyriazis M. (2014) Reversal of Informational Entropy and the Acquisition 
+of Germ -Like Immortality by Somatic Cells. Curr Aging Sci May 20. [Epub 
+ahead of print]  
+27. Kirkwood, T. B. (1987) Immortality of the germ -line versus disposability of 
+the soma. Basic Life Sc iences 42:209 –218 
+28. Smellick C, Ahmed S. (2005) Achieving immortality in the C.elegans 
+germline.  Ageing Research Reviews, 4:67 -82 
+29. Avise JC. (1993) The evolutionary biology of aging, sexual reproduction 
+and DNA repair. Evolution 47: 1293 -1301  
+30. Santos F, Dean W. (2004) Epigenetic reprogramming during early 
+development in mammals. Reproduction 127: 643 -651 
+31. Kemp CJ, Moore JM, Moser R, et al. (2014) CTCF haploinsufficiency 
+destabilizes DNA methylation and predisposes to cancer. Cell Rep.7(4):102 0-9 
+32. Choi JD, Lee JS.(2013) Interplay between Epigenetics and Genetics in 
+Cancer. Genomics Inform. (4):164 -73 
+33. Burger JM, Hwangbo DS, Corby -Harris V, et al. (2007) The functional 
+costs and benefits of dietary restriction in Drosophila. Aging Cell 6(1 ):63-71 
+34. Flatt T. Amdam GV. Kirkwood TB, et al. (2013) Life -history evolution and 
+the polyphonic regulation of somatic maintenance and survival. Q Rev Biol 
+88(3):185 -218 
+35. Calvanese V, Lara E, Kahn A, et al. (2009) The role of epigenetics in aging 
+and age-related diseases. Ageing Res Rev 8(4):268 -76 
+36. Shannon CE (1948). A Mathematical Theory of Communication. Bell 
+System Tech J 27 (3): 379 –423 
+37. Heylighen F, Joslyn C. (2001) Cybernetics and Second Order Cybernetics, 
+in: R.A. Meyers (ed.), Encyclope dia o f Physical Science & Technology , Vol. 4 
+(3rd ed.), Academic Press, New York , p. 155 -170 
+38. Branchi I, Karpova NN, D'Andrea I, et al. (2011) Epigenetic modifications 
+induced by early enrichment are associated with changes in timing of induction 
+of BDN F expression. Neurosci Lett 495(3):168 -72 
+39. Ferris LT, Williams JS, Shen CL. (2007) The effect of acute exercise on 
+serum brain -derived neurotrophic factor levels and cognitiv e function Med Sci 
+Sports Exerc  39(4):728 -34 40. Raichlen DA, Polk JD. (2013) L inking brains and brawn: exercise and the 
+evolution of human neurobiology. Proc Biol Sci, 280(1750):20122250  
+41. Feng J, Fouse S, Fan G. (2007) Epigenetic regulation of neural gene 
+expression and neuronal function. Pediatr Res 61(5 Pt 2):58R -63R 
+42. Saxena  A, Jacobson J, Yamanashi W, et al.  (2003) A hypothetical 
+mathematical construct explaining the mechanism of biological amplification in 
+an experimental model utilizing picoTesla (PT) electromagnetic fields. Med 
+Hypotheses 60(6):821 -39 
+43.  Adorjan P1, Sc hwabe L, Wenning G, et al. (2002) Rapid adaptation to 
+internal states as a coding strategy in visual cortex? Neuroreport 4;13(3):337 -42 
+44. Fry RC, Rager JE, Bauer RN, et al. (2014) Air toxics and epigenetic effects: 
+Ozone altered microRNAs in the sputum o f human subjects. Am J Physiol Lung 
+Cell Mol Physiol  [Epub ahead of print]  
+45.  Le TD, Liu L, Zhang J, et al.  (2014) From miRNA regulation to miRNA -
+TF co -regulation: computational approaches and challenges. Brief Bioinform. 
+pii: bbu023. [Epub ahead of pri nt] 
+46. Dweep H, Georgiou GD, Gretz N, et al. (2013) CNVs -microRNAs 
+interactions demonstrate unique characteristics in the human genome. An 
+interspecies in silico analysis. PLoS One 8(12):e81204  
+47. Heylighen F. Evolutionary psychology, in A. Michalos (ed. ) (2011): 
+Encyclopedia of Quality of Life Research, Springer, Berlin  
+48. Natt, D (2011) Heritable epigenetic changes to environmental challenges. 
+Linkoping studies in science and technology, dissertation 1383, Linkoping 
+University, Sweeden  
+49. Thayer ZM, K uzawa CW. (2011) Biological memories of past 
+environments: epigenetic pathways to health disparities. Epigenetics 6(7):798 -
+803 
+50. Gentilini D, Castaldi D, Mari D et al. (2012) Age -dependent skewing of X 
+chromosome inactivation appears delayed in centenari ans' offspring. Is there a 
+role for allelic imbalance in healthy aging and longevity? Aging Cell 11:277 -83 
+51. Gentilini D,  Mari D, Castaldi D  et al. (2013). Role of epigenetics in human 
+aging and longevity: genome -wide DNA methylation profile in centenari ans 
+and centenarians' offspring. Age (Dordr) 35:1961 -73 52. Nikoletopoulou V, Kyriakakis E, Tavernarakis N. (2014) Cellular and 
+molecular longevity pathways: the old and the new. Trends Endocrinol Metab 
+25(4):212 -23 
+53. Kyriazis M. (2014) Novel Approaches to an Old Problem: Insights, Theory 
+and Practice for Eliminating Aging Current Aging Science 7, No. 1: 1  
+54. The Transhumanist Reader: Classical and Contemporary Essays on the 
+Science, Technology, and Philosophy of the Human Future, eds: More M, Vita -
+More N. 2013, John Wiley & Sons, Chichester UK  
+55. Iansiti M . (1995) Technology integration: Managing technological evolution 
+in a complex environment. Research Policy 24; 521 -542 

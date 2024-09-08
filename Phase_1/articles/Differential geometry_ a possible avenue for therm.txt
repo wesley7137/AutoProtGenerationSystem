@@ -1,0 +1,684 @@
+Title: Differential geometry, a possible avenue for thermal ablation in
+  oncology?
+Abstract:   We report a model for hyperthermia therapies based on heat diffusion in a
+biological tissue containing a topological defect. Biological tissues behave
+like active liquid crystals with the presence of topological defects which are
+likely to anchor tumors during the metastatic phase of cancer evolution and the
+therapy challenge is to destroy the cancer cells without damaging surrounding
+healthy tissues. The defect creates an effective non-Euclidean geometry for
+low-energy excitations, modifying the bio-heat equation. Applications to
+protocols of thermal ablation for various biological tissues (liver, prostate,
+and skin) is analyzed and discussed.
+
+Full Text: Condensed Matter Physics ????, Vol. ?, No ?, ?????: 1– ??
+http://www.icmp.lviv.ua/journal
+Differential geometry, a possible avenue for thermal
+ablation in oncology?∗
+Andy Manapany1,2, Loriane Didier1, Le¨ıla Moueddene1,2, Bertrand Berche1,2†,
+S´ebastien Fumeron1
+1Laboratoire de Physique et Chimie Th ´eoriques, CNRS - Universit ´e de Lorraine, UMR 7019, Nancy, France
+2L4 collaboration, Leipzig-Lorraine-Lviv-Coventry, Europe
+May 27, 2024
+We report a model for hyperthermia therapies based on heat diffusion in a biological tissue containing a
+topological defect. Biological tissues behave like active liquid crystals with the presence of topological defects
+which are likely to anchor tumors during the metastatic phase of cancer evolution and the therapy challenge
+is to destroy the cancer cells without damaging surrounding healthy tissues. The defect creates an effective
+non-Euclidean geometry for low-energy excitations, modifying the bio-heat equation. Applications to protocols
+of thermal ablation for various biological tissues (liver, prostate, and skin) is analyzed and discussed.
+Key words: differential geometry, bioheat transport, thermal ablation
+March, 21, 2024
+1. The context
+In essence, cancer consists of an uncontrolled growth of abnormal cells that invade healthy
+neighboring body parts. Despite important breakthroughs in the understanding, diagnosis, and
+treatment of the various forms of cancer, it is still the second leading cause of mortality worldwide
+[1]. This incentivizes the development of new tools to supplement chemotherapies and radiothera-
+pies, such as image-guided thermal tumor ablation [2, 3].
+Hyperthermia treatments must obey two constraints: on the one hand, they have to destroy the
+cancer cells without damaging the surrounding healthy tissue [3], and on the other hand, thermal
+ablation must be performed completely, otherwise the heating of the tumor cells may promote
+increased tolerance concerning elevated temperatures and even trigger accelerated cancer cells
+growth [4]. Hence, the efficiency of thermal ablation protocols requires 1) a thorough understanding
+of heat diffusion processes in the vicinity of cancer cells and 2) a precise account of the deposited
+energy, a delicate tuning between the temperature reached and the duration of the treatment.
+A possible track to fulfil requirement 1) is to track down topological defects. For the physicist,
+the notion of topological defect is ubiquitous (phase transitions, cosmology, high energy physics,
+solid state, liquid crystals, etc [5]), but that it could be of probable interest in oncology is like
+a surprise at first glance. The presence of topological defects in biological tissues is now well-
+established and their possible role in biological processes soon attracted the attention of physicists
+[6], but it is only recently that studies have shown how this role may also be central in certain
+kinds of cancer. Indeed, body organs are covered in the surface by the epithelium, which behaves
+as an active liquid crystal: the epithelial cells display an orientational order within domains, and at
+the boundaries between competing domains, topological defects arise [7–9]. During the metastatic
+∗For Open Access, a CC-BY public copyright license,
+ , has been applied by the authors to the present
+document and will be applied to all subsequent versions up to the Author Accepted Manuscript arising from this
+submission.
+†bertrand.berche@univ-lorraine.fr
+©Andy Manapany1,2, Loriane Didier1, Le¨ıla Moueddene1,2, Bertrand Berche1,21, S´ebastien Fumeron1?????-1arXiv:2405.15257v1  [cond-mat.stat-mech]  24 May 2024Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+phase of cancer evolution, cancer cells concentrate in the vicinity of topological defects due to lower
+cell density in the core region [10, 11], which makes them attractive targets for thermal therapies.
+In addition to the vast body of available data, hyperthermia may highly benefit from a predic-
+tive mathematical model to optimize treatment strategies. Although cancers are convoluted and
+multifactorial diseases, such highly complex behaviors may often be captured by a set of elemen-
+tary physical mechanisms: this is the framework of mathematical oncology, which has become -
+although not without some difficulty - a compulsory tool to enable cancer discoveries [12–15]. In
+this work, we report a differential geometry-based model designed to characterize and discriminate
+thermotherapy protocols in oncology. This may have some relevance for image-guided interven-
+tional therapies. We solve numerically Pennes’ bioheat equation in a biological tissue displaying
+a topological defect. The heat balance encompasses the influence of the metabolism and blood
+flow [16–18], along with the energy input due to the thermal treatment. The defect is included
+by writing the diffusion equation on a curved manifold [19], since defects induce non-Euclidean
+geometries for propagating low-energy excitations [20, 21]. Depending on the physical properties of
+the biological tissue where a tumor is supposed to be present (for instance liver, skin, prostate...),
+we can thus estimate, in the form of a compromise between the temperature to be applied and the
+duration of application, the scenario that seems the most appropriate.
+In this preliminary study, we aim to show that the Physics of topological defects and heat
+transport in the presence of such defects may have something meaningful to say in the very practical
+field of cancer therapies but the model proposed here has strong limitations: i) It is a continuum field
+theory approach (here in cylindrical symmetry), a coarse-grained description at scales much larger
+than the cells sizes. ii) The physical parameters describing the tissues are taken from the literature
+and supposed to be fixed, i.e. their temperature dependence is neglected. This does not account for
+the possible response of the organism to the elevation of temperature. iii) The mechanisms of cell
+death are complex biological processes, which are here (over-)simplified, considering that after a
+period determined by the imposed temperature, the cells are killed and that this does not depend
+on the type of tissue considered. All these aspects should be analyzed in deeper detail to ensure a
+better validity of the model. These aspects are discussed in the conclusion.
+The paper is structured as follows. First, we describe at a very introductory level recent ob-
+servations made in medicine and biology – to be specific we will refer later to the case of ovarian,
+liver, prostate, and skin cancers, but the observations are of a wider range of applications. We
+then propose a physical description of a model system that we believe is reasonably close to the
+experimental situation considered and present the tenets of heat diffusion on non-Euclidean geome-
+tries. We finally performed several case studies to determine which hyperthermia protocol seems
+more efficient for maintaining the core of the defect at high temperatures while preserving the
+surrounding tissues.
+2. Topological defects in biological tissues drive tumors location during the
+metastatic cascade
+Here we summarize the present knowledge on the role of topological defects in biological tissues
+on the mechanisms of pinning and growth of metastases since this will be the building block of
+our later analysis. A crucial phase in the development of many cancers is indeed the metastasis
+formation: cancer cells spread from the primary tumor and colonize distant secondary organs. To
+do so, cancer cells must successfully go through a series of steps (the metastatic cascade [22]):
+the cells must detach from a primary tumor ( extrusion ) and invade the surrounding tissue (this is
+called EMT , see the glossary at the end of the paper) [23], then enter a blood or lymphatic vessel
+(intravasion ) where they circulate to reach distant organs. There, the cancer cells exit the vessel
+(extravasion ), and grow in a new tissue. This is the metastatic growth. During all these steps, the
+tumor cells encounter immune cells to which they must be resistant.
+The Yes-Associated Protein (YAP) and the Transcriptional Co-activator with PDZ-binding
+Motif (TAZ) are regulators of early embryonic development and the growth of tissues. While they
+are not direct drivers of cancer, they have been implicated in cancer development and progression
+?????-2Differential geometry, a possible avenue for thermal ablation in oncology?2
+due to their involvement in various cellular processes. They drive the transcription of genes that
+promote cell proliferation, cell survival, and stem cell maintenance [24, 25]. In vitro and in vivo
+evidence (in particular with human cell lines) suggest that inappropriate YAP or TAZ activation
+can promote metastasis by influencing virtually every process of the aforementioned cascade. In
+particular, the authors of Ref. [24] write:
+“a meta-analysis of 21 different studies with a combined 2983 patients revealed
+that YAP is overexpressed and associated with poor outcomes and reduced survival in
+many human cancers. This is complemented by numerous in vivo studies that show a
+role for YAP or TAZ in tumor formation and growth” (. . . ) “Several other [studies]
+have directly implicated YAP, TAZ, or TEADs in metastasis of numerous cancer types,
+including melanoma, lung cancer, breast cancer, cholangiocarcinoma, gastric cancer,
+ovarian cancer, colorectal cancer, and oral squamous cell carcinoma.”
+Those studies show that overexpression of YAP or TAZ enhances the morphological changes asso-
+ciated with EMT and promotes cell migration and invasion of mesothelioma . A few studies have
+also implicated YAP in the intravasion in blood vessels and suggested that YAP and TAZ enhance
+tumor cell survival in circulation. Cancer cells with high YAP/TAZ activity show resistance to
+anoikis (cell’s death) since YAP/TAZ activity in tumor cells also helps these cells to evade the im-
+mune system, which is a critical step for proliferation, tumor progression, and metastasis. Authors
+of Ref. [24] conclude that
+“experimental evidence (. . . ) suggests that YAP/TAZ activation, which occurs in
+many human cancer types, is pro-tumorigenic and pro-metastatic”.
+Epithelial and mesothelial tissues are typically organized in a highly ordered and regular man-
+ner, with cells tightly packed and adhering to one another to form continuous sheets. However,
+under certain conditions or during specific developmental processes, topological defects or devia-
+tions from perfect regularity can occur in these tissues. Many aggressive cancer cells already have
+elevated YAP/TAZ activity before they enter circulation, but being exposed to shear stress or
+disturbed flow induced by the presence of topological defects further activates YAP and TAZ. If
+the mechanisms leading to defect formation in biological tissues are not fully understood, correla-
+tions have been identified between collagen density and tumorigenesis. Tumor-associated collagen
+signatures (TACS) are used for the identification of pre-palpable tumors in tissues rich in collagen.
+Authors of Ref. [26] showed that for TACS-2 tumors (non-invasive), collagen fibers are stretched
+parallelwise to the tumor regular boundary, forming a nest around it, whereas for TACS-3 tumors
+(invasive), collagen fibers align normally to tumor irregular boundary: one may therefore expect
+that such orientational transition left relics in the form of defects that may promote the local
+invasion ought to migration of epithelial cells. In different epithelium types, singularities in the
+cell alignments were shown to be correlated with extrusion sites [10], demonstrating that defect-
+induced anisotropic stresses are the primary precursors of mechanotransductive responses in cells,
+including YAP transcription factor activity [7, 8, 10, 11, 27]. In particular, comet-like topological
+defects (defects of order +1 /2, as we will see in the next section) are present on the epithelium
+where they are essential to cell extrusion processes [23, 28]. As the comet generates strong com-
+pressive stress at its core, it causes the YAP protein to migrate from the nucleus of the cell to its
+cytoplasm, causing apoptosis and extrusion [10]. In all the cases observed, the head of the comet
+pointed towards the cell to be eliminated. It should be noted that if the defects are responsible for
+the extrusion, the converse was not observed and their appearance occurs well before the elimina-
+tion of the cells. The statistical analysis of cell velocities in the vicinity of comet-like defects also
+showed a sink effect along the defect axis, with cells on both sides of the defect moving inward
+([11]).
+The comet defects ( m= +1 /2) constitute a large part of the foci for the development of ovarian
+cancer metastases on the mesothelium – a specialized type of epithelium – of the abdomen. The
+latter is composed of mesothelial cells and presents the same nematic ordering as the epithelial
+cells of the ovaries. The study of the mesothelium is of great interest for ovarian cancer since
+?????-3Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+this is where most of the metastases are formed. Unlike comets, trefoil-like defects ( m=−1/2)
+display a net outward cell velocity (outside of their legs), leading to a lower cell density in the core
+region. Another important feature is that correlations have been observed between the presence of
+both types of defects (of order ±1/2) and metastases development, hence reducing the clearance
+of cancer cells [11].
+3. Thermal tumor ablation, a promising treatment
+Delayed diagnosis and treatment of cancer is a major cause of mortality. Thus, the development
+of an early treatment of epithelial and metastatic tumors would offer patients better chances
+of survival. Since the YAP transcription coactivator promotes tumorigenesis and chemotherapy
+resistance [29–34], in principle, controlling its activity could allow a strategic area for therapeutic
+purposes in oncology. This could be done in the near future, as the possibility to manipulate defects
+in situ with optical tweezers is now within our reach [35]. However, the journey to defect-engineered
+therapies based on YAP deactivation promises to be long, as competing mechanisms [36] involving
+defect-induced cell motions have recently been reported to impede malignant cell clearance [11].
+If currently chemotherapy is very widely used, the efficiency of such long-lasting treatments
+decreases with time, as cancer cells continually mutate and develop numerous resistance mecha-
+nisms [37]. Therefore, there is very often a relapse of patients who initially responded positively
+to treatment. This relapse occurs around 18 months after the start of chemotherapy in the case of
+ovarian cancer. A promising alternative, which is less invasive than surgery, is thermal ablation [2],
+i.e. killing cancer cells by heat. Different protocols are possible, depending on the heating sources
+and durations of application. Among them, radiofrequency, microwave, or ultrasound procedure
+allows for localized heating of cancer cells at temperatures ranging from 50 °C to 100 °C for a couple
+of minutes (at this temperature, the enzymatic activity of the cells stops irreversibly, leading to
+their death). Another alternative to these methods would be hyperthermia in which the tissue is
+brought to temperatures neighboring 41 and 45 °C (via methods such as hyperthermic perfusion or
+previously aforementioned radiofrequency therapy for instance [38]). Thermal ablation has already
+proven to be very effective against certain cancerous tumors such as those of the liver. Thermal
+ablation is also less expensive and requires shorter hospital stays than surgery [2].
+Summarizing, thermal ablation of metastic tumors is one among various approaches to treat
+cancers. As topological defects are correlated to invasive tumor locations, the efficiency of thermal
+ablation may likely benefit from understanding how heat transfer occurs inside a defective tissue.
+This calls for the elaboration of a simplified heat diffusion model encompassing the salient features
+of these complex biophysical phenomena.
+4. Heat propagation is influenced by the presence of topological defects
+Trefoil and comet-like topological defects of human abdominal mesothelial (inner membrane)
+and ovarian epithelial (outer membrane) cells play a central role in ovarian cancers (about 90% of
+ovarian cancers are epithelial tumors).
+However, few in-vivo studies on thermal ablation therapies have been done to date not only
+for reasons of time and cost but also because of the risks of burning the healthy cells surrounding
+tumors. Most of the current studies are therefore done by computer modeling and play a major role
+in the development of treatments [7], but the field remains largely unexplored and the complexity of
+the parameters to be taken into account (friction, presence of walls, density fluctuation, turbulence,
+etc) does not allow a universal model.
+Here, we elaborate a simple model which allows us to analyse heat propagation in the vicinity
+of these topological defects.
+4.1. Geometry associated to a disclination of order min a nematic
+The geometric theory of defects originates from the pioneering works by Bilby [39] and Kr¨ oner
+[40]. It is based on the idea that a displacement field ui(x) in elasticity distorts the distance between
+?????-4Differential geometry, a possible avenue for thermal ablation in oncology?3
+any pair of points according to:
+dl2=δijdyidyj= 
+δij+∂iuj+∂jui+δkl∂iuk∂jul
+dxidxj(1)
+where the indices i, j, . . . run from 1 to 3 for the three space coordinates and we assume the
+standard summation rule on repeated indices. Hence everything happens as if the low energy fields
+propagate on a curved geometry described by the metric
+gij=δij+∂iuj+∂jui+δkl∂iuk∂jul=δij+ 2εij (2)
+where εijdenotes the strain tensor.
+The general form for the metric around a disclination of order mwas obtained by S´ atiro
+and Moraes [21]. Following an original idea proposed by Joets and Ribotta [41], they searched the
+effective matter-depending geometry leading to the same geodesics as the light paths obtained from
+the Fermat-Grandjean’s principle inside a nematic liquid crystal. Fermat-Grandjean’s principle is
+valid not only for light rays but also for sound rays and a version of it for sound rays in an
+anisotropic elastic medium (at rest) can be found in [42–44]. As nematic liquid crystals have
+uniaxial optical and acoustic properties along the same principal directions, the optical and elastic
+Fermat-Grandjean’s principles share the same form and the procedure used by Satiro and Moraes
+lead to similar effective Riemann geometries, the dielectric constants of the material being replaced
+by the elastic constants. The resulting metric in cylindrical coordinates ( ρ, θ, z ) is of the following
+form in terms of the metric tensor4gµν(µandνare space-time indices and run from 0 (time) to
+3):
+ds2
+4D=4gµνdxµdxν=−c2dt2+A(θ)dρ2+B(θ)ρ2dθ2+C(θ)ρdθdz +dz2(3)
+with the auxiliary functions
+A(θ) = cos2[F(θ)] +α2sin2[F(θ)], (4)
+B(θ) = α2cos2[F(θ)] + sin2[F(θ)], (5)
+C(θ) = (1 −α2) sin[2 F(θ)], (6)
+andF(θ) = ( m−1)θ+φ0. The value of mspecifies the topological charge of the defect and for
+the defects of interest in the context of biological tissues, m=±1/2. Such geometry describes a
+static defect: in practice +1/2 defects move at about 1 µm/h, therefore the static regime is valid
+regarding the typical heating times of thermal therapies. The case m= 1 corresponds to ordinary
+disclination lines which are the liquid crystals analogues of cosmic strings. Such line defects can
+be formed by either inserting or removing a wedge of material of angle 2 π(1−α) with subsequent
+identification of the edges. This is the Volterra cut-and-weld process.
+4.2. Heat equation in the presence of topological defects
+The heat equation derives from an enthalpy balance and describes the evolution of the temper-
+ature field T(r, t) as
+∂tT(r, t) =λ∆T(r, t), (7)
+with λ=k/(µc) the diffusion coefficient given in terms of the thermal conductivity k, the density
+µand specific heat cof the material. In the presence of topological defects, one has to modify this
+equation to account for the non-Euclidean geometry (3).
+The ADM formalism (Arnowitt, Deser, Misner, [45, 46]) consists in a foliation of spacetime
+adapted to the Hamiltonian formulation of General Relativity. To do so, the 4 Dmetric4gµν
+(µ, ν= 0,1,2,3) is decomposed into a 3 Dspace metric gij(i, j= 1,2,3) into slices orthogonal to
+the time foliation, gij=4gij,N= (−4g00)−1/2,Ni=4g0iand4g00=−(N2−NiNi). It impliesp
+−4g=N√g, with gthe determinant of the 3-metric and Nthe so-called lapse function.
+?????-5Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+This approach was used by Smerlak [19, 47] to write down a heat equation in a foliated space-
+time. This requires essentially two modifications: the introduction of the lapse function Nin quan-
+tities being derived and the use of the Laplace-Beltrami operator
+∆LB(NT) =1√g∂i[√ggij∂j(NT)] (8)
+instead of the ordinary Laplacian in a Euclidean manifold. This approach was already used to
+study heat propagation in the vicinity of topological defects [48]. In our case the lapse function
+N= 1 and the heat equation becomes, in cylindrical coordinates ( ρ, θ, z )
+1
+k∂T
+∂t= ∆ LB(T)
+=sin2[F(θ)]
+α2+ cos2[F(θ)]∂2T
+∂ρ2
++h
+1 + (1 −α2)(m−1)sin2[F(θ)]
+α2ρ+
+1−(1−α2)(m−1)
+α2cos2[F(θ)]
+ρi∂T
+∂ρ
+−1−α2
+α2ρsin[2F(θ)]h∂2T
+∂ρ∂θ+ (m−1)∂T
+∂θi
++1
+α2ρ2(cos2[F(θ)] +α2sin2[F(θ)])∂2T
+∂θ2+∂2T
+∂z2. (9)
+The defect geometry couples the radial and angular coordinates ρandθ, the absence of defect
+being recovered in the limit α= 1.
+Figure 1. Thermal diffusion (with standard colour code, the red being hotter than the blue)
+around defects of various topological charges m. Here the disclination parameter is α= 8. The
+initial condition sketched on the left shows that heat flux is imposed by fixing the temperature
+T0= 1 on the circular areas shown on the free surface of a finite cylinder (where initially T= 0)
+and spreads into space. The different snapshots in the middle show the temperature profile after
+a finite amount of time. Overlay of the director field (solid lines) with the temperature profile
+(colors) occurs in any plane perpendicular to the defect axis. The phase contrast images on the
+right show m=±1/2 defects (taken from Ref. [11]).
+This equation is then solved numerically using Mathematica. The solutions are derived as inter-
+polation functions using the Finite Element Method. Besides the method, every other parameter
+such as step size or accuracy digits is chosen automatically depending on values handled by the
+solver. The temperature profile in the vicinity of the topological defect is displayed in the figure 1
+for various topological charges ranging from m=−2 tom= 2. The material is supposed to be con-
+fined within a cylindric domain centered on the defect axis (the core, in the form of a tiny cylinder
+?????-6Differential geometry, a possible avenue for thermal ablation in oncology?4
+of radius Rcutoff , is excluded to avoid numerical divergences) to preserve the axial symmetry. This
+symmetry is compatible with the application proposed in the following sections where the heat
+source is produced by a needle-shaped antenna. The temperature in this section is fixed at the set
+value T0(Dirichlet boundary conditions), either from inside the cylinder or from outside of it (see
+figure 2, left). The boundary conditions are chosen periodic on the upper and lower walls of the
+cylinder and in the angular direction. The temperature profiles corresponding to different times
+are shown in figure 2. The cylinder being finite, the asymptotic regime at t→ ∞ corresponds to a
+stationary and uniform temperature profile at T0. When heating a tissue, a 1/2-defect leaves an un-
+equivocal thermal signature on the temperature profile: on figure 1, the nematic director field does
+superimpose to the temperature field in the plane perpendicular to the defect axis. Such results
+may have important outcomes for diagnosis. Diffusion along the axis is not coupled to the other
+coordinates and thus is not essential there, so in the following, we will keep only representations
+in the perpendicular planes.
+Figure 2. Temperature profiles at various times for the comet (left) and trefoil (right) defect
+subject to a heat flux at the defect core at a temperature T0= 46◦C (top) and T0= 75◦C
+(bottom). The snapshots are taken at times from t= 1 s to t= 1000 s from left to right
+(T0= 46◦C) and from t= 1 s to t= 100 s from left to right ( T0= 75◦C). The first line shows
+the temperature profile in the presence only of the topological defect ( α= 4, m=±1/2), the
+second line with the Pennes term only in a purely Euclidean geometry with isotropic temperature
+profiles, and the third line represents the model of biological tissue with both the topological
+defect and the Pennes term. Here, R0= 5mm (burning scale), R2= 10mm (external scale) and
+the cutoff scale is Rcutoff = 0.1 mm.
+5. Model of heat propagation around topological defects in biological tis-
+sues
+Biological tissues are not just inert materials but are rather examples of active matter, i.e. non-
+equilibrium self-organized systems which do not couple trivially to the energy input. Among them,
+epithelia are the archetype of active nematic liquid crystals [49], each epithelial cell being fuelled
+by its metabolic activity. The bioheat equation of Pennes [16] has been introduced to describe
+arterial temperature in the human forearm. Compared the ordinary heat equation, it comprises
+?????-7Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+additional terms that include the metabolic contribution (volumic heat source) and the influence
+of blood flow (convective correction),
+µtct∂T(r, t)
+∂t=k∆LBT(r, t)−µbcbω(T−Ta) +qm. (10)
+The l.h.s corresponds to energy storage (there, µtis the tissue density [kg/m3] and ctits specific
+heat [J/(kg.K)], like µandcin the previous section) and the Laplacian on the r.h.s. (here ∆ LB
+indicates the presence of the topological defect) describes as usual the temperature diffusion inside
+the tissue (with kthe tissue thermal conductivity [J/(s.m.K)]). In biological tissues, there are also
+at least two sources of energy. The heat transferred by convection by blood to the tissue is described
+by the second term at the r.h.s. (with µbandcbthe blood density and specific heat, ωthe local blood
+perfusion – which ensures the transport of nutrients and waste products towards and outwards the
+cells– and Tathe arterial temperature) and finally, the heat produced by the tissue metabolism
+given by the source term, qm. In the case of a local thermal treatment, an additional term qpcan be
+introduced as well. Despite its extreme simplicity (the assumption that thermal equilibrium may
+occur in the capillaries has been questioned) and although several mechanisms are missing from
+Pennes’ equation (the blood velocity field does not appear, the role of thermoregulation, or memory
+effects are absent, see e.g. [17, 50–53]), it yet captures from a limited number of parameters the
+salient biophysics of human tissues and is widely used to simulate bioheat transfers at different
+scales.
+To identify general patterns, we introduce the dimensionless parameters ¯ r=ρ/R (with ρthe
+cylindrical coordinate radial distance) and Θ = ( T−Ta)/T0with T0the setpoint temperature
+corresponding to a given thermotherapy, and a typical scale of time
+τ=µtctR2/k. (11)
+Neglecting the metabolic term, the Pennes’ equation then writes as
+τ∂Θ(¯r, t)
+∂t=¯∆LBΘ(¯r, t)−Bi Θ( ¯r, t) (12)
+where the Biot number is
+Bi = µbcbωR2/k. (13)
+We now compare heat propagation in the inert nematic material to its biological counterpart.
+We focus on the cases of comet ( m= +1 /2) and trefoil ( m=−1/2) defects. Profiles at different
+times measure the ability of the heat flux to diffuse into the material (figure 2). As time increases,
+warmer areas expand in an anisotropic manner, as a result of the presence of the topological defect
+(except the isotropic diffusion when α= 1, i.e. no defect at all in that case). In figure 2, the first
+lines show the heat flow in an ordinary nematic in the presence of a topological defect, the second
+lines correspond to Pennes bioheat equation without any defect and the third lines correspond to
+the model of interest where the bioheat equation is solved in the presence of the topological defect.
+Several observations are worth noting. Heat propagates along preferential directions (along three
+main legs for the trefoil, or one side, say ahead or backward, even though there is no front/rear
+distinction here). In all cases, the heat flows in the vicinity of the defect core and the temperature
+in the defect core area remains much higher than in the rest of the system. This is very positive
+for the application considered here, since ultimately, we will focus on bio-tissues with defects that
+concentrate metastatic cells in their core region.
+In figure 3 we present in grey the burnt areas, in the same geometrical conditions as in figure 2
+for comet defects.Triggering cell apoptosis depends both on the value of the temperature and
+the time of exposure: typically, cells die when they are exposed at 46◦C during 15 min while
+they die almost instantaneously when submitted above 60◦C. Thus, by ”burnt areas”, we mean
+regions exposed at 46◦C during 15 min, or at 60◦C at least during a few seconds, or, by simple
+interpolation, 55◦C during 400 seconds. Since we found no data at this temperature, that is the
+simplest approximation we can do. Possible improvements are discussed in the conclusion.
+?????-8Differential geometry, a possible avenue for thermal ablation in oncology?5
+Figure 3. Burnt areas for various protocols in the case of a comet-like defect ( α= 4,m= +1 /2).
+Left: tissue exposed to a source at T0= 49◦C. The grey areas at various times represent the part
+of the system subject to 46◦C during an exposure time of at least 900 s. Right: tissue exposed
+to a source at T0= 75◦C. The grey areas at various times represent the part of the system
+subject to 75◦C during an exposure time of at least 1 s. The three lines correspond to the same
+convention as in figures 2.
+The next question to address is the efficiency of the different protocols of heating: off-center
+heating (figure 4 shows that this is essential to aim at the target precisely), high temperatures
+for short times (evaporation), lower temperatures applied longer (hyperthermia), and finally a fine
+balance between temperature level and duration of application (coagulation). The three situations
+will be discussed in the next section.
+Figure 4. Temperature profiles at various times for the comet defect subject to a heat flux
+off-center from the defect core for the comet defect.
+6. Towards a case-by-case treatment recommendation
+We now provide an analysis of the efficiency of thermal ablation protocols for different kinds
+of biological tissues. We target by thermal ablation a tumor of radius Rt, from a uniform heating
+protocol on a scale Rb< R t. The tumor is considered as destroyed (burnt) if it has been exposed
+for a sufficient time, tb, to a temperature at least equal to a value fixed Tb, as explained in the
+previous section. The different protocols allow to vary the values of Rb,tb, and Tb. Healthy tissues
+outside the tumor must be preserved (a sketch is shown on figure 5).
+Each tissue is characterized by the values of the parameters Bi and τ(see table 1 for the
+?????-9Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+Tissue µt(kg.m−3)ct(J.kg−1.◦C−1)µb(kg.m−3)cb(J.kg−1.◦C−1)ωb(s−1)
+Skin [54] 1060 2846 1000 3860 0 .1
+Liver [55, 56] 1079 3540 1050 3639 0 .0175
+Prostate [57] 1050 3639 1060 3770 0 .03
+Table 1. Parameters of several tissues of the Human body. Note that the blood has tissue-
+dependent characteristics.
+biophysical characteristics of different tissues). In the plane of these parameters, we determine,
+for a sample of cylindrical tissue of radius R2, the percentage of the burnt area after a certain
+time has elapsed, for an imposed setpoint temperature fixed at 49◦C, 55◦C and 75◦C respectively.
+When this percentage reaches a proportion about 20% to 40% of the area of the tissue, a tumor of
+characteristic radius Rt≃R2/2 is considered destroyed ( R2
+t∼0.25R2
+b). These numbers are chosen
+for the facility of the representation, but should of course be adapted to the tumor size.
+Figure 5. Left: An example of tumor located at the center of a comet defect (taken from
+Ref. [11]). Center: Sketch (this is an artificial image) of a tumor at the core of a topological
+defect. The green area represents the tumor of radius Rt, and the red contour shows the area,
+of radius Rb, which is submitted to the heating source. For the following geometric parameters
+Rb= 4 mm (burning scale), R2= 20 mm (external scale). Right: Evolution of the relative burnt
+area in the plane of parameters τvs Bi. The red part on the surface corresponds to the targeted
+size burnt for a tumor of size Rt= 10 mm (tumor scale). Three tissues are located in this
+parameter space.
+We have displayed three different tissues (liver, prostate, and skin) in the Bi −τplane. These
+points would represent the target to be reached by the white area. The position of these targets
+depends on the biophysical parameters, but also on the size of the tumor via the definition of Bi
+andτ. In the present example, Rt= 5 mm, but for a tumor of half size, the values of τand Bi
+would be reduced by a factor of 4.
+Figure 6 shows our results for comet defects heated at Tb= 49◦C during tb= 100 s and 900 s.
+The target is not reached for any of the tissues considered, since they are not in the white area
+which corresponds to the expected 20% to 40% of the area burnt. In all three cases, the fraction
+of the area burnt only covers partially the tumor size.
+AtTb= 55◦C,tb= 20 s on the other hand (figure 7), the conditions are fulfilled for the liver
+and prostate tissues, and for the skin, they are satisfied for Tb= 75◦C,tb= 20 s (figure 8), while
+at that temperature, the treatment is too aggressive and a significative part of healthy tissue is
+also destroyed.
+Our analysis suggests that prostate and liver tumors should preferably be treated via coagu-
+lation protocols (e.g. 55 °C, 20-50 sec), while skin tumors are better treated by evaporation (e.g.
+?????-10Differential geometry, a possible avenue for thermal ablation in oncology?6
+Figure 6. Evolution with time of exposure of the relative burnt area for a tumor of size Rt= 10
+mm heated at 49◦C. After the 100s (upper plot), and even after the 900s, none of the three
+types of tissues is yet eradicated.
+Figure 7. Evolution with time of exposure of the relative burnt area for a tumor of size Rt= 10
+mm heated at 55◦C during 20 s. Liver and prostate tissues are correctly targeted by these
+conditions, but the burnt area for skin would not be enough to eradicate the tumor.
+75°C, 20 sec). Hyperthermia (lower temperatures) in all three cases fails to burn the tumor to its
+whole extent. Although these are very strong statements, we should be cautious with these conclu-
+sions which follow from a physical model of a biological tissue, and not from in-vivo studies. The
+?????-11Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+Figure 8. Evolution with time of exposure of the relative burnt area for a tumor of size Rt= 10
+mm heated at 75◦C during 20 s. Skin tissue is correctly targeted, while a too large fraction of
+healthy liver and prostate tissues would be burnt by these conditions.
+criterion used to decide about the area burnt is also still very approximate, and a careful study of
+the conditions of apoptosis of cancer cells should be performed to improve the modelization.
+7. Key statements, recommendations, and limitations
+This work introduces a model of heat diffusion in a biological tissue containing half-integer
+topological defects. Comet-like defects ( m= +1 /2) are involved in YAP activity and tumorigenesis,
+but they may also trap tumor cells and could serve as reliable snitches for image-guided thermal
+therapies. The computations show that the optimal point for tumor burning is very sensitive to the
+thermophysical properties of the surrounding tissue. They provide a tool to recommend a case-by-
+case treatment likely to destroy efficiently the tumor cells while preserving the surrounding healthy
+tissues.
+Several avenues of improvement can therefore be identified to extend the present work. First,
+we opted for a cylindrical setting to comply with the defect symmetry, but in practice, this may
+not reflect the local peculiarities of body organs (yet, changing the setting is not an obstacle in
+principle and it can be treated from a fully numerical approach.
+Second, some of the approximations that we made were due to a lack of knowledge of the
+properties of the biological tissues (partly due to our ignorance of a part of the literature available,
+partly because the studies have not yet been performed). For example, the dependence of the
+biophysical properties of in-vivo tissues with temperature and heat damage is not taken into account
+(recent results evidenced temperature-dependent non-linear changes of the thermal properties of
+ex-vivo liver [58, 59], brain and pancreas [60] tissues), but there is no theoretical obstacle to
+incorporate this in the model. More delicate would be to account for heat sink effects of perfusion
+within in vivo tissue, and those effects are highly non-linear. Living systems dynamically respond
+to heat sources, dilating blood vessels and increasing interstitial transport to reduce heat build-
+up. The thermal damage could also be treated more rigorously using damage models [61, 62],
+like Henriques’s burn integral [61] or the Cumulative Equivalent Minutes at 43◦C dose model
+(CEM43) which expresses the thermal load on living tissues by estimating the equivalent induced
+thermal stress in minutes at 43◦C [63]. Finally, improvements to the model should be made in the
+implementation of the heat source in the tissue. Here, we consider that the heat source is applied
+locally , but in a uniform manner at the inner part of the tissue where the tumor sits, while there
+should be a penetration law from this inner part to the outer of the tissue. The protocol proposed
+is also to apply a constant temperature during time tc, but obvious extensions could be considered
+for example cycles of heating-deheating.
+Another improvement of our model consists in taking into account the thermal history of the
+?????-12Differential geometry, a possible avenue for thermal ablation in oncology?7
+tumor, as this may affect its tolerance to hyperthermia. Several recent works [64–66] showed that
+fractional calculus was a well-suited tool to account for memory effects in biological media.
+Despite all the limitations that we have just mentioned and the essential precautions that must
+be taken with the recommendations to be drawn, this simple model seems very promising to us
+and can easily be improved to get closer to realistic employment conditions.
+Acknowledgements
+We would like to thank Ralph Kenna (RIP) and Coventry University for supporting Andy
+Manapany and Le¨ ıla Moueddene in this project and their PhDs. Ralph recently fought his own
+battle with cancer and, while that stymied him from working with us on the scientific part of this
+project, it did not stop him from securing essential funding that made the project possible. In this
+way, Ralph’s contribution to the fight against cancer endures. We are all grateful for that of course,
+but also for much more, for all Ralph has brought to each of us, friendship, advice, and a style of
+view on life and science.
+This work was supported by the Coll` ege Doctoral “Statistical Physics of Complex Systems”
+Leipzig-Lorraine-Lviv-Coventry ( L4). For Open Access, a CC-BY public copyright license,
+ ,
+has been applied by the authors to the present document and will be applied to all subsequent
+versions up to the Author Accepted Manuscript arising from this submission.
+Abbreviations and glossary
+Anoikis: A form of programmed cell death that occurs in anchorage-dependent cells when they
+detach from the surrounding extracellular matrix.
+Apoptotic cell extrusion: Elimination of cells after apoptosis (programmed cell death). See anoikis.
+EMT: Epithelial to mesenchymal transition.
+The epithelium is a thin protective layer of compactly packed cells that line the outer surfaces of
+organs and blood vessels throughout the body.
+Extravasion: Exit of cells from blood or lymphatic vessels.
+Extrusion: Mechanical expulsion of cells from the membrane
+Intravasion: Entry of cells in blood or lymphatic vessels.
+The mesothelium is a membrane that forms the internal lining of several body cavities.
+TACS: Tumor-associated collagen signatures.
+TAZ: Transcriptional Co-activator with PDZ-binding Motif (the PDZ domain is a common struc-
+tural domain of 80-90 amino acids).
+TEAD: TEA Domain Family Members. The TEA domain is a DNA-binding region of about 66
+to 68 amino acids that has been named after the two proteins that originally defined the
+domain: TEF-1 and abaA.
+YAP: Yes-Associated Protein, is a protein that promotes transcription of genes involved in cellular
+proliferation (this is a component that regulates organ size, regeneration, and tumorigenesis).
+?????-13Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+References
+1. World Health Organization Cancer: Fact Sheets. (2020). https://www.who.int/news-room/
+fact-sheets/detail/cancer .
+2. Chu, K. F. , Dupuy, D. E. Thermal ablation of tumours: biological mechanisms and advances in
+therapy. Nat. Rev. Cancer , 14, 199–208 (2014). 10.1038/nrc3672 .
+3. Brace, C. Thermal tumor ablation in clinical use. IEEE Pulse 2, 28-38 (2011).
+10.1109/MPUL.2011.942603 .
+4. Markezana, A., Ahmed, M., Kumar, G., Zorde-Khvalevsky, E., Rozenblum, N., Galun, E. & Goldberg,
+S.N. Moderate hyperthermic heating encountered during thermal ablation increases tumor cell activity.
+International Journal of Hyperthermia 37, 119-129 (2020) 10.1080/02656736.2020.1714084 .
+5. Fumeron, S. & Berche, B. Introduction to topological defects: from liquid crystals to particle physics.
+Eur. Phys. J. Spec. Top. (2023). 10.1140/epjs/s11734-023-00803-x .
+6. Bouligand, Y. Defects in ordered biological materials, bibliographical notes. in Physics of defects . Les
+Houches Summer School Proceedings, Vol. 35, ed. by R. Balian, M. Kl´ eman, J.-P. Poirier (North-
+Holland Publ. Co., 1981), pp. 777-811
+7. Doostmohammadi, A., Adamer, M. F., Thampi, S. P., Yeomans J. M. Stabilization of active matter
+by flow-vortex lattices and defect ordering. Nat. Commun. 7, 10557 (2016). 10.1038/ncomms10557 .
+8. Doostmohammadi, A. , Ladoux, B. Physics of liquid crystals in cell biology. Trends in cell biology 32,
+140-150 (2022) 10.1016/j.tcb.2022.01.010 .
+9. Ardaˇ seva, A., Doostmohammadi, A. Topological defects in biological matter. Nat. Rev. Phys. 4,
+354–356 (2022). 10.1038/s42254-022-00469-9 .
+10. Saw, T. B., Doostmohammadi, A., Nier, V., Kocgozlu, L., Thampi S., Toyama, Y., Marcq, P., Lim,
+C.T., Yeomans, J.M., Ladoux, B. Topological defects in epithelia govern cell death and extrusion.
+Nature 544, 212–216 (2017). 10.1038/nature21718 .
+11. Zhang, J., Yang, N., Kreeger, P. K., Notbohm, J. Topological defects in the mesothelium suppress
+ovarian cancer cell clearance. APL Bioeng. 5, 036103 (2021). 10.1063/5.0047523 .
+12. Gatenby, R. A., Maini, P. K. Mathematical oncology: cancer summed up. Nature 421, 321-321 (2003).
+13. Jackson, T., Komarova, N., Swanson, K. Mathematical oncology: using mathematics to enable cancer
+discoveries. The American Mathematical Monthly 121, 840-856 (2014).
+14. Rockne, R. C., Hawkins-Daarud, A., Swanson, K. R., Sluka, J. P., Glazier, J. A., Macklin, P., Scott,
+J. G. The 2019 mathematical oncology roadmap. Physical biology 16, 041005 (2019).
+15. Bull, J. A., Byrne, H. M. The hallmarks of mathematical oncology. Proceedings of the IEEE 110,
+523-540 (2022).
+16. Pennes, H. H. Analysis of Tissue and Arterial Blood Temperatures in the Resting Human Forearm.
+J. Appl. Physiol. 1, 93–122 (1948). 10.1152/jappl.1948.1.2.93 .
+17. Andreozzi, A., Brunese, L., Iasiello, M., Tucci, C. & Vanoli, G. P. Modeling Heat Transfer in Tumors: A
+Review of Thermal Therapies. Ann. Biomed. Eng. 47, 676–693 (2019). 10.1007/s10439-018-02177-x .
+18. Tucci, C., Trujillo, M., Berjano, E. et al. Pennes’ bioheat equation vs. porous media ap-
+proach in computer modeling of radiofrequency tumor ablation. Sci Rep 11, 5272 (2021).
+10.1038/s41598-021-84546-6 .
+19. Smerlak, M. Diffusion in Curved Spacetimes. New Journal of Physics 14, 023019 (2012).
+10.1088/1367-2630/14/2/023019 ,
+20. Katanaev, M.O., Volovich, I.V. Theory of defects in solids and three-dimensional gravity. Annals of
+Physics 216, 1-28 (1992). 10.1016/0003-4916(52)90040-7 .
+21. S´ atiro, C. & Moraes, F. Lensing effects in a nematic liquid crystal with topological defects. Eur. Phys.
+J. E 20, 173–178 (2006). 10.1140/epje/i2005-10127-2 .
+22. Pantel, K. & Brakenhoff, R. Dissecting the metastatic cascade. Nat Rev Cancer 4, 448–456 (2004).
+10.1038/nrc1370 .
+23. Gracia, M., Theis, S., Proag, A., Gay, G., Benassayag, C. & Suzanne, M. Mechanical impact of
+epithelial-mesenchymal transition on epithelial morphogenesis in Drosophila. Nat. Commun. 10, 2951
+(2019). 10.1038/s41467-019-10720-0 .
+24. Warren, Janine S. A., Xiao, Yuxuan, Lamar, John M. YAP/TAZ Activation as a Target for Treating
+Metastatic Cancer. Cancers 10, 115 (2018). 10.3390/cancers10040115 .
+25. Cheng, Yifan , Mao, Misha, Lu, Yong. The biology of yap in programmed cell death. Biomarker
+Research 10, 1-10 (2022). 10.1186/s40364-022-00365-5 .
+26. Provenzano, P.P., Eliceiri, K.W., Campbell, J.M., Inman, D.R., White, J.G. & Keely, P.J. Collagen
+reorganization at the tumor-stromal interface facilitates local invasion. BMC medicine 4, 1-15 (2006).
+?????-14Differential geometry, a possible avenue for thermal ablation in oncology?8
+10.1186/1741-7015-4-38 .
+27. Elosegui-Artola, A., Andreu I., Beedle, A.E.M., Lezamiz, A., Uroz, M., Kosmalska, A.J., Oria, R.,
+Kechagia, J.Z., Rico-Lastres, P., Le Roux, A.-L., Shanahan, C.M., Trepat, X., Navajas, D., Garcia-
+Manyes, S., Roca-Cusachs P. Force Triggers YAP Nuclear Entry by Regulating Transport across Nu-
+clear Pores. Cell171, 1397–1410 (2017). 10.1016/j.cell.2017.10.008 .
+28. Hogan, C., Dupr´ e-Crochet, S., Norman, M., Kajita, M., Zimmermann, C., Pelling, A.E., Piddini,
+E., Baena-L´ opez, L.A., Vincent, J.P., Itoh, Y., Hosoya, H., Pichaud, F., Fujita, Y. Characterization
+of the interface between normal and transformed epithelial cells. Nat Cell Biol. 11, 460-467 (2009).
+10.1038/ncb1853 .
+29. Camargo, Fernando D., Gokhale, Sumita, Johnnidis, Jonathan B., Fu, Dongdong, Bell, George W.,
+Jaenisch, Rudolf, Brummelkamp, Thijn R. Yap1 increases organ size and expands undifferentiated
+progenitor cells. Current biology 17, 2054-2060 (2007). 10.1016/j.cub.2007.10.039 .
+30. Lamar, John M., Stern, Patrick, Liu, Hui, Schindler, Jeffrey W., Jiang, Zhi-Gang, Hynes, Richard O.
+The hippo pathway target, yap, promotes metastasis through its tead-interaction domain. Proceedings
+of the National Academy of Sciences 109, E2441-E2450 (2012). 10.1073/pnas.1212021109 .
+31. Wang J., Ma L., Weng W., Qiao Y., Zhang Y., He J., Wang H., Xiao W., Li L., Chu Q., Pan Q.,
+Yu Y. & Sun F. Mutual interaction between YAP and CREB promotes tumorigenesis in liver cancer.
+Hepatology 58, 011-20 (2013). 10.1002/hep.26420 .
+32. Marti, P., Stein, C., Blumer, T., Abraham, Y., Dill, M.T., Pikiolek, M., Orsini, V., Jurisic, G., Megel,
+P., Makowska, Z., Agarinis, C., Tornillo, L., Bouwmeester, T., Ruffner, H., Bauer, A., Parker, C.N.,
+Schmelzle, T., Terracciano, L.M., Heim, M.H. & Tchorz, J.S.. YAP promotes proliferation, chemoresis-
+tance, and angiogenesis in human cholangiocarcinoma through TEAD transcription factors. Hepatology
+62, 1497-510 (2015). 10.1002/hep.27992 .
+33. Warren, J.S.A., Xiao, Y. & Lamar, J.M. YAP/TAZ Activation as a Target for Treating Metastatic
+Cancer. Cancers 10, 115 (2018). 10.3390/cancers10040115 .
+34. Shen, J., Cao, B., Wang, Y., Ma, C., Zeng, Z., Liu, L., Li, X., Tao, D., Gong, J. & Xie,
+D. Hippo component YAP promotes focal adhesion and tumour aggressiveness via transcription-
+ally activating THBS1/FAK signalling in breast cancer. J Exp Clin Cancer Res. 37, 175 (2018).
+10.1186/s13046-018-0850-z .
+35. Shankar S., Scharrer, L.V.D., Bowick, M.J., Marchetti, M.C. Spatiotemporal control of active topo-
+logical defects. arXiv preprint, arXiv:2212.00666, 2022. 10.48550/arXiv.2212.00666 .
+36. Zhang, X., Abdelrahman, A., Vollmar, B., Zechner, D. The Ambivalent Function of YAP in Apoptosis
+and Cancer Int. J. Mol. Sci. 19, 3770 (2018). 10.3390/ijms19123770 .
+37. Annunziata, C.M., Kohn, E.C. Novel Facts About FAK: New Connections to Drug Resistance? JNCI
+J. Natl. Cancer Inst. 105, 1430-1431 (2013). 10.1093/jnci/djt255 .
+38. Ablin, R.J., Soanes, W.A., Gonder, M. J. Prospects for cryo-immunotherapy in cases of metastasizing
+carcinoma of the prostate. Cryobiology 8, 271-279 (1971). 10.1016/0011-2240(71)90050-2 .
+39. Bilby, B.A., Bullough, R., Smith, E.: Proc. Roy. Soc. London, A231 263 (1955)
+40. Kr¨ oner, E.: Kontinums Theories der Versetzungen und Eigenspanungen. Springer Verlag, Berlin-
+Heidelberg (1958)
+41. Joets, A. & Ribotta, R. A geometrical model for the propagation of rays in an anisotropic inhomoge-
+neous medium. Opt. Commun. 107, 200-204 (1994). 10.1016/0030-4018(94)90020-5 .
+42. Epstein, M. and J¸ edrzej ´S. Fermat’s principle in elastodynamics. Journal of elasticity 27, 45-56 (1992).
+43. Babich, V. M. Ray method of calculating the intensity of wavefronts in the case of a heterogeneous,
+anisotropic, elastic medium. Geophysical Journal International 118.2, 379-383 (1994).
+44. Cerveny, V. Fermat’s variational principle for anisotropic inhomogeneous media. Studia geophysica et
+geodaetica 46.3, 567-588 (2002).
+45. Arnowitt, R., Deser, S. & Misner, C.W. The Dynamics of General Relativity. In: General Relativity
+and Gravitation 40.9 (Sept. 2008), pp. 1997–2027, arXiv: gr-qc/0405109, 10.1007/s10714-008-0661-1 ,
+arXiv .
+46. Gourgoulhon, E. 3 + 1 formalism in general relativity: bases of numerical relativity . (Springer, 2012).
+47. Smerlak, M. Tailoring diffusion in analog spacetimes. Phys. Rev. E 85, 041134 (2012).
+10.1103/PhysRevE.85.041134 .
+48. Manapany, A., Moueddene, L., Berche, B. & Fumeron, S. Diffusion in the presence of a chiral topological
+defect The European Physical Journal B 95, 118 (2022). 10.1140/epjb/s10051-022-00384-z .
+49. Hirst, L. S., Charras, G. Liquid crystals in living tissue. Nature 544, 164-165 (2017) 10.1038/544164a .
+50. Wissler, E. H. Pennes’ 1948 paper revisited. J. Appl. Physiol. . 85, 35-41 (1998).
+10.1152/jappl.1998.85.1.35 .
+?????-15Andy Manapany, Loriane Didier, Le ¨ıla Moueddene, Bertrand Berche, S ´ebastien Fumeron
+51. Khaled, A.-R.A., Vafai, K. The role of porous media in modeling flow and heat transfer in biological
+tissues. Int. J. Heat Mass Transf. 46, 4989-5003 (2003). 10.1016/S0017-9310(03)00301-6 .
+52. Arkin, H., Xu, L.X., Holmes, K.R. Recent developments in modeling heat transfer in blood perfused
+tissues. IEEE Trans. Biomed. Eng. 41, 97-107 (1994). 10.1109/10.284920 .
+53. El-Nabulsi, R.A. Fractal Pennes and Cattaneo–Vernotte bioheat equations from product-like fractal
+geometry and their implications on cells in the presence of tumour growth. J. R. Soc. Interface 18,
+20210564 (2021). 10.1098/rsif.2021.0564 .
+54. Yang, J. & Sun Y. A space-fractional Pennes bioheat conduction model for skin tissue SN Appl. Sci.
+3, 61 (2021). 10.1007/s42452-020-04080-4 .
+55. Barnoon P. & Ashkiyan M. Magnetic field generation due to the microwaves by an antenna
+connected to a power supply to destroy damaged tissue in the liver considering heat control,
+Journal of Magnetism and Magnetic Materials 513, 167245 (2020) 10.1016/j.jmmm.2020.167245 .
+https://doi.org/10.1016/j.jmmm.2020.167245.
+56. Eipel C., Abshagen K., Vollmar B. Regulation of hepatic blood flow: The hepatic arterial buffer
+response revisited, World J Gastroenterol 16(48), 6046-6057 (2010) [PMID: 21182219 DOI:
+10.3748/wjg.v16.i48.6046] 10.3748/wjg.v16.i48.6046 .
+57. Kabiri, A. & Talaee, M.R. Theoretical investigation of thermal wave model of microwave ablation
+applied in prostate Cancer therapy Heat Mass Transfer 55, 2199 (2019). 10.1007/s00231-019-02562-9
+58. Guntur, S.R., Lee, K.I.L., Paeng, D.-G., Coleman, A.J., Choi, M.J. Temperature-Dependent Thermal
+Properties of ExVivo Liver Undergoing Thermal Ablation. Ultrasound Med. Biol. 39, 1771 (2013).
+10.1016/j.ultrasmedbio.2013.04.014
+59. Lopresto V. & Argentieri A. &, Pinto R. & Cavagnaro M. Temperature dependence of thermal
+properties of ex vivo liver tissue up to ablative temperatures. Phys. Med. Biol. 64, 105016 (2019).
+10.1088/1361-6560/ab1663
+60. Mohammadi, A., Bianchi, L., Asadi, S., Saccomandi, P. Measurement of Ex Vivo Liver, Brain and Pan-
+creas Thermal Properties as Function of Temperature. Sensors 21, 4236 (2021). 10.3390/s21124236
+61. Pearce J.A. Comparative analysis of mathematical models of cell death and thermal damage processes.
+Int J Hyperthermia 29, 262 (2013). 10.3109/02656736.2013.786140
+62. Hao,D., Nourbakhsh,M. Recent Advances in Experimental Burn Models. Biology 10, 526 (2021).
+10.3390/biology10060526
+63. van Rhoon G.C., Samaras T., Yarmolenko P.S., Dewhirst M.W., Neufeld E., Kuster N. CEM43 °C
+thermal dose thresholds: a potential guide for magnetic resonance radiofrequency exposure levels? Eur
+Radiol. 23, 2215 (2013). 10.1007/s00330-013-2825-y
+64. Valentim, C. A., Rabi, J. A., David, S. A., Fractional mathematical oncology: On the potential of
+non-integer order calculus applied to interdisciplinary models. Biosystems 204, 104377 (2021).
+65. Alinei-Poiana, T., Dulf, E. H., Kovacs, L., Fractional calculus in mathematical oncology. Scientific
+Reports 13, 10083 (2023).
+66. Vieira, L. C., Costa, R. S., Val´ erio, D., An Overview of Mathematical Modelling in Cancer Research:
+Fractional Calculus as Modelling Tool. Fractal and Fractional 7, 595 (2023).
+?????-16
