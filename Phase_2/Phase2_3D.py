@@ -10,12 +10,12 @@ from esm.sdk.api import ESM3InferenceClient, ESMProtein, GenerationConfig
 from pymol import cmd
 
 # Import your existing functions
-from Phase_2.analyze7 import run_analysis_pipeline
-from Phase_2.generate3 import generate_protein_sequence, save_results_to_csv
+from Phase_2.analyze import run_analysis_pipeline
+from Phase_2.generate import generate_protein_sequence, save_results_to_csv
 from Phase_2.optimize4 import run_optimization_pipeline
-from Phase_2.predict5 import run_prediction_pipeline, predict_protein_function, predict_properties, predict_structure
-from Phase_2.simulate6 import run_simulation_pipeline
-from Phase_2.generate3 import read_technical_descriptions
+from Phase_2.predict import run_prediction_pipeline, predict_protein_function, predict_properties, predict_structure
+from Phase_2.simulate import run_simulation_pipeline
+from Phase_2.generate import read_technical_descriptions
 from datetime import datetime
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')

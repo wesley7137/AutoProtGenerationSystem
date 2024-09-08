@@ -6,7 +6,7 @@ import subprocess
 import platform
 import asyncio
 import aioconsole
-
+from esm.sdk.api import ESMProteinError
 import os
 import asyncio
 import logging
@@ -35,29 +35,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 esm3_model:ESM3InferenceClient = ESM3.from_pretrained("esm3_sm_open_v1").to("cuda")  # or "cpu"
 
 
-async def predict_structure(sequence):
-    """Predict the structure of a protein sequence using ESM-3."""
-    try:
-        protein = ESMProtein(sequence=sequence)
-        config = GenerationConfig(track="structure", num_steps=8)
-        result = esm3_model.generate(protein, config)
-        
-        logger.info(f"Structure generation result type: {type(result)}")
-        logger.info(f"Structure generation result attributes: {dir(result)}")
-        
-        # Save the PDB file
-        output_dir = "predicted_structures"
-        os.makedirs(output_dir, exist_ok=True)
-        pdb_file = os.path.join(output_dir, f"{sequence[:10]}_structure.pdb")
-        result.to_pdb(pdb_file)
-        
-        logger.info(f"Structure predicted and saved to {pdb_file}")
-        return pdb_file
-    except Exception as e:
-        logger.error(f"Error in predict_structure: {str(e)}")
-        logger.error(f"Error type: {type(e)}")
-        logger.error(f"Error args: {e.args}")
-        return None
 
 
 async def predict_protein_function(sequence):
@@ -168,69 +145,90 @@ async def create_3d_model_esm3(protein_pdb, prompt_string, output_dir):
 
 
 
-
-
-async def esm3_refinement(sequence):
-    """Refine the sequence using ESM3 model predictions."""
+async def predict_structure(sequence):
+    """Predict the structure of a protein sequence using ESM-3."""
     try:
         protein = ESMProtein(sequence=sequence)
-        # Refine sequence using ESM3 model
-        refined_protein = esm3_model.generate(protein, GenerationConfig(track="sequence", num_steps=8, temperature=0.7))
-        refined_sequence = refined_protein.sequence
-        logger.info(f"Refined sequence: {refined_sequence[:50]}...")  # Log first 50 characters
-        return refined_sequence
+        config = GenerationConfig(track="structure", num_steps=8)
+        result = esm3_model.generate(protein, config)
+
+        logger.info(f"Structure generation result type: {type(result)}")
+        logger.info(f"Structure generation result attributes: {dir(result)}")
+
+        # Save the PDB file
+        output_dir = "predicted_structures"
+        os.makedirs(output_dir, exist_ok=True)
+        pdb_file = os.path.join(output_dir, f"{sequence[:10]}_structure.pdb")
+        result.to_pdb(pdb_file)
+
+        logger.info(f"Structure predicted and saved to {pdb_file}")
+        return pdb_file
+    except ESMProteinError as e:
+        logger.error(f"ESM Protein Error in predict_structure: {str(e)}")
+        return None
     except Exception as e:
-        logger.error(f"Error in ESM3 refinement: {str(e)}")
-        return sequence  # Return original if refinement fails
+        logger.error(f"Unexpected error in predict_structure: {str(e)}")
+        return None
 
-
-    
-async def run_prediction_pipeline(sequences):
-    """Asynchronously run the full prediction pipeline for a list of sequences."""
-    tasks = []
-    for i, sequence in enumerate(sequences):
-        if isinstance(sequence, dict):
-            sequence = sequence['optimized_sequence']
-        logger.info(f"Processing sequence {i+1}/{len(sequences)}: {sequence}")
-        refined_sequence = await esm3_refinement(sequence)
-        tasks.append(asyncio.gather(
-            predict_protein_function(refined_sequence),
-            predict_properties(refined_sequence),
-            predict_structure(refined_sequence)
-        ))
-    
-    results = await asyncio.gather(*tasks)
-    return [
-        {
-            "sequence": seq,
-            "refined_sequence": refined_seq,
-            "score": res[0],
-            "properties": res[1],
-            "pdb_file": res[2]
-        } for seq, refined_seq, res in zip(sequences, [await esm3_refinement(s) for s in sequences], results)
-    ]
-    
-    
-async def main():
-    # Test sequence
-    test_sequence = "ITSPGCSYISLDVTPANLAAVNNRFTIASVNARYRALLAADRDFVEQYALRFYDKTRHHYTIERATQPDGLALTQFFIDQPTNQGEYTRPNAQNFQITQDFTYYPQKAKLRSGLGVVTVYDLSPINQSLGKPPANFTVLSHVFEHLLAGSNYHRVSFELLTTGYTISAAVHRGGTLPAIAKELTRQDDSPTLTGQLATRARELKEYCFATQINLRGNSGSRGNPPCPNESSAFIKFAPAPISNFTQQIQGAANEL"
-    
-    print("Running prediction pipeline...")
-    results = await run_prediction_pipeline([test_sequence])
-    
-    for result in results:
-        print("\nPrediction Results:")
-        print(f"Original Sequence: {result['sequence'][:50]}...")
-        print(f"Refined Sequence: {result['refined_sequence'][:50]}...")
-        print(f"Function Score: {result['score']}")
-        print("Properties:")
-        for prop, value in result['properties'].items():
-            print(f"  {prop}: {value}")
-        print(f"PDB file: {result['pdb_file']}")
+async def esm3_refinement(sequence):
+    try:
+        protein = ESMProtein(sequence=sequence)
+        refined_protein = await esm3_model.generate(
+            protein, 
+            GenerationConfig(track="sequence", num_steps=8, temperature=0.7)
+        )
         
-        if result['pdb_file']:
-            output_dir = "predicted_structures"
-            await create_3d_model_esm3(result['pdb_file'], "test_protein", output_dir)
+        if isinstance(refined_protein, (ESMProtein, str)):
+            refined_sequence = (
+                refined_protein.sequence 
+                if isinstance(refined_protein, ESMProtein) 
+                else refined_protein
+            )
+        else:
+            logger.warning(f"Unexpected refined protein type: {type(refined_protein)}. Using original sequence.")
+            refined_sequence = sequence
+        
+        logger.info(f"Refined sequence: {refined_sequence[:50]}...")
+        return refined_sequence
+    except ESMProteinError as e:
+        logger.warning(f"ESM Protein Error in ESM3 refinement: {str(e)}. Using original sequence.")
+        return sequence
+    except Exception as e:
+        logger.error(f"Unexpected error in ESM3 refinement: {str(e)}. Using original sequence.")
+        return sequence
+    
+        
 
-if __name__ == "__main__":
-    asyncio.run(main())
+async def run_prediction_pipeline(sequences, output_dir):
+    try:
+        results = []
+        for i, sequence in enumerate(sequences):
+            if isinstance(sequence, dict):
+                sequence = sequence['optimized_sequence']
+            logger.info(f"Processing sequence {i+1}/{len(sequences)}: {sequence}")
+            refined_sequence = await esm3_refinement(sequence)
+            
+            try:
+                score = await predict_protein_function(refined_sequence)
+                properties = await predict_properties(refined_sequence)
+                pdb_file = await predict_structure(refined_sequence)
+            except Exception as e:
+                logger.error(f"Error processing sequence {i+1}: {str(e)}")
+                score, properties, pdb_file = None, None, None
+
+            results.append({
+                "sequence": sequence,
+                "refined_sequence": refined_sequence,
+                "score": score,
+                "properties": properties,
+                "pdb_file": pdb_file
+            })
+
+        return results
+    except Exception as e:
+        logger.error(f"Error in run_prediction_pipeline: {str(e)}")
+        logger.error(f"Sequences: {sequences}")
+        logger.error(f"Output directory: {output_dir}")
+        return None
+    
+        

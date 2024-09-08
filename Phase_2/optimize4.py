@@ -8,7 +8,7 @@ from transformers import BertForMaskedLM, BertTokenizer
 import asyncio
 import logging
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
-from predict5 import predict_protein_function, predict_properties, predict_structure
+from Phase_2.predict import predict_protein_function, predict_properties, predict_structure
 import random
 import numpy as np
 from scipy.stats import boltzmann
@@ -19,7 +19,7 @@ from transformers import BertForMaskedLM, BertTokenizer
 import asyncio
 import logging
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
-from predict5 import predict_protein_function, predict_properties, predict_structure
+from Phase_2.predict import predict_protein_function, predict_properties, predict_structure
 import random
 from deap import base, creator, tools, algorithms
 
