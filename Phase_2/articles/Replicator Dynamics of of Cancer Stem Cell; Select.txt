@@ -1,869 +1,0 @@
-Title: Replicator Dynamics of of Cancer Stem Cell; Selection in the Presence of
-  Differentiation and Plasticity
-Abstract:   Stem cells have the potential to produce lineages of non-stem cell
-populations (differentiated cells) via a ubiquitous hierarchal division scheme.
-Differentiation of a stem cell into (partially) differentiated cells can happen
-either symmetrically or asymmetrically. The selection dynamics of a mutant
-cancer stem cell should be investigated in the light of a stem cell
-proliferation hierarchy and presence of a non-stem cell population. By
-constructing a three-compartment Moran-type model composed of normal stem
-cells, mutant (cancer) stem cells and differentiated cells, we derive the
-replicator dynamics of stem cell frequencies where asymmetric differentiation
-and differentiated cell death rates are included in the model. We determine how
-these new factors change the conditions for a successful mutant invasion and
-discuss the variation on the steady state fraction of the population as
-different model parameters are changed. By including the phenotypic
-plasticity/dedifferentiation, in which a progenitor/differentiated cell can
-transform back into a cancer stem cell, we show that the effective fitness of
-mutant stem cells is not only determined by their proliferation and death rates
-but also according to their dedifferentiation potential. By numerically solving
-the model we derive the phase diagram of the advantageous and disadvantageous
-phases of cancer stem cells in the space of proliferation and dedifferentiation
-potentials. The result shows that at high enough dedifferentiation rates even a
-previously disadvantageous mutant can take over the population of normal stem
-cells. This observation has implications in different areas of cancer research
-including experimental observations that imply metastatic cancer stem cell
-types might have lower proliferation potential than other stem cell phenotypes
-while showing much more phenotypic plasticity and can undergo clonal expansion.
-
-Full Text: Replicator Dynamics of of Cancer Stem Cell; Selection
-in the Presence of Dierentiation and Plasticity
-Kamran Kaveh1, Mohammad Kohandel1;2, Siv Sivaloganathan1;2
-1Department of Applied Mathematics, University of Waterloo, Waterloo, ON, Canada N2L
-3G1
-2Center for Mathematical Medicine, Fields Institute for Research in Mathematical Sciences,
-Toronto, ON, Canada M5T 3J1
-Abstract
-The cancer stem cell hypothesis has evolved into one of the most important
-paradigms in cancer research. According to cancer stem cell hypothesis, so-
-matic mutations in a subpopulation of cells can transform them into cancer stem
-cells with the unique potential of tumour initiation. Stem cells have the poten-
-tial to produce lineages of non-stem cell populations (dierentiated cells) via a
-ubiquitous hierarchal division scheme. Dierentiation of a stem cell into (par-
-tially) dierentiated cells can happen either symmetrically or asymmetrically.
-The selection dynamics of a mutant cancer stem cell should be investigated
-in the light of a stem cell proliferation hierarchy and presence of a non-stem
-cell population. By constructing a three-compartment Moran-type model com-
-posed of normal stem cells, mutant (cancer) stem cells and dierentiated cells,
-we derive the replicator dynamics of stem cell frequencies where asymmetric
-dierentiation and dierentiated cell death rates are included in the model. We
-determine how these new factors change the conditions for a successful mutant
-invasion and discuss the variation on the steady state fraction of the popula-
-tion as dierent model parameters are changed. By including the phenotypic
-plasticity/dedierentiation, in which a progenitor/dierentiated cell can trans-
-form back into a cancer stem cell, we show that the eective tness of mutant
-stem cells is not only determined by their proliferation and death rates but
-also according to their dedierentiation potential. By numerically solving the
-model we derive the phase diagram of the advantageous and disadvantageous
-phases of cancer stem cells in the space of proliferation and dedierentiation
-potentials. The result shows that at high enough dedierentiation rates even a
-previously disadvantageous mutant can take over the population of normal stem
-cells. This observation has implications in dierent areas of cancer research in-
-cluding experimental observations that imply metastatic cancer stem cell types
-might have lower proliferation potential than other stem cell phenotypes while
-showing much more phenotypic plasticity and can undergo clonal expansion.
-Keywords: cancer stem cell, evolutionary dynamics, selection, dierentiation,
-plasticity, de-dierentiation, self-renewal, epithelial-mesenchymal transition.
-Preprint submitted to Elsevier April 12, 2021arXiv:1411.1399v1  [q-bio.CB]  5 Nov 20141. Introduction
-According to clonal evolution theory, most tumours arise from single cells
-through multiple genetic alterations accumulated over time. However, the can-
-cer stem cell hypothesis suggests that cancer cells with similar genetic back-
-ground originate from a transformed cell which can initiate the rest of tu-
-mour population (Bonnet and Dick, 1997)(Lapidot et al, 1994)(Eppert et al,
-2011)(Meacham and Morrison, 2013). This subpopulation of tumour initiating
-cells, known as cancer stem cells, are hypothesized to be a result of somatic
-mutations of a normal adult stem cell giving it a proliferative advantage and
-as a result generating clonal outgrowth in the tissue which leads to the for-
-mation of a neoplasm (Perou et al, 2000)(Srlie et al, 2001)(Vogelstein et al,
-2013). Combination of these mutation/proliferation mechanisms and microen-
-vironmental factors leads to dierent stages of cancer progression (Hanahan and
-Weinberg, 2000)(Hanahan and Weinberg, 2011), which results in genetically and
-phenotypically heterogeneous tumours (Notta et al, 2011).
-Stem cells can divide both symmetrically into two daughter stem cells (self-
-renewal) or two daughter progenitor cells (full dierentiation), or asymmetrically
-into a daughter stem cell and a progenitor cell (partial dierentiation) . Pro-
-genitor cells then divide hierarchically into a population of fully dierentiated
-functional tissue cells which lack proliferative potential (Morrison and Kimble,
-2006). This polarity in cancer stem cell division is observed in dierent cancer
-types. For breast carcinomas, it has been shown that activating the ErbB2
-oncogene increases the self-renewal potential of cancer stem cells signicantly
-(Cicalese et al, 2009). Similarly, p53 inactivation leads to not only almost im-
-mortal stem cells but also a higher divisional polarity (Cicalese et al, 2009).
-p53 is also reported to impose an asymmetric proliferation potential on other
-non-stem cell linages (Rambhatla et al, 2001); see also (Caussinus and Gonzalez,
-2005).
-In addition to the tumour initiating potential of cancer stem cells, another
-distinctive feature of cancer cells is their high phenotypic plasticity. One aspect
-of such plasticity is the dedierentiation potential possessed by stem cell progen-
-itors. During dedierentiation progenitors (or dierentiated cells) can transform
-back spontaneously into a stem cell thus lending further credence to the vivid
-concept of cancer stem cells as tumour initiating cell (Marjanovic et al, 2013).
-Recent in-vitro experiments have demonstrated the dedierentiation potential
-of dierent cancer type cell lines. For breast cancer, puried populations of non-
-stem cells, CD44low=CD24hi(basal and luminal cell lines), created a population
-of CD44hi=CD24low, which is a marker for stemness (Gupta et al, 2011). It
-has been also shown that a population where the majority are non-stem cells,
-CD44low=CD24hi, gives rise to a higher mammosphere formation rate which
-is a measure of stemness (Chaer et al, 2011). The role of dedierentiation in
-2intestinal tumorigenesis is investigated in (Schwitalla et al, 2013), where it is
-shown that elevating the levels of the transcription factor NF  B, which mod-
-ulate Wnt signaling, induces dedierentiation in the (non-stem cell) intestinal
-epithelial cell population and thus can lead to tumourigenesis. In the context of
-leukaemia, the leukemia-initiating cell marker CD34+CD38 has been observed
-in the fraction of non-leukemia initiating cells (Bonnet and Dick, 1997)(Sarry
-et al, 2011).
-It has been suggested that as cancer progresses towards more aggressive
-metastatic phenotypes, the dedierentiation potential increases (Marjanovic
-et al, 2013). The dedierentiation of non-stem cells may arise due to (stochasti-
-cally) genetic or epigenetic mutations, or the epithelial-mesenchymal transition
-(EMT), a cellular dierentiation process wherein epithelial cells adopt mes-
-enchymal features (Marjanovic et al, 2013). It has been shown that EMT in-
-duced cells have a higher dedierentiation potential while at the same time they
-display features resembling stem cell (Chaer et al, 2013)(Scheel and Weinberg,
-2011) (Mani et al, 2008). Thus, beside the mutation/clonal expansion model
-of cancer progression which leads to genomic heterogeneity in the tumour pop-
-ulation, inclusion of hierarchal stem cell proliferation and the dedierentiation
-potential of cells leads to more phenotypic heterogeneity inside a tumour. More
-importantly, cell plasticity shadows the concept of stem cells, in the sense that
-we cannot compare the two populations of normal and cancer stem cells com-
-peting via their corresponding proliferation strengths, but rather the population
-of non-stem cells has to be included in the picture of the selection process and
-Darwinian evolution of the tumour.
-Mathematical models of selection processes so far have treated the selec-
-tion mechanism among cancer stem cell populations and normal population
-assuming higher division rate for mutants due to activation and inactivations of
-oncogenes/tumour suppressor genes that regulate the growth factor signalling
-pathways inside the cell. These models were able to successfully describe the
-selection process occurring prior to each new clonal expansion (due to a new
-mutation). The dynamics of tumour suppressor gene inactivation in particular
-has been investigated in the literature in detail (Komarova et al, 2003)(Nowak
-et al, 2004)(Michor et al, 2004); see (Attolini and Michor, 2009) for a thorough
-review of evolutionary modelling in cancer. However, there has not been much
-work with regard to stem cell hierarchy proliferation potential and its eect on
-selection dynamics. Some recent works have focused on the asymmetric nature
-of stem cell division. (Dingli et al, 2007) studied the time to xation of mu-
-tant stem cell selection using a simplied birth-death model of two stem cell
-population which divides asymmetrically, ignoring the population progenitors
-and dierentiated cells (perhaps for simplicity). A recent computational study
-by Sprouske et al (Sprouske et al, 2013), has investigated the eect of an
-asymmetric division scheme for stem cells by simulating stem cells with random
-tness and have discussed Darwinian selection and the existence of disadvanta-
-geous subpopulations in the formation of neoplasms. Shahriyari and Komarova
-(?) has also addressed the evolutionary advantage/disadvantages of symmetric
-versus asymmetric dierentiation by constructing a Moran-type process for one
-3and two-hit mutation models and have analyzed the eect of dierentiated cell
-compartment in the eectiveness of the mutations among stem cell compart-
-ment. More recently, Jilkine and Gutenkunst ( ?) considered a stochastic model
-for dierentiation and dedierentiation and investigated time to mutation ac-
-quisition in the presence of dedierentiation mechanism for progenitors of stem
-cells. They also discussed how asymmetric versus symmetric dierentiation can
-aect the eciency of dedierentiation process. The cancer stem cell hypoth-
-esis has also been applied in the context of drug resistance as an evolutionary
-process by Leder et al (Leder et al, 2010).
-The present work aims to provide a general framework to study the selection
-dynamics of cancer versus normal stem cells by including asymmetric dierenti-
-ation, in addition to stem cell self-renewal. This introduces a more challenging
-mathematical model which now contains two competing stem cell populations
-and a third dierentiated cell compartment, which now both stem cells popu-
-lations are competing with. By introducing a Moran-type stochastic model for
-this three-compartment model, we derive replicator-type dynamics for the three
-populations of cancer stem cells, normal stem cells and dierentiated cells as
-a function of time. We show that the condition for successful invasion by the
-cancer stem cells not only depends on their higher division rate or lower death
-rate, but also on dierentiation rate or polarity of their asymmetric division. In
-constructing the birth-death model we assume three independent parameters for
-the death rates of mutant stem cells, normal stem cells and the dierentiated cell
-population. An important feature of our model is that dedierentiation events
-can be naturally added to the model. We discuss dedierentiation (assumed
-only for cancer stem cells) in detail and show that the proliferation advantage is
-not only a function of relative tness of two stem cells and their corresponding
-dierentiation rates but also depends on the strength of plasticity and on the
-population of non-stem cells. We plot a phase diagram between advantageous
-and disadvantageous regimes in the space of tness, plasticity and, dierenti-
-ation probabilities. We show that assuming nite dedierentiation rates (con-
-sistent with numerical estimate from experiments) a seemingly disadvantageous
-mutant can successfully initiate clonal expansion into a neoplasm.
-The paper is organized as follows: In Sec. 2 we formulate a Moran-type
-model of stem cell dierentiation and dedierentiation and report the replica-
-tor dynamics in the presence of dierentiation and dedierentiation potentials.
-We also discuss the analytical result of the xation time for this model in the
-absence of dedierentiation. In Sec. 3 we discuss numerical solutions of the
-replicator dynamics and investigate the population dynamics and average time
-to xation of a mutant stem cell as one varies division rates of the stem cell
-population, relative death rates of stem cells and dierentiated cells and dif-
-ferentiation probabilities. Similarly, we look at time to xation and whether
-a mutant is advantageous or disadvantageous by varying both relative division
-rates and dedierentiation potential. In Sec. 4 we discuss the implications for
-cancer therapeutics and also possible future directions of investigation.
-42. Replicator Dynamics of Dierentiation and Dedierentiation
-We consider a model of two stem cell populations and a population of par-
-tially/fully dierentiated cells (Fig. 2). Normal stem cells divide with a rate
-r1and die with rate d1per generation. In each division event, a stem cell can
-divide (1) symmetrically into two daughter stem cells with probability !1, (2)
-asymmetrically into one daughter stem cell and one progenitor with probability
-u1and (3) fully dierentiate into two daughter progenitor cells with probability
-v1(Fig. 3). The probabilities !1;u1andv1add up to unity. Similarly, mutant
-stem cell proliferation and death rates are denoted by r2andd2. Correspond-
-ingly, self-renewal and dierentiation probabilities are !2;u2andv2. In the
-hierarchal stem cell proliferation scheme, the number of transient progenitors
-are nite thus by including all dierentiated cell population into one compart-
-ment, we assume that the only possibility for this population to increase is the
-case in which a stem cell dierentiates symmetrically or asymmetrically. Thus
-we assume that the dierentiated compartment lacks proliferation potential of
-its own. The death rate of dierentiated cells are commonly higher than normal
-and cancer stem cells and is denoted as dD.
-To biologically justify the model described above, consider an intestinal crypt
-which constitutes part of the colon. The crypt has a U-shaped one-dimensional
-arrangement of cells where at the bottom, few stem cells proliferate and augment
-the proliferation of the rest of the cells. On top of the stem cells, there is a range
-of transient progenitor cells which constitute most of the body of the crypt and
-end up to a population of fully functional dierentiated cells. Due to both
-geometrical constraints and homeostasis regulation, the total population of the
-whole crypt - and not only the population of stem cells at the bottom - can be
-considered constant (see Fig. 1).
-S1+S2D
-stem cellspartially  differentiatedfully differentiated
-Figure 1: Schematics of three-compartment model of cancer/normal stem cell and dierenti-
-ated cells for an intestinal crypt.
-We consider a Moran-type of birth-death process in which, at every time
-5step, one stem cell is chosen to divide at random with probability proportional
-to its tness. The cell division includes all the possible self-renewal and dier-
-entiation events. Dierentiated cells do not contribute to birth events as they
-lack any proliferation potential. At the same time step, another stem cell or
-dierentiated cell is picked at random to die. This construction keeps the total
-population of the whole system of stem cells plus dierentiated cells constant.
-We can examine the dynamics of the selection mechanism by analyzing this
-model. Notice the dierences between this model and the conventional Moran
-model, where there are only two populations of normal and mutant cells and at
-every time step a birth and death event occurs. In our model, birth events do
-not necessarily increase the total number of either of the stem cell populations
-but rather can be a dierentiation process in which the non-stem cell popula-
-tion increases in number, while the number of stem cells is reduced or remains
-constant. Our construction is also dierent from that of (Dingli et al, 2007)
-which incorporated dierentiation events as an independent death event. For a
-conventional Moran model, the population dynamics is described by a replicator
-ODE for the fraction of mutant stem cells, x(t) (Moran et al, 1962)(Wodarz and
-Komarova, 2005),
-dx(t)
-dt=(r 1)x(1 x)
-(1 + (r 1)x): (1)
-This can straightforwardly be generalized to arbitrary birth and death rates r
-andd,
-dx(t)
-dt=(~r 1)x(1 x)
-(r2
-r1 1)x+ 1)
-(1 d1
-d2)x+d1
-d2; (2)
-~r=r2
-r1d1
-d2: (3)
-If ~r>1 the mutant is advantageous, if ~ r<1 the mutant is disadvantageous.
-The case ~r= 1 is the marginal neutral limit where stochastic uctuation and
-nite-population eects are important in determining the fate of a single mu-
-tant. In the presence of asymmetric dierentiation and the third population of
-(dierentiated) cells, we generalize the above simple criteria for a mutant stem
-cell being advantageous. The population dynamics of the two stem cell popu-
-lations can be obtained as a non-linear system of coupled ODEs (see Appendix
-A),
-dx1(t)
-dt=r11dDx1 x1d1(r1x1+r2x2) +r11x1((d1 dD)x1+ (d2 dD)x2)
-(r1x1+r2x2)((d1 dD)x1+ (d2 dD)x2+dD);
-dx2(t)
-dt=r22dDx2 x2d2(r1x1+r2x2) +r22x2((d1 dD)x1+ (d2 dD)x2)
-(r1x1+r2x2)((d1 dD)x1+ (d2 dD)x2+dD);
-(4)
-6qPartial/Full !Differentiated!Cells
-Cancer !Stem CellNormal !Stem Celld2d1dDr2↵2
-r1↵1r1(1 ↵1)r2(1 ↵2)Figure 2: The two competing stem cells (normal =blue, mutant = red) can self-renew or
-dierentiate with rates r1;21;2andr1;2(1 1;2), and die with rates d1;2. The rest of the
-population of progeny and dierentiated cells are indicated as green which can either die, dD
-or dedierentiate into the cancer stem cell compartment ( q).
-wherex1;2are the frequencies of the normal and cancer stem cells ( x1;2=
-i1;2=Nwherei1;2are the corresponding stem cell populations), the coecients
-1;2=!1;2 v1;2indicate the eective self-renewal rate. Notice that now
-x1+x2+xD= 1, where xDis the fraction of the dierentiated cells. Equation 4
-is the replicator dynamics of caner stem cells in the presence of dierentiation.
-Attractive xed points of Eq. 4 determine the possible steady state frac-
-tions of the two stem cell populations. In the absence of any game theoretical
-interactions there is no coexistence of the two populations. Fixed point of Eq.
-4 corresponding to domination of the mutant population is,
-x
-1= 0; x
-2=2dD
-(1 2)d2+2dD; (5)
-where the value x
-2also indicates the nal fraction of mutant stem cells while the
-rest of the fraction is taken by dierentiated cells. The eective proliferation rate
-of each stem cell population is thus determined by r1;21;2=r1;2(!1;2 v1;2).
-Similarly, the xed point of normal stem cells lies along the x1-axis and is given
-by,
-7i
-i
-DedifferentiationFigure 3: The replication-death Moran-type model. The two competing stem cell populations
-are indicated by blue and red (normal =blue, mutant = red). The rest of the population
-of progeny and dierentiated cells are indicated as green. In each time step one replication
-and one death elementary process occurs. In the presence of dedierentiation, two further
-composite events happen: a dierentiated cell divided into a cancer stem cell and a cancer
-stem cell death occurs.
-x
-1=1dD
-(1 1)d1+1dD; x
-2= 0: (6)
-8The phase portrait for Eq. 4 is plotted in Fig. 4. In Fig. 4 one can see that
-there are two xed points for this model, x
-1;2along each of the two x1andx2
-axes. It is importance to notice that one of the two xed points, x
-1;2is globally
-attractive and the other is a saddle-point. The attractive xed-point determines
-the advantageous population that is capable of taking over a fraction of the
-whole population. As the rest of the population is made of only non-stem cells.
-A straightforward stability analysis for both xed points leads to an algebraic
-condition to determine the advantageous versus non-advantageous phenotypes
-in the presence of dierentiation. One can readily check the following condition
-for a successful mutant,
-r2(!2 v2)
-d2r1(!1 v1)
-d1: (7)
-It turns out that the change in the dierentiated cells death rate (which in
-fact is representative of how fast transient cells are dividing and fully-dierentiated
-cells are dying) does not change the critical value of the eective tness that
-determines a neutral system. Variation in the value of dD, however, does change
-the fraction of mutant stem cells in the stationary state and also aects how
-long it takes to reach xation (time to xation).
-The denominator of Eq. 4 is quite essential in determining the time to
-xation for an advantageous mutant. One can derive (see Appendix B) an
-analytical result for this xation time in the case of equal death rates d1;2;D= 1,
-tF=r2+1
-r2 1
-lnN ln2; (8)
-where 1=Nis the initial fraction of the mutant stem cells (see Appendix B).
-As dierentiation probabilities increase the second term contribution abruptly
-increases leading to higher time to xation. Interestingly u1;2=v1;2= 1=3 is
-the limit where time to xation blows up to innity.
-It is also instructive to follow the trajectory, starting with one mutant stem
-cell (x2;i= 1=N). As indicated by a horizontal trajectory in Fig. 4, the fre-
-quency of mutant cells remain constant indicating that initially dierentiation
-of normal stem cells is a major mechanism until the trajectory gets close to
-the xed point of normal cells, i.e. dierentiated cells get saturated. The rest
-of the trajectory is a diagonal line that connects the two xed points to each
-other. For the case of identical dierentiation probabilities, 1=2we get
-x2= x1, indicating that the selection dynamics, similar to the Moran
-model, is at work, and the eect of dierentiation is a shift in the eective total
-population ( N!N nD). In the case of dierent dierentiation rates which
-is of interest to us, we can see the line of attraction does have a slope and thus
-dierentiation eect acts to change the eective total population and also to
-amplify the frequency of the mutant population.
-Beginning from a small dierentiated cell fraction (see Fig.4), we see that
-the trajectories tends to stay at an almost constant value for x2, whilex1is de-
-creasing, i.e the competition is initially between dierentiated cells and normal
-9Figure 4: The phase portrait of average populations for the stochastic growth equations for
-(a)r1= 1:0;r2= 1:2;u1;2= 0:1;v1;2= 0:0;d1;2;D= 1:0 (b)r1= 1:0;r2= 1:2;u1= 0:1;u2=
-0:3;v1;2= 0:0;d1;2;D= 1:0. Mutant xed point along vertical axis becomes unstable as the
-dierentiation probability u2increases from 0.1 to 0.3.
-cells. As time passes and the dierentiated cell population reaches a saturated
-value the eective competition is going to be between the two stem cell popu-
-lations. In three-population models of selection, this sequential behaviour for
-selection is known as Hill-robertson interference (for example see ( ?)). This is
-in fact an important observation, as the model predicts that there is a always a
-(relatively large) pool of dierentiated cell population present as the two stem
-cell populations are competing thus when dedierentiated events are going to
-be taken into account (next section).
-2.1. Dedierentiation and Plasticity
-We can introduce dedierentiation into this model in a similar fashion as
-a back-mutation event for dierentiated cells. To incorporate mutation events
-into a Moran process, we can regard it as an asymmetric division event where
-one phenotype asymmetrically divides and gives rise to one daughter cell of
-its own type and one daughter cell of the mutant phenotype (see (Komarova
-et al, 2003)(Wodarz and Komarova, 2005)). In the case of plasticity - as back
-mutation- we assume that a dierentiated cell can asymmetrically divide into
-a daughter dierentiated cell and a daughter mutant stem cell. The rate of
-division is indicated by q. This is accompanied by a death event of either a
-dierentiated cell or a mutant stem cell with the same death rate as model
-indicates. The slight dierence that appears in our construction is that we need
-a mutation event for dierentiated cells to transform back into mutant stem cells
-and into the normal population. Thus, only the dierentiated cell division are
-accompanied with either mutant or dierentiated cell death events. Thus there
-is a correlation between birth-death dedierentiation events by construction.
-10As normal stem cells are assumed to be well regulated and follow the stem
-cell proliferation hierarchy we ignore the possibility of dedierentiation for the
-normal population.
-To reduce the number of parameters, we assume the death rates of all pop-
-ulations are equal, d1;2;D= 1:0. Now the population dynamics can be written
-in terms of the ratio of r2andr1and the dedierentiation rate, q. Derivation
-of the transition probability for the dedierentiation events are presented in
-Appendix A,
-dx1(t)
-dt=r11x1 x1(r1x1+r2x2)
-((r1 q)x1+ (r2 q)x2+q);
-dx2(t)
-dt=r22x2 x2(r1x1+r2x2) +q(1 x1 x2)2
-((r1 q)x1+ (r2 q)x2+q); (9)
-where the term q(1 x1 x2)2is added to the dynamics of mutant cells. The
-dynamics of normal stem cells are untouched other than modication to the
-total possible events (denominator of equations) which now includes an eective
-proliferation event of dierentiated cells with rate q.
-In the presence of dedierentiation, the fate of a new mutant is not only
-determined by its relative proliferation rate, rbut also by the dedierentiation
-rate of non-stem cell population, q. Notice that the dierentiation dynamics is
-essential and has to be included, as the dierentiation rates essentially deter-
-mine what fraction of the total population is made up of dierentiated cells and
-thus aect the dedierentiation rate. For example if dierentiation rates are
-low and we begin with a population of normal stem cells and introduce a dis-
-advantageous mutant to this system, the mutant will become extinct. However,
-if the dierentiation rates are high enough the population of dierentiated cells
-- created via dierentiation - can actively contribute to increasing the mutant
-population.
-In the construction of the model we did not make a distinction between dif-
-ferentiated cells with the capability of phenotypic plasticity and normal dieren-
-tiated cells. Dividing the non-stem cell population into plastic and non-plastic
-populations, however, will only change the eective value of the dedierentia-
-tion rate,q, and is not crucial for our analysis. For stochastic analysis of the
-xation probability, however, such a distinction might be needed.
-In the presence of dedierentiation, the xed point of mutant cells remains
-along thex2-axis, given by,
-x
-1= 0; x
-2=1
-2 2r2+ 2q+p
-2r2(2r2 4q) + 4qr2
-q r2; (10)
-while the (previous) xed point of normal cells now shifts up from the x1axis,
-having both components nonzero. The components of this xed point can be
-described by algebraic expressions in terms of r1;2;1;2andq. In the limit of
-1= 1 andr1= 1,
-x
-1=(2+q)r2
-2 2qr2+q r2
-q(r2 1)2; x
-2= 2r2+ 1
-q(r2 1)2: (11)
-11Notice that even in the absence of both stem cell populations at t= 0 the
-system will evolve to one of the two xed points which contain stem cells, due
-to phenotypic plasticity.
-We have depicted the phase portrait of the stem cell dynamics in Fig. 5.
-While the vertical xed point of mutant stem cells is not globally stable for
-r2=r1= 0:8, upon introduction of a nite value of dedierentiation, the role of
-the two xed points switches and the mutant is now advantageous (Fig. 5b).
-Figure 5: The phase portrait of average populations for (a) r1= 1:0;r2= 0:8;u1;2=
-0:5;v1;2= 0:0;d1;2;D= 1:0 with dedierentiation rate q= 0:0. (b) Same parameter val-
-ues as part (a) but q= 0:5 now. The important change here is that the xed point x
-1remains
-along the horizontal axis, indicating the possibility of extinction of mutant cells, while the
-new xed point (previously called x
-2now have non-zero values of normal and mutant stem
-cells indicating the possibility of co-existence between the two population in the presence of
-dedierentiation. Notice the co-existence can only occur when the disadvantageous mutant
-becomes advantageous in the presence of dedierentiation).
-In the next section we analyze the numerical solutions of both replicator
-dynamics in detail. The numerical solutions will let us calculate the time to
-xation of the model as a function of proliferation and dierentiation rates of
-normal and cancer stem cells as well as death rates of all three populations.
-3. Numerical Results
-3.1. Time to Fixation and Steady State Fraction of Cancer Stem Cell
-We numerically integrate the system of equations in Eq. 4 and plot (Fig. 6)
-the stem cell frequencies as function of proliferation and death rates in addition
-to dierentiation probabilities. In addition to time to xation, the value of
-the steady state fractions can be read o from these plots. In most of the
-cancer initiation cases, the population of normal and dierentiated cells are
-in equilibrium prior to introduction of the mutant stem cell. The equilibrium
-12fraction between stem cells and dierentiated cells dier from tissue to tissue but
-normally stem cells constitute a small minority. This is reected in our choice
-of initial conditions. The initial frequency of normal stem cells is taken to be
-0.5 while the mutant frequency is 0.01. In Fig. 6a proliferation parameters
-read asr2= 1:2;r1= 1:0;d1;2;D= 1:0. As it is believed that most of the
-dierentiation events occur asymmetrically, i.e., v1;21, we choose v1;2= 0:0
-and look at the population dynamics of both stem cell species as u1is varied for
-two dierent values of u2= 0.1, Fig. 6 (top), and u2= 0.3, Fig. 6 (bottom).
-The mutant stem cell is always assumed advantageous with r2=r1= 1:2. Notice,
-while relative tness in the absence of dierentiation is bigger than unity, for
-low dierentiation rates of normal cells and high dierentiation rates of cancer
-stem cells Fig. 6 ( u1= 0:1;u2= 0:3) the normal stem cells have a selective
-advantage. Also the increase in time to xation is apparent as one decreases the
-dierentiation rate of normal stem cells. For the normal stem cell frequency,
-there is a peak at early times which begins to decrease monotonically. As
-discussed in the previous section, this early increase in the population of both
-stem cells indicates that there is an early competition between stem cells and
-dierentiated cells before dierentiated cells reach saturation and stem cells
-begin to compete with each other. As the values of dierentiation probabilities
-is decreased we observe an increase in time to xation (time to reach plateau
-in Fig. 6) . This is in accordance with the exact analytical result for time to
-xationtF, Eq. 8.
-Time to xation is also plotted directly from integration of Eq. 4 as a
-function of both relative tness and dierentiation rates. This is plotted in Fig.
-7. Again, as is expected from Eq. 8, time to xation dramatically reduces as
-division ratio r2=r1increases as a function of asymmetric dierentiation rate of
-cancer stem cells.
-As discussed in the previous section, the eective tness is in fact indepen-
-dent of the value of dDas can be seen from the condition in Eq. 7. However,
-changingdDaects the nal frequency of mutant stem cells. This can be seen
-in Fig. 8. Fig. 8a is plotted with parameter values r1= 1;r2= 1:2;u1;2=
-0:3;v1;2= 0:0;d1;2= 1:0;dD=1.0 (magenta), 3.0 (green), 5.0 (blue), 7.0 (red).
-Finally, we plot the fraction of mutant stem cells as a function of both dDand
-the asymmetric dierentiation rate of mutant cells, u2in Fig. 9.
-3.2. Cancer Stem Cell Dynamics in the Presence of Dedierentiation
-In the presence of dedierentiation Eq. 9 can be solved for dierent values of
-dedierentiation and proliferation rates of normal and cancer stem cells. Pop-
-ulation dynamics of stem cell frequencies is plotted (Fig. 10) as dierentiation
-rates change. In Fig. 10 (top) a disadvantageous mutant with r2=r1= 0.8 is
-assumed. As one can see, upon increasing the dedierentiation rate from 0 to
-0.6, the mutant invasive fate changes. For q= 0:2;0:4;0:6, as a matter of fact,
-the mutant is advantageous. Change of dierentiation rates also play an impor-
-tant role in the dedierentiation dynamics. Dedierentiation not only depends
-on the rate of conversion and phenotype switching of non-stem cells but also
-13Figure 6: Stem cell frequencies as a function of time for various division rates and dieren-
-tiation probabilities: (top) r1= 1;r2= 1:2;u1= 0:2 (magenta), 0.4 (green), 0.6 (blue), 0.8
-(red),u2= 0:1;v1;2= 0:0;d1;2;D= 1:0. ( bottom) r1= 1;r2= 1:2;u1= 0:1 (magenta), 0.2
-(green), 0.3 (green), 0.3 (blue), 0.4 (red), 0.5 (black), u2= 0:3;v1;2= 0:0;d1;2;D= 1:0.
-14tF
-r
-u2tFFigure 7: (Average) time to xation as a function of relative tness and dierentiation rates
-left:tFas a function of r2=r1foru1= 0:5 andu2=0.2 (magenta),0.3 (green), 0.4 (blue), 0.5
-(red). Times are measured in units of generation.
-Figure 8: Stem cell fractions for parameters r1= 1;r2= 1:2;u1;2= 0:3;v1;2= 0:0;d1;2=
-1:0;dD=1.0 (magenta), 3.0 (green), 5.0 (blue), 7.0 (red).
-15u2dDxfracFigure 9: Mutant stem cell fraction in the steady state as a function of dierentiation rate
-u2(u1=u2;v1;2= 0:0) and the death rate of dierentiated cells, dD. Notice that the limit
-of low death-rate of dierentiated cells is not a physical result. In fact, in tissues such as
-intestinal crypt, the dierentiated cell death rates are signicantly higher than stem cells.
-on the population of non-stem cells itself. Based on our model this is not sur-
-prising that as the dierentiation rate u1;2(in this case) increases the originally
-disadvantageous cancer stem cell becomes advantageous, Fig. 10(bottom).
-Condition under which the cancer stem cells (in presence of a nite dieren-
-tiation rate ( u1;2), dedierentiation rate ( q) and relative proliferation ( r2=r1))
-are advantageous or not, is a nontrivial question. As can be seen from the xed-
-point analysis, the two xed points corresponding to a full xation of mutant cell
-(versus partial) in the nal population always exist. The condition for having
-a successful mutant depends on when the mutant xed point becomes globally
-attractive. We have calculated this numerically by diagonalizing the Jacobian
-matrix of Eq. 9, and looking at the point when the second eigenvalue becomes
-negative (one eigenvalue corresponding to x2direction is always attractive thus
-we only need to look at the sign change of the other eigenvalue).This leads to a
-phase diagram for successful and unsuccessful mutants as function of r=r2=r1
-andq. Fig. 11 shows the results for two dierent values of dierentiation rates
-u1;2= 0.3 (left) and u1;2= 0.7 (right). The higher dierentiation rate helps the
-mutant to shift the neutral critical point (i.e. r= 1 forq= 0) faster to lower r
-asqincreases. Fig. 12 shows a 3D plot of such a phase diagram as all the three
-relevant parameters in the model change.
-16Figure 10: Stem cell dynamics in the presence of dierentiation. Top: Dynamics of both
-mutant and normal stem cell frequencies for dierent values of dedierentiation rate q, while
-rest of parameters are kept constant at r1= 1;r2= 0:8;u1;2= 0:3;v1;2= 0:0;q= 0:0
-(magenta), q= 0:2 (green),q= 0:4 (blue),q= 0:6 (red). Bottom: Dynamics of populations
-as dierentiation rate varies: r1= 1;r2= 0:8;v1;2= 0:0;q= 0:2,u1;2= 0:2 (magenta),
-u1;2= 0:4 (green),u1;2= 0:6 (blue),u1;2= 0:8 (red).
-17advantageous
-dis-advantageous
-dis-advantageousadvantageous
-Figure 11: Phase diagram of dis-advantageous/advantageous mutant in the space of pro-
-liferation rate ( r2represents relative proliferation rate as r1= 1:0). Three dierent plots
-correspond to dierent value of dierentiation probabilities.
-q
-Figure 12: Three dimensional phase-diagram for dedierentiation rate of cancer stem cells q,
-proliferation rate r2(r1= 1:0) and asymmetric dierentiation probability u2. (u2=u1;v1;2=
-0:0). The curve indicate the neutral limit. All points in the phase space in the left belong to
-an dis-advantageous mutant case.
-184. Discussion and Implications on Cancer Therapeutics
-In this work we constructed a general model of stem cell selection dynamics
-by including the population of dierentiated cells into a Moran-type model which
-governs the stochastic dynamics of both stem cell and non-stem cell species at
-the same time. Although the non-stem cell (dierentiated) population lacks
-proliferative potential its population can increase through the dierentiation of
-stem cells. Our model allows us to proceed with investigating the conditions for
-having a successful mutant stem cell as a function of dierentiation probabilities
-as well as the proliferation and death rates. Beside the competition between two
-stem cells the model now can describe competition between stem cells and non-
-stem cells which resemble itself as the fraction of the stem cells in the steady
-state. The replicator dynamics that is derived for stem cell frequencies can
-predict the average time to xation which is in agreement with previous known
-results for the Moran model in the limit of no dierentiation.
-The above construction allows us to approach theoretically the question of
-dedierentiation and phenotypic plasticity that has been observed in recent ex-
-periments and which is believed to be an important factor at the latest stages of
-cancer. By including dedierentiation events into our replicator dynamics, we
-are able to determine the fate of a cancer stem cell not only by its proliferation
-potential but also based on the dedierentiation rate and overall dierentiation
-parameters. We derive a 3D phase diagram that determines in what regions of
-(proliferation, dedierentiation, dierentiation) space the cancer (mutant) stem
-cell is successful. Interestingly, the phenotypic heterogeneity that is believed to
-be a result of cell plasticity is seen in our model in the presence of dedieren-
-tiation. Due to the plastic nature of dierentiated cells even a disadvantageous
-mutant will not completely go extinct but rather keepsis preserved as a small
-subpopulation in the nal population of the system and can co-exist with the
-normal stem cell population.
-Notice that due to the complicated nature of adapting hierarchal prolifera-
-tion scheme of stem cells into constant-nite population model(s) of selection
-dynamics, we have had to keep things simplied. Thus the population of the
-dierentiated cells generated by either the cancer stem cells or normal stem
-cells are both included in one compartment. The justication for this assump-
-tion, is that in equilibrium there is a relatively large pool of dierentiated cells
-that then due to their plasticity (at least a fraction of them) can be expected
-to contribute to an inux of dierentiated cells that transform back into caner
-stem cells. The lack of any experimental observations to distinguish between
-plastic and non-plastic dierentiated cells has led us to keep the simplest model
-possible. However, the reader should be cautious since for small populations
-of dierentiated cells we might expect some distinction between a lineage of
-dierentiated cells derived from cancer stem cells from one generated by normal
-stem cells. This will be the subject of future work.
-The implications of the cancer stem cell dynamics for cancer therapeutics
-is also important. The evolutionary dynamics of drug resistance has been dis-
-cussed in the literature in some detail (Iwasa et al, 2006) (see also (Dingli and
-19Michor, 2006)(Foo and Michor, 2009)). The idea in previous modelling schemes
-is that due to strong genetic heterogeneity of stem cells inside the tumour, there
-is a nite probability of having a particular drug-resistant phenotype which upon
-chemotherapy (or radiotherapy) can take over the system and replenish the can-
-cer stem cell pool even faster than before. Inclusion of phenotypic plasticity,
-as we discussed in this model, however, suggests an alternative picture. In this
-picture tumour heterogeneity is due to diverse dedierentiation programs which
-result in a set of plastic dierentiated cells transforming back into a variety
-of cancer stem cell phenotypes. Thus even if the therapy kills all cancer stem
-cells in the tumour, as long as a small population of plastic non-stem cells ex-
-ist there is a nite chance for them to create a drug-resistant phenotype. Due
-to a much higher rate of dedierentiation (relative to somatic mutations) this
-alternative picture can explain the solidity of the drug-resistance mechanism in
-many tumours. Our model also suggests that this rate strongly depends on the
-number of dedierentiation channels developed in the tumour (which correlates
-with the level of plasticity and aggressiveness of the tumour phenotypes). Drug
-resistance due to dedierentiation also predicts a dependence of resistance on
-the size of the tumour after the therapy. As a matter of fact when the tumour
-is in its early stages, the dedierentiation rate is low, the heterogeneity is also
-small, and thus therapy eradicates or reduces the size of the tumour signi-
-cantly. However, if the drug-resistant colony is already formed and the main
-mechanism of their population increase is due to their self-renewal capability,
-then the cancer therapy might not work due to both increased rate of plasticity
-and also inability to overcome the resistant colony.
-There are also important implications related to the epithelial-mesenchymal
-transition (EMT), a cellular dierentiation program wherein epithelial cells
-adopt mesenchymal features. It is known that cancer cells that undergone EMT
-have less proliferation potential (division rate) (Gatenby and Gillies, 2008) but
-much higher plasticity and dedierentiation than their progenitors. The phase
-diagram derived in the previous section can answer the paradoxical situation
-that even though EMT cells are assumed to be disadvantageous inside a tu-
-mour they can undergo clonal expansion and defy extinction and eventually
-pay a signicant role in the highly heterogenous population of the tumour.
-5. Appendix A
-Individual events of replication of a normal or mutant stem cell and/or death
-of a mutant or normal stem cell or a dierentiated cell are given by,
-Preplication;i=!irini
-r1n1+r2n2(!i!ui;vi)
-Pdeath;k=dknk
-d1n1+d2n2+dDnD; i= 1;2k= 1;2;D: (12)
-All possible combinations of these replication and death events leads to tran-
-sition probabilities for the Moran-type model introduced in the text (Fig. 3).
-20The master equation for such a three-population death-birth process can be
-written as,
-N 1@(n1;n2;t)
-@t=P ;0(n1+ 1;n2)(n1+ 1;n2;t) +P+;0(n1 1;n2)(n1 1;n2;t)
-+P0; (n1;n2+ 1)(n1;n2+ 1;t) +P0;+(n1;n2 1)(n1;n2 1;t)
-+P ;+(n1+ 1;n2 1)(n1+ 1;n2 1;t) +P+; (n1 1;n2+ 1)(n1 1;n2+ 1;t)
-+P ; (n1+ 1;n2+ 1)(n1+ 1;n2+ 1;t) +P 2;0(n1+ 2;n2)(n1+ 2;n2;t)
-+P0; 2(n1;n2+ 2)(n1;n2+ 2;t) fP ;0(n1;n2) +P+;0(n1;n2)
-+P0; (n1;n2) +P0;+(n1;n2) +P 2;0(n1;n2) +P0; 2(n1;n2g(n1;n2;t); (13)
-where(n1;n2;t) is the probability density of having n1andn2stem cells
-(normal and mutant) at time t.P;(n11;n21) are transition probabilities
-to lose or gain one normal or mutant stem cells. N 1is inserted to keep the
-continuum time limit consistent with discreet time ( t= 1=N). Introducing
-the notation,
-Nr=r1n1+r2n2
-Nd=d1n1+n2d2+dD(N n1 n2); (14)
-the transition probabilities in the absence of dedierentiation are,
-P+;0(n1;n2) =r1!1n1dD(N n1 n2)=(NrNd);
-P ;0(n1;n2) =fr1u1n1+r2u2n2gd1n1=(NrNd) +r1v1n1dD(N n1 n2)=(NrNd);
-P0;+(n1;n2) =r2!2n2dD(N n1 n2)=(NrNd);
-P0; (n1;n2) = (r1u1n1+r2u2n2)d2n2=(NrNd) +r2v2n2dD(N n1 n2)=(NrNd);
-P+;+(n1;n2) = 0;
-P ; (n1;n2) = (v1r1d2+v2r2d1)n1n2=(NrNd);
-P+; (n1;n2) =!1r1n1d2n2=(NrNd);
-P ;+(n1;n2) =!2r2n2d1n1=(NrNd);
-P 2;0(n1;n2) =v1r1d1n2
-1=(NrNd);
-P0; 2(n1;n2) =v2r2d2n2
-2=(NrNd); (15)
-whereP 2;0is the probability to gain two S1in a generation. Similarly,
-P0; 2stands for the probability to gain two S2's. Notice that due to con-
-stant population assumption we have replaced dierentiated cell population nD
-byN n1 n2.
-The probability of composite events from Fig. 3 modies only the transition
-probability, P0;+,
-P0;+!P0;++q(N n1 n2)2=(NrNd); (16)
-21while the denominator, Nr, is changed to,
-Nr=r1n1+r2n2+q(N n1 n2); (17)
-applied to all P(;)'s.
-The dynamics of average values for frequencies hx1(t)iandhx2(t)ican be
-derived using the master equation, by inserting average frequencies as,
-hx1(t)i=1
-NX
-n1;n2n1(n1;n2;t);
-hx2(t)i=1
-NX
-n1;n2n2(n1;n2;t);
-(18)
-into master equation,
-1
-N@
-@tX
-n1;n2n1(n1;n2;t)
-=X
-n1;n2n1(X
-;P;(n1 ;n 2 )(n1 ;n 2 ;t))
- (X
-;P;(n1;n2))(n1;n2;t); (19)
-where;=f1;2gand( 1;n2) =(n1; ) =( 2;n2) =(n1; 2) = 0.
-By shifting the sum over n's byandin the rst term of above equation we
-arrive at ,
-dhx1(t)i
-dt=ha1(x1;x2)i;
-dhx2(t)i
-dt=ha2(x1;x2)i;
-(20)
-where,
-a1(x1;x2) =X
-P+; P ; 2P 2;0;  =f0;+; g;
-a2(x1;x2) =X
-P;+ P;  2P0; 2;  =f0;+; g:
-(21)
-This will lead to a much simpler form for the time evolution of average
-population frequencies. Thus in the large population limits we have Eq. 4.
-226. Appendix B: Analytical Result for Time to Fixation
-Eq. 4 can be exactly integrated to give the time to xation. For d1;2;D= 1:0
-we obtain,
-lnx1;f
-x1;i
- 1
-rlnx2;f
-x2;i
-=(r 1)t
-r(22)
-For a xation process values of initial and nal conditions are,
-x2;i=1
-Nx1;i= 1 1
-N
-x2;f=
-1 1
-N
-x1;f=
-N(23)
-These conditions come from the constraints x1;i+x2;i+xD;f= 1. The initial
-number of dierentiated cells are assumed to be zero, and the nal number of
-dierentiated cells is assumed to be x
-D= 1 while assuming x1;f==N.
-The xation time now reads,
-tF=r+ 1
-r 1lnN ln;
-tF=tMoran ln: (24)
-Notice that the the second term which represents the eect of dierentiation,
-is positive as = 1 u 2vis always less than one. We also have tF!1 as
-!0, which is the case when u;v!1=3.
-Similar result can be obtained for the non-symmetric situation where the
-dierentiation rates are not equal, i.e., 16=2. Integrating the above equation
-and using the initial conditions similar to Eq. 23,
-x2;i=1
-Nx1;i= 1 1
-N
-x2;f=2 
-1 1
-N
-x1;f=2
-N(25)
-The (approximate) result for the xation time is,
-tF=r2+1
-r2 1
-lnN ln2: (26)
-References
-Attolini CSO, Michor F (2009) Evolutionary theory of cancer. Annals of the
-New York Academy of Sciences 1168(1):23{51
-23Bonnet D, Dick JE (1997) Human acute myeloid leukemia is organized as a
-hierarchy that originates from a primitive hematopoietic cell. Nature medicine
-3(7):730{737
-Caussinus E, Gonzalez C (2005) Induction of tumor growth by altered stem-cell
-asymmetric division in drosophila melanogaster. Nature genetics 37(10):1125{
-1129
-Chaer CL, Brueckmann I, Scheel C, Kaestli AJ, Wiggins PA, Rodrigues LO,
-Brooks M, Reinhardt F, Su Y, Polyak K, et al (2011) Normal and neoplastic
-nonstem cells can spontaneously convert to a stem-like state. Proceedings of
-the National Academy of Sciences 108(19):7950{7955
-Chaer CL, Marjanovic ND, Lee T, Bell G, Kleer CG, Reinhardt F, D?Alessio
-AC, Young RA, Weinberg RA (2013) Poised chromatin at the zeb1 pro-
-moter enables breast cancer cell plasticity and enhances tumorigenicity. Cell
-154(1):61{74
-Cicalese A, Bonizzi G, Pasi CE, Faretta M, Ronzoni S, Giulini B, Brisken C,
-Minucci S, Di Fiore PP, Pelicci PG (2009) The tumor suppressor< i> p53</i>
-regulates polarity of self-renewing divisions in mammary stem cells. Cell
-138(6):1083{1095
-Dingli D, Michor F (2006) Successful therapy must eradicate cancer stem cells.
-Stem cells 24(12):2603{2610
-Dingli D, Traulsen A, Michor F (2007) (a) symmetric stem cell replication and
-cancer. PLoS computational biology 3(3):e53
-Eppert K, Takenaka K, Lechman ER, Waldron L, Nilsson B, van Galen P,
-Metzeler KH, Poeppl A, Ling V, Beyene J, et al (2011) Stem cell gene expres-
-sion programs inuence clinical outcome in human leukemia. Nature medicine
-17(9):1086{1093
-Foo J, Michor F (2009) Evolution of resistance to targeted anti-cancer therapies
-during continuous and pulsed administration strategies. PLoS computational
-biology 5(11):e1000,557
-Gatenby RA, Gillies RJ (2008) A microenvironmental model of carcinogenesis.
-Nature Reviews Cancer 8(1):56{61
-Gupta PB, Fillmore CM, Jiang G, Shapira SD, Tao K, Kuperwasser C, Lander
-ES (2011) Stochastic state transitions give rise to phenotypic equilibrium in
-populations of cancer cells. Cell 146(4):633{644
-Hanahan D, Weinberg RA (2000) The hallmarks of cancer. cell 100(1):57{70
-Hanahan D, Weinberg RA (2011) Hallmarks of cancer: the next generation. Cell
-144(5):646{674
-24Iwasa Y, Nowak MA, Michor F (2006) Evolution of resistance during clonal
-expansion. Genetics 172(4):2557{2566
-Komarova NL, Sengupta A, Nowak MA (2003) Mutation{selection networks
-of cancer initiation: tumor suppressor genes and chromosomal instability.
-Journal of theoretical biology 223(4):433{450
-Lapidot T, Sirard C, Vormoor J, Murdoch B, Hoang T, Caceres-Cortes J, Min-
-den M, Paterson B, Caligiuri MA, Dick JE (1994) A cell initiating human
-acute myeloid leukaemia after transplantation into scid mice
-Leder K, Holland EC, Michor F (2010) The therapeutic implications of plasticity
-of the cancer stem cell phenotype. PloS one 5(12):e14,366
-Mani SA, Guo W, Liao MJ, Eaton EN, Ayyanan A, Zhou AY, Brooks M,
-Reinhard F, Zhang CC, Shipitsin M, et al (2008) The epithelial-mesenchymal
-transition generates cells with properties of stem cells. Cell 133(4):704{715
-Marjanovic ND, Weinberg RA, Chaer CL (2013) Cell plasticity and hetero-
-geneity in cancer. Clinical chemistry 59(1):168{179
-Meacham CE, Morrison SJ (2013) Tumour heterogeneity and cancer cell plas-
-ticity. Nature 501(7467):328{337
-Michor F, Iwasa Y, Nowak MA (2004) Dynamics of cancer progression. Nature
-Reviews Cancer 4(3):197{205
-Moran PAP, et al (1962) The statistical processes of evolutionary theory. The
-statistical processes of evolutionary theory
-Morrison SJ, Kimble J (2006) Asymmetric and symmetric stem-cell divisions in
-development and cancer. Nature 441(7097):1068{1074
-Notta F, Mullighan CG, Wang JC, Poeppl A, Doulatov S, Phillips LA, Ma
-J, Minden MD, Downing JR, Dick JE (2011) Evolution of human bcr-abl1
-lymphoblastic leukaemia-initiating cells. Nature 469(7330):362{367
-Nowak MA, Michor F, Komarova NL, Iwasa Y (2004) Evolutionary dynamics
-of tumor suppressor gene inactivation. Proceedings of the National Academy
-of Sciences of the United States of America 101(29):10,635{10,638
-Perou CM, Srlie T, Eisen MB, van de Rijn M, Jerey SS, Rees CA, Pollack JR,
-Ross DT, Johnsen H, Akslen LA, et al (2000) Molecular portraits of human
-breast tumours. Nature 406(6797):747{752
-Rambhatla L, Bohn SA, Stadler PB, Boyd JT, Coss RA, Sherley JL (2001)
-Cellular senescence: ex vivo p53-dependent asymmetric cell kinetics. BioMed
-Research International 1(1):28{37
-25Sarry JE, Murphy K, Perry R, Sanchez PV, Secreto A, Keefer C, Swider
-CR, Strzelecki AC, Cavelier C, R echer C, et al (2011) Human acute
-myelogenous leukemia stem cells are rare and heterogeneous when as-
-sayed in nod/scid/il2r c-decient mice. The Journal of clinical investigation
-121(1):384{395
-Scheel C, Weinberg RA (2011) Phenotypic plasticity and epithelial-mesenchymal
-transitions in cancer and normal stem cells? International Journal of Cancer
-129(10):2310{2314
-Schwitalla S, Fingerle AA, Cammareri P, Nebelsiek T, G oktuna SI, Ziegler PK,
-Canli O, Heijmans J, Huels DJ, Moreaux G, et al (2013) Intestinal tumorige-
-nesis initiated by dedierentiation and acquisition of stem-cell-like properties.
-Cell 152(1):25{38
-Srlie T, Perou CM, Tibshirani R, Aas T, Geisler S, Johnsen H, Hastie T,
-Eisen MB, van de Rijn M, Jerey SS, et al (2001) Gene expression patterns
-of breast carcinomas distinguish tumor subclasses with clinical implications.
-Proceedings of the National Academy of Sciences 98(19):10,869{10,874
-Sprouske K, Athena Aktipis C, Radich JP, Carroll M, Nedelcu AM, Maley CC
-(2013) An evolutionary explanation for the presence of cancer nonstem cells
-in neoplasms. Evolutionary applications 6(1):92{101
-Vogelstein B, Papadopoulos N, Velculescu VE, Zhou S, Diaz LA, Kinzler KW
-(2013) Cancer genome landscapes. science 339(6127):1546{1558
-Wodarz D, Komarova N (2005) Lecture notes and mathematical modeling
-26

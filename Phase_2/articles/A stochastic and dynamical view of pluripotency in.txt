@@ -1,497 +1,0 @@
-Title: A stochastic and dynamical view of pluripotency in mouse embryonic stem
-  cells
-Abstract:   Pluripotent embryonic stem cells are of paramount importance for biomedical
-research thanks to their innate ability for self-renewal and differentiation
-into all major cell lines. The fateful decision to exit or remain in the
-pluripotent state is regulated by complex genetic regulatory network. Latest
-advances in transcriptomics have made it possible to infer basic topologies of
-pluripotency governing networks. The inferred network topologies, however, only
-encode boolean information while remaining silent about the roles of dynamics
-and molecular noise in gene expression. These features are widely considered
-essential for functional decision making. Herein we developed a framework for
-extending the boolean level networks into models accounting for individual
-genetic switches and promoter architecture which allows mechanistic
-interrogation of the roles of molecular noise, external signaling, and network
-topology. We demonstrate the pluripotent state of the network to be a broad
-attractor which is robust to variations of gene expression. Dynamics of exiting
-the pluripotent state, on the other hand, is significantly influenced by the
-molecular noise originating from genetic switching events which makes cells
-more responsive to extracellular signals. Lastly we show that steady state
-probability landscape can be significantly remodeled by global gene switching
-rates alone which can be taken as a proxy for how global epigenetic
-modifications exert control over stability of pluripotent states.
-
-Full Text: A stochastic and dynamical view of pluripotency in mouse embryonic stem cells
-Yen Ting Lin,1, 2Peter G. Hufton,2Esther J. Lee,3and Davit A. Potoyan4
-1T-6 and Center for Nonlinear Studies, Los Alamos National Laboratory, Los Alamos, NM 87545, USA
-2School of Physics and Astronomy, The University of Manchester, Manchester, M13 9PL, UK
-3Department of Bioengineering, Rice University, Houston, TX 77005, USA
-4Department of Chemistry, Iowa State University, Ames, IA 50011, USA
-(Dated: November 12, 2018)
-Pluripotent embryonic stem cells are of paramount importance for biomedical research thanks to
-their innate ability for self-renewal and dierentiation into all major cell lines. The fateful decision
-to exit or remain in the pluripotent state is regulated by complex genetic regulatory network.
-Latest advances in transcriptomics have made it possible to infer basic topologies of pluripotency
-governing networks. The inferred network topologies, however, only encode boolean information
-while remaining silent about the roles of dynamics and molecular noise in gene expression. These
-features are widely considered essential for functional decision making. Herein we developed a
-framework for extending the boolean level networks into models accounting for individual genetic
-switches and promoter architecture which allows mechanistic interrogation of the roles of molecular
-noise, external signaling, and network topology. We demonstrate the pluripotent state of the network
-to be a broad attractor which is robust to variations of gene expression. Dynamics of exiting the
-pluripotent state, on the other hand, is signicantly inuenced by the molecular noise originating
-from genetic switching events which makes cells more responsive to extracellular signals. Lastly we
-show that steady state probability landscape can be signicantly remodeled by global gene switching
-rates alone which can be taken as a proxy for how global epigenetic modications exert control over
-stability of pluripotent states.
-I. INTRODUCTION
-Embryonic stem cells derived from mammalian blastocyst are pluripotent: they show an indenite capacity for
-self-renewal and the ability to dierentiate into every cell type constituting an adult organism [1{3]. The development
-of healthy tissues hinges on the ability of these pluripotent stem cells to make critical decisions determining when
-and into which kind of cells to dierentiate in response to their environment. Fates of embryonic cells are therefore
-decided through sophisticated biological computations orchestrated by a vast regulatory network consisting of genetic,
-epigenetic and signaling layers [3].
-The dynamics of genetic expressions take place in molecular environments and are subject to intrinsic noise due to
-the discrete nature of the molecular copy numbers and to extrinsic noise from extracellular environment [4]. Thus,
-while at the level of the organism development is often predictable with a well-dened order of events, at the level of
-single cells fate determination is fundamentally stochastic [5, 6]. An outstanding question involves understanding to
-what extent the inherent molecular stochasticity in embryonic cells is suppressed or exploited for functional purposes.
-Studies probing transcription in single cells have uncovered high variabilities of gene expression in embryonic stem cell
-populations [7{9]. Several hypotheses about the functional roles of stochasticity in embryonic stem cells have been
-put forward. Observations of dynamic and heterogeneous expression patterns of core transcription factors such as
-Nanog, Oct4 and Sox2 have promoted the view that stochastic excursions of these factors are governing the stability
-of pluripotent states [10, 11]. A dierent hypothesis claims transcriptional noise to be advantageous by facilitating
-the exploration of the space of a gene network such that, at any instant, a subpopulation of cells is optimally primed
-to be responsive to dierentiation signals [12]. The heterogeneity of populations of pluripotent cells has also raised
-some concerns that pluripotency is ill-dened on a single-cell level [12] and instead should be viewed as a statistical
-property of the macroscopic state emerging at the level of an ensemble of cells. A comprehensive physical picture of
-pluripotency at the single-cell level therefore still remains unclear.
-In this regard, the roles of modeling and computational approaches are seen as especially important for bridging the
-gap between our understanding of molecular dynamics of regulatory networks and phenotypic outcomes. The rapid
-accumulation of data of gene expression through single-cell experiments has stimulated the techniques of statistical
-inference and computational systems biology for mapping embryonic stem cell networks [14{16]. In vitro studies
-of mouse embryonic stem cells (mESC) in dierent culture conditions, in particular, have become an ideal model
-system for exploring mechanistic issues surrounding pluripotency and lineage commitment in mammals [16]. In a tour
-de force study of mESC by Dunn et al. [13], regulatory relationships between transcription factors were uncovered
-through analysis of pairwise correlations in gene expression. Using known experimental data as constraints, a network
-topology with a minimal set of genes was derived with a high degree of predictive power with respect to perturbations
-of the network.arXiv:1710.08542v1  [q-bio.MN]  23 Oct 20172
-LIF
-CH
-PDStat3
-Tcf3
-MEK
-ERKKlf4Gbx2
-EsrrbKlf2
-Oct4
-Sox2Sall4
-Tfcp2l1
-NanogExternal 
-input
-Regulated by both types of TF
-(Tfcp2l1, Esrrb, Oct4, Nanog)⍺m
-⍺m
-⍺m
-⍺m
-⍺max
-0˜ 
-˜ 
-˜ 
-˜ 
-˜⍺max
-⍺max
-0˜ 
-˜ no bound TF
-one bound repressor
-two bound repressors
-no bound TF
-one bound repressor
-one bound activator
-Two bound activators
-Two bound repressorsone bound activator and
-one bound repressor0
-0
-⍺max˜ no bound TF
-one bound activator
-two bound activatorsRegulated by only activators
-(Stat3, Gbx2, Klf2, Klf4, 
-Sall4, Sox2)
-Regulated by only repressors
-(Tcf3, MEKERK)Conﬁguration Production rate
-FIG. 1. The left panel shows a schematic diagram of the network topology, reproduced from Dunn et al. [13]. Each node
-corresponds to a given gene and their placement from left to right is chosen to indicate a general trend of downstreamness
-from the inputs. In our mechanistic model, each gene produces a unique transcription factor at a given rate, depending on the
-binding state of its promoter sites. These transcription factors go on to bind and activate (black arrow) or repress (red bar)
-other genes. The three nodes on left correspond to extra-cellular signals, which are either absent or present. The right panel
-shows our assumed molecular logic of transcriptional regulation. Shown are the outcomes of combinatorial binding of activators
-and repressors to promoter sites. Depending on the conguration of the promoter site, transcription factors are produced with
-rates 0, ~m, and ~max, modeling the eects of cooperative binding.
-Network topologies, however, remain silent about the roles of molecular noise and dynamics in stem cell dier-
-entiation governed by stochastic biochemical reactions. Furthermore, in order to validate that the inferred network
-reects true microscopic reality of cell and is not a result of overtting, one has to ultimately test the results using
-mass-action-based kinetics which integrate relevant molecular factors. The key challenge lies in nding the adequate
-resolution for the network which is able to be predictive and does not pose insurmountable computational burden.
-In the present work, we outline a framework for extending boolean resolution networks into stochastic and dy-
-namical models|with microscopic resolution of promoter architecture and individual gene switching events. The
-computational scheme utilizes static boolean information about the network topology and uses novel analytical model
-reduction to increase the computational eciency, allowing for extensive searches in the space of microscopic reac-
-tion rates. This framework is successfully applied to the network topology inferred by Dunn et al. [13] in order to
-build a mass action based stochastic dynamic model which is capable of describing both the discrete states of all the
-genes and the populations of transcription factors. Starting from minimal assumptions about the rates of various
-reactions, we nd a few distinct gene swithcing regimes where a remarkable agreement with the experimental gene
-expression proles is achieved for all combinations of experimentally controlled external signals. We show that gene
-expression levels in complex regulatory networks are not a unique function of gene switching rates which cautions
-against over-interpreting boolean level networks and suggests strategies of inference which utilize higher moments
-in distribution of transcription factors. Using single cell experiments which have probed expression of pluripotency
-factors [7, 8] we are able to argue that gene switching in pluripotent states happens primarily on the intermediate
-scale relative to the reactions of creation and degradation (dilution). This regime better agrees with the diverse set
-of experiments available and provides explanation for the multimodality in distributions of transcription factors and
-burst like expression dynamics for some genes.
-In the second half of the paper, armed with a predictive and physically motivated model of pluripotency network,
-we explore the dynamics of lineage commitment driven by withdrawal of various well documented signals (LIF, 2i)
-for maintaining the na ve state of pluripotency. We nd a number of non-trivial consequences of molecular noise and
-gene switching dynamics. In particular we show that intermediate gene switching regime generates higher sensitivity
-for the network when responding to external signals.3
-II. FRAMEWORK FOR DERIVING MICROSCOPIC RESOLUTION NETWORKS FROM
-EXPERIMENTALLY INFERRED NETWORK TOPOLOGIES
-A. Molecular logic of transcriptional regulation in ESC
-Here we outline the basic steps of constructing the microscopic genetic regulatory networks from the Boolean
-topology of genes inferred from experiments [13]. The network topology (Fig. 1) contains static information about the
-types of interactions between pairs of genes. The interactions are classied as being either repressing or activating.
-To study the dynamics of complex genetic networks, one has to extend the Boolean level description to account for
-the molecular logic of gene regulation. This molecular logic species the precise relation between the binding of
-transcription factors to genomic sites and the regulatory outcome in terms of gene activation, repression, etc. In the
-case where the same sites can be bound to dierent transcription factors, the combinatorial nature of regulation can
-give rise to ambiguity in molecular logic. Such ambiguities can be resolved either by directly inferring regulatory logic
-or by simulating dierent combinatorial possibilities until sucient agreement with experiments is reached. Once
-molecular logic is dened the topologic level description can be extended into a set of biochemical reactions.
-The reactions in the present model include (i)the binding/unbinding of transcription factors to promoter sites
-of genes and (ii)the creation/degradation of populations of transcription factors. We adopt the network of mESCs
-inferred by Dunn et al. [13]. There are N= 12 genes in the network and we assign each gene Gito a discrete variable
-which describes the conguration of its promoter sites. The values of Gidetermine if the transcriptional activity is
-in the activated, repressed or neutral state. The npromoter sites of a particular gene allow binding of at most n
-transcription factors. Since a large majority of eukaryotic transcription factors in this network bind as dimers [17] we
-setn= 2 for all genes [18]. The binding reactions are
-First TF binding: Gi+Pj2~konNPj       *)       
-~koffGiPj;
-Second TF binding: GiPj+Pk~konNPk     *)     
-~koffGiPjk:(1)
-Notice that we have adopted the uncooperative binding mechanism which assumes the transcription factors bind to
-any of the unbound promoter sites independently with a constant rate ~kon. Other cooperative binding mechanisms
-can be easily built into this framework. Each gene codes for its own transcription factor Piwhere indices i= 1;:::;N
-label both genes and the corresponding transcription factors. These promoters can act as repressors or activators of
-other genes: this information is contained in the experimentally-inferred topology. The molecular logic describing how
-the combinatorial binding of activators and repressors regulate each gene, however, is an assumption in the model.
-When the rate of transcription is non-zero, genes produce copies of their respective transcription factors. We use
-a one step model of transcription [19] whereby transcription factors are produced via a unimolecular step. This
-approximation coarse grains several sequential intermediate reactions, such as mRNA production, into one eective
-step [20, 21]. This approximation has become popular in models of protein production [22{24]. All of the transcription
-factors are assumed to have nite lifetimes set by the rate of degradation ensuring the existence of stable steady states
-with nite number of molecules. The reactions are
-TF production: GiPjk~jk  !GiPjk+Pi;
-TF degredation: Pi~  !?:(2)
-We note that one can adopt a view with higher resolution of the network depending on the available experimental data
-and the type of question posed. For instance one may consider explicitly including the steps of cell cycle regulation,
-dierent epigenetic states, binding of non-coding RNAs etc. For simplicity and illustrative purpose, we consider the
-most simplied dynamical model which describes only the promoter congurations and the population dynamics of
-the transcription factors|this model aims to use the optimal resolution for capturing trends in gene expression while
-remaining feasible for ecient stochastic simulations capturing the variability in an ensemble of cells. After converting
-the network topology into a higher resolution network of biochemical reactions, our next goal is to exhaustively sample
-a vast space of parameter space to identify the optimal parameter regime with which the model best reproduces all
-of the experimental constraints.4
-FIG. 2. PDMP stochastic simulations identify three genetic switching regimes consistent with experimental data. When
-switching is slow, intermediate, or fast we nd certain parameters which closely match the experimental results obtained by
-Dunn et al. [13]. The consistency of our model with experimental results is measured using a Hamming distance|a measure
-where one counts the number of discrepancies between the binary expression of each TF for both cases. (A) Shown are the
-identied regions in parameter regimes that minimize Hamming distance. There are three free parameters: the binding rate kon,
-unbinding rate ko, and basal transcription rate m. For slow switching, the parameters are kon= 3:2,ko= 0:2,m= 0:02;
-for intermediate switching, kon= 16,ko= 1:5,m= 0:01; for fast switching, kon= 102,ko= 10,m= 0:005. The selected
-parameter sets are presented as red dots in the landscapes in the upper panel. (B) Comparison of computed and discretized
-gene expression proles with that of the experiments (Benchmark panel).
-B. Multi-scale simulation of complex genetic networks
-Biochemical reactions in gene networks are of fundamentally probabilistic nature. The most rigorous way to
-simulate a network of reactions is by numerically solving the master equation which accounts for all possible states
-of the network down to the level of single molecules [4, 19]. However in high dimensions, i.e., when the number of
-species is large, this approach is not computationally ecient. Instead, kinetic Monte Carlo algorithms are the most
-straightforward way to generate sample paths of the stochastic process. Fully individual-based models, however, still
-suer from a steep scaling of computational time with the number of components. This fact renders them inecient
-for simulating large gene networks, especially when it comes to scanning or exploring the parameter space.
-A wide range of approximate schemes have been employed to simulate large scale gene regulatory networks. Most
-conventional approximations so far have been the size-expansion methods which are known for being problematic when
-the molecular noise induced by genetic switching becomes non-negligible. On the other hand, for embryonic stem cell
-networks it is essential to account for the stochastic nature of genetic switches which give rise to multiple attractor
-states corresponding to various phenotypes. A network with Ngenes can theoretically have 2Nattractors. Even if
-populations of all the other species are present in large quantities, the stochastic uctuations caused by the genetic
-switches (due to stochastic binding-unbinding events of the transcriptional factors) between ON and OFF states cannot
-be ignored, unless the switching is operating in the extremely fast limit compared to any other reactions, known as the
-\adiabatic regime" [25{27]. In the other cases|the non-adiabatic regime|gene switching can completely dominate
-the dynamics in the network [25, 28]. Eukaryotic gene regulatory networks are often found in the intermediate regime
-where gene switching events are dynamically interwoven with the rest of the reactions in the network and cannot be
-ignored [5, 29]. Single-cell studies of mESC in particular have shown bursty behavior in gene expression with sudden
-jumps in levels of proteins resulting in multi-modal distributions of core transcription factors [7].
-Many of the early computational models of embryonic stem cells have focused on small fragments of pluripotency
-network, typically involving bistable switches [10, 30]. These early pioneering studies have yielded many insights5
-on stochastic decision making in regards to fate determination and self-renewal. A few studied have looked at
-larger portions of the regulatory network [31{34] but at the cost of making near-adiabatic switching approximations
-thereby ignoring explicit stochastic treatment of genetic switching dynamics. Lastly, with very few exceptions, the
-kinetic parameters in those models were not throughly explored or data-informed and had to be picked relying on
-physical intuition alone. All of these limitations have been completely overcome in the present work. A series of
-recent studies [22{25, 35, 36] on gene expression dynamics have developed a novel computational framework utilizing
-piecewise-deterministic Markov process (PDMP) [37] as approximations to the fully individual-based model. This
-approach treats genetic switching events exactly, while assuming noise due to the nite nature of populations of
-transcription factors to be small in comparison. As will soon be seen, the assumptions underlying the PDMP approach
-turn out to be sound as we go on to obtain a nearly perfect quantitative agreement with full blown kinetic Monte
-Carlo schemes even for the case of the complex networks of ESC operating in the intermediate gene switching regime.
-The PDMP simulations carried out in the present study show nearly O(103) fold faster generating stochastic
-trajectories compared to conventional individual-based kinetic Monte Carlo techniques (the algorithm for generating
-PDMP sample paths is provided in the Supplementary Information). This rigorous and rapid sampling of gene
-switching events has not only allowed us to investigate the stochastic dynamics of the regulatory network at a longer
-timescale compared to conventional kinetic Monte Carlo methods, but also enabled us to explore a vast parameter space
-eciently. We have used the obtained information to derive microscopic resolution models of ESC. The mathematical
-details of the model described in greater detail can be found in the SI.
-III. RESULTS
-A. In the pluripotent state the mean levels of gene expression are a hardwired feature of network
-architecture whereas heterogeneity is shaped signicantly by stochastic dynamics of genetic switches.
-In this section we rst identify certain parameters which provide results which are consistent experiment. Following
-this the model becomes predictive about dynamical features which are not contained in the topology.
-Having reduced the individual-based model to a computationally tractable PDMP, we are at a point where we can
-tune the model parameters to match experimental data. The experimental data used for constraining the rate coe-
-cients are the binarized gene expression levels of transcription factors under well-dened culture conditions consisting
-of dierent combinations of leukemia inhibitory factor (LIF), glycogen synthase kinase 3 (CH), and mitogen-activated
-protein kinase (PD). Identical culture conditions were used by Dunn et al. [13] to infer the original Boolean topology
-are LIF, 2i (same as PD+CH), LIF+2i, LIF+PD, LIF+CH. We employ the Hamming distance (the number of discrep-
-ancies between the simulated and experimental proles) as a cost-function for optimization. The Hamming distance
-is minimized through multiple rounds of simulations where we vary the three free parameters: the rates of promoter
-bindingkonand dissociation ko, and the basal transcription rate m. Through this procedure we nd that, in certain
-parameter regimes, our assumed molecular logic closely reproduces the gene expression proles from experiments
-for dierent combinations of external signals. The dimeric binding|modeled in our framework as two binding sites
-(n= 2)|of TF to promoter sites in particular leads to a more sensitive switching and emerges as an important feature
-of the network which we show to be advantageous for reproducing experimental data [38]. We nd localized parameter
-sets in three distinct regimes of gene switching: slow, intermediate and fast; all of which successfully reproduce the
-experimental gene expression patterns (Fig. 2) corresponding to pluripotent and lineage committed cells. The fact
-that the rate parameters of the network occupy nite regions and cover dierent regimes suggests that distinct gene
-expression proles can tolerate uctuations in reaction rates. Such rate uctuations, reecting the eect of extrinsic
-noise, are inevitable in dynamic cellular environments of embryonic cells which experience frequent epigenetic and
-extracellular perturbations [16, 39, 40]. In a way changes in gene switching rates can be seen as a proxy for how global
-epigenetic changes govern the rates of transcription factor binding to target genomic regions.
-From the methodology point of view the absence of a unique regime of rates implies the following: inferring
-networks using only mean levels of gene expression (as is done for Boolean networks) may lead to the loss of valuable
-information contained in higher moments of distribution. Thus new approaches of inference need to be developed in
-order to account for broad distributions of transcription factors. For this reason, we look beyond comparisons of mean
-expression levels and turn to comparing stationary distributions of transcription factors observed in experiments with
-the computationally generated distributions in three chosen parameter regimes identied in Fig. 2. The pluripotent
-state of mESCs has been the subject of intense investigations by nucleic acid-based single-cell techniques such as RNA-
-seq, sm-FISH, qPCR and there is now extensive data on the steady state distributions of RNA and transcription
-factors maintained under pluripotency-favoring culture conditions [7, 8, 41]. These experiments have revealed a
-heterogeneous nature of gene expression with many core pluripotency factors, such as Nanog, having long tailed or
-bimodal distributions. Additionally, the single-cell stochastic trajectories of TFs have shown sharp, bursty transitions6
-FIG. 3. Gene expression proles of pluripotency factors predicted by PDMP simulations. Each column corresponds to dierent
-external inputs, and each row corresponds to regimes of slow, intermediate and fast gene switching. More than 105sample
-paths were used for generating each condition.
-implying infrequent genetic switching events [7]. These experimental observations are more consistent with the
-intermediate regime of genetic switching as seen from Fig. 3, as in the case of slow switching nearly all of the
-transcription factors express bimodality and in the case of fast switching the expressions of all the factors are narrow
-and unimodal.
-Although the PDMP approach accurately captures the eects of genetic switching, it assumes demographic noise
-arising from nite populations to be negligible. To test the validity of this assumption and assess the contribution of
-dierent sources of noise in establishing the steady state distribution of the pluripotent state, we carry out individual-
-based simulations for the intermediate switching regime of the network, Fig 4. In the individual-based model all
-reactions are treated stochastically thereby accounting for all of the sources of noise in the system. The resulting gene
-expression proles follow closely those obtained by PDMP simulations, showing that the noise arising from stochastic
-switching events of promoter conguration accounts for the signicant part of overall variability in the network.
-Trajectories of individual transcription factors show that indeed most of the variance in the the molecular distributions
-are generated by genetic switching events which appear as abrupt stochastic jumps. Consistent with experiments,
-we also nd that under LIF gene expression is more heterogeneous than under 2i, but also that the overall levels
-of expression are higher [7, 8]. In all three regimes of genetic switching supporting pluripotency (LIF+2i,LIF+PD,
-LIF+CH, LIF and 2i), core transcriptions factors such as Nanog, Oct4, Sox2 are highly expressed. The same factors
-are also repressed in conditions favoring dierentiation (CH, PD and none) irrespective of gene switching regime. This
-shows that the pluripotent and dierentiated states, as determined by the pattern of gene expression, are hardwired
-in the architecture of the genetic network independent of genetic switching rates. Nevertheless, as we will show in the
-next section, the routes and dynamics of lineage commitment from pluripotent states strongly depend on the level of
-molecular noise generated in dierent gene switching regimes.
-B. Dynamics of lineage commitment is driven by gene switching induced bifurcations of the underlying
-landscape of gene expression.
-We next ask how the steady state gene expression patterns displayed by the gene network respond to extracellular
-perturbations in the form of initiation or termination of pluripotency signals. Both dual inhibitor 2i (PD+CH) and7
-FIG. 4. Gene expression proles of pluripotency factors predicted by individual-based simulations. The intermediate switching
-regime is chosen to be presented as it is the regime which best captures the experimentally measured distributions [7, 8].
-(A) Shown are 100 representative trajectories and full distributions of select few transcription factors under three dierent
-conditions generated by individual based simulations. (B) Gene expression prole showing the near quantitative agreement
-with results of PDMP simulations shown on Fig. 3 (C) Comparison of individual based model with experimental data from
-Dunn et al [13]
-Leukemia factor LIF based signaling have been shown to provide a stable environment for maintaining pluripotency
-of stem cells in vitro [3, 13]. Conversely, withdrawal of either LIF or 2i leads to irreversible lineage commitment
-after a 24-hour period. Despite a similar ability to guard pluripotent cells against lineage commitment, these factors
-deploy dierent regulatory mechanisms reected in distinct distributions of pluripotency factors. As a result, stem cell
-dierentiation by withdrawal of dierent signals proceeds via dierent routes. To gain a mechanistic understanding
-of how the interplay of signaling, molecular noise and network architecture give rise to the steady state expression
-proles, we study the dynamics of transitioning between the pluripotent and lineage committed states induced by
-rapid initiation and withdrawal of signaling conditions (LIF, CH, PD).
-The temporal evolution of distributions of the TFs exiting (LIF/2i withdrawal) and entering (LIF/2i immersion)
-pluripotent states reveals rich dynamical signatures of these transitions (Fig 5). To reveal the role of stochasticity in
-these transitions, we compare the intermediate regime|which is dominated by genetic switching|to the fast regime|
-in which transitions are largely governed by the network topology and the uctuation of promoter conguration is
-almost-completely ignored. The irreversible nature of transitions manifests clearly in dierent routes exiting and
-entering the pluripotent state (transitions to and from the None state in Fig 5).
-In the intermediate regime of genetic switching rates, expression noise greatly facilitates transitions out of a pluripo-
-tent state by making the network more responsive to changes in environmental signaling. In contrast, in the fast
-switching regime, upon withdrawal of pluripotency signals the downstream regulation happens on a much slower
-time-scale with some factors remaining virtually unresponsive to changes of signaling. This signaling enhancement
-in the intermediate regime reveals the importance of molecular noise in making pluripotent states more sensitive to8
-FIG. 5. The dynamical behavior of the distributions of transcription factor densities for the intermediate and fast switching
-regimes. At time t= 0, the external inputs are changed. The plots show the evolution in probability density for a large
-ensemble (105) of PDMP sample paths.
-environmental conditions. There are qualitatively dierent patterns of re-entrance into pluripotent states upon LIF vs
-2i addition, with LIF being much more ecient at reversing pluripotency compared to the 2i. The dierent potential
-of signaling culture for pluripotency reversal has been established in experiments [3] which have shown that in the
-later stages of commitment only the LIF is able to reverse lineage-primed cells back to their naive pluripotent states.
-The exit and re-entrance from pluripotency upon withdrawal/addition of LIF shows complex signatures of hysteresis
-and bifurcations. This suggests that there can be multiple pathways of entering or exiting pluripotency. The tran-
-sition times for all signaling-induced changes of the steady states of the network are visualized on a kinetic diagram
-(Fig 6). The kinetic diagram shows an underlying structure to these transitions where conversion among pluripotent
-states takes place with lower \activation barriers" compared to transitions accompanying loss of pluripotency. In the
-intermediate switching regime there is a clear time-scale separation between transitions which keep cells in pluripotent
-states and transitions out of pluripotent states. One may argue that such a time-scale separation between signals
-inducing dierentiation and pluripotency allows embryonic cells to execute developmental decisions more faithfully.
-In the fast switching regime this clear time-scale separation is partially lost where only the loss of all three signals is
-separated from the rest of the transitions.
-Detailed analysis of individual distributions and trajectories of transcription factors can be very informative due
-to their high information content. It is, however, not immediately clear how changes in the expression of individual
-genes contribute to global changes corresponding to dierent phenotypic transitions. To reveal such global changes,
-we project stochastic trajectories of all transcription factors onto the rst two eigenvectors obtained by principal
-component analysis of the reference pluripotent steady state (LIF+2i). Most of the variance of transcription factors
-is well captured by the few principal components. The high-dimensional steady state of the cellular network can thus
-be conveniently projected onto a 2-dimensional subspace, allowing us to visualize the attractor states of the network
-as probability landscapes (PC1;PC 2) which are often masked by heterogeneous distributions.
-Comparing these probability landscapes with dierent gene switching regimes reveals the distinct roles played by
-gene switching-induced molecular noise and the deterministic network topology in guiding the transition out of the
-pluripotent states (Fig 7). The intermediate gene switching regime, once again, appears to be the more viable regime
-underlying pluripotent states since the probability landscape shows up as a broad attractor with interconnected states.
-Going towards the limit of slow switching results in the fragmentation of the landscape into states separated by high
-barriers. This gene switching-induced remodeling of attractors shows the potential for regulation via global epigenetic
-changes which are purported to act via silencing or activating entire sets of genes at once. Thus one may view gene
-switching rates as a proxy for genome wide acetylation/methylation patterns which can dramatically alter the access
-of transcription factors to key target genomic sites. The sequential removal of pluripotency inducing signals reveals9
-FastswitchingIntermediateswitching
-Intermediate switching: Stochastic regimeFast switching: Near-deterministic regime
-FIG. 6. Calculations of transition times between the stationary distributions of dierent external conditions. A larger, darker
-arrow indicates that a given transition takes a longer time to converge to its stationary state. This time-scale is measured by
-simulating a large ensemble (105) of PDMP sample paths to provide a simulated probability density, and nding the Jensen{
-Shannon divergence [42, 43] between the instantaneous distribution of each TF and its nal stationary distribution. The time
-for the each divergence to fall below a threshold (:= 0 :3) is recorded, and we choose the largest of these as a quantication of
-the transition time.
-a consistent change in the size of the attractor towards occupying smaller regions on the landscape. This argues for
-the physical state of network corresponding to pluripotent states to be the one with maximal variance of regulatory
-transcription factors where lineage commitment is accompanied by their gradual constraining and repression. A
-similar idea which views pluripotency as a macrostate emerging from an ensemble of cells which try to maximizes
-the information entropy with respect to regulatory transcription factors has been postulated before [12, 44]. The
-analysis of steady state stochastic dynamics of pluripotency network in this work appears in agreement with his
-view. Furthermore, we are able to reveal the microscopic origin of this entropic paradigm. By analyzing pairwise
-correlation among dierent transcription factors we nd that signals like LIF/2i create greater independence between
-the expression of core transcription factors leading them to explore larger range of values. Hence, removal of these
-signals leads to more constrained and inter-dependent patterns of gene expression for the same transcription factors
-which greatly diminishes overall variance. (Fig S1).
-IV. DISCUSSION
-Recent studies of ESC have increasingly emphasized systems level perspective on pluripotency and fate determina-
-tion as outcomes of complex biological computations orchestrated by non-random networks of genes [45, 46]. Rapid
-growth of gene expression data collected from controllable in vitro experiments on mESCs has made it possible to make
-reliable inferences of gene regulatory networks which govern the state of pluripotency [13]. These inferences show a
-highly interconnected nature of regulatory networks where signaling molecules, genomic binding, epigenetics and bio-
-chemical feedback act in a concerted manner in balancing pluripotency and decision making. Single-cell experiments
-have also revealed signicant dynamic heterogeneity of gene expression in the population of cells [7, 8], suggesting
-the important roles played by molecular noise and non-equilibrium processes. Schematic network topology models
-are no longer sucient for rationalizing the level of detailed quantitative information obtained in single-cell studies.
-In the present work we have developed a multi-scale computational scheme for converting experimentally-inferred
-boolean topologies into quantitative and predictive models of networks with microscopic resolution of gene expression
-dynamics. The employed computational model is based on previously proposed hybrid stochastic approaches [22{25]
-in which the switching dynamics of individual genes are considered exactly while the rest of the biochemical reactions
-are approximated as deterministic. This hybrid stochastic approach is approximately a thousand fold faster than con-
-ventional kinetic Monte Carlo methods. This allows us to simulate large scale gene regulatory networks of ESC under
-dierent culture conditions and gene switching regimes. To infer the parameters in the model from the experimental
-data, we use hybrid simulations to exhaustively sample the space of rates and identify the parameter regime in which
-the model prediction best matches experimental data. The approximation using the hybrid scheme is validated by
-carrying out fully stochastic simulations of the network for the identied parameter sets. This agreement also shows10
-Fast switchingIntermediate switchingSlow switchingLIF+2iLIF2iNone
-0.01.0⇡(PC1,PC2)
-FIG. 7. Mapping the cellular attractors of genetic network under dierent switching and signaling conditions by projecting
-PDMP simulated gene expression onto rst two principal components. The reference state for principal components was chosen
-to be the LIF+2i/intermediate switching.
-that the switching events of genes|due to stochastic TFs binding to the promoter sites|to be a signicant source of
-variance in the ESC networks. Furthermore we see the changes in gene switching rates as a proxy for global epigenetic
-modications that can alter the rates of access of transcription factors to sites buried under chromatin structures.
-Thus the signicant remodeling of steady state landscape that we see by varying the global gene switching rates gives
-us a glimpse of potentially powerful leverage that epigenetic changes of chromatin have over stability of pluripotent
-states.
-We nd that the intermediate regime, in which gene switching rate is comparable to the other reaction rates in
-the network, is most consistent with single-cell measurements [7{9]. In this regime transcription factors show bursty
-dynamics which lead to heterogeneous distributions with some showing long tailed and bimodal features. We nd
-signaling by LIF and 2i to be a major driving force maintaining the stability of pluripotent states. Withdrawal of
-either LIF/2i initiates lineage commitment via a robust pattern of reduced expression of Nanog/Oct4/Sox2 triad.
-To characterize the dynamics of lineage commitment, we compute transition times from pluripotent to dierentiated
-steady states. We nd that higher levels of molecular noise generated by slower gene switching make network more
-responsive to changes in signaling condition. Next, by carrying out principal component analysis on ensembles of
-gene expression proles, we nd a much simpler description of pluripotency and lineage commitment in terms of
-eective probability landscapes. As the signals safeguarding pluripotency are removed, these landscapes reveal a
-gradual narrowing of the steady state attractor explored by the network. Thus, we see a hierarchical organization
-of dierentiation landscapes where pluripotent states pose the largest attractor which is maintained through the
-extracellular signals and the molecular noise of gene switching.
-At last we believe the computational framework developed here should also be useful in organize and interpreting
-experimental data of other complex gene regulatory networks within a coherent and unied computational models
-thereby making it easier to conceive and vet physical hypothesis in a systematic way. Given the rapid rise of information
-from high throughput single-cell nucleic acid based techniques (RNA-seq, RNA-FISH, qPCR, etc), we expect such
-microscopic resolution models to play important roles for bridging the systems-level behavior of genetic networks with
-the underlying molecular-level processes of binding and regulation at the genomic sites.
-[1] M. Evans, Nat Rev Mol Cell Biol 12, 680 (2011).
-[2] C. E. Murry and G. Keller, Cell 132, 661 (2008).11
-[3] G. Martello and A. Smith, Ann Rev Cell Dev Biol 30, 647 (2014).
-[4] N. G. Van Kampen, Stochastic processes in physics and chemistry , Vol. 1 (Elsevier, 1992).
-[5] O. Symmons and A. Raj, Mol cell 62, 788 (2016).
-[6] G. Bal azsi, A. van Oudenaarden, and J. J. Collins, Cell 144, 910 (2011).
-[7] Z. S. Singer, J. Yong, J. Tischler, J. A. Hackett, A. Altinok, M. A. Surani, L. Cai, and M. B. Elowitz, Molecular cell 55,
-319 (2014).
-[8] R. M. Kumar, P. Cahan, A. K. Shalek, R. Satija, A. J. DaleyKeyser, H. Li, J. Zhang, K. Pardee, D. Gennert, J. J.
-Trombetta, et al. , Nature 516, 56 (2014).
-[9] M. A. Canham, A. A. Sharov, M. S. Ko, and J. M. Brickman, PLoS Biol 8, e1000379 (2010).
-[10] T. Kalmar, C. Lim, P. Hayward, S. Mu~ noz-Descalzo, J. Nichols, J. Garcia-Ojalvo, and A. M. Arias, PLoS Biol 7, e1000149
-(2009).
-[11] S. Masui, Y. Nakatake, Y. Toyooka, D. Shimosato, R. Yagi, K. Takahashi, H. Okochi, A. Okuda, R. Matoba, A. A. Sharov,
-et al. , Nature cell biology 9, 625 (2007).
-[12] B. D. MacArthur and I. R. Lemischka, Cell 154, 484 (2013).
-[13] S.-J. Dunn, G. Martello, B. Yordanov, S. Emmott, and A. Smith, Science 344, 1156 (2014).
-[14] J. Feigelman, S. Ganscha, S. Hastreiter, M. Schwarzscher, A. Filipczyk, T. Schroeder, F. J. Theis, C. Marr, and
-M. Claassen, Cell Sys 3, 480 (2016).
-[15] H. Xu, Y.-S. Ang, A. Sevilla, I. R. Lemischka, and A. Ma'ayan, PLoS Comput Biol 10, e1003777 (2014).
-[16] S. Semrau and A. van Oudenaarden, Ann Rev Cell Dev Biol 31, 317 (2015).
-[17] L. Ferraris, A. P. Stewart, J. Kang, A. M. DeSimone, M. Gemberling, D. Tantin, and W. G. Fairbrother, Genome Res
-21, 1055 (2011).
-[18] We have also tested n= 3;4;5 showing qualitatively similar results to n= 2.
-[19] P. C. Bresslo, Stochastic processes in cell biology , Vol. 41 (Springer, 2014).
-[20] T. B. Kepler and T. C. Elston, Biophysical journal 81, 3116 (2001).
-[21] J. Hornos, D. Schultz, G. Innocentini, J. Wang, A. Walczak, J. Onuchic, and P. Wolynes, Phys Rev E 72, 051907 (2005).
-[22] Y. T. Lin and T. Galla, Journal of The Royal Society Interface 13, 20150772 (2016).
-[23] Y. T. Lin and C. R. Doering, Physical Review E 93, 022409 (2016).
-[24] P. G. Hufton, Y. T. Lin, T. Galla, and A. J. McKane, Physical Review E 93, 052119 (2016).
-[25] D. A. Potoyan and P. G. Wolynes, The Journal of chemical physics 143, 195101 (2015).
-[26] A. M. Walczak, J. N. Onuchic, and P. G. Wolynes, Proceedings of the National Academy of Sciences of the United States
-of America 102, 18926 (2005).
-[27] M. Sasai and P. G. Wolynes, Proceedings of the National Academy of Sciences 100, 2374 (2003).
-[28] H. Feng, B. Han, and J. Wang, The Journal of Physical Chemistry B 115, 1254 (2010).
-[29] T. L. Lenstra, J. Rodriguez, H. Chen, and D. R. Larson, Ann Rev Biophys (2016).
-[30] V. Chickarmane, C. Troein, U. A. Nuber, H. M. Sauro, and C. Peterson, PLoS Comput Biol 2, e123 (2006).
-[31] J. Wang, K. Zhang, L. Xu, and E. Wang, Proceedings of the National Academy of Sciences 108, 8257 (2011).
-[32] C. Li and J. Wang, Journal of The Royal Society Interface 10, 20130787 (2013).
-[33] B. Zhang and P. G. Wolynes, Proceedings of the National Academy of Sciences 111, 10185 (2014).
-[34] H. Feng and J. Wang, Scientic reports 2, 550 (2012).
-[35] S. Zeiser, U. Franz, O. Wittich, and V. Liebscher, IET systems biology 2, 113 (2008).
-[36] S. Zeiser, U. Franz, and V. Liebscher, Journal of Mathematical Biology 60, 207 (2010).
-[37] M. H. Davis, J. Roy. Statist. Soc. Ser. B 46, 353 (1984).
-[38] Our analysis showing n2 signicantly reduces the Hamming distance, compared to a single-site binding n= 1.
-[39] M.-E. Torres-Padilla and I. Chambers, Development 141, 2173 (2014).
-[40] H. Ochiai, T. Sugawara, T. Sakuma, and T. Yamamoto, Scientic reports 4, 7125 (2014).
-[41] A. M. Klein, L. Mazutis, I. Akartuna, N. Tallapragada, A. Veres, V. Li, L. Peshkin, D. A. Weitz, and M. W. Kirschner,
-Cell161, 1187 (2015).
-[42] J. Lin, IEEE Transactions on Information theory 37, 145 (1991).
-[43] D. M. Endres and J. E. Schindelin, IEEE Transactions on Information theory 49, 1858 (2003).
-[44] S. J. Ridden, H. H. Chang, K. C. Zygalakis, and B. D. MacArthur, Physical review letters 115, 208103 (2015).
-[45] B. D. MacArthur, A. Ma'ayan, and I. R. Lemischka, Nature Reviews Molecular Cell Biology 10, 672 (2009).
-[46] S. Kontogeorgaki, R. Sanchez-Garcia, R. Ewing, K. Zygalakis, and B. D. MacArthur, bioRxiv , 075366 (2016).
